@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "typed_bytes": 5,
+  "physical_records": 2,
+  "physical_symbols": 6,
+  "files": 2,
+  "archived_player_start": 43136,
+  "current_player_start": 42880,
+  "byte_exact_authored_extent": 21,
+  "archived_type_address": 43154,
+  "current_type_address": 42898,
+  "current_game_consumers_proved": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false,
+  "current_type_effect_consumers_proved": true,
+  "type_effect_readers": [
+    59945,
+    60015
+  ],
+  "conditional_type_rank_reader": 63038
+}

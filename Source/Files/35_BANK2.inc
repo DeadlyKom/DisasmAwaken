@@ -16,8 +16,10 @@
                 ; Исходные байты, которые фиксированный LDIR читает за концом растра полосы
                 incbin "../Resources/35_BANK2/StripStagingTail.bin"
                 assert $ == #1D07
-                ; Unknown, дальнейшие чтения промежутка этой трассой не установлены
-                incbin "../Resources/35_BANK2/Unclassified1D07_1E12.bin"
+                ; Документация [копия растрового слоя](../../Docs/BankArchiveTileLayers.md)
+                assert $ == #1D07
+                ; Копия третьего внекаталожного растрового слоя, значения и положение сохранены
+                incbin "../Resources/35_BANK2/ArchiveTileLayerCopy.bin"
                 assert $ == #1E12
                 disp #1E12
                 include "../Resources/35_BANK2/ArchiveRouteCopies.asm"

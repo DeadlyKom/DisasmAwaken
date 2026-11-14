@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "source_disk": "awk1.trd",
+  "file_sha256": "17c876d1b34cef75cc60df001765f97780cd23ca3734807f6e3738da5d808693",
+  "full_file_match_bytes": 11264,
+  "teleport": {
+    "file": "HIPERJMP.van",
+    "source_label": "VSPR2",
+    "source_setup": "NWTEL",
+    "start": 55296,
+    "total_bytes": 3328,
+    "frame_stride": 192,
+    "frame_count": 13,
+    "tail_offset": 8640,
+    "tail_bytes": 832
+  },
+  "alignment": {
+    "source_macro": "ADRXX00",
+    "code_end": 59749,
+    "table": "CSTB.dat",
+    "table_start": 59904,
+    "offset": 10597,
+    "bytes": 155
+  },
+  "all_runtime_consumers_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

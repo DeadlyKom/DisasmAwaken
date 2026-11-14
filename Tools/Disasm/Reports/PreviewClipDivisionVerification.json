@@ -15,5 +15,15 @@
   "quotient_overflow_tested": false,
   "irq_executed": false,
   "native_execution": false,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "independent_M1_formula": "130+10*(d<0)+12*(N<0)-2*(negative_count==1)-popcount(q)",
+  "full_M1_and_each_R_step_checked": true,
+  "R_initial_values": 256,
+  "R_bit7_and_I_IM_IFF_preserved": true,
+  "M1_bounds": [
+    114,
+    152
+  ],
+  "total_M1": 178443740,
+  "R_full_joint_input_product": false
 }

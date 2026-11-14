@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "entry": 55321,
+  "stop": 55350,
+  "base_address": 49665,
+  "angle_address": 49695,
+  "original_sine_used": true,
+  "exact_four_operand_writes": true,
+  "complete_angle_pair_domain": true,
+  "flags_r_t_checked": false,
+  "entire_model_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

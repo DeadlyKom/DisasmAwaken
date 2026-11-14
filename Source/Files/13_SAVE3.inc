@@ -36,8 +36,11 @@
                 ; Unknown, соседние байты не объявляются свободными
                 ; Документация [таблицы и сохранённые промежутки](../../Docs/StationOrderCompatibleSlots.md)
                 assert $ == #0085
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/13_SAVE3/Unclassified0085_008B.bin"
+                ; Документация [перенос тела NEWS](../../Docs/StationNewsTransfer.md)
+                assert $ == #0085
+                disp #0085
+                include "../Resources/13_SAVE3/NewsTransfer.asm"
+                ent
                 assert $ == #008B
                 disp #008B
                 include "../Resources/13_SAVE3/OrderCompatibleSlots.asm"

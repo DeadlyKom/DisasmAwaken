@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "physical_bytes": 193,
+  "record_labels": 49,
+  "groups": 8,
+  "differing_disk_bytes": {
+    "StoredMapPoints": 0,
+    "StoredMapOrder": 0,
+    "MapAuxiliaryPoints": 0,
+    "MapAuxiliaryCodes": 10,
+    "InterfaceChoices": 0,
+    "PointerKeys": 0,
+    "InterfaceColors": 0,
+    "ControlOptions": 0
+  },
+  "original_transfer_proved": true,
+  "all_action_consumers_proved": false,
+  "original_bytes_preserved": true,
+  "assembly_executed": false
+}

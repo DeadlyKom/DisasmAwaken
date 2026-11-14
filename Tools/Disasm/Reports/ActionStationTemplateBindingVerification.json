@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "source_template": {
+    "index": 11,
+    "name": "ST16k",
+    "pointer": 30799,
+    "selector": 0,
+    "authored_pair": "IST16",
+    "selected_pair": "IPOL1",
+    "authored_pair_offset": 256,
+    "selected_targets": [
+      {
+        "symbol": "KN01pol1",
+        "address": 49152
+      },
+      {
+        "symbol": "Kd1",
+        "address": 49216
+      }
+    ]
+  },
+  "sector_key": "384bfa4400",
+  "original_map_sector_generation_verified": true,
+  "cases": [
+    {
+      "depth_input": 6144,
+      "variant": "near",
+      "selector": 2,
+      "model": {
+        "symbol": "Kd1",
+        "address": 49216
+      },
+      "table_reads": [
+        [
+          43727,
+          40450
+        ],
+        [
+          43729,
+          40451
+        ],
+        [
+          43748,
+          40450
+        ],
+        [
+          43750,
+          40451
+        ]
+      ],
+      "model_fetches": [
+        [
+          43736,
+          49216
+        ],
+        [
+          43760,
+          49216
+        ]
+      ],
+      "packet_bytes": 101,
+      "raster_changed_bytes": 18
+    },
+    {
+      "depth_input": 8704,
+      "variant": "far",
+      "selector": 0,
+      "model": {
+        "symbol": "KN01pol1",
+        "address": 49152
+      },
+      "table_reads": [
+        [
+          43727,
+          40448
+        ],
+        [
+          43729,
+          40449
+        ],
+        [
+          43748,
+          40448
+        ],
+        [
+          43750,
+          40449
+        ]
+      ],
+      "model_fetches": [
+        [
+          43736,
+          49152
+        ],
+        [
+          43760,
+          49152
+        ]
+      ],
+      "packet_bytes": 64,
+      "raster_changed_bytes": 7
+    }
+  ],
+  "real_spawn_entry": 30809,
+  "real_render_entry": 57376,
+  "original_model_tables_preserved": true,
+  "spawn_entry_and_render_geometry_prepared": true,
+  "gameplay_reachability_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

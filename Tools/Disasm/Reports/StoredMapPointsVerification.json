@@ -8,6 +8,21 @@
   "empty_byte": "FF",
   "terminator_range": "80..FE",
   "all_alternate_registers_preserved": true,
+  "before_first_list": {
+    "start": 39172,
+    "end_exclusive": 39178,
+    "cases": 55296,
+    "entries": [
+      50191,
+      51348,
+      51343
+    ],
+    "reads": 0,
+    "writes": 0,
+    "positive_byte_word_read_and_write_control_passed": true,
+    "centering_path_included": false,
+    "other_consumers_or_global_unusedness_proved": false
+  },
   "calls_stubbed": false,
   "irq_executed": false,
   "native_execution": false,

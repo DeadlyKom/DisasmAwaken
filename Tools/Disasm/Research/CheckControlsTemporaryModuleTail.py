@@ -5,9 +5,27 @@ from CheckControlsTextQueue import base_memory
 from CheckIntro import ROOT
 from CheckMusic import PC,SP,Simulator,get_registers
 from CheckScreenUpdate import PortTrace,put
+from skoolkit.simutils import I, IFF, IM
 
 
-def main():
+def check_tail_DI(baseline):
+    cases = []
+    for initial_iff in (0, 1):
+        memory = RecordedBanks(banks=[bank.copy() for bank in baseline], out7ffd=17)
+        assert memory[0xDB29] == 0xF3
+        cpu = Simulator(memory)
+        cpu.registers[:] = get_registers({'PC': 0xDB29, 'SP': 0xBFFE, 'I': 0x80}, None, False)
+        cpu.registers[IFF], cpu.registers[IM] = initial_iff, 2
+        cpu.run()
+        assert cpu.registers[PC] == 0xDB2A and cpu.registers[IFF] == 0
+        assert cpu.registers[IM] == 2 and cpu.registers[I] == 0x80
+        cases.append(dict(initial_iff=initial_iff, final_iff=0,
+            original_DI_address=0xDB29, next_pc=cpu.registers[PC],
+            I_and_IM_preserved_by_DI=True))
+    return cases
+
+
+def evaluate_tail():
     flat=flat_action();baseline=[bytearray(0x4000) for _ in range(8)]
     for bank,start in ((5,0x4000),(2,0x8000),(0,0xC000)):baseline[bank][:]=bytes(flat[start:start+0x4000])
     baseline[1][:]=bytes(base_memory()[0xC000:])
@@ -42,9 +60,13 @@ def main():
             assert sim.registers[SP]==0x5FFE and bytes(memory[0x5FFE:0x6000])==bytes([0xFD,0x7F])
             assert bytes(memory[0x5E33:0x5E35])==saved_stack.to_bytes(2,'little')
             assert bytes(memory[0x6000:0x6010])==bytes.fromhex('083E11CD1BAB08CD56EC3E10CD1BABC9')
+            # Настоящий копировщик читает индексные пары из уже заполненного FF растра.
+            assert sim.registers[8:12] == [255, 255, 255, 255]
             cases.append(dict(initial_linear_pattern=pattern,saved_stack_word=saved_stack,
-                pc=sim.registers[PC],sp=sim.registers[SP],stack_top_word=0x7FFD,steps=steps))
-    result=dict(passed=True,cases=cases,hypothetical_fixed_copy_fixture=fixture,
+                pc=sim.registers[PC],sp=sim.registers[SP],stack_top_word=0x7FFD,steps=steps,
+                final_ix=sim.registers[8]*256+sim.registers[9],
+                final_iy=sim.registers[10]*256+sim.registers[11]))
+    result=dict(passed=True,cases=cases,first_DI_cases=check_tail_DI(baseline),hypothetical_fixed_copy_fixture=fixture,
         original_tail_and_real_clear_and_copy_executed=True,
         original_core_and_work_restored=True,linear_buffer_and_upper_screen_cleared_to_ff=True,
         restored_entry='Source/Action/QueueNumberBank1.asm',restored_entry_not_executed=True,
@@ -52,6 +74,11 @@ def main():
         starts_after_assumed_normal_temporary_call_return=True,
         legitimate_relocation_and_temporary_payload_proved=False,
         irq_executed=False,r_and_timing_proved=False,assembly_executed=False,native_execution=False)
+    return result
+
+
+def main():
+    result = evaluate_tail()
     target=ROOT/'Tools/Disasm/Reports/ControlsTemporaryModuleTailVerification.json';assert not target.exists()
     target.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n','utf-8')
     print(json.dumps({k:v for k,v in result.items() if k!='cases'},ensure_ascii=False,indent=2))

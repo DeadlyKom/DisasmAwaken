@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 12,
+  "resources": 12,
+  "verification": "ActionNoiseExitVerification.json",
+  "bank": 0,
+  "read_pc": 764,
+  "rom_profiles": 2,
+  "native_alias_reachability_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

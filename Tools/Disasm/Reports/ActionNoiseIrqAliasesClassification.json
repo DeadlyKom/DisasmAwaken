@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 27,
+  "resources": 27,
+  "physical_bank": 0,
+  "keyboard_flag_targets": 14,
+  "frame_counter_targets": 14,
+  "original_rom_irq_executed": true,
+  "native_alias_reachability_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

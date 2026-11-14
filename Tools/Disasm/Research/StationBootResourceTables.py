@@ -28,6 +28,7 @@ def name_operands(region, address, operation):
     for index, (label, _) in enumerate(KEYS):
         operation = operation.replace(f'LD HL, #{0x402A + index * 9:04X}',
                                       'LD HL, @StationBootFileKeys.' + label + '.Name')
+    operation=operation.replace('LD A, #09','LD A, @FTrDosFileKey').replace('(#5D06)','(@TrDosState.SearchKeyLength)').replace('LD DE, #5CDD','LD DE, @TrDosState.Descriptor')
     return operation.replace('LD BC, #0009', 'LD BC, @FTrDosFileKey').replace(
         'LD DE, #4060', 'LD DE, @StationBackdropSizes.Backdrop00.Sectors')
 

@@ -1091,12 +1091,6 @@
                 disp #94DC
                 include "../Station/Data/MarketCategories.asm"
                 ent
-                assert $ == #34F7
-                ; Unknown, исходные байты вне подтверждённых записей рынка
-                ; Документация [таблицы и сохранённые промежутки](../../Docs/WeightedLoad.md)
-                assert $ == #34F7
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/04_STATIONF/Unclassified34F7_34FA.bin"
                 assert $ == #34FA
                 disp #94FA
                 include "../Station/Data/CargoLoadScale.asm"
@@ -1105,9 +1099,6 @@
                 disp #9518
                 include "../Station/Data/MarketRules.asm"
                 ent
-                assert $ == #3554
-                ; Unknown, исходные байты вне подтверждённых записей рынка
-                incbin "../Resources/04_STATIONF/BeforeMarketRows.bin"
                 assert $ == #3555
                 disp #9555
                 include "../Station/Data/MarketRows.asm"
@@ -1149,11 +1140,9 @@
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 ; Документация [таблицы и сохранённые промежутки](../../Docs/InterfaceEventAndSpecialRecord.md)
                 assert $ == #3762
-                ; Unknown, соседние байты не объявляются свободными
-                ; Документация [таблицы и сохранённые промежутки](../../Docs/StationTransportTradeTables.md)
-                assert $ == #3762
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/04_STATIONF/Unclassified3762_3802.bin"
+                disp #9762
+                include "../Station/Data/ArchivedJobList.asm"
+                ent
                 assert $ == #3802
                 disp #9802
                 include "../Station/Data/ShipTradeRows.asm"
@@ -1213,8 +1202,11 @@
                 ; Unknown, соседние байты не объявляются свободными
                 ; Документация [таблицы и сохранённые промежутки](../../Docs/StationOrderCompatibleSlots.md)
                 assert $ == #38C0
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/04_STATIONF/Unclassified38C0_38C6.bin"
+                ; Документация [перенос тела NEWS](../../Docs/StationNewsTransfer.md)
+                assert $ == #38C0
+                disp #98C0
+                include "../Station/Data/NewsTransfer.asm"
+                ent
                 assert $ == #38C6
                 disp #98C6
                 include "../Station/Data/OrderCompatibleSlots.asm"
@@ -1224,21 +1216,24 @@
                 include "../Station/Data/SecondaryQuantities.asm"
                 ent
                 assert $ == #3904
-                ; Unknown, соседние байты не объявляются свободными
+                ; Второй печататель читает #9904 и #9905 после 14 кодов количества
+                ; Исходное назначение пары открыто [условия чтения](../../Docs/SecondaryContextAliases.md)
                 incbin "../Resources/04_STATIONF/Unclassified3904_3906.bin"
                 assert $ == #3906
                 disp #9906
                 include "../Station/Data/TransitionCounter.asm"
                 ent
                 assert $ == #3907
-                ; Unknown, соседние байты не объявляются свободными
+                ; Второй печататель читает #9907 при продолжении списка за 14 строками
+                ; Исходное назначение байта открыто
                 incbin "../Resources/04_STATIONF/Unclassified3907_3908.bin"
                 assert $ == #3908
                 disp #9908
                 include "../Station/Data/MeasuredDistance.asm"
                 ent
                 assert $ == #3909
-                ; Unknown, соседние байты не объявляются свободными
+                ; Второй печататель читает #9909 при продолжении списка за 14 строками
+                ; Исходное назначение байта открыто
                 incbin "../Resources/04_STATIONF/Unclassified3909_390A.bin"
                 assert $ == #390A
                 disp #990A
@@ -1279,8 +1274,9 @@
                 ; Хвост исходного состояния перед переносом в ACTION
                 incbin "../Station/Resources/InitialTransferTrailer.bin"
                 assert $ == #3A3B
-                ; Unknown, продолжение находится за границей переноса состояния
-                incbin "../Resources/04_STATIONF/Unclassified3A3B_3A58.bin"
+                disp #9A3B
+                include "../Station/Data/ScriptFields.asm"
+                ent
                 assert $ == #3A58
                 disp #9A58
                 include "../Station/EmptyCallback.asm"
@@ -1642,8 +1638,8 @@
                 include "../Station/HandleMissionGroupAction.asm"
                 ent
                 assert $ == #4A82
-                ; Unknown, сохранённые байты вне новых доказанных входов
-                incbin "../Resources/04_STATIONF/EventGap4A82.bin"
+                ; Два RET перед пустым наведением, раскладка архивного WMISS2
+                incbin "../Station/Resources/LegacyMissionReturnPair.bin"
                 assert $ == #4A84
                 assert $ == #4A84
                 disp #AA84
@@ -2231,6 +2227,18 @@
                 ; 22 исходных байта, читаемых удалением последней панели после открытия исходных окон
                 incbin "../Station/Resources/InitialDrawListExtendedTail.bin"
                 assert $ == #9488
-                ; Unknown, более дальние обращения этой трассой не установлены
-                incbin "../Resources/04_STATIONF/Unclassified9488_A000.bin"
+                ; Исходный хвост LDIR в композиции восьми открывателей, 39 обработчиков
+                incbin "../Station/Resources/InitialCombinedPanelShiftTail.bin"
+                assert $ == #94AC
+                ; Исходный хвост LDIR при включении всех 46 физических обработчиков в модели
+                incbin "../Station/Resources/InitialFullDrawListShiftTail.bin"
+                assert $ == #94BA
+                ; Исходный хвост LDIR при 47..63 указателях, штатное достижение не установлено
+                incbin "../Station/Resources/InitialConditionalRebuildShiftTail.bin"
+                assert $ == #94DC
+                ; Хвост чтения удаления 64-го указателя, штатная длина не установлена
+                incbin "../Station/Resources/InitialConditionalPopupShiftTail.bin"
+                assert $ == #94DE
+                ; Unknown, назначение дальнейшего нулевого диапазона не установлено
+                incbin "../Resources/04_STATIONF/Unclassified94DE_A000.bin"
                 assert $ == #A000

@@ -18,7 +18,7 @@ Entry:          EX AF, AF'
                 LD L, A
                 LD H, A
                 EX AF, AF'
-                LD SP, #5820
+AttrStack:      LD SP, #5820
                 PUSH HL
                 PUSH HL
                 PUSH HL

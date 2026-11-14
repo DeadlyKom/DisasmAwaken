@@ -3,22 +3,22 @@ from PreviewSceneTables import render as render_records,parse as parse_records
 
 PAIR_FIELDS=(('OtherFirst',2,'первое слово для сравнения с SeedFirst'),('OtherSecond',2,'второе слово для сравнения с SeedSecond'))
 INDEX_FIELDS=(('SelectedIndex',1,'байт публикации при совпадении обеих пар контекста'),)
-GATE_FIELDS=(('Value',1,'знаковое сложение поправок и беззнаковые пороговые сравнения, игровой смысл неизвестен'),)
-ARRIVAL_FIELDS=(('Value',2,'счётчик ближнего завершения по модулю 65536, полный игровой смысл неизвестен'),)
-LIMIT_FIELDS=(('Current',1,'младший байт E, кандидат пополнения увеличивается по модулю 256'),
-              ('Limit',1,'старший байт D, беззнаковый предел кандидата E'))
+STATUS_FIELDS=(('Code',1,'статус игрока, переносится на станцию для сценария штрафов'),)
+ARRIVAL_FIELDS=(('Value',2,'очки ранга за уничтожение целей учитываемых классов, исходное значение ACTION'),)
+TONNAGE_FIELDS=(('Used',1,'учтённый тоннаж, изменяется в полёте по модулю 256'),
+                ('Capacity',1,'беззнаковый предел при пополнении топлива и подборе'))
 TABLES=(
     (17,0x6000,('ActionOtherContext','Source/Action/Data/OtherContext.asm',0x3BC6,0x3BCA,'FContextWordPair',PAIR_FIELDS,('Value',))),
     (17,0x6000,('ActionContextIndex','Source/Action/Data/ContextIndex.asm',0x3BCA,0x3BCB,'FContextPublishIndex',INDEX_FIELDS,('Value',))),
-    (17,0x6000,('ActionIndexedGate','Source/Action/Data/IndexedGate.asm',0x3BCD,0x3BCE,'FIndexedGateValue',GATE_FIELDS,('Value',))),
-    (17,0x6000,('ActionArrivalCounter','Source/Action/Data/ArrivalCounter.asm',0x3BCE,0x3BD0,'FArrivalCounter',ARRIVAL_FIELDS,('Value',))),
-    (17,0x6000,('ActionByteLimitCounter','Source/Action/Data/ByteLimitCounter.asm',0x3BD2,0x3BD4,'FByteLimitCounter',LIMIT_FIELDS,('Value',))),
+    (17,0x6000,('ActionFlightStatus','Source/Action/Data/FlightStatus.asm',0x3BCD,0x3BCE,'FFlightStatus',STATUS_FIELDS,('Value',))),
+    (17,0x6000,('ActionRankScore','Source/Action/Data/RankScore.asm',0x3BCE,0x3BD0,'FActionRankScore',ARRIVAL_FIELDS,('Value',))),
+    (17,0x6000,('ActionFlightTonnage','Source/Action/Data/FlightTonnage.asm',0x3BD2,0x3BD4,'FFlightTonnage',TONNAGE_FIELDS,('Value',))),
 )
 BINDINGS=(('ActionContextWordPairsState','OtherFirst',0x9BC6,'ActionOtherContext.Value.OtherFirst'),
           ('ActionContextWordPairsState','OtherSecond',0x9BC8,'ActionOtherContext.Value.OtherSecond'),
           ('ActionWideProjectionLoopState','SelectedIndex',0x9BCA,'ActionContextIndex.Value.SelectedIndex'),
-          ('ActionPreferredChanceState','UnknownGate',0x9BCD,'ActionIndexedGate.Value.Value'),
-          ('ActionArrivalState','ArrivalCount',0x9BCE,'ActionArrivalCounter.Value.Value'))
+          ('ActionPreferredChanceState','StatusCode',0x9BCD,'ActionFlightStatus.Value.Code'),
+          ('ActionArrivalState','RankScore',0x9BCE,'ActionRankScore.Value.Value'))
 REQUIRED_REPORTS=('ActionContextWordPairsVerification','ActionWideProjectionLoopVerification',
                   'ActionTypeDeltaVerification','ActionArrivalStateVerification',
                   'ActionBodyVectorPanelVerification','ActionMissileConsumeVerification')
@@ -48,7 +48,7 @@ def parse(text,origin,table):return parse_records(text,table,origin)
 def structures():
     lines=[]
     for name,fields in (('FContextWordPair',PAIR_FIELDS),('FContextPublishIndex',INDEX_FIELDS),
-                        ('FIndexedGateValue',GATE_FIELDS),('FArrivalCounter',ARRIVAL_FIELDS),('FByteLimitCounter',LIMIT_FIELDS)):
+                        ('FFlightStatus',STATUS_FIELDS),('FActionRankScore',ARRIVAL_FIELDS),('FFlightTonnage',TONNAGE_FIELDS)):
         lines+=['                ; Физические поля существующего контекста ACTION',
                 '                struct '+name]
         offset=0;assertions=[]

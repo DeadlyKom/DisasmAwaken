@@ -19,7 +19,7 @@
     "window_class9_reject": 256
   },
   "all_256_A_by_256_H": true,
-  "all_256_classes_by_256_Unknown14": true,
+  "all_256_classes_by_256_class17_delay": true,
   "full_class_table_index_not_clamped": true,
   "actual_current_link_and_class17_children_executed": true,
   "exact_registers_flags_r_sp": true,

@@ -21,7 +21,7 @@ def main():
     needle='                LD (@ActionMissileCreateState.InitParameter), A';assert current.count(needle)==1
     cut=current.index(needle);head=current[:cut].rstrip()
     # Перенос комментария сохранения параметра вместе с самой инструкцией в новый файл.
-    line='                ; Обновление операнда инициализации Unknown13 перед поиском, запись сохраняется и при отказе по слотам.'
+    line='                ; Обновление операнда инициализации EffectReserve перед поиском, запись сохраняется и при отказе по слотам.'
     assert head.endswith(line);head=head[:-len(line)].rstrip()
     head=head.replace('адреса 60AE..6144','адреса 60AE..60E7')
     head+='\n                ; JP @Action.'+name+'.Entry, продолжение в '+name+'.asm\n\n                endmodule\n                endmodule\n'
@@ -82,15 +82,15 @@ def main():
     pending[path]=text.replace(needle,extra+needle).encode('utf-8')
     path=ROOT/'Includes/Variables/Include.inc';text=path.read_text('utf-8');assert 'module ActionClass17SpawnState' not in text
     block='\n                ; Существующий операнд общего создателя, память не выделяется\n                module ActionClass17SpawnState\n'
-    block+=('InitialParam    equ #612E').ljust(80)+'; начальный Unknown13, записывается до поиска слота\n                endmodule\n\n'
+    block+=('InitialParam    equ #612E').ljust(80)+'; начальный EffectReserve, записывается до поиска слота\n                endmodule\n\n'
     pending[path]=text.replace('                endif',block+'                endif').encode('utf-8')
     path=ROOT/'Docs/Functions.md';text=path.read_text('utf-8');needle=next(line for line in text.splitlines() if line.startswith('| #60AE | [Action.'))
     row='| #60E8 | [Action.'+name+'](../'+new_path+') | '+description+' |';text=text.replace(needle,needle+'\n'+row)
     count=sum(f['region']=='Action' for f in functions);described=sum(f['region']=='Action' and f['semantic_status']=='described' for f in functions)
     pending[path]=re.sub(r'\| Action \| \d+ \| \d+ \|',f'| Action | {count} | {described} |',text).encode('utf-8')
     for relative,extra in (('Docs/FunctionDetails/Action.md','\n## '+name+'\n\n[Общий создатель](../../'+new_path+'). [Алгоритм и точный договор](../ActionClass17Spawn.md).\n'),
-                           ('Docs/ActionMissileCreation.md','\nОбщий дополнительный вход 60E8 выделен в [CreateClass17LinkedRecord](../Source/Action/CreateClass17LinkedRecord.asm). Его полный договор описан [отдельно](ActionClass17Spawn.md), ракетная обёртка заканчивается по 60E7 и продолжает исполнение в следующем файле.\n'),
-                           ('Docs/ModifiedCode.md','\nПисатель 60E8 и операнд 612E теперь находятся в [CreateClass17LinkedRecord](../Source/Action/CreateClass17LinkedRecord.asm), физические адреса перенесённого банка 5 сохранены.\n')):
+                           ('Docs/ActionMissileCreation.md','\nОбщий дополнительный вход 60E8 выделен в [CreateLinkedMissileRecord](../Source/Action/CreateLinkedMissileRecord.asm). Его полный договор описан [отдельно](ActionClass17Spawn.md), ракетная обёртка заканчивается по 60E7 и продолжает исполнение в следующем файле.\n'),
+                           ('Docs/ModifiedCode.md','\nПисатель 60E8 и операнд 612E теперь находятся в [CreateLinkedMissileRecord](../Source/Action/CreateLinkedMissileRecord.asm), физические адреса перенесённого банка 5 сохранены.\n')):
         path=ROOT/relative;pending[path]=(path.read_text('utf-8')+extra).encode('utf-8')
     candidate=ROOT/'Tools/Disasm/Research/Candidates/ActionClass17SpawnSplit';history=ROOT/'Tools/Disasm/Research/History/BeforeActionClass17SpawnSplit'
     assert not candidate.exists() and not history.exists();plan=[(p,p.read_bytes() if p.exists() else None,a) for p,a in pending.items()]

@@ -82,6 +82,9 @@ def main():
         simulator.registers[:] = initial
         simulator.registers[A], simulator.registers[F] = value, flags
         simulator.registers[PC] = 0xCC2C
+        # Проверка R до выбранного хвоста, один M1 при Carry и три при продолжении.
+        refresh = (value + flags) & 255
+        simulator.registers[15] = refresh
         while simulator.registers[PC] not in (0x3FFF, 0xCC30, 0xCC81):
             pc = simulator.registers[PC]
             if f"{pc:04X}" not in observed:
@@ -91,6 +94,8 @@ def main():
                     raise ValueError("Изменились инструкции условного продолжения")
                 observed[f"{pc:04X}"] = raw.hex()
             simulator.run()
+        cost = 1 if flags & 1 else 3
+        assert simulator.registers[15] == (refresh & 0x80) | ((refresh + cost) & 0x7F)
         target = 0x3FFF if flags & 1 else 0xCC81 if value else 0xCC30
         result_f = flags if flags & 1 else and_flags(value)
         expected_sp = 0x8000 if flags & 1 else 0x7FFE
@@ -102,6 +107,8 @@ def main():
                 raise ValueError("Развилка изменила сохраняемый регистр")
     report = dict(passed=True, method="original_bounds_toggle_all_byte_dimensions_and_action_tail_all_af",
                   geometry_cases=cases, restored=restored, expanded=expanded, action_tail_cases=65536,
+                  action_tail_R_checked=True, action_tail_M1_by_Carry={"set":1,"clear":3},
+                  full_geometry_R_proved=False,
                   source_sha256=hashlib.sha256(source).hexdigest(), original_visited=observed,
                   draw_or_pointer_calls_executed=False, irq_enabled=False,
                   native_execution_verified=False, assembly_executed=False)

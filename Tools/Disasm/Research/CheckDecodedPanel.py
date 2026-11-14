@@ -32,7 +32,7 @@ def main():
   else:expected=(0x6E02 if code==0xFE else 0x6E76,0,0x4E25,code,compare_flags(code,0xFE))
   assert (r[PC],r[H]*256+r[L],r[D]*256+r[E],r[A],r[F])==expected
   assert r[B:C+1]==initial[B:C+1] and r[8:12]==initial[8:12] and r[16:24]==initial[16:24] and r[SP]==0x7FFE and r[IFF]==1 and flat[0xBD26]==1;gates+=1
- # Проверка каждого первого и второго слова и каждого значения необъяснённого байта 98A0 без исполнения выбранного выхода.
+ # Проверка каждого первого и второго слова и всех кодов количества X артефакта без исполнения выбранного выхода.
  for word in range(65536):gate(word,0x4E25,0xFE);gate(0x4B37,word,0xFE)
  for code in range(256):gate(0x4B37,0x4E25,code)
  manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_text('utf-8'));entry=next(e for e in manifest['entries'] if e['slot']==10);music=(ROOT/(entry['path']+'.sectors.bin')).read_bytes();banks[3][0x1B00:0x1B00+len(music)]=list(music)
@@ -55,7 +55,7 @@ def main():
      else:
       assert observed_message and r[SP]==0x8000 and m[0x6306]==page and not trace.reads and not trace.writes and r[8:12]==initial[8:12] and r[16:18]==caption_af and r[18:24]==initial[18:24];messages+=1
      whole+=1
- report=dict(passed=True,gate_cases=gates,fixed_system_name=fixed_name,all_first_words=True,all_second_words=True,all_98A0_bytes=True,whole_panel_cases=whole,whole_final_paths=finals,whole_message_paths=messages,real_caption_message_and_music=True,final_copy_512_bytes_checked=True,explicit_halt_wakeups=whole,unknown_98A0_game_role_retained=True,trdos_executed=False,final_entry_executed=False,whole_frame_bitmap_independent_oracle=False,irq_executed=False,native_execution=False,assembly_executed=False)
+ report=dict(passed=True,gate_cases=gates,fixed_system_name=fixed_name,all_first_words=True,all_second_words=True,all_98A0_bytes=True,whole_panel_cases=whole,whole_final_paths=finals,whole_message_paths=messages,real_caption_message_and_music=True,final_copy_512_bytes_checked=True,explicit_halt_wakeups=whole,artifact_quantity_code_address=0x98A0,trdos_executed=False,final_entry_executed=False,whole_frame_bitmap_independent_oracle=False,irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/DecodedPanelVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 
 

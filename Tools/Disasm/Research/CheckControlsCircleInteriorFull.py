@@ -57,6 +57,13 @@ def main():
         compared=(*range(15),*range(16,25),26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared),(serial,radius,cx,cy,local['paths'],
             [(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
+        # Проверка физических Direction и Mode, только направление меняется последней нижней половиной.
+        assert memory[0xD18B]==1 and memory[0xD18C]==mode
+        left_mask=(255<<(7-((cx-radius)&7)))&255
+        assert simulator.registers[0:2]==[left_mask,0x42]
+        assert simulator.registers[16:18]==initial[16:18]
+        assert simulator.registers[18]==255 and simulator.registers[20]==0
+        assert simulator.registers[9]==(initial[9]^(initial[8] if (up+down)&1 else 0))
         actual_nonpixel=[]
         for bank,offset,value in memory.writes:
             if bank==2 and offset<3072:continue
@@ -72,6 +79,7 @@ def main():
         all_nonpixel_values_and_write_multiplicity_proved=True,pixel_write_multiplicity_proved=False,
         independent_pixel_interval_oracle=True,independent_second_order_state_oracle=True,
         actual_all_children_executed=True,horizontal_unclipped_domain=True,vertical_clipping_proved=True,
+        direct_Direction_one_Mode_preserved_and_saved_AF_checked=True,
         maximum_additional_stack_bytes=8,stack_positions=[0x9008,0x9FF0,0xB000,0xBFFE],complete_domain_product_exhausted=False,
         generic_clipped_kernel_entries_proved=False,whole_large_renderer_proved=False,
         assembly_executed=False,irq_executed=False,native_execution=False,timing_proved=False)

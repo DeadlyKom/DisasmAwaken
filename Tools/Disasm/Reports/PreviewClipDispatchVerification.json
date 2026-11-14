@@ -10,6 +10,13 @@
   "all_input_corner_bytes_preserved": true,
   "all_output_points_preserved": true,
   "full_handlers_separately_checked_in": "PreviewClipSegmentVerification.json",
+  "direct_prefix_M1_and_R_checked": true,
+  "before_JP_M1_without_swap": 24,
+  "before_JP_M1_with_swap": 41,
+  "real_JP_HL_plus_one_M1_checked": true,
+  "I_IM_IFF_preserved_checked": true,
+  "handler_instructions_executed": false,
+  "full_handler_R_proved": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

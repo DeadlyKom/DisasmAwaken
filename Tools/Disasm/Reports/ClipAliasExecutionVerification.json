@@ -1,12 +1,16 @@
 {
   "passed": true,
-  "total_cases": 7680,
+  "total_cases": 23040,
   "original_alias_copies": 2,
   "conditional_instruction_effect_proved": true,
   "all_memory_unchanged": true,
   "exact_registers_flags_and_R": true,
-  "iff_cleared": true,
-  "instruction_count": 3,
+  "iff_cleared_only_from_cf08": true,
+  "cases_by_entry": {
+    "CF08": 7680,
+    "CF09": 7680,
+    "CF0A": 7680
+  },
   "execution_entry_proved": false,
   "nonexecution_proved": false,
   "unknown_purpose_preserved": true,

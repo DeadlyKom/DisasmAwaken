@@ -5,6 +5,7 @@ from CheckHelpLineIndex import expected as index_rows
 from CheckJustifiedText import reference as justified
 from CheckTextStream import reference as stream
 from skoolkit.simutils import SP
+from ReferenceControlsPointRespawn import refresh
 
 
 def main():
@@ -58,11 +59,13 @@ def main():
  for address in (0x69A8,0x6A5B):
   f=Fixture(base);m=f.memory;s=f.sim;m[address]=0xC9;before=[bytes(b) for b in m.banks]
   for flags in range(256):
-   s.registers[:]=f.initial;r=s.registers;r[1]=flags;s.run(start=address,stop=0x3FFF)
+   s.registers[:]=f.initial;r=s.registers;r[1]=flags;r[14]=flags;r[15]=flags;r[27]=flags%3;context=r.copy();s.run(start=address,stop=0x3FFF)
+   assert r[15]==refresh(context[15],1) and all(r[i]==context[i] for i in (14,26,27))
    assert r[:12]==[f.initial[0],flags,*f.initial[2:12]] and r[16:24]==f.initial[16:24] and r[SP]==0x8000
    assert [bytes(b) for b in m.banks]==before;counts['disabled_draw_returns']+=1
  report=dict(passed=True,cases_by_path=dict(counts),all_original_help_records_and_titles=True,actual_caption_and_help_and_bank_helpers=True,
   independent_layout_and_exact_registers=True,entire_index_cache_checked=True,irq_only_at_caption_halt=True,music_disabled=True,
+  disabled_ret_full_m1=1,disabled_ret_i_im_iff_preserved=True,disabled_ret_iff_fixture=1,
   independent_whole_bitmap_oracle=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/HelpPanelDrawsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 

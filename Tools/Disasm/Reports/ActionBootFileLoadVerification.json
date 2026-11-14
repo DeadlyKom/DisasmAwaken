@@ -1,0 +1,2348 @@
+{
+  "passed": true,
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "basic_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "original_bootstrap_instructions_and_keys_matched": true,
+  "whole_selected_directory_record_matched": true,
+  "prepared_system_variables": true,
+  "prepared_5D06": 9,
+  "prepared_5D0C": 255,
+  "real_TRDOS_search_0A_and_read_directory_08": true,
+  "controller_and_ROM_paging_modelled": true,
+  "file_data_sectors_read": true,
+  "IRQ_executed": false,
+  "disk_errors_or_missing_files_proved": false,
+  "natural_caller_entry_proved": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "profiles": [
+    {
+      "slot": 21,
+      "key_address": 17104,
+      "key_hex": "564f58414c20202043",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 5,
+      "physical_sector": 6,
+      "logical_track": 74,
+      "sector_count": 15,
+      "final_AF": 3840,
+      "final_HL": 18950,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 21,
+      "key_address": 17104,
+      "key_hex": "564f58414c20202043",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 5,
+      "physical_sector": 6,
+      "logical_track": 74,
+      "sector_count": 15,
+      "final_AF": 3840,
+      "final_HL": 18950,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 20,
+      "key_address": 17113,
+      "key_hex": "564f58414c30202043",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 9,
+      "physical_sector": 10,
+      "logical_track": 71,
+      "sector_count": 44,
+      "final_AF": 11272,
+      "final_HL": 18186,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 20,
+      "key_address": 17113,
+      "key_hex": "564f58414c30202043",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 9,
+      "physical_sector": 10,
+      "logical_track": 71,
+      "sector_count": 44,
+      "final_AF": 11272,
+      "final_HL": 18186,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 23,
+      "key_address": 17122,
+      "key_hex": "434f4e54524f4c2043",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 15,
+      "physical_sector": 16,
+      "logical_track": 76,
+      "sector_count": 26,
+      "final_AF": 6672,
+      "final_HL": 19472,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 23,
+      "key_address": 17122,
+      "key_hex": "434f4e54524f4c2043",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 15,
+      "physical_sector": 16,
+      "logical_track": 76,
+      "sector_count": 26,
+      "final_AF": 6672,
+      "final_HL": 19472,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 22,
+      "key_address": 17131,
+      "key_hex": "434f4e54524f4c3043",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 4,
+      "physical_sector": 5,
+      "logical_track": 75,
+      "sector_count": 27,
+      "final_AF": 6912,
+      "final_HL": 19205,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 22,
+      "key_address": 17131,
+      "key_hex": "434f4e54524f4c3043",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 4,
+      "physical_sector": 5,
+      "logical_track": 75,
+      "sector_count": 27,
+      "final_AF": 6912,
+      "final_HL": 19205,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 25,
+      "key_address": 17140,
+      "key_hex": "50414e454c20202043",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 3,
+      "physical_sector": 4,
+      "logical_track": 81,
+      "sector_count": 6,
+      "final_AF": 1536,
+      "final_HL": 20740,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 25,
+      "key_address": 17140,
+      "key_hex": "50414e454c20202043",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 3,
+      "physical_sector": 4,
+      "logical_track": 81,
+      "sector_count": 6,
+      "final_AF": 1536,
+      "final_HL": 20740,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 24,
+      "key_address": 17149,
+      "key_hex": "4f424a454354334443",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 9,
+      "physical_sector": 10,
+      "logical_track": 78,
+      "sector_count": 42,
+      "final_AF": 10760,
+      "final_HL": 19978,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 24,
+      "key_address": 17149,
+      "key_hex": "4f424a454354334443",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 9,
+      "physical_sector": 10,
+      "logical_track": 78,
+      "sector_count": 42,
+      "final_AF": 10760,
+      "final_HL": 19978,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    }
+  ],
+  "load_profiles": [
+    {
+      "slot": 21,
+      "entry": 17097,
+      "destination": 60416,
+      "ignored_HL_input": null,
+      "logical_bytes": 3784,
+      "physical_bytes": 3840,
+      "suffix_bytes": 56,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          74,
+          6
+        ],
+        [
+          74,
+          7
+        ],
+        [
+          74,
+          8
+        ],
+        [
+          74,
+          9
+        ],
+        [
+          74,
+          10
+        ],
+        [
+          74,
+          11
+        ],
+        [
+          74,
+          12
+        ],
+        [
+          74,
+          13
+        ],
+        [
+          74,
+          14
+        ],
+        [
+          74,
+          15
+        ],
+        [
+          74,
+          16
+        ],
+        [
+          75,
+          1
+        ],
+        [
+          75,
+          2
+        ],
+        [
+          75,
+          3
+        ],
+        [
+          75,
+          4
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        21,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        47,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    },
+    {
+      "slot": 21,
+      "entry": 17097,
+      "destination": 60416,
+      "ignored_HL_input": null,
+      "logical_bytes": 3784,
+      "physical_bytes": 3840,
+      "suffix_bytes": 56,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          74,
+          6
+        ],
+        [
+          74,
+          7
+        ],
+        [
+          74,
+          8
+        ],
+        [
+          74,
+          9
+        ],
+        [
+          74,
+          10
+        ],
+        [
+          74,
+          11
+        ],
+        [
+          74,
+          12
+        ],
+        [
+          74,
+          13
+        ],
+        [
+          74,
+          14
+        ],
+        [
+          74,
+          15
+        ],
+        [
+          74,
+          16
+        ],
+        [
+          75,
+          1
+        ],
+        [
+          75,
+          2
+        ],
+        [
+          75,
+          3
+        ],
+        [
+          75,
+          4
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        21,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        87,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    },
+    {
+      "slot": 20,
+      "entry": 17094,
+      "destination": 49152,
+      "ignored_HL_input": 4951,
+      "logical_bytes": 11264,
+      "physical_bytes": 11264,
+      "suffix_bytes": 0,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          71,
+          10
+        ],
+        [
+          71,
+          11
+        ],
+        [
+          71,
+          12
+        ],
+        [
+          71,
+          13
+        ],
+        [
+          71,
+          14
+        ],
+        [
+          71,
+          15
+        ],
+        [
+          71,
+          16
+        ],
+        [
+          72,
+          1
+        ],
+        [
+          72,
+          2
+        ],
+        [
+          72,
+          3
+        ],
+        [
+          72,
+          4
+        ],
+        [
+          72,
+          5
+        ],
+        [
+          72,
+          6
+        ],
+        [
+          72,
+          7
+        ],
+        [
+          72,
+          8
+        ],
+        [
+          72,
+          9
+        ],
+        [
+          72,
+          10
+        ],
+        [
+          72,
+          11
+        ],
+        [
+          72,
+          12
+        ],
+        [
+          72,
+          13
+        ],
+        [
+          72,
+          14
+        ],
+        [
+          72,
+          15
+        ],
+        [
+          72,
+          16
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          73,
+          2
+        ],
+        [
+          73,
+          3
+        ],
+        [
+          73,
+          4
+        ],
+        [
+          73,
+          5
+        ],
+        [
+          73,
+          6
+        ],
+        [
+          73,
+          7
+        ],
+        [
+          73,
+          8
+        ],
+        [
+          73,
+          9
+        ],
+        [
+          73,
+          10
+        ],
+        [
+          73,
+          11
+        ],
+        [
+          73,
+          12
+        ],
+        [
+          73,
+          13
+        ],
+        [
+          73,
+          14
+        ],
+        [
+          73,
+          15
+        ],
+        [
+          73,
+          16
+        ],
+        [
+          74,
+          1
+        ],
+        [
+          74,
+          2
+        ],
+        [
+          74,
+          3
+        ],
+        [
+          74,
+          4
+        ],
+        [
+          74,
+          5
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        20,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        127,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    },
+    {
+      "slot": 20,
+      "entry": 17094,
+      "destination": 49152,
+      "ignored_HL_input": 4951,
+      "logical_bytes": 11264,
+      "physical_bytes": 11264,
+      "suffix_bytes": 0,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          71,
+          10
+        ],
+        [
+          71,
+          11
+        ],
+        [
+          71,
+          12
+        ],
+        [
+          71,
+          13
+        ],
+        [
+          71,
+          14
+        ],
+        [
+          71,
+          15
+        ],
+        [
+          71,
+          16
+        ],
+        [
+          72,
+          1
+        ],
+        [
+          72,
+          2
+        ],
+        [
+          72,
+          3
+        ],
+        [
+          72,
+          4
+        ],
+        [
+          72,
+          5
+        ],
+        [
+          72,
+          6
+        ],
+        [
+          72,
+          7
+        ],
+        [
+          72,
+          8
+        ],
+        [
+          72,
+          9
+        ],
+        [
+          72,
+          10
+        ],
+        [
+          72,
+          11
+        ],
+        [
+          72,
+          12
+        ],
+        [
+          72,
+          13
+        ],
+        [
+          72,
+          14
+        ],
+        [
+          72,
+          15
+        ],
+        [
+          72,
+          16
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          73,
+          2
+        ],
+        [
+          73,
+          3
+        ],
+        [
+          73,
+          4
+        ],
+        [
+          73,
+          5
+        ],
+        [
+          73,
+          6
+        ],
+        [
+          73,
+          7
+        ],
+        [
+          73,
+          8
+        ],
+        [
+          73,
+          9
+        ],
+        [
+          73,
+          10
+        ],
+        [
+          73,
+          11
+        ],
+        [
+          73,
+          12
+        ],
+        [
+          73,
+          13
+        ],
+        [
+          73,
+          14
+        ],
+        [
+          73,
+          15
+        ],
+        [
+          73,
+          16
+        ],
+        [
+          74,
+          1
+        ],
+        [
+          74,
+          2
+        ],
+        [
+          74,
+          3
+        ],
+        [
+          74,
+          4
+        ],
+        [
+          74,
+          5
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        20,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        39,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    },
+    {
+      "slot": 23,
+      "entry": 17097,
+      "destination": 56030,
+      "ignored_HL_input": null,
+      "logical_bytes": 6474,
+      "physical_bytes": 6656,
+      "suffix_bytes": 182,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          76,
+          16
+        ],
+        [
+          77,
+          1
+        ],
+        [
+          77,
+          2
+        ],
+        [
+          77,
+          3
+        ],
+        [
+          77,
+          4
+        ],
+        [
+          77,
+          5
+        ],
+        [
+          77,
+          6
+        ],
+        [
+          77,
+          7
+        ],
+        [
+          77,
+          8
+        ],
+        [
+          77,
+          9
+        ],
+        [
+          77,
+          10
+        ],
+        [
+          77,
+          11
+        ],
+        [
+          77,
+          12
+        ],
+        [
+          77,
+          13
+        ],
+        [
+          77,
+          14
+        ],
+        [
+          77,
+          15
+        ],
+        [
+          77,
+          16
+        ],
+        [
+          78,
+          1
+        ],
+        [
+          78,
+          2
+        ],
+        [
+          78,
+          3
+        ],
+        [
+          78,
+          4
+        ],
+        [
+          78,
+          5
+        ],
+        [
+          78,
+          6
+        ],
+        [
+          78,
+          7
+        ],
+        [
+          78,
+          8
+        ],
+        [
+          78,
+          9
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        23,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        84,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    },
+    {
+      "slot": 23,
+      "entry": 17097,
+      "destination": 56030,
+      "ignored_HL_input": null,
+      "logical_bytes": 6474,
+      "physical_bytes": 6656,
+      "suffix_bytes": 182,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          76,
+          16
+        ],
+        [
+          77,
+          1
+        ],
+        [
+          77,
+          2
+        ],
+        [
+          77,
+          3
+        ],
+        [
+          77,
+          4
+        ],
+        [
+          77,
+          5
+        ],
+        [
+          77,
+          6
+        ],
+        [
+          77,
+          7
+        ],
+        [
+          77,
+          8
+        ],
+        [
+          77,
+          9
+        ],
+        [
+          77,
+          10
+        ],
+        [
+          77,
+          11
+        ],
+        [
+          77,
+          12
+        ],
+        [
+          77,
+          13
+        ],
+        [
+          77,
+          14
+        ],
+        [
+          77,
+          15
+        ],
+        [
+          77,
+          16
+        ],
+        [
+          78,
+          1
+        ],
+        [
+          78,
+          2
+        ],
+        [
+          78,
+          3
+        ],
+        [
+          78,
+          4
+        ],
+        [
+          78,
+          5
+        ],
+        [
+          78,
+          6
+        ],
+        [
+          78,
+          7
+        ],
+        [
+          78,
+          8
+        ],
+        [
+          78,
+          9
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        23,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        124,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    },
+    {
+      "slot": 22,
+      "entry": 17094,
+      "destination": 49152,
+      "ignored_HL_input": 4951,
+      "logical_bytes": 6878,
+      "physical_bytes": 6912,
+      "suffix_bytes": 34,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          75,
+          5
+        ],
+        [
+          75,
+          6
+        ],
+        [
+          75,
+          7
+        ],
+        [
+          75,
+          8
+        ],
+        [
+          75,
+          9
+        ],
+        [
+          75,
+          10
+        ],
+        [
+          75,
+          11
+        ],
+        [
+          75,
+          12
+        ],
+        [
+          75,
+          13
+        ],
+        [
+          75,
+          14
+        ],
+        [
+          75,
+          15
+        ],
+        [
+          75,
+          16
+        ],
+        [
+          76,
+          1
+        ],
+        [
+          76,
+          2
+        ],
+        [
+          76,
+          3
+        ],
+        [
+          76,
+          4
+        ],
+        [
+          76,
+          5
+        ],
+        [
+          76,
+          6
+        ],
+        [
+          76,
+          7
+        ],
+        [
+          76,
+          8
+        ],
+        [
+          76,
+          9
+        ],
+        [
+          76,
+          10
+        ],
+        [
+          76,
+          11
+        ],
+        [
+          76,
+          12
+        ],
+        [
+          76,
+          13
+        ],
+        [
+          76,
+          14
+        ],
+        [
+          76,
+          15
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        22,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        42,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    },
+    {
+      "slot": 22,
+      "entry": 17094,
+      "destination": 49152,
+      "ignored_HL_input": 4951,
+      "logical_bytes": 6878,
+      "physical_bytes": 6912,
+      "suffix_bytes": 34,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          75,
+          5
+        ],
+        [
+          75,
+          6
+        ],
+        [
+          75,
+          7
+        ],
+        [
+          75,
+          8
+        ],
+        [
+          75,
+          9
+        ],
+        [
+          75,
+          10
+        ],
+        [
+          75,
+          11
+        ],
+        [
+          75,
+          12
+        ],
+        [
+          75,
+          13
+        ],
+        [
+          75,
+          14
+        ],
+        [
+          75,
+          15
+        ],
+        [
+          75,
+          16
+        ],
+        [
+          76,
+          1
+        ],
+        [
+          76,
+          2
+        ],
+        [
+          76,
+          3
+        ],
+        [
+          76,
+          4
+        ],
+        [
+          76,
+          5
+        ],
+        [
+          76,
+          6
+        ],
+        [
+          76,
+          7
+        ],
+        [
+          76,
+          8
+        ],
+        [
+          76,
+          9
+        ],
+        [
+          76,
+          10
+        ],
+        [
+          76,
+          11
+        ],
+        [
+          76,
+          12
+        ],
+        [
+          76,
+          13
+        ],
+        [
+          76,
+          14
+        ],
+        [
+          76,
+          15
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        22,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        82,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    },
+    {
+      "slot": 25,
+      "entry": 17094,
+      "destination": 49152,
+      "ignored_HL_input": 4951,
+      "logical_bytes": 1463,
+      "physical_bytes": 1536,
+      "suffix_bytes": 73,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          81,
+          4
+        ],
+        [
+          81,
+          5
+        ],
+        [
+          81,
+          6
+        ],
+        [
+          81,
+          7
+        ],
+        [
+          81,
+          8
+        ],
+        [
+          81,
+          9
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        25,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        113,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    },
+    {
+      "slot": 25,
+      "entry": 17094,
+      "destination": 49152,
+      "ignored_HL_input": 4951,
+      "logical_bytes": 1463,
+      "physical_bytes": 1536,
+      "suffix_bytes": 73,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          81,
+          4
+        ],
+        [
+          81,
+          5
+        ],
+        [
+          81,
+          6
+        ],
+        [
+          81,
+          7
+        ],
+        [
+          81,
+          8
+        ],
+        [
+          81,
+          9
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        25,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        25,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    },
+    {
+      "slot": 24,
+      "entry": 17094,
+      "destination": 49152,
+      "ignored_HL_input": 4951,
+      "logical_bytes": 10580,
+      "physical_bytes": 10752,
+      "suffix_bytes": 172,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          78,
+          10
+        ],
+        [
+          78,
+          11
+        ],
+        [
+          78,
+          12
+        ],
+        [
+          78,
+          13
+        ],
+        [
+          78,
+          14
+        ],
+        [
+          78,
+          15
+        ],
+        [
+          78,
+          16
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          79,
+          2
+        ],
+        [
+          79,
+          3
+        ],
+        [
+          79,
+          4
+        ],
+        [
+          79,
+          5
+        ],
+        [
+          79,
+          6
+        ],
+        [
+          79,
+          7
+        ],
+        [
+          79,
+          8
+        ],
+        [
+          79,
+          9
+        ],
+        [
+          79,
+          10
+        ],
+        [
+          79,
+          11
+        ],
+        [
+          79,
+          12
+        ],
+        [
+          79,
+          13
+        ],
+        [
+          79,
+          14
+        ],
+        [
+          79,
+          15
+        ],
+        [
+          79,
+          16
+        ],
+        [
+          80,
+          1
+        ],
+        [
+          80,
+          2
+        ],
+        [
+          80,
+          3
+        ],
+        [
+          80,
+          4
+        ],
+        [
+          80,
+          5
+        ],
+        [
+          80,
+          6
+        ],
+        [
+          80,
+          7
+        ],
+        [
+          80,
+          8
+        ],
+        [
+          80,
+          9
+        ],
+        [
+          80,
+          10
+        ],
+        [
+          80,
+          11
+        ],
+        [
+          80,
+          12
+        ],
+        [
+          80,
+          13
+        ],
+        [
+          80,
+          14
+        ],
+        [
+          80,
+          15
+        ],
+        [
+          80,
+          16
+        ],
+        [
+          81,
+          1
+        ],
+        [
+          81,
+          2
+        ],
+        [
+          81,
+          3
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        24,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        71,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    },
+    {
+      "slot": 24,
+      "entry": 17094,
+      "destination": 49152,
+      "ignored_HL_input": 4951,
+      "logical_bytes": 10580,
+      "physical_bytes": 10752,
+      "suffix_bytes": 172,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_reads": [
+        [
+          78,
+          10
+        ],
+        [
+          78,
+          11
+        ],
+        [
+          78,
+          12
+        ],
+        [
+          78,
+          13
+        ],
+        [
+          78,
+          14
+        ],
+        [
+          78,
+          15
+        ],
+        [
+          78,
+          16
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          79,
+          2
+        ],
+        [
+          79,
+          3
+        ],
+        [
+          79,
+          4
+        ],
+        [
+          79,
+          5
+        ],
+        [
+          79,
+          6
+        ],
+        [
+          79,
+          7
+        ],
+        [
+          79,
+          8
+        ],
+        [
+          79,
+          9
+        ],
+        [
+          79,
+          10
+        ],
+        [
+          79,
+          11
+        ],
+        [
+          79,
+          12
+        ],
+        [
+          79,
+          13
+        ],
+        [
+          79,
+          14
+        ],
+        [
+          79,
+          15
+        ],
+        [
+          79,
+          16
+        ],
+        [
+          80,
+          1
+        ],
+        [
+          80,
+          2
+        ],
+        [
+          80,
+          3
+        ],
+        [
+          80,
+          4
+        ],
+        [
+          80,
+          5
+        ],
+        [
+          80,
+          6
+        ],
+        [
+          80,
+          7
+        ],
+        [
+          80,
+          8
+        ],
+        [
+          80,
+          9
+        ],
+        [
+          80,
+          10
+        ],
+        [
+          80,
+          11
+        ],
+        [
+          80,
+          12
+        ],
+        [
+          80,
+          13
+        ],
+        [
+          80,
+          14
+        ],
+        [
+          80,
+          15
+        ],
+        [
+          80,
+          16
+        ],
+        [
+          81,
+          1
+        ],
+        [
+          81,
+          2
+        ],
+        [
+          81,
+          3
+        ]
+      ],
+      "final_HL": 65364,
+      "final_AF": 65432,
+      "final_registers": [
+        255,
+        152,
+        0,
+        24,
+        1,
+        0,
+        255,
+        84,
+        0,
+        0,
+        92,
+        58,
+        32768,
+        0,
+        63,
+        111,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_SP": 32768,
+      "guard_bytes_preserved": true
+    }
+  ],
+  "ordinary_file_load_tail_executed": true
+}

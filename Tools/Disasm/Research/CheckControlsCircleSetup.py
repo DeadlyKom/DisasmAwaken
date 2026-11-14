@@ -77,16 +77,37 @@ def main():
         simulator.registers[:]=initial
         memory.writes=[]
         memory.recording=True
+        measured_m1=0
         for _ in range(180):
             if simulator.registers[PC]==0x3FFF:
                 break
+            old_r=simulator.registers[15]
             simulator.run()
+            increment=(simulator.registers[15]-old_r)&127
+            assert increment in (1,2)
+            measured_m1+=increment
         else:
             raise AssertionError(('возврат',entry,radius,work_x))
         memory.recording=False
         compared=(*range(13),14,15,*range(16,24),26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared), (entry,radius,work_x,center_y,[(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
         assert memory==expected and Counter(memory.writes)==Counter(writes), (entry,radius,work_x,center_y)
+        assert measured_m1==m1
+        # Проверка смысловых условий флагов, возвращаемый A не всегда является проверенным значением.
+        flags_out=simulator.registers[1]
+        if entry==0xD504:
+            assert bool(flags_out&1)==bool(radius)
+            assert bool(flags_out&0x40)==(radius==0)
+            assert bool(flags_out&4)==(radius==128)
+            assert flags_out&2
+        elif entry==0xD56C:
+            assert bool(flags_out&0x40)==(work_x==136)
+            assert bool(flags_out&1)==(work_x>136)
+            assert flags_out&2
+        elif entry==0xD4E4:
+            assert simulator.registers[0]!=0 and bool(flags_out&0x40)==(mode==0)
+        else:
+            assert simulator.registers[0]!=0 and not flags_out&0x53
         touched={address for address,_ in writes}
         counts[kind]+=1
     # Проверка каждой пары радиус-рабочее X для установщиков состояния и обоих краёв.
@@ -107,6 +128,8 @@ def main():
         real_mask_helpers_without_stubs=True,exact_registers_flags_r_and_sp=True,
         every_ram_byte_and_write_checked=True,right_clip_mode_read_has_no_output_effect=True,
         left_clip_z_returns_mode_not_a=True,whole_large_renderer_proved=False,
+        direct_full_M1_count_checked=True,direct_local_flag_conditions_checked=True,
+        complete_joint_input_product_exhausted=False,
         irq_executed=False,native_execution=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/ControlsCircleSetupVerification.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,indent=2))

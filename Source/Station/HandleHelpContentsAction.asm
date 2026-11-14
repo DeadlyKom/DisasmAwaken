@@ -19,7 +19,7 @@
                 ;   после выбора BeginScreenUpdate, DrawHelpText, DrawHelpContents и EndScreenUpdate дают итоговые HL, DE, BC последнего рисователя и A=10 с сохранённым его F
                 ;   IndexRow после перерисовки равен FF, VisibleTitles обновлён, ContentsTop сохранён, банк и страница равны 10, SP после возврата входному+2
                 ; Corrupt:
-                ;   HL, DE, BC, AF, AF', IX и BC' по фактическим помощникам, список, экраны, курсор, указатель, TopLine, ContentsTop, IndexRow, VisibleTitles, кэш и операнды
+                ;   HL, DE, BC, AF, BC', AF', IX по фактическим помощникам, список, экраны, курсор, указатель, TopLine, ContentsTop, IndexRow, VisibleTitles, кэш и операнды, R и временные слова CPU-стека
                 ; Note:
                 ;   FF проверяется только в младшем ContentsTop, старший байт не участвует в выборе, IndexRow=FF отдельно не отвергается
                 ;   все 65280 суммы проверены до SelectText, недопустимые полученные номера не передавались индексатору

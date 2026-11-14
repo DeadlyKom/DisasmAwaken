@@ -11,4 +11,4 @@ def divide(high,low,divisor,carry):
   accepted=trial>=divisor;quotient=(quotient*2+accepted)&255
   if not accepted:remainder,flags=arithmetic(remainder,divisor)
  inverse=quotient^255
- return dict(remainder=remainder,encoded=(carry<<7)|(inverse>>1),flags=flags,quotient_bits=quotient,inverse_quotient=inverse)
+ return dict(remainder=remainder,encoded=(carry<<7)|(inverse>>1),flags=flags,quotient_bits=quotient,inverse_quotient=inverse,m1=41+inverse.bit_count())

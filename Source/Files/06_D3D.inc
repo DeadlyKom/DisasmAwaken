@@ -14,7 +14,9 @@
                 include "../D3D/Data/PreviewSharedSeed.asm"
                 ent
                 assert $ == #0203
-                incbin "../Resources/06_D3D/BetweenSceneSeedMatrix.bin"
+                ; Исходные байты резерва L90..L91 страницы C2
+                ; Документация [исходные резервы](../../Docs/PreviewRenderWorkspace.md)
+                incbin "../D3D/Resources/ScenePageAfterSeed.bin"
                 assert $ == #020C
                 disp #C20C
                 include "../D3D/Data/PreviewSceneMatrix.asm"
@@ -24,7 +26,8 @@
                 include "../D3D/Data/PreviewObjectAngles.asm"
                 ent
                 assert $ == #0221
-                incbin "../Resources/06_D3D/BeforeContourSizeAfterAngles.bin"
+                ; Исходные байты резерва L90..L91 страницы C2
+                incbin "../D3D/Resources/ScenePageAfterAngles.bin"
                 assert $ == #022B
                 assert $ == #022B
                 disp #C22B
@@ -35,7 +38,8 @@
                 include "../D3D/Data/PreviewClipFirst.asm"
                 ent
                 assert $ == #0231
-                incbin "../Resources/06_D3D/AfterClipFirst.bin"
+                ; Исходные байты резерва L90..L91 страницы C2
+                incbin "../D3D/Resources/ScenePageAfterClipFirst.bin"
                 assert $ == #023B
                 assert $ == #023B
                 disp #C23B
@@ -46,7 +50,8 @@
                 include "../D3D/Data/PreviewClipSecond.asm"
                 ent
                 assert $ == #0241
-                incbin "../Resources/06_D3D/AfterClipSecond.bin"
+                ; Исходные байты резерва L90..L91 страницы C2
+                incbin "../D3D/Resources/ScenePageAfterClipSecond.bin"
                 assert $ == #024B
                 assert $ == #024B
                 assert $ == #024B
@@ -58,13 +63,15 @@
                 include "../D3D/Data/PreviewClipCorners.asm"
                 ent
                 assert $ == #0251
-                incbin "../Resources/06_D3D/BeforeLineCoordinates.bin"
+                ; Исходные байты резерва L90..L91 страницы C2
+                incbin "../D3D/Resources/ScenePageAfterCorners.bin"
                 assert $ == #025B
                 disp #C25B
                 include "../D3D/Data/PreviewLineCoordinates.asm"
                 ent
                 assert $ == #0261
-                incbin "../Resources/06_D3D/BetweenLineWords.bin"
+                ; Исходные байты резерва L90..L91 страницы C2
+                incbin "../D3D/Resources/ScenePageAfterLineCoords.bin"
                 assert $ == #026B
                 disp #C26B
                 include "../D3D/Data/PreviewLineTail.asm"
@@ -76,19 +83,22 @@
                 include "../D3D/Data/PreviewEdgeMode.asm"
                 ent
                 assert $ == #0271
-                incbin "../Resources/06_D3D/BeforeFaceGateState.bin"
+                ; Исходные байты резерва L90..L91 страницы C2
+                incbin "../D3D/Resources/ScenePageAfterEdgeMode.bin"
                 assert $ == #027B
                 disp #C27B
                 include "../D3D/Data/PreviewFaceGateState.asm"
                 ent
                 assert $ == #027C
-                incbin "../Resources/06_D3D/BeforeClipProducts.bin"
+                ; Исходные байты резерва L90..L91 страницы C2
+                incbin "../D3D/Resources/ScenePageBeforeClipProducts.bin"
                 assert $ == #02DC
                 disp #C2DC
                 include "../D3D/Data/PreviewClipTopProduct.asm"
                 ent
                 assert $ == #02E0
-                incbin "../Resources/06_D3D/BetweenClipTopBottom.bin"
+                ; Исходные байты резерва L90..L91 страницы C2
+                incbin "../D3D/Resources/ScenePageBetweenTopBottom.bin"
                 assert $ == #02EA
                 disp #C2EA
                 include "../D3D/Data/PreviewClipBottomProduct.asm"
@@ -98,7 +108,8 @@
                 include "../D3D/Data/PreviewClipLeftLow.asm"
                 ent
                 assert $ == #02F0
-                incbin "../Resources/06_D3D/BetweenClipLeftWords.bin"
+                ; Исходные байты резерва L90..L91 страницы C2
+                incbin "../D3D/Resources/ScenePageBetweenLeftRight.bin"
                 assert $ == #02FA
                 disp #C2FA
                 include "../D3D/Data/PreviewClipLeftHigh.asm"
@@ -136,8 +147,8 @@
                 include "../D3D/Data/PreviewQueue.asm"
                 ent
                 assert $ == #07FC
-                ; Unknown, четыре исходных байта между рабочей очередью и контуром
-                incbin "../Resources/06_D3D/Unclassified07FC_0800.bin"
+                ; Последние четыре байта резерва L9D за узлами очереди
+                incbin "../D3D/Resources/QueuePageTail.bin"
                 assert $ == #0800
                 ; исходная страница C8 до копирования и отсечения контуров
                 incbin "../D3D/Resources/InitialPreviewContour.bin"
@@ -175,18 +186,17 @@
                 disp #CDC7
                 include "../D3D/Data/PreviewPrimaryAngles.asm"
                 ent
-                assert $ == #0DCA
                 ; Документация [таблицы и сохранённые промежутки](../../Docs/PreviewQueueBuild.md)
                 assert $ == #0DCA
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/06_D3D/Unclassified0DCA_0E00.bin"
+                ; Хвост первой записи Carsb после десяти начальных байтов
+                incbin "../D3D/Resources/PreviewObjectRecordTail.bin"
                 assert $ == #0E00
                 disp #CE00
                 include "../D3D/Data/PreviewObjectEnd.asm"
                 ent
                 assert $ == #0E02
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/06_D3D/Unclassified0E02_0E40.bin"
+                ; Хвост второй записи Carsb после маркера 8080
+                incbin "../D3D/Resources/PreviewObjectEndTail.bin"
                 assert $ == #0E40
                 assert $ == #0E40
                 assert $ == #0E40
@@ -199,19 +209,23 @@
                 include "../D3D/Data/PreviewDrawState.asm"
                 ent
                 assert $ == #0F04
-                incbin "../Resources/06_D3D/AfterDrawState.bin"
+                ; Выравнивание ADRXX00 перед указателями моделей L97
+                ; Документация [исходное выравнивание](../../Docs/PreviewRenderWorkspace.md)
+                incbin "../D3D/Resources/DrawStatePageAlignment.bin"
                 assert $ == #1000
                 disp #D000
                 include "../D3D/Data/PreviewModelPointers.asm"
                 ent
                 assert $ == #102C
-                incbin "../Resources/06_D3D/BeforeFillPatterns.bin"
+                ; Выравнивание ADRXX00 между DATA3D и XR2
+                incbin "../D3D/Resources/ModelPointerPageAlignment.bin"
                 assert $ == #1100
                 disp #D100
                 include "../D3D/Data/PreviewFillPatterns.asm"
                 ent
                 assert $ == #1110
-                incbin "../Resources/06_D3D/AfterFillPatterns.bin"
+                ; Конец выравнивания XR2 перед рисователем по D1C0
+                incbin "../D3D/Resources/FillPageCodeAlignment.bin"
                 assert $ == #11C0
                 assert $ == #11C0
                 disp #D1C0

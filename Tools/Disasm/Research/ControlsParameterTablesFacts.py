@@ -10,22 +10,25 @@ CONTRACTS = {('Controls',0xDE10): (
     ['HL, DE, BC и AF основных аргументов не задают, первое зерно читается из SeedFirst, второе из SeedSecond, управляющий байт из StepControl',
      "входные HL' и DE' становятся основными выходными HL и DE из-за конечного EXX, остальные альтернативные входы не задают числовых параметров",
      'банк 1 выбран, общее ядро ACTION перенесено, используются исходные таблицы параметров, строк и пятнадцать FParameterCoefficient',
-     'физический FWordRandomState, Parameters, CoordRows и операнд SeedIndex по 688B доступны для записи',
-     'на CPU-стеке внешний возврат, ещё восемь байтов нужны настоящей вложенной цепочке, IRQ не вмешиваются'],
+     'физический FWordRandomState, Parameters, ClassLimits и операнд SeedIndex по 688B доступны для записи',
+     'на CPU-стеке внешний возврат, ещё восемь байтов нужны вложенной цепочке, стек не перекрывает код, таблицы и рабочие данные, IRQ не вмешиваются'],
     ["HL=входной HL', DE=входной DE', BC=0000 OR C, где C является средним четырёхбитным индексом BuildSeededIndices",
-     'Parameters содержит 15 вычисленных байтов, CoordRows содержит девять записей через RowStride=6, промежутки не меняются',
+     'Parameters содержит 15 вычисленных байтов, ClassLimits содержит девять записей через RowStride=6, промежутки не меняются',
      'A равен последнему строковому шаблону плюс C по модулю байта, F=28 OR (F этого ADD AND C4)',
      "HL'=7BCD, DE'=RowTemplates+16*G+9, BC'=0006, A' равен последнему Parameters[14], F' от последнего сложения с байтом шаблона параметра",
      'IX=9BB3, IY, I, IM и IFF сохраняются, SP=входной SP+2',
      'SeedIndex содержит индекс свёртки зерна 0..6, физическое состояние генератора соответствует всем K шагам',
      'R учитывает настоящие вызовы и длины исходных циклов, точный счёт каждого пути проверен независимой моделью'],
-    ["HL, DE, BC, AF, HL', DE', BC', AF', IX, Parameters, девять CoordRows, SeedIndex, состояние генератора, восемь байтов CPU-стека, R"],
-    ['G равен старшему индексу BuildSeededIndices, но при нулевом индексе свёртки заменяется DefaultGroup=3',
+    ["HL, DE, BC, AF, HL', DE', BC', AF', IX, Parameters, девять ClassLimits, SeedIndex, состояние генератора, восемь байтов CPU-стека, R"],
+    ['полная цепочка пишет вне стека только SeedIndex=688B, состояние 9B15..9B18, Parameters=9BA4..9BB2 и ClassLimits=7B97+6*i при i=0..8, стек занимает входной SP-8..SP-1',
+     'G равен старшему индексу BuildSeededIndices, но при нулевом индексе свёртки заменяется DefaultGroup=3',
      'в исходной таблице код наклона 01 означает ноль, 02 означает плюс C, FE означает минус C, число SRA задаётся степенью двойки ShiftMask',
      'шаблон параметров G=4 читает байты начала самой таблицы коэффициентов со смещением один, перекрытие сохраняется без копирования',
      '688B является операндом LD A, n по 688A общего ядра ACTION, это настоящая самомодификация',
      'последний EXX не компенсируется перед RET, описанный основной и альтернативный наборы нельзя менять местами',
-     'точные игровые имена пятнадцати полей и девяти строковых значений пока не установлены, числовой алгоритм разобран на исходных таблицах'])}
+     'пятнадцать полей имеют имена по доказанным потребителям ApplyParameterSet, полный игровой смысл Unknown11 не установлен',
+     'маршруты полей описаны в ActionApplyParameters.md, физический набор находится в Action/Data/ParameterSet.asm',
+     'девять ClassLimits меняют операнды CP выбора классов 0..8 ScheduleSpawn, первая граница сравнивает скорректированное значение'])}
 COMMENTS = {
     0xDE10: (['загрузка двух слов зерна и числа шагов из существующего контекста'],None),
     0xDE1A: (['формирование числовых индексов настоящей цепочкой классификатора и генератора'],None),
@@ -61,7 +64,7 @@ COMMENTS = {
     0xDE75: ([], 'переход, если обработаны ещё не все RecordCount полей'),
     0xDE78: (['восстановление среднего индекса в альтернативный C, затем выбор ранее сохранённой группы строк'],None),
     0xDE7C: (['вычисление указателя строкового шаблона RowTemplates+16*G'],None),
-    0xDE81: (['подготовка девяти записей CoordRows с физическим шагом RowStride'],None),
+    0xDE81: (['подготовка девяти записей ClassLimits с физическим шагом RowStride'],None),
     0xDE87: (['обновление первой строки без прибавления среднего индекса'],None),
     0xDE8B: (['переход в альтернативный набор для счётчика восьми строк, этот EXX перед RET не компенсируется'],None),
     0xDE8E: (['чтение следующего шаблонного байта через основной указатель и прибавление сохранённого среднего индекса'],None),
@@ -77,7 +80,7 @@ def name_operands(region,function_address,operation):
             operation = operation.replace('#'+format(value,'04X'),'@ControlsParameterTablesConst.'+name)
         operation = operation.replace('#DF65','@ControlsParameterCoefficients.Field00.SlopeCode')
         operation = operation.replace('#9BA4','@ControlsParameterTablesState.Parameters')
-        operation = operation.replace('#7B97','@ControlsParameterTablesState.CoordRows')
+        operation = operation.replace('#7B97','@ControlsParameterTablesState.ClassLimits')
         operation = operation.replace('LD H, #03','LD H, @ControlsParameterTablesConst.DefaultGroup')
         operation = operation.replace('LD A, #0F','LD A, @ControlsParameterTablesConst.RecordCount')
         operation = operation.replace('LD B, #08','LD B, @ControlsParameterTablesConst.ExtraRows')

@@ -21,6 +21,7 @@
   "maximum_extra_stack_bytes": 18,
   "real_ports_verified": true,
   "common_offset_tail_executed": false,
+  "full_M1_count_compared_not_only_R_modulo_128": true,
   "near_path_external_ret_executed": true,
   "all_record_contents_product_exhausted": false,
   "assembly_executed": false,

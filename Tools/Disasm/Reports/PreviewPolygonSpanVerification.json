@@ -20,5 +20,15 @@
   "cpu_return_executed": false,
   "irq_executed": false,
   "native_execution": false,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "R_formula": "2*full_bytes+9",
+  "M1_bounds": [
+    9,
+    71
+  ],
+  "R_initial_values": 256,
+  "R_bit7_and_I_IM_IFF_preserved": true,
+  "entire_original_71_byte_span_checked": true,
+  "full_joint_R_input_product": false,
+  "row_loop_R_cost_proved": false
 }

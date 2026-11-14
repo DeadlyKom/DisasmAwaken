@@ -1,0 +1,7416 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "sources": 9,
+  "tokenized_source_bytes": 5564,
+  "converter_evidence": {
+    "member": "awk5.trd",
+    "slot": 31,
+    "name": "AX3     C",
+    "compiled_origin": 24576,
+    "compiled_sha256": "2c8a7c5b3c64f239f497e5b8ed652632f9f834daeebc4245aba7304044b69279",
+    "compiled_disk_offset": 284928,
+    "source_start_load_instruction": 25854,
+    "source_end_check_addresses": [
+      25857,
+      25858,
+      25859
+    ],
+    "token_expansion_addresses": [
+      25988,
+      25993,
+      25996,
+      26002,
+      26013,
+      26022
+    ],
+    "token_table_address": 27984,
+    "token_table_end_exclusive": 28321,
+    "token_table_sha256": "0b8a1b521f182a44978f0e23f077f5fd1ef17514624ce00ef91cfbda99da2e0d",
+    "token_count": 115,
+    "converter_executed": false,
+    "assembly_executed": false
+  },
+  "token_table": {
+    "80": "LDIR",
+    "81": "LDDR",
+    "82": "LDI",
+    "83": "LDD",
+    "84": "CPIR",
+    "85": "CPDR",
+    "86": "CPI",
+    "87": "CPD",
+    "88": "INIR",
+    "89": "INDR",
+    "8A": "INI",
+    "8B": "IND",
+    "8C": "OUTI",
+    "8D": "OTIR",
+    "8E": "OUTD",
+    "8F": "OTDR",
+    "90": "RETI",
+    "91": "RETN",
+    "92": "NEG",
+    "93": "RLD",
+    "94": "RRD",
+    "95": "PUSH",
+    "96": "POP",
+    "97": "ADD",
+    "98": "SUB",
+    "99": "ADC",
+    "9A": "SBC",
+    "9B": "AND",
+    "9C": "OR",
+    "9D": "XOR",
+    "9E": "CP",
+    "9F": "INC",
+    "A0": "DEC",
+    "A1": "BIT",
+    "A2": "RES",
+    "A3": "SET",
+    "A4": "RLC",
+    "A5": "RRC",
+    "A6": "RL",
+    "A7": "RR",
+    "A8": "SLA",
+    "A9": "SRA",
+    "AA": "SLI",
+    "AB": "SRL",
+    "AC": "LD",
+    "AD": "EX",
+    "AE": "IN",
+    "AF": "OUT",
+    "B0": "IM",
+    "B1": "RST",
+    "B2": "DJNZ",
+    "B3": "JP",
+    "B4": "JR",
+    "B5": "CALL",
+    "B6": "RET",
+    "B7": "EXX",
+    "B8": "CPL",
+    "B9": "DAA",
+    "BA": "RLCA",
+    "BB": "RRCA",
+    "BC": "RLA",
+    "BD": "RRA",
+    "BE": "NOP",
+    "BF": "HALT",
+    "C0": "DI",
+    "C1": "EI",
+    "C2": "SCF",
+    "C3": "CCF",
+    "C4": "ORG",
+    "C5": "ENT",
+    "C6": "EQU",
+    "C7": "WORK",
+    "C8": "DEFB",
+    "C9": "DEFW",
+    "CA": "DEFM",
+    "CB": "DEFS",
+    "CC": "!ASSM",
+    "CD": "!CONT",
+    "CE": "LOADTEXT",
+    "CF": "LOADCODE",
+    "D0": "BC",
+    "D1": "DE",
+    "D2": "HL",
+    "D3": "IX",
+    "D4": "IY",
+    "D5": "SP",
+    "D6": "AF",
+    "D7": "(C)",
+    "D8": "B",
+    "D9": "C",
+    "DA": "D",
+    "DB": "E",
+    "DC": "H",
+    "DD": "L",
+    "DE": "(HL)",
+    "DF": "A",
+    "E0": "(BC)",
+    "E1": "(DE)",
+    "E2": "HX",
+    "E3": "LX",
+    "E4": "HY",
+    "E5": "LY",
+    "E6": "I",
+    "E7": "R",
+    "E8": "NZ",
+    "E9": "Z",
+    "EA": "NC",
+    "EB": "PO",
+    "EC": "PE",
+    "ED": "P",
+    "EE": "M",
+    "EF": "!ON",
+    "F0": "!OFF",
+    "F1": "(SP)",
+    "F2": "AF'"
+  },
+  "entries": [
+    {
+      "member": "awk5.trd",
+      "slot": 8,
+      "name": "SOUND=  X",
+      "disk_offset": 125476,
+      "file_disk_offset": 125440,
+      "bytes": 484,
+      "sha256": "1212a23bd8192fff0793159d316c75fdfd24003828d66b4cd9d241e2fb0277b9",
+      "recognition": "XAS_9_07_tokenized",
+      "plain_instruction_lines": 0,
+      "lines": [
+        {
+          "line": 1,
+          "original_hex": "c42338303030",
+          "expanded_tokens": " ORG #8000"
+        },
+        {
+          "line": 2,
+          "original_hex": "c5",
+          "expanded_tokens": " ENT "
+        },
+        {
+          "line": 3,
+          "original_hex": "c0",
+          "expanded_tokens": " DI "
+        },
+        {
+          "line": 4,
+          "original_hex": "acd9234644",
+          "expanded_tokens": " LD  C #FD"
+        },
+        {
+          "line": 5,
+          "original_hex": "acda233046",
+          "expanded_tokens": " LD  D #0F"
+        },
+        {
+          "line": 6,
+          "original_hex": "4e31",
+          "expanded_tokens": "N1"
+        },
+        {
+          "line": 7,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 8,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 9,
+          "original_hex": "9ddf",
+          "expanded_tokens": " XOR  A "
+        },
+        {
+          "line": 10,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 11,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 12,
+          "original_hex": "a0da",
+          "expanded_tokens": " DEC  D "
+        },
+        {
+          "line": 13,
+          "original_hex": "b3ed4e31",
+          "expanded_tokens": " JP  P N1"
+        },
+        {
+          "line": 14,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 15,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 16,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 17,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 18,
+          "original_hex": "acdf253131313131313130",
+          "expanded_tokens": " LD  A %11111110"
+        },
+        {
+          "line": 19,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 20,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 21,
+          "original_hex": "acd12330383039",
+          "expanded_tokens": " LD  DE #0809"
+        },
+        {
+          "line": 22,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 23,
+          "original_hex": "acd2444154414d555a",
+          "expanded_tokens": " LD  HL DATAMUZ"
+        },
+        {
+          "line": 24,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 25,
+          "original_hex": "4d3130",
+          "expanded_tokens": "M10"
+        },
+        {
+          "line": 26,
+          "original_hex": "acd24c554b41",
+          "expanded_tokens": " LD  HL LUKA"
+        },
+        {
+          "line": 27,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 28,
+          "original_hex": "acd123334645383b2334413341",
+          "expanded_tokens": " LD  DE #3FE8;#4A3A"
+        },
+        {
+          "line": 29,
+          "original_hex": "acd932",
+          "expanded_tokens": " LD  C 2"
+        },
+        {
+          "line": 30,
+          "original_hex": "4d31",
+          "expanded_tokens": "M1"
+        },
+        {
+          "line": 31,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 32,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 33,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 34,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 35,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 36,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 37,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 38,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 39,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 40,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 41,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 42,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 43,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 44,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 45,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 46,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 47,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 48,
+          "original_hex": "acd8de",
+          "expanded_tokens": " LD  B  (HL) "
+        },
+        {
+          "line": 49,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 50,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 51,
+          "original_hex": "a0d2",
+          "expanded_tokens": " DEC  HL "
+        },
+        {
+          "line": 52,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 53,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 54,
+          "original_hex": "b3242b33",
+          "expanded_tokens": " JP $+3"
+        },
+        {
+          "line": 55,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 56,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 57,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 58,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 59,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 60,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 61,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 62,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 63,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 64,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 65,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 66,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 67,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 68,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 69,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 70,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 71,
+          "original_hex": "acd8de",
+          "expanded_tokens": " LD  B  (HL) "
+        },
+        {
+          "line": 72,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 73,
+          "original_hex": "a0d1",
+          "expanded_tokens": " DEC  DE "
+        },
+        {
+          "line": 74,
+          "original_hex": "acdfda",
+          "expanded_tokens": " LD  A  D "
+        },
+        {
+          "line": 75,
+          "original_hex": "9cdb",
+          "expanded_tokens": " OR  E "
+        },
+        {
+          "line": 76,
+          "original_hex": "b3e84d31",
+          "expanded_tokens": " JP  NZ M1"
+        },
+        {
+          "line": 77,
+          "original_hex": "a0d9",
+          "expanded_tokens": " DEC  C "
+        },
+        {
+          "line": 78,
+          "original_hex": "b3e94d3939",
+          "expanded_tokens": " JP  Z M99"
+        },
+        {
+          "line": 79,
+          "original_hex": "acd12331464538",
+          "expanded_tokens": " LD  DE #1FE8"
+        },
+        {
+          "line": 80,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 81,
+          "original_hex": "acd24c554b412b2332303030",
+          "expanded_tokens": " LD  HL LUKA+#2000"
+        },
+        {
+          "line": 82,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 83,
+          "original_hex": "b34d31",
+          "expanded_tokens": " JP M1"
+        },
+        {
+          "line": 84,
+          "original_hex": "4d3939",
+          "expanded_tokens": "M99"
+        },
+        {
+          "line": 85,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 86,
+          "original_hex": "a137de",
+          "expanded_tokens": " BIT 7 (HL) "
+        },
+        {
+          "line": 87,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 88,
+          "original_hex": "b3e94d3130",
+          "expanded_tokens": " JP  Z M10"
+        },
+        {
+          "line": 89,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 90,
+          "original_hex": "acd02346464644",
+          "expanded_tokens": " LD  BC #FFFD"
+        },
+        {
+          "line": 91,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 92,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 93,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 94,
+          "original_hex": "acdf234646",
+          "expanded_tokens": " LD  A #FF"
+        },
+        {
+          "line": 95,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 96,
+          "original_hex": "c1",
+          "expanded_tokens": " EI "
+        },
+        {
+          "line": 97,
+          "original_hex": "b6",
+          "expanded_tokens": " RET "
+        },
+        {
+          "line": 98,
+          "original_hex": "5245c631",
+          "expanded_tokens": "RE EQU 1"
+        },
+        {
+          "line": 99,
+          "original_hex": "444f44c632",
+          "expanded_tokens": "DOD EQU 2"
+        },
+        {
+          "line": 100,
+          "original_hex": "444fc633",
+          "expanded_tokens": "DO EQU 3"
+        },
+        {
+          "line": 101,
+          "original_hex": "4349c63134",
+          "expanded_tokens": "CI EQU 14"
+        },
+        {
+          "line": 102,
+          "original_hex": "4c41c63139",
+          "expanded_tokens": "LA EQU 19"
+        },
+        {
+          "line": 103,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 104,
+          "original_hex": "444154414d555a",
+          "expanded_tokens": "DATAMUZ"
+        },
+        {
+          "line": 105,
+          "original_hex": "c8332c31342c32342c32302c31312c233830",
+          "expanded_tokens": " DEFB 3,14,24,20,11,#80"
+        },
+        {
+          "line": 106,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 107,
+          "original_hex": "c42338323030",
+          "expanded_tokens": " ORG #8200"
+        },
+        {
+          "line": 108,
+          "original_hex": "4c554b41",
+          "expanded_tokens": "LUKA"
+        },
+        {
+          "line": 109,
+          "original_hex": "ccef",
+          "expanded_tokens": " !ASSM  !ON "
+        },
+        {
+          "line": 110,
+          "original_hex": "cf224c494d454c494722",
+          "expanded_tokens": " LOADCODE \"LIMELIG\""
+        },
+        {
+          "line": 111,
+          "original_hex": "cd",
+          "expanded_tokens": " !CONT "
+        },
+        {
+          "line": 112,
+          "original_hex": "",
+          "expanded_tokens": ""
+        }
+      ],
+      "allocated_bytes": 768,
+      "allocated_sha256": "1e0d7b621b9aea9adda45dc4c272cbaa5bb0b579745fbd7d368c80ed98b81c92",
+      "catalog_length_word": 32720,
+      "catalog_length_word_semantics_proved": false,
+      "source_start_file_offset": 36,
+      "zero_terminator_file_offset": 520,
+      "trailing_allocated_bytes": 247,
+      "source_header_metadata_hex": "f8c11910002301",
+      "source_header_metadata_semantics_proved": false,
+      "token_counts": {
+        "9B": 2,
+        "9C": 1,
+        "9D": 1,
+        "9F": 3,
+        "A0": 4,
+        "A1": 1,
+        "AC": 32,
+        "AF": 14,
+        "B2": 2,
+        "B3": 6,
+        "B6": 1,
+        "B7": 10,
+        "BB": 4,
+        "BE": 6,
+        "C0": 1,
+        "C1": 1,
+        "C4": 2,
+        "C5": 1,
+        "C6": 5,
+        "C8": 1,
+        "CC": 1,
+        "CD": 1,
+        "CF": 1,
+        "D0": 1,
+        "D1": 4,
+        "D2": 7,
+        "D8": 15,
+        "D9": 3,
+        "DA": 6,
+        "DB": 3,
+        "DE": 5,
+        "DF": 17,
+        "E8": 1,
+        "E9": 2,
+        "ED": 1,
+        "EF": 1
+      }
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 9,
+      "name": "SHOW    X",
+      "disk_offset": 126244,
+      "file_disk_offset": 126208,
+      "bytes": 713,
+      "sha256": "afd758b0559daf966862c68da2b068add6b0e3ec1ddb790161d1402a50c043e1",
+      "recognition": "XAS_9_07_tokenized",
+      "plain_instruction_lines": 0,
+      "lines": [
+        {
+          "line": 1,
+          "original_hex": "c42336303030",
+          "expanded_tokens": " ORG #6000"
+        },
+        {
+          "line": 2,
+          "original_hex": "53435233",
+          "expanded_tokens": "SCR3"
+        },
+        {
+          "line": 3,
+          "original_hex": "cf2244505222",
+          "expanded_tokens": " LOADCODE \"DPR\""
+        },
+        {
+          "line": 4,
+          "original_hex": "c42338303030",
+          "expanded_tokens": " ORG #8000"
+        },
+        {
+          "line": 5,
+          "original_hex": "c5",
+          "expanded_tokens": " ENT "
+        },
+        {
+          "line": 6,
+          "original_hex": "4d3131",
+          "expanded_tokens": "M11"
+        },
+        {
+          "line": 7,
+          "original_hex": "4153435231acd253435231",
+          "expanded_tokens": "ASCR1 LD  HL SCR1"
+        },
+        {
+          "line": 8,
+          "original_hex": "acd12334303030",
+          "expanded_tokens": " LD  DE #4000"
+        },
+        {
+          "line": 9,
+          "original_hex": "acd02331383030",
+          "expanded_tokens": " LD  BC #1800"
+        },
+        {
+          "line": 10,
+          "original_hex": "80",
+          "expanded_tokens": " LDIR "
+        },
+        {
+          "line": 11,
+          "original_hex": "acd22335383030",
+          "expanded_tokens": " LD  HL #5800"
+        },
+        {
+          "line": 12,
+          "original_hex": "9fd1",
+          "expanded_tokens": " INC  DE "
+        },
+        {
+          "line": 13,
+          "original_hex": "434f4c31acde253031303030313031",
+          "expanded_tokens": "COL1 LD  (HL) %01000101"
+        },
+        {
+          "line": 14,
+          "original_hex": "acd023324646",
+          "expanded_tokens": " LD  BC #2FF"
+        },
+        {
+          "line": 15,
+          "original_hex": "80",
+          "expanded_tokens": " LDIR "
+        },
+        {
+          "line": 16,
+          "original_hex": "acdf233137",
+          "expanded_tokens": " LD  A #17"
+        },
+        {
+          "line": 17,
+          "original_hex": "acd02337464644",
+          "expanded_tokens": " LD  BC #7FFD"
+        },
+        {
+          "line": 18,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 19,
+          "original_hex": "4153435232acd253435232",
+          "expanded_tokens": "ASCR2 LD  HL SCR2"
+        },
+        {
+          "line": 20,
+          "original_hex": "acd12343303030",
+          "expanded_tokens": " LD  DE #C000"
+        },
+        {
+          "line": 21,
+          "original_hex": "acd02331383030",
+          "expanded_tokens": " LD  BC #1800"
+        },
+        {
+          "line": 22,
+          "original_hex": "80",
+          "expanded_tokens": " LDIR "
+        },
+        {
+          "line": 23,
+          "original_hex": "acd22344383030",
+          "expanded_tokens": " LD  HL #D800"
+        },
+        {
+          "line": 24,
+          "original_hex": "9fd1",
+          "expanded_tokens": " INC  DE "
+        },
+        {
+          "line": 25,
+          "original_hex": "434f4c32acde253031303030303031",
+          "expanded_tokens": "COL2 LD  (HL) %01000001"
+        },
+        {
+          "line": 26,
+          "original_hex": "acd023324646",
+          "expanded_tokens": " LD  BC #2FF"
+        },
+        {
+          "line": 27,
+          "original_hex": "80",
+          "expanded_tokens": " LDIR "
+        },
+        {
+          "line": 28,
+          "original_hex": "c1",
+          "expanded_tokens": " EI "
+        },
+        {
+          "line": 29,
+          "original_hex": "4d31",
+          "expanded_tokens": "M1"
+        },
+        {
+          "line": 30,
+          "original_hex": "bf",
+          "expanded_tokens": " HALT "
+        },
+        {
+          "line": 31,
+          "original_hex": "53435253acdf233137",
+          "expanded_tokens": "SCRS LD  A #17"
+        },
+        {
+          "line": 32,
+          "original_hex": "acd02337464644",
+          "expanded_tokens": " LD  BC #7FFD"
+        },
+        {
+          "line": 33,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 34,
+          "original_hex": "9d38",
+          "expanded_tokens": " XOR 8"
+        },
+        {
+          "line": 35,
+          "original_hex": "ac28534352532b3129df",
+          "expanded_tokens": " LD (SCRS+1) A "
+        },
+        {
+          "line": 36,
+          "original_hex": "acdf234645",
+          "expanded_tokens": " LD  A #FE"
+        },
+        {
+          "line": 37,
+          "original_hex": "aedf234645",
+          "expanded_tokens": " IN  A #FE"
+        },
+        {
+          "line": 38,
+          "original_hex": "a130df",
+          "expanded_tokens": " BIT 0 A "
+        },
+        {
+          "line": 39,
+          "original_hex": "b6e9",
+          "expanded_tokens": " RET  Z "
+        },
+        {
+          "line": 40,
+          "original_hex": "a131df",
+          "expanded_tokens": " BIT 1 A "
+        },
+        {
+          "line": 41,
+          "original_hex": "b4e84d32",
+          "expanded_tokens": " JR  NZ M2"
+        },
+        {
+          "line": 42,
+          "original_hex": "acdf28434f4c312b3129",
+          "expanded_tokens": " LD  A (COL1+1)"
+        },
+        {
+          "line": 43,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 44,
+          "original_hex": "9fdf",
+          "expanded_tokens": " INC  A "
+        },
+        {
+          "line": 45,
+          "original_hex": "9b37",
+          "expanded_tokens": " AND 7"
+        },
+        {
+          "line": 46,
+          "original_hex": "acd8df",
+          "expanded_tokens": " LD  B  A "
+        },
+        {
+          "line": 47,
+          "original_hex": "acdfd9",
+          "expanded_tokens": " LD  A  C "
+        },
+        {
+          "line": 48,
+          "original_hex": "9b253131313131303030",
+          "expanded_tokens": " AND %11111000"
+        },
+        {
+          "line": 49,
+          "original_hex": "9cd8",
+          "expanded_tokens": " OR  B "
+        },
+        {
+          "line": 50,
+          "original_hex": "ac28434f4c312b3129df",
+          "expanded_tokens": " LD (COL1+1) A "
+        },
+        {
+          "line": 51,
+          "original_hex": "b34d3131",
+          "expanded_tokens": " JP M11"
+        },
+        {
+          "line": 52,
+          "original_hex": "4d32",
+          "expanded_tokens": "M2"
+        },
+        {
+          "line": 53,
+          "original_hex": "a132df",
+          "expanded_tokens": " BIT 2 A "
+        },
+        {
+          "line": 54,
+          "original_hex": "b4e84d33",
+          "expanded_tokens": " JR  NZ M3"
+        },
+        {
+          "line": 55,
+          "original_hex": "acdf28434f4c312b3129",
+          "expanded_tokens": " LD  A (COL1+1)"
+        },
+        {
+          "line": 56,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 57,
+          "original_hex": "a0df",
+          "expanded_tokens": " DEC  A "
+        },
+        {
+          "line": 58,
+          "original_hex": "9b37",
+          "expanded_tokens": " AND 7"
+        },
+        {
+          "line": 59,
+          "original_hex": "acd8df",
+          "expanded_tokens": " LD  B  A "
+        },
+        {
+          "line": 60,
+          "original_hex": "acdfd9",
+          "expanded_tokens": " LD  A  C "
+        },
+        {
+          "line": 61,
+          "original_hex": "9b253131313131303030",
+          "expanded_tokens": " AND %11111000"
+        },
+        {
+          "line": 62,
+          "original_hex": "9cd8",
+          "expanded_tokens": " OR  B "
+        },
+        {
+          "line": 63,
+          "original_hex": "ac28434f4c312b3129df",
+          "expanded_tokens": " LD (COL1+1) A "
+        },
+        {
+          "line": 64,
+          "original_hex": "b34d3131",
+          "expanded_tokens": " JP M11"
+        },
+        {
+          "line": 65,
+          "original_hex": "4d33",
+          "expanded_tokens": "M3"
+        },
+        {
+          "line": 66,
+          "original_hex": "a133df",
+          "expanded_tokens": " BIT 3 A "
+        },
+        {
+          "line": 67,
+          "original_hex": "b4e84d34",
+          "expanded_tokens": " JR  NZ M4"
+        },
+        {
+          "line": 68,
+          "original_hex": "acdf28434f4c322b3129",
+          "expanded_tokens": " LD  A (COL2+1)"
+        },
+        {
+          "line": 69,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 70,
+          "original_hex": "9fdf",
+          "expanded_tokens": " INC  A "
+        },
+        {
+          "line": 71,
+          "original_hex": "9b37",
+          "expanded_tokens": " AND 7"
+        },
+        {
+          "line": 72,
+          "original_hex": "acd8df",
+          "expanded_tokens": " LD  B  A "
+        },
+        {
+          "line": 73,
+          "original_hex": "acdfd9",
+          "expanded_tokens": " LD  A  C "
+        },
+        {
+          "line": 74,
+          "original_hex": "9b253131313131303030",
+          "expanded_tokens": " AND %11111000"
+        },
+        {
+          "line": 75,
+          "original_hex": "9cd8",
+          "expanded_tokens": " OR  B "
+        },
+        {
+          "line": 76,
+          "original_hex": "ac28434f4c322b3129df",
+          "expanded_tokens": " LD (COL2+1) A "
+        },
+        {
+          "line": 77,
+          "original_hex": "b34d3131",
+          "expanded_tokens": " JP M11"
+        },
+        {
+          "line": 78,
+          "original_hex": "4d34",
+          "expanded_tokens": "M4"
+        },
+        {
+          "line": 79,
+          "original_hex": "a134df",
+          "expanded_tokens": " BIT 4 A "
+        },
+        {
+          "line": 80,
+          "original_hex": "b4e84d35",
+          "expanded_tokens": " JR  NZ M5"
+        },
+        {
+          "line": 81,
+          "original_hex": "acdf28434f4c322b3129",
+          "expanded_tokens": " LD  A (COL2+1)"
+        },
+        {
+          "line": 82,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 83,
+          "original_hex": "a0df",
+          "expanded_tokens": " DEC  A "
+        },
+        {
+          "line": 84,
+          "original_hex": "9b37",
+          "expanded_tokens": " AND 7"
+        },
+        {
+          "line": 85,
+          "original_hex": "acd8df",
+          "expanded_tokens": " LD  B  A "
+        },
+        {
+          "line": 86,
+          "original_hex": "acdfd9",
+          "expanded_tokens": " LD  A  C "
+        },
+        {
+          "line": 87,
+          "original_hex": "9b253131313131303030",
+          "expanded_tokens": " AND %11111000"
+        },
+        {
+          "line": 88,
+          "original_hex": "9cd8",
+          "expanded_tokens": " OR  B "
+        },
+        {
+          "line": 89,
+          "original_hex": "ac28434f4c322b3129df",
+          "expanded_tokens": " LD (COL2+1) A "
+        },
+        {
+          "line": 90,
+          "original_hex": "b34d3131",
+          "expanded_tokens": " JP M11"
+        },
+        {
+          "line": 91,
+          "original_hex": "4d35",
+          "expanded_tokens": "M5"
+        },
+        {
+          "line": 92,
+          "original_hex": "acdf233745",
+          "expanded_tokens": " LD  A #7E"
+        },
+        {
+          "line": 93,
+          "original_hex": "aedf234645",
+          "expanded_tokens": " IN  A #FE"
+        },
+        {
+          "line": 94,
+          "original_hex": "a134df",
+          "expanded_tokens": " BIT 4 A "
+        },
+        {
+          "line": 95,
+          "original_hex": "b4e84d36",
+          "expanded_tokens": " JR  NZ M6"
+        },
+        {
+          "line": 96,
+          "original_hex": "acd12841534352312b3129",
+          "expanded_tokens": " LD  DE (ASCR1+1)"
+        },
+        {
+          "line": 97,
+          "original_hex": "b54e5854",
+          "expanded_tokens": " CALL NXT"
+        },
+        {
+          "line": 98,
+          "original_hex": "ac2841534352312b3129d2",
+          "expanded_tokens": " LD (ASCR1+1) HL "
+        },
+        {
+          "line": 99,
+          "original_hex": "b34d3131",
+          "expanded_tokens": " JP M11"
+        },
+        {
+          "line": 100,
+          "original_hex": "4d36",
+          "expanded_tokens": "M6"
+        },
+        {
+          "line": 101,
+          "original_hex": "a133df",
+          "expanded_tokens": " BIT 3 A "
+        },
+        {
+          "line": 102,
+          "original_hex": "b4e84d37",
+          "expanded_tokens": " JR  NZ M7"
+        },
+        {
+          "line": 103,
+          "original_hex": "acd12841534352322b3129",
+          "expanded_tokens": " LD  DE (ASCR2+1)"
+        },
+        {
+          "line": 104,
+          "original_hex": "b54e5854",
+          "expanded_tokens": " CALL NXT"
+        },
+        {
+          "line": 105,
+          "original_hex": "ac2841534352322b3129d2",
+          "expanded_tokens": " LD (ASCR2+1) HL "
+        },
+        {
+          "line": 106,
+          "original_hex": "b34d3131",
+          "expanded_tokens": " JP M11"
+        },
+        {
+          "line": 107,
+          "original_hex": "4d37",
+          "expanded_tokens": "M7"
+        },
+        {
+          "line": 108,
+          "original_hex": "b34d31",
+          "expanded_tokens": " JP M1"
+        },
+        {
+          "line": 109,
+          "original_hex": "4e5854",
+          "expanded_tokens": "NXT"
+        },
+        {
+          "line": 110,
+          "original_hex": "acd253435231",
+          "expanded_tokens": " LD  HL SCR1"
+        },
+        {
+          "line": 111,
+          "original_hex": "9bdf",
+          "expanded_tokens": " AND  A "
+        },
+        {
+          "line": 112,
+          "original_hex": "9ad2d1",
+          "expanded_tokens": " SBC  HL  DE "
+        },
+        {
+          "line": 113,
+          "original_hex": "acd253435232",
+          "expanded_tokens": " LD  HL SCR2"
+        },
+        {
+          "line": 114,
+          "original_hex": "b6e9",
+          "expanded_tokens": " RET  Z "
+        },
+        {
+          "line": 115,
+          "original_hex": "9bdf",
+          "expanded_tokens": " AND  A "
+        },
+        {
+          "line": 116,
+          "original_hex": "9ad2d1",
+          "expanded_tokens": " SBC  HL  DE "
+        },
+        {
+          "line": 117,
+          "original_hex": "acd253435233",
+          "expanded_tokens": " LD  HL SCR3"
+        },
+        {
+          "line": 118,
+          "original_hex": "b6e9",
+          "expanded_tokens": " RET  Z "
+        },
+        {
+          "line": 119,
+          "original_hex": "acd253435231",
+          "expanded_tokens": " LD  HL SCR1"
+        },
+        {
+          "line": 120,
+          "original_hex": "b6",
+          "expanded_tokens": " RET "
+        },
+        {
+          "line": 121,
+          "original_hex": "53435231",
+          "expanded_tokens": "SCR1"
+        },
+        {
+          "line": 122,
+          "original_hex": "cf2244504222",
+          "expanded_tokens": " LOADCODE \"DPB\""
+        },
+        {
+          "line": 123,
+          "original_hex": "53435232",
+          "expanded_tokens": "SCR2"
+        },
+        {
+          "line": 124,
+          "original_hex": "cf2244504722",
+          "expanded_tokens": " LOADCODE \"DPG\""
+        },
+        {
+          "line": 125,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 126,
+          "original_hex": "",
+          "expanded_tokens": ""
+        }
+      ],
+      "allocated_bytes": 768,
+      "allocated_sha256": "bcf2fbb7f55a5e1291210a1b114ce5110acfa94cb2ed529531dcbeaf93d42407",
+      "catalog_length_word": 0,
+      "catalog_length_word_semantics_proved": false,
+      "source_start_file_offset": 36,
+      "zero_terminator_file_offset": 749,
+      "trailing_allocated_bytes": 18,
+      "source_header_metadata_hex": "e0c21a10000b01",
+      "source_header_metadata_semantics_proved": false,
+      "token_counts": {
+        "80": 4,
+        "9A": 2,
+        "9B": 10,
+        "9C": 4,
+        "9D": 1,
+        "9F": 4,
+        "A0": 2,
+        "A1": 7,
+        "AC": 47,
+        "AE": 2,
+        "AF": 2,
+        "B3": 7,
+        "B4": 6,
+        "B5": 2,
+        "B6": 4,
+        "BF": 1,
+        "C1": 1,
+        "C4": 2,
+        "C5": 1,
+        "CF": 3,
+        "D0": 6,
+        "D1": 8,
+        "D2": 12,
+        "D8": 8,
+        "D9": 8,
+        "DE": 2,
+        "DF": 42,
+        "E8": 6,
+        "E9": 3
+      }
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 10,
+      "name": "SOUND;  X",
+      "disk_offset": 127012,
+      "file_disk_offset": 126976,
+      "bytes": 438,
+      "sha256": "783dd5541d73cf8debd48d58e59c00a1c340eff230a5c484d258e323fcfd884b",
+      "recognition": "XAS_9_07_tokenized",
+      "plain_instruction_lines": 0,
+      "lines": [
+        {
+          "line": 1,
+          "original_hex": "c42338303030",
+          "expanded_tokens": " ORG #8000"
+        },
+        {
+          "line": 2,
+          "original_hex": "c0",
+          "expanded_tokens": " DI "
+        },
+        {
+          "line": 3,
+          "original_hex": "acd02346464644",
+          "expanded_tokens": " LD  BC #FFFD"
+        },
+        {
+          "line": 4,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 5,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 6,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 7,
+          "original_hex": "acdf253131313131313130",
+          "expanded_tokens": " LD  A %11111110"
+        },
+        {
+          "line": 8,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 9,
+          "original_hex": "acdf36",
+          "expanded_tokens": " LD  A 6"
+        },
+        {
+          "line": 10,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 11,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 12,
+          "original_hex": "9ddf",
+          "expanded_tokens": " XOR  A "
+        },
+        {
+          "line": 13,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 14,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 15,
+          "original_hex": "9ddf",
+          "expanded_tokens": " XOR  A "
+        },
+        {
+          "line": 16,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 17,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 18,
+          "original_hex": "9ddf",
+          "expanded_tokens": " XOR  A "
+        },
+        {
+          "line": 19,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 20,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 21,
+          "original_hex": "acdf31",
+          "expanded_tokens": " LD  A 1"
+        },
+        {
+          "line": 22,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 23,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 24,
+          "original_hex": "9ddf",
+          "expanded_tokens": " XOR  A "
+        },
+        {
+          "line": 25,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 26,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 27,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 28,
+          "original_hex": "acd12337453030",
+          "expanded_tokens": " LD  DE #7E00"
+        },
+        {
+          "line": 29,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 30,
+          "original_hex": "acd24c554b412b233630",
+          "expanded_tokens": " LD  HL LUKA+#60"
+        },
+        {
+          "line": 31,
+          "original_hex": "acda5442532648",
+          "expanded_tokens": " LD  D TBS&H"
+        },
+        {
+          "line": 32,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 33,
+          "original_hex": "acdf38",
+          "expanded_tokens": " LD  A 8"
+        },
+        {
+          "line": 34,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 35,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 36,
+          "original_hex": "4d31",
+          "expanded_tokens": "M1"
+        },
+        {
+          "line": 37,
+          "original_hex": "acdbde",
+          "expanded_tokens": " LD  E  (HL) "
+        },
+        {
+          "line": 38,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 39,
+          "original_hex": "acdfe1",
+          "expanded_tokens": " LD  A  (DE) "
+        },
+        {
+          "line": 40,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 41,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 42,
+          "original_hex": "acd83330",
+          "expanded_tokens": " LD  B 30"
+        },
+        {
+          "line": 43,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 44,
+          "original_hex": "a0d1",
+          "expanded_tokens": " DEC  DE "
+        },
+        {
+          "line": 45,
+          "original_hex": "acdfda",
+          "expanded_tokens": " LD  A  D "
+        },
+        {
+          "line": 46,
+          "original_hex": "9cdb",
+          "expanded_tokens": " OR  E "
+        },
+        {
+          "line": 47,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 48,
+          "original_hex": "b3e84d31",
+          "expanded_tokens": " JP  NZ M1"
+        },
+        {
+          "line": 49,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 50,
+          "original_hex": "acd02346464644",
+          "expanded_tokens": " LD  BC #FFFD"
+        },
+        {
+          "line": 51,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 52,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 53,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 54,
+          "original_hex": "acdf234646",
+          "expanded_tokens": " LD  A #FF"
+        },
+        {
+          "line": 55,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 56,
+          "original_hex": "c1",
+          "expanded_tokens": " EI "
+        },
+        {
+          "line": 57,
+          "original_hex": "b6",
+          "expanded_tokens": " RET "
+        },
+        {
+          "line": 58,
+          "original_hex": "cb242d312f3235362a3235362d242b323536",
+          "expanded_tokens": " DEFS $-1/256*256-$+256"
+        },
+        {
+          "line": 59,
+          "original_hex": "544253",
+          "expanded_tokens": "TBS"
+        },
+        {
+          "line": 60,
+          "original_hex": "cb342c2330303030",
+          "expanded_tokens": " DEFS 4,#0000"
+        },
+        {
+          "line": 61,
+          "original_hex": "cb352c2330313031",
+          "expanded_tokens": " DEFS 5,#0101"
+        },
+        {
+          "line": 62,
+          "original_hex": "cb352c2330323032",
+          "expanded_tokens": " DEFS 5,#0202"
+        },
+        {
+          "line": 63,
+          "original_hex": "cb352c2330333033",
+          "expanded_tokens": " DEFS 5,#0303"
+        },
+        {
+          "line": 64,
+          "original_hex": "cb362c2330343034",
+          "expanded_tokens": " DEFS 6,#0404"
+        },
+        {
+          "line": 65,
+          "original_hex": "cb372c2330353035",
+          "expanded_tokens": " DEFS 7,#0505"
+        },
+        {
+          "line": 66,
+          "original_hex": "cb31322c2330363036",
+          "expanded_tokens": " DEFS 12,#0606"
+        },
+        {
+          "line": 67,
+          "original_hex": "cb31322c2330373037",
+          "expanded_tokens": " DEFS 12,#0707"
+        },
+        {
+          "line": 68,
+          "original_hex": "cb382c2330383038",
+          "expanded_tokens": " DEFS 8,#0808"
+        },
+        {
+          "line": 69,
+          "original_hex": "cb31362c2330393039",
+          "expanded_tokens": " DEFS 16,#0909"
+        },
+        {
+          "line": 70,
+          "original_hex": "cb32342c2330413041",
+          "expanded_tokens": " DEFS 24,#0A0A"
+        },
+        {
+          "line": 71,
+          "original_hex": "cb31372c2330423042",
+          "expanded_tokens": " DEFS 17,#0B0B"
+        },
+        {
+          "line": 72,
+          "original_hex": "cb32332c2330433043",
+          "expanded_tokens": " DEFS 23,#0C0C"
+        },
+        {
+          "line": 73,
+          "original_hex": "cb33322c2330443044",
+          "expanded_tokens": " DEFS 32,#0D0D"
+        },
+        {
+          "line": 74,
+          "original_hex": "cb33392c2330453045",
+          "expanded_tokens": " DEFS 39,#0E0E"
+        },
+        {
+          "line": 75,
+          "original_hex": "cb34312c2330463046",
+          "expanded_tokens": " DEFS 41,#0F0F"
+        },
+        {
+          "line": 76,
+          "original_hex": "4c554b41",
+          "expanded_tokens": "LUKA"
+        },
+        {
+          "line": 77,
+          "original_hex": "cf226c756b6122",
+          "expanded_tokens": " LOADCODE \"luka\""
+        },
+        {
+          "line": 78,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 79,
+          "original_hex": "",
+          "expanded_tokens": ""
+        }
+      ],
+      "allocated_bytes": 512,
+      "allocated_sha256": "14ad2ce1b1951fbb4f19aa40fb39f08489ac30ab576a13dc90a49de2cd0d74be",
+      "catalog_length_word": 15360,
+      "catalog_length_word_semantics_proved": false,
+      "source_start_file_offset": 36,
+      "zero_terminator_file_offset": 474,
+      "trailing_allocated_bytes": 37,
+      "source_header_metadata_hex": "c2c11e0f000e01",
+      "source_header_metadata_semantics_proved": false,
+      "token_counts": {
+        "9C": 1,
+        "9D": 4,
+        "9F": 1,
+        "A0": 1,
+        "AC": 26,
+        "AF": 12,
+        "B2": 1,
+        "B3": 1,
+        "B6": 1,
+        "B7": 4,
+        "C0": 1,
+        "C1": 1,
+        "C4": 1,
+        "CB": 17,
+        "CF": 1,
+        "D0": 2,
+        "D1": 2,
+        "D2": 2,
+        "D8": 11,
+        "DA": 2,
+        "DB": 2,
+        "DE": 1,
+        "DF": 25,
+        "E1": 1,
+        "E8": 1
+      }
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 11,
+      "name": "CONV----X",
+      "disk_offset": 127524,
+      "file_disk_offset": 127488,
+      "bytes": 325,
+      "sha256": "76a12c8aeda42280544319ebc561f2d57899af129092c370f07d9d48d29e2679",
+      "recognition": "XAS_9_07_tokenized",
+      "plain_instruction_lines": 0,
+      "lines": [
+        {
+          "line": 1,
+          "original_hex": "c42338303030",
+          "expanded_tokens": " ORG #8000"
+        },
+        {
+          "line": 2,
+          "original_hex": "c0",
+          "expanded_tokens": " DI "
+        },
+        {
+          "line": 3,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 4,
+          "original_hex": "acd12337383030",
+          "expanded_tokens": " LD  DE #7800"
+        },
+        {
+          "line": 5,
+          "original_hex": "acd24c554b41",
+          "expanded_tokens": " LD  HL LUKA"
+        },
+        {
+          "line": 6,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 7,
+          "original_hex": "acd24c554b41",
+          "expanded_tokens": " LD  HL LUKA"
+        },
+        {
+          "line": 8,
+          "original_hex": "acda5442532648",
+          "expanded_tokens": " LD  D TBS&H"
+        },
+        {
+          "line": 9,
+          "original_hex": "4d31",
+          "expanded_tokens": "M1"
+        },
+        {
+          "line": 10,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 11,
+          "original_hex": "9d233830",
+          "expanded_tokens": " XOR #80"
+        },
+        {
+          "line": 12,
+          "original_hex": "acdbdf",
+          "expanded_tokens": " LD  E  A "
+        },
+        {
+          "line": 13,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 14,
+          "original_hex": "acdfe1",
+          "expanded_tokens": " LD  A  (DE) "
+        },
+        {
+          "line": 15,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 16,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 17,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 18,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 19,
+          "original_hex": "9d233830",
+          "expanded_tokens": " XOR #80"
+        },
+        {
+          "line": 20,
+          "original_hex": "acdbdf",
+          "expanded_tokens": " LD  E  A "
+        },
+        {
+          "line": 21,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 22,
+          "original_hex": "acdfe1",
+          "expanded_tokens": " LD  A  (DE) "
+        },
+        {
+          "line": 23,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 24,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 25,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 26,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 27,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 28,
+          "original_hex": "9cde",
+          "expanded_tokens": " OR  (HL) "
+        },
+        {
+          "line": 29,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 30,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 31,
+          "original_hex": "a0d1",
+          "expanded_tokens": " DEC  DE "
+        },
+        {
+          "line": 32,
+          "original_hex": "acdfda",
+          "expanded_tokens": " LD  A  D "
+        },
+        {
+          "line": 33,
+          "original_hex": "9cdb",
+          "expanded_tokens": " OR  E "
+        },
+        {
+          "line": 34,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 35,
+          "original_hex": "b3e84d31",
+          "expanded_tokens": " JP  NZ M1"
+        },
+        {
+          "line": 36,
+          "original_hex": "c1",
+          "expanded_tokens": " EI "
+        },
+        {
+          "line": 37,
+          "original_hex": "b6",
+          "expanded_tokens": " RET "
+        },
+        {
+          "line": 38,
+          "original_hex": "cb242d312f3235362a3235362d242b323536",
+          "expanded_tokens": " DEFS $-1/256*256-$+256"
+        },
+        {
+          "line": 39,
+          "original_hex": "544253",
+          "expanded_tokens": "TBS"
+        },
+        {
+          "line": 40,
+          "original_hex": "cb342c2330303030",
+          "expanded_tokens": " DEFS 4,#0000"
+        },
+        {
+          "line": 41,
+          "original_hex": "cb352c2330313031",
+          "expanded_tokens": " DEFS 5,#0101"
+        },
+        {
+          "line": 42,
+          "original_hex": "cb352c2330323032",
+          "expanded_tokens": " DEFS 5,#0202"
+        },
+        {
+          "line": 43,
+          "original_hex": "cb352c2330333033",
+          "expanded_tokens": " DEFS 5,#0303"
+        },
+        {
+          "line": 44,
+          "original_hex": "cb362c2330343034",
+          "expanded_tokens": " DEFS 6,#0404"
+        },
+        {
+          "line": 45,
+          "original_hex": "cb372c2330353035",
+          "expanded_tokens": " DEFS 7,#0505"
+        },
+        {
+          "line": 46,
+          "original_hex": "cb31322c2330363036",
+          "expanded_tokens": " DEFS 12,#0606"
+        },
+        {
+          "line": 47,
+          "original_hex": "cb31322c2330373037",
+          "expanded_tokens": " DEFS 12,#0707"
+        },
+        {
+          "line": 48,
+          "original_hex": "cb382c2330383038",
+          "expanded_tokens": " DEFS 8,#0808"
+        },
+        {
+          "line": 49,
+          "original_hex": "cb31362c2330393039",
+          "expanded_tokens": " DEFS 16,#0909"
+        },
+        {
+          "line": 50,
+          "original_hex": "cb32342c2330413041",
+          "expanded_tokens": " DEFS 24,#0A0A"
+        },
+        {
+          "line": 51,
+          "original_hex": "cb31372c2330423042",
+          "expanded_tokens": " DEFS 17,#0B0B"
+        },
+        {
+          "line": 52,
+          "original_hex": "cb32332c2330433043",
+          "expanded_tokens": " DEFS 23,#0C0C"
+        },
+        {
+          "line": 53,
+          "original_hex": "cb33322c2330443044",
+          "expanded_tokens": " DEFS 32,#0D0D"
+        },
+        {
+          "line": 54,
+          "original_hex": "cb33392c2330453045",
+          "expanded_tokens": " DEFS 39,#0E0E"
+        },
+        {
+          "line": 55,
+          "original_hex": "cb34312c2330463046",
+          "expanded_tokens": " DEFS 41,#0F0F"
+        },
+        {
+          "line": 56,
+          "original_hex": "4c554b41",
+          "expanded_tokens": "LUKA"
+        },
+        {
+          "line": 57,
+          "original_hex": "cf2273616d3122",
+          "expanded_tokens": " LOADCODE \"sam1\""
+        },
+        {
+          "line": 58,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 59,
+          "original_hex": "",
+          "expanded_tokens": ""
+        }
+      ],
+      "allocated_bytes": 512,
+      "allocated_sha256": "73a1131c407502467682bf915f7f96c99b1a3a968ef8fc1894ef1e0ea2691012",
+      "catalog_length_word": 15488,
+      "catalog_length_word_semantics_proved": false,
+      "source_start_file_offset": 36,
+      "zero_terminator_file_offset": 361,
+      "trailing_allocated_bytes": 150,
+      "source_header_metadata_hex": "69c10013000f01",
+      "source_header_metadata_semantics_proved": false,
+      "token_counts": {
+        "9C": 2,
+        "9D": 2,
+        "9F": 3,
+        "A0": 1,
+        "AC": 13,
+        "B3": 1,
+        "B6": 1,
+        "B7": 6,
+        "BA": 4,
+        "C0": 1,
+        "C1": 1,
+        "C4": 1,
+        "CB": 17,
+        "CF": 1,
+        "D1": 2,
+        "D2": 5,
+        "DA": 2,
+        "DB": 3,
+        "DE": 5,
+        "DF": 9,
+        "E1": 2,
+        "E8": 1
+      }
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 22,
+      "name": "SOUND=1 X",
+      "disk_offset": 240676,
+      "file_disk_offset": 240640,
+      "bytes": 451,
+      "sha256": "de7b1c5b2c4779f4b1e2ac52ff81bb5dd51c60f8a448187816840acc6743666e",
+      "recognition": "XAS_9_07_tokenized",
+      "plain_instruction_lines": 0,
+      "lines": [
+        {
+          "line": 1,
+          "original_hex": "c42338303030",
+          "expanded_tokens": " ORG #8000"
+        },
+        {
+          "line": 2,
+          "original_hex": "c5",
+          "expanded_tokens": " ENT "
+        },
+        {
+          "line": 3,
+          "original_hex": "c0",
+          "expanded_tokens": " DI "
+        },
+        {
+          "line": 4,
+          "original_hex": "acd9234644",
+          "expanded_tokens": " LD  C #FD"
+        },
+        {
+          "line": 5,
+          "original_hex": "acda233046",
+          "expanded_tokens": " LD  D #0F"
+        },
+        {
+          "line": 6,
+          "original_hex": "4e31",
+          "expanded_tokens": "N1"
+        },
+        {
+          "line": 7,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 8,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 9,
+          "original_hex": "9ddf",
+          "expanded_tokens": " XOR  A "
+        },
+        {
+          "line": 10,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 11,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 12,
+          "original_hex": "a0da",
+          "expanded_tokens": " DEC  D "
+        },
+        {
+          "line": 13,
+          "original_hex": "b3ed4e31",
+          "expanded_tokens": " JP  P N1"
+        },
+        {
+          "line": 14,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 15,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 16,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 17,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 18,
+          "original_hex": "acdf253131313131313131",
+          "expanded_tokens": " LD  A %11111111"
+        },
+        {
+          "line": 19,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 20,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 21,
+          "original_hex": "acd12330383039",
+          "expanded_tokens": " LD  DE #0809"
+        },
+        {
+          "line": 22,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 23,
+          "original_hex": "acd2444154414d555a",
+          "expanded_tokens": " LD  HL DATAMUZ"
+        },
+        {
+          "line": 24,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 25,
+          "original_hex": "4d3130",
+          "expanded_tokens": "M10"
+        },
+        {
+          "line": 26,
+          "original_hex": "acd24c554b41",
+          "expanded_tokens": " LD  HL LUKA"
+        },
+        {
+          "line": 27,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 28,
+          "original_hex": "acd14c454e",
+          "expanded_tokens": " LD  DE LEN"
+        },
+        {
+          "line": 29,
+          "original_hex": "acd931",
+          "expanded_tokens": " LD  C 1"
+        },
+        {
+          "line": 30,
+          "original_hex": "4d31",
+          "expanded_tokens": "M1"
+        },
+        {
+          "line": 31,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 32,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 33,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 34,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 35,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 36,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 37,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 38,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 39,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 40,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 41,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 42,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 43,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 44,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 45,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 46,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 47,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 48,
+          "original_hex": "acd8de",
+          "expanded_tokens": " LD  B  (HL) "
+        },
+        {
+          "line": 49,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 50,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 51,
+          "original_hex": "a0d2",
+          "expanded_tokens": " DEC  HL "
+        },
+        {
+          "line": 52,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 53,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 54,
+          "original_hex": "b3242b33",
+          "expanded_tokens": " JP $+3"
+        },
+        {
+          "line": 55,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 56,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 57,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 58,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 59,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 60,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 61,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 62,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 63,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 64,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 65,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 66,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 67,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 68,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 69,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 70,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 71,
+          "original_hex": "acd8de",
+          "expanded_tokens": " LD  B  (HL) "
+        },
+        {
+          "line": 72,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 73,
+          "original_hex": "a0d1",
+          "expanded_tokens": " DEC  DE "
+        },
+        {
+          "line": 74,
+          "original_hex": "acdfda",
+          "expanded_tokens": " LD  A  D "
+        },
+        {
+          "line": 75,
+          "original_hex": "9cdb",
+          "expanded_tokens": " OR  E "
+        },
+        {
+          "line": 76,
+          "original_hex": "b3e84d31",
+          "expanded_tokens": " JP  NZ M1"
+        },
+        {
+          "line": 77,
+          "original_hex": "a0d9",
+          "expanded_tokens": " DEC  C "
+        },
+        {
+          "line": 78,
+          "original_hex": "b3e94d3939",
+          "expanded_tokens": " JP  Z M99"
+        },
+        {
+          "line": 79,
+          "original_hex": "acd12331464538",
+          "expanded_tokens": " LD  DE #1FE8"
+        },
+        {
+          "line": 80,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 81,
+          "original_hex": "acd24c554b412b2332303030",
+          "expanded_tokens": " LD  HL LUKA+#2000"
+        },
+        {
+          "line": 82,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 83,
+          "original_hex": "b34d31",
+          "expanded_tokens": " JP M1"
+        },
+        {
+          "line": 84,
+          "original_hex": "4d3939",
+          "expanded_tokens": "M99"
+        },
+        {
+          "line": 85,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 86,
+          "original_hex": "a137de",
+          "expanded_tokens": " BIT 7 (HL) "
+        },
+        {
+          "line": 87,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 88,
+          "original_hex": "b3e94d3130",
+          "expanded_tokens": " JP  Z M10"
+        },
+        {
+          "line": 89,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 90,
+          "original_hex": "acd02346464644",
+          "expanded_tokens": " LD  BC #FFFD"
+        },
+        {
+          "line": 91,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 92,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 93,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 94,
+          "original_hex": "acdf234646",
+          "expanded_tokens": " LD  A #FF"
+        },
+        {
+          "line": 95,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 96,
+          "original_hex": "c1",
+          "expanded_tokens": " EI "
+        },
+        {
+          "line": 97,
+          "original_hex": "b6",
+          "expanded_tokens": " RET "
+        },
+        {
+          "line": 98,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 99,
+          "original_hex": "444154414d555a",
+          "expanded_tokens": "DATAMUZ"
+        },
+        {
+          "line": 100,
+          "original_hex": "c838302c233830",
+          "expanded_tokens": " DEFB 80,#80"
+        },
+        {
+          "line": 101,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 102,
+          "original_hex": "c42338323030",
+          "expanded_tokens": " ORG #8200"
+        },
+        {
+          "line": 103,
+          "original_hex": "4c554b41",
+          "expanded_tokens": "LUKA"
+        },
+        {
+          "line": 104,
+          "original_hex": "ccef",
+          "expanded_tokens": " !ASSM  !ON "
+        },
+        {
+          "line": 105,
+          "original_hex": "cf22454646433222",
+          "expanded_tokens": " LOADCODE \"EFFC2\""
+        },
+        {
+          "line": 106,
+          "original_hex": "cd",
+          "expanded_tokens": " !CONT "
+        },
+        {
+          "line": 107,
+          "original_hex": "4c454ec623333346313b2332463439",
+          "expanded_tokens": "LEN EQU #33F1;#2F49"
+        },
+        {
+          "line": 108,
+          "original_hex": "",
+          "expanded_tokens": ""
+        }
+      ],
+      "allocated_bytes": 512,
+      "allocated_sha256": "e6383ba8fcfd1c118d6d06422cadfa16954cd9edca3783e2812b368fc20dcb94",
+      "catalog_length_word": 33024,
+      "catalog_length_word_semantics_proved": false,
+      "source_start_file_offset": 36,
+      "zero_terminator_file_offset": 487,
+      "trailing_allocated_bytes": 24,
+      "source_header_metadata_hex": "c9c1190f002401",
+      "source_header_metadata_semantics_proved": false,
+      "token_counts": {
+        "9B": 2,
+        "9C": 1,
+        "9D": 1,
+        "9F": 3,
+        "A0": 4,
+        "A1": 1,
+        "AC": 32,
+        "AF": 14,
+        "B2": 2,
+        "B3": 6,
+        "B6": 1,
+        "B7": 10,
+        "BB": 4,
+        "BE": 6,
+        "C0": 1,
+        "C1": 1,
+        "C4": 2,
+        "C5": 1,
+        "C6": 1,
+        "C8": 1,
+        "CC": 1,
+        "CD": 1,
+        "CF": 1,
+        "D0": 1,
+        "D1": 4,
+        "D2": 7,
+        "D8": 15,
+        "D9": 3,
+        "DA": 6,
+        "DB": 3,
+        "DE": 5,
+        "DF": 17,
+        "E8": 1,
+        "E9": 2,
+        "ED": 1,
+        "EF": 1
+      }
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 23,
+      "name": "SOUND=1+X",
+      "disk_offset": 241188,
+      "file_disk_offset": 241152,
+      "bytes": 613,
+      "sha256": "ca58709fa303b9bf2ad91162d8bef91fa95e66f215222ebe0fc481efd2aebc2c",
+      "recognition": "XAS_9_07_tokenized",
+      "plain_instruction_lines": 0,
+      "lines": [
+        {
+          "line": 1,
+          "original_hex": "c42338303030",
+          "expanded_tokens": " ORG #8000"
+        },
+        {
+          "line": 2,
+          "original_hex": "c5",
+          "expanded_tokens": " ENT "
+        },
+        {
+          "line": 3,
+          "original_hex": "c0",
+          "expanded_tokens": " DI "
+        },
+        {
+          "line": 4,
+          "original_hex": "acd9234644",
+          "expanded_tokens": " LD  C #FD"
+        },
+        {
+          "line": 5,
+          "original_hex": "acda233046",
+          "expanded_tokens": " LD  D #0F"
+        },
+        {
+          "line": 6,
+          "original_hex": "4e31",
+          "expanded_tokens": "N1"
+        },
+        {
+          "line": 7,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 8,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 9,
+          "original_hex": "9ddf",
+          "expanded_tokens": " XOR  A "
+        },
+        {
+          "line": 10,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 11,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 12,
+          "original_hex": "a0da",
+          "expanded_tokens": " DEC  D "
+        },
+        {
+          "line": 13,
+          "original_hex": "b3ed4e31",
+          "expanded_tokens": " JP  P N1"
+        },
+        {
+          "line": 14,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 15,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 16,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 17,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 18,
+          "original_hex": "acdf253131313131313131",
+          "expanded_tokens": " LD  A %11111111"
+        },
+        {
+          "line": 19,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 20,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 21,
+          "original_hex": "acd12330383039",
+          "expanded_tokens": " LD  DE #0809"
+        },
+        {
+          "line": 22,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 23,
+          "original_hex": "acd2444154414d555a",
+          "expanded_tokens": " LD  HL DATAMUZ"
+        },
+        {
+          "line": 24,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 25,
+          "original_hex": "4d3130",
+          "expanded_tokens": "M10"
+        },
+        {
+          "line": 26,
+          "original_hex": "acd24c554b41",
+          "expanded_tokens": " LD  HL LUKA"
+        },
+        {
+          "line": 27,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 28,
+          "original_hex": "acd14c454e",
+          "expanded_tokens": " LD  DE LEN"
+        },
+        {
+          "line": 29,
+          "original_hex": "acd931",
+          "expanded_tokens": " LD  C 1"
+        },
+        {
+          "line": 30,
+          "original_hex": "4d31",
+          "expanded_tokens": "M1"
+        },
+        {
+          "line": 31,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 32,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 33,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 34,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 35,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 36,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 37,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 38,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 39,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 40,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 41,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 42,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 43,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 44,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 45,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 46,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 47,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 48,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 49,
+          "original_hex": "a0d2",
+          "expanded_tokens": " DEC  HL "
+        },
+        {
+          "line": 50,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 51,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 52,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 53,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 54,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 55,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 56,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 57,
+          "original_hex": "97dfd9",
+          "expanded_tokens": " ADD  A  C "
+        },
+        {
+          "line": 58,
+          "original_hex": "bd",
+          "expanded_tokens": " RRA "
+        },
+        {
+          "line": 59,
+          "original_hex": "acd9234644",
+          "expanded_tokens": " LD  C #FD"
+        },
+        {
+          "line": 60,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 61,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 62,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 63,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 64,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 65,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 66,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 67,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 68,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 69,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 70,
+          "original_hex": "acd8de",
+          "expanded_tokens": " LD  B  (HL) "
+        },
+        {
+          "line": 71,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 72,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 73,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 74,
+          "original_hex": "a0d2",
+          "expanded_tokens": " DEC  HL "
+        },
+        {
+          "line": 75,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 76,
+          "original_hex": "a0d2",
+          "expanded_tokens": " DEC  HL "
+        },
+        {
+          "line": 77,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 78,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 79,
+          "original_hex": "b3242b33",
+          "expanded_tokens": " JP $+3"
+        },
+        {
+          "line": 80,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 81,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 82,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 83,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 84,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 85,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 86,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 87,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 88,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 89,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 90,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 91,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 92,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 93,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 94,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 95,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 96,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 97,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 98,
+          "original_hex": "a0d2",
+          "expanded_tokens": " DEC  HL "
+        },
+        {
+          "line": 99,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 100,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 101,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 102,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 103,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 104,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 105,
+          "original_hex": "be",
+          "expanded_tokens": " NOP "
+        },
+        {
+          "line": 106,
+          "original_hex": "97dfd9",
+          "expanded_tokens": " ADD  A  C "
+        },
+        {
+          "line": 107,
+          "original_hex": "bd",
+          "expanded_tokens": " RRA "
+        },
+        {
+          "line": 108,
+          "original_hex": "acd9234644",
+          "expanded_tokens": " LD  C #FD"
+        },
+        {
+          "line": 109,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 110,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 111,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 112,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 113,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 114,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 115,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 116,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 117,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 118,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 119,
+          "original_hex": "acd8de",
+          "expanded_tokens": " LD  B  (HL) "
+        },
+        {
+          "line": 120,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 121,
+          "original_hex": "a0d1",
+          "expanded_tokens": " DEC  DE "
+        },
+        {
+          "line": 122,
+          "original_hex": "acdfda",
+          "expanded_tokens": " LD  A  D "
+        },
+        {
+          "line": 123,
+          "original_hex": "9cdb",
+          "expanded_tokens": " OR  E "
+        },
+        {
+          "line": 124,
+          "original_hex": "b3e84d31",
+          "expanded_tokens": " JP  NZ M1"
+        },
+        {
+          "line": 125,
+          "original_hex": "a0d9",
+          "expanded_tokens": " DEC  C "
+        },
+        {
+          "line": 126,
+          "original_hex": "b3e94d3939",
+          "expanded_tokens": " JP  Z M99"
+        },
+        {
+          "line": 127,
+          "original_hex": "acd12331464538",
+          "expanded_tokens": " LD  DE #1FE8"
+        },
+        {
+          "line": 128,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 129,
+          "original_hex": "acd24c554b412b2332303030",
+          "expanded_tokens": " LD  HL LUKA+#2000"
+        },
+        {
+          "line": 130,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 131,
+          "original_hex": "b34d31",
+          "expanded_tokens": " JP M1"
+        },
+        {
+          "line": 132,
+          "original_hex": "4d3939",
+          "expanded_tokens": "M99"
+        },
+        {
+          "line": 133,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 134,
+          "original_hex": "a137de",
+          "expanded_tokens": " BIT 7 (HL) "
+        },
+        {
+          "line": 135,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 136,
+          "original_hex": "b3e94d3130",
+          "expanded_tokens": " JP  Z M10"
+        },
+        {
+          "line": 137,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 138,
+          "original_hex": "acd02346464644",
+          "expanded_tokens": " LD  BC #FFFD"
+        },
+        {
+          "line": 139,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 140,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 141,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 142,
+          "original_hex": "acdf234646",
+          "expanded_tokens": " LD  A #FF"
+        },
+        {
+          "line": 143,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 144,
+          "original_hex": "c1",
+          "expanded_tokens": " EI "
+        },
+        {
+          "line": 145,
+          "original_hex": "b6",
+          "expanded_tokens": " RET "
+        },
+        {
+          "line": 146,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 147,
+          "original_hex": "444154414d555a",
+          "expanded_tokens": "DATAMUZ"
+        },
+        {
+          "line": 148,
+          "original_hex": "c833302c233830",
+          "expanded_tokens": " DEFB 30,#80"
+        },
+        {
+          "line": 149,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 150,
+          "original_hex": "c42338323030",
+          "expanded_tokens": " ORG #8200"
+        },
+        {
+          "line": 151,
+          "original_hex": "4c554b41",
+          "expanded_tokens": "LUKA"
+        },
+        {
+          "line": 152,
+          "original_hex": "ccef",
+          "expanded_tokens": " !ASSM  !ON "
+        },
+        {
+          "line": 153,
+          "original_hex": "cf22454646433222",
+          "expanded_tokens": " LOADCODE \"EFFC2\""
+        },
+        {
+          "line": 154,
+          "original_hex": "cd",
+          "expanded_tokens": " !CONT "
+        },
+        {
+          "line": 155,
+          "original_hex": "4c454ec623333346313b2332463439",
+          "expanded_tokens": "LEN EQU #33F1;#2F49"
+        },
+        {
+          "line": 156,
+          "original_hex": "",
+          "expanded_tokens": ""
+        }
+      ],
+      "allocated_bytes": 768,
+      "allocated_sha256": "5672b437c4a7a7cb69cf0ab2de284a3e7d580581a855e8825d8c0c60458fc026",
+      "catalog_length_word": 218,
+      "catalog_length_word_semantics_proved": false,
+      "source_start_file_offset": 36,
+      "zero_terminator_file_offset": 649,
+      "trailing_allocated_bytes": 118,
+      "source_header_metadata_hex": "6bc2190f002701",
+      "source_header_metadata_semantics_proved": false,
+      "token_counts": {
+        "97": 2,
+        "9B": 4,
+        "9C": 1,
+        "9D": 1,
+        "9F": 6,
+        "A0": 7,
+        "A1": 1,
+        "AC": 46,
+        "AF": 22,
+        "B2": 2,
+        "B3": 6,
+        "B6": 1,
+        "B7": 10,
+        "BA": 4,
+        "BB": 4,
+        "BD": 2,
+        "BE": 10,
+        "C0": 1,
+        "C1": 1,
+        "C4": 2,
+        "C5": 1,
+        "C6": 1,
+        "C8": 1,
+        "CC": 1,
+        "CD": 1,
+        "CF": 1,
+        "D0": 1,
+        "D1": 4,
+        "D2": 13,
+        "D8": 23,
+        "D9": 9,
+        "DA": 8,
+        "DB": 5,
+        "DE": 7,
+        "DF": 27,
+        "E8": 1,
+        "E9": 2,
+        "ED": 1,
+        "EF": 1
+      }
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 24,
+      "name": "SOUND=2+X",
+      "disk_offset": 241956,
+      "file_disk_offset": 241920,
+      "bytes": 688,
+      "sha256": "5203adae67b579b4e908667bae15da975af2671c11c1309306a005738d3aed30",
+      "recognition": "XAS_9_07_tokenized",
+      "plain_instruction_lines": 0,
+      "lines": [
+        {
+          "line": 1,
+          "original_hex": "c42338303030",
+          "expanded_tokens": " ORG #8000"
+        },
+        {
+          "line": 2,
+          "original_hex": "c5",
+          "expanded_tokens": " ENT "
+        },
+        {
+          "line": 3,
+          "original_hex": "c0",
+          "expanded_tokens": " DI "
+        },
+        {
+          "line": 4,
+          "original_hex": "3b4d414b45544142",
+          "expanded_tokens": ";MAKETAB"
+        },
+        {
+          "line": 5,
+          "original_hex": "acd25441424c",
+          "expanded_tokens": " LD  HL TABL"
+        },
+        {
+          "line": 6,
+          "original_hex": "4b31",
+          "expanded_tokens": "K1"
+        },
+        {
+          "line": 7,
+          "original_hex": "acdfdd",
+          "expanded_tokens": " LD  A  L "
+        },
+        {
+          "line": 8,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 9,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 10,
+          "original_hex": "acd8df",
+          "expanded_tokens": " LD  B  A "
+        },
+        {
+          "line": 11,
+          "original_hex": "9fdc",
+          "expanded_tokens": " INC  H "
+        },
+        {
+          "line": 12,
+          "original_hex": "9fdc",
+          "expanded_tokens": " INC  H "
+        },
+        {
+          "line": 13,
+          "original_hex": "acdfdd",
+          "expanded_tokens": " LD  A  L "
+        },
+        {
+          "line": 14,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 15,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 16,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 17,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 18,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 19,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 20,
+          "original_hex": "a0dc",
+          "expanded_tokens": " DEC  H "
+        },
+        {
+          "line": 21,
+          "original_hex": "97dfd8",
+          "expanded_tokens": " ADD  A  B "
+        },
+        {
+          "line": 22,
+          "original_hex": "abdf",
+          "expanded_tokens": " SRL  A "
+        },
+        {
+          "line": 23,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 24,
+          "original_hex": "a0dc",
+          "expanded_tokens": " DEC  H "
+        },
+        {
+          "line": 25,
+          "original_hex": "9fdd",
+          "expanded_tokens": " INC  L "
+        },
+        {
+          "line": 26,
+          "original_hex": "b3e84b31",
+          "expanded_tokens": " JP  NZ K1"
+        },
+        {
+          "line": 27,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 28,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 29,
+          "original_hex": "acd9234644",
+          "expanded_tokens": " LD  C #FD"
+        },
+        {
+          "line": 30,
+          "original_hex": "acda233046",
+          "expanded_tokens": " LD  D #0F"
+        },
+        {
+          "line": 31,
+          "original_hex": "4e31",
+          "expanded_tokens": "N1"
+        },
+        {
+          "line": 32,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 33,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 34,
+          "original_hex": "9ddf",
+          "expanded_tokens": " XOR  A "
+        },
+        {
+          "line": 35,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 36,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 37,
+          "original_hex": "a0da",
+          "expanded_tokens": " DEC  D "
+        },
+        {
+          "line": 38,
+          "original_hex": "b3ed4e31",
+          "expanded_tokens": " JP  P N1"
+        },
+        {
+          "line": 39,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 40,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 41,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 42,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 43,
+          "original_hex": "acdf253131313131313131",
+          "expanded_tokens": " LD  A %11111111"
+        },
+        {
+          "line": 44,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 45,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 46,
+          "original_hex": "acd12330383039",
+          "expanded_tokens": " LD  DE #0809"
+        },
+        {
+          "line": 47,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 48,
+          "original_hex": "acd24c554b41",
+          "expanded_tokens": " LD  HL LUKA"
+        },
+        {
+          "line": 49,
+          "original_hex": "acd14c454e",
+          "expanded_tokens": " LD  DE LEN"
+        },
+        {
+          "line": 50,
+          "original_hex": "acd85441424c26482b31",
+          "expanded_tokens": " LD  B TABL&H+1"
+        },
+        {
+          "line": 51,
+          "original_hex": "4d31",
+          "expanded_tokens": "M1"
+        },
+        {
+          "line": 52,
+          "original_hex": "acd9de",
+          "expanded_tokens": " LD  C  (HL) "
+        },
+        {
+          "line": 53,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 54,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 55,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 56,
+          "original_hex": "a0d1",
+          "expanded_tokens": " DEC  DE "
+        },
+        {
+          "line": 57,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 58,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 59,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 60,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 61,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 62,
+          "original_hex": "a0d8",
+          "expanded_tokens": " DEC  B "
+        },
+        {
+          "line": 63,
+          "original_hex": "acdfe0",
+          "expanded_tokens": " LD  A  (BC) "
+        },
+        {
+          "line": 64,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 65,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 66,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 67,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 68,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 69,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 70,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 71,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 72,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 73,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 74,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 75,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 76,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 77,
+          "original_hex": "b3242b33",
+          "expanded_tokens": " JP $+3"
+        },
+        {
+          "line": 78,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 79,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 80,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 81,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 82,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 83,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 84,
+          "original_hex": "9fd1",
+          "expanded_tokens": " INC  DE "
+        },
+        {
+          "line": 85,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 86,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 87,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 88,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 89,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 90,
+          "original_hex": "9fd8",
+          "expanded_tokens": " INC  B "
+        },
+        {
+          "line": 91,
+          "original_hex": "acdfe0",
+          "expanded_tokens": " LD  A  (BC) "
+        },
+        {
+          "line": 92,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 93,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 94,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 95,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 96,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 97,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 98,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 99,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 100,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 101,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 102,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 103,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 104,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 105,
+          "original_hex": "b3242b33",
+          "expanded_tokens": " JP $+3"
+        },
+        {
+          "line": 106,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 107,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 108,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 109,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 110,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 111,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 112,
+          "original_hex": "a0d1",
+          "expanded_tokens": " DEC  DE "
+        },
+        {
+          "line": 113,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 114,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 115,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 116,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 117,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 118,
+          "original_hex": "9fd8",
+          "expanded_tokens": " INC  B "
+        },
+        {
+          "line": 119,
+          "original_hex": "acdfe0",
+          "expanded_tokens": " LD  A  (BC) "
+        },
+        {
+          "line": 120,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 121,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 122,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 123,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 124,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 125,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 126,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 127,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 128,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 129,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 130,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 131,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 132,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 133,
+          "original_hex": "b3242b33",
+          "expanded_tokens": " JP $+3"
+        },
+        {
+          "line": 134,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 135,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 136,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 137,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 138,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 139,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 140,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 141,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 142,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 143,
+          "original_hex": "9cd9",
+          "expanded_tokens": " OR  C "
+        },
+        {
+          "line": 144,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 145,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 146,
+          "original_hex": "a0d8",
+          "expanded_tokens": " DEC  B "
+        },
+        {
+          "line": 147,
+          "original_hex": "acdfe0",
+          "expanded_tokens": " LD  A  (BC) "
+        },
+        {
+          "line": 148,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 149,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 150,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 151,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 152,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 153,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 154,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 155,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 156,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 157,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 158,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 159,
+          "original_hex": "acdfda",
+          "expanded_tokens": " LD  A  D "
+        },
+        {
+          "line": 160,
+          "original_hex": "9cdb",
+          "expanded_tokens": " OR  E "
+        },
+        {
+          "line": 161,
+          "original_hex": "b3e84d31",
+          "expanded_tokens": " JP  NZ M1"
+        },
+        {
+          "line": 162,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 163,
+          "original_hex": "acd02346464644",
+          "expanded_tokens": " LD  BC #FFFD"
+        },
+        {
+          "line": 164,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 165,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 166,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 167,
+          "original_hex": "acdf234646",
+          "expanded_tokens": " LD  A #FF"
+        },
+        {
+          "line": 168,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 169,
+          "original_hex": "c1",
+          "expanded_tokens": " EI "
+        },
+        {
+          "line": 170,
+          "original_hex": "b6",
+          "expanded_tokens": " RET "
+        },
+        {
+          "line": 171,
+          "original_hex": "454e44",
+          "expanded_tokens": "END"
+        },
+        {
+          "line": 172,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 173,
+          "original_hex": "c42338323030",
+          "expanded_tokens": " ORG #8200"
+        },
+        {
+          "line": 174,
+          "original_hex": "5441424c",
+          "expanded_tokens": "TABL"
+        },
+        {
+          "line": 175,
+          "original_hex": "cb23333030",
+          "expanded_tokens": " DEFS #300"
+        },
+        {
+          "line": 176,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 177,
+          "original_hex": "4c554b41",
+          "expanded_tokens": "LUKA"
+        },
+        {
+          "line": 178,
+          "original_hex": "ccef",
+          "expanded_tokens": " !ASSM  !ON "
+        },
+        {
+          "line": 179,
+          "original_hex": "cf22454646433222",
+          "expanded_tokens": " LOADCODE \"EFFC2\""
+        },
+        {
+          "line": 180,
+          "original_hex": "cd",
+          "expanded_tokens": " !CONT "
+        },
+        {
+          "line": 181,
+          "original_hex": "4c454ec6242d4c554b41",
+          "expanded_tokens": "LEN EQU $-LUKA"
+        },
+        {
+          "line": 182,
+          "original_hex": "",
+          "expanded_tokens": ""
+        }
+      ],
+      "allocated_bytes": 768,
+      "allocated_sha256": "81f8c5897010a80178230285c0f4c7571804962019bc295916e8a48502f946af",
+      "catalog_length_word": 233,
+      "catalog_length_word_semantics_proved": false,
+      "source_start_file_offset": 36,
+      "zero_terminator_file_offset": 724,
+      "trailing_allocated_bytes": 43,
+      "source_header_metadata_hex": "bbc2190f003101",
+      "source_header_metadata_semantics_proved": false,
+      "token_counts": {
+        "97": 1,
+        "9B": 10,
+        "9C": 8,
+        "9D": 1,
+        "9F": 7,
+        "A0": 7,
+        "AB": 1,
+        "AC": 63,
+        "AF": 22,
+        "B3": 6,
+        "B6": 1,
+        "B7": 9,
+        "BB": 4,
+        "C0": 1,
+        "C1": 1,
+        "C4": 2,
+        "C5": 1,
+        "C6": 1,
+        "CB": 1,
+        "CC": 1,
+        "CD": 1,
+        "CF": 1,
+        "D0": 1,
+        "D1": 5,
+        "D2": 3,
+        "D8": 28,
+        "D9": 5,
+        "DA": 8,
+        "DB": 5,
+        "DC": 4,
+        "DD": 3,
+        "DE": 11,
+        "DF": 64,
+        "E0": 4,
+        "E8": 2,
+        "ED": 1,
+        "EF": 1
+      }
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 27,
+      "name": "FILTER  X",
+      "disk_offset": 269348,
+      "file_disk_offset": 269312,
+      "bytes": 913,
+      "sha256": "ce61c2b42cc9ad55423bfe4a5ff800b963aec5564f5458ac2765a0b4821a5cba",
+      "recognition": "XAS_9_07_tokenized",
+      "plain_instruction_lines": 0,
+      "lines": [
+        {
+          "line": 1,
+          "original_hex": "3b46494c544552",
+          "expanded_tokens": ";FILTER"
+        },
+        {
+          "line": 2,
+          "original_hex": "3b167d125041454d207d4f14454520421a434f4b124520194143544f541a",
+          "expanded_tokens": ";\u0016}\u0012PAEM }O\u0014EE B\u001aCOK\u0012E \u0019ACTOT\u001a"
+        },
+        {
+          "line": 3,
+          "original_hex": "c42338303030",
+          "expanded_tokens": " ORG #8000"
+        },
+        {
+          "line": 4,
+          "original_hex": "c5",
+          "expanded_tokens": " ENT "
+        },
+        {
+          "line": 5,
+          "original_hex": "acd22338323030",
+          "expanded_tokens": " LD  HL #8200"
+        },
+        {
+          "line": 6,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 7,
+          "original_hex": "acd04c454e",
+          "expanded_tokens": " LD  BC LEN"
+        },
+        {
+          "line": 8,
+          "original_hex": "4e31",
+          "expanded_tokens": "N1"
+        },
+        {
+          "line": 9,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 10,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 11,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 12,
+          "original_hex": "acdbdf",
+          "expanded_tokens": " LD  E  A "
+        },
+        {
+          "line": 13,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 14,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 15,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 16,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 17,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 18,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 19,
+          "original_hex": "acdadf",
+          "expanded_tokens": " LD  D  A "
+        },
+        {
+          "line": 20,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 21,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 22,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 23,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 24,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 25,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 26,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 27,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 28,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 29,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 30,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 31,
+          "original_hex": "acd8df",
+          "expanded_tokens": " LD  B  A "
+        },
+        {
+          "line": 32,
+          "original_hex": "a0d2",
+          "expanded_tokens": " DEC  HL "
+        },
+        {
+          "line": 33,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 34,
+          "original_hex": "acdfdb",
+          "expanded_tokens": " LD  A  E "
+        },
+        {
+          "line": 35,
+          "original_hex": "9ed9",
+          "expanded_tokens": " CP  C "
+        },
+        {
+          "line": 36,
+          "original_hex": "b4e84d31",
+          "expanded_tokens": " JR  NZ M1"
+        },
+        {
+          "line": 37,
+          "original_hex": "9eda",
+          "expanded_tokens": " CP  D "
+        },
+        {
+          "line": 38,
+          "original_hex": "b4e94d31",
+          "expanded_tokens": " JR  Z M1"
+        },
+        {
+          "line": 39,
+          "original_hex": "b4ea4d3131",
+          "expanded_tokens": " JR  NC M11"
+        },
+        {
+          "line": 40,
+          "original_hex": "9ed8",
+          "expanded_tokens": " CP  B "
+        },
+        {
+          "line": 41,
+          "original_hex": "b4ea4d3132",
+          "expanded_tokens": " JR  NC M12"
+        },
+        {
+          "line": 42,
+          "original_hex": "b44d31",
+          "expanded_tokens": " JR M1"
+        },
+        {
+          "line": 43,
+          "original_hex": "4d3131",
+          "expanded_tokens": "M11"
+        },
+        {
+          "line": 44,
+          "original_hex": "9ed8",
+          "expanded_tokens": " CP  B "
+        },
+        {
+          "line": 45,
+          "original_hex": "b4e94d3132",
+          "expanded_tokens": " JR  Z M12"
+        },
+        {
+          "line": 46,
+          "original_hex": "b4ea4d31",
+          "expanded_tokens": " JR  NC M1"
+        },
+        {
+          "line": 47,
+          "original_hex": "4d3132",
+          "expanded_tokens": "M12"
+        },
+        {
+          "line": 48,
+          "original_hex": "acdfd9",
+          "expanded_tokens": " LD  A  C "
+        },
+        {
+          "line": 49,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 50,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 51,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 52,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 53,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 54,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 55,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 56,
+          "original_hex": "9cd9",
+          "expanded_tokens": " OR  C "
+        },
+        {
+          "line": 57,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 58,
+          "original_hex": "4d31",
+          "expanded_tokens": "M1"
+        },
+        {
+          "line": 59,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 60,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 61,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 62,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 63,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 64,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 65,
+          "original_hex": "acdbdf",
+          "expanded_tokens": " LD  E  A "
+        },
+        {
+          "line": 66,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 67,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 68,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 69,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 70,
+          "original_hex": "acdadf",
+          "expanded_tokens": " LD  D  A "
+        },
+        {
+          "line": 71,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 72,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 73,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 74,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 75,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 76,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 77,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 78,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 79,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 80,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 81,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 82,
+          "original_hex": "acd8df",
+          "expanded_tokens": " LD  B  A "
+        },
+        {
+          "line": 83,
+          "original_hex": "a0d2",
+          "expanded_tokens": " DEC  HL "
+        },
+        {
+          "line": 84,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 85,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 86,
+          "original_hex": "acdfdb",
+          "expanded_tokens": " LD  A  E "
+        },
+        {
+          "line": 87,
+          "original_hex": "9ed9",
+          "expanded_tokens": " CP  C "
+        },
+        {
+          "line": 88,
+          "original_hex": "b4e84d32",
+          "expanded_tokens": " JR  NZ M2"
+        },
+        {
+          "line": 89,
+          "original_hex": "9eda",
+          "expanded_tokens": " CP  D "
+        },
+        {
+          "line": 90,
+          "original_hex": "b4e94d32",
+          "expanded_tokens": " JR  Z M2"
+        },
+        {
+          "line": 91,
+          "original_hex": "b4ea4d3231",
+          "expanded_tokens": " JR  NC M21"
+        },
+        {
+          "line": 92,
+          "original_hex": "9ed8",
+          "expanded_tokens": " CP  B "
+        },
+        {
+          "line": 93,
+          "original_hex": "b4ea4d3232",
+          "expanded_tokens": " JR  NC M22"
+        },
+        {
+          "line": 94,
+          "original_hex": "b44d32",
+          "expanded_tokens": " JR M2"
+        },
+        {
+          "line": 95,
+          "original_hex": "4d3231",
+          "expanded_tokens": "M21"
+        },
+        {
+          "line": 96,
+          "original_hex": "9ed8",
+          "expanded_tokens": " CP  B "
+        },
+        {
+          "line": 97,
+          "original_hex": "b4e94d3232",
+          "expanded_tokens": " JR  Z M22"
+        },
+        {
+          "line": 98,
+          "original_hex": "b4ea4d32",
+          "expanded_tokens": " JR  NC M2"
+        },
+        {
+          "line": 99,
+          "original_hex": "4d3232",
+          "expanded_tokens": "M22"
+        },
+        {
+          "line": 100,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 101,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 102,
+          "original_hex": "9cd9",
+          "expanded_tokens": " OR  C "
+        },
+        {
+          "line": 103,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 104,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 105,
+          "original_hex": "4d32",
+          "expanded_tokens": "M2"
+        },
+        {
+          "line": 106,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 107,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 108,
+          "original_hex": "a0d0",
+          "expanded_tokens": " DEC  BC "
+        },
+        {
+          "line": 109,
+          "original_hex": "acdfd9",
+          "expanded_tokens": " LD  A  C "
+        },
+        {
+          "line": 110,
+          "original_hex": "9cd8",
+          "expanded_tokens": " OR  B "
+        },
+        {
+          "line": 111,
+          "original_hex": "b3e84e31",
+          "expanded_tokens": " JP  NZ N1"
+        },
+        {
+          "line": 112,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 113,
+          "original_hex": "3b2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d",
+          "expanded_tokens": ";---------------------------------------------------"
+        },
+        {
+          "line": 114,
+          "original_hex": "3b167d125041454d207d4f144545204812334b124520194143544f541a20154f431445201712141b5450412031",
+          "expanded_tokens": ";\u0016}\u0012PAEM }O\u0014EE H\u00123K\u0012E \u0019ACTOT\u001a \u0015OC\u0014E \u0017\u0012\u0014\u001bTPA 1"
+        },
+        {
+          "line": 115,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 116,
+          "original_hex": "acd22338323030",
+          "expanded_tokens": " LD  HL #8200"
+        },
+        {
+          "line": 117,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 118,
+          "original_hex": "acd04c454e",
+          "expanded_tokens": " LD  BC LEN"
+        },
+        {
+          "line": 119,
+          "original_hex": "4e32",
+          "expanded_tokens": "N2"
+        },
+        {
+          "line": 120,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 121,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 122,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 123,
+          "original_hex": "acdbdf",
+          "expanded_tokens": " LD  E  A "
+        },
+        {
+          "line": 124,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 125,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 126,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 127,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 128,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 129,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 130,
+          "original_hex": "acdadf",
+          "expanded_tokens": " LD  D  A "
+        },
+        {
+          "line": 131,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 132,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 133,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 134,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 135,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 136,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 137,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 138,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 139,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 140,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 141,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 142,
+          "original_hex": "acd8df",
+          "expanded_tokens": " LD  B  A "
+        },
+        {
+          "line": 143,
+          "original_hex": "a0d2",
+          "expanded_tokens": " DEC  HL "
+        },
+        {
+          "line": 144,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 145,
+          "original_hex": "acdfdb",
+          "expanded_tokens": " LD  A  E "
+        },
+        {
+          "line": 146,
+          "original_hex": "9ed8",
+          "expanded_tokens": " CP  B "
+        },
+        {
+          "line": 147,
+          "original_hex": "b4e84b31",
+          "expanded_tokens": " JR  NZ K1"
+        },
+        {
+          "line": 148,
+          "original_hex": "9eda",
+          "expanded_tokens": " CP  D "
+        },
+        {
+          "line": 149,
+          "original_hex": "b4e94b31",
+          "expanded_tokens": " JR  Z K1"
+        },
+        {
+          "line": 150,
+          "original_hex": "9ed9",
+          "expanded_tokens": " CP  C "
+        },
+        {
+          "line": 151,
+          "original_hex": "b4e94b31",
+          "expanded_tokens": " JR  Z K1"
+        },
+        {
+          "line": 152,
+          "original_hex": "acdfda",
+          "expanded_tokens": " LD  A  D "
+        },
+        {
+          "line": 153,
+          "original_hex": "9ed9",
+          "expanded_tokens": " CP  C "
+        },
+        {
+          "line": 154,
+          "original_hex": "b4e84b31",
+          "expanded_tokens": " JR  NZ K1"
+        },
+        {
+          "line": 155,
+          "original_hex": "acdfdb",
+          "expanded_tokens": " LD  A  E "
+        },
+        {
+          "line": 156,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 157,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 158,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 159,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 160,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 161,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 162,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 163,
+          "original_hex": "9cd9",
+          "expanded_tokens": " OR  C "
+        },
+        {
+          "line": 164,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 165,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 166,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 167,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 168,
+          "original_hex": "9cdb",
+          "expanded_tokens": " OR  E "
+        },
+        {
+          "line": 169,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 170,
+          "original_hex": "a0d2",
+          "expanded_tokens": " DEC  HL "
+        },
+        {
+          "line": 171,
+          "original_hex": "4b31",
+          "expanded_tokens": "K1"
+        },
+        {
+          "line": 172,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 173,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 174,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 175,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 176,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 177,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 178,
+          "original_hex": "acdbdf",
+          "expanded_tokens": " LD  E  A "
+        },
+        {
+          "line": 179,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 180,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 181,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 182,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 183,
+          "original_hex": "acdadf",
+          "expanded_tokens": " LD  D  A "
+        },
+        {
+          "line": 184,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 185,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 186,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 187,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 188,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 189,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 190,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 191,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 192,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 193,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 194,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 195,
+          "original_hex": "acd8df",
+          "expanded_tokens": " LD  B  A "
+        },
+        {
+          "line": 196,
+          "original_hex": "a0d2",
+          "expanded_tokens": " DEC  HL "
+        },
+        {
+          "line": 197,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 198,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 199,
+          "original_hex": "acdfdb",
+          "expanded_tokens": " LD  A  E "
+        },
+        {
+          "line": 200,
+          "original_hex": "9ed8",
+          "expanded_tokens": " CP  B "
+        },
+        {
+          "line": 201,
+          "original_hex": "b4e84b32",
+          "expanded_tokens": " JR  NZ K2"
+        },
+        {
+          "line": 202,
+          "original_hex": "9eda",
+          "expanded_tokens": " CP  D "
+        },
+        {
+          "line": 203,
+          "original_hex": "b4e94b32",
+          "expanded_tokens": " JR  Z K2"
+        },
+        {
+          "line": 204,
+          "original_hex": "9ed9",
+          "expanded_tokens": " CP  C "
+        },
+        {
+          "line": 205,
+          "original_hex": "b4e94b32",
+          "expanded_tokens": " JR  Z K2"
+        },
+        {
+          "line": 206,
+          "original_hex": "acdfda",
+          "expanded_tokens": " LD  A  D "
+        },
+        {
+          "line": 207,
+          "original_hex": "9ed9",
+          "expanded_tokens": " CP  C "
+        },
+        {
+          "line": 208,
+          "original_hex": "b4e84b32",
+          "expanded_tokens": " JR  NZ K2"
+        },
+        {
+          "line": 209,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 210,
+          "original_hex": "acdfdb",
+          "expanded_tokens": " LD  A  E "
+        },
+        {
+          "line": 211,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 212,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 213,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 214,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 215,
+          "original_hex": "9cdb",
+          "expanded_tokens": " OR  E "
+        },
+        {
+          "line": 216,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 217,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 218,
+          "original_hex": "4b32",
+          "expanded_tokens": "K2"
+        },
+        {
+          "line": 219,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 220,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 221,
+          "original_hex": "a0d0",
+          "expanded_tokens": " DEC  BC "
+        },
+        {
+          "line": 222,
+          "original_hex": "acdfd9",
+          "expanded_tokens": " LD  A  C "
+        },
+        {
+          "line": 223,
+          "original_hex": "9cd8",
+          "expanded_tokens": " OR  B "
+        },
+        {
+          "line": 224,
+          "original_hex": "b3e84e32",
+          "expanded_tokens": " JP  NZ N2"
+        },
+        {
+          "line": 225,
+          "original_hex": "b6",
+          "expanded_tokens": " RET "
+        },
+        {
+          "line": 226,
+          "original_hex": "454e44",
+          "expanded_tokens": "END"
+        },
+        {
+          "line": 227,
+          "original_hex": "c42338323030",
+          "expanded_tokens": " ORG #8200"
+        },
+        {
+          "line": 228,
+          "original_hex": "cf22454646433222",
+          "expanded_tokens": " LOADCODE \"EFFC2\""
+        },
+        {
+          "line": 229,
+          "original_hex": "4c454ec6242d2338323030",
+          "expanded_tokens": "LEN EQU $-#8200"
+        },
+        {
+          "line": 230,
+          "original_hex": "",
+          "expanded_tokens": ""
+        }
+      ],
+      "allocated_bytes": 1024,
+      "allocated_sha256": "9a6581e446e7964801bdfb0d5edae5b7a888611ab73aaff7b00c061b8ea61d0b",
+      "catalog_length_word": 233,
+      "catalog_length_word_semantics_proved": false,
+      "source_start_file_offset": 36,
+      "zero_terminator_file_offset": 949,
+      "trailing_allocated_bytes": 74,
+      "source_header_metadata_hex": "76c3100c000901",
+      "source_header_metadata_semantics_proved": false,
+      "token_counts": {
+        "9B": 20,
+        "9C": 7,
+        "9E": 16,
+        "9F": 7,
+        "A0": 7,
+        "AC": 58,
+        "B3": 2,
+        "B4": 22,
+        "B6": 1,
+        "B7": 6,
+        "BA": 8,
+        "BB": 36,
+        "C4": 2,
+        "C5": 1,
+        "C6": 1,
+        "CF": 1,
+        "D0": 4,
+        "D2": 14,
+        "D8": 12,
+        "D9": 18,
+        "DA": 10,
+        "DB": 12,
+        "DE": 25,
+        "DF": 54,
+        "E8": 8,
+        "E9": 8,
+        "EA": 6
+      }
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 29,
+      "name": "SOUND=3+X",
+      "disk_offset": 283684,
+      "file_disk_offset": 283648,
+      "bytes": 939,
+      "sha256": "371f39f9490dac97b35dd1aa7505db5f3d70b4364cedfbeb3dc2c4ea5fcc0ab5",
+      "recognition": "XAS_9_07_tokenized",
+      "plain_instruction_lines": 0,
+      "lines": [
+        {
+          "line": 1,
+          "original_hex": "c42338303030",
+          "expanded_tokens": " ORG #8000"
+        },
+        {
+          "line": 2,
+          "original_hex": "c5",
+          "expanded_tokens": " ENT "
+        },
+        {
+          "line": 3,
+          "original_hex": "c0",
+          "expanded_tokens": " DI "
+        },
+        {
+          "line": 4,
+          "original_hex": "3b4d414b45544142",
+          "expanded_tokens": ";MAKETAB"
+        },
+        {
+          "line": 5,
+          "original_hex": "acd25441424c",
+          "expanded_tokens": " LD  HL TABL"
+        },
+        {
+          "line": 6,
+          "original_hex": "4b31",
+          "expanded_tokens": "K1"
+        },
+        {
+          "line": 7,
+          "original_hex": "acdfdd",
+          "expanded_tokens": " LD  A  L "
+        },
+        {
+          "line": 8,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 9,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 10,
+          "original_hex": "acd8df",
+          "expanded_tokens": " LD  B  A "
+        },
+        {
+          "line": 11,
+          "original_hex": "9fdc",
+          "expanded_tokens": " INC  H "
+        },
+        {
+          "line": 12,
+          "original_hex": "9fdc",
+          "expanded_tokens": " INC  H "
+        },
+        {
+          "line": 13,
+          "original_hex": "acdfdd",
+          "expanded_tokens": " LD  A  L "
+        },
+        {
+          "line": 14,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 15,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 16,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 17,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 18,
+          "original_hex": "bb",
+          "expanded_tokens": " RRCA "
+        },
+        {
+          "line": 19,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 20,
+          "original_hex": "a0dc",
+          "expanded_tokens": " DEC  H "
+        },
+        {
+          "line": 21,
+          "original_hex": "97dfd8",
+          "expanded_tokens": " ADD  A  B "
+        },
+        {
+          "line": 22,
+          "original_hex": "abdf",
+          "expanded_tokens": " SRL  A "
+        },
+        {
+          "line": 23,
+          "original_hex": "acdedf",
+          "expanded_tokens": " LD  (HL)  A "
+        },
+        {
+          "line": 24,
+          "original_hex": "a0dc",
+          "expanded_tokens": " DEC  H "
+        },
+        {
+          "line": 25,
+          "original_hex": "9fdd",
+          "expanded_tokens": " INC  L "
+        },
+        {
+          "line": 26,
+          "original_hex": "b3e84b31",
+          "expanded_tokens": " JP  NZ K1"
+        },
+        {
+          "line": 27,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 28,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 29,
+          "original_hex": "acd9234644",
+          "expanded_tokens": " LD  C #FD"
+        },
+        {
+          "line": 30,
+          "original_hex": "acda233046",
+          "expanded_tokens": " LD  D #0F"
+        },
+        {
+          "line": 31,
+          "original_hex": "4e31",
+          "expanded_tokens": "N1"
+        },
+        {
+          "line": 32,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 33,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 34,
+          "original_hex": "9ddf",
+          "expanded_tokens": " XOR  A "
+        },
+        {
+          "line": 35,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 36,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 37,
+          "original_hex": "a0da",
+          "expanded_tokens": " DEC  D "
+        },
+        {
+          "line": 38,
+          "original_hex": "b3ed4e31",
+          "expanded_tokens": " JP  P N1"
+        },
+        {
+          "line": 39,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 40,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 41,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 42,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 43,
+          "original_hex": "acdf253131313131313131",
+          "expanded_tokens": " LD  A %11111111"
+        },
+        {
+          "line": 44,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 45,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 46,
+          "original_hex": "acd12330383039",
+          "expanded_tokens": " LD  DE #0809"
+        },
+        {
+          "line": 47,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 48,
+          "original_hex": "acd24c554b41",
+          "expanded_tokens": " LD  HL LUKA"
+        },
+        {
+          "line": 49,
+          "original_hex": "acd14c454e",
+          "expanded_tokens": " LD  DE LEN"
+        },
+        {
+          "line": 50,
+          "original_hex": "acd85441424c26482b31",
+          "expanded_tokens": " LD  B TABL&H+1"
+        },
+        {
+          "line": 51,
+          "original_hex": "4d31",
+          "expanded_tokens": "M1"
+        },
+        {
+          "line": 52,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 53,
+          "original_hex": "acd9de",
+          "expanded_tokens": " LD  C  (HL) "
+        },
+        {
+          "line": 54,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 55,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 56,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 57,
+          "original_hex": "a0d1",
+          "expanded_tokens": " DEC  DE "
+        },
+        {
+          "line": 58,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 59,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 60,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 61,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 62,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 63,
+          "original_hex": "a0d8",
+          "expanded_tokens": " DEC  B "
+        },
+        {
+          "line": 64,
+          "original_hex": "acdfe0",
+          "expanded_tokens": " LD  A  (BC) "
+        },
+        {
+          "line": 65,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 66,
+          "original_hex": "acd850415553",
+          "expanded_tokens": " LD  B PAUS"
+        },
+        {
+          "line": 67,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 68,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 69,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 70,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 71,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 72,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 73,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 74,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 75,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 76,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 77,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 78,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 79,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 80,
+          "original_hex": "b3242b33",
+          "expanded_tokens": " JP $+3"
+        },
+        {
+          "line": 81,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 82,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 83,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 84,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 85,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 86,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 87,
+          "original_hex": "9fd1",
+          "expanded_tokens": " INC  DE "
+        },
+        {
+          "line": 88,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 89,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 90,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 91,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 92,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 93,
+          "original_hex": "9fd8",
+          "expanded_tokens": " INC  B "
+        },
+        {
+          "line": 94,
+          "original_hex": "acdfe0",
+          "expanded_tokens": " LD  A  (BC) "
+        },
+        {
+          "line": 95,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 96,
+          "original_hex": "acd850415553",
+          "expanded_tokens": " LD  B PAUS"
+        },
+        {
+          "line": 97,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 98,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 99,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 100,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 101,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 102,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 103,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 104,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 105,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 106,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 107,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 108,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 109,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 110,
+          "original_hex": "b3242b33",
+          "expanded_tokens": " JP $+3"
+        },
+        {
+          "line": 111,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 112,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 113,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 114,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 115,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 116,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 117,
+          "original_hex": "a0d1",
+          "expanded_tokens": " DEC  DE "
+        },
+        {
+          "line": 118,
+          "original_hex": "9cd9",
+          "expanded_tokens": " OR  C "
+        },
+        {
+          "line": 119,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 120,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 121,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 122,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 123,
+          "original_hex": "9fdf",
+          "expanded_tokens": " INC  A "
+        },
+        {
+          "line": 124,
+          "original_hex": "acdfe0",
+          "expanded_tokens": " LD  A  (BC) "
+        },
+        {
+          "line": 125,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 126,
+          "original_hex": "acd850415553",
+          "expanded_tokens": " LD  B PAUS"
+        },
+        {
+          "line": 127,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 128,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 129,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 130,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 131,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 132,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 133,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 134,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 135,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 136,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 137,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 138,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 139,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 140,
+          "original_hex": "b3242b33",
+          "expanded_tokens": " JP $+3"
+        },
+        {
+          "line": 141,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 142,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 143,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 144,
+          "original_hex": "acd9de",
+          "expanded_tokens": " LD  C  (HL) "
+        },
+        {
+          "line": 145,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 146,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 147,
+          "original_hex": "9fd1",
+          "expanded_tokens": " INC  DE "
+        },
+        {
+          "line": 148,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 149,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 150,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 151,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 152,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 153,
+          "original_hex": "9fd8",
+          "expanded_tokens": " INC  B "
+        },
+        {
+          "line": 154,
+          "original_hex": "acdfe0",
+          "expanded_tokens": " LD  A  (BC) "
+        },
+        {
+          "line": 155,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 156,
+          "original_hex": "acd850415553",
+          "expanded_tokens": " LD  B PAUS"
+        },
+        {
+          "line": 157,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 158,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 159,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 160,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 161,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 162,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 163,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 164,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 165,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 166,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 167,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 168,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 169,
+          "original_hex": "9cdf",
+          "expanded_tokens": " OR  A "
+        },
+        {
+          "line": 170,
+          "original_hex": "b3242b33",
+          "expanded_tokens": " JP $+3"
+        },
+        {
+          "line": 171,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 172,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 173,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 174,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 175,
+          "original_hex": "9b234630",
+          "expanded_tokens": " AND #F0"
+        },
+        {
+          "line": 176,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 177,
+          "original_hex": "9fd2",
+          "expanded_tokens": " INC  HL "
+        },
+        {
+          "line": 178,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 179,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 180,
+          "original_hex": "9cd9",
+          "expanded_tokens": " OR  C "
+        },
+        {
+          "line": 181,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 182,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 183,
+          "original_hex": "a0d8",
+          "expanded_tokens": " DEC  B "
+        },
+        {
+          "line": 184,
+          "original_hex": "acdfe0",
+          "expanded_tokens": " LD  A  (BC) "
+        },
+        {
+          "line": 185,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 186,
+          "original_hex": "acd850415553",
+          "expanded_tokens": " LD  B PAUS"
+        },
+        {
+          "line": 187,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 188,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 189,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 190,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 191,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 192,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 193,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 194,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 195,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 196,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 197,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 198,
+          "original_hex": "acdfdf",
+          "expanded_tokens": " LD  A  A "
+        },
+        {
+          "line": 199,
+          "original_hex": "b3242b33",
+          "expanded_tokens": " JP $+3"
+        },
+        {
+          "line": 200,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 201,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 202,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 203,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 204,
+          "original_hex": "acdfde",
+          "expanded_tokens": " LD  A  (HL) "
+        },
+        {
+          "line": 205,
+          "original_hex": "9b233046",
+          "expanded_tokens": " AND #0F"
+        },
+        {
+          "line": 206,
+          "original_hex": "a8df",
+          "expanded_tokens": " SLA  A "
+        },
+        {
+          "line": 207,
+          "original_hex": "a8df",
+          "expanded_tokens": " SLA  A "
+        },
+        {
+          "line": 208,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 209,
+          "original_hex": "ba",
+          "expanded_tokens": " RLCA "
+        },
+        {
+          "line": 210,
+          "original_hex": "a0d1",
+          "expanded_tokens": " DEC  DE "
+        },
+        {
+          "line": 211,
+          "original_hex": "9cd9",
+          "expanded_tokens": " OR  C "
+        },
+        {
+          "line": 212,
+          "original_hex": "acd9df",
+          "expanded_tokens": " LD  C  A "
+        },
+        {
+          "line": 213,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 214,
+          "original_hex": "acdfe0",
+          "expanded_tokens": " LD  A  (BC) "
+        },
+        {
+          "line": 215,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 216,
+          "original_hex": "acd850415553",
+          "expanded_tokens": " LD  B PAUS"
+        },
+        {
+          "line": 217,
+          "original_hex": "b224",
+          "expanded_tokens": " DJNZ $"
+        },
+        {
+          "line": 218,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 219,
+          "original_hex": "afdb",
+          "expanded_tokens": " OUT  E "
+        },
+        {
+          "line": 220,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 221,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 222,
+          "original_hex": "acd8234646",
+          "expanded_tokens": " LD  B #FF"
+        },
+        {
+          "line": 223,
+          "original_hex": "afda",
+          "expanded_tokens": " OUT  D "
+        },
+        {
+          "line": 224,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 225,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 226,
+          "original_hex": "b7",
+          "expanded_tokens": " EXX "
+        },
+        {
+          "line": 227,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 228,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 229,
+          "original_hex": "acdfda",
+          "expanded_tokens": " LD  A  D "
+        },
+        {
+          "line": 230,
+          "original_hex": "9cdb",
+          "expanded_tokens": " OR  E "
+        },
+        {
+          "line": 231,
+          "original_hex": "b3e84d31",
+          "expanded_tokens": " JP  NZ M1"
+        },
+        {
+          "line": 232,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 233,
+          "original_hex": "acd02346464644",
+          "expanded_tokens": " LD  BC #FFFD"
+        },
+        {
+          "line": 234,
+          "original_hex": "acdf37",
+          "expanded_tokens": " LD  A 7"
+        },
+        {
+          "line": 235,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 236,
+          "original_hex": "acd8234246",
+          "expanded_tokens": " LD  B #BF"
+        },
+        {
+          "line": 237,
+          "original_hex": "acdf234646",
+          "expanded_tokens": " LD  A #FF"
+        },
+        {
+          "line": 238,
+          "original_hex": "afdf",
+          "expanded_tokens": " OUT  A "
+        },
+        {
+          "line": 239,
+          "original_hex": "c1",
+          "expanded_tokens": " EI "
+        },
+        {
+          "line": 240,
+          "original_hex": "b6",
+          "expanded_tokens": " RET "
+        },
+        {
+          "line": 241,
+          "original_hex": "454e44",
+          "expanded_tokens": "END"
+        },
+        {
+          "line": 242,
+          "original_hex": "50415553c633",
+          "expanded_tokens": "PAUS EQU 3"
+        },
+        {
+          "line": 243,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 244,
+          "original_hex": "c42338323030",
+          "expanded_tokens": " ORG #8200"
+        },
+        {
+          "line": 245,
+          "original_hex": "5441424c",
+          "expanded_tokens": "TABL"
+        },
+        {
+          "line": 246,
+          "original_hex": "cb23333030",
+          "expanded_tokens": " DEFS #300"
+        },
+        {
+          "line": 247,
+          "original_hex": "",
+          "expanded_tokens": ""
+        },
+        {
+          "line": 248,
+          "original_hex": "4c554b41",
+          "expanded_tokens": "LUKA"
+        },
+        {
+          "line": 249,
+          "original_hex": "cf224546464b3222",
+          "expanded_tokens": " LOADCODE \"EFFK2\""
+        },
+        {
+          "line": 250,
+          "original_hex": "4c454ec6242d4c554b41",
+          "expanded_tokens": "LEN EQU $-LUKA"
+        },
+        {
+          "line": 251,
+          "original_hex": "",
+          "expanded_tokens": ""
+        }
+      ],
+      "allocated_bytes": 1024,
+      "allocated_sha256": "8726c9a53c405b906a3e2d98a4740b06d9e2c1829cfbf27276adbcde5c49bd3a",
+      "catalog_length_word": 26593,
+      "catalog_length_word_semantics_proved": false,
+      "source_start_file_offset": 36,
+      "zero_terminator_file_offset": 975,
+      "trailing_allocated_bytes": 48,
+      "source_header_metadata_hex": "bbc3000f003501",
+      "source_header_metadata_semantics_proved": false,
+      "token_counts": {
+        "97": 1,
+        "9B": 13,
+        "9C": 11,
+        "9D": 1,
+        "9F": 9,
+        "A0": 8,
+        "A8": 2,
+        "AB": 1,
+        "AC": 88,
+        "AF": 30,
+        "B2": 6,
+        "B3": 8,
+        "B6": 1,
+        "B7": 13,
+        "BA": 2,
+        "BB": 4,
+        "C0": 1,
+        "C1": 1,
+        "C4": 2,
+        "C5": 1,
+        "C6": 2,
+        "CB": 1,
+        "CF": 1,
+        "D0": 1,
+        "D1": 7,
+        "D2": 3,
+        "D8": 42,
+        "D9": 12,
+        "DA": 10,
+        "DB": 7,
+        "DC": 4,
+        "DD": 3,
+        "DE": 14,
+        "DF": 84,
+        "E0": 6,
+        "E8": 2,
+        "ED": 1
+      }
+    }
+  ],
+  "queried_names": [
+    "RDS",
+    "SEDETECT",
+    "STPA",
+    "STPB",
+    "STPG",
+    "EYE_A",
+    "EYE_B",
+    "EYE_G",
+    "SETS",
+    "JL1",
+    "JL2",
+    "NEWS",
+    "ORDER",
+    "ABONS",
+    "PLAYER",
+    "SHILD",
+    "CNKR",
+    "CNSK",
+    "LZS",
+    "RCO",
+    "EXAS",
+    "EFF"
+  ],
+  "named_reference_hits": [],
+  "loadcode_references": [
+    {
+      "source": "SOUND=  X",
+      "slot": 8,
+      "line": 110,
+      "requested_name": "LIMELIG",
+      "exact_archive_name_matches": [
+        {
+          "member": "awk5.trd",
+          "slot": 6,
+          "name": "LIMELIG",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_archive_name_candidates": [
+        {
+          "member": "awk5.trd",
+          "slot": 6,
+          "name": "LIMELIG",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_current_image_name_candidates": [],
+      "actual_directive_file_resolution_proved": false,
+      "current_game_resource_consumer_proved": false
+    },
+    {
+      "source": "SHOW    X",
+      "slot": 9,
+      "line": 3,
+      "requested_name": "DPR",
+      "exact_archive_name_matches": [],
+      "case_insensitive_archive_name_candidates": [],
+      "case_insensitive_current_image_name_candidates": [],
+      "actual_directive_file_resolution_proved": false,
+      "current_game_resource_consumer_proved": false
+    },
+    {
+      "source": "SHOW    X",
+      "slot": 9,
+      "line": 122,
+      "requested_name": "DPB",
+      "exact_archive_name_matches": [],
+      "case_insensitive_archive_name_candidates": [],
+      "case_insensitive_current_image_name_candidates": [],
+      "actual_directive_file_resolution_proved": false,
+      "current_game_resource_consumer_proved": false
+    },
+    {
+      "source": "SHOW    X",
+      "slot": 9,
+      "line": 124,
+      "requested_name": "DPG",
+      "exact_archive_name_matches": [],
+      "case_insensitive_archive_name_candidates": [],
+      "case_insensitive_current_image_name_candidates": [],
+      "actual_directive_file_resolution_proved": false,
+      "current_game_resource_consumer_proved": false
+    },
+    {
+      "source": "SOUND;  X",
+      "slot": 10,
+      "line": 77,
+      "requested_name": "luka",
+      "exact_archive_name_matches": [],
+      "case_insensitive_archive_name_candidates": [],
+      "case_insensitive_current_image_name_candidates": [],
+      "actual_directive_file_resolution_proved": false,
+      "current_game_resource_consumer_proved": false
+    },
+    {
+      "source": "CONV----X",
+      "slot": 11,
+      "line": 57,
+      "requested_name": "sam1",
+      "exact_archive_name_matches": [],
+      "case_insensitive_archive_name_candidates": [
+        {
+          "member": "awk5.trd",
+          "slot": 12,
+          "name": "SAM1",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_current_image_name_candidates": [],
+      "actual_directive_file_resolution_proved": false,
+      "current_game_resource_consumer_proved": false
+    },
+    {
+      "source": "SOUND=1 X",
+      "slot": 22,
+      "line": 105,
+      "requested_name": "EFFC2",
+      "exact_archive_name_matches": [
+        {
+          "member": "awk5.trd",
+          "slot": 21,
+          "name": "EFFC2",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_archive_name_candidates": [
+        {
+          "member": "awk5.trd",
+          "slot": 21,
+          "name": "EFFC2",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_current_image_name_candidates": [],
+      "actual_directive_file_resolution_proved": false,
+      "current_game_resource_consumer_proved": false
+    },
+    {
+      "source": "SOUND=1+X",
+      "slot": 23,
+      "line": 153,
+      "requested_name": "EFFC2",
+      "exact_archive_name_matches": [
+        {
+          "member": "awk5.trd",
+          "slot": 21,
+          "name": "EFFC2",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_archive_name_candidates": [
+        {
+          "member": "awk5.trd",
+          "slot": 21,
+          "name": "EFFC2",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_current_image_name_candidates": [],
+      "actual_directive_file_resolution_proved": false,
+      "current_game_resource_consumer_proved": false
+    },
+    {
+      "source": "SOUND=2+X",
+      "slot": 24,
+      "line": 179,
+      "requested_name": "EFFC2",
+      "exact_archive_name_matches": [
+        {
+          "member": "awk5.trd",
+          "slot": 21,
+          "name": "EFFC2",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_archive_name_candidates": [
+        {
+          "member": "awk5.trd",
+          "slot": 21,
+          "name": "EFFC2",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_current_image_name_candidates": [],
+      "actual_directive_file_resolution_proved": false,
+      "current_game_resource_consumer_proved": false
+    },
+    {
+      "source": "FILTER  X",
+      "slot": 27,
+      "line": 228,
+      "requested_name": "EFFC2",
+      "exact_archive_name_matches": [
+        {
+          "member": "awk5.trd",
+          "slot": 21,
+          "name": "EFFC2",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_archive_name_candidates": [
+        {
+          "member": "awk5.trd",
+          "slot": 21,
+          "name": "EFFC2",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_current_image_name_candidates": [],
+      "actual_directive_file_resolution_proved": false,
+      "current_game_resource_consumer_proved": false
+    },
+    {
+      "source": "SOUND=3+X",
+      "slot": 29,
+      "line": 249,
+      "requested_name": "EFFK2",
+      "exact_archive_name_matches": [
+        {
+          "member": "awk5.trd",
+          "slot": 28,
+          "name": "EFFK2",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_archive_name_candidates": [
+        {
+          "member": "awk5.trd",
+          "slot": 28,
+          "name": "EFFK2",
+          "extension": "C"
+        }
+      ],
+      "case_insensitive_current_image_name_candidates": [],
+      "actual_directive_file_resolution_proved": false,
+      "current_game_resource_consumer_proved": false
+    }
+  ],
+  "expanded_tokens_are_not_assembler_ready_source": true,
+  "source_versions_match_current_game_proved": false,
+  "arbitrary_other_source_formats_excluded": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

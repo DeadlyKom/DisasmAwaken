@@ -14,14 +14,14 @@ from CheckActionOverlayModeCommand import comparison_flags
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--tractor',action='store_true');parser.add_argument('--free-flight',action='store_true');args=parser.parse_args();assert not (args.tractor and args.free_flight)
+    parser=argparse.ArgumentParser();parser.add_argument('--tractor',action='store_true');parser.add_argument('--free-flight',action='store_true');parser.add_argument('--target-internal',action='store_true');args=parser.parse_args();assert sum((args.tractor,args.free_flight,args.target_internal))<=1
     flat=flat_action();baseline=[bytearray([0xA0+i]*16384) for i in range(8)]
     baseline[5]=bytearray(flat[0x4000:0x8000]);baseline[2]=bytearray(flat[0x8000:0xC000])
     baseline[0]=bytearray(flat[0xC000:]);baseline[1]=bytearray(base_memory()[0xC000:])
     memory=Memory(banks=[bytearray(b) for b in baseline],out7ffd=16)
     sim=Simulator(memory);ports=Ports(memory);sim.set_tracer(ports);counts=Counter()
 
-    def check(entry,delay,request,head=0,mask=0,old_page=16,beam=0,equipment=254,limit_word=136,motion_opcode=58):
+    def check(entry,delay,request,head=0,mask=0,old_page=16,beam=0,equipment=254,limit_word=136,motion_opcode=58,af=0xA5EF):
         memory.recording=False
         for bank,original in zip(memory.banks,baseline):bank[:]=original
         memory.out7ffd(old_page);memory[0xA85F]=delay;memory[0xAA8E]=request;memory[0x7318]=beam;memory[0x9C24]=equipment;memory[0x9C28]=equipment;memory[0x6E72]=motion_opcode;put(memory,0x7693,limit_word.to_bytes(2,'little'))
@@ -32,13 +32,24 @@ def main():
         memory.banks[1][0x2CA0:0x2CA2]=bytes((0,0))
         cursor=QUEUE+2*head;memory.banks[1][0x2C5D:0x2C5F]=cursor.to_bytes(2,'little')
         expected=[bytearray(b) for b in memory.banks];wanted_ports=[]
-        initial=get_registers({'AF':0xA5EF,'HL':0x1357,'DE':0x2468,'BC':0x369C,
+        initial=get_registers({'AF':af,'HL':0x1357,'DE':0x2468,'BC':0x369C,
             '^AF':0xDEF0,'^HL':0x1234,'^DE':0x5678,'^BC':0x9ABC,
             'IX':0xABCD,'IY':0x5C3A,'SP':0xBFFE,'PC':entry},None,False)
         serial=counts['cases'];initial[14]=serial&255;initial[26]=serial&1;initial[27]=serial%3
         wanted=list(initial);wanted[PC]=0x3FFF;wanted[SP]=0xC000
-        if delay:
+        messages=()
+        if delay and entry not in (0x72F2,0x7306,0x730E):
             wanted[0:2]=[delay,and_flags(delay)];counts['delay_exit']+=1
+        elif entry in (0x72F2,0x7306,0x730E):
+            # Проверка внутренних входов, задержка и звуковой курсор должны остаться прежними.
+            if entry==0x72F2:
+                toggled=request^1;expected[2][0x2A8E]=toggled
+                wanted[0:2]=[toggled,and_flags(toggled)&~16]
+                messages=(0xF1E1 if toggled else 0xF1F0,0xF214);counts['internal_toggle_request']+=1
+            elif entry==0x7306:
+                messages=(0xF1E1,0xF214);counts['internal_enabled_message']+=1
+            else:
+                messages=(0xF214,);counts['internal_mode_message']+=1
         elif entry in (0x7439,0x754C) and equipment==255:
             expected[2][0x285F]=20 if entry==0x754C else 10;wanted[0:2]=[0,0x50];counts['missing_equipment']+=1
         elif entry==0x754C and limit_word!=136:
@@ -63,6 +74,7 @@ def main():
                     expected[2][0x1B1B:0x1B1E]=bytes((255,255,255))
                     messages=(0xF1E1 if new_beam else 0xF1F0,0xF2D9)+messages
                 wanted[0:2]=[result,and_flags(result)&~16];counts['toggle_request']+=1
+        if messages:
             virtual={a:expected[1][a-0xC000] for a in range(QUEUE,QUEUE+34)}
             virtual[PRODUCER],virtual[PRODUCER+1]=cursor&255,cursor>>8
             for message in messages:
@@ -108,6 +120,15 @@ def main():
             for mask in (0,65535,0xAAAA,0x5555):
                 for request in (0,1,2,255):
                     for beam in (0,1,2,255):check(0x7439,0,request,head,mask,8*((head+request)&3),beam=beam)
+    elif args.target_internal:
+        # Проверка всех Request и распределённых AF, затем всех курсоров и схем заполнения с отдельными флаговыми контекстами.
+        for entry in (0x72F2,0x7306,0x730E):
+            for request in range(256):
+                check(entry,(request*37+7)&255,request,request%17,(0,65535,0xAAAA,0x5555)[request%4],8*(request&3),af=(request<<8)|(request^0xA5))
+            for head in range(17):
+                for mask in (0,65535,0xAAAA,0x5555):
+                    for af in (0,65535,0x80FF,0x7F00):
+                        for request in (0,1,2,255):check(entry,7,request,head,mask,8*((head+request)&3),af=af)
     else:
         for entry in (0x72BE,0x72E2):
             for delay in range(256):check(entry,delay,0)
@@ -117,9 +138,10 @@ def main():
                     for request in (0,1,2,255):check(entry,0,request,head,mask,8*((head+request)&3))
     result=dict(passed=True,total_cases=counts['cases'],counts=dict(counts),
         real_queue_and_banking_executed=True,all_registers_except_R_and_T_checked=True,
+        internal_entry_contexts_exercised=args.target_internal,complete_input_product_exhausted=False,
         all_ram_except_18_byte_temporary_stack_checked=True,maximum_stack_bytes=18,
         tested_entry_instruction_bytes_preserved=True,mutable_operands_or_gates_prepared=True,entry_bank_zero_required=True,assembly_executed=False,native_execution=False)
-    (ROOT/('Tools/Disasm/Reports/'+('ActionFreeFlightCommand' if args.free_flight else 'ActionTractorModeCommand' if args.tractor else 'ActionTargetCommands')+'Verification.json')).write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    (ROOT/('Tools/Disasm/Reports/'+('ActionTargetInternalEntries' if args.target_internal else 'ActionFreeFlightCommand' if args.free_flight else 'ActionTractorModeCommand' if args.tractor else 'ActionTargetCommands')+'Verification.json')).write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,indent=2))
 
 

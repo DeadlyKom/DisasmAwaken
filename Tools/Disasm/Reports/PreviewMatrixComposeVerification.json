@@ -18,5 +18,49 @@
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false,
-  "whole_projection_not_executed": true
+  "whole_projection_not_executed": true,
+  "direct_full_M1_and_R_scope": "ComposePreviewMatrix_invocations_only",
+  "I_IM_IFF_preserved_checked": true,
+  "coefficient_write_multiplicity_checked": true,
+  "M1_by_branch": {
+    "quadrant0": [
+      31
+    ],
+    "quadrant1": [
+      38
+    ],
+    "quadrant2": [
+      45
+    ],
+    "quadrant3": [
+      39
+    ],
+    "one_axis": [
+      259,
+      262,
+      263,
+      265,
+      266,
+      268,
+      271
+    ],
+    "general": [
+      541,
+      544,
+      545,
+      547,
+      548,
+      550,
+      551,
+      553,
+      554,
+      556,
+      557,
+      559,
+      560,
+      561,
+      565
+    ]
+  },
+  "complete_joint_input_product_exhausted": false
 }

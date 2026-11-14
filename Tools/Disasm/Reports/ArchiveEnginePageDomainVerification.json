@@ -1,0 +1,114 @@
+{
+  "passed": true,
+  "instructions_checked": 1325,
+  "fixed_calls": {
+    "16500": 7,
+    "16555": 0,
+    "16952": 0,
+    "18030": 0,
+    "18160": 13,
+    "18254": 14,
+    "18773": 13,
+    "18795": 14,
+    "18806": 7,
+    "19606": 7,
+    "19679": 7
+  },
+  "sprite_calls": [
+    18096,
+    18262
+  ],
+  "irq_restore_call": 19691,
+  "sprite_steps": 204,
+  "logical_codes": [
+    0,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    14
+  ],
+  "profiles": [
+    {
+      "mode": 0,
+      "first_screen_inputs": 16,
+      "selector_transitions": 64,
+      "first_screen_windows": [
+        7
+      ],
+      "all_windows": [
+        0,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14
+      ]
+    },
+    {
+      "mode": 1,
+      "first_screen_inputs": 16,
+      "selector_transitions": 64,
+      "first_screen_windows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "all_windows": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "mode": 2,
+      "first_screen_inputs": 16,
+      "selector_transitions": 64,
+      "first_screen_windows": [
+        7,
+        15
+      ],
+      "all_windows": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "bank4_page": 12,
+  "external_transfer_to_5c26_executed": false,
+  "interrupts_injected": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

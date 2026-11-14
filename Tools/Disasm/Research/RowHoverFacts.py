@@ -41,9 +41,9 @@ CONTRACTS={
  ['IX - запись контекстного меню Item40, действуют договоры UpdatePixelHover и его графических вызовов',
   'операнд PreviousRow по #757A доступен для записи, после DrawItem40 он равен #FF',
   'PointerY=0..191, таблицы экрана и владельцев подготовлены, банк 0 выбран и не заблокирован'],
- ['HL, DE, BC, AF и AF\' соответствуют UpdatePixelHover с HL=DrawItem40, D=64, E=3',
-  'при Z=0 A записан в операнд PreviousRow, при Z=1 прежний операнд сохранён',
-  'HL\', DE\', BC\', IX, IY, I и IFF сохранены, SP восстановлен'],
+ ['HL, DE, BC и AF соответствуют UpdatePixelHover с параметрами HL=DrawItem40, D=64, E=3',
+  "HL', DE', BC' сохранены, AF' рабочий по UpdatePixelHover, IX, IY, I и IFF сохранены, SP восстановлен",
+  'при Z=0 A записан в операнд PreviousRow, при Z=1 прежний операнд сохранён'],
  ['HL, DE, BC, AF, AF\''],
  ['пиксельная область высотой 64 задаёт восемь строк с верхним отступом 3',
   'самомодификация меняет только непосредственный байт LD A, код операции сохраняется',
@@ -100,3 +100,19 @@ FUNCTIONS[0x7539]=("HandleItem40","Вход наведения контекст�
 DOCUMENTS["Station",0x7539]=("RowHover","обёртка наведения и отдельный вход действия меню")
 CONTRACTS["Station",0x7539]=CONTRACTS["Station",0x7573]
 COMMENTS[0x7539]=(["передача наведения исходной обёрткой, вход действия расположен по Entry+3"],None)
+
+
+# Память дочерних XOR и восстановления указателя входит в полный договор наведения.
+from RowHighlightFacts import HIGHLIGHT_CORRUPT
+HOVER_CORRUPT = [
+    "HL, DE, BC, AF, AF', R",
+    *HIGHLIGHT_CORRUPT[1:],
+    'PointerState.UpdateBlocked, PointerState.RestoredFlag, PointerState.SpriteBase, PointerState.BackgroundAddr и PointerState.VisibleRows',
+    'InterfaceState.HoverItem, InterfaceState.HoverCallback и строки PointerBackground',
+]
+for _address in (0xA311,0xA341,0x7573,0x7539):
+    _parts = list(CONTRACTS['Station',_address])
+    _parts[2] = list(HOVER_CORRUPT)
+    if _address in (0x7573,0x7539):
+        _parts[2].append('PopupState.PreviousRow при возвращённом Z=0')
+    CONTRACTS['Station',_address] = tuple(_parts)

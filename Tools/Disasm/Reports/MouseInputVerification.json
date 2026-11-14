@@ -5,6 +5,64 @@
   "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
   "axis_cases": 131072,
   "calibration_cases": 1536,
+  "internal_entry_observations": [
+    {
+      "pc": 25998,
+      "visits": 2048,
+      "entry_IX": [
+        25989
+      ],
+      "saved_IX": [
+        9320
+      ],
+      "SP_delta": [
+        4
+      ]
+    },
+    {
+      "pc": 26057,
+      "visits": 133120,
+      "entry_IX": [
+        25989
+      ],
+      "saved_IX": [
+        9320
+      ],
+      "SP_delta": [
+        4
+      ]
+    },
+    {
+      "pc": 26067,
+      "visits": 133120,
+      "entry_IX": [
+        25989
+      ],
+      "saved_IX": [
+        9320
+      ],
+      "SP_delta": [
+        4
+      ]
+    },
+    {
+      "pc": 26072,
+      "visits": 133632,
+      "entry_IX": [
+        25989
+      ],
+      "saved_IX": [
+        9320
+      ],
+      "SP_delta": [
+        4
+      ]
+    }
+  ],
+  "arbitrary_saved_IX_or_frame_address_product": false,
+  "disabled_R_checked": true,
+  "disabled_M1": 3,
+  "full_poll_R_proved": false,
   "original_visited": {
     "65A7": "3e00",
     "65A9": "a7",

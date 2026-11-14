@@ -1,0 +1,327 @@
+{
+  "passed": true,
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "basic_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "profiles": [
+    {
+      "row": 0,
+      "slot": 16,
+      "sectors": [
+        [
+          57,
+          10
+        ],
+        [
+          57,
+          11
+        ]
+      ],
+      "bytes_transferred": 512,
+      "final_iff": 1
+    },
+    {
+      "row": 1,
+      "slot": 11,
+      "sectors": [
+        [
+          56,
+          16
+        ],
+        [
+          57,
+          1
+        ]
+      ],
+      "bytes_transferred": 512,
+      "final_iff": 1
+    },
+    {
+      "row": 2,
+      "slot": 12,
+      "sectors": [
+        [
+          57,
+          2
+        ],
+        [
+          57,
+          3
+        ]
+      ],
+      "bytes_transferred": 512,
+      "final_iff": 1
+    },
+    {
+      "row": 3,
+      "slot": 13,
+      "sectors": [
+        [
+          57,
+          4
+        ],
+        [
+          57,
+          5
+        ]
+      ],
+      "bytes_transferred": 512,
+      "final_iff": 1
+    },
+    {
+      "row": 4,
+      "slot": 14,
+      "sectors": [
+        [
+          57,
+          6
+        ],
+        [
+          57,
+          7
+        ]
+      ],
+      "bytes_transferred": 512,
+      "final_iff": 1
+    },
+    {
+      "row": 5,
+      "slot": 15,
+      "sectors": [
+        [
+          57,
+          8
+        ],
+        [
+          57,
+          9
+        ]
+      ],
+      "bytes_transferred": 512,
+      "final_iff": 1
+    }
+  ],
+  "missing_file_profiles": [
+    {
+      "row": 255,
+      "deleted_slot": null,
+      "transfers": [
+        {
+          "command": 6,
+          "descriptor_index": 255,
+          "transfer_request": {
+            "track": 0,
+            "sector": 0,
+            "count": 2,
+            "buffer": 38971,
+            "descriptor": "00000000000000000000000000000000"
+          },
+          "actual_sectors": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "final_iff": 1
+        },
+        {
+          "command": 5,
+          "descriptor_index": 255,
+          "transfer_request": {
+            "track": 0,
+            "sector": 0,
+            "count": 2,
+            "buffer": 38971,
+            "descriptor": "00000000000000000000000000000000"
+          },
+          "actual_sectors": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "final_iff": 1
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "deleted_slot": 12,
+      "transfers": [
+        {
+          "command": 6,
+          "descriptor_index": 255,
+          "transfer_request": {
+            "track": 0,
+            "sector": 0,
+            "count": 2,
+            "buffer": 38971,
+            "descriptor": "00000000000000000000000000000000"
+          },
+          "actual_sectors": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "final_iff": 1
+        },
+        {
+          "command": 5,
+          "descriptor_index": 255,
+          "transfer_request": {
+            "track": 0,
+            "sector": 0,
+            "count": 2,
+            "buffer": 38971,
+            "descriptor": "00000000000000000000000000000000"
+          },
+          "actual_sectors": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "final_iff": 1
+        }
+      ]
+    }
+  ],
+  "panel_selection": {
+    "executions": 80,
+    "stable_pointer_y": true,
+    "input_geometry_prepared": true,
+    "action_selector_prepared": 1,
+    "profiles": [
+      {
+        "command": 6,
+        "printed_position": 1,
+        "hover_value": 0,
+        "file": "SAVE0",
+        "directory_slot": 16
+      },
+      {
+        "command": 6,
+        "printed_position": 2,
+        "hover_value": 1,
+        "file": "SAVE1",
+        "directory_slot": 11
+      },
+      {
+        "command": 6,
+        "printed_position": 3,
+        "hover_value": 2,
+        "file": "SAVE2",
+        "directory_slot": 12
+      },
+      {
+        "command": 6,
+        "printed_position": 4,
+        "hover_value": 3,
+        "file": "SAVE3",
+        "directory_slot": 13
+      },
+      {
+        "command": 6,
+        "printed_position": 5,
+        "hover_value": 4,
+        "file": "SAVE4",
+        "directory_slot": 14
+      },
+      {
+        "command": 5,
+        "printed_position": 1,
+        "hover_value": 0,
+        "file": "SAVE0",
+        "directory_slot": 16
+      },
+      {
+        "command": 5,
+        "printed_position": 2,
+        "hover_value": 1,
+        "file": "SAVE1",
+        "directory_slot": 11
+      },
+      {
+        "command": 5,
+        "printed_position": 3,
+        "hover_value": 2,
+        "file": "SAVE2",
+        "directory_slot": 12
+      },
+      {
+        "command": 5,
+        "printed_position": 4,
+        "hover_value": 3,
+        "file": "SAVE3",
+        "directory_slot": 13
+      },
+      {
+        "command": 5,
+        "printed_position": 5,
+        "hover_value": 4,
+        "file": "SAVE4",
+        "directory_slot": 14
+      }
+    ],
+    "rebuild_before_next_halt": {
+      "entry": 39553,
+      "halt": 39559,
+      "empty_draw_list": true,
+      "loaded_state_unchanged": true,
+      "profiles": [
+        {
+          "file": "SAVE0",
+          "event_enabled": 1,
+          "item_attribute": 40
+        },
+        {
+          "file": "SAVE1",
+          "event_enabled": 1,
+          "item_attribute": 40
+        },
+        {
+          "file": "SAVE2",
+          "event_enabled": 1,
+          "item_attribute": 40
+        },
+        {
+          "file": "SAVE3",
+          "event_enabled": 1,
+          "item_attribute": 40
+        },
+        {
+          "file": "SAVE4",
+          "event_enabled": 1,
+          "item_attribute": 40
+        }
+      ]
+    }
+  },
+  "rom_interrupt_enablers": [
+    16123,
+    16178
+  ],
+  "real_dos_entry": true,
+  "controller_model": true,
+  "writes_in_memory_only": true,
+  "original_files_unchanged": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

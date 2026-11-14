@@ -2,6 +2,8 @@
 from pathlib import Path
 from itertools import product
 import json,sys
+from hashlib import sha256
+from CheckBank4Index import WriteMemory
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/'Tools/Disasm/Research/vendor/skoolkit-10.1'),str(ROOT/'Tools/Disasm/Research')]
 from skoolkit.simulator import Simulator
@@ -9,16 +11,29 @@ from skoolkit.pagingtracer import SliceableMemory
 from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,SP
 from CheckRowHighlight import make_context
 from CheckScreenUpdate import PortTrace,put
-from CheckWorldSignature import signature
+from CheckWorldSignature import signature,step_key
 from CheckGlyphRenderer import compare_flags
 from CheckMarketAccess import add16_flags
 
 
-def main():
+def main(with_expression_wrappers=False):
  _,_,banks=make_context();banks=[bytearray(b) for b in banks]
  manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_text('utf-8'));e=next(e for e in manifest['entries'] if e['slot']==5)
  lang=(ROOT/(e['path']+'.sectors.bin')).read_bytes();banks[6][:len(lang)]=lang
- memory=SliceableMemory(banks=[b.copy() for b in banks],out7ffd=0x16);sim=Simulator(memory)
+ # Проверка физического происхождения исполняемых секторов.
+ disk=(ROOT/'Tools/Disasm/Disk/original.trd').read_bytes()
+ assert sha256(disk).hexdigest()==manifest['sha256']
+ for slot in (4,5,7):
+  item=next(row for row in manifest['entries'] if row['slot']==slot)
+  sectors=(ROOT/(item['path']+'.sectors.bin')).read_bytes()
+  assert sectors==disk[item['offset']:item['offset']+item['allocated_length']]
+  assert sha256(sectors).hexdigest()==item['sectors_sha256']
+ # Проверка наблюдателя настоящей записью CPU.
+ probe=WriteMemory(banks=[bytearray(0x4000) for _ in range(8)],out7ffd=0x16)
+ put(probe,0x4000,bytes.fromhex('320070'));cpu=Simulator(probe)
+ cpu.registers[24]=0x4000;probe.recording=True;cpu.run()
+ assert probe.cpu_writes==[(0x7000,0)]
+ memory=WriteMemory(banks=[b.copy() for b in banks],out7ffd=0x16);sim=Simulator(memory)
  initial=get_registers({'SP':0x7FFE,'BC':0x365D,'IX':0xB000,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
  cases=0
  for entry,base,row_address,offset_address in ((0xC28F,0x95F0,0x7217,0x71B9),(0xC2BB,0x9632,0x73D8,0x737D)):
@@ -34,15 +49,41 @@ def main():
    index=(int(prefix)-1)&65535 if prefix else 36;delta=(2*index)&65535;address=(base+delta)&65535;memory[address]=threshold
    parsed_flags=compare_flags(33,46 if prefix else 48);saved_flags=add16_flags(delta,base,parsed_flags)
    size=signature(0x4B38,0x1357,variant)['size'];expected=int(size>=threshold)
-   sim.registers[:]=initial;r=sim.registers;trace=PortTrace(sim);sim.set_tracer(trace);sim.run(start=entry,stop=0x3FFF)
+   sim.registers[:]=initial;r=sim.registers;trace=PortTrace(sim);sim.set_tracer(trace)
+   if with_expression_wrappers:r[22],r[23]=0xB8,0
+   memory.cpu_writes.clear();memory.recording=True
+   sim.run(start=entry-6 if with_expression_wrappers else entry,stop=0x3FFF);memory.recording=False
+   # Расчёт всех нестековых записей парсера и генерации ключа.
+   target=0xC29F if entry==0xC28F else 0xC2CB
+   persistent=[(0xC804,target&255),(0xC805,target>>8),(0x6306,0x11)]
+   u,v=0x4B38,0x1357
+   def key_writes(u,v):
+    data=u.to_bytes(2,'little')+v.to_bytes(2,'little')
+    return [(0x631C+i,value) for i,value in enumerate(data)]
+   persistent+=key_writes(u,v)
+   for iteration in range(variant+1):
+    u,v,_=step_key(u,v);persistent+=key_writes(u,v)
+   persistent.extend(((0x6306,0x10),(0x6306,0x16)))
+   if with_expression_wrappers:
+    persistent.extend(((0xB800,expected),(0xB801,0)))
+    assert (r[20]*256+r[21],r[22]*256+r[23])==(expected,0xB802)
+    assert bytes(memory[0x7FFC:0x7FFE])==bytes([expected,0])
+   assert [(a,v) for a,v in memory.cpu_writes if not (0x7FEC if with_expression_wrappers else 0x7FEE)<=a<0x7FFE]==persistent
+   assert bytes(memory[0x7FFE:0x8000])==bytes([255,63])
    assert (r[A],r[F],r[D],r[E],r[H],r[L],r[B],r[C],r[SP])==(expected,0 if expected else compare_flags(size,threshold),0,expected,threshold,saved_flags,0,36,0x8000)
-   assert r[8]*256+r[9]==0xB000+len(prefix) and r[10:12]==initial[10:12] and r[18]==4 and r[19:24]==initial[19:24]
+   assert r[8]*256+r[9]==0xB000+len(prefix) and r[10:12]==initial[10:12] and r[18]==4 and r[19]==initial[19]
+   if not with_expression_wrappers:assert r[20:24]==initial[20:24]
    assert trace.writes==[(0x7FFD,0x11),(0x7FFD,0x10),(0x7FFD,0x16)] and memory.o7ffd==0x16
    cases+=1
  report=dict(passed=True,cases=cases,method='original_two_entry_threshold_checks_with_actual_parser_and_banks',
-  all_threshold_bytes=True,saved_AF_restored_to_HL=True,irq_executed=False,native_execution=False,assembly_executed=False)
- (ROOT/'Tools/Disasm/Reports/EntryThresholdVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
+  all_threshold_bytes=True,saved_AF_restored_to_HL=True,expression_wrappers_executed=with_expression_wrappers,
+  physical_disk_and_sector_hashes_checked=True,CPU_write_watch_positive_control=True,
+  exact_non_stack_write_sequence_checked=True,original_return_word_preserved=True,
+  temporary_stack_interval=[0x7FEC if with_expression_wrappers else 0x7FEE,0x7FFE],
+  suffix_paths_executed=False,full_R_proved=False,all_keys_stack_addresses_and_pages_checked=False,
+  stack_bus_cycle_order_verified=False,irq_executed=False,native_execution=False,assembly_executed=False)
+ (ROOT/'Tools/Disasm/Reports'/('EntryThresholdExpressionWrappersVerification.json' if with_expression_wrappers else 'EntryThresholdVerification.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))
 
 
-if __name__=='__main__':main()
+if __name__=='__main__':main('--expression-wrappers' in sys.argv)

@@ -1,0 +1,430 @@
+{
+  "passed": true,
+  "loader_disk_offset": 14336,
+  "model_loader_entry": 33055,
+  "model_archive_base": 14848,
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "directory_entries": 64,
+  "stages": [
+    {
+      "disk_offset": 57088,
+      "sectors": [
+        [
+          13,
+          16
+        ]
+      ],
+      "port_7ffd": 16,
+      "destination": 32512
+    },
+    {
+      "disk_offset": 57344,
+      "sectors": [
+        [
+          14,
+          1
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          14,
+          6
+        ]
+      ],
+      "port_7ffd": 22,
+      "destination": 49152,
+      "hr2_input_bytes": 1501,
+      "output_bytes": 4096,
+      "output_sha256": "b42f0338a271dd9355c90c57f924e9eef87276717f7a2a4d1ecc689a01abe0cd",
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_0E000.unpacked.bin"
+    },
+    {
+      "disk_offset": 58880,
+      "sectors": [
+        [
+          14,
+          7
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          14,
+          12
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          14
+        ]
+      ],
+      "port_7ffd": 20,
+      "destination": 49152,
+      "hr2_input_bytes": 1976,
+      "output_bytes": 4096,
+      "output_sha256": "7c704e8d734ef99e2419879deef7da7b55683bde7be53e0eb1f079311c32c65b",
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_0E600.unpacked.bin"
+    },
+    {
+      "disk_offset": 60928,
+      "sectors": [
+        [
+          14,
+          15
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          15,
+          12
+        ]
+      ],
+      "port_7ffd": 16,
+      "destination": 24932,
+      "hr2_input_bytes": 3332,
+      "output_bytes": 7324,
+      "output_sha256": "316e24fbafcd8cadb41ce9040cc6194b2c48f4e635901e064f7e5103725df6fd",
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_0EE00.unpacked.bin"
+    }
+  ],
+  "directory_members": [
+    {
+      "directory": 33212,
+      "index": 0,
+      "disk_offset": 14848,
+      "sector_count": 6,
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_03A00.unpacked.bin",
+      "output_bytes": 2775,
+      "output_sha256": "f8cf98f884397d9a41168786b595702ab2a5aac355ab3375c58b2f411a439100"
+    },
+    {
+      "directory": 33212,
+      "index": 1,
+      "disk_offset": 16384,
+      "sector_count": 10,
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_04000.unpacked.bin",
+      "output_bytes": 4972,
+      "output_sha256": "2e2207e18718b0417050d26a24c06b28f6e44adf1d81cba8249f47af0a16f40d"
+    },
+    {
+      "directory": 33212,
+      "index": 2,
+      "disk_offset": 18944,
+      "sector_count": 8,
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_04A00.unpacked.bin",
+      "output_bytes": 4034,
+      "output_sha256": "6feadadb72cb7b78489c7534320c380b13403ec08455ebec9bec1c5f93ec50a3"
+    },
+    {
+      "directory": 33260,
+      "index": 0,
+      "disk_offset": 20992,
+      "sector_count": 13,
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_05200.unpacked.bin",
+      "output_bytes": 5138,
+      "output_sha256": "deff74b61b2bd81538b588a918d8c9973cc6255f4c3b96e2c931a2a7d21f291d"
+    },
+    {
+      "directory": 33260,
+      "index": 1,
+      "disk_offset": 24320,
+      "sector_count": 17,
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_05F00.unpacked.bin",
+      "output_bytes": 6808,
+      "output_sha256": "6eaf3bda2f593fd39fd845482124842a429a6d8f22893f0b6a1bec1fcbed332e"
+    },
+    {
+      "directory": 33260,
+      "index": 2,
+      "disk_offset": 28672,
+      "sector_count": 45,
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_07000.unpacked.bin",
+      "output_bytes": 18876,
+      "output_sha256": "66986cfb4b5a2908ba66648233b2ec0f551905ec1c27b273c0fca443475f2b71"
+    },
+    {
+      "directory": 33260,
+      "index": 3,
+      "disk_offset": 40192,
+      "sector_count": 12,
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_09D00.unpacked.bin",
+      "output_bytes": 4574,
+      "output_sha256": "22c5c5c9fac4c8b905e2f547574b7337f901ec4626ee0db74ebc6ffcf4b41535"
+    },
+    {
+      "directory": 33260,
+      "index": 4,
+      "disk_offset": 43264,
+      "sector_count": 8,
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_0A900.unpacked.bin",
+      "output_bytes": 2684,
+      "output_sha256": "f2ead2224b1b86624defbb110ce9013ec92c43da69f3a11c7b46e9fab6177ebd"
+    },
+    {
+      "directory": 33260,
+      "index": 5,
+      "disk_offset": 45312,
+      "sector_count": 18,
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_0B100.unpacked.bin",
+      "output_bytes": 6628,
+      "output_sha256": "dffab3ac032f81a3e8c5c2452750bc9ca1ab66dc879becffad8d7975790ee8fa"
+    },
+    {
+      "directory": 33260,
+      "index": 6,
+      "disk_offset": 49920,
+      "sector_count": 26,
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_0C300.unpacked.bin",
+      "output_bytes": 10828,
+      "output_sha256": "2bf9824bd8b4e9aab921e47e71d261aaa1f6017eb3c0a1395820c96923e5dd4a"
+    },
+    {
+      "directory": 33284,
+      "index": 0,
+      "disk_offset": 56576,
+      "sector_count": 2,
+      "decoded_path": "Tools/Disasm/Extracted/Deleted/00_Article_0DD00.unpacked.bin",
+      "output_bytes": 737,
+      "output_sha256": "b2f349bc816d94d652088db074763a7b5f63def4381c1fa4ddb84b4e600c6fe1"
+    }
+  ],
+  "reached_entry": 24932,
+  "independent_decoder_matches_ram": true,
+  "expanded_code_executed": true,
+  "article_selection": {
+    "requests": [
+      {
+        "disk_offset": 20992,
+        "count": 13,
+        "destination": 32768,
+        "port_7ffd": 16,
+        "sectors": [
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            5,
+            13
+          ],
+          [
+            5,
+            14
+          ],
+          [
+            5,
+            15
+          ]
+        ]
+      },
+      {
+        "disk_offset": 56576,
+        "count": 2,
+        "destination": 49152,
+        "port_7ffd": 17,
+        "sectors": [
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            15
+          ]
+        ]
+      },
+      {
+        "disk_offset": 14848,
+        "count": 6,
+        "destination": 52056,
+        "port_7ffd": 20,
+        "sectors": [
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            13
+          ],
+          [
+            3,
+            14
+          ],
+          [
+            3,
+            15
+          ],
+          [
+            3,
+            16
+          ]
+        ]
+      },
+      {
+        "disk_offset": 43264,
+        "count": 8,
+        "destination": 32768,
+        "port_7ffd": 16,
+        "sectors": [
+          [
+            10,
+            10
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            10,
+            14
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            11,
+            1
+          ]
+        ]
+      }
+    ],
+    "selected_row": 5,
+    "title": "Awaken second breez",
+    "text_sha256": "f2ead2224b1b86624defbb110ce9013ec92c43da69f3a11c7b46e9fab6177ebd",
+    "rendered_screen_sha256": "baecfc536445c602962d0bd9d283ba7eaca5cd90b5d9e4d4428c51d83e3f46fb"
+  },
+  "active_game_entry_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

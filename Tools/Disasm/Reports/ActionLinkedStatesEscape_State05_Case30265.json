@@ -1,0 +1,62 @@
+{
+  "passed": false,
+  "state": 5,
+  "serial": 30265,
+  "linked": 194,
+  "code": 0,
+  "mode": 1,
+  "path": [
+    "counter_expired_spawn",
+    "parameter_0A",
+    "free_record",
+    "class17_created"
+  ],
+  "expected_PC": 16383,
+  "actual_PC": 4576,
+  "instruction_limit": 30000,
+  "first_ROM_escape": 146,
+  "recent_PCs": [
+    4576,
+    4572,
+    4574,
+    4575,
+    4576,
+    4572,
+    4574,
+    4575,
+    4576,
+    4572,
+    4574,
+    4575,
+    4576,
+    4572,
+    4574,
+    4575,
+    4576,
+    4572,
+    4574,
+    4575,
+    4576,
+    4572,
+    4574,
+    4575,
+    4576,
+    4572,
+    4574,
+    4575,
+    4576,
+    4572,
+    4574,
+    4575
+  ],
+  "multiply_differences": [
+    {
+      "address": 53643,
+      "original": 209,
+      "actual": 0
+    }
+  ],
+  "nontermination_proved": false,
+  "native_reachability_proved": false,
+  "assembly_executed": false
+}

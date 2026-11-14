@@ -36,6 +36,8 @@
   "max_observed_stack_byte_writes": 104,
   "stack_residue_values_and_R_proved": false,
   "unreachable_far_rejection_explained_by_23_bit_depth": true,
+  "direct_depth_sign_reject_and_final_flag_invariants": true,
+  "direct_near_radius_depth_register_invariants": true,
   "independent_integer_parent_oracle": true,
   "full_component_product_exhausted": false,
   "irq_executed": false,

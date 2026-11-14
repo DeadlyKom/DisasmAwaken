@@ -11,13 +11,15 @@ sys.path.insert(0, str(ROOT / "Tools/Disasm"))
 from skoolkit.simulator import Simulator
 from skoolkit.simutils import get_registers, A, F, B, C, D, E, H, L, PC, SP, IXh, IXl
 from InspectZ80 import decoder
+from CheckPreviewCoordinateMultiply import Memory
+from ReferenceControlsPointRespawn import refresh
 
 
 def main():
     manifest = json.loads((ROOT / "Tools/Disasm/Disk/Manifest.json").read_text(encoding="utf-8"))
     entry = next(e for e in manifest["entries"] if e["slot"] == 4)
     source = (ROOT / (entry["path"]+".sectors.bin")).read_bytes()
-    memory = [0]*65536
+    memory = Memory([0]*65536)
     memory[0x6000:] = source
     simulator = Simulator(memory)
     dis = decoder([0]*0x6000+list(source))
@@ -26,10 +28,14 @@ def main():
                              "IX": 0x2468, "IY": 0x5C3A, "^HL": 0x369C,
                              "^DE": 0x47AD, "^BC": 0x58BE, "^AF": 0x69CF}, None, False)
     counts = {}
+    bounds_m1 = {start:set() for start in (0xA7B7,0xA7E0,0xCB7F)}
 
-    def run(start, capture=False):
+    def run(start, capture=False, length=None):
         memory[0x7FFE:0x8000] = [0xFF, 0x3F]
-        if capture:
+        traced = start in bounds_m1
+        before = simulator.registers.copy()
+        m1 = 0; memory.writes = []; memory.recording = traced
+        if capture or traced:
             simulator.registers[PC] = start
             for _ in range(100000):
                 pc = simulator.registers[PC]
@@ -41,11 +47,20 @@ def main():
                     if raw != source[pc-0x6000:pc-0x6000+len(raw)]:
                         raise ValueError("Исполнена изменённая инструкция восстановления границ")
                     visited[pc] = raw.hex()
+                old_r = simulator.registers[15]
                 simulator.run()
+                m1 += (simulator.registers[15]-old_r)&127
             else:
                 raise ValueError("Не завершился исследуемый интерфейсный вход")
         else:
             simulator.run(start=start, stop=0x3FFF)
+        memory.recording = False
+        if traced:
+            expected_m1 = 7+23*length+int(start==0xA7E0)
+            assert m1==expected_m1,(start,length,m1,expected_m1)
+            assert simulator.registers[15]==refresh(before[15],expected_m1)
+            assert all(simulator.registers[i]==before[i] for i in (14,26,27))
+            bounds_m1[start].add(m1)
         if simulator.registers[SP] != 0x8000:
             raise ValueError("Интерфейсный вход не восстановил стек")
         counts[f"{start:04X}"] = counts.get(f"{start:04X}", 0)+1
@@ -99,15 +114,26 @@ def main():
                 expected[base+8:base+12] = saved
                 expected[base:base+4] = saved
             table[16*length] = expected[16*length] = 0x80
-            memory[0xF0FD:0xF4FD] = table
-            simulator.registers[:] = initial
-            before = simulator.registers.copy()
-            run(0xCB7F, pattern == 0 and length in (0, 1, 46))
-            if memory[0xF0FD:0xF4FD] != expected or (
-                    simulator.registers[IXh]*256+simulator.registers[IXl], simulator.registers[D]*256+simulator.registers[E],
-                    simulator.registers[A], simulator.registers[F]) != (0xF0FD+16*length, 16, 128, 0x42):
-                raise ValueError("Не совпало восстановление всей таблицы границ")
-            preserve(before, {IXh, IXl, D, E, A, F})
+            for start in (0xCB7F,0xA7E0,0xA7B7):
+                # Выбор направления копирования, каждая проверка получает исходную таблицу заново.
+                result = expected.copy() if start!=0xA7B7 else table.copy()
+                if start==0xA7B7:
+                    for index in range(length):
+                        base=16*index;result[base+8:base+12]=table[base:base+4]
+                memory[0xF0FD:0xF4FD] = table
+                simulator.registers[:] = initial
+                simulator.registers[14]=(length+pattern)&255
+                simulator.registers[15]=(length^pattern)&255
+                simulator.registers[27]=pattern%3
+                before = simulator.registers.copy()
+                run(start, pattern == 0 and length in (0, 1, 46),length)
+                if memory[0xF0FD:0xF4FD] != result or (
+                        simulator.registers[IXh]*256+simulator.registers[IXl], simulator.registers[D]*256+simulator.registers[E],
+                        simulator.registers[A], simulator.registers[F]) != (0xF0FD+16*length, 16, 128, 0x42):
+                    raise ValueError("Не совпало сохранение либо восстановление всей таблицы границ")
+                offset=8 if start==0xA7B7 else 0
+                assert memory.writes==[(0xF0FD+16*i+offset+j,result[16*i+offset+j]) for i in range(length) for j in range(4)]
+                preserve(before, {IXh, IXl, D, E, A, F})
     # Проверка полного CBA9, включая ранее неразмеченный хвост после MoveItemToTail.
     for key in (0, 45):
         for length in (0, 1, 3, 46):
@@ -149,6 +175,8 @@ def main():
                     preserve(before, {H, L, D, E, A, F})
     report = dict(method="original_draw_list_readers_and_saved_bounds_restore", passed=True,
                   cases=sum(counts.values()), by_entry=counts, source_sha256=hashlib.sha256(source).hexdigest(),
+                  bounds_full_m1_by_entry={f"{k:04X}":sorted(v) for k,v in bounds_m1.items()},
+                  bounds_exact_refresh_and_memory_writes=True,bounds_i_im_iff_preserved=True,bounds_iff_fixture=0,
                   whole_table_and_list_tail_compared=True, irq_enabled=False, native_execution_verified=False,
                   assembly_executed=False, original_visited={f"{p:04X}": value for p, value in sorted(visited.items())})
     (ROOT / "Tools/Disasm/Reports/InterfaceListsVerification.json").write_text(

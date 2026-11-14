@@ -34,7 +34,7 @@ def main():
     banks[1]=bytearray(base_memory()[0xC000:]);root_table=bytes(banks[1][:768])
     memory=RecordedBanks(banks=banks,out7ffd=16);baseline=[bytearray(b) for b in memory.banks]
     expected=[bytearray(b) for b in baseline];simulator=Simulator(memory);counts=Counter();roots=set();root_inputs=set();paths=Counter();touched=set()
-    delta_min,delta_max=0,0
+    delta_min,delta_max=0,0;refresh_costs=set();initial_r_values=set()
 
     def page(address):return 5 if address<0x8000 else 2 if address<0xC000 else 0
 
@@ -55,7 +55,19 @@ def main():
             bank=page(address);offset=address&0x3FFF;expected[bank][offset]=value
             writes.append((bank,offset,value));touched.add((bank,offset))
         simulator.registers[:]=initial;trace=PortTrace(simulator);simulator.set_tracer(trace)
-        memory.writes=[];memory.recording=True;simulator.run(start=0xAD5A,stop=0x3FFF);memory.recording=False
+        memory.writes=[];memory.recording=True;measured_m1=0
+        # Проверка полного числа M1 композиции без потери кратных 128 в конечном R.
+        for _ in range(10000):
+            if simulator.registers[PC]==0x3FFF:break
+            previous_r=simulator.registers[15]
+            simulator.run()
+            increment=(simulator.registers[15]-previous_r)&127
+            assert increment in (1,2),(serial,'неожиданное изменение R',increment)
+            measured_m1+=increment
+        else:raise AssertionError(('геометрия не вернулась',serial,values))
+        assert measured_m1==model['refresh_m1'],(serial,'M1',measured_m1,model['refresh_m1'])
+        refresh_costs.add(measured_m1);initial_r_values.add(initial[15])
+        memory.recording=False
         compared=(*range(25),26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared),(serial,values,model,
             [(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
@@ -78,6 +90,10 @@ def main():
         maximum_additional_stack_bytes=14,real_ports_and_eight_banks=True,initial_7ffd_values=[0,8,16,24],final_7ffd=16,
         IX_and_IY_preserved=True,alternate_delta_frame_proved=True,root_times_256_signed_word_interpretation_preserved=True,
         hardware_bus_stack_write_order_proved=False,refresh_R_proved=True,square_refresh_subdomain_proved=True,complete_six_word_product_exhausted=False,
+        full_M1_count_compared_not_only_R_modulo_128=True,
+        all_initial_R_values_observed=initial_r_values==set(range(256)),
+        observed_M1_min=min(refresh_costs),observed_M1_max=max(refresh_costs),
+        refresh_formula='99+2*negative_first_code+square_d0+square_d1+cached_root+first_ratio_code+second_ratio_code',
         assembly_executed=False,irq_executed=False,native_execution=False,timing_proved=False)
     assert counts.total()==613638 and max(root_inputs)==0x7FFE
     (ROOT/'Tools/Disasm/Reports/ActionHalfDeltaCodesVerification.json').write_text(json.dumps(report,indent=2)+'\n','utf-8')

@@ -1,0 +1,4264 @@
+{
+  "passed": true,
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "length_reader_hex": "11dd5c3a065d47afbe2003c11809cd1327c12806",
+  "compare_loop_hex": "1abec0132310f9c9",
+  "compare_cases": 512,
+  "all_B_values_checked": true,
+  "zero_B_compares_256_bytes": true,
+  "compare_RAM_and_stack_bytes_unchanged": true,
+  "real_DOS_search_cases": 8,
+  "length_8_ignores_extension": true,
+  "length_9_includes_extension": true,
+  "prepared_system_variables": true,
+  "controller_and_ROM_paging_modelled": true,
+  "all_search_lengths_or_DOS_versions_proved": false,
+  "IRQ_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "comparisons": [
+    {
+      "initial_B": 0,
+      "effective_length": 256,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 256,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 0,
+      "effective_length": 256,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 255,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 1,
+      "effective_length": 1,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 1,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 1,
+      "effective_length": 1,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 0,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 2,
+      "effective_length": 2,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 2,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 2,
+      "effective_length": 2,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 1,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 3,
+      "effective_length": 3,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 3,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 3,
+      "effective_length": 3,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 2,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 4,
+      "effective_length": 4,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 4,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 4,
+      "effective_length": 4,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 3,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 5,
+      "effective_length": 5,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 5,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 5,
+      "effective_length": 5,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 4,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 6,
+      "effective_length": 6,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 6,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 6,
+      "effective_length": 6,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 5,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 7,
+      "effective_length": 7,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 7,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 7,
+      "effective_length": 7,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 6,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 8,
+      "effective_length": 8,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 8,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 8,
+      "effective_length": 8,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 7,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 9,
+      "effective_length": 9,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 9,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 9,
+      "effective_length": 9,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 8,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 10,
+      "effective_length": 10,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 10,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 10,
+      "effective_length": 10,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 9,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 11,
+      "effective_length": 11,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 11,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 11,
+      "effective_length": 11,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 10,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 12,
+      "effective_length": 12,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 12,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 12,
+      "effective_length": 12,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 11,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 13,
+      "effective_length": 13,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 13,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 13,
+      "effective_length": 13,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 12,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 14,
+      "effective_length": 14,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 14,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 14,
+      "effective_length": 14,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 13,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 15,
+      "effective_length": 15,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 15,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 15,
+      "effective_length": 15,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 14,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 16,
+      "effective_length": 16,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 16,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 16,
+      "effective_length": 16,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 15,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 17,
+      "effective_length": 17,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 17,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 17,
+      "effective_length": 17,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 16,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 18,
+      "effective_length": 18,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 18,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 18,
+      "effective_length": 18,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 17,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 19,
+      "effective_length": 19,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 19,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 19,
+      "effective_length": 19,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 18,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 20,
+      "effective_length": 20,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 20,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 20,
+      "effective_length": 20,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 19,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 21,
+      "effective_length": 21,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 21,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 21,
+      "effective_length": 21,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 20,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 22,
+      "effective_length": 22,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 22,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 22,
+      "effective_length": 22,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 21,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 23,
+      "effective_length": 23,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 23,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 23,
+      "effective_length": 23,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 22,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 24,
+      "effective_length": 24,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 24,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 24,
+      "effective_length": 24,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 23,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 25,
+      "effective_length": 25,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 25,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 25,
+      "effective_length": 25,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 24,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 26,
+      "effective_length": 26,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 26,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 26,
+      "effective_length": 26,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 25,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 27,
+      "effective_length": 27,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 27,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 27,
+      "effective_length": 27,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 26,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 28,
+      "effective_length": 28,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 28,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 28,
+      "effective_length": 28,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 27,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 29,
+      "effective_length": 29,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 29,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 29,
+      "effective_length": 29,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 28,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 30,
+      "effective_length": 30,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 30,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 30,
+      "effective_length": 30,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 29,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 31,
+      "effective_length": 31,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 31,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 31,
+      "effective_length": 31,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 30,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 32,
+      "effective_length": 32,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 32,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 32,
+      "effective_length": 32,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 31,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 33,
+      "effective_length": 33,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 33,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 33,
+      "effective_length": 33,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 32,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 34,
+      "effective_length": 34,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 34,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 34,
+      "effective_length": 34,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 33,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 35,
+      "effective_length": 35,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 35,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 35,
+      "effective_length": 35,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 34,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 36,
+      "effective_length": 36,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 36,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 36,
+      "effective_length": 36,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 35,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 37,
+      "effective_length": 37,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 37,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 37,
+      "effective_length": 37,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 36,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 38,
+      "effective_length": 38,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 38,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 38,
+      "effective_length": 38,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 37,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 39,
+      "effective_length": 39,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 39,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 39,
+      "effective_length": 39,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 38,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 40,
+      "effective_length": 40,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 40,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 40,
+      "effective_length": 40,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 39,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 41,
+      "effective_length": 41,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 41,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 41,
+      "effective_length": 41,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 40,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 42,
+      "effective_length": 42,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 42,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 42,
+      "effective_length": 42,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 41,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 43,
+      "effective_length": 43,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 43,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 43,
+      "effective_length": 43,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 42,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 44,
+      "effective_length": 44,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 44,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 44,
+      "effective_length": 44,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 43,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 45,
+      "effective_length": 45,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 45,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 45,
+      "effective_length": 45,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 44,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 46,
+      "effective_length": 46,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 46,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 46,
+      "effective_length": 46,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 45,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 47,
+      "effective_length": 47,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 47,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 47,
+      "effective_length": 47,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 46,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 48,
+      "effective_length": 48,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 48,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 48,
+      "effective_length": 48,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 47,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 49,
+      "effective_length": 49,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 49,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 49,
+      "effective_length": 49,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 48,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 50,
+      "effective_length": 50,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 50,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 50,
+      "effective_length": 50,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 49,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 51,
+      "effective_length": 51,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 51,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 51,
+      "effective_length": 51,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 50,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 52,
+      "effective_length": 52,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 52,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 52,
+      "effective_length": 52,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 51,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 53,
+      "effective_length": 53,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 53,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 53,
+      "effective_length": 53,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 52,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 54,
+      "effective_length": 54,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 54,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 54,
+      "effective_length": 54,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 53,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 55,
+      "effective_length": 55,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 55,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 55,
+      "effective_length": 55,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 54,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 56,
+      "effective_length": 56,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 56,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 56,
+      "effective_length": 56,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 55,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 57,
+      "effective_length": 57,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 57,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 57,
+      "effective_length": 57,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 56,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 58,
+      "effective_length": 58,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 58,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 58,
+      "effective_length": 58,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 57,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 59,
+      "effective_length": 59,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 59,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 59,
+      "effective_length": 59,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 58,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 60,
+      "effective_length": 60,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 60,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 60,
+      "effective_length": 60,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 59,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 61,
+      "effective_length": 61,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 61,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 61,
+      "effective_length": 61,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 60,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 62,
+      "effective_length": 62,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 62,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 62,
+      "effective_length": 62,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 61,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 63,
+      "effective_length": 63,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 63,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 63,
+      "effective_length": 63,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 62,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 64,
+      "effective_length": 64,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 64,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 64,
+      "effective_length": 64,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 63,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 65,
+      "effective_length": 65,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 65,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 65,
+      "effective_length": 65,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 64,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 66,
+      "effective_length": 66,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 66,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 66,
+      "effective_length": 66,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 65,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 67,
+      "effective_length": 67,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 67,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 67,
+      "effective_length": 67,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 66,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 68,
+      "effective_length": 68,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 68,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 68,
+      "effective_length": 68,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 67,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 69,
+      "effective_length": 69,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 69,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 69,
+      "effective_length": 69,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 68,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 70,
+      "effective_length": 70,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 70,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 70,
+      "effective_length": 70,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 69,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 71,
+      "effective_length": 71,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 71,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 71,
+      "effective_length": 71,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 70,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 72,
+      "effective_length": 72,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 72,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 72,
+      "effective_length": 72,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 71,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 73,
+      "effective_length": 73,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 73,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 73,
+      "effective_length": 73,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 72,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 74,
+      "effective_length": 74,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 74,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 74,
+      "effective_length": 74,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 73,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 75,
+      "effective_length": 75,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 75,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 75,
+      "effective_length": 75,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 74,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 76,
+      "effective_length": 76,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 76,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 76,
+      "effective_length": 76,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 75,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 77,
+      "effective_length": 77,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 77,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 77,
+      "effective_length": 77,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 76,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 78,
+      "effective_length": 78,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 78,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 78,
+      "effective_length": 78,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 77,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 79,
+      "effective_length": 79,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 79,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 79,
+      "effective_length": 79,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 78,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 80,
+      "effective_length": 80,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 80,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 80,
+      "effective_length": 80,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 79,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 81,
+      "effective_length": 81,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 81,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 81,
+      "effective_length": 81,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 80,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 82,
+      "effective_length": 82,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 82,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 82,
+      "effective_length": 82,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 81,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 83,
+      "effective_length": 83,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 83,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 83,
+      "effective_length": 83,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 82,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 84,
+      "effective_length": 84,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 84,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 84,
+      "effective_length": 84,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 83,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 85,
+      "effective_length": 85,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 85,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 85,
+      "effective_length": 85,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 84,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 86,
+      "effective_length": 86,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 86,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 86,
+      "effective_length": 86,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 85,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 87,
+      "effective_length": 87,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 87,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 87,
+      "effective_length": 87,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 86,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 88,
+      "effective_length": 88,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 88,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 88,
+      "effective_length": 88,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 87,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 89,
+      "effective_length": 89,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 89,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 89,
+      "effective_length": 89,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 88,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 90,
+      "effective_length": 90,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 90,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 90,
+      "effective_length": 90,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 89,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 91,
+      "effective_length": 91,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 91,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 91,
+      "effective_length": 91,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 90,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 92,
+      "effective_length": 92,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 92,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 92,
+      "effective_length": 92,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 91,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 93,
+      "effective_length": 93,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 93,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 93,
+      "effective_length": 93,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 92,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 94,
+      "effective_length": 94,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 94,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 94,
+      "effective_length": 94,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 93,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 95,
+      "effective_length": 95,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 95,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 95,
+      "effective_length": 95,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 94,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 96,
+      "effective_length": 96,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 96,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 96,
+      "effective_length": 96,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 95,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 97,
+      "effective_length": 97,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 97,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 97,
+      "effective_length": 97,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 96,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 98,
+      "effective_length": 98,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 98,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 98,
+      "effective_length": 98,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 97,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 99,
+      "effective_length": 99,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 99,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 99,
+      "effective_length": 99,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 98,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 100,
+      "effective_length": 100,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 100,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 100,
+      "effective_length": 100,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 99,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 101,
+      "effective_length": 101,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 101,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 101,
+      "effective_length": 101,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 100,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 102,
+      "effective_length": 102,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 102,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 102,
+      "effective_length": 102,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 101,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 103,
+      "effective_length": 103,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 103,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 103,
+      "effective_length": 103,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 102,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 104,
+      "effective_length": 104,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 104,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 104,
+      "effective_length": 104,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 103,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 105,
+      "effective_length": 105,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 105,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 105,
+      "effective_length": 105,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 104,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 106,
+      "effective_length": 106,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 106,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 106,
+      "effective_length": 106,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 105,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 107,
+      "effective_length": 107,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 107,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 107,
+      "effective_length": 107,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 106,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 108,
+      "effective_length": 108,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 108,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 108,
+      "effective_length": 108,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 107,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 109,
+      "effective_length": 109,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 109,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 109,
+      "effective_length": 109,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 108,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 110,
+      "effective_length": 110,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 110,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 110,
+      "effective_length": 110,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 109,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 111,
+      "effective_length": 111,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 111,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 111,
+      "effective_length": 111,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 110,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 112,
+      "effective_length": 112,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 112,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 112,
+      "effective_length": 112,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 111,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 113,
+      "effective_length": 113,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 113,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 113,
+      "effective_length": 113,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 112,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 114,
+      "effective_length": 114,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 114,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 114,
+      "effective_length": 114,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 113,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 115,
+      "effective_length": 115,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 115,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 115,
+      "effective_length": 115,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 114,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 116,
+      "effective_length": 116,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 116,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 116,
+      "effective_length": 116,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 115,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 117,
+      "effective_length": 117,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 117,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 117,
+      "effective_length": 117,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 116,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 118,
+      "effective_length": 118,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 118,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 118,
+      "effective_length": 118,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 117,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 119,
+      "effective_length": 119,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 119,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 119,
+      "effective_length": 119,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 118,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 120,
+      "effective_length": 120,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 120,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 120,
+      "effective_length": 120,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 119,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 121,
+      "effective_length": 121,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 121,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 121,
+      "effective_length": 121,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 120,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 122,
+      "effective_length": 122,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 122,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 122,
+      "effective_length": 122,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 121,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 123,
+      "effective_length": 123,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 123,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 123,
+      "effective_length": 123,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 122,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 124,
+      "effective_length": 124,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 124,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 124,
+      "effective_length": 124,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 123,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 125,
+      "effective_length": 125,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 125,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 125,
+      "effective_length": 125,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 124,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 126,
+      "effective_length": 126,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 126,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 126,
+      "effective_length": 126,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 125,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 127,
+      "effective_length": 127,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 127,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 127,
+      "effective_length": 127,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 126,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 128,
+      "effective_length": 128,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 128,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 128,
+      "effective_length": 128,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 127,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 129,
+      "effective_length": 129,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 129,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 129,
+      "effective_length": 129,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 128,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 130,
+      "effective_length": 130,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 130,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 130,
+      "effective_length": 130,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 129,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 131,
+      "effective_length": 131,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 131,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 131,
+      "effective_length": 131,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 130,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 132,
+      "effective_length": 132,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 132,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 132,
+      "effective_length": 132,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 131,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 133,
+      "effective_length": 133,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 133,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 133,
+      "effective_length": 133,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 132,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 134,
+      "effective_length": 134,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 134,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 134,
+      "effective_length": 134,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 133,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 135,
+      "effective_length": 135,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 135,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 135,
+      "effective_length": 135,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 134,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 136,
+      "effective_length": 136,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 136,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 136,
+      "effective_length": 136,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 135,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 137,
+      "effective_length": 137,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 137,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 137,
+      "effective_length": 137,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 136,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 138,
+      "effective_length": 138,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 138,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 138,
+      "effective_length": 138,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 137,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 139,
+      "effective_length": 139,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 139,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 139,
+      "effective_length": 139,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 138,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 140,
+      "effective_length": 140,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 140,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 140,
+      "effective_length": 140,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 139,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 141,
+      "effective_length": 141,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 141,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 141,
+      "effective_length": 141,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 140,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 142,
+      "effective_length": 142,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 142,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 142,
+      "effective_length": 142,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 141,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 143,
+      "effective_length": 143,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 143,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 143,
+      "effective_length": 143,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 142,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 144,
+      "effective_length": 144,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 144,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 144,
+      "effective_length": 144,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 143,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 145,
+      "effective_length": 145,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 145,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 145,
+      "effective_length": 145,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 144,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 146,
+      "effective_length": 146,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 146,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 146,
+      "effective_length": 146,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 145,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 147,
+      "effective_length": 147,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 147,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 147,
+      "effective_length": 147,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 146,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 148,
+      "effective_length": 148,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 148,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 148,
+      "effective_length": 148,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 147,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 149,
+      "effective_length": 149,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 149,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 149,
+      "effective_length": 149,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 148,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 150,
+      "effective_length": 150,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 150,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 150,
+      "effective_length": 150,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 149,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 151,
+      "effective_length": 151,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 151,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 151,
+      "effective_length": 151,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 150,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 152,
+      "effective_length": 152,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 152,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 152,
+      "effective_length": 152,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 151,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 153,
+      "effective_length": 153,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 153,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 153,
+      "effective_length": 153,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 152,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 154,
+      "effective_length": 154,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 154,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 154,
+      "effective_length": 154,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 153,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 155,
+      "effective_length": 155,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 155,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 155,
+      "effective_length": 155,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 154,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 156,
+      "effective_length": 156,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 156,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 156,
+      "effective_length": 156,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 155,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 157,
+      "effective_length": 157,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 157,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 157,
+      "effective_length": 157,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 156,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 158,
+      "effective_length": 158,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 158,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 158,
+      "effective_length": 158,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 157,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 159,
+      "effective_length": 159,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 159,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 159,
+      "effective_length": 159,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 158,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 160,
+      "effective_length": 160,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 160,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 160,
+      "effective_length": 160,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 159,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 161,
+      "effective_length": 161,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 161,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 161,
+      "effective_length": 161,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 160,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 162,
+      "effective_length": 162,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 162,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 162,
+      "effective_length": 162,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 161,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 163,
+      "effective_length": 163,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 163,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 163,
+      "effective_length": 163,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 162,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 164,
+      "effective_length": 164,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 164,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 164,
+      "effective_length": 164,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 163,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 165,
+      "effective_length": 165,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 165,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 165,
+      "effective_length": 165,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 164,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 166,
+      "effective_length": 166,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 166,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 166,
+      "effective_length": 166,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 165,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 167,
+      "effective_length": 167,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 167,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 167,
+      "effective_length": 167,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 166,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 168,
+      "effective_length": 168,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 168,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 168,
+      "effective_length": 168,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 167,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 169,
+      "effective_length": 169,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 169,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 169,
+      "effective_length": 169,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 168,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 170,
+      "effective_length": 170,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 170,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 170,
+      "effective_length": 170,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 169,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 171,
+      "effective_length": 171,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 171,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 171,
+      "effective_length": 171,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 170,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 172,
+      "effective_length": 172,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 172,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 172,
+      "effective_length": 172,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 171,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 173,
+      "effective_length": 173,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 173,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 173,
+      "effective_length": 173,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 172,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 174,
+      "effective_length": 174,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 174,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 174,
+      "effective_length": 174,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 173,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 175,
+      "effective_length": 175,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 175,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 175,
+      "effective_length": 175,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 174,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 176,
+      "effective_length": 176,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 176,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 176,
+      "effective_length": 176,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 175,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 177,
+      "effective_length": 177,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 177,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 177,
+      "effective_length": 177,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 176,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 178,
+      "effective_length": 178,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 178,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 178,
+      "effective_length": 178,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 177,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 179,
+      "effective_length": 179,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 179,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 179,
+      "effective_length": 179,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 178,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 180,
+      "effective_length": 180,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 180,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 180,
+      "effective_length": 180,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 179,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 181,
+      "effective_length": 181,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 181,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 181,
+      "effective_length": 181,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 180,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 182,
+      "effective_length": 182,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 182,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 182,
+      "effective_length": 182,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 181,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 183,
+      "effective_length": 183,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 183,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 183,
+      "effective_length": 183,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 182,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 184,
+      "effective_length": 184,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 184,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 184,
+      "effective_length": 184,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 183,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 185,
+      "effective_length": 185,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 185,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 185,
+      "effective_length": 185,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 184,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 186,
+      "effective_length": 186,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 186,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 186,
+      "effective_length": 186,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 185,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 187,
+      "effective_length": 187,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 187,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 187,
+      "effective_length": 187,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 186,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 188,
+      "effective_length": 188,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 188,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 188,
+      "effective_length": 188,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 187,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 189,
+      "effective_length": 189,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 189,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 189,
+      "effective_length": 189,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 188,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 190,
+      "effective_length": 190,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 190,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 190,
+      "effective_length": 190,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 189,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 191,
+      "effective_length": 191,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 191,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 191,
+      "effective_length": 191,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 190,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 192,
+      "effective_length": 192,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 192,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 192,
+      "effective_length": 192,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 191,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 193,
+      "effective_length": 193,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 193,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 193,
+      "effective_length": 193,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 192,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 194,
+      "effective_length": 194,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 194,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 194,
+      "effective_length": 194,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 193,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 195,
+      "effective_length": 195,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 195,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 195,
+      "effective_length": 195,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 194,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 196,
+      "effective_length": 196,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 196,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 196,
+      "effective_length": 196,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 195,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 197,
+      "effective_length": 197,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 197,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 197,
+      "effective_length": 197,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 196,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 198,
+      "effective_length": 198,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 198,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 198,
+      "effective_length": 198,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 197,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 199,
+      "effective_length": 199,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 199,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 199,
+      "effective_length": 199,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 198,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 200,
+      "effective_length": 200,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 200,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 200,
+      "effective_length": 200,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 199,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 201,
+      "effective_length": 201,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 201,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 201,
+      "effective_length": 201,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 200,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 202,
+      "effective_length": 202,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 202,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 202,
+      "effective_length": 202,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 201,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 203,
+      "effective_length": 203,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 203,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 203,
+      "effective_length": 203,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 202,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 204,
+      "effective_length": 204,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 204,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 204,
+      "effective_length": 204,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 203,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 205,
+      "effective_length": 205,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 205,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 205,
+      "effective_length": 205,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 204,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 206,
+      "effective_length": 206,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 206,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 206,
+      "effective_length": 206,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 205,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 207,
+      "effective_length": 207,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 207,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 207,
+      "effective_length": 207,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 206,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 208,
+      "effective_length": 208,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 208,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 208,
+      "effective_length": 208,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 207,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 209,
+      "effective_length": 209,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 209,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 209,
+      "effective_length": 209,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 208,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 210,
+      "effective_length": 210,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 210,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 210,
+      "effective_length": 210,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 209,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 211,
+      "effective_length": 211,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 211,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 211,
+      "effective_length": 211,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 210,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 212,
+      "effective_length": 212,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 212,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 212,
+      "effective_length": 212,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 211,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 213,
+      "effective_length": 213,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 213,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 213,
+      "effective_length": 213,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 212,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 214,
+      "effective_length": 214,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 214,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 214,
+      "effective_length": 214,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 213,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 215,
+      "effective_length": 215,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 215,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 215,
+      "effective_length": 215,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 214,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 216,
+      "effective_length": 216,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 216,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 216,
+      "effective_length": 216,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 215,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 217,
+      "effective_length": 217,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 217,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 217,
+      "effective_length": 217,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 216,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 218,
+      "effective_length": 218,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 218,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 218,
+      "effective_length": 218,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 217,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 219,
+      "effective_length": 219,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 219,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 219,
+      "effective_length": 219,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 218,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 220,
+      "effective_length": 220,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 220,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 220,
+      "effective_length": 220,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 219,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 221,
+      "effective_length": 221,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 221,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 221,
+      "effective_length": 221,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 220,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 222,
+      "effective_length": 222,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 222,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 222,
+      "effective_length": 222,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 221,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 223,
+      "effective_length": 223,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 223,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 223,
+      "effective_length": 223,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 222,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 224,
+      "effective_length": 224,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 224,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 224,
+      "effective_length": 224,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 223,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 225,
+      "effective_length": 225,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 225,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 225,
+      "effective_length": 225,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 224,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 226,
+      "effective_length": 226,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 226,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 226,
+      "effective_length": 226,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 225,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 227,
+      "effective_length": 227,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 227,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 227,
+      "effective_length": 227,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 226,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 228,
+      "effective_length": 228,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 228,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 228,
+      "effective_length": 228,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 227,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 229,
+      "effective_length": 229,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 229,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 229,
+      "effective_length": 229,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 228,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 230,
+      "effective_length": 230,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 230,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 230,
+      "effective_length": 230,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 229,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 231,
+      "effective_length": 231,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 231,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 231,
+      "effective_length": 231,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 230,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 232,
+      "effective_length": 232,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 232,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 232,
+      "effective_length": 232,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 231,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 233,
+      "effective_length": 233,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 233,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 233,
+      "effective_length": 233,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 232,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 234,
+      "effective_length": 234,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 234,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 234,
+      "effective_length": 234,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 233,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 235,
+      "effective_length": 235,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 235,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 235,
+      "effective_length": 235,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 234,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 236,
+      "effective_length": 236,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 236,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 236,
+      "effective_length": 236,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 235,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 237,
+      "effective_length": 237,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 237,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 237,
+      "effective_length": 237,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 236,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 238,
+      "effective_length": 238,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 238,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 238,
+      "effective_length": 238,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 237,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 239,
+      "effective_length": 239,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 239,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 239,
+      "effective_length": 239,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 238,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 240,
+      "effective_length": 240,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 240,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 240,
+      "effective_length": 240,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 239,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 241,
+      "effective_length": 241,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 241,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 241,
+      "effective_length": 241,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 240,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 242,
+      "effective_length": 242,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 242,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 242,
+      "effective_length": 242,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 241,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 243,
+      "effective_length": 243,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 243,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 243,
+      "effective_length": 243,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 242,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 244,
+      "effective_length": 244,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 244,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 244,
+      "effective_length": 244,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 243,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 245,
+      "effective_length": 245,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 245,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 245,
+      "effective_length": 245,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 244,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 246,
+      "effective_length": 246,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 246,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 246,
+      "effective_length": 246,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 245,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 247,
+      "effective_length": 247,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 247,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 247,
+      "effective_length": 247,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 246,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 248,
+      "effective_length": 248,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 248,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 248,
+      "effective_length": 248,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 247,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 249,
+      "effective_length": 249,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 249,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 249,
+      "effective_length": 249,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 248,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 250,
+      "effective_length": 250,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 250,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 250,
+      "effective_length": 250,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 249,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 251,
+      "effective_length": 251,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 251,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 251,
+      "effective_length": 251,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 250,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 252,
+      "effective_length": 252,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 252,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 252,
+      "effective_length": 252,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 251,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 253,
+      "effective_length": 253,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 253,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 253,
+      "effective_length": 253,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 252,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 254,
+      "effective_length": 254,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 254,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 254,
+      "effective_length": 254,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 253,
+      "final_B": 1,
+      "final_F": 155
+    },
+    {
+      "initial_B": 255,
+      "effective_length": 255,
+      "last_byte_mismatch": false,
+      "advanced_bytes": 255,
+      "final_B": 0,
+      "final_F": 74
+    },
+    {
+      "initial_B": 255,
+      "effective_length": 255,
+      "last_byte_mismatch": true,
+      "advanced_bytes": 254,
+      "final_B": 1,
+      "final_F": 155
+    }
+  ],
+  "searches": [
+    {
+      "length": 8,
+      "requested_extension": 67,
+      "initial_cylinder": 0,
+      "returned_C": 22,
+      "system_result": 22,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "length": 8,
+      "requested_extension": 67,
+      "initial_cylinder": 9,
+      "returned_C": 22,
+      "system_result": 22,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "length": 8,
+      "requested_extension": 88,
+      "initial_cylinder": 0,
+      "returned_C": 22,
+      "system_result": 22,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "length": 8,
+      "requested_extension": 88,
+      "initial_cylinder": 9,
+      "returned_C": 22,
+      "system_result": 22,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "length": 9,
+      "requested_extension": 67,
+      "initial_cylinder": 0,
+      "returned_C": 22,
+      "system_result": 22,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "length": 9,
+      "requested_extension": 67,
+      "initial_cylinder": 9,
+      "returned_C": 22,
+      "system_result": 22,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "length": 9,
+      "requested_extension": 88,
+      "initial_cylinder": 0,
+      "returned_C": 255,
+      "system_result": 255,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "length": 9,
+      "requested_extension": 88,
+      "initial_cylinder": 9,
+      "returned_C": 255,
+      "system_result": 255,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    }
+  ]
+}

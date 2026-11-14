@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "original_action_sha256": "63f2ac2717bb7f630b25ec3cb92671e5f78f2174f36d7370d1bae39baf3fc39a",
+  "watched_addresses": [
+    39832,
+    39833,
+    39834,
+    39835,
+    39836,
+    39837,
+    39838,
+    39839,
+    39840
+  ],
+  "positive_control_real_IX_reader": 44088,
+  "positive_control_reads_by_address": {
+    "39832": 1,
+    "39833": 2,
+    "39834": 2,
+    "39835": 2,
+    "39836": 2,
+    "39837": 2,
+    "39838": 2,
+    "39839": 2,
+    "39840": 2
+  },
+  "CPU_accesses_only": true,
+  "profiles": [
+    {
+      "artificial_values_injected": false,
+      "values_before_first_frame_hex": "000000000000000000",
+      "complete_frame_returns": 64,
+      "accesses": [],
+      "final_values_hex": "000000000000000000"
+    },
+    {
+      "artificial_values_injected": true,
+      "values_before_first_frame_hex": "000000000000000000",
+      "complete_frame_returns": 64,
+      "accesses": [],
+      "final_values_hex": "35526f8ca9c6e3001d"
+    }
+  ],
+  "no_keys": true,
+  "trdos_substituted": true,
+  "irq_injected": false,
+  "all_game_paths_exhausted": false,
+  "original_STP_purpose_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

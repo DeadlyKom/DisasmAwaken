@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 34,
+  "resources": 1,
+  "maximum_tested_entries": 63,
+  "original_rebuild_executed": true,
+  "original_pointers_repeated_in_model": true,
+  "natural_game_path_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

@@ -23,3 +23,15 @@ BC сохраняются, AF возвращается из рисователя
 подмены не проверены.
 [Модель](../Tools/Disasm/Research/CheckCenteredItem.py),
 [отчёт](../Tools/Disasm/Reports/DrawCenteredWithoutOwnerVerification.json).
+
+## Уточнение побочных записей
+
+Corrupt DrawCenteredWithoutOwner включает AF, L', AF', R,
+CenteredItemDrawState.RegisterTarget, TextWindow, bitmap, текстовые
+и растровые операнды и временные слова CPU-стека. H' сохраняется
+по договору DrawCenteredItem. Временная замена цели регистрации
+не является отсутствием самомодификации, даже когда индексные
+пары и карта владельцев остаются прежними. После вывода цель
+получает постоянный RegisterItemCells.Entry, произвольное прежнее
+значение не возвращается. Прежние ограничения модели и отсутствие
+доказанного штатного вызывающего пути не менялись.

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 987,
+  "resources": 2,
+  "archive_proof": "VoxelArchivedLayoutVerification.json",
+  "actual_game_consumers_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

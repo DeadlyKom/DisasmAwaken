@@ -36,6 +36,8 @@ def name_operands(region, address, operation):
         operation = operation.replace('(#62A7)', '(@FinalSyncPointers.Value.AfterRow10)')
     if address == 0x6000 and operation == 'CALL #8000':
         return 'CALL @FinalDisplayChainConst.GeneratedEntry'
+    if address == 0x6000 and operation == 'LD DE, #6196':
+        return 'LD DE, @FinalDisplayChainConst.IrqStackTop'
     if address == 0x6196 and operation == 'LD HL, #8000':
         return 'LD HL, @FinalDisplayChainConst.GeneratedEntry'
     return operation

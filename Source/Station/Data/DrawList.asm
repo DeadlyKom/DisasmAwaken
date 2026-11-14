@@ -1,5 +1,6 @@
                 module InterfaceDrawList
-; исходные указатели перерисовки с ограничителем #0101
+                ; Список рисователей с ограничителем #0101, соответствует архивному Sur1 по формату
+                ; Документация [список и граница хвоста](../../../Docs/Rendering.md#список-рисователей)
                 DW @Station.DrawItem00.Entry
                 DW @Station.DrawItem02.Entry
                 DW @Station.DrawItem03.Entry

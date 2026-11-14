@@ -37,3 +37,9 @@
 Для [панели оснащения](EquipmentListPanels.md) старший операнд #7212 изменяется на EquipmentListState.RowCount. Этот счётчик учитывает попытку чтения маркера 80, а после отказа заголовка равен нулю. JP [HandleEquipmentListHover](../Source/Station/HandleEquipmentListHover.asm) передаёт управление в UpdateEquipmentHover с этим текущим запросом, исходный отступ 27 сохраняется. Эквивалентность обёртки проверена отдельно для шести значений RowCount.
 
 Старший операнд наведения списка разделов справки также изменяемый, DrawHelpContents записывает HelpPanelState.VisibleTitles по 6A4D. Значение 30 является исходным. Четыре внешних JP и изменяемые счётчики дополнительно проверены в [ListHoverAdapters](ListHoverAdapters.md).
+
+## Параметры помощников и порядок выходных регистров
+
+В Out семи UpdateShipListHover/UpdateIndexListHover/UpdateEnvironmentHover/UpdateEquipmentHover/UpdateToPositionHover/UpdateFromPositionHover/UpdateGameSettingsHover первыми перечислены результаты HL/DE/BC/AF по UpdateRowHover либо UpdatePixelHover. Затем указаны сохраняемые альтернативные HL/DE/BC, рабочий AF альтернативного набора и IX/IY. Параметры непосредственного вызова, число строк или пикселей и условия записи нового номера сохранены отдельно. Они не выдаются за неизменный конечный DE.
+
+Тот же порядок наследуют четыре [адаптера](ListHoverAdapters.md) и [обёртка оснащения](EquipmentListPanels.md). In, Corrupt, Note и все двенадцать исполняемых тел сохранены. Отдельное уточнение текущего VisibleTitles не заменено общим исходным числом 30. Это переупорядочение договоров, самостоятельная числовая модель семи помощников CheckPanelHover не объявляется новым прогоном ради комментариев.

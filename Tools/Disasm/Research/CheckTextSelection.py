@@ -128,10 +128,28 @@ def main():
                     if simulator.registers[SP] != 0x8000 or memory[0xA397] != 10:
                         raise ValueError("Обёртка нарушила стек либо восстановление ограничителя")
                     wrappers += 1
+    # Реальный поиск подписей настроек при заданном индексе за всеми 43 подписями.
+    memory[0x6000:] = source
+    title_starts = [address + 1 for address in range(0xDF3C, 0xE262) if memory[address] == 13]
+    assert len(title_starts) == 61 and title_starts[42:45] == [0xE0E2, 0xE0FB, 0xE0FC]
+    subscriber_indices = []
+    for index in range(43, len(title_starts)):
+        memory[0xA397], memory[0xAEAB], memory[0xBD26], memory[0xBD4F] = 10, 192, 0, 0xC3
+        bitmap = memory[0x4000:0x5B00]
+        simulator.registers[:] = initial
+        simulator.registers[H], simulator.registers[L] = 0, index
+        simulator.run(start=0x78FC, stop=0x790B)
+        registers = simulator.registers
+        assert (registers[A], registers[F]) == (10, 0x4A)
+        assert registers[H]*256+registers[L] == title_starts[index]+(2 if index == 43 else 1)
+        assert memory[0x4000:0x5B00] == bitmap
+        subscriber_indices.append(index)
     report = dict(method="original_text_separator_search_against_separator_positions", passed=True,
                   cases=cases, exhausted_search_cases=exhausted, source_sha256=hashlib.sha256(source).hexdigest(),
                   index_255_skips_256_separators=True, search_success_flag_not_propagated=True,
                   selection_and_print_wrapper_cases=wrappers,
+                  prepared_settings_indices_into_subscriber_text=subscriber_indices,
+                  subscriber_text_drawn_by_prepared_indices=False,
                   irq_enabled=False, native_execution_verified=False, assembly_executed=False)
     (ROOT / "Tools/Disasm/Reports/TextSelectionVerification.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")

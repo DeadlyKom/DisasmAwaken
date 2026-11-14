@@ -13,8 +13,31 @@ SHAPES = ((7,2,7),(2,2,7),(7,4,7),(7,7,7),(4,6,7),(7,0,7),
           (3,3,3),(7,5,7),(5,5,5),(1,2,4),(5,2,5),(2,7,2))
 
 
-def main():
+def phase_index_evidence(original):
+    flow = next(row for row in json.loads((ROOT/'Tools/Disasm/Reports/ControlFlow.json').read_bytes())
+                if row['name']=='Controls')['instructions']
+    code = {row['address']: row for row in flow}
+    groups = [(0xE5E5, ['EXX','LD A,E','AND #07','ADD A,A','LD E,A','ADD A,A',
+                         'ADD A,E','EXX','LD C,A','LD B,#00']),
+              (0xE60A, ['ADD HL,BC','PUSH HL','LD HL,#E68D','ADD HL,BC',
+                         'LD B,(HL)','INC HL','LD C,(HL)','POP HL'])]
+    checked = []
+    for start, operations in groups:
+        address = start
+        for operation in operations:
+            row = code[address]
+            assert row['operation']==operation
+            raw = bytes.fromhex(row['hex'])
+            assert bytes(original[address:address+len(raw)])==raw
+            checked.append(dict(address=address, operation=operation, hex=row['hex']))
+            address += len(raw)
+    return dict(phase_multiplier=6, index_shared_by_shape_and_clear_mask=True,
+                instructions_checked_against_original=checked)
+
+
+def main(poison_clear_tails=False, boundary_only=False, report_name='ControlsObjectGlyphsVerification.json'):
     original = base_memory()
+    index_evidence = phase_index_evidence(original)
     targets = [original[0xE65D+2*i] | original[0xE65E+2*i] << 8 for i in range(20)]
     # Проверка каждого физического байта фаз по независимому сдвигу исходных трёхбитовых строк.
     for shape, rows in enumerate(SHAPES):
@@ -28,6 +51,11 @@ def main():
             (~(0xE000 >> phase)) & 255, 0, 0, 0, 0]
         assert original[0xE685+phase] == 128 >> phase
     assert set(targets) == {0xE6BD+48*i for i in range(12)}
+    if poison_clear_tails:
+        # Подстановка затрагивает только четыре неизвестных байта каждой фазы в модельной RAM.
+        for phase in range(8):
+            for offset in range(2,6):
+                original[0xE68D+phase*6+offset] = ((phase*37+offset*53)&255) or 255
     memory = Memory(original)
     simulator = Simulator(memory)
     touched = set()
@@ -95,21 +123,27 @@ def main():
 
     # Проверка всех разрешённых координат для каждого из двадцати указателей исходной таблицы.
     for kind in range(20):
-        for x in range(64,141):
-            for y in range(107,181):
+        for x in (range(64,72) if boundary_only else range(64,141)):
+            for y in ((107,111,179,180) if boundary_only else range(107,181)):
                 check(x,y,kind,0,counts.total())
     # Проверка всего управляющего байта и принудительного указателя 1 на границах сдвигов.
     for mode in range(256):
         for phase in range(8):
             check(64+phase,111+(mode&1)*16,mode%20,mode,counts.total())
     report = dict(passed=True,total_cases=counts.total(),cases_by_mode=dict(counts),
-        all_accepted_positions_each_20_pointer_entries=True,all_control_bytes=True,
+        all_accepted_positions_each_20_pointer_entries=not boundary_only,all_control_bytes=True,
         physical_shape_count=12,physical_phase_count=96,physical_mask_records=8,
         original_resource_bytes_checked=672,exact_registers_flags_refresh_sp=True,
         every_ram_byte_and_write_checked=True,maximum_additional_stack_bytes=2,
         type_domain=[0,19],types_outside_table_proved=False,full_e291_proved=False,
+        boundary_positions_only=boundary_only,nonzero_clear_tail_fixture=poison_clear_tails,
+        clear_tail_fixture_bytes=32 if poison_clear_tails else 0,
+        clear_tail_fixture_values=[[original[0xE68D+phase*6+offset] for offset in range(2,6)]
+                                   for phase in range(8)],
+        phase_index_evidence=index_evidence,
+        global_tail_purpose_proved=False,
         assembly_executed=False,irq_executed=False,native_execution=False)
-    (ROOT/'Tools/Disasm/Reports/ControlsObjectGlyphsVerification.json').write_bytes(
+    (ROOT/'Tools/Disasm/Reports'/report_name).write_bytes(
         (json.dumps(report,indent=2)+'\n').encode('utf-8'))
     print(json.dumps(report,indent=2))
 

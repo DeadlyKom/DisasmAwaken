@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 2,
+  "resources": 1,
+  "popup_index": 40,
+  "entries": 64,
+  "physical_read_start": 62684,
+  "physical_read_end_exclusive": 62686,
+  "normal_game_reachability_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

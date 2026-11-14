@@ -1,0 +1,677 @@
+{
+  "passed": true,
+  "explicit_quantity_and_limit": [
+    {
+      "address": 39172,
+      "decimal_quantity_index": 15,
+      "stack_index": 14,
+      "quantity": 80,
+      "limit": 127,
+      "quantity_read": [
+        39172,
+        49628,
+        80
+      ],
+      "limit_read": [
+        39172,
+        50560,
+        80
+      ]
+    },
+    {
+      "address": 39173,
+      "decimal_quantity_index": 16,
+      "stack_index": 15,
+      "quantity": 0,
+      "limit": 1,
+      "quantity_read": [
+        39173,
+        49628,
+        255
+      ],
+      "limit_read": [
+        39173,
+        50560,
+        255
+      ]
+    },
+    {
+      "address": 39175,
+      "decimal_quantity_index": 18,
+      "stack_index": 17,
+      "quantity": 0,
+      "limit": 127,
+      "quantity_read": [
+        39175,
+        49628,
+        0
+      ],
+      "limit_read": [
+        39175,
+        50560,
+        0
+      ]
+    },
+    {
+      "address": 39177,
+      "decimal_quantity_index": 20,
+      "stack_index": 19,
+      "quantity": 0,
+      "limit": 127,
+      "quantity_read": [
+        39177,
+        49628,
+        0
+      ],
+      "limit_read": [
+        39177,
+        50560,
+        0
+      ]
+    }
+  ],
+  "neighbor_valid_indices_without_tail_reads": 14,
+  "neighbor_out_of_range_reads": [
+    {
+      "index": 14,
+      "reads": [
+        [
+          39173,
+          50505,
+          255
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "reads": [
+        [
+          39172,
+          50484,
+          80
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "reads": [
+        [
+          39173,
+          50484,
+          255
+        ],
+        [
+          39172,
+          50484,
+          80
+        ]
+      ]
+    },
+    {
+      "index": 33,
+      "reads": [
+        [
+          39177,
+          50484,
+          0
+        ],
+        [
+          39175,
+          50484,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 51,
+      "reads": [
+        [
+          39177,
+          50484,
+          0
+        ],
+        [
+          39175,
+          50484,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 57,
+      "reads": [
+        [
+          39177,
+          50484,
+          0
+        ],
+        [
+          39175,
+          50484,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 59,
+      "reads": [
+        [
+          39177,
+          50484,
+          0
+        ],
+        [
+          39175,
+          50484,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 60,
+      "reads": [
+        [
+          39177,
+          50484,
+          0
+        ],
+        [
+          39175,
+          50484,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 61,
+      "reads": [
+        [
+          39177,
+          50484,
+          0
+        ],
+        [
+          39175,
+          50484,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 62,
+      "reads": [
+        [
+          39177,
+          50484,
+          0
+        ],
+        [
+          39175,
+          50484,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 63,
+      "reads": [
+        [
+          39177,
+          50484,
+          0
+        ],
+        [
+          39175,
+          50484,
+          0
+        ]
+      ]
+    }
+  ],
+  "threshold_original_key_variants": 256,
+  "threshold_sizes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "threshold_forced_first_seven_zero": [
+    39172,
+    50442,
+    80
+  ],
+  "weighted_options_checked": 256,
+  "weighted_tail_reads": [
+    {
+      "skimmer_index": 44,
+      "read": [
+        39173,
+        51453,
+        255
+      ]
+    },
+    {
+      "skimmer_index": 95,
+      "read": [
+        39173,
+        51453,
+        255
+      ]
+    },
+    {
+      "skimmer_index": 146,
+      "read": [
+        39173,
+        51453,
+        255
+      ]
+    },
+    {
+      "skimmer_index": 197,
+      "read": [
+        39173,
+        51453,
+        255
+      ]
+    },
+    {
+      "skimmer_index": 248,
+      "read": [
+        39172,
+        51453,
+        80
+      ]
+    },
+    {
+      "skimmer_index": 249,
+      "read": [
+        39177,
+        51453,
+        0
+      ]
+    }
+  ],
+  "original_market_script_profiles": [
+    {
+      "event": 3,
+      "initial_skimmer": 0,
+      "alias_reads": []
+    },
+    {
+      "event": 3,
+      "initial_skimmer": 1,
+      "alias_reads": []
+    },
+    {
+      "event": 3,
+      "initial_skimmer": 2,
+      "alias_reads": []
+    },
+    {
+      "event": 3,
+      "initial_skimmer": 3,
+      "alias_reads": []
+    },
+    {
+      "event": 3,
+      "initial_skimmer": 255,
+      "alias_reads": []
+    },
+    {
+      "event": 3,
+      "initial_skimmer": 44,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 3,
+      "initial_skimmer": 95,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 3,
+      "initial_skimmer": 146,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 3,
+      "initial_skimmer": 197,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 3,
+      "initial_skimmer": 248,
+      "alias_reads": [
+        [
+          39172,
+          51453,
+          80
+        ]
+      ]
+    },
+    {
+      "event": 3,
+      "initial_skimmer": 249,
+      "alias_reads": [
+        [
+          39177,
+          51453,
+          0
+        ]
+      ]
+    },
+    {
+      "event": 4,
+      "initial_skimmer": 0,
+      "alias_reads": []
+    },
+    {
+      "event": 4,
+      "initial_skimmer": 1,
+      "alias_reads": []
+    },
+    {
+      "event": 4,
+      "initial_skimmer": 2,
+      "alias_reads": []
+    },
+    {
+      "event": 4,
+      "initial_skimmer": 3,
+      "alias_reads": []
+    },
+    {
+      "event": 4,
+      "initial_skimmer": 255,
+      "alias_reads": []
+    },
+    {
+      "event": 4,
+      "initial_skimmer": 44,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 4,
+      "initial_skimmer": 95,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 4,
+      "initial_skimmer": 146,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 4,
+      "initial_skimmer": 197,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 4,
+      "initial_skimmer": 248,
+      "alias_reads": [
+        [
+          39172,
+          51453,
+          80
+        ]
+      ]
+    },
+    {
+      "event": 4,
+      "initial_skimmer": 249,
+      "alias_reads": [
+        [
+          39177,
+          51453,
+          0
+        ]
+      ]
+    },
+    {
+      "event": 7,
+      "initial_skimmer": 0,
+      "alias_reads": []
+    },
+    {
+      "event": 7,
+      "initial_skimmer": 1,
+      "alias_reads": []
+    },
+    {
+      "event": 7,
+      "initial_skimmer": 2,
+      "alias_reads": []
+    },
+    {
+      "event": 7,
+      "initial_skimmer": 3,
+      "alias_reads": []
+    },
+    {
+      "event": 7,
+      "initial_skimmer": 255,
+      "alias_reads": []
+    },
+    {
+      "event": 7,
+      "initial_skimmer": 44,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 7,
+      "initial_skimmer": 95,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 7,
+      "initial_skimmer": 146,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 7,
+      "initial_skimmer": 197,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 7,
+      "initial_skimmer": 248,
+      "alias_reads": [
+        [
+          39172,
+          51453,
+          80
+        ]
+      ]
+    },
+    {
+      "event": 7,
+      "initial_skimmer": 249,
+      "alias_reads": [
+        [
+          39177,
+          51453,
+          0
+        ]
+      ]
+    },
+    {
+      "event": 8,
+      "initial_skimmer": 0,
+      "alias_reads": []
+    },
+    {
+      "event": 8,
+      "initial_skimmer": 1,
+      "alias_reads": []
+    },
+    {
+      "event": 8,
+      "initial_skimmer": 2,
+      "alias_reads": []
+    },
+    {
+      "event": 8,
+      "initial_skimmer": 3,
+      "alias_reads": []
+    },
+    {
+      "event": 8,
+      "initial_skimmer": 255,
+      "alias_reads": []
+    },
+    {
+      "event": 8,
+      "initial_skimmer": 44,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 8,
+      "initial_skimmer": 95,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 8,
+      "initial_skimmer": 146,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 8,
+      "initial_skimmer": 197,
+      "alias_reads": [
+        [
+          39173,
+          51453,
+          255
+        ]
+      ]
+    },
+    {
+      "event": 8,
+      "initial_skimmer": 248,
+      "alias_reads": [
+        [
+          39172,
+          51453,
+          80
+        ]
+      ]
+    },
+    {
+      "event": 8,
+      "initial_skimmer": 249,
+      "alias_reads": [
+        [
+          39177,
+          51453,
+          0
+        ]
+      ]
+    }
+  ],
+  "physical_skimmer_rows": 4,
+  "secondary_selection_entered": false,
+  "normal_game_use_of_aliases_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -89,15 +89,19 @@ VISUAL_EFFECT_FIELDS = {
     0x02: "SavedDE", 0x03: "SavedDE + 1",
     0x04: "SavedBC", 0x05: "SavedBC + 1",
     0x06: "Mode", 0x07: "State",
-    0x08: "Source", 0x09: "Source + 1",
-    0x0A: "Cursor", 0x0B: "Cursor + 1",
-    0x0C: "Unknown0C", 0x0D: "Unknown0D",
-    0x0E: "Unknown0E", 0x0F: "Unknown0E + 1",
-    0x10: "Unknown10", 0x11: "Unknown11",
+    0x08: "FramePointer", 0x09: "FramePointer + 1",
+    0x0A: "FirstFrame", 0x0B: "FirstFrame + 1",
+    0x0C: "FrameCount", 0x0D: "FrameReload",
+    0x0E: "FrameStride", 0x0F: "FrameStride + 1",
+    0x10: "FrameWidth", 0x11: "FrameHeight",
 }
 
 
+from ActionPanelPhysicalData import name_operands as action_panel_physical_name_operands
+
+
 def name_operands(region, function_address, operation):
+    operation = action_panel_physical_name_operands(region, function_address, operation)
     if (region, function_address) == ("Action", 0xE020):
         operation = operation.replace('LD HL, #001B', 'LD HL, @FActionRecord.ViewPosition.X.High')
         operation = operation.replace('LD DE, #0020', 'LD DE, @FActionRecord.ViewPosition.Depth + @FActionWord')
@@ -153,6 +157,10 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = introattributescanprefix_name_operands(region,function_address,operation)
+    operation = introdetachedunpackgate_name_operands(region,function_address,operation)
+    operation = controlsevenspanprefix_name_operands(region,function_address,operation)
+    operation = action_record_scale_extra_entry_name_operands(region,function_address,operation)
     operation = introattributecounttail_name_operands(region,function_address,operation)
     operation = actionrandomclassgateentry_name_operands(region,function_address,operation)
     operation = stationallfilledband_name_operands(region,function_address,operation)
@@ -608,9 +616,12 @@ def name_operands(region, function_address, operation):
     operation = weight_field_name_operands(region, function_address, operation)
     operation = cargo_field_name_operands(region, function_address, operation)
     operation = threshold_set_name_operands(region, function_address, operation)
+    operation = membership_flags_name_operands(region, function_address, operation)
+    operation = expression_push_name_operands(region, function_address, operation)
     operation = key_choice_name_operands(region, function_address, operation)
     operation = signature_return_name_operands(region, function_address, operation)
     operation = delimited_record_name_operands(region, function_address, operation)
+    operation = station_script_fields_name_operands(region, function_address, operation)
     operation = market_field_name_operands(region, function_address, operation)
     operation = weighted_load_name_operands(region, function_address, operation)
     operation = field_suffix_name_operands(region, function_address, operation)
@@ -709,12 +720,12 @@ def name_operands(region, function_address, operation):
         operation = operation.replace("BIT 7, B", "BIT @IntroConst.PhaseSignBit, B")
     if (region, function_address) == ("Intro", 0x6A4B):
         operation = operation.replace("(#6A5E)", "(@Intro.RunTimedEffect.StepCall + 1)")
-    if (region, function_address) == ("Intro", 0x6BF6):
+    if region == "Intro" and function_address in (0x6BF6, 0x6DB6, 0x6C9C):
         for address, name in ((0x6C8A, "TexturePhases.PhaseA"), (0x6C90, "TexturePhases.PhaseB"),
                               (0x6C96, "TexturePhases.PhaseC"), (0x6400, "IntroTables.PhaseSamples"),
                               (0x6BA2, "IntroState.LookupHL"), (0x6BA6, "IntroState.LookupBCAlt"),
                               (0x6BA9, "IntroState.LookupHLAlt"), (0x6BAC, "IntroState.LookupDEAlt"),
-                              (0x6C12, "IntroState.SampleCursor")):
+                              (0x6C12, "IntroState.SampleCursor"), (0x6D40, "IntroLookupState.PointerRowPhase")):
             operation = operation.replace(f"#{address:04X}", "@" + name)
     if (region, function_address) == ("Basic", 0x5D41):
         for literal, name in (("#5FFF", "@LoaderConst.StackTop"), ("#5C3A", "@LoaderConst.SystemIY"),
@@ -971,6 +982,7 @@ LABELS.update(MARKET_FIELD_LABELS)
 DOCUMENTS.update(MARKET_FIELD_DOCUMENTS)
 
 from DelimitedRecordFacts import LABELS as DELIMITED_RECORD_LABELS, DOCUMENTS as DELIMITED_RECORD_DOCUMENTS, name_operands as delimited_record_name_operands
+from StationScriptFields import name_operands as station_script_fields_name_operands
 LABELS.update(DELIMITED_RECORD_LABELS)
 DOCUMENTS.update(DELIMITED_RECORD_DOCUMENTS)
 
@@ -984,7 +996,7 @@ from StrideFiveFacts import LABELS as STRIDE_FIVE_LABELS, DOCUMENTS as STRIDE_FI
 LABELS.update(STRIDE_FIVE_LABELS)
 DOCUMENTS.update(STRIDE_FIVE_DOCUMENTS)
 
-from MembershipFlagsFacts import LABELS as MEMBERSHIP_FLAGS_LABELS, DOCUMENTS as MEMBERSHIP_FLAGS_DOCUMENTS
+from MembershipFlagsFacts import LABELS as MEMBERSHIP_FLAGS_LABELS, DOCUMENTS as MEMBERSHIP_FLAGS_DOCUMENTS, name_operands as membership_flags_name_operands
 LABELS.update(MEMBERSHIP_FLAGS_LABELS)
 DOCUMENTS.update(MEMBERSHIP_FLAGS_DOCUMENTS)
 
@@ -1019,7 +1031,7 @@ from RecordFieldSelectorFacts import LABELS as RECORD_FIELD_SELECTOR_LABELS, DOC
 LABELS.update(RECORD_FIELD_SELECTOR_LABELS)
 DOCUMENTS.update(RECORD_FIELD_SELECTOR_DOCUMENTS)
 
-from ExpressionPushFacts import LABELS as EXPRESSION_PUSH_LABELS, DOCUMENTS as EXPRESSION_PUSH_DOCUMENTS
+from ExpressionPushFacts import LABELS as EXPRESSION_PUSH_LABELS, DOCUMENTS as EXPRESSION_PUSH_DOCUMENTS, name_operands as expression_push_name_operands
 LABELS.update(EXPRESSION_PUSH_LABELS)
 DOCUMENTS.update(EXPRESSION_PUSH_DOCUMENTS)
 
@@ -1785,6 +1797,7 @@ DOCUMENTS.update({("Controls", a): ("ControlsPointRespawn", "алгоритм и
 
 
 ACTION_FIXED_OPERANDS = {
+    0xF760: ('BIT 1,', 'BIT @ActionArrivalConst.RocketAttackBit,'),
     0x6B0D: ('#CEFA', '@Controls.ProjectAndDrawBody.Entry'),
     0x6C86: ('#CEFA', '@Controls.ProjectAndDrawBody.Entry'),
     0x6E1E: ('#FA3A', '@Voxel.DrawProjectedEffect.Entry'),
@@ -1846,6 +1859,7 @@ DOCUMENTS.update({("Controls", a): ("ControlsSmallBodies", "алгоритм и 
 from ControlsCircleSetupFacts import LABELS as CONTROLS_CIRCLE_SETUP_LABELS, name_operands as controls_circle_setup_name_operands
 LABELS.update(CONTROLS_CIRCLE_SETUP_LABELS)
 DOCUMENTS.update({("Controls", a): ("ControlsCircleSetup", "алгоритм и проверка") for a in (54532, 54636, 54475, 54500)})
+DOCUMENTS[("Controls", 0xD501)] = ("ControlsCircleSetup", "вход UNFILLED")
 
 from ControlsCircleSpanFacts import LABELS as CONTROLS_CIRCLE_SPAN_LABELS, name_operands as controls_circle_span_name_operands
 LABELS.update(CONTROLS_CIRCLE_SPAN_LABELS)
@@ -2918,7 +2932,7 @@ LABELS.update({('Action', 62099): 'CheckList', ('Action', 62119): 'RefreshClass'
 
 from ActionArrivalStateFacts import name_operands as action_arrival_state_name_operands
 DOCUMENTS['Action',62847]=('ActionArrivalState','алгоритм и проверка')
-LABELS.update({('Action', 62893): 'EffectCurrent', ('Action', 62900): 'Approach', ('Action', 63003): 'Reached', ('Action', 63020): 'MarkArrival', ('Action', 63061): 'CountArrival', ('Action', 63070): 'EffectTarget'})
+LABELS.update({('Action', 62893): 'EffectCurrent', ('Action', 62900): 'Approach', ('Action', 63003): 'Reached', ('Action', 63020): 'MarkArrival', ('Action', 63061): 'ScoreTarget', ('Action', 63070): 'EffectTarget'})
 
 LABELS['Action',0xDDFC]='DrawPacked'
 
@@ -3148,3 +3162,19 @@ from PreviewSquareEntryFacts import LABELS as PREVIEW_SQUARE_ENTRY_LABELS, DOCUM
 LABELS.update(PREVIEW_SQUARE_ENTRY_LABELS)
 DOCUMENTS.update(PREVIEW_SQUARE_ENTRY_DOCUMENTS)
 LABELS['Intro',0x6A5D]='StepCall'
+
+from ActionRecordScaleExtraEntryFacts import name_operands as action_record_scale_extra_entry_name_operands
+DOCUMENTS['Action',58783]=('ActionRecordScaleExtraEntry','алгоритм и проверка')
+LABELS.update({})
+
+from ControlsEvenSpanPrefixFacts import name_operands as controlsevenspanprefix_name_operands
+DOCUMENTS['Controls',52917]=('ControlsEvenSpanPrefix','условное заполнение 31 байта')
+
+from IntroDetachedUnpackGateFacts import name_operands as introdetachedunpackgate_name_operands
+DOCUMENTS['IntroUnpack',29932]=('IntroDetachedUnpackGate','условный вход и переходы за экранным потоком')
+LABELS['IntroUnpack',29943]='ProbeByte'
+
+from IntroAttributeScanPrefixFacts import name_operands as introattributescanprefix_name_operands
+DOCUMENTS['IntroUnpack',29844]=('IntroAttributeCountTail','фиксированный приёмник условного обхода атрибутов')
+
+DOCUMENTS['Action',61308]=('ActionObjectStateReturnOnly','алгоритм и проверка')

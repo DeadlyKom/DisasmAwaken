@@ -15,6 +15,10 @@ def main():
     manifest = json.loads((ROOT / "Tools/Disasm/Disk/Manifest.json").read_text(encoding="utf-8"))
     item = next(e for e in manifest["entries"] if e["slot"] == 4)
     source = (ROOT / (item["path"]+".sectors.bin")).read_bytes()
+    disk = (ROOT / "Tools/Disasm/Disk/original.trd").read_bytes()
+    assert hashlib.sha256(disk).hexdigest() == manifest["sha256"]
+    assert len(source) == item["allocated_length"]
+    assert disk[item["offset"]:item["offset"] + len(source)] == source
     memory = [0]*65536
     memory[0x6000:] = source
     simulator = Simulator(memory)
@@ -66,7 +70,10 @@ def main():
         memory[0x7FFE:0x8000] = [0xFF, 0x3F]
         simulator.registers[:] = initial
         simulator.registers[A], simulator.registers[F] = flags ^ 0xA5, flags
+        # Проверка R на трёх исходных инструкциях отказа, без callback и сохранения контекста.
+        simulator.registers[15] = flags
         simulator.run(start=0x9E77, stop=0x3FFF)
+        assert simulator.registers[15] == (flags & 0x80) | ((flags + 3) & 0x7F)
         if (simulator.registers[A], simulator.registers[F], simulator.registers[SP]) != (0, 0x54, 0x8000):
             raise ValueError("Не совпал неактивный вход закрытия")
         if memory[0x9E8B:0x9E8D] != [0, 0x50]:
@@ -76,6 +83,8 @@ def main():
                 raise ValueError("Неактивный вход изменил сохраняемый регистр")
     report = dict(passed=True, method="original_close_callback_protocol_with_explicit_synthetic_register_clobber",
                   callback_af_cases=65536, inactive_cases=256, toggle_suppressed_by_bit4=True,
+                  inactive_R_checked=True, inactive_M1=3, full_callback_R_proved=False,
+                  original_disk_sha256=hashlib.sha256(disk).hexdigest(),
                   source_sha256=hashlib.sha256(source).hexdigest(), external_callback_is_fixture=True,
                   irq_enabled=False, native_execution_verified=False, assembly_executed=False)
     (ROOT / "Tools/Disasm/Reports/CloseCallbackVerification.json").write_text(

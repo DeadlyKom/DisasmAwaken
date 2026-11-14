@@ -8,7 +8,7 @@ CONTRACTS={('D3D',0xEC28):(
   "исходный список начинается по CDC0 с шагом 64, первые десять байтов содержат три слова, смещение модели и три параметра ориентации",
   "список имеет доступный конечный маркер 80xx с младшим байтом от 80, записи и указатели не перекрывают активные рабочие области",
   "смещения модели выбирают допустимую пару PreviewModelPointers, младший размер заголовка байтовый, показатель старшего байта после RES 7 находится в 1..6",
-  "PreviewSceneMatrix содержит девять исходных слов, PreviewSharedSeed три сохраняемых байта с ещё не установленным общим игровым назначением",
+  "PreviewSceneMatrix содержит девять исходных слов, PreviewSharedSeed задаёт начальные первый и третий углы и базовый второй отсчёт",
   "выполнены договоры TransformPreviewCoords, CheckPreviewBounds и InsertPreviewQueue, исходная FoldedSquare127 доступна"],
  ["Head=1 и NextFree=0 устанавливаются перед обходом, исходные невыделенные узлы не очищаются",
   "старшие байты коэффициентов 80 заменяются на 81 в рабочих операндах, остальные копируются без изменения",
@@ -26,11 +26,11 @@ CONTRACTS={('D3D',0xEC28):(
   "для первой преобразованной компоненты отрицательный старший байт инвертируется через CPL, а не NEG",
   "выбор соседнего указателя при третьем результате меньше 1F00 не означает другой ресурс, обе исходные пары всех 11 моделей равны",
   "три предварительных знаковых теста сходятся к DepthPlusSize, их промежуточные результаты не являются условиями пропуска объекта",
-  "полный алгоритм подготовки очереди отделён от дальнейшего чтения узлов и растеризации, игровой смысл трёх Unknown-полей не придумывается"])}
+  "подготовка очереди отделена от дальнейшего чтения узлов и растеризации, направления глобальной камеры этим проходом не доказываются"])}
 NORMALIZATION=((0xEC34,0xEC37,0xEC39,0xEC3B,0xEC3C,1,1),(0xEC3F,0xEC42,0xEC44,0xEC46,0xEC47,2,1),(0xEC4A,0xEC4D,0xEC4F,0xEC51,0xEC52,3,1),(0xEC55,0xEC58,0xEC5A,0xEC5C,0xEC5D,1,2),(0xEC60,0xEC63,0xEC65,0xEC67,0xEC68,2,2),(0xEC6B,0xEC6E,0xEC70,0xEC72,0xEC73,3,2),(0xEC76,0xEC79,0xEC7B,0xEC7D,0xEC7E,1,3),(0xEC81,0xEC84,0xEC86,0xEC88,0xEC89,2,3),(0xEC8C,0xEC8F,0xEC91,0xEC93,0xEC94,3,3))
 COMMENTS={
- 0xEC28:(["копирование первых двух исходных Unknown-параметров, их общий игровой смысл ещё не установлен"],None),
- 0xEC2E:(["копирование третьего исходного Unknown-параметра в начальное рабочее состояние"],None),
+ 0xEC28:(["копирование начального первого угла и базового второго отсчёта в рабочие углы"],None),
+ 0xEC2E:(["копирование начального третьего угла Eye_g в AngleThird до обхода записей"],None),
  0xEC97:(["создание пустого активного списка, младший байт Head=1, старший NextFree=0"],None),
  0xEC9D:(["выбор исходного шага физических записей объектов"],None),
  0xECA0:(["выбор исходного начала списка объектов"],None),
@@ -140,7 +140,7 @@ for read,compare,branch,increment,store,row,column in NORMALIZATION:
 
 def name_operands(region,address,operation):
  if region=='D3D' and address==0xEC28:
-  operation=operation.replace('(#C200)','(@PreviewSharedSeed.Value.Unknown00)').replace('(#C202)','(@PreviewSharedSeed.Value.Unknown02)')
+  operation=operation.replace('(#C200)','(@PreviewSharedSeed.Value.InitialAngle0)').replace('(#C202)','(@PreviewSharedSeed.Value.InitialAngle2)')
   for index,(read,compare,branch,increment,store,row,column) in enumerate(NORMALIZATION):
    operation=operation.replace('(#'+format(0xC20D+2*index,'04X')+')','(@PreviewSceneMatrix.Value.Coeff'+str(row)+str(column)+'+#01)')
   from PreviewQueueFacts import STATE

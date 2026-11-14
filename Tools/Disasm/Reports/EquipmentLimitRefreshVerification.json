@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "method": "original_equipment_limit_all_initial_refresh_values",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "source_sha256": "92f1f656d150b82844697329625d4fea9607f9a62181e8558091f6594e4a27b1",
+  "cases_by_entry_and_base": {
+    "0xc577_0x988e": 3840,
+    "0xc5bb_0x98f6": 3840,
+    "0xc57a_0xa200": 3840,
+    "0xc57a_0xffff": 3840
+  },
+  "total_cases": 15360,
+  "initial_R_values": 256,
+  "R_bit7_preserved": true,
+  "R_low7_wrap_checked": true,
+  "input_indices": [
+    0,
+    1,
+    255
+  ],
+  "input_bytes": [
+    0,
+    1,
+    127,
+    128,
+    255
+  ],
+  "M1_for_bit7_clear": {
+    "C577": 11,
+    "C5BB": 12,
+    "C57A": 10
+  },
+  "M1_for_bit7_set": {
+    "C577": 12,
+    "C5BB": 13,
+    "C57A": 11
+  },
+  "all_registers_except_T_and_entire_RAM_checked": true,
+  "original_return_word_and_consumed_index_unchanged": true,
+  "arbitrary_base_word_wrap_checked_at_FFFF": true,
+  "full_input_cartesian_product_proved": false,
+  "arbitrary_stack_addresses_proved": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

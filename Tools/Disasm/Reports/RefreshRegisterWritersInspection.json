@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "registered_regions_checked": 20,
+  "original_instructions_checked": 50957,
+  "registered_LD_R_A_writers": [],
+  "selected_roms": [
+    {
+      "path": "Tools/Disasm/Research/vendor/skoolkit-10.1/skoolkit/resources/48.rom",
+      "sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "bytes": 16384,
+      "raw_ED4F_offsets": []
+    },
+    {
+      "path": "Tools/Disasm/Research/vendor/skoolkit-10.1/skoolkit/resources/128-0.rom",
+      "sha256": "3ba308f23b9471d13d9ba30c23030059a9ce5d4b317b85b86274b132651d1425",
+      "bytes": 16384,
+      "raw_ED4F_offsets": []
+    },
+    {
+      "path": "Tools/Disasm/Research/vendor/skoolkit-10.1/skoolkit/resources/128-1.rom",
+      "sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "bytes": 16384,
+      "raw_ED4F_offsets": []
+    },
+    {
+      "path": "Tools/Disasm/Research/Runtime/Unreal/rom/trdos504t.rom",
+      "sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+      "bytes": 16384,
+      "raw_ED4F_offsets": [
+        11967
+      ]
+    }
+  ],
+  "trdos_fragment": {
+    "start": 11966,
+    "stop": 11969,
+    "original_bytes_hex": "F1ED4F",
+    "cases": 256,
+    "all_256_R_values_restored": true,
+    "stack_AF_word_explicitly_prepared": true,
+    "whole_dos_entry_executed": false,
+    "native_game_reaches_this_fragment_proved": false
+  },
+  "raw_disk_ED4F_offsets": [
+    5356,
+    13218,
+    191001,
+    204084,
+    219941
+  ],
+  "raw_disk_pair_is_not_instruction_proof": true,
+  "generated_modified_or_other_entry_code_excluded": false,
+  "native_refresh_bit7_reachability_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

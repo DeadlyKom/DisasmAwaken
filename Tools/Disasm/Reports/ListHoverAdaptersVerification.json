@@ -6,7 +6,10 @@
     "741E": 32,
     "74A7": 32
   },
-  "whole_memory_and_register_equivalence": true,
+  "ordinary_context_and_whole_memory_equivalence": true,
+  "wrapper_extra_refresh_m1": 1,
+  "i_im_iff_preserved": true,
+  "iff_fixture": 1,
   "mutable_ship_and_help_row_counts": [
     0,
     1,

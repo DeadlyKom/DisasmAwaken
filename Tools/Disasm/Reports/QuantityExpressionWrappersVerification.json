@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "method": "original_direct_quantity_expression_wrappers",
+  "expression_wrappers_executed": true,
+  "sum_cases": 196608,
+  "field_cases": 3584,
+  "all_encoded_weight_bytes": true,
+  "all_index_component_pairs": true,
+  "suffix_handlers_executed": false,
+  "direct_quantity_exact_R_and_CPU_writes_checked": true,
+  "direct_quantity_return_word_preserved": true,
+  "direct_quantity_suffix_paths_checked": false,
+  "index_cases_by_entry": {
+    "51456": 65536,
+    "51468": 65536,
+    "51480": 65536
+  },
+  "index_M1": 7,
+  "index_no_CPU_RAM_writes": true,
+  "index_exact_R_and_return_word_checked": true,
+  "CPU_write_watch_positive_control": true,
+  "physical_disk_and_sector_hashes_checked": true,
+  "full_index_component_AF_R_cartesian_product_checked": false,
+  "arbitrary_stack_addresses_checked": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

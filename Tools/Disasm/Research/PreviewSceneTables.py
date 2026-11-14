@@ -1,6 +1,8 @@
 """Физические исходные параметры, девять слов матрицы и пары указателей моделей."""
 import re
-SEED_FIELDS=tuple(('Unknown'+str(i).zfill(2),1,'исходный байт начального копирования, отдельный игровой смысл ещё не установлен') for i in range(3))
+SEED_FIELDS=(('InitialAngle0',1,'начальный первый угол Eye_a, копируется в AngleFirst до обхода записей'),
+ ('PlanarAngleBase',1,'вычитаемый угловой отсчёт плоской модели, единица 1/256 оборота'),
+ ('InitialAngle2',1,'начальный третий угол Eye_g, копируется в AngleThird до обхода записей'))
 MATRIX_FIELDS=tuple(('Coeff'+str(row)+str(column),2,'исходный коэффициент строки '+str(row)+' при координате '+str(column)+', проход использует старший байт') for column in range(1,4) for row in range(1,4))
 POINTER_FIELDS=(('BasePointer',2,'указатель модели при старшем байте третьего результата 31..127'),('AlternatePtr',2,'соседний указатель модели при старшем байте третьего результата 0..30'))
 MODEL_NAMES=('Dominion','Sofist','Memfis','Firs','Orsan','Baros','Karen','Fervest','Kridon','Protos','Algol')

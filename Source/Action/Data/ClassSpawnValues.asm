@@ -3,48 +3,48 @@
                 assert $ == #F280
                 ; -----------------------------------------
                 ; исходная физическая запись Class0
-Class0:         FClassSpawnByte {
-                    #14                                                         ; Value, исходный байт Unknown14 после попытки создания, единицы во всех состояниях не установлены
+Class0:         FMissileRepeatDelay {
+                    #14                                                         ; Counter, начальное значение MissileRepeatDelay после попытки пуска, авторский счётчик RCO
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Class1
-Class1:         FClassSpawnByte {
-                    #00                                                         ; Value, исходный байт Unknown14 после попытки создания, единицы во всех состояниях не установлены
+Class1:         FMissileRepeatDelay {
+                    #00                                                         ; Counter, начальное значение MissileRepeatDelay после попытки пуска, авторский счётчик RCO
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Class2
-Class2:         FClassSpawnByte {
-                    #12                                                         ; Value, исходный байт Unknown14 после попытки создания, единицы во всех состояниях не установлены
+Class2:         FMissileRepeatDelay {
+                    #12                                                         ; Counter, начальное значение MissileRepeatDelay после попытки пуска, авторский счётчик RCO
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Class3
-Class3:         FClassSpawnByte {
-                    #1E                                                         ; Value, исходный байт Unknown14 после попытки создания, единицы во всех состояниях не установлены
+Class3:         FMissileRepeatDelay {
+                    #1E                                                         ; Counter, начальное значение MissileRepeatDelay после попытки пуска, авторский счётчик RCO
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Class4
-Class4:         FClassSpawnByte {
-                    #00                                                         ; Value, исходный байт Unknown14 после попытки создания, единицы во всех состояниях не установлены
+Class4:         FMissileRepeatDelay {
+                    #00                                                         ; Counter, начальное значение MissileRepeatDelay после попытки пуска, авторский счётчик RCO
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Class5
-Class5:         FClassSpawnByte {
-                    #1E                                                         ; Value, исходный байт Unknown14 после попытки создания, единицы во всех состояниях не установлены
+Class5:         FMissileRepeatDelay {
+                    #1E                                                         ; Counter, начальное значение MissileRepeatDelay после попытки пуска, авторский счётчик RCO
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Class6
-Class6:         FClassSpawnByte {
-                    #23                                                         ; Value, исходный байт Unknown14 после попытки создания, единицы во всех состояниях не установлены
+Class6:         FMissileRepeatDelay {
+                    #23                                                         ; Counter, начальное значение MissileRepeatDelay после попытки пуска, авторский счётчик RCO
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Class7
-Class7:         FClassSpawnByte {
-                    #0A                                                         ; Value, исходный байт Unknown14 после попытки создания, единицы во всех состояниях не установлены
+Class7:         FMissileRepeatDelay {
+                    #0A                                                         ; Counter, начальное значение MissileRepeatDelay после попытки пуска, авторский счётчик RCO
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Class8
-Class8:         FClassSpawnByte {
-                    #28                                                         ; Value, исходный байт Unknown14 после попытки создания, единицы во всех состояниях не установлены
+Class8:         FMissileRepeatDelay {
+                    #28                                                         ; Counter, начальное значение MissileRepeatDelay после попытки пуска, авторский счётчик RCO
                 }
                 assert $ == #F289
                 endmodule

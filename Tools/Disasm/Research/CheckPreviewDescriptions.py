@@ -34,17 +34,24 @@ def main():
  _,_,banks=make_context();raw=payload(6);template=bytearray(65536);template[0x4000:0x8000]=bytes(banks[5]);template[0x8000:0xC000]=bytes(banks[2]);template[0xC000:0xC000+len(raw)]=raw
  template[0x4000:0x5B00]=bytes((i*73+(i>>8)*19+17)&255 for i in range(0x1B00));initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5D,'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
  counts=prints=glyphs=0
- def execute(entry,selector,index,wrapped,width,height,scroll=0,origin=(5,3)):
+ def execute(entry,selector,index,wrapped,width,height,scroll=0,origin=(5,3),input_b=0x36):
   nonlocal counts,prints,glyphs
-  m=bytearray(template);s=Simulator(m);s.registers[:]=initial;r=s.registers;r[A]=selector;r[H]=scroll>>8;r[L]=scroll&255;row=(index-3)&255 if wrapped else index;base=3 if wrapped else 0;m[0xE146]=row;m[0xE148]=base;m[0x6320:0x6322]=bytes([127,250]);m[0xAEAB]=height;m[0xAEB3]=width;m[0xAEBB]=origin[0];m[0xAEBF]=0;m[0xAEC7]=origin[1];m[0xAECB]=0;m[0xBD26]=0;m[0x7FFE:0x8000]=bytes([255,63]);start=selected(m,selector,index);positions=[];description_image=bytes(m[0xC000:])
-  args=(0xA82D if entry==0xE124 else 0xA843,list(m[start:]),list(m[0x8900:0x8A00]),0x3600|row if entry==0xE124 else 0x0800,width,height,0 if entry==0xE124 else scroll&255)
+  m=bytearray(template);s=Simulator(m);context=list(initial);context[2]=input_b;context[14]=(counts+prints)&255;context[26]=0;context[27]=(counts+prints)%3;s.registers[:]=context;r=s.registers;r[A]=selector;r[H]=scroll>>8;r[L]=scroll&255;row=(index-3)&255 if wrapped else index;base=3 if wrapped else 0;m[0xE146]=row;m[0xE148]=base;m[0x6320:0x6322]=bytes([127,250]);m[0xAEAB]=height;m[0xAEB3]=width;m[0xAEBB]=origin[0];m[0xAEBF]=0;m[0xAEC7]=origin[1];m[0xAECB]=0;m[0xBD26]=0;m[0x7FFE:0x8000]=bytes([255,63]);start=selected(m,selector,index);positions=[];description_image=bytes(m[0xC000:])
+  args=(0xA82D if entry==0xE124 else 0xA843,list(m[start:]),list(m[0x8900:0x8A00]),(input_b<<8)|row if entry==0xE124 else 0x0800,width,height,0 if entry==0xE124 else scroll&255)
   expected=reference(*args,initial_d=scroll>>8,positions=positions,origin=origin);screen=bytearray(m[0x4000:0x5B00]);widths=m[0x8900:0x8A00]
   screen,painted=paint_positions(m,positions,width,height,origin);glyphs+=painted
   s.run(start=entry,stop=0x3FFF);offset,x,y,a,f,bc,d,e,_=expected
   actual=(r[H]*256+r[L],m[0x6320],m[0x6321],r[A],r[F],r[2]*256+r[3],r[D],r[E]);assert actual==(start+offset,x,y,a,f,bc,d,e),(hex(entry),selector,index,wrapped,width,height,scroll,actual,expected)
   assert m[0x4000:0x5B00]==screen and r[SP]==0x8000 and r[8:12]==initial[8:12] and r[16:24]==initial[16:24]
   assert bytes(m[0xC000:])==description_image
-  if entry==0xE124:counts+=1
+  assert all(r[i]==context[i] for i in (14,26,27))
+  if entry==0xE124:
+   # Проверка завершения сухого подсчёта, Carry принадлежит последнему выравнивателю, а не сумме индексов.
+   assert r[F]&1
+   if height<14:
+    assert r[H]*256+r[L]==start and r[D]*256+r[E]==1
+    assert r[2]*256+r[3]==(input_b<<8)|row
+   counts+=1
   else:prints+=1
  for selector in (0,1,2,255):
   for index in range(4 if selector==1 else 7):
@@ -55,7 +62,9 @@ def main():
  for selector in range(256):execute(0xE124,selector,selector%(4 if selector==1 else 7),False,168,80)
  for selector,index in ((0,0),(1,3)):
   for scroll in range(256):execute(0xE154,selector,index,False,168,80,scroll,origin=(248,184))
- report=dict(passed=True,count_cases=counts,print_cases=prints,independent_glyphs=glyphs,all_selectors_checked=True,all_skip_bytes_checked=True,wrapped_index_sum=True,scroll_high_byte_ignored_for_skip=True,real_skip_count_print_and_glyph_callees=True,whole_bitmap_and_attributes_compared=True,original_descriptions_preserved=True,irq_executed=False,native_execution=False,assembly_executed=False)
+ # Проверка всех входных B, временный FF поиска должен восстановиться до немедленного сухого выхода.
+ for input_b in range(256):execute(0xE124,0,0,False,96,13,input_b=input_b)
+ report=dict(passed=True,count_cases=counts,print_cases=prints,independent_glyphs=glyphs,all_selectors_checked=True,all_skip_bytes_checked=True,wrapped_index_sum=True,scroll_high_byte_ignored_for_skip=True,real_skip_count_print_and_glyph_callees=True,whole_bitmap_and_attributes_compared=True,original_descriptions_preserved=True,direct_count_carry_and_low_height_exit_checked=True,all_input_B_at_low_height_checked=True,I_IM_IFF_preservation_checked=True,complete_joint_input_product_exhausted=False,R_proved=False,irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/PreviewDescriptionsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 
 

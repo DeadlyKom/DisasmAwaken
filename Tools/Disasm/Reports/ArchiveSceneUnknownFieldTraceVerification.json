@@ -1,0 +1,327 @@
+{
+  "passed": true,
+  "unknown_addresses": [
+    18506,
+    18508,
+    18589,
+    18591
+  ],
+  "positive_addresses": [
+    18505,
+    18507,
+    18588,
+    18590
+  ],
+  "original_instruction_read_write_controls": 8,
+  "outside_instruction_accesses_excluded": true,
+  "positive_field_accesses": [
+    {
+      "kind": "read",
+      "pc": 18175,
+      "address": 18505,
+      "count": 600
+    },
+    {
+      "kind": "read",
+      "pc": 18175,
+      "address": 18588,
+      "count": 68
+    },
+    {
+      "kind": "read",
+      "pc": 18201,
+      "address": 18507,
+      "count": 1268
+    },
+    {
+      "kind": "read",
+      "pc": 18201,
+      "address": 18590,
+      "count": 68
+    },
+    {
+      "kind": "read",
+      "pc": 18215,
+      "address": 18505,
+      "count": 87329
+    },
+    {
+      "kind": "read",
+      "pc": 18215,
+      "address": 18588,
+      "count": 5865
+    },
+    {
+      "kind": "read",
+      "pc": 18227,
+      "address": 18505,
+      "count": 87329
+    },
+    {
+      "kind": "read",
+      "pc": 18227,
+      "address": 18588,
+      "count": 5865
+    },
+    {
+      "kind": "write",
+      "pc": 18308,
+      "address": 18505,
+      "count": 112
+    },
+    {
+      "kind": "write",
+      "pc": 18308,
+      "address": 18588,
+      "count": 181
+    },
+    {
+      "kind": "write",
+      "pc": 18314,
+      "address": 18507,
+      "count": 112
+    },
+    {
+      "kind": "write",
+      "pc": 18314,
+      "address": 18590,
+      "count": 181
+    },
+    {
+      "kind": "write",
+      "pc": 18384,
+      "address": 18505,
+      "count": 125
+    },
+    {
+      "kind": "write",
+      "pc": 18384,
+      "address": 18588,
+      "count": 56
+    },
+    {
+      "kind": "write",
+      "pc": 18390,
+      "address": 18507,
+      "count": 125
+    },
+    {
+      "kind": "write",
+      "pc": 18390,
+      "address": 18590,
+      "count": 56
+    }
+  ],
+  "unknown_field_accesses": [],
+  "scene_unknown_addresses": [
+    19025,
+    19026,
+    19030
+  ],
+  "scene_positive_addresses": [
+    19029
+  ],
+  "scene_unknown_field_accesses": [],
+  "scene_positive_field_accesses": [
+    {
+      "kind": "read",
+      "pc": 18677,
+      "address": 19029,
+      "count": 1024
+    },
+    {
+      "kind": "read",
+      "pc": 18690,
+      "address": 19029,
+      "count": 256
+    },
+    {
+      "kind": "read",
+      "pc": 18809,
+      "address": 19029,
+      "count": 68
+    },
+    {
+      "kind": "read",
+      "pc": 19190,
+      "address": 19029,
+      "count": 69
+    },
+    {
+      "kind": "write",
+      "pc": 16753,
+      "address": 19029,
+      "count": 84
+    },
+    {
+      "kind": "write",
+      "pc": 16868,
+      "address": 19029,
+      "count": 51
+    },
+    {
+      "kind": "write",
+      "pc": 18686,
+      "address": 19029,
+      "count": 394
+    },
+    {
+      "kind": "write",
+      "pc": 18696,
+      "address": 19029,
+      "count": 255
+    }
+  ],
+  "scene_original_instruction_read_write_controls": 6,
+  "model_report": "Tools/Disasm/Reports/ArchiveSceneFieldAccessModelVerification.json",
+  "prior_consumer_report_preserved": true,
+  "global_unusedness_proved": false,
+  "prior_consumer_report_sha256": "fa990b4e4e52c690521d11d4f961ae948620a331a1c8d20bc4316a1c7ffaa0c1",
+  "indirect_source_sites_observed": [
+    16413,
+    16415,
+    16509,
+    16514,
+    16516,
+    16521,
+    16568,
+    16573,
+    16862,
+    16865,
+    17110,
+    17112,
+    17115,
+    17120,
+    17125,
+    17130,
+    17168,
+    17185,
+    17190,
+    17192,
+    17230,
+    17232,
+    17247,
+    17249,
+    17266,
+    17268,
+    17283,
+    17288,
+    17290,
+    17298,
+    17303,
+    17314,
+    17362,
+    17401,
+    17487,
+    17489,
+    17493,
+    17523,
+    17525,
+    17529,
+    17590,
+    17592,
+    17595,
+    17601,
+    17603,
+    17608,
+    17610,
+    17625,
+    18042,
+    18063,
+    18091,
+    18123,
+    18127,
+    18131,
+    18135,
+    18139,
+    18143,
+    18147,
+    18151,
+    18153,
+    18220,
+    18321,
+    18324,
+    18326,
+    18329,
+    18331,
+    18334,
+    18397,
+    18398,
+    18400,
+    18402,
+    18670,
+    18683,
+    18719,
+    18782,
+    18801,
+    18902,
+    18904,
+    18905,
+    18919,
+    18921,
+    18939,
+    18941,
+    18945,
+    18947,
+    18949,
+    18951,
+    18953,
+    18955,
+    18957,
+    18959,
+    18961,
+    18963,
+    18965,
+    18967,
+    18969,
+    18971,
+    18973,
+    18975,
+    18977,
+    18979,
+    18981,
+    18983,
+    18985,
+    18987,
+    18989,
+    18991,
+    18993,
+    18995,
+    18997,
+    18999,
+    19001,
+    19003,
+    19005,
+    19007,
+    19080,
+    19158,
+    19166,
+    19167,
+    19168,
+    19170,
+    19171,
+    19172,
+    19220,
+    19221,
+    19224,
+    19225,
+    19618,
+    19620,
+    19631,
+    19633,
+    19661,
+    19701,
+    19720,
+    19721,
+    19748,
+    19767,
+    19768,
+    20493,
+    20537
+  ],
+  "indirect_source_sites_not_observed": [],
+  "pc_observation_does_not_prove_mutable_opcode_identity": true,
+  "cpu_interrupt_acceptance_outside_run_not_observed": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

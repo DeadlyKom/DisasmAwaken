@@ -1,0 +1,660 @@
+{
+  "passed": true,
+  "complete_frame_profiles": 231,
+  "regular_profiles": 224,
+  "extra_model_pointer_profiles": 7,
+  "observed_only_inside_original_simulator_instruction": true,
+  "positive_control_reads_and_writes": 72,
+  "queue_reads": 5179,
+  "queue_writes": 4731,
+  "observed_node_offsets": [
+    0,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "unknown_byte_accesses": 0,
+  "nonzero_unknown_templates_preserved": true,
+  "watched_unknown_bytes": 36,
+  "original_report_unchanged": true,
+  "model_catalogue_coverage": {
+    "original_main_table_indices": 128,
+    "distinct_main_packets": 95,
+    "substituted_tail_packets": 7,
+    "named_packets": [
+      {
+        "kind": "original_main_table",
+        "pointer": 49152,
+        "name": "KN01pol1",
+        "source_path": "Source/Action/Data/ModelKN01pol1.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 49216,
+        "name": "Kd1",
+        "source_path": "Source/Action/Data/ModelKd1.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 49317,
+        "name": "KN02mlt1",
+        "source_path": "Source/Action/Data/ModelKN02mlt1.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 49356,
+        "name": "Kd2",
+        "source_path": "Source/Action/Data/ModelKd2.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 49472,
+        "name": "KN04trg1",
+        "source_path": "Source/Action/Data/ModelKN04trg1.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 49511,
+        "name": "Kd4",
+        "source_path": "Source/Action/Data/ModelKd4.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 49634,
+        "name": "KN05trg2",
+        "source_path": "Source/Action/Data/ModelKN05trg2.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 49666,
+        "name": "Kd5",
+        "source_path": "Source/Action/Data/ModelKd5.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 49745,
+        "name": "KN06pol2",
+        "source_path": "Source/Action/Data/ModelKN06pol2.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 49777,
+        "name": "Kd6",
+        "source_path": "Source/Action/Data/ModelKd6.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 49854,
+        "name": "KN07krs1",
+        "source_path": "Source/Action/Data/ModelKN07krs1.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 49961,
+        "name": "Kd7",
+        "source_path": "Source/Action/Data/ModelKd7.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 50094,
+        "name": "KN08grz2",
+        "source_path": "Source/Action/Data/ModelKN08grz2.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 50161,
+        "name": "Kd8",
+        "source_path": "Source/Action/Data/ModelKd8.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 50260,
+        "name": "KN09mlt2",
+        "source_path": "Source/Action/Data/ModelKN09mlt2.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 50354,
+        "name": "Kd9",
+        "source_path": "Source/Action/Data/ModelKd9.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 50511,
+        "name": "KN10trg3",
+        "source_path": "Source/Action/Data/ModelKN10trg3.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 50543,
+        "name": "Kd10",
+        "source_path": "Source/Action/Data/ModelKd10.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 50690,
+        "name": "KN11grz3",
+        "source_path": "Source/Action/Data/ModelKN11grz3.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 50767,
+        "name": "Kd11",
+        "source_path": "Source/Action/Data/ModelKd11.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 50922,
+        "name": "Kd15",
+        "source_path": "Source/Action/Data/ModelKd15.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 51085,
+        "name": "KN16trg4",
+        "source_path": "Source/Action/Data/ModelKN16trg4.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 51142,
+        "name": "Kd16",
+        "source_path": "Source/Action/Data/ModelKd16.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 51269,
+        "name": "KN17mlt3",
+        "source_path": "Source/Action/Data/ModelKN17mlt3.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 51360,
+        "name": "Kd17",
+        "source_path": "Source/Action/Data/ModelKd17.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 51509,
+        "name": "Kd19",
+        "source_path": "Source/Action/Data/ModelKd19.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 51671,
+        "name": "KN21plS3",
+        "source_path": "Source/Action/Data/ModelKN21plS3.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 51703,
+        "name": "Kd21",
+        "source_path": "Source/Action/Data/ModelKd21.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 51776,
+        "name": "Kd22",
+        "source_path": "Source/Action/Data/ModelKd22.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 51950,
+        "name": "KN25plS4",
+        "source_path": "Source/Action/Data/ModelKN25plS4.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 51987,
+        "name": "Kd25",
+        "source_path": "Source/Action/Data/ModelKd25.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52050,
+        "name": "KN26mlt4",
+        "source_path": "Source/Action/Data/ModelKN26mlt4.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52090,
+        "name": "Kd26",
+        "source_path": "Source/Action/Data/ModelKd26.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52204,
+        "name": "KN27pol7",
+        "source_path": "Source/Action/Data/ModelKN27pol7.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52241,
+        "name": "Kd27",
+        "source_path": "Source/Action/Data/ModelKd27.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52349,
+        "name": "KN28plS5",
+        "source_path": "Source/Action/Data/ModelKN28plS5.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52389,
+        "name": "Kd28",
+        "source_path": "Source/Action/Data/ModelKd28.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52459,
+        "name": "KN29pol6",
+        "source_path": "Source/Action/Data/ModelKN29pol6.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52496,
+        "name": "Kd29",
+        "source_path": "Source/Action/Data/ModelKd29.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52619,
+        "name": "KN30grz4",
+        "source_path": "Source/Action/Data/ModelKN30grz4.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52681,
+        "name": "Kd30",
+        "source_path": "Source/Action/Data/ModelKd30.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52790,
+        "name": "KN31grz5",
+        "source_path": "Source/Action/Data/ModelKN31grz5.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52866,
+        "name": "Kd31",
+        "source_path": "Source/Action/Data/ModelKd31.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 52981,
+        "name": "micKN",
+        "source_path": "Source/Action/Data/ModelmicKN.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53009,
+        "name": "micKd1",
+        "source_path": "Source/Action/Data/ModelmicKd1.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53089,
+        "name": "micKd2",
+        "source_path": "Source/Action/Data/ModelmicKd2.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53154,
+        "name": "REM_DR",
+        "source_path": "Source/Action/Data/ModelREM_DR.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53237,
+        "name": "KontUFO",
+        "source_path": "Source/Action/Data/ModelKontUFO.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53319,
+        "name": "ufo_K",
+        "source_path": "Source/Action/Data/Modelufo_K.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53385,
+        "name": "UfoRD",
+        "source_path": "Source/Action/Data/ModelUfoRD.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53467,
+        "name": "Kib_K",
+        "source_path": "Source/Action/Data/ModelKib_K.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53507,
+        "name": "KN03grz1",
+        "source_path": "Source/Action/Data/ModelKN03grz1.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53584,
+        "name": "Kd3",
+        "source_path": "Source/Action/Data/ModelKd3.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53696,
+        "name": "KN13ufo2",
+        "source_path": "Source/Action/Data/ModelKN13ufo2.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53753,
+        "name": "Kd13",
+        "source_path": "Source/Action/Data/ModelKd13.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53844,
+        "name": "KN14ufo3",
+        "source_path": "Source/Action/Data/ModelKN14ufo3.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 53898,
+        "name": "Kd14",
+        "source_path": "Source/Action/Data/ModelKd14.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 54024,
+        "name": "Kd12",
+        "source_path": "Source/Action/Data/ModelKd12.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 54168,
+        "name": "KN18UFo4",
+        "source_path": "Source/Action/Data/ModelKN18UFo4.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 54229,
+        "name": "Kd18",
+        "source_path": "Source/Action/Data/ModelKd18.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 54393,
+        "name": "KN20ufo5",
+        "source_path": "Source/Action/Data/ModelKN20ufo5.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 54462,
+        "name": "Kd20",
+        "source_path": "Source/Action/Data/ModelKd20.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 54602,
+        "name": "KN24ufo7",
+        "source_path": "Source/Action/Data/ModelKN24ufo7.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 54654,
+        "name": "Kd24",
+        "source_path": "Source/Action/Data/ModelKd24.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 54754,
+        "name": "KN23ufo6",
+        "source_path": "Source/Action/Data/ModelKN23ufo6.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 54818,
+        "name": "Kd23",
+        "source_path": "Source/Action/Data/ModelKd23.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 54915,
+        "name": "KOBRA",
+        "source_path": "Source/Action/Data/ModelKOBRA.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55008,
+        "name": "KOBRAD",
+        "source_path": "Source/Action/Data/ModelKOBRAD.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55168,
+        "name": "KRYL",
+        "source_path": "Source/Action/Data/ModelKRYL.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55263,
+        "name": "KRYLD",
+        "source_path": "Source/Action/Data/ModelKRYLD.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55372,
+        "name": "OSKOL",
+        "source_path": "Source/Action/Data/ModelOSKOL.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55396,
+        "name": "ROKET",
+        "source_path": "Source/Action/Data/ModelROKET.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55474,
+        "name": "TARGET",
+        "source_path": "Source/Action/Data/ModelTARGET.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55482,
+        "name": "TRASH",
+        "source_path": "Source/Action/Data/ModelTRASH.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55506,
+        "name": "CRG1",
+        "source_path": "Source/Action/Data/ModelCRG1.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55600,
+        "name": "ASTER1",
+        "source_path": "Source/Action/Data/ModelASTER1.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55720,
+        "name": "ASTER2",
+        "source_path": "Source/Action/Data/ModelASTER2.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55784,
+        "name": "ASTER3",
+        "source_path": "Source/Action/Data/ModelASTER3.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55838,
+        "name": "UFO1D",
+        "source_path": "Source/Action/Data/ModelUFO1D.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55915,
+        "name": "UFO1",
+        "source_path": "Source/Action/Data/ModelUFO1.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 55978,
+        "name": "St1",
+        "source_path": "Source/Action/Data/ModelSt1.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 56192,
+        "name": "St2",
+        "source_path": "Source/Action/Data/ModelSt2.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 56378,
+        "name": "St3",
+        "source_path": "Source/Action/Data/ModelSt3.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 56556,
+        "name": "St4",
+        "source_path": "Source/Action/Data/ModelSt4.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 56706,
+        "name": "St5",
+        "source_path": "Source/Action/Data/ModelSt5.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 56850,
+        "name": "St6",
+        "source_path": "Source/Action/Data/ModelSt6.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 57004,
+        "name": "St7",
+        "source_path": "Source/Action/Data/ModelSt7.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 57206,
+        "name": "St8",
+        "source_path": "Source/Action/Data/ModelSt8.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 57412,
+        "name": "St9",
+        "source_path": "Source/Action/Data/ModelSt9.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 57520,
+        "name": "St10",
+        "source_path": "Source/Action/Data/ModelSt10.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 57682,
+        "name": "St11",
+        "source_path": "Source/Action/Data/ModelSt11.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 57803,
+        "name": "St12",
+        "source_path": "Source/Action/Data/ModelSt12.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 58041,
+        "name": "St13",
+        "source_path": "Source/Action/Data/ModelSt13.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 58157,
+        "name": "St14",
+        "source_path": "Source/Action/Data/ModelSt14.asm"
+      },
+      {
+        "kind": "original_main_table",
+        "pointer": 58323,
+        "name": "St15",
+        "source_path": "Source/Action/Data/ModelSt15.asm"
+      },
+      {
+        "kind": "substituted_tail_pointer",
+        "pointer": 58473,
+        "name": "St16",
+        "source_path": "Source/Action/Data/ModelSt16.asm"
+      },
+      {
+        "kind": "substituted_tail_pointer",
+        "pointer": 58655,
+        "name": "StPirat",
+        "source_path": "Source/Action/Data/ModelStPirat.asm"
+      },
+      {
+        "kind": "substituted_tail_pointer",
+        "pointer": 58817,
+        "name": "Prison",
+        "source_path": "Source/Action/Data/ModelPrison.asm"
+      },
+      {
+        "kind": "substituted_tail_pointer",
+        "pointer": 58987,
+        "name": "StU1",
+        "source_path": "Source/Action/Data/ModelStU1.asm"
+      },
+      {
+        "kind": "substituted_tail_pointer",
+        "pointer": 59143,
+        "name": "StScince",
+        "source_path": "Source/Action/Data/ModelStScince.asm"
+      },
+      {
+        "kind": "substituted_tail_pointer",
+        "pointer": 59307,
+        "name": "StU2",
+        "source_path": "Source/Action/Data/ModelStU2.asm"
+      },
+      {
+        "kind": "substituted_tail_pointer",
+        "pointer": 59481,
+        "name": "GipPl",
+        "source_path": "Source/Action/Data/ModelGipPl.asm"
+      }
+    ],
+    "catalogue_pose": [
+      0,
+      0,
+      0
+    ],
+    "catalogue_depth": 8704,
+    "all_model_pose_and_scene_combinations_exhausted": false
+  },
+  "global_unusedness_proved": false,
+  "original_padding_intent_proved": false,
+  "interrupt_acceptance_exercised": false,
+  "full_input_product_exhausted": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

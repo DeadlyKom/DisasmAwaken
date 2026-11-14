@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "cases": 2816,
+  "positions": 11,
+  "values_per_position": 256,
+  "code_value_counts": {
+    "zero": 11,
+    "positive": 1397,
+    "negative": 1408
+  },
+  "positive_last_code_reads_codes_as_key_cases": 127,
+  "physical_map_sha256": "bab32dcd0347fabd011a6db89f9290c790e8b9b55aeacad78443afa668583fa0",
+  "entry": 49401,
+  "stop": 49444,
+  "viewport": [
+    128,
+    96
+  ],
+  "origin": [
+    65533,
+    65533
+  ],
+  "actual_marker_without_stubs": true,
+  "exact_marker_arguments_and_stop_pointers": true,
+  "bitmap_and_attributes_compared": true,
+  "input_keys_codes_and_adjacent_guard_preserved": true,
+  "full_joint_code_space_exhausted": false,
+  "global_unknown_field_roles_proved": false,
+  "IRQ_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,51 @@
+{
+  "passed": false,
+  "state": 2,
+  "serial": 30121,
+  "linked": 193,
+  "code": 4,
+  "mode": 1,
+  "saved": 197,
+  "path": [
+    "counter_expired_spawn",
+    "parameter_0A",
+    "free_record",
+    "class17_created"
+  ],
+  "boundary": "common",
+  "all_banks_match": true,
+  "write_multiplicity_match": true,
+  "register_differences": [
+    {
+      "index": 15,
+      "expected": 36,
+      "actual": 33
+    }
+  ],
+  "multiply_differences": [
+    {
+      "address": 53579,
+      "original": 24,
+      "actual": 0
+    }
+  ],
+  "builder_differences": [
+    {
+      "address": 45125,
+      "original": 0,
+      "actual": 169
+    },
+    {
+      "address": 45135,
+      "original": 0,
+      "actual": 177
+    },
+    {
+      "address": 45148,
+      "original": 0,
+      "actual": 245
+    }
+  ],
+  "assembly_executed": false,
+  "native_execution": false
+}

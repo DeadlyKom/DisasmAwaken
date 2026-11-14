@@ -145,3 +145,9 @@ RowCount 0, 1, 2, 30, 31, 255, граничные Y указателя, преж
 обёртки, отдельный независимый bitmap наведения не заявляется.
 [Отчёт](../Tools/Disasm/Reports/EquipmentListHoverVerification.json) отделяет
 эту модель от IRQ, сборки и нативной игры.
+
+## Договор наведения и R собственной JP-обёртки
+
+Out [HandleEquipmentListHover](../Source/Station/HandleEquipmentListHover.asm) и UpdateEquipmentHover согласован с общей фабрикой семи списков. Результаты HL/DE/BC/AF отделены от альтернативных и индексных пар, текущий EquipmentListState.RowCount остаётся параметром вызова, его не заменяли константой. Все инструкции, условия Z и изменяемые поля сохранены.
+
+Повторный [CheckEquipmentListHover](../Tools/Disasm/Research/CheckEquipmentListHover.py) прошёл 288 пар обёртки и прямого помощника. При одинаковом входном R собственный JP добавляет одну M1, обычные регистры, все банки и OUT совпали. Проверены сохранение варьируемых I/IM при IFF=1 и различные входные R без IRQ. Полный M1 помощника, независимый bitmap этой композиции и нативный запуск не заявляются. [Отчёт](../Tools/Disasm/Reports/EquipmentListHoverVerification.json).

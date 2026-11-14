@@ -1,0 +1,955 @@
+{
+  "passed": true,
+  "decoded_block_copies": 439,
+  "by_opcode": {
+    "LDIR": 104,
+    "LDI": 331,
+    "LDDR": 4
+  },
+  "known_size_and_target": 100,
+  "known_all_operands": 85,
+  "matching_transfers": [
+    {
+      "region": "Intro",
+      "slot": 3,
+      "pc": 25866,
+      "disk_file_offset": 522,
+      "operation": "LDIR",
+      "source": 26039,
+      "target": 23867,
+      "size": 256,
+      "direction": 1,
+      "source_windows": {},
+      "target_windows": {
+        "fixed_wrapper": [
+          [
+            23968,
+            24123
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Intro",
+      "slot": 3,
+      "pc": 25922,
+      "disk_file_offset": 578,
+      "operation": "LDIR",
+      "source": 49152,
+      "target": 49153,
+      "size": 16383,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56157
+          ]
+        ],
+        "banked_saved_context": [
+          [
+            56345,
+            56475
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      },
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56157
+          ]
+        ],
+        "banked_saved_context": [
+          [
+            56345,
+            56475
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Intro",
+      "slot": 3,
+      "pc": 25964,
+      "disk_file_offset": 620,
+      "operation": "LDIR",
+      "source": 49152,
+      "target": 49153,
+      "size": 4863,
+      "direction": 1,
+      "source_windows": {
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      },
+      "target_windows": {
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Intro",
+      "slot": 3,
+      "pc": 25981,
+      "disk_file_offset": 637,
+      "operation": "LDIR",
+      "source": 49152,
+      "target": 49153,
+      "size": 16383,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56157
+          ]
+        ],
+        "banked_saved_context": [
+          [
+            56345,
+            56475
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      },
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56157
+          ]
+        ],
+        "banked_saved_context": [
+          [
+            56345,
+            56475
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Intro",
+      "slot": 3,
+      "pc": 26059,
+      "disk_file_offset": 715,
+      "operation": "LDIR",
+      "source": 55296,
+      "target": 55297,
+      "size": 767,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56063
+          ]
+        ]
+      },
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Intro",
+      "slot": 3,
+      "pc": 26070,
+      "disk_file_offset": 726,
+      "operation": "LDIR",
+      "source": 16384,
+      "target": 49152,
+      "size": 6912,
+      "direction": 1,
+      "source_windows": {},
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Intro",
+      "slot": 3,
+      "pc": 26464,
+      "disk_file_offset": 1120,
+      "operation": "LDIR",
+      "source": 32768,
+      "target": 49152,
+      "size": 16384,
+      "direction": 1,
+      "source_windows": {},
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56157
+          ]
+        ],
+        "banked_saved_context": [
+          [
+            56345,
+            56475
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Intro",
+      "slot": 3,
+      "pc": 27818,
+      "disk_file_offset": 2474,
+      "operation": "LDIR",
+      "source": 49152,
+      "target": 44288,
+      "size": 4864,
+      "direction": 1,
+      "source_windows": {
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      },
+      "target_windows": {}
+    },
+    {
+      "region": "Intro",
+      "slot": 3,
+      "pc": 28083,
+      "disk_file_offset": 2739,
+      "operation": "LDIR",
+      "source": 32768,
+      "target": 49152,
+      "size": 4864,
+      "direction": 1,
+      "source_windows": {},
+      "target_windows": {
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Intro",
+      "slot": 3,
+      "pc": 28204,
+      "disk_file_offset": 2860,
+      "operation": "LDIR",
+      "source": 32768,
+      "target": 49152,
+      "size": 4096,
+      "direction": 1,
+      "source_windows": {},
+      "target_windows": {
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "StationBoot",
+      "slot": 4,
+      "pc": 16417,
+      "disk_file_offset": 826,
+      "operation": "LDIR",
+      "source": 49152,
+      "target": 49153,
+      "size": 6911,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56063
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      },
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Station",
+      "slot": 4,
+      "pc": 32373,
+      "disk_file_offset": 8481,
+      "operation": "LDIR",
+      "source": 55296,
+      "target": 55297,
+      "size": 767,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56063
+          ]
+        ]
+      },
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Station",
+      "slot": 4,
+      "pc": 41450,
+      "disk_file_offset": 16874,
+      "operation": "LDIR",
+      "source": 22528,
+      "target": 55296,
+      "size": 768,
+      "direction": 1,
+      "source_windows": {},
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Station",
+      "slot": 4,
+      "pc": 41557,
+      "disk_file_offset": 16981,
+      "operation": "LDIR",
+      "source": 16384,
+      "target": 49152,
+      "size": 6144,
+      "direction": 1,
+      "source_windows": {},
+      "target_windows": {
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "ActionBoot",
+      "slot": 17,
+      "pc": 24597,
+      "disk_file_offset": 21,
+      "operation": "LDIR",
+      "source": 49152,
+      "target": 49153,
+      "size": 6911,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56063
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      },
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Action",
+      "slot": 17,
+      "pc": 43068,
+      "disk_file_offset": 18492,
+      "operation": "LDIR",
+      "source": 49152,
+      "target": 16384,
+      "size": 6912,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      },
+      "target_windows": {}
+    },
+    {
+      "region": "Controls",
+      "slot": 23,
+      "pc": 56053,
+      "disk_file_offset": 23,
+      "operation": "LDIR",
+      "source": 35840,
+      "target": 49152,
+      "size": 13312,
+      "direction": 1,
+      "source_windows": {},
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56157
+          ]
+        ],
+        "banked_saved_context": [
+          [
+            56345,
+            56475
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Controls",
+      "slot": 23,
+      "pc": 56072,
+      "disk_file_offset": 42,
+      "operation": "LDIR",
+      "source": 50688,
+      "target": 32768,
+      "size": 65536,
+      "direction": 1,
+      "source_windows": {
+        "fixed_wrapper": [
+          [
+            23968,
+            24283
+          ]
+        ],
+        "fixed_saved_context": [
+          [
+            24283,
+            24413
+          ]
+        ],
+        "banked_wrapper": [
+          [
+            56030,
+            56157
+          ]
+        ],
+        "banked_saved_context": [
+          [
+            56345,
+            56475
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      },
+      "target_windows": {
+        "fixed_wrapper": [
+          [
+            23968,
+            24283
+          ]
+        ],
+        "fixed_saved_context": [
+          [
+            24283,
+            24413
+          ]
+        ],
+        "banked_wrapper": [
+          [
+            56030,
+            56157
+          ]
+        ],
+        "banked_saved_context": [
+          [
+            56345,
+            56475
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Controls",
+      "slot": 23,
+      "pc": 56123,
+      "disk_file_offset": 93,
+      "operation": "LDIR",
+      "source": 49152,
+      "target": 35840,
+      "size": 13312,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56157
+          ]
+        ],
+        "banked_saved_context": [
+          [
+            56345,
+            56475
+          ]
+        ],
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      },
+      "target_windows": {}
+    },
+    {
+      "region": "Final",
+      "slot": 29,
+      "pc": 24605,
+      "disk_file_offset": 29,
+      "operation": "LDIR",
+      "source": 55296,
+      "target": 55297,
+      "size": 767,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56063
+          ]
+        ]
+      },
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Final",
+      "slot": 29,
+      "pc": 24626,
+      "disk_file_offset": 50,
+      "operation": "LDIR",
+      "source": 25257,
+      "target": 49152,
+      "size": 6144,
+      "direction": 1,
+      "source_windows": {},
+      "target_windows": {
+        "current_font": [
+          [
+            50688,
+            51312
+          ]
+        ],
+        "viewport_code_prefix": [
+          [
+            51312,
+            51712
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Final",
+      "slot": 29,
+      "pc": 24639,
+      "disk_file_offset": 63,
+      "operation": "LDIR",
+      "source": 55296,
+      "target": 55297,
+      "size": 767,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56063
+          ]
+        ]
+      },
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ]
+      }
+    },
+    {
+      "region": "Final",
+      "slot": 29,
+      "pc": 24936,
+      "disk_file_offset": 360,
+      "operation": "LDIR",
+      "source": 55296,
+      "target": 55297,
+      "size": 767,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56063
+          ]
+        ]
+      },
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ]
+      }
+    },
+    {
+      "region": "StationFinalExit",
+      "slot": 4,
+      "pc": 16414,
+      "disk_file_offset": 4315,
+      "operation": "LDIR",
+      "source": 55296,
+      "target": 55297,
+      "size": 767,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56063
+          ]
+        ]
+      },
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ]
+      }
+    },
+    {
+      "region": "StationFinalExit",
+      "slot": 4,
+      "pc": 16440,
+      "disk_file_offset": 4341,
+      "operation": "LDIR",
+      "source": 55296,
+      "target": 55297,
+      "size": 767,
+      "direction": 1,
+      "source_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56063
+          ]
+        ]
+      },
+      "target_windows": {
+        "banked_wrapper": [
+          [
+            56030,
+            56064
+          ]
+        ]
+      }
+    }
+  ],
+  "overlapping_direct_stores": [
+    {
+      "region": "Help",
+      "slot": 8,
+      "pc": 56151,
+      "instruction": "LD (#DB01),A",
+      "operand_names": [
+        "banked_length"
+      ]
+    },
+    {
+      "region": "ActionBoot",
+      "slot": 17,
+      "pc": 16999,
+      "instruction": "LD (#5E20),HL",
+      "operand_names": [
+        "legacy_disk_position_and_count"
+      ]
+    },
+    {
+      "region": "ActionBoot",
+      "slot": 17,
+      "pc": 17002,
+      "instruction": "LD (#5E23),A",
+      "operand_names": [
+        "legacy_disk_position_and_count"
+      ]
+    },
+    {
+      "region": "Controls",
+      "slot": 23,
+      "pc": 56032,
+      "instruction": "LD (#5E33),SP",
+      "operand_names": [
+        "saved_sp"
+      ]
+    }
+  ],
+  "intro_overlap": {
+    "pc": 25866,
+    "source": 26039,
+    "target": 23867,
+    "bytes_copied": 256,
+    "wrapper_prefix_hex": "46433e1611ff",
+    "length_position_hex": "6711",
+    "saved_sp_position_hex": "3f32"
+  },
+  "assumed_straight_line_only": true,
+  "mutable_operands_and_selected_banks_inferred": false,
+  "ordinary_game_caller_proved": false,
+  "assembly_executed": false
+}

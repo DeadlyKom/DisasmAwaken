@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "serial": 31232,
+  "full_matrix_passed": false,
+  "actual_phase_steps_used": true,
+  "exact_registers_including_R": true,
+  "all_eight_banks_and_write_multiplicity": true,
+  "full_external_return": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

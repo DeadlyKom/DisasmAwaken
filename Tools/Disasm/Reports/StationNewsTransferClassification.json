@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "typed_bytes": 42,
+  "physical_records": 7,
+  "physical_symbols": 35,
+  "files": 7,
+  "station_address": 39104,
+  "action_address": 40002,
+  "save_offset": 133,
+  "marked_and_original_flight_profiles": 2,
+  "observed_game_reads_in_first_64_frames": 0,
+  "normal_game_field_semantics_proved": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

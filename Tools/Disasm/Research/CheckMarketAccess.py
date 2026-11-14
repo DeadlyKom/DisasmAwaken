@@ -1,10 +1,12 @@
 """Исходные обработчики цены, маркера и общего шага два с операндом поверх возврата."""
 from pathlib import Path
+import hashlib
 import json
 import sys
 ROOT=Path(__file__).resolve().parents[3]
 sys.path.insert(0,str(ROOT/'Tools/Disasm/Research/vendor/skoolkit-10.1'))
 from skoolkit.simulator import Simulator
+from CheckGeometryReturnEntries import Memory
 from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,SP
 
 
@@ -16,14 +18,25 @@ def add16_flags(left,right,old):
 def main():
  manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_text('utf-8'))
  sources={e['slot']:(ROOT/(e['path']+'.sectors.bin')).read_bytes() for e in manifest['entries'] if e['slot'] in (4,5)}
- memory=bytearray(65536);memory[0x6000:]=sources[4];memory[0xC000:0xC000+len(sources[5])]=sources[5]
+ # Проверка физических секторных областей обоих используемых файлов.
+ disk=(ROOT/'Tools/Disasm/Disk/original.trd').read_bytes()
+ assert hashlib.sha256(disk).hexdigest()==manifest['sha256']
+ for slot,data in sources.items():
+  e=next(e for e in manifest['entries'] if e['slot']==slot)
+  assert data==disk[e['offset']:e['offset']+e['allocated_length']]
+  assert hashlib.sha256(data).hexdigest()==e['sectors_sha256']
+ # Проверка наблюдателя настоящей записью CPU в отдельную память.
+ probe=Memory(65536);probe[0x4000:0x4003]=bytes.fromhex('320070')
+ cpu=Simulator(probe);cpu.registers[24]=0x4000;probe.recording=True;cpu.run()
+ assert probe.writes==[(0x7000,0)]
+ memory=Memory(65536);memory[0x6000:]=sources[4];memory[0xC000:0xC000+len(sources[5])]=sources[5]
  simulator=Simulator(memory)
  initial=get_registers({'SP':0x7FFA,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A00,
   'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
  counts={};bits=0
  # Проверка всех индексов и флагов для трёх штатных входов и двух общих хвостов.
  for entry,base,word in ((0xC4D7,0x9592,True),(0xC4E3,0x95F1,False),(0xC5C7,0x9556,False),
-                         (0xC4DA,0x9F01,True),(0xC4E6,0x9FFF,False),(0xC58A,0x95D4,True),(0xC590,0x9633,False)):
+                         (0xC4DA,0x9F01,True),(0xC4E6,0x9FFF,False),(0xC58A,0x95D4,True),(0xC590,0x9633,False),(0xC5C1,0x9853,False)):
   count=0
   for index in range(256):
    for flags in range(256):
@@ -34,7 +47,12 @@ def main():
     address=(base+2*index)&0xFFFF
     memory[address]=(index*17+flags*13)&255;memory[address+1]=(index*29+flags*7)&255
     expected=memory[address]+(memory[address+1]*256 if word else 0)
-    simulator.run(start=entry,stop=0x3FFF)
+    refresh=index^flags;r[15]=refresh
+    frame=bytes(memory[0x7FFA:0x7FFE])
+    memory.writes.clear();memory.recording=True;simulator.run(start=entry,stop=0x3FFF);memory.recording=False
+    m1={0xC4D7:9,0xC4DA:8,0xC4E3:8,0xC4E6:7,0xC5C7:9,0xC58A:10,0xC590:9,0xC5C1:9}[entry]
+    assert r[15]==((refresh&128)|((refresh+m1)&127)) and not memory.writes
+    assert bytes(memory[0x7FFA:0x7FFE])==frame
     assert r[SP]==0x7FFE and r[H]*256+r[L]==address+int(word)
     assert r[D]*256+r[E]==expected and r[B]*256+r[C]==0x36C9
     assert r[A]==0x5A and r[F]==add16_flags(2*index,base,flags)
@@ -46,7 +64,12 @@ def main():
   for value in range(256):
    simulator.registers[:]=initial;r=simulator.registers
    memory[0x7FFA:0x7FFE]=bytes((index,0xE3,255,63));address=0x9555+2*index;memory[address]=value
-   simulator.run(start=0xC5CD,stop=0x3FFF)
+   refresh=index^value;r[15]=refresh
+   frame=bytes(memory[0x7FFA:0x7FFE])
+   memory.writes.clear();memory.recording=True;simulator.run(start=0xC5CD,stop=0x3FFF);memory.recording=False
+   m1=12+int(not value&128)
+   assert r[15]==((refresh&128)|((refresh+m1)&127)) and not memory.writes
+   assert bytes(memory[0x7FFA:0x7FFE])==frame
    result=int(not value&128);expected_f=0 if result else 0x90|(value&0x28)
    assert (r[A],r[F],r[D],r[E],r[H]*256+r[L],r[SP])==(result,expected_f,0,result,address,0x7FFE)
    assert r[B]*256+r[C]==0x36C9 and r[8:12]==initial[8:12] and r[16:24]==initial[16:24]
@@ -54,6 +77,10 @@ def main():
  report=dict(passed=True,method='original_strided_read_and_market_marker_handlers_with_operand_on_stack',
              accessor_cases=counts,marker_cases=bits,all_byte_indices=True,all_initial_flags_for_accessors=True,
              index_high_byte_discarded=True,logical_bounds_checked_by_original=False,
+             exact_R_and_no_CPU_RAM_writes_checked=True,index_and_return_frame_unchanged=True,
+             CPU_write_watch_positive_control=True,physical_disk_and_sector_hashes_checked=True,
+             full_index_value_flags_R_cartesian_product_checked=False,
+             arbitrary_stack_addresses_checked=False,
              irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/MarketAccessVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))

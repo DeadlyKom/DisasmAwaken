@@ -16,8 +16,9 @@
                 include "../Voxel/Data/SmallEffectFrames.asm"
                 ent
                 assert $ == #21C0
-                ; Назначение следующих 832 байтов ещё не установлено.
-                incbin "../Resources/20_VOXAL0/AfterSmallFrames.bin"
+                ; Исходный хвост HIPERJMP.van после 13 кадров телепорта
+                ; Документация [разметка VOXAL0](../../Docs/VoxelPhysicalResources.md)
+                incbin "../Voxel/Resources/TeleportResourceTail.bin"
                 assert $ == #2500
                 disp #E500
                 include "../Voxel/RotateBasisVectors.asm"
@@ -27,11 +28,9 @@
                 include "../Voxel/SignedSeededProduct.asm"
                 ent
                 assert $ == #2965
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                ; Документация [таблицы и сохранённые промежутки](../../Docs/VoxelBasisRotation.md)
-                assert $ == #2965
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/20_VOXAL0/Unclassified2965_2A00.bin"
+                ; Заполнение ADRXX00 перед исходной таблицей CSTB.dat
+                ; Документация [выравнивание таблицы](../../Docs/VoxelBasisRotation.md)
+                incbin "../Voxel/Resources/CosineTableAlignment.bin"
                 assert $ == #2A00
                 disp #EA00
                 include "../Voxel/Data/CosineLow.asm"

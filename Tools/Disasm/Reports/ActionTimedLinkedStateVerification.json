@@ -28,7 +28,7 @@
   },
   "all_256_timers_by_256_thresholds": true,
   "zero_timer_wrap_preserved": true,
-  "expired_StateCode_from_Unknown19": true,
+  "expired_state_restored_from_timed_resume_code": true,
   "actual_context_random_creation_projection_clipping_and_raster_children_executed": true,
   "exact_registers_except_R_on_renderer": true,
   "exact_R_on_nonrenderer_cases": 55589,

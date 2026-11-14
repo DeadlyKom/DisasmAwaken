@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "total_cases": 458816,
+  "cases": {
+    "common_unlocked": 229376,
+    "common_locked": 229376,
+    "banked_same": 8,
+    "banked_changed": 56
+  },
+  "common_stack_boundary_cases": 327680,
+  "common_stack_addresses": [
+    32766,
+    32768,
+    32769,
+    32770,
+    49150
+  ],
+  "all_old_and_new_latch_bytes_at_each_common_stack": true,
+  "split_push_across_bank5_bank2_checked": true,
+  "I_IM_preservation_checked": true,
+  "exact_registers_flags_r_t": true,
+  "exact_two_stack_writes": true,
+  "irq_entry_and_nested_interrupts_executed": false,
+  "banking_stack_precondition_demonstrated": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

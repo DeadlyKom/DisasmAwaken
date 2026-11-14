@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "cases": 6144,
+  "paths": {
+    "small_radius": 1024,
+    "inside_two_x_borders": 1024,
+    "outside_y_far_vertical": 1024,
+    "outside_x_two_borders": 1024,
+    "outside_xy_far_vertical": 1536,
+    "outside_xy_one_edge": 512
+  },
+  "window_profiles": [
+    [
+      16,
+      24
+    ],
+    [
+      64,
+      64
+    ]
+  ],
+  "all_256_quadrant_bytes": true,
+  "command_read_address_write_address_traces_identical_with_same_low_bits": true,
+  "independent_bitmap_and_attributes_checked": true,
+  "original_code_byte_preserved": true,
+  "changed_register_indices": [
+    0,
+    1
+  ],
+  "changed_written_memory_addresses": [
+    32762,
+    32763
+  ],
+  "full_register_and_stack_byte_equality_claimed": false,
+  "all_geometries_proved": false,
+  "original_0f_initializer_purpose_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

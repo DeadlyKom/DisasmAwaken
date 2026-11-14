@@ -34,12 +34,12 @@ InitParameters: CALL @Action.NextRandomWord12.Entry
                 OR #20
                 LD (IX + @FActionRecord.Unknown11), A
                 LD (IX + @FActionRecord.LinkFlags), #00
-                LD (IX + @FActionRecord.Unknown14), #00
+                LD (IX + @FActionRecord.MissileRepeatDelay), #00
                 LD (IX + @FActionRecord.LinkOverride), #FF
                 LD (IX + @FActionRecord.LinkedIndex), #FF
                 LD HL, (@ActionRandomStreams.Stream3.LowWord)
-                LD (IX + @FActionRecord.Unknown0D), L
-                LD (IX + @FActionRecord.Unknown0E), H
+                LD (IX + @FActionRecord.Phase0OrLink), L
+                LD (IX + @FActionRecord.LocalPhase1), H
                 ; Получение параметров из потока 13 и проверка верхней границы.
                 CALL @Action.NextRandomWord13.Entry
                 LD E, H
@@ -52,26 +52,26 @@ InitParameters: CALL @Action.NextRandomWord12.Entry
 
                 LD A, H
                 DEC A
-StoreLimit:     LD (IX + @FActionRecord.Unknown13), A
+StoreLimit:     LD (IX + @FActionRecord.EffectReserve), A
                 LD A, E
                 OR #A0
-                LD (IX + @FActionRecord.Unknown22), A
+                LD (IX + @FActionRecord.ReserveCeiling), A
                 LD A, #20
-                LD (IX + @FActionRecord.Unknown10), A
+                LD (IX + @FActionRecord.OffsetScaleLow), A
                 XOR A
                 LD (@ActionRandomStreams.Stream3.FoldByte), A
                 LD A, (IX + @FActionRecord.ClassCode)
                 CP #08
                 JR NZ, @Action.FinishSpawnRecord.CheckClassSix                  ; переход, если класс отличается от #08, сохранить общие поля
 
-                LD (IX + @FActionRecord.Unknown13), #F0
-                LD (IX + @FActionRecord.Unknown22), #FA
+                LD (IX + @FActionRecord.EffectReserve), #F0
+                LD (IX + @FActionRecord.ReserveCeiling), #FA
                 LD A, (IX + @FActionRecord.OffsetPhase0)
-                LD (IX + @FActionRecord.Unknown0D), A
+                LD (IX + @FActionRecord.Phase0OrLink), A
                 LD A, (IX + @FActionRecord.OffsetPhase1)
-                LD (IX + @FActionRecord.Unknown0E), A
+                LD (IX + @FActionRecord.LocalPhase1), A
                 LD A, (IX + @FActionRecord.OffsetPhase2)
-                LD (IX + @FActionRecord.TargetIndex), A
+                LD (IX + @FActionRecord.Phase2OrTarget), A
 CheckClassSix:  LD A, (IX + @FActionRecord.ClassCode)
                 CP #06
                 JR NZ, @Action.FinishSpawnRecord.StoreState                     ; переход, если класс отличается от #06
@@ -79,10 +79,10 @@ CheckClassSix:  LD A, (IX + @FActionRecord.ClassCode)
                 CP #07
                 JR NZ, @Action.FinishSpawnRecord.StoreState                     ; переход, если тот же класс отличается от #07, после предыдущей проверки переход всегда выполняется
 
-                LD (IX + @FActionRecord.Unknown13), #F0
-                LD (IX + @FActionRecord.Unknown22), #FA
+                LD (IX + @FActionRecord.EffectReserve), #F0
+                LD (IX + @FActionRecord.ReserveCeiling), #FA
                 LD (IX + @FActionRecord.Unknown11), #6E
-                LD (IX + @FActionRecord.Unknown24), #00
+                LD (IX + @FActionRecord.OffsetScaleHigh), #00
                 ; Сохранение начального состояния и выбор байта повторного использования по R.
 StoreState:     LD A, (IX + @FActionRecord.StateCode)
                 LD (IX + @FActionRecord.SavedStateCode), A
@@ -102,8 +102,8 @@ StoreState:     LD A, (IX + @FActionRecord.StateCode)
                 SET 2, C
 StoreReuse:     LD (IX + @FActionRecord.ReuseByte), C
                 LD (IX + @FActionRecord.PhaseMoveTimer), #00
-                LD (IX + @FActionRecord.Unknown20), #FF
-                LD (IX + @FActionRecord.Unknown21), #FF
+                LD (IX + @FActionRecord.ProximityIndex), #FF
+                LD (IX + @FActionRecord.ProximityClass), #FF
                 ; Чтение заголовка модели для выбора записываемого масштаба.
 ReadHeader:     LD A, (IX + @FActionRecord.ModelOffset)
                 CALL @Action.ReadObjectHeaderWord.Entry

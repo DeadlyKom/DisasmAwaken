@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "total_cases": 5184,
+  "whole_object_and_effect_pool_compared": true,
+  "all_eight_stream_states_compared": true,
+  "stops_before_final_header": false,
+  "assembly_executed": false,
+  "dispatch_counts": {
+    "class_0": 2592,
+    "no_override": 5184,
+    "carry_skip": 1330,
+    "stream_10": 3854,
+    "marker": 756,
+    "search_Z": 756,
+    "class_6": 2592,
+    "stream_0": 2592,
+    "predicate_nonzero": 2592,
+    "class6_nonzero_common": 2592,
+    "found": 1512,
+    "link_written": 3098,
+    "random_gate_26": 1586
+  },
+  "original_header_class_dispatch_and_class_handlers_executed": true,
+  "header_scale_full_record_and_page_writes_checked": true,
+  "class_phase_exact_registers_except_T_all_RAM_and_write_multiplicity_checked": true,
+  "created_record_tail_27_3F_no_CPU_reads_observed": true,
+  "created_record_tail_27_3F_preserved": true,
+  "tail_read_CPU_probe_passed": true,
+  "external_return_3FFF_prepared_at_BFFE": true,
+  "prefix_all_registers_and_full_RAM_not_independently_compared": true,
+  "original_physical_files_revalidated": [
+    17,
+    20,
+    21,
+    24
+  ],
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "original_common_code_relocation_checked": true,
+  "original_voxel_bank_composition_checked": true,
+  "tail_read_CPU_probes": 25,
+  "IRQ_executed": false,
+  "native_execution": false,
+  "CheckDistance_entry_to_external_RET_executed": true,
+  "saved_word_original_writer_CheckDistance_executed": true,
+  "initial_saved_operand_replaced_by_HL": true,
+  "exact_two_byte_saved_word_write_checked": true,
+  "distance_profiles": [
+    {
+      "words": [
+        0,
+        0,
+        112
+      ],
+      "M1_until_gate_R": 110
+    },
+    {
+      "words": [
+        0,
+        0,
+        0
+      ],
+      "M1_until_gate_R": 50
+    },
+    {
+      "words": [
+        0,
+        0,
+        65424
+      ],
+      "M1_until_gate_R": 117
+    }
+  ],
+  "distance_counts": {
+    "far_positive": 1728,
+    "near_without_Stream1": 1728,
+    "far_negative": 1728
+  },
+  "Stream1_initial_word": 6,
+  "Stream1_initial_fold": 0,
+  "Stream1_equal_bytes_required_for_far_profiles": true,
+  "Stream1_unchanged_for_near_profiles": true,
+  "gate_R_values_and_counter_two_writes_checked": true,
+  "CPU_state_not_reset_between_writer_gate_and_creation": true,
+  "common_Entry_executed_in_near_profiles_only": true,
+  "all_distance_and_stream_and_word_input_combinations_proved": false,
+  "native_game_loop_executed": false
+}

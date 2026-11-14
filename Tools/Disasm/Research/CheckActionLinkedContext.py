@@ -11,22 +11,28 @@ def profiles():
     for axis in range(3):
         for word in range(65536):
             values=[0x1234,0x7FFF,0x8000];values[axis]=word
-            yield 1,tuple(values),False,'all_component_words'
+            yield 1,tuple(values),1,'all_component_words'
     for index in range(256):
-        for unavailable in (False,True):yield index,(0x1234,0x7FFF,0x8000),unavailable,'all_link_bytes'
+        for high in (1,128):yield index,(0x1234,0x7FFF,0x8000),high,'all_link_bytes'
+    # Проверка полного байта доступности общего адреса A780 для особого FF и обычного индекса 1A.
+    for index in (0x1A,0xFF):
+        for high in range(256):yield index,(0x1234,0x7FFF,0x8000),high,'special_pointer_high_bytes'
 
 
 def main():
     flat=flat_action();banks=[bytearray([0xA0+i]*0x4000) for i in range(8)]
     banks[5],banks[2],banks[0]=bytearray(flat[0x4000:0x8000]),bytearray(flat[0x8000:0xC000]),bytearray(flat[0xC000:])
     memory=RecordedBanks(banks=banks,out7ffd=16);baseline=[bytearray(bank) for bank in banks]
-    simulator=Simulator(memory);cases=0;paths=Counter();counts=Counter()
-    for index,values,unavailable,profile in profiles():
+    simulator=Simulator(memory);cases=0;paths=Counter();counts=Counter();special_highs={0x1A:set(),0xFF:set()}
+    for index,values,requested_high,profile in profiles():
         memory.recording=False
         for page in (0,2,5):memory.banks[page][:]=baseline[page]
         ix=0xA100;stack=0xBFFE;pointer=0xA780 if index==255 else 0xA100+64*index
         for axis,value in enumerate(values):memory[ix+2*axis],memory[ix+2*axis+1]=value&255,value>>8
-        if index<26:memory[pointer+1]=128 if unavailable else 1
+        if index<26 or profile=='special_pointer_high_bytes':memory[pointer+1]=requested_high
+        if profile=='special_pointer_high_bytes':
+            assert pointer==0xA780
+            special_highs[index].add(requested_high)
         memory[ix+11]=index;memory[stack],memory[stack+1]=255,63
         actual_values=[memory[ix+2*k]+256*memory[ix+2*k+1] for k in range(3)]
         high=memory[pointer+1]
@@ -55,9 +61,11 @@ def main():
         assert all(wanted[i]==simulator.registers[i] for i in (*range(25),26,27)),(cases,index,[(i,wanted[i],simulator.registers[i]) for i in (*range(25),26,27) if wanted[i]!=simulator.registers[i]])
         assert memory.banks==expected and Counter(memory.writes)==Counter(writes),(cases,'RAM')
         counts[profile]+=1;paths[path]+=1;paths['special_ff' if index==255 else 'ordinary_index']+=1;cases+=1
-    assert cases==197120
+    assert cases==197632
+    assert all(values==set(range(256)) for values in special_highs.values())
     result=dict(passed=True,total_cases=cases,profiles=dict(counts),paths=dict(paths),all_three_component_word_domains=True,
         all_256_link_bytes=True,special_ff_maps_A780=True,real_index_conversion_executed=True,
+        all_256_A780_high_bytes_for_ff_and_1A=True,special_ff_unavailable_ret_executed=True,
         exact_registers_flags_r_sp=True,full_eight_bank_ram_and_write_multiplicity_compared=True,
         maximum_additional_stack_bytes=2,prepared_consumers_executed=False,
         all_input_products_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)

@@ -4,10 +4,73 @@
   "save_geometry_cases": 752,
   "close_filter_cases": 304,
   "hide_cases": 256,
+  "close_menu_chain": [
+    {
+      "prepared_active_item": null,
+      "close_executed_on_click": 1,
+      "final_draw_indices": [
+        0
+      ],
+      "real_im2_wakeups": 1,
+      "last_draw_list_read": 62563,
+      "last_draw_list_write": 62561
+    },
+    {
+      "prepared_active_item": 28,
+      "close_executed_on_click": 2,
+      "final_draw_indices": [
+        0
+      ],
+      "real_im2_wakeups": 2,
+      "last_draw_list_read": 62563,
+      "last_draw_list_write": 62561
+    }
+  ],
+  "close_full_m1_values": [
+    8,
+    50,
+    92,
+    302,
+    357,
+    361,
+    399,
+    403,
+    420,
+    706,
+    710,
+    714,
+    1235,
+    1353,
+    1416,
+    1580,
+    1790,
+    1837,
+    1929,
+    1954,
+    2451,
+    2479,
+    11764,
+    11892,
+    13156,
+    13946,
+    14518,
+    14740,
+    15081,
+    15203,
+    15257,
+    15702,
+    16062
+  ],
+  "close_exact_hl_de_af_refresh": true,
+  "close_all_128_shift_writes_and_tail_checked": true,
+  "close_only_declared_memory_writes": true,
+  "close_i_im_iff_preserved": true,
+  "close_iff_fixture": 0,
   "all_flag_bytes": true,
   "actual_remove_code_executed": true,
   "halt_wakeup_is_fixture": true,
-  "irq_executed": false,
+  "irq_executed": true,
+  "irq_executed_in_isolated_cases": false,
   "native_execution": false,
   "assembly_executed": false
 }

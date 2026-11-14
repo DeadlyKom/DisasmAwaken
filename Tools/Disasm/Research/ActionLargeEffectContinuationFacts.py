@@ -10,8 +10,8 @@ CONTRACTS = {('Action', 0xEA3D): (
     ['при наличии слота создан большой эффект с ресурсом C400, State=8 и параметрами 14/14/0280, обход включён и Frames не меньше 16 даже при отказе',
      'для полного класса ниже 16 запрашиваются от двух до пяти игровых детей по R, фактически создаётся столько, сколько найдено слотов до маркера',
      'игровой поиск проверяет High=80 и Low=80 напрямую, ReuseByte не проверяется и не очищается',
-     'дети получают Components источника, ModelOffset=B8, StateCode=4, LinkFlags=0, ClassCode=10, Unknown13=10, Unknown14=FF, LinkOverride=FF, SavedStateCode=0',
-     'Unknown0D/0E получают соседние байты ROM по R и R+1, Unknown10 равен ChildMask OR (отдельный R AND 1F), прочие поля сохраняются',
+     'дети получают Components источника, ModelOffset=B8, StateCode=4, LinkFlags=0, ClassCode=10, EffectReserve=10, MissileRepeatDelay=FF, LinkOverride=FF, SavedStateCode=0',
+     'Phase0OrLink и LocalPhase1 получают соседние байты ROM по R и R+1, OffsetScaleLow равен ChildMask OR (отдельный R AND 1F), прочие поля сохраняются',
      'HL=EE4D, курсор AY-канала B обновлён, исходная запись получает Component0=8000 и ReuseByte=FF после создания детей',
      'при классе не меньше 16 DE=0280, BC=0012, A=класс, F от CP класса с 10',
      'при полном выполнении запроса детей DE=IX+6, BC=FFEB, A=0/F=42, при достижении маркера DE=0040, BC=0012 до первого ребёнка либо FFEB после него, A=80/F=42',
@@ -57,5 +57,7 @@ def name_operands(region, address, operation):
                                           f'(IX + @FActionRecord.Components.Component{index}.{field})')
     return (operation.replace('(IX + #12)', '(IX + @FActionRecord.ClassCode)')
             .replace('LD HL, #EC1B', 'LD HL, @Voxel.CreateLargeEffect.Entry')
+            .replace('LD HL, #EE4D', 'LD HL, @ActionAyStreams.WaitLoopRow00')
+            .replace('(#ECF6)', '(@ActionAyEffectsState.CursorB)')
             .replace('CALL #6CEF', 'CALL @Action.DispatchBank3Callback.Entry')
             .replace('JP #F394', 'JP @Action.MarkRecordForReuse.Entry'))

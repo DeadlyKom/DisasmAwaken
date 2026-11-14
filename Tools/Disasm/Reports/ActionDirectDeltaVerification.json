@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "total_cases": 134656,
+  "cases_by_kind": {
+    "all_delta_and_state_bytes_two_mode_classes": 131072,
+    "actual_call_deltas_all_mode_bytes": 3584
+  },
+  "original_direct_entry_sha256": "ef5e0124bf689aad99c82a8b61fae473f383f52419302715e6bef4ad8c71e894",
+  "boost_wrap_cases": 2560,
+  "boost_wrap_input_bytes": [
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127
+  ],
+  "exact_registers_flags_R_SP_and_all_RAM_compared": true,
+  "single_state_write_and_no_CPU_stack_writes": true,
+  "actual_call_deltas": [
+    8,
+    32
+  ],
+  "all_joint_mode_delta_state_inputs_exhausted": false,
+  "game_meaning_of_state_and_mode_proved": false,
+  "IRQ_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -15,8 +15,9 @@ def inc_flags(value,carry):
 
 def main():
     original=flat_action();memory=Memory(original);simulator=Simulator(memory);counts=Counter();touched=set();skip_total=0
+    costs=[];found_A80_cases=0
     def check(position,first,tag,marker,pattern,kind):
-        nonlocal touched,skip_total
+        nonlocal touched,skip_total,found_A80_cases
         serial=counts.total();memory.recording=False
         for address in touched:memory[address]=original[address]
         # Создание занятых строк и пропускаемых строк перед выбранной границей поиска.
@@ -47,10 +48,21 @@ def main():
         wanted[4:6]=[0,64];wanted[10:12]=[base>>8,base&255] if result=='found' else [(0xA100+i*64)>>8,(0xA100+i*64)&255]
         wanted[SP],wanted[PC],wanted[15]=0xC000,0x3FFF,refresh(initial[15],m1)
         simulator.registers[:]=initial;memory.writes=[];memory.recording=True
+        measured_m1=0
         for _ in range(4000):
             if simulator.registers[PC]==0x3FFF:break
+            old_r=simulator.registers[15]
             simulator.run()
+            increment=(simulator.registers[15]-old_r)&127
+            assert increment in (1,2),(serial,'неожиданное изменение R',increment)
+            measured_m1+=increment
         else:raise AssertionError(('возврат',position,first,tag,marker,pattern))
+        assert measured_m1==m1,(serial,'M1',measured_m1,m1)
+        costs.append(m1)
+        # Проверка ненулевого результата 80, совпадение A с маркером не означает отказа по Z.
+        if result=='found' and skip==127:
+            assert simulator.registers[0]==128 and not simulator.registers[1]&64
+            found_A80_cases+=1
         memory.recording=False
         compared=(*range(13),14,15,*range(16,24),PC,26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared),(position,first,tag,marker,pattern,
@@ -66,10 +78,13 @@ def main():
     for first in range(256):
         for tag in range(256):
             for pattern in (0,1):check(3,first,tag,False,pattern,'all_header_and_tag_pairs')
+    assert counts.total()==132096 and found_A80_cases
     report=dict(passed=True,total_cases=counts.total(),cases_by_kind=dict(counts),cleared_skip_records=skip_total,
         method='independent_record_list_search_against_original_instructions',
         all_header_tag_pairs=True,all_positions_within_256_records=True,explicit_end_marker_and_skip_ff=True,
         exact_registers_flags_refresh_sp=True,every_ram_byte_and_write_checked=True,no_cpu_stack_writes=True,
+        full_M1_count_compared_not_only_R_modulo_128=True,observed_M1_min=min(costs),observed_M1_max=max(costs),
+        found_A80_with_Z_clear_cases=found_A80_cases,
         maximum_records_is_not_a_proved_game_limit=True,termination_requires_reachable_match_or_marker=True,
         all_joint_inputs_exhausted=False,record_field_game_meanings_proved=False,
         assembly_executed=False,irq_executed=False,native_execution=False)

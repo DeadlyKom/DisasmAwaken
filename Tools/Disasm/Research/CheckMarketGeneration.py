@@ -55,6 +55,7 @@ def main():
                                                 (0,1,7,255),(0,1,3,4,0xFC,0xFF),(0,128)):
         memory.banks=[bank.copy() for bank in base];memory.memory=[None,memory.banks[5],memory.banks[2],None]
         memory.out7ffd(0x10);simulator.registers[:]=initial;r=simulator.registers
+        r[14]=tick^variant;r[15]=tick;r[27]=first%3;context=r.copy()
         trace=PortTrace(simulator);simulator.set_tracer(trace)
         put(memory,0x7FFE,[255,63]);memory[0x6306]=0x10
         put(memory,0x983F,list(first.to_bytes(2,'little')+second.to_bytes(2,'little')+bytes([variant])))
@@ -83,6 +84,7 @@ def main():
             assert memory[0xA967]==info['minor'] and memory[0xA999]==info['major']
             prices_below_five+=sum(value<5 for value in expected[1:54:2]);marked_rows+=sum(bool(value&128) for value in expected[:54:2])
             generated_cases+=1
+        assert all(r[i]==context[i] for i in (14,26,27))
         assert trace.writes==[(0x7FFD,0x11),(0x7FFD,0x10)]
         for page in (0,1,3,4,6,7):assert memory.banks[page]==base[page]
         cases+=1
@@ -91,7 +93,8 @@ def main():
                 generated_rows_per_case=27,special_rows=3,prices_below_five=prices_below_five,
                 marked_rows=marked_rows,actual_original_rule_tables_used=True,mode_values=[0,128],
                 signature_query_stubbed=False,random_stream_stubbed=False,banks_modeled=8,
-                mark_game_meaning_proved=False,irq_executed=False,native_execution=False,assembly_executed=False)
+                mark_game_meaning_proved_by_this_model=False,market_sale_ban_proof_report="OriginalTradeScriptVerification.json",
+                i_im_iff_preserved=True,iff_fixture=0,irq_executed=False,native_execution=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/MarketGenerationVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
     print(json.dumps(report,ensure_ascii=False,indent=2))
 

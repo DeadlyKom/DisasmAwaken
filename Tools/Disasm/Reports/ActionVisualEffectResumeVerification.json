@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cases": {
+    "zero_depth": 128,
+    "negative_depth": 256,
+    "overflow": 768,
+    "draw_and_restore": 168
+  },
+  "early_exit_all_registers_and_r_checked": true,
+  "full_child_executed": true,
+  "child_results_preserved_except_a_ix_sp": true,
+  "exact_wrapper_stack_writes_checked": true,
+  "entry": 28113,
+  "continuation": 27980,
+  "native_execution": false,
+  "assembly_executed": false
+}

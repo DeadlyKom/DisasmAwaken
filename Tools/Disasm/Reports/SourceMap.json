@@ -47,11 +47,30 @@
   {
     "slot": 3,
     "offset": 123,
-    "length": 133,
-    "path": "Source/Resources/03_AWAKEN/UnknownAfterBasicAutostart.bin",
-    "kind": "unclassified",
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/Basic/Data/DetachedLineSuffix.asm",
     "origin": null,
-    "sha256": "c922c6ef80955ef76e47198199b58cc378361455e00014d0c39aee5ae599d7e6"
+    "sha256": "0ede154a770c454d838283737c656a24750490ee682d2588b3553c17a36e8944"
+  },
+  {
+    "slot": 3,
+    "offset": 132,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Basic/Data/DetachedSectorNumber.asm",
+    "origin": null,
+    "sha256": "96f0a3b43fa7fbe5e24517d03db2328ea116b5b8b2dd1bfaadc5758f5795c15b"
+  },
+  {
+    "slot": 3,
+    "offset": 144,
+    "length": 112,
+    "kind": "binary_resource",
+    "path": "Source/Resources/03_AWAKEN/FirstSectorBufferTail.bin",
+    "origin": null,
+    "sha256": "069543c75801b9db759831c2df0645848f88488634c5c654621697ee6ea44b24",
+    "format": "BASIC_FIRST_SECTOR_BUFFER_TAIL"
   },
   {
     "slot": 3,
@@ -75,9 +94,9 @@
     "slot": 3,
     "offset": 691,
     "length": 1,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified02B3_02B4.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Intro/Data/StackSampleBefore.asm",
+    "origin": 26035,
     "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
   },
   {
@@ -93,9 +112,9 @@
     "slot": 3,
     "offset": 694,
     "length": 1,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified02B6_02B7.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Intro/Data/StackSampleAfter.asm",
+    "origin": 26038,
     "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
   },
   {
@@ -146,20 +165,11 @@
   {
     "slot": 3,
     "offset": 867,
-    "length": 63,
+    "length": 64,
     "kind": "typed_data",
     "path": "Source/Intro/Data/AlternatingLookup.asm",
     "origin": 26211,
-    "sha256": "decb5026a48a3fc7b75bf54c9ed24ee2cb095199565b0f85dad5f9536e58a7c1"
-  },
-  {
-    "slot": 3,
-    "offset": 930,
-    "length": 1,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/UnknownAfterLookupParameters.bin",
-    "origin": null,
-    "sha256": "ba5ec51d07a4ac0e951608704431d59a02b21a4e951acc10505a8dc407c501ee"
+    "sha256": "d158941d7f509082e445bcb41ecaea5bf197b618346a1ac390b28838c5f76e64"
   },
   {
     "slot": 3,
@@ -614,11 +624,20 @@
   {
     "slot": 3,
     "offset": 11371,
-    "length": 44,
+    "length": 41,
     "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified2C6B_2C97.bin",
+    "path": "Source/Resources/03_AWAKEN/Unclassified2C6B_2C94.bin",
     "origin": null,
-    "sha256": "25300e5153d0694fd17f0e9e47a675939e9b0cbcb7e3f3f5e7522fa6d99bb4db"
+    "sha256": "6cff65cc85504b608fb276f905e35a3e9cd7d181dcb28ed44a28a17a4c7b8754"
+  },
+  {
+    "slot": 3,
+    "offset": 11412,
+    "length": 3,
+    "kind": "code",
+    "path": "Source/IntroUnpack/SetAttributeScanDest.asm",
+    "origin": 29844,
+    "sha256": "bd8c50a917d0fe59aca384afb277f06a04e1582a13148cbf91ba3fe8a1bda0ac"
   },
   {
     "slot": 3,
@@ -659,11 +678,21 @@
   {
     "slot": 3,
     "offset": 11500,
-    "length": 20,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified2CEC_2D00.bin",
-    "origin": null,
-    "sha256": "5400a7ed81e0d8278dc41da5cb9c4a0b0000b03d96df7384d51e71f028f1eb2e"
+    "length": 19,
+    "kind": "code",
+    "path": "Source/IntroUnpack/UnpackTailGate.asm",
+    "origin": 29932,
+    "sha256": "1d146a1a9620819413685344fc3bc30177d4b1f0a0fee5a6d83c1efbc0da3d03"
+  },
+  {
+    "slot": 3,
+    "offset": 11519,
+    "length": 1,
+    "kind": "binary_resource",
+    "path": "Source/Resources/03_AWAKEN/DetachedJumpOpcode.bin",
+    "origin": 29951,
+    "sha256": "32ebb1abcc1c601ceb9c4e3c4faba0caa5b85bb98c4f1e6612c40faa528a91c9",
+    "format": "INTRO_DETACHED_JR_OPCODE"
   },
   {
     "slot": 4,
@@ -2969,20 +2998,11 @@
   {
     "slot": 4,
     "offset": 13532,
-    "length": 27,
+    "length": 30,
     "kind": "typed_data",
     "path": "Source/Station/Data/MarketCategories.asm",
     "origin": 38108,
-    "sha256": "61e0f5e21a4e2040aad661d7f62314d3afae5037e125251f62790287ba52e9c1"
-  },
-  {
-    "slot": 4,
-    "offset": 13559,
-    "length": 3,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified34F7_34FA.bin",
-    "origin": null,
-    "sha256": "fb50dc0717ff266cf9baf82b1ce7a1c2ef6d9247859680b11a19fb7077f5f222"
+    "sha256": "92cd507825e0371755f0ef701af6d1c2753a0e7e98375fa9e2447dfa5ccd2a7c"
   },
   {
     "slot": 4,
@@ -2996,20 +3016,11 @@
   {
     "slot": 4,
     "offset": 13592,
-    "length": 60,
+    "length": 61,
     "kind": "typed_data",
     "path": "Source/Station/Data/MarketRules.asm",
     "origin": 38168,
-    "sha256": "ebbbf9bb805d9ad69460bdaeef6fa5d23b29234a3f13bfb2b28fb22e685a7a96"
-  },
-  {
-    "slot": 4,
-    "offset": 13652,
-    "length": 1,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/BeforeMarketRows.bin",
-    "origin": null,
-    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+    "sha256": "74ecd5c4b993839a2106028ec9e25af42915fa712c991fffc4826fbe38a71137"
   },
   {
     "slot": 4,
@@ -3096,9 +3107,9 @@
     "slot": 4,
     "offset": 14178,
     "length": 160,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified3762_3802.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Station/Data/ArchivedJobList.asm",
+    "origin": 38754,
     "sha256": "b393978842a0fa3d3e1470196f098f473f9678e72463cb65ec4ab5581856c2e4"
   },
   {
@@ -3204,9 +3215,9 @@
     "slot": 4,
     "offset": 14528,
     "length": 6,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified38C0_38C6.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Station/Data/NewsTransfer.asm",
+    "origin": 39104,
     "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1"
   },
   {
@@ -3358,9 +3369,9 @@
     "slot": 4,
     "offset": 14907,
     "length": 29,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified3A3B_3A58.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Station/Data/ScriptFields.asm",
+    "origin": 39483,
     "sha256": "c4528a184ca35981db96b47983447aad7d5f741e200ed2fd2d9178bf76a89ba5"
   },
   {
@@ -4168,10 +4179,11 @@
     "slot": 4,
     "offset": 19074,
     "length": 2,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/EventGap4A82.bin",
-    "origin": null,
-    "sha256": "2b83fca8dcc615080d0630d4b7eb699c924b6911b1ade02d557f0dabcf70e9ed"
+    "path": "Source/Station/Resources/LegacyMissionReturnPair.bin",
+    "sha256": "2b83fca8dcc615080d0630d4b7eb699c924b6911b1ade02d557f0dabcf70e9ed",
+    "kind": "binary_resource",
+    "origin": 43650,
+    "format": "STATION_LEGACY_MISSION_RETURN_PAIR"
   },
   {
     "slot": 4,
@@ -5541,9 +5553,49 @@
   {
     "slot": 4,
     "offset": 38024,
-    "length": 2936,
-    "path": "Source/Resources/04_STATIONF/Unclassified9488_A000.bin",
-    "sha256": "2cd23f08b33b3a8c762462a6b22090ad67861052f04a6912b27772ff38606695",
+    "length": 36,
+    "path": "Source/Station/Resources/InitialCombinedPanelShiftTail.bin",
+    "sha256": "6db65fd59fd356f6729140571b5bcd6bb3b83492a16e1bf0a3884442fc3c8a0e",
+    "kind": "binary_resource",
+    "origin": 62600,
+    "format": "INITIAL_STATION_COMBINED_PANEL_SHIFT_TAIL"
+  },
+  {
+    "slot": 4,
+    "offset": 38060,
+    "length": 14,
+    "path": "Source/Station/Resources/InitialFullDrawListShiftTail.bin",
+    "sha256": "e7ecebbc590bc88b3761fa6cd03d749f87463dabb67021a5c6768c25ec68b3f2",
+    "kind": "binary_resource",
+    "origin": 62636,
+    "format": "INITIAL_STATION_FULL_DRAW_LIST_SHIFT_TAIL"
+  },
+  {
+    "slot": 4,
+    "offset": 38074,
+    "length": 34,
+    "path": "Source/Station/Resources/InitialConditionalRebuildShiftTail.bin",
+    "sha256": "eb142b0cae0baa72a767ebc0823d1be94e14c5bfc52d8e417fc4302fceb6240c",
+    "kind": "binary_resource",
+    "origin": 62650,
+    "format": "INITIAL_STATION_CONDITIONAL_REBUILD_SHIFT_TAIL"
+  },
+  {
+    "slot": 4,
+    "offset": 38108,
+    "length": 2,
+    "path": "Source/Station/Resources/InitialConditionalPopupShiftTail.bin",
+    "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+    "kind": "binary_resource",
+    "origin": 62684,
+    "format": "INITIAL_STATION_CONDITIONAL_POPUP_SHIFT_TAIL"
+  },
+  {
+    "slot": 4,
+    "offset": 38110,
+    "length": 2850,
+    "path": "Source/Resources/04_STATIONF/Unclassified94DE_A000.bin",
+    "sha256": "12d7defbd58807134cb2e31923b59e598ed8ea7db415cd21e8a9d17c3faa9bff",
     "kind": "unclassified",
     "origin": null
   },
@@ -5867,7 +5919,7 @@
     "offset": 577,
     "length": 11,
     "kind": "code",
-    "path": "Source/Text/ReadFieldLowerj.asm",
+    "path": "Source/Text/PushUsedTonnage.asm",
     "origin": 49729,
     "sha256": "a2660445479abe44c3c7c08cf1878314cfe2578479ddead9f6409bd4ccda67d3"
   },
@@ -5876,7 +5928,7 @@
     "offset": 588,
     "length": 6,
     "kind": "code",
-    "path": "Source/Text/ReadFieldUpperJ.asm",
+    "path": "Source/Text/PushTonnageCapacity.asm",
     "origin": 49740,
     "sha256": "0c61f825c69181c70f9d5fafcc4ccb5b15c86cfb197d1cd3ebeeccdb9e633ed9"
   },
@@ -6290,7 +6342,7 @@
     "offset": 1368,
     "length": 31,
     "kind": "code",
-    "path": "Source/Text/IsByteMissingFromFour.asm",
+    "path": "Source/Text/IsShipTypeMissingFromRow.asm",
     "origin": 50520,
     "sha256": "100732df734ef64d0261eec12dee5fe305fef13382a6b3100c3746fa7fcf88ab"
   },
@@ -6299,7 +6351,7 @@
     "offset": 1399,
     "length": 19,
     "kind": "code",
-    "path": "Source/Text/GetHighBitCode.asm",
+    "path": "Source/Text/ReadShipEquipmentLimit.asm",
     "origin": 50551,
     "sha256": "bb7b35eb31541f3a67cd2de07359e5c2eafbf36fffd4ee5e2a293e3fb85f1fee"
   },
@@ -6308,7 +6360,7 @@
     "offset": 1418,
     "length": 6,
     "kind": "code",
-    "path": "Source/Text/Property070.asm",
+    "path": "Source/Text/ReadSecondaryEquipmentPrice.asm",
     "origin": 50570,
     "sha256": "728d9721c2603725fa0ae910dff687ce3e07e4d7beb3b1bab639658be1d1736a"
   },
@@ -6317,7 +6369,7 @@
     "offset": 1424,
     "length": 6,
     "kind": "code",
-    "path": "Source/Text/Property071.asm",
+    "path": "Source/Text/ReadSecondaryEquipmentWeight.asm",
     "origin": 50576,
     "sha256": "5941ed69c875f34aa42dab2dc0047e4712095e72dfe2705a4ff9a7ef775416cf"
   },
@@ -6344,7 +6396,7 @@
     "offset": 1458,
     "length": 9,
     "kind": "code",
-    "path": "Source/Text/Property072.asm",
+    "path": "Source/Text/IsSkimmerTypeMissingFromRow.asm",
     "origin": 50610,
     "sha256": "9aaf3b41bb0277ca9bec876b2546069c8f550a802a58d978336e806258bf2266"
   },
@@ -6353,7 +6405,7 @@
     "offset": 1467,
     "length": 6,
     "kind": "code",
-    "path": "Source/Text/Property073.asm",
+    "path": "Source/Text/ReadSkimmerEquipmentLimit.asm",
     "origin": 50619,
     "sha256": "254a50782139e51eefc011bdda371abb13613c877e99d94085b7f0c843993662"
   },
@@ -6416,7 +6468,7 @@
     "offset": 1545,
     "length": 6,
     "kind": "code",
-    "path": "Source/Text/Property080.asm",
+    "path": "Source/Text/ReadShipSaleField.asm",
     "origin": 50697,
     "sha256": "3f9bfebe6a6f193186d367231139f322cb165f3f4a8a382d491e481c2d322ae7"
   },
@@ -6425,7 +6477,7 @@
     "offset": 1551,
     "length": 6,
     "kind": "code",
-    "path": "Source/Text/Property086.asm",
+    "path": "Source/Text/ReadSkimmerPriceField.asm",
     "origin": 50703,
     "sha256": "f81f6357173fc27c3de0eaf2f2dc78ca49b22a0edfa9661b0da8cef542518426"
   },
@@ -6434,7 +6486,7 @@
     "offset": 1557,
     "length": 6,
     "kind": "code",
-    "path": "Source/Text/Property087.asm",
+    "path": "Source/Text/ReadSkimmerLoadAddend.asm",
     "origin": 50709,
     "sha256": "d4b2d4dfff97290e05fc08bf7fedb7ba424232248d03a1a67f6ba79c05aee1a2"
   },
@@ -6702,20 +6754,21 @@
   {
     "slot": 5,
     "offset": 2683,
-    "length": 6,
+    "length": 10,
     "kind": "typed_data",
     "path": "Source/Text/Data/AssignmentScratch.asm",
     "origin": 51835,
-    "sha256": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44"
+    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
   },
   {
     "slot": 5,
-    "offset": 2689,
-    "length": 14,
-    "kind": "unclassified",
-    "path": "Source/Resources/05_LANG/BeforeMarketScript.bin",
-    "origin": null,
-    "sha256": "e7ecebbc590bc88b3761fa6cd03d749f87463dabb67021a5c6768c25ec68b3f2"
+    "offset": 2693,
+    "length": 10,
+    "path": "Source/Text/Resources/AssignmentBufferTail.bin",
+    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+    "kind": "binary_resource",
+    "origin": 51845,
+    "format": "LANG_AUTHORED_ASSIGNMENT_BUFFER_TAIL"
   },
   {
     "slot": 5,
@@ -6758,10 +6811,11 @@
     "slot": 6,
     "offset": 515,
     "length": 9,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BetweenSceneSeedMatrix.bin",
-    "origin": null,
-    "sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d"
+    "path": "Source/D3D/Resources/ScenePageAfterSeed.bin",
+    "sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
+    "kind": "binary_resource",
+    "origin": 49667,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -6785,10 +6839,11 @@
     "slot": 6,
     "offset": 545,
     "length": 10,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforeContourSizeAfterAngles.bin",
-    "origin": null,
-    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
+    "path": "Source/D3D/Resources/ScenePageAfterAngles.bin",
+    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+    "kind": "binary_resource",
+    "origin": 49697,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -6812,10 +6867,11 @@
     "slot": 6,
     "offset": 561,
     "length": 10,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterClipFirst.bin",
-    "origin": null,
-    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
+    "path": "Source/D3D/Resources/ScenePageAfterClipFirst.bin",
+    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+    "kind": "binary_resource",
+    "origin": 49713,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -6839,10 +6895,11 @@
     "slot": 6,
     "offset": 577,
     "length": 10,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterClipSecond.bin",
-    "origin": null,
-    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
+    "path": "Source/D3D/Resources/ScenePageAfterClipSecond.bin",
+    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+    "kind": "binary_resource",
+    "origin": 49729,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -6866,10 +6923,11 @@
     "slot": 6,
     "offset": 593,
     "length": 10,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforeLineCoordinates.bin",
-    "origin": null,
-    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
+    "path": "Source/D3D/Resources/ScenePageAfterCorners.bin",
+    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+    "kind": "binary_resource",
+    "origin": 49745,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -6884,10 +6942,11 @@
     "slot": 6,
     "offset": 609,
     "length": 10,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BetweenLineWords.bin",
-    "origin": null,
-    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
+    "path": "Source/D3D/Resources/ScenePageAfterLineCoords.bin",
+    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+    "kind": "binary_resource",
+    "origin": 49761,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -6911,10 +6970,11 @@
     "slot": 6,
     "offset": 625,
     "length": 10,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforeFaceGateState.bin",
-    "origin": null,
-    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
+    "path": "Source/D3D/Resources/ScenePageAfterEdgeMode.bin",
+    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+    "kind": "binary_resource",
+    "origin": 49777,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -6929,10 +6989,11 @@
     "slot": 6,
     "offset": 636,
     "length": 96,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforeClipProducts.bin",
-    "origin": null,
-    "sha256": "2ea9ab9198d1638007400cd2c3bef1cc745b864b76011a0e1bc52180ac6452d4"
+    "path": "Source/D3D/Resources/ScenePageBeforeClipProducts.bin",
+    "sha256": "2ea9ab9198d1638007400cd2c3bef1cc745b864b76011a0e1bc52180ac6452d4",
+    "kind": "binary_resource",
+    "origin": 49788,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -6947,10 +7008,11 @@
     "slot": 6,
     "offset": 736,
     "length": 10,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BetweenClipTopBottom.bin",
-    "origin": null,
-    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
+    "path": "Source/D3D/Resources/ScenePageBetweenTopBottom.bin",
+    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+    "kind": "binary_resource",
+    "origin": 49888,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -6974,10 +7036,11 @@
     "slot": 6,
     "offset": 752,
     "length": 10,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BetweenClipLeftWords.bin",
-    "origin": null,
-    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
+    "path": "Source/D3D/Resources/ScenePageBetweenLeftRight.bin",
+    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+    "kind": "binary_resource",
+    "origin": 49904,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -7046,10 +7109,11 @@
     "slot": 6,
     "offset": 2044,
     "length": 4,
-    "path": "Source/Resources/06_D3D/Unclassified07FC_0800.bin",
+    "path": "Source/D3D/Resources/QueuePageTail.bin",
     "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-    "kind": "unclassified",
-    "origin": null
+    "kind": "binary_resource",
+    "origin": 51196,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -7140,10 +7204,11 @@
     "slot": 6,
     "offset": 3530,
     "length": 54,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/Unclassified0DCA_0E00.bin",
-    "origin": null,
-    "sha256": "ea659cdc838619b3767c057fdf8e6d99fde2680c5d8517eb06761c0878d40c40"
+    "path": "Source/D3D/Resources/PreviewObjectRecordTail.bin",
+    "sha256": "ea659cdc838619b3767c057fdf8e6d99fde2680c5d8517eb06761c0878d40c40",
+    "kind": "binary_resource",
+    "origin": 52682,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -7158,10 +7223,11 @@
     "slot": 6,
     "offset": 3586,
     "length": 62,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/Unclassified0E02_0E40.bin",
-    "origin": null,
-    "sha256": "1ebb2bdc5ce08e6e90b3ede72a8ef315e3e1bced3a3c458f69b6d7eeff9e4f3a"
+    "path": "Source/D3D/Resources/PreviewObjectEndTail.bin",
+    "sha256": "1ebb2bdc5ce08e6e90b3ede72a8ef315e3e1bced3a3c458f69b6d7eeff9e4f3a",
+    "kind": "binary_resource",
+    "origin": 52738,
+    "format": "D3D_AUTHORED_RESERVE"
   },
   {
     "slot": 6,
@@ -7185,10 +7251,11 @@
     "slot": 6,
     "offset": 3844,
     "length": 252,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterDrawState.bin",
-    "origin": null,
-    "sha256": "913c6e2c32d99e4baff62cf421a494730cb043924f2c6bf46406573b59c641bd"
+    "path": "Source/D3D/Resources/DrawStatePageAlignment.bin",
+    "sha256": "913c6e2c32d99e4baff62cf421a494730cb043924f2c6bf46406573b59c641bd",
+    "kind": "binary_resource",
+    "origin": 52996,
+    "format": "D3D_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 6,
@@ -7203,10 +7270,11 @@
     "slot": 6,
     "offset": 4140,
     "length": 212,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforeFillPatterns.bin",
-    "origin": null,
-    "sha256": "f59194106e93b4b8bfc8b4347ce1f7992e383eef8e1526fce5ee65ba3ed35096"
+    "path": "Source/D3D/Resources/ModelPointerPageAlignment.bin",
+    "sha256": "f59194106e93b4b8bfc8b4347ce1f7992e383eef8e1526fce5ee65ba3ed35096",
+    "kind": "binary_resource",
+    "origin": 53292,
+    "format": "D3D_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 6,
@@ -7221,10 +7289,11 @@
     "slot": 6,
     "offset": 4368,
     "length": 176,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterFillPatterns.bin",
-    "origin": null,
-    "sha256": "86d2cf5b090f43ee54d8f7c1dcf746a853951191457ff6dac96269a9d24860b9"
+    "path": "Source/D3D/Resources/FillPageCodeAlignment.bin",
+    "sha256": "86d2cf5b090f43ee54d8f7c1dcf746a853951191457ff6dac96269a9d24860b9",
+    "kind": "binary_resource",
+    "origin": 53520,
+    "format": "D3D_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 6,
@@ -8527,10 +8596,11 @@
     "slot": 7,
     "offset": 5144,
     "length": 8,
-    "kind": "unclassified",
-    "path": "Source/Resources/07_KARTA/BeforeMapLineMasks.bin",
-    "origin": null,
-    "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+    "path": "Source/Map/Resources/LineMaskAlignment.bin",
+    "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+    "kind": "binary_resource",
+    "origin": 54296,
+    "format": "MAP_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 7,
@@ -8770,10 +8840,11 @@
     "slot": 7,
     "offset": 7600,
     "length": 80,
-    "kind": "unclassified",
-    "path": "Source/Resources/07_KARTA/Unclassified1DB0_1E00.bin",
-    "origin": null,
-    "sha256": "5b6fb58e61fa475939767d68a446f97f1bff02c0e5935a3ea8bb51e6515783d8"
+    "path": "Source/Map/Resources/ClipPageAlignment.bin",
+    "sha256": "5b6fb58e61fa475939767d68a446f97f1bff02c0e5935a3ea8bb51e6515783d8",
+    "kind": "binary_resource",
+    "origin": 56752,
+    "format": "MAP_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 7,
@@ -9238,10 +9309,11 @@
     "slot": 7,
     "offset": 10430,
     "length": 66,
-    "kind": "unclassified",
-    "path": "Source/Resources/07_KARTA/Unclassified010.bin",
-    "origin": null,
-    "sha256": "efbb03b7a7f6fd3c29391d4d0281e1830a85caadd831c3f04716faca4107a42e"
+    "path": "Source/Map/Resources/DistanceTableAlignment.bin",
+    "sha256": "efbb03b7a7f6fd3c29391d4d0281e1830a85caadd831c3f04716faca4107a42e",
+    "kind": "binary_resource",
+    "origin": 59582,
+    "format": "MAP_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 7,
@@ -10700,9 +10772,9 @@
     "slot": 11,
     "offset": 133,
     "length": 6,
-    "kind": "unclassified",
-    "path": "Source/Resources/11_SAVE1/Unclassified0085_008B.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/NewsTransfer.asm",
+    "origin": 133,
     "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1"
   },
   {
@@ -10926,9 +10998,9 @@
     "slot": 12,
     "offset": 133,
     "length": 6,
-    "kind": "unclassified",
-    "path": "Source/Resources/12_SAVE2/Unclassified0085_008B.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/NewsTransfer.asm",
+    "origin": 133,
     "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1"
   },
   {
@@ -11152,9 +11224,9 @@
     "slot": 13,
     "offset": 133,
     "length": 6,
-    "kind": "unclassified",
-    "path": "Source/Resources/13_SAVE3/Unclassified0085_008B.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/NewsTransfer.asm",
+    "origin": 133,
     "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1"
   },
   {
@@ -11378,9 +11450,9 @@
     "slot": 14,
     "offset": 133,
     "length": 6,
-    "kind": "unclassified",
-    "path": "Source/Resources/14_SAVE4/Unclassified0085_008B.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/NewsTransfer.asm",
+    "origin": 133,
     "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1"
   },
   {
@@ -11604,9 +11676,9 @@
     "slot": 15,
     "offset": 133,
     "length": 6,
-    "kind": "unclassified",
-    "path": "Source/Resources/15_SAVE5/Unclassified0085_008B.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/NewsTransfer.asm",
+    "origin": 133,
     "sha256": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44"
   },
   {
@@ -11830,9 +11902,9 @@
     "slot": 16,
     "offset": 133,
     "length": 6,
-    "kind": "unclassified",
-    "path": "Source/Resources/16_SAVE0/Unclassified0085_008B.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/NewsTransfer.asm",
+    "origin": 133,
     "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1"
   },
   {
@@ -12129,7 +12201,7 @@
     "offset": 805,
     "length": 93,
     "kind": "code",
-    "path": "Source/Action/CreateClass17LinkedRecord.asm",
+    "path": "Source/Action/CreateLinkedMissileRecord.asm",
     "origin": 24808,
     "sha256": "ef6b19705947dc830de5e7379c4c5b4b906abd97c472a9063eb2711e71833266"
   },
@@ -12147,7 +12219,7 @@
     "offset": 943,
     "length": 11,
     "kind": "code",
-    "path": "Source/Action/ReleaseClass14Records.asm",
+    "path": "Source/Action/ReleaseBoostDebrisRecords.asm",
     "origin": 24946,
     "sha256": "eb1fa809c33bf134781e0d03bf2067a8fd5f26924f046606b6122d28a4075d77"
   },
@@ -12156,7 +12228,7 @@
     "offset": 954,
     "length": 132,
     "kind": "code",
-    "path": "Source/Action/CreateRandomClass20Record.asm",
+    "path": "Source/Action/CreateBoostDebrisRecord.asm",
     "origin": 24957,
     "sha256": "80972caa15b7b90800a8542a9ffd64c11b1a42c98712d45b474f6759a88b1d17"
   },
@@ -12255,7 +12327,7 @@
     "offset": 1620,
     "length": 200,
     "kind": "code",
-    "path": "Source/Action/SpawnClass19AndUpdateList.asm",
+    "path": "Source/Action/CreateCargoAndUpdateList.asm",
     "origin": 25623,
     "sha256": "3f3e9e3068f129dbc4b57ff21cc91b332e59d7176aada3ebd518fa20332592a0"
   },
@@ -12434,10 +12506,11 @@
     "slot": 17,
     "offset": 3002,
     "length": 1,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified0BBA_0BBB.bin",
-    "origin": null,
-    "sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96"
+    "path": "Source/Action/Resources/LegacyBodyIndexLoad.bin",
+    "sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+    "kind": "binary_resource",
+    "origin": 27578,
+    "format": "ACTION_LEGACY_BODY_INDEX_LOAD"
   },
   {
     "slot": 17,
@@ -12921,7 +12994,7 @@
     "offset": 5944,
     "length": 9,
     "kind": "code",
-    "path": "Source/Action/SelectPreferredByte.asm",
+    "path": "Source/Action/SelectFuelStock.asm",
     "origin": 29947,
     "sha256": "36a7d75b2e6c136e4dd9a8f2355cb0889377a35f5c5c9013e0b7e814d870744b"
   },
@@ -13082,9 +13155,9 @@
     "slot": 17,
     "offset": 7557,
     "length": 16,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/UnknownAfterSpawnModelChoices.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/DetachedSpawnModelChoices.asm",
+    "origin": 31560,
     "sha256": "cfb41024dee9b7ad380afb5eae4b9ae9c77c4ea09285523a7170881608644bfc"
   },
   {
@@ -13777,10 +13850,11 @@
     "slot": 17,
     "offset": 11976,
     "length": 56,
-    "path": "Source/Resources/17_ACTION/Unclassified2EC8_2F00.bin",
+    "path": "Source/Action/Resources/ProjectedPointsPageTail.bin",
     "sha256": "d4817aa5497628e7c77e6b606107042bbba3130888c5f47a375e6179be789fbb",
-    "kind": "unclassified",
-    "origin": null
+    "kind": "binary_resource",
+    "origin": 36552,
+    "format": "ACTION_AUTHORED_RENDER_PAGE_TAIL"
   },
   {
     "slot": 17,
@@ -13796,10 +13870,11 @@
     "slot": 17,
     "offset": 12284,
     "length": 4,
-    "path": "Source/Resources/17_ACTION/Unclassified2FFC_3000.bin",
+    "path": "Source/Action/Resources/RenderQueuePageTail.bin",
     "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-    "kind": "unclassified",
-    "origin": null
+    "kind": "binary_resource",
+    "origin": 36860,
+    "format": "ACTION_AUTHORED_RENDER_PAGE_TAIL"
   },
   {
     "slot": 17,
@@ -14029,9 +14104,9 @@
     "slot": 17,
     "offset": 15256,
     "length": 9,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified3B98_3BA1.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/ArchivedEyeState.asm",
+    "origin": 39832,
     "sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d"
   },
   {
@@ -14065,9 +14140,9 @@
     "slot": 17,
     "offset": 15283,
     "length": 10,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified3BB3_3BBD.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/ArchivedSpawnChances.asm",
+    "origin": 39859,
     "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
   },
   {
@@ -14110,9 +14185,9 @@
     "slot": 17,
     "offset": 15307,
     "length": 2,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified3BCB_3BCD.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/PlayerIndices.asm",
+    "origin": 39883,
     "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
   },
   {
@@ -14120,7 +14195,7 @@
     "offset": 15309,
     "length": 1,
     "kind": "typed_data",
-    "path": "Source/Action/Data/IndexedGate.asm",
+    "path": "Source/Action/Data/FlightStatus.asm",
     "origin": 39885,
     "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
   },
@@ -14129,7 +14204,7 @@
     "offset": 15310,
     "length": 2,
     "kind": "typed_data",
-    "path": "Source/Action/Data/ArrivalCounter.asm",
+    "path": "Source/Action/Data/RankScore.asm",
     "origin": 39886,
     "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
   },
@@ -14137,9 +14212,9 @@
     "slot": 17,
     "offset": 15312,
     "length": 2,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified3BD0_3BD2.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/PlayerMoney.asm",
+    "origin": 39888,
     "sha256": "ab74ddaca1f4bbf9630190a2414b9a2f85409367cec70562e7b7a5cdb8c07387"
   },
   {
@@ -14147,7 +14222,7 @@
     "offset": 15314,
     "length": 2,
     "kind": "typed_data",
-    "path": "Source/Action/Data/ByteLimitCounter.asm",
+    "path": "Source/Action/Data/FlightTonnage.asm",
     "origin": 39890,
     "sha256": "2ee788372518190a6ab539cbb20331df1040f21846e3ba836c269aee907c894c"
   },
@@ -14227,10 +14302,11 @@
     "slot": 17,
     "offset": 15497,
     "length": 1,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified3C89_3C8A.bin",
-    "origin": null,
-    "sha256": "18ac3e7343f016890c510e93f935261169d9e3f565436429830faf0934f4f8e4"
+    "path": "Source/Action/Resources/InitialArchivedSkimmerSpeed.bin",
+    "sha256": "18ac3e7343f016890c510e93f935261169d9e3f565436429830faf0934f4f8e4",
+    "kind": "binary_resource",
+    "origin": 40073,
+    "format": "ACTION_ARCHIVED_SKIMMER_SPEED"
   },
   {
     "slot": 17,
@@ -14245,11 +14321,10 @@
     "slot": 17,
     "offset": 15499,
     "length": 193,
-    "path": "Source/Action/Resources/InitialTransferredContextMiddle.bin",
+    "path": "Source/Action/Data/ContextMapAndOptions.asm",
     "sha256": "80edfcf1355fac43c14ea64615dce5ce2f78218b32d21ae30db1635f4d7c7d2d",
-    "kind": "binary_resource",
-    "origin": 40075,
-    "format": "INITIAL_ACTION_CONTEXT_MIDDLE"
+    "kind": "typed_data",
+    "origin": 40075
   },
   {
     "slot": 17,
@@ -14283,10 +14358,11 @@
     "slot": 17,
     "offset": 15805,
     "length": 67,
-    "path": "Source/Resources/17_ACTION/Unclassified3DBD_3E00.bin",
+    "path": "Source/Action/Resources/ObjectTablePageAlignment.bin",
     "sha256": "1be2b3990b410ca4fb38d1f79019c4018cd8820b69618646c81d22dfcbddc802",
-    "kind": "unclassified",
-    "origin": null
+    "kind": "binary_resource",
+    "origin": 40381,
+    "format": "ACTION_OBJECT_TABLE_ALIGNMENT"
   },
   {
     "slot": 17,
@@ -14319,11 +14395,22 @@
   {
     "slot": 17,
     "offset": 16394,
-    "length": 18,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified400A_401C.bin",
-    "origin": null,
-    "sha256": "60daa3a5f7dbfa200f8c82840ecf5b42640b70f3b7218a4c6bbd67db542e75a4"
+    "length": 13,
+    "kind": "binary_resource",
+    "path": "Source/Action/Resources/InitialObjectStreamExtendedTail.bin",
+    "origin": 40970,
+    "sha256": "dd46c3eebb1884ff3b5258c0a2fc9398e560a29e0780d4b53869b6254aa46a96",
+    "format": "INITIAL_OBJECT_STREAM_EXTENDED_TAIL"
+  },
+  {
+    "slot": 17,
+    "offset": 16407,
+    "length": 5,
+    "path": "Source/Action/Resources/ObjectStreamBufferTail.bin",
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+    "kind": "binary_resource",
+    "origin": 40983,
+    "format": "ACTION_AUTHORED_OBJECT_BUFFER_TAIL"
   },
   {
     "slot": 17,
@@ -14338,10 +14425,11 @@
     "slot": 17,
     "offset": 16423,
     "length": 217,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified4027_4100.bin",
-    "origin": null,
-    "sha256": "087fe55d46b5fac5e233bc72e9f0392365dac5ff09cee4278caca86691771625"
+    "path": "Source/Action/Resources/ObjectRecordsAlignment.bin",
+    "sha256": "087fe55d46b5fac5e233bc72e9f0392365dac5ff09cee4278caca86691771625",
+    "kind": "binary_resource",
+    "origin": 40999,
+    "format": "ACTION_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 17,
@@ -14374,9 +14462,9 @@
     "slot": 17,
     "offset": 18317,
     "length": 2,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified478D_478F.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/PlayerPanelWord.asm",
+    "origin": 42893,
     "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
   },
   {
@@ -14392,9 +14480,9 @@
     "slot": 17,
     "offset": 18321,
     "length": 3,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified4791_4794.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/PlayerPanelType.asm",
+    "origin": 42897,
     "sha256": "2c8d07cd986f58eb210bd800133d6645c7340c59865377c8ea431cebca0b3113"
   },
   {
@@ -15517,10 +15605,11 @@
     "slot": 17,
     "offset": 28387,
     "length": 29,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified6EE3_6F00.bin",
-    "origin": null,
-    "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6"
+    "path": "Source/Action/Resources/ClipDispatchAlignment.bin",
+    "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6",
+    "kind": "binary_resource",
+    "origin": 52963,
+    "format": "ACTION_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 17,
@@ -15535,8 +15624,8 @@
     "slot": 17,
     "offset": 28424,
     "length": 3,
-    "kind": "code",
-    "path": "Source/Action/UnknownCF08.asm",
+    "kind": "typed_data",
+    "path": "Source/Action/Data/ClipTargetLowAlias.asm",
     "origin": 53000,
     "sha256": "b4abbe0609b69c6c6201ade6111f0963d12cc63aa11d8de1bbe60b255acdc002"
   },
@@ -15643,10 +15732,11 @@
     "slot": 17,
     "offset": 29076,
     "length": 44,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified028_BeforePolygonRows.bin",
-    "origin": null,
-    "sha256": "85759b3811ff7dc47b03792ac85317be51431a3f9e01dcafce317ed736a391b0"
+    "path": "Source/Action/Resources/PolygonRowsAlignment.bin",
+    "sha256": "85759b3811ff7dc47b03792ac85317be51431a3f9e01dcafce317ed736a391b0",
+    "kind": "binary_resource",
+    "origin": 53652,
+    "format": "ACTION_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 17,
@@ -15859,10 +15949,11 @@
     "slot": 17,
     "offset": 32777,
     "length": 7,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified028_BeforeLineMasks.bin",
-    "origin": null,
-    "sha256": "837885c8f8091aeaeb9ec3c3f85a6ff470a415e610b8ba3e49f9b33c9cf9d619"
+    "path": "Source/Action/Resources/LineMasksAlignment.bin",
+    "sha256": "837885c8f8091aeaeb9ec3c3f85a6ff470a415e610b8ba3e49f9b33c9cf9d619",
+    "kind": "binary_resource",
+    "origin": 57353,
+    "format": "ACTION_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 17,
@@ -16012,9 +16103,9 @@
     "slot": 17,
     "offset": 34207,
     "length": 1,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified032.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Action/DoubleRecordScale.asm",
+    "origin": 58783,
     "sha256": "ba5ec51d07a4ac0e951608704431d59a02b21a4e951acc10505a8dc407c501ee"
   },
   {
@@ -16049,7 +16140,7 @@
     "offset": 34399,
     "length": 38,
     "kind": "code",
-    "path": "Source/Action/ReleaseClass12Records.asm",
+    "path": "Source/Action/ReleaseStationPartsOrRestoreOffsets.asm",
     "origin": 58975,
     "sha256": "d09ac5add305635f724e8d6b9e0b0ecb74e0194892a28865b16a76c60f212991"
   },
@@ -16669,9 +16760,9 @@
     "slot": 17,
     "offset": 36732,
     "length": 1,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/AfterObjectStateHandlers_BeforeActionObjectOffsetRise.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Action/ReturnFromObjectState.asm",
+    "origin": 61308,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
   },
   {
@@ -16805,7 +16896,7 @@
     "offset": 37410,
     "length": 45,
     "kind": "code",
-    "path": "Source/Action/CheckClass17SpawnWindow.asm",
+    "path": "Source/Action/CheckMissileSpawnWindow.asm",
     "origin": 61986,
     "sha256": "a39a0c92931491d1ace33bfece1d6f9d8c5bf16f4ef8a2fe33d0bbdfb97fc82a"
   },
@@ -16814,7 +16905,7 @@
     "offset": 37455,
     "length": 6,
     "kind": "code",
-    "path": "Source/Action/SpawnLinkedClass17AndContinue.asm",
+    "path": "Source/Action/CreateMissileAndContinueOffsets.asm",
     "origin": 62031,
     "sha256": "f2c85546eb985370706ecfc0879037ced6ad8ac339c95f19ee5dc20ba880b7c5"
   },
@@ -16823,7 +16914,7 @@
     "offset": 37461,
     "length": 43,
     "kind": "code",
-    "path": "Source/Action/SpawnClass17FromCurrentLink.asm",
+    "path": "Source/Action/CreateMissileFromCurrentLink.asm",
     "origin": 62037,
     "sha256": "3ceca7314379aac6692a5a384a16a753fc3b66a98b4039df6db9dbc6f468da79"
   },
@@ -17118,11 +17209,781 @@
   {
     "slot": 17,
     "offset": 39014,
-    "length": 1912,
+    "length": 443,
+    "path": "Source/Resources/17_ACTION/Unclassified9866_9A21.bin",
+    "sha256": "2ba380ec3ae7aff244ac225a0328c408f1e7e7ccb4b27a474a48f95740d9e178",
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified9866_9FDE.bin",
-    "origin": null,
-    "sha256": "ece032a357c722fa7c6668d9c340622242ffd32e52ee96cb3179f6c24b07e550"
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 39457,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFA21.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64033,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 39458,
+    "length": 5,
+    "path": "Source/Resources/17_ACTION/Unclassified9A22_9A27.bin",
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 39463,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFA27.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64039,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 39464,
+    "length": 56,
+    "path": "Source/Resources/17_ACTION/Unclassified9A28_9A60.bin",
+    "sha256": "d4817aa5497628e7c77e6b606107042bbba3130888c5f47a375e6179be789fbb",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 39520,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFA60.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64096,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 39521,
+    "length": 672,
+    "path": "Source/Resources/17_ACTION/Unclassified9A61_9D01.bin",
+    "sha256": "f792b7f860bb94e55760c0daa727d58d13ba96276a2b52f29a645c8e08e73ec1",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40193,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD01.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64769,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40194,
+    "length": 2,
+    "path": "Source/Resources/17_ACTION/Unclassified9D02_9D04.bin",
+    "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40196,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD04.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64772,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40197,
+    "length": 2,
+    "path": "Source/Resources/17_ACTION/Unclassified9D05_9D07.bin",
+    "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40199,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD07.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64775,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40200,
+    "length": 2,
+    "path": "Source/Resources/17_ACTION/Unclassified9D08_9D0A.bin",
+    "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40202,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD0A.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64778,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40203,
+    "length": 3,
+    "path": "Source/Resources/17_ACTION/Unclassified9D0B_9D0E.bin",
+    "sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40206,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD0E.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64782,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40207,
+    "length": 5,
+    "path": "Source/Resources/17_ACTION/Unclassified9D0F_9D14.bin",
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40212,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD14.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64788,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40213,
+    "length": 40,
+    "path": "Source/Resources/17_ACTION/Unclassified9D15_9D3D.bin",
+    "sha256": "2c34ce1df23b838c5abf2a7f6437cca3d3067ed509ff25f11df6b11b582b51eb",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40253,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD3D.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64829,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40254,
+    "length": 2,
+    "path": "Source/Resources/17_ACTION/Unclassified9D3E_9D40.bin",
+    "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40256,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD40.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64832,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40257,
+    "length": 2,
+    "path": "Source/Resources/17_ACTION/Unclassified9D41_9D43.bin",
+    "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40259,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD43.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64835,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40260,
+    "length": 9,
+    "path": "Source/Resources/17_ACTION/Unclassified9D44_9D4D.bin",
+    "sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40269,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD4D.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64845,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40270,
+    "length": 15,
+    "path": "Source/Resources/17_ACTION/Unclassified9D4E_9D5D.bin",
+    "sha256": "5322fecfc92a5e3248a297a3df3eddfb9bd9049504272e4f572b87fa36d4b3bd",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40285,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD5D.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64861,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40286,
+    "length": 5,
+    "path": "Source/Resources/17_ACTION/Unclassified9D5E_9D63.bin",
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40291,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD63.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64867,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40292,
+    "length": 24,
+    "path": "Source/Resources/17_ACTION/Unclassified9D64_9D7C.bin",
+    "sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40316,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD7C.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64892,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40317,
+    "length": 5,
+    "path": "Source/Resources/17_ACTION/Unclassified9D7D_9D82.bin",
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40322,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD82.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64898,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40323,
+    "length": 25,
+    "path": "Source/Resources/17_ACTION/Unclassified9D83_9D9C.bin",
+    "sha256": "61126de1b795b976f3ac878f48e88fa77a87d7308ba57c7642b9e1068403a496",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40348,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD9C.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64924,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40349,
+    "length": 2,
+    "path": "Source/Resources/17_ACTION/Unclassified9D9D_9D9F.bin",
+    "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40351,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFD9F.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64927,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40352,
+    "length": 5,
+    "path": "Source/Resources/17_ACTION/Unclassified9DA0_9DA5.bin",
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40357,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFDA5.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64933,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40358,
+    "length": 5,
+    "path": "Source/Resources/17_ACTION/Unclassified9DA6_9DAB.bin",
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40363,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFDAB.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64939,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40364,
+    "length": 15,
+    "path": "Source/Resources/17_ACTION/Unclassified9DAC_9DBB.bin",
+    "sha256": "5322fecfc92a5e3248a297a3df3eddfb9bd9049504272e4f572b87fa36d4b3bd",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40379,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFDBB.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64955,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40380,
+    "length": 34,
+    "path": "Source/Resources/17_ACTION/Unclassified9DBC_9DDE.bin",
+    "sha256": "eb142b0cae0baa72a767ebc0823d1be94e14c5bfc52d8e417fc4302fceb6240c",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40414,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFDDE.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 64990,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40415,
+    "length": 69,
+    "path": "Source/Resources/17_ACTION/Unclassified9DDF_9E24.bin",
+    "sha256": "cd05c2283f62b7c74911008df6a66101d51ed5cb23e6b4b5c84af4bc60db0f3a",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40484,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFE24.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65060,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40485,
+    "length": 5,
+    "path": "Source/Resources/17_ACTION/Unclassified9E25_9E2A.bin",
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40490,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFE2A.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65066,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40491,
+    "length": 52,
+    "path": "Source/Resources/17_ACTION/Unclassified9E2B_9E5F.bin",
+    "sha256": "7955cb2de90dd9efc6df9fdbf5f5d10c114f4135a9a6b52db1003be749e32f7a",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40543,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFE5F.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65119,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40544,
+    "length": 3,
+    "path": "Source/Resources/17_ACTION/Unclassified9E60_9E63.bin",
+    "sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40547,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFE63.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65123,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40548,
+    "length": 1,
+    "path": "Source/Resources/17_ACTION/Unclassified9E64_9E65.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40549,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFE65.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65125,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40550,
+    "length": 25,
+    "path": "Source/Resources/17_ACTION/Unclassified9E66_9E7F.bin",
+    "sha256": "61126de1b795b976f3ac878f48e88fa77a87d7308ba57c7642b9e1068403a496",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40575,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFE7F.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65151,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40576,
+    "length": 5,
+    "path": "Source/Resources/17_ACTION/Unclassified9E80_9E85.bin",
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40581,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFE85.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65157,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40582,
+    "length": 24,
+    "path": "Source/Resources/17_ACTION/Unclassified9E86_9E9E.bin",
+    "sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40606,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFE9E.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65182,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40607,
+    "length": 31,
+    "path": "Source/Resources/17_ACTION/Unclassified9E9F_9EBE.bin",
+    "sha256": "fd08be957bda07dc529ad8100df732f9ce12ae3e42bcda6acabe12c02dfd6989",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40638,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFEBE.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65214,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40639,
+    "length": 21,
+    "path": "Source/Resources/17_ACTION/Unclassified9EBF_9ED4.bin",
+    "sha256": "c90232586b801f9558a76f2f963eccd831d9fe6775e4c8f1446b2331aa2132f2",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40660,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFED4.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65236,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40661,
+    "length": 5,
+    "path": "Source/Resources/17_ACTION/Unclassified9ED5_9EDA.bin",
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40666,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFEDA.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65242,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40667,
+    "length": 38,
+    "path": "Source/Resources/17_ACTION/Unclassified9EDB_9F01.bin",
+    "sha256": "762b023699a0e48aa95763f0cf7c0467f1d6e9880308c78ebbc1c423de7072d3",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40705,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFF01.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65281,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40706,
+    "length": 5,
+    "path": "Source/Resources/17_ACTION/Unclassified9F02_9F07.bin",
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40711,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFF07.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65287,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40712,
+    "length": 11,
+    "path": "Source/Resources/17_ACTION/Unclassified9F08_9F13.bin",
+    "sha256": "71b6c1d53832f789a7f2435a7c629245fa3761ad8487775ebf4957330213a706",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40723,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFF13.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65299,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40724,
+    "length": 43,
+    "path": "Source/Resources/17_ACTION/Unclassified9F14_9F3F.bin",
+    "sha256": "859732b97382a08583d6a67f5842486505e50bee754bd9b57ac3abf81b9714f2",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40767,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFF3F.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65343,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40768,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFF40.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65344,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40769,
+    "length": 4,
+    "path": "Source/Resources/17_ACTION/Unclassified9F41_9F45.bin",
+    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40773,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFF45.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65349,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40774,
+    "length": 56,
+    "path": "Source/Resources/17_ACTION/Unclassified9F46_9F7E.bin",
+    "sha256": "d4817aa5497628e7c77e6b606107042bbba3130888c5f47a375e6179be789fbb",
+    "kind": "unclassified",
+    "origin": null
+  },
+  {
+    "slot": 17,
+    "offset": 40830,
+    "length": 1,
+    "path": "Source/Action/Resources/InitialNoiseIrqByteFF7E.bin",
+    "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "kind": "binary_resource",
+    "origin": 65406,
+    "format": "INITIAL_ACTION_NOISE_IRQ_ALIAS"
+  },
+  {
+    "slot": 17,
+    "offset": 40831,
+    "length": 95,
+    "path": "Source/Resources/17_ACTION/Unclassified9F7F_9FDE.bin",
+    "sha256": "8542681424ecba28d65569c3be0d3962837fdf9d6cb770620108a86cf9e8d75f",
+    "kind": "unclassified",
+    "origin": null
   },
   {
     "slot": 17,
@@ -18029,10 +18890,11 @@
     "slot": 19,
     "offset": 3811,
     "length": 29,
-    "kind": "unclassified",
-    "path": "Source/Resources/19_3DPART/Unclassified0EE3_0F00.bin",
-    "origin": null,
-    "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6"
+    "path": "Source/ThreeD/Resources/ClipDispatchAlignment.bin",
+    "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6",
+    "kind": "binary_resource",
+    "origin": 52963,
+    "format": "ACTION_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 19,
@@ -18047,8 +18909,8 @@
     "slot": 19,
     "offset": 3848,
     "length": 3,
-    "kind": "code",
-    "path": "Source/ThreeD/UnknownCF08.asm",
+    "kind": "typed_data",
+    "path": "Source/ThreeD/Data/ClipTargetLowAlias.asm",
     "origin": 53000,
     "sha256": "b4abbe0609b69c6c6201ade6111f0963d12cc63aa11d8de1bbe60b255acdc002"
   },
@@ -18155,10 +19017,11 @@
     "slot": 19,
     "offset": 4500,
     "length": 44,
-    "kind": "unclassified",
-    "path": "Source/Resources/19_3DPART/Physical1194.bin",
-    "origin": null,
-    "sha256": "85759b3811ff7dc47b03792ac85317be51431a3f9e01dcafce317ed736a391b0"
+    "path": "Source/ThreeD/Resources/PolygonRowsAlignment.bin",
+    "sha256": "85759b3811ff7dc47b03792ac85317be51431a3f9e01dcafce317ed736a391b0",
+    "kind": "binary_resource",
+    "origin": 53652,
+    "format": "ACTION_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 19,
@@ -18371,10 +19234,11 @@
     "slot": 19,
     "offset": 8201,
     "length": 7,
-    "kind": "unclassified",
-    "path": "Source/Resources/19_3DPART/Physical2009.bin",
-    "origin": null,
-    "sha256": "837885c8f8091aeaeb9ec3c3f85a6ff470a415e610b8ba3e49f9b33c9cf9d619"
+    "path": "Source/ThreeD/Resources/LineMasksAlignment.bin",
+    "sha256": "837885c8f8091aeaeb9ec3c3f85a6ff470a415e610b8ba3e49f9b33c9cf9d619",
+    "kind": "binary_resource",
+    "origin": 57353,
+    "format": "ACTION_AUTHORED_ALIGNMENT"
   },
   {
     "slot": 19,
@@ -18426,10 +19290,11 @@
     "slot": 20,
     "offset": 8640,
     "length": 832,
-    "kind": "unclassified",
-    "path": "Source/Resources/20_VOXAL0/AfterSmallFrames.bin",
-    "origin": null,
-    "sha256": "e0084b66cb4a03e2aba6cc7342eead6a91610ad915d66f9ae2c734f99b772ac7"
+    "path": "Source/Voxel/Resources/TeleportResourceTail.bin",
+    "sha256": "e0084b66cb4a03e2aba6cc7342eead6a91610ad915d66f9ae2c734f99b772ac7",
+    "kind": "binary_resource",
+    "origin": 57792,
+    "format": "VOXEL_TELEPORT_RESOURCE_TAIL"
   },
   {
     "slot": 20,
@@ -18453,10 +19318,11 @@
     "slot": 20,
     "offset": 10597,
     "length": 155,
-    "kind": "unclassified",
-    "path": "Source/Resources/20_VOXAL0/Unclassified2965_2A00.bin",
-    "origin": null,
-    "sha256": "30a7553f9e01eac79a41037ec6d680c06c0bbaf4ee7ee1d7ff9ae5e71d7966f6"
+    "path": "Source/Voxel/Resources/CosineTableAlignment.bin",
+    "sha256": "30a7553f9e01eac79a41037ec6d680c06c0bbaf4ee7ee1d7ff9ae5e71d7966f6",
+    "kind": "binary_resource",
+    "origin": 59749,
+    "format": "VOXEL_COSINE_TABLE_ALIGNMENT"
   },
   {
     "slot": 20,
@@ -18607,10 +19473,11 @@
     "slot": 22,
     "offset": 1350,
     "length": 186,
-    "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified0546_0600.bin",
-    "origin": null,
-    "sha256": "b57cceac5243ea773def6e4a96db5bd89d900f7a41429431c2719f43d523c83f"
+    "path": "Source/Controls/Resources/DotBufferPageTail.bin",
+    "sha256": "b57cceac5243ea773def6e4a96db5bd89d900f7a41429431c2719f43d523c83f",
+    "kind": "binary_resource",
+    "origin": 50502,
+    "format": "CONTROL0_AUTHORED_DOT_BUFFER_TAIL"
   },
   {
     "slot": 22,
@@ -18707,9 +19574,9 @@
     "slot": 22,
     "offset": 3765,
     "length": 2,
-    "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified002_Prefix.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Controls/FillSpan31.asm",
+    "origin": 52917,
     "sha256": "65da4e192c92112906479883f0b4740c6434367e3d4a1da77a21dece77ab34f1"
   },
   {
@@ -19013,9 +19880,9 @@
     "slot": 22,
     "offset": 5377,
     "length": 3,
-    "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified006.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Controls/ReturnUnfilledMask.asm",
+    "origin": 54529,
     "sha256": "c4e2b157cb5fc3b570351d406a84594ac40d34e95d01bd3267471e58369b85d7"
   },
   {
@@ -19130,10 +19997,11 @@
     "slot": 22,
     "offset": 6491,
     "length": 4,
-    "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified010.bin",
-    "origin": null,
-    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    "path": "Source/Controls/Resources/ArchivedTxtrPair.bin",
+    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+    "kind": "binary_resource",
+    "origin": 55643,
+    "format": "CONTROL0_AUTHORED_TXTR_PAIR"
   },
   {
     "slot": 22,
@@ -19166,10 +20034,11 @@
     "slot": 22,
     "offset": 6556,
     "length": 20,
-    "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified011_AfterMasks.bin",
-    "origin": null,
-    "sha256": "de47c9b27eb8d300dbb5f2c353e632c393262cf06340c4fa7f1b40c4cbd36f90"
+    "path": "Source/Controls/Resources/SmallMaskBufferTail.bin",
+    "sha256": "de47c9b27eb8d300dbb5f2c353e632c393262cf06340c4fa7f1b40c4cbd36f90",
+    "kind": "binary_resource",
+    "origin": 55708,
+    "format": "CONTROL0_AUTHORED_SMALL_MASK_TAIL"
   },
   {
     "slot": 22,
@@ -19256,11 +20125,32 @@
   {
     "slot": 23,
     "offset": 315,
-    "length": 130,
-    "kind": "unclassified",
-    "path": "Source/Resources/23_CONTROL/Unclassified013B_01BD.bin",
-    "origin": null,
-    "sha256": "683240644a985bb185e19009527d5f450149ce7e9fb9cfb96494d448b9b9eebf"
+    "length": 13,
+    "path": "Source/Controls/Resources/LegacyContextPrefix.bin",
+    "sha256": "810100626adb1fa0afba1cf476206be65b55a57876284df5f91fa0b9c120d4da",
+    "kind": "binary_resource",
+    "origin": 56345,
+    "format": "CONTROL_LEGACY_CONTEXT_PREFIX"
+  },
+  {
+    "slot": 23,
+    "offset": 328,
+    "length": 8,
+    "path": "Source/Controls/Resources/LegacyResetRevisedHeader.bin",
+    "sha256": "d6047297e59725f3e2433e319e0cfc5e2381e2b3d026e7173755290c84e687af",
+    "kind": "binary_resource",
+    "origin": 56358,
+    "format": "CONTROL_LEGACY_RESET_REVISED_HEADER"
+  },
+  {
+    "slot": 23,
+    "offset": 336,
+    "length": 109,
+    "path": "Source/Controls/Resources/LegacyResetContextTail.bin",
+    "sha256": "942258d8fa3a1274308368810e75cc2f8209d61c3f5c918161f8e66adf1a2a3f",
+    "kind": "binary_resource",
+    "origin": 56366,
+    "format": "CONTROL_LEGACY_RESET_CONTEXT_TAIL"
   },
   {
     "slot": 23,
@@ -19692,7 +20582,7 @@
     "offset": 0,
     "length": 64,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0000.asm",
+    "path": "Source/Action/Data/ModelKN01pol1.asm",
     "origin": 49152,
     "sha256": "e99105cc6fe6f1d38753a3b7e540d2eae2fe56eb6f489988f3dad1d37768709f"
   },
@@ -19701,7 +20591,7 @@
     "offset": 64,
     "length": 101,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0040.asm",
+    "path": "Source/Action/Data/ModelKd1.asm",
     "origin": 49216,
     "sha256": "c673e23d53cce5b2eea2e463076556e3f7f8ac09d768524dbf30c496bc5acaa7"
   },
@@ -19710,7 +20600,7 @@
     "offset": 165,
     "length": 39,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model00A5.asm",
+    "path": "Source/Action/Data/ModelKN02mlt1.asm",
     "origin": 49317,
     "sha256": "504d77bc552a676738cd4f4af905a5d848b4ed24e94ce414affb2c678f95a8a2"
   },
@@ -19719,7 +20609,7 @@
     "offset": 204,
     "length": 116,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model00CC.asm",
+    "path": "Source/Action/Data/ModelKd2.asm",
     "origin": 49356,
     "sha256": "0c0faded1d08a29e944b61f082b437e4bc7b2779111930c3438c872ed499919d"
   },
@@ -19728,7 +20618,7 @@
     "offset": 320,
     "length": 39,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0140.asm",
+    "path": "Source/Action/Data/ModelKN04trg1.asm",
     "origin": 49472,
     "sha256": "2d3b1e8c2f87a2bb7af361daaeaf5eb02129e85bca67c9cbc41daa754b12b65a"
   },
@@ -19737,7 +20627,7 @@
     "offset": 359,
     "length": 123,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0167.asm",
+    "path": "Source/Action/Data/ModelKd4.asm",
     "origin": 49511,
     "sha256": "980980070b3c1f278d15b9092a7b4a2eb55100e9c8e2bb5cb0078486eac6a056"
   },
@@ -19746,7 +20636,7 @@
     "offset": 482,
     "length": 32,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model01E2.asm",
+    "path": "Source/Action/Data/ModelKN05trg2.asm",
     "origin": 49634,
     "sha256": "85d2f5f1b63545143df048cdf367b3c38413196a02274a3fc1d2ea254c358cd0"
   },
@@ -19755,7 +20645,7 @@
     "offset": 514,
     "length": 79,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0202.asm",
+    "path": "Source/Action/Data/ModelKd5.asm",
     "origin": 49666,
     "sha256": "7855f0e219e5ca5718bc13809da9a84b587e4d6b947e278a7b04de690ca0bbb2"
   },
@@ -19764,7 +20654,7 @@
     "offset": 593,
     "length": 32,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0251.asm",
+    "path": "Source/Action/Data/ModelKN06pol2.asm",
     "origin": 49745,
     "sha256": "624f558701e14adf6e56eb2eed8af45ebebe16a58b86f32ca5e2c451351ac516"
   },
@@ -19773,7 +20663,7 @@
     "offset": 625,
     "length": 77,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0271.asm",
+    "path": "Source/Action/Data/ModelKd6.asm",
     "origin": 49777,
     "sha256": "abf9875a895770a5444f645bf3efcb0f0b82fb8f0b62cabc37597c721213a3a8"
   },
@@ -19782,7 +20672,7 @@
     "offset": 702,
     "length": 107,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model02BE.asm",
+    "path": "Source/Action/Data/ModelKN07krs1.asm",
     "origin": 49854,
     "sha256": "d9a9a73bd441768757b8febbdece6a3037da7fb6c4f04db5625d79a326fa1611"
   },
@@ -19791,7 +20681,7 @@
     "offset": 809,
     "length": 133,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0329.asm",
+    "path": "Source/Action/Data/ModelKd7.asm",
     "origin": 49961,
     "sha256": "b65714b50983eb42fb808944ec9429ef4da615a6687cb5bd969e693f9c9f3e8d"
   },
@@ -19800,7 +20690,7 @@
     "offset": 942,
     "length": 67,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model03AE.asm",
+    "path": "Source/Action/Data/ModelKN08grz2.asm",
     "origin": 50094,
     "sha256": "bcbf8632296d1f8c1dc7d7336aa286561950cb2bd92e7ab224428834a091bf82"
   },
@@ -19809,7 +20699,7 @@
     "offset": 1009,
     "length": 99,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model03F1.asm",
+    "path": "Source/Action/Data/ModelKd8.asm",
     "origin": 50161,
     "sha256": "3c3103f73906884e00974b2c5712145189bb0b90762ee6349ba7405e44e4e602"
   },
@@ -19818,7 +20708,7 @@
     "offset": 1108,
     "length": 94,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0454.asm",
+    "path": "Source/Action/Data/ModelKN09mlt2.asm",
     "origin": 50260,
     "sha256": "944da853f5933e8569901c7e1fddb22f5df1e70d3a54af5d03c9c79258a968a7"
   },
@@ -19827,7 +20717,7 @@
     "offset": 1202,
     "length": 157,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model04B2.asm",
+    "path": "Source/Action/Data/ModelKd9.asm",
     "origin": 50354,
     "sha256": "825839084a787d9bb1d0ba6665766a120b649460b20b41fbd7193c8db5aeef6d"
   },
@@ -19836,7 +20726,7 @@
     "offset": 1359,
     "length": 32,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model054F.asm",
+    "path": "Source/Action/Data/ModelKN10trg3.asm",
     "origin": 50511,
     "sha256": "e0eaf2b435924b4e88ce71fd07306c85410da0edfc692e524d8ecf6a8f5cfc09"
   },
@@ -19845,7 +20735,7 @@
     "offset": 1391,
     "length": 147,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model056F.asm",
+    "path": "Source/Action/Data/ModelKd10.asm",
     "origin": 50543,
     "sha256": "d195019c812447f5123471a9caef0bf9ee8c1fdc63dd9d84d77f6e38b9045d19"
   },
@@ -19854,7 +20744,7 @@
     "offset": 1538,
     "length": 77,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0602.asm",
+    "path": "Source/Action/Data/ModelKN11grz3.asm",
     "origin": 50690,
     "sha256": "fae1c61e56338caef38fca617abba254f3ceebc422b4007277b84514a2ed37e8"
   },
@@ -19863,7 +20753,7 @@
     "offset": 1615,
     "length": 155,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model064F.asm",
+    "path": "Source/Action/Data/ModelKd11.asm",
     "origin": 50767,
     "sha256": "855ee2284b16d0734773e73df9f3a3491616f6d0cea8bba89c86c54f34a9f9f8"
   },
@@ -19872,7 +20762,7 @@
     "offset": 1770,
     "length": 163,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model06EA.asm",
+    "path": "Source/Action/Data/ModelKd15.asm",
     "origin": 50922,
     "sha256": "2344c5a40495356e21f867519094c475c61d3f9a5b1dd0591377bc72dc3095f2"
   },
@@ -19881,7 +20771,7 @@
     "offset": 1933,
     "length": 57,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model078D.asm",
+    "path": "Source/Action/Data/ModelKN16trg4.asm",
     "origin": 51085,
     "sha256": "5bfd6c63a9dd12a736431acab27fab1ab2da15e46123363a6c66553f3708a262"
   },
@@ -19890,7 +20780,7 @@
     "offset": 1990,
     "length": 127,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model07C6.asm",
+    "path": "Source/Action/Data/ModelKd16.asm",
     "origin": 51142,
     "sha256": "fcb6342a4e173a8a10e6675f557cb20f4939ce9d29c7f0a72ac24101c1cca41c"
   },
@@ -19899,7 +20789,7 @@
     "offset": 2117,
     "length": 91,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0845.asm",
+    "path": "Source/Action/Data/ModelKN17mlt3.asm",
     "origin": 51269,
     "sha256": "70d46ba48cf4b0f1121786ef978f1912f1902102c7b771c0ea83bd9ab609905f"
   },
@@ -19908,7 +20798,7 @@
     "offset": 2208,
     "length": 149,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model08A0.asm",
+    "path": "Source/Action/Data/ModelKd17.asm",
     "origin": 51360,
     "sha256": "e19983f5066488d9224d3a5a731625de6c66d4254176ca5ac7bb30a1f3c38442"
   },
@@ -19917,7 +20807,7 @@
     "offset": 2357,
     "length": 162,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0935.asm",
+    "path": "Source/Action/Data/ModelKd19.asm",
     "origin": 51509,
     "sha256": "a42011c5c7822e708262b73864276fe5a0e1496e4b38c0cb7349911cd1d0e4ed"
   },
@@ -19926,7 +20816,7 @@
     "offset": 2519,
     "length": 32,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model09D7.asm",
+    "path": "Source/Action/Data/ModelKN21plS3.asm",
     "origin": 51671,
     "sha256": "b629ddf96c0b1083c522a5358a126044cef2409b940ad790fb1dec47a88d9c60"
   },
@@ -19935,7 +20825,7 @@
     "offset": 2551,
     "length": 73,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model09F7.asm",
+    "path": "Source/Action/Data/ModelKd21.asm",
     "origin": 51703,
     "sha256": "22cefc3c8e411b71f99863a6b4671aaa741a53894f61600994a7151b753dd43f"
   },
@@ -19944,7 +20834,7 @@
     "offset": 2624,
     "length": 174,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0A40.asm",
+    "path": "Source/Action/Data/ModelKd22.asm",
     "origin": 51776,
     "sha256": "f4ac30a3b22dcae38d1020fb5f196c1886446473d13561c0f9bccec2c7071393"
   },
@@ -19953,7 +20843,7 @@
     "offset": 2798,
     "length": 37,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0AEE.asm",
+    "path": "Source/Action/Data/ModelKN25plS4.asm",
     "origin": 51950,
     "sha256": "975164c223e2964427fcc2f7b9ad1bd2d457f743018079a8c32313a245153dcf"
   },
@@ -19962,7 +20852,7 @@
     "offset": 2835,
     "length": 63,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0B13.asm",
+    "path": "Source/Action/Data/ModelKd25.asm",
     "origin": 51987,
     "sha256": "c2729cb878e96f476d9808ad673e933cf3f06bf127cbef44f6e59193d75989b1"
   },
@@ -19971,7 +20861,7 @@
     "offset": 2898,
     "length": 40,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0B52.asm",
+    "path": "Source/Action/Data/ModelKN26mlt4.asm",
     "origin": 52050,
     "sha256": "e1869d4b1f0cc81b80bd2aca1749a1b9f499e14fee49807a8176c4051e65d85a"
   },
@@ -19980,7 +20870,7 @@
     "offset": 2938,
     "length": 114,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0B7A.asm",
+    "path": "Source/Action/Data/ModelKd26.asm",
     "origin": 52090,
     "sha256": "7c0b198fab84684481683edce437e69ec4876903617a3868a0500720ecda1b19"
   },
@@ -19989,7 +20879,7 @@
     "offset": 3052,
     "length": 37,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0BEC.asm",
+    "path": "Source/Action/Data/ModelKN27pol7.asm",
     "origin": 52204,
     "sha256": "d44587d4ffa60bed8566445d6b6cd91fcc6428bd5f197b4ac0e25dcab41c0755"
   },
@@ -19998,7 +20888,7 @@
     "offset": 3089,
     "length": 108,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0C11.asm",
+    "path": "Source/Action/Data/ModelKd27.asm",
     "origin": 52241,
     "sha256": "9636b0749a4c6baf66a8306db801ca06a89a46a26b053219706e4471722ab3a8"
   },
@@ -20007,7 +20897,7 @@
     "offset": 3197,
     "length": 40,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0C7D.asm",
+    "path": "Source/Action/Data/ModelKN28plS5.asm",
     "origin": 52349,
     "sha256": "b96dac1c8bc03462cfb91201259528ef9b0ff4b00e0b69a30af4113477cc00da"
   },
@@ -20016,7 +20906,7 @@
     "offset": 3237,
     "length": 70,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0CA5.asm",
+    "path": "Source/Action/Data/ModelKd28.asm",
     "origin": 52389,
     "sha256": "0b005b44c109fdc9ccc7894cdea641ed4e9350637787a1fbc3778bfd214e592d"
   },
@@ -20025,7 +20915,7 @@
     "offset": 3307,
     "length": 37,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0CEB.asm",
+    "path": "Source/Action/Data/ModelKN29pol6.asm",
     "origin": 52459,
     "sha256": "a85ef044076c4a4c9d526b44faa8059f8585581c8820b9f5375355dd8369a950"
   },
@@ -20034,7 +20924,7 @@
     "offset": 3344,
     "length": 123,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0D10.asm",
+    "path": "Source/Action/Data/ModelKd29.asm",
     "origin": 52496,
     "sha256": "3ef1a32d88081badc04ea874c2cb87fc082f57a50c8c94e61f8a9b567bf44494"
   },
@@ -20043,7 +20933,7 @@
     "offset": 3467,
     "length": 62,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0D8B.asm",
+    "path": "Source/Action/Data/ModelKN30grz4.asm",
     "origin": 52619,
     "sha256": "75ec8d34fc55d81472d4167896128b6832a17dc98d55d5b588e50ed44bd761f8"
   },
@@ -20052,7 +20942,7 @@
     "offset": 3529,
     "length": 109,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0DC9.asm",
+    "path": "Source/Action/Data/ModelKd30.asm",
     "origin": 52681,
     "sha256": "cbd7353f24b28a912db4bd60ebf8647d7447ac635a420181318982314964e368"
   },
@@ -20061,7 +20951,7 @@
     "offset": 3638,
     "length": 76,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0E36.asm",
+    "path": "Source/Action/Data/ModelKN31grz5.asm",
     "origin": 52790,
     "sha256": "809b57c282159dff2beb130c28ac44b64dc8f55ae28a516e0f02c58d5dfd2bb8"
   },
@@ -20070,7 +20960,7 @@
     "offset": 3714,
     "length": 115,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0E82.asm",
+    "path": "Source/Action/Data/ModelKd31.asm",
     "origin": 52866,
     "sha256": "a5416a8c52575f6d361f391fbd143b26278bcd8be235f020a324fd2562188843"
   },
@@ -20079,7 +20969,7 @@
     "offset": 3829,
     "length": 28,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0EF5.asm",
+    "path": "Source/Action/Data/ModelmicKN.asm",
     "origin": 52981,
     "sha256": "dca5ad49d6d2eafeee6d0cc34d656fa155375db4c8306bf736cd24a54d8fc03e"
   },
@@ -20088,7 +20978,7 @@
     "offset": 3857,
     "length": 80,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0F11.asm",
+    "path": "Source/Action/Data/ModelmicKd1.asm",
     "origin": 53009,
     "sha256": "88ff05bd59e54dcfc545cf6de40d9b559bf2c1696f3641e23bd05ac93a3465c5"
   },
@@ -20097,7 +20987,7 @@
     "offset": 3937,
     "length": 65,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0F61.asm",
+    "path": "Source/Action/Data/ModelmicKd2.asm",
     "origin": 53089,
     "sha256": "2ec10a94c6ece2a77362a4493c5392080fead2dde91843b387a1bbd07741f14f"
   },
@@ -20106,7 +20996,7 @@
     "offset": 4002,
     "length": 83,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0FA2.asm",
+    "path": "Source/Action/Data/ModelREM_DR.asm",
     "origin": 53154,
     "sha256": "c0ea08a5cf3b03ba22d7d5e2d6a6239a1ec18b0db542f7dd8f3cea8d6dcf67af"
   },
@@ -20115,7 +21005,7 @@
     "offset": 4085,
     "length": 82,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model0FF5.asm",
+    "path": "Source/Action/Data/ModelKontUFO.asm",
     "origin": 53237,
     "sha256": "1b2514d797627ec5bbe45720ff19b69ca720669b2faa0a47fdc2471c48a0036b"
   },
@@ -20124,7 +21014,7 @@
     "offset": 4167,
     "length": 66,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1047.asm",
+    "path": "Source/Action/Data/Modelufo_K.asm",
     "origin": 53319,
     "sha256": "0207eb3e718fba4032e22836f76b491751212d1f71086b9fc2ffc4e6530a2a73"
   },
@@ -20133,7 +21023,7 @@
     "offset": 4233,
     "length": 82,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1089.asm",
+    "path": "Source/Action/Data/ModelUfoRD.asm",
     "origin": 53385,
     "sha256": "cfc99de9fc4657dc6b0c820e34fc78598e5f4329b3cd972c137bef88f8cbc769"
   },
@@ -20142,7 +21032,7 @@
     "offset": 4315,
     "length": 40,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model10DB.asm",
+    "path": "Source/Action/Data/ModelKib_K.asm",
     "origin": 53467,
     "sha256": "52d53b00885da51ed1e1de3ce28eff706e984019e0666d88ad9251c1363ccc63"
   },
@@ -20151,7 +21041,7 @@
     "offset": 4355,
     "length": 77,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1103.asm",
+    "path": "Source/Action/Data/ModelKN03grz1.asm",
     "origin": 53507,
     "sha256": "d4c90f60463eaf4c7acb5b38c19c69f4ad5ac7293ae00c3bc60e43b73ef141d1"
   },
@@ -20160,7 +21050,7 @@
     "offset": 4432,
     "length": 112,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1150.asm",
+    "path": "Source/Action/Data/ModelKd3.asm",
     "origin": 53584,
     "sha256": "2ffd5197d09bb81b428d467df34f961edbaff318ad5e550ffdec4cd3c5efded5"
   },
@@ -20169,7 +21059,7 @@
     "offset": 4544,
     "length": 57,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model11C0.asm",
+    "path": "Source/Action/Data/ModelKN13ufo2.asm",
     "origin": 53696,
     "sha256": "8a436e97e857bc9b23ee327a4e9a579a0d3708cbab843e90328d55d8dc036ce9"
   },
@@ -20178,7 +21068,7 @@
     "offset": 4601,
     "length": 91,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model11F9.asm",
+    "path": "Source/Action/Data/ModelKd13.asm",
     "origin": 53753,
     "sha256": "469c61d64c17e7757127fc50c659364efe53b939b4eeaee66c067b3d74bef2de"
   },
@@ -20187,7 +21077,7 @@
     "offset": 4692,
     "length": 54,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1254.asm",
+    "path": "Source/Action/Data/ModelKN14ufo3.asm",
     "origin": 53844,
     "sha256": "f524474b42228bcbaec5ce8d098a4efac0f5d8170efb2210032f2ad13cd830aa"
   },
@@ -20196,7 +21086,7 @@
     "offset": 4746,
     "length": 126,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model128A.asm",
+    "path": "Source/Action/Data/ModelKd14.asm",
     "origin": 53898,
     "sha256": "5ad0e82f88ec440d23cf53b009a25e1c7542c678c0a273eb2446c49340314335"
   },
@@ -20205,7 +21095,7 @@
     "offset": 4872,
     "length": 144,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1308.asm",
+    "path": "Source/Action/Data/ModelKd12.asm",
     "origin": 54024,
     "sha256": "cc49a9007543cf930b0d1e8d501856be765be85488edbc1fc83744b67cd1ff84"
   },
@@ -20214,7 +21104,7 @@
     "offset": 5016,
     "length": 61,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1398.asm",
+    "path": "Source/Action/Data/ModelKN18UFo4.asm",
     "origin": 54168,
     "sha256": "f3fa1e7dcd286c6a29fc7d0d2382de6d99b4e102473321a9446234a1a054822e"
   },
@@ -20223,7 +21113,7 @@
     "offset": 5077,
     "length": 164,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model13D5.asm",
+    "path": "Source/Action/Data/ModelKd18.asm",
     "origin": 54229,
     "sha256": "ecfbf240bef9bf21fafb6f6945fec6fa9f354627229173e91037ed6fc34c2cdb"
   },
@@ -20232,7 +21122,7 @@
     "offset": 5241,
     "length": 69,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1479.asm",
+    "path": "Source/Action/Data/ModelKN20ufo5.asm",
     "origin": 54393,
     "sha256": "a3c7e7c113eb508a68e771854d4ebc43558912bb674f8a9a231a366319539c6a"
   },
@@ -20241,7 +21131,7 @@
     "offset": 5310,
     "length": 140,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model14BE.asm",
+    "path": "Source/Action/Data/ModelKd20.asm",
     "origin": 54462,
     "sha256": "7353f8c04855d69199b12f7071002c856b5da5c98675c24303eecc85c9f6da4a"
   },
@@ -20250,7 +21140,7 @@
     "offset": 5450,
     "length": 52,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model154A.asm",
+    "path": "Source/Action/Data/ModelKN24ufo7.asm",
     "origin": 54602,
     "sha256": "4b50d21f2ddc70fecfa3cee0135b2c4505e4865ac44356919c833bf7922e3932"
   },
@@ -20259,7 +21149,7 @@
     "offset": 5502,
     "length": 100,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model157E.asm",
+    "path": "Source/Action/Data/ModelKd24.asm",
     "origin": 54654,
     "sha256": "6cb3fb0efa27633a93680b6bee8c2f8853e46f56b379ccd040e1b793a840a0d4"
   },
@@ -20268,7 +21158,7 @@
     "offset": 5602,
     "length": 64,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model15E2.asm",
+    "path": "Source/Action/Data/ModelKN23ufo6.asm",
     "origin": 54754,
     "sha256": "558c7df686fa233fb8c537f85eebc36bb0c9b10fead37cccf6338a710e8314bb"
   },
@@ -20277,7 +21167,7 @@
     "offset": 5666,
     "length": 97,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1622.asm",
+    "path": "Source/Action/Data/ModelKd23.asm",
     "origin": 54818,
     "sha256": "379c9421c4ede55fe5811b23a4e54f1b24e33eed1f60d70fc45e977945b09617"
   },
@@ -20286,7 +21176,7 @@
     "offset": 5763,
     "length": 93,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1683.asm",
+    "path": "Source/Action/Data/ModelKOBRA.asm",
     "origin": 54915,
     "sha256": "197e056abd1d7619c8a672ddc0e2e1d18aca545ce02edbe49d44937d2238fb2a"
   },
@@ -20295,7 +21185,7 @@
     "offset": 5856,
     "length": 160,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model16E0.asm",
+    "path": "Source/Action/Data/ModelKOBRAD.asm",
     "origin": 55008,
     "sha256": "bee5321fdd8a4e6f85f922832e281981aae46c1a05756e8aa45cfb60fb4e8f42"
   },
@@ -20304,7 +21194,7 @@
     "offset": 6016,
     "length": 95,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1780.asm",
+    "path": "Source/Action/Data/ModelKRYL.asm",
     "origin": 55168,
     "sha256": "84d71b4727ecefb786f74a884776f4e57552ee92976ef592746e4a05d85d7c05"
   },
@@ -20313,7 +21203,7 @@
     "offset": 6111,
     "length": 109,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model17DF.asm",
+    "path": "Source/Action/Data/ModelKRYLD.asm",
     "origin": 55263,
     "sha256": "2a1f49d733463c188df177eacad104d1b6e8db4fe1a7c43d01f4a48a7d0eaf13"
   },
@@ -20322,7 +21212,7 @@
     "offset": 6220,
     "length": 24,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model184C.asm",
+    "path": "Source/Action/Data/ModelOSKOL.asm",
     "origin": 55372,
     "sha256": "f21bfb64101d30b8ea7b41201b3baac3ef4229511fb74ab6a67afa0cd0f8da1e"
   },
@@ -20331,7 +21221,7 @@
     "offset": 6244,
     "length": 78,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1864.asm",
+    "path": "Source/Action/Data/ModelROKET.asm",
     "origin": 55396,
     "sha256": "2cbcc080eb86cafa7f65d47a100b94d42394eb13c176fec8afe0e02a5794d04c"
   },
@@ -20340,7 +21230,7 @@
     "offset": 6322,
     "length": 4,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model18B2.asm",
+    "path": "Source/Action/Data/ModelTARGET.asm",
     "origin": 55474,
     "sha256": "a0454a24dd4bc418448ca19320519ea3fe544fa1a910868b62ca210614f119f8"
   },
@@ -20348,17 +21238,18 @@
     "slot": 24,
     "offset": 6326,
     "length": 4,
-    "kind": "unclassified",
-    "path": "Source/Resources/24_OBJECT3D/Gap18B6.bin",
-    "origin": null,
-    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    "path": "Source/Action/Resources/TargetModelTail.bin",
+    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+    "kind": "binary_resource",
+    "origin": 55478,
+    "format": "OBJECT3D_AUTHORED_TARGET_TAIL"
   },
   {
     "slot": 24,
     "offset": 6330,
     "length": 24,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model18BA.asm",
+    "path": "Source/Action/Data/ModelTRASH.asm",
     "origin": 55482,
     "sha256": "e04a146185e2d3a69f6dea7a6f524659faac173919f9cce34bf6d021ad6349bd"
   },
@@ -20367,7 +21258,7 @@
     "offset": 6354,
     "length": 94,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model18D2.asm",
+    "path": "Source/Action/Data/ModelCRG1.asm",
     "origin": 55506,
     "sha256": "587b054a30b1a4c7549eb869c76dd238b0dc5d80b1c360a0b3a3b0c790d3b1d7"
   },
@@ -20376,7 +21267,7 @@
     "offset": 6448,
     "length": 120,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1930.asm",
+    "path": "Source/Action/Data/ModelASTER1.asm",
     "origin": 55600,
     "sha256": "75115a71af12c89efc037adb1cc4f4ec4b8461a07a26f97a6fc6ef602ed4529c"
   },
@@ -20385,7 +21276,7 @@
     "offset": 6568,
     "length": 64,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model19A8.asm",
+    "path": "Source/Action/Data/ModelASTER2.asm",
     "origin": 55720,
     "sha256": "abb04b7e5ef98e9697a471d455c8ec2176a3705cb7d6ae849c434e4425180884"
   },
@@ -20394,7 +21285,7 @@
     "offset": 6632,
     "length": 54,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model19E8.asm",
+    "path": "Source/Action/Data/ModelASTER3.asm",
     "origin": 55784,
     "sha256": "5dcae2ef435363fa4e27eb589d095d5eedd9a7aafbcffb3d424a2e3ebea4330f"
   },
@@ -20403,7 +21294,7 @@
     "offset": 6686,
     "length": 77,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1A1E.asm",
+    "path": "Source/Action/Data/ModelUFO1D.asm",
     "origin": 55838,
     "sha256": "74dd41286388a8f3f7d7aa94b7046b931332bd6c962a588316e7a06cd4b51c6d"
   },
@@ -20412,7 +21303,7 @@
     "offset": 6763,
     "length": 63,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1A6B.asm",
+    "path": "Source/Action/Data/ModelUFO1.asm",
     "origin": 55915,
     "sha256": "d5410deb7c2f8e43abbca6b266c0e1ff99d679f55dea2d9742edd462c5f87540"
   },
@@ -20421,7 +21312,7 @@
     "offset": 6826,
     "length": 214,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1AAA.asm",
+    "path": "Source/Action/Data/ModelSt1.asm",
     "origin": 55978,
     "sha256": "ee030be74ef65dfd5e2f65e60e89e19bce9c7983e3feaa1689faab3ea3b6c5f7"
   },
@@ -20430,7 +21321,7 @@
     "offset": 7040,
     "length": 186,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1B80.asm",
+    "path": "Source/Action/Data/ModelSt2.asm",
     "origin": 56192,
     "sha256": "6374c2ed2606c6e1bc5428fba2b94a240d34a5dd9580ad363133169dc00cf35d"
   },
@@ -20439,7 +21330,7 @@
     "offset": 7226,
     "length": 178,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1C3A.asm",
+    "path": "Source/Action/Data/ModelSt3.asm",
     "origin": 56378,
     "sha256": "73c37d810c784e934758f7cdba5279963546cdfd8b72aee078c2fba6916b8c94"
   },
@@ -20448,7 +21339,7 @@
     "offset": 7404,
     "length": 150,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1CEC.asm",
+    "path": "Source/Action/Data/ModelSt4.asm",
     "origin": 56556,
     "sha256": "7996ec1923d807c07172dc2fcf43df8a01b7122c5220c4bc2dae2b13892dd6f1"
   },
@@ -20457,7 +21348,7 @@
     "offset": 7554,
     "length": 144,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1D82.asm",
+    "path": "Source/Action/Data/ModelSt5.asm",
     "origin": 56706,
     "sha256": "7d62f275c1ad52420336bad8d4b412a9171c3e01d7fd64b047a2a93617d05128"
   },
@@ -20466,7 +21357,7 @@
     "offset": 7698,
     "length": 154,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1E12.asm",
+    "path": "Source/Action/Data/ModelSt6.asm",
     "origin": 56850,
     "sha256": "bbe41a9b1200b01a4d5c069d10c4c700ef777ac983200cab3309589766258ed8"
   },
@@ -20475,7 +21366,7 @@
     "offset": 7852,
     "length": 202,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1EAC.asm",
+    "path": "Source/Action/Data/ModelSt7.asm",
     "origin": 57004,
     "sha256": "ba54de53e30e589df96bc6430d854184740d5c14d45c2a5d404c61d56712e3af"
   },
@@ -20484,7 +21375,7 @@
     "offset": 8054,
     "length": 206,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model1F76.asm",
+    "path": "Source/Action/Data/ModelSt8.asm",
     "origin": 57206,
     "sha256": "214a609d07fe086e86ed6835d3389165edaa3d7d91d907f67b58915c6fe3717f"
   },
@@ -20493,7 +21384,7 @@
     "offset": 8260,
     "length": 108,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model2044.asm",
+    "path": "Source/Action/Data/ModelSt9.asm",
     "origin": 57412,
     "sha256": "bf3a2f3dd3b4478ff83b70b8e5da666f586b9f8a65d9cd5072ea04e0a4c8b332"
   },
@@ -20502,7 +21393,7 @@
     "offset": 8368,
     "length": 162,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model20B0.asm",
+    "path": "Source/Action/Data/ModelSt10.asm",
     "origin": 57520,
     "sha256": "172c0ed06776ccc9b7cb6e8c5c46bb86ba856f970952fadd7f88eb719ceb6e62"
   },
@@ -20511,7 +21402,7 @@
     "offset": 8530,
     "length": 121,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model2152.asm",
+    "path": "Source/Action/Data/ModelSt11.asm",
     "origin": 57682,
     "sha256": "d13a9795001a7d323312ce3e79943bd28a36c398d150826b8e6bbd8e14a114ba"
   },
@@ -20520,7 +21411,7 @@
     "offset": 8651,
     "length": 238,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model21CB.asm",
+    "path": "Source/Action/Data/ModelSt12.asm",
     "origin": 57803,
     "sha256": "7c50fc5c5fe32bef51f39d328cb1f85032f16541ddef70f37c6a71ab4accf6f2"
   },
@@ -20529,7 +21420,7 @@
     "offset": 8889,
     "length": 116,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model22B9.asm",
+    "path": "Source/Action/Data/ModelSt13.asm",
     "origin": 58041,
     "sha256": "7be46c85adb7a3218c7344f1457ddbc7a36948274ac4ab77e6f156de1dfd4be2"
   },
@@ -20538,7 +21429,7 @@
     "offset": 9005,
     "length": 166,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model232D.asm",
+    "path": "Source/Action/Data/ModelSt14.asm",
     "origin": 58157,
     "sha256": "c5eccf6af7060b3e62fd37379d3e5b88558c465de7c67d0f53588fa73f2af8a4"
   },
@@ -20547,7 +21438,7 @@
     "offset": 9171,
     "length": 150,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model23D3.asm",
+    "path": "Source/Action/Data/ModelSt15.asm",
     "origin": 58323,
     "sha256": "c5396a1c1b5a4e08cc0303d460bc819ef18113a573d3965039969314d5b4007d"
   },
@@ -20556,7 +21447,7 @@
     "offset": 9321,
     "length": 182,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model2469.asm",
+    "path": "Source/Action/Data/ModelSt16.asm",
     "origin": 58473,
     "sha256": "c6e1ebbc4705a94b2bd9a59b8c99b0e85c32cecd1daada7b3857bae5f7bc1823"
   },
@@ -20565,7 +21456,7 @@
     "offset": 9503,
     "length": 162,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model251F.asm",
+    "path": "Source/Action/Data/ModelStPirat.asm",
     "origin": 58655,
     "sha256": "da6385784ed6f9b9e2f722cac9c53d64bf7401332260b47b725cdf2175192f71"
   },
@@ -20574,7 +21465,7 @@
     "offset": 9665,
     "length": 170,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model25C1.asm",
+    "path": "Source/Action/Data/ModelPrison.asm",
     "origin": 58817,
     "sha256": "c557eed5416df991d9105a7707914ed3cb965a67fd2797f7b01e2534b02f9c15"
   },
@@ -20583,7 +21474,7 @@
     "offset": 9835,
     "length": 156,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model266B.asm",
+    "path": "Source/Action/Data/ModelStU1.asm",
     "origin": 58987,
     "sha256": "324e945eae99d458ba6604ed3acb663ee000ebbd5176f644f4e9e73db6ddc334"
   },
@@ -20592,7 +21483,7 @@
     "offset": 9991,
     "length": 164,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model2707.asm",
+    "path": "Source/Action/Data/ModelStScince.asm",
     "origin": 59143,
     "sha256": "0ffd30d08d7015a9f72cd4f42c01a29df56a852b4ace7e1ab7f75202c2c034d5"
   },
@@ -20601,7 +21492,7 @@
     "offset": 10155,
     "length": 174,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model27AB.asm",
+    "path": "Source/Action/Data/ModelStU2.asm",
     "origin": 59307,
     "sha256": "932eeacc4a450585a758e119abb988839ad3229bb4703670fc7f8c95d3a8831b"
   },
@@ -20610,7 +21501,7 @@
     "offset": 10329,
     "length": 251,
     "kind": "typed_data",
-    "path": "Source/Action/Data/Model2859.asm",
+    "path": "Source/Action/Data/ModelGipPl.asm",
     "origin": 59481,
     "sha256": "ce66d3f3f2d053564b06574e051c73826cf34859f4118cdbc7238a2aeef08b60"
   },
@@ -20699,11 +21590,20 @@
   {
     "slot": 29,
     "offset": 378,
-    "length": 28,
+    "length": 24,
     "kind": "unclassified",
-    "path": "Source/Resources/29_FINALF/Unclassified000.bin",
+    "path": "Source/Resources/29_FINALF/Unclassified017A_0192.bin",
     "origin": null,
-    "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+    "sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0"
+  },
+  {
+    "slot": 29,
+    "offset": 402,
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Final/Data/IrqFrame.asm",
+    "origin": 24978,
+    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
   },
   {
     "slot": 29,
@@ -20923,11 +21823,21 @@
   {
     "slot": 33,
     "offset": 7395,
-    "length": 349,
-    "kind": "unclassified",
-    "path": "Source/Resources/33_BANK0/Unclassified1CE3_1E40.bin",
+    "length": 276,
+    "kind": "binary_resource",
+    "path": "Source/Resources/33_BANK0/ArchiveTileLayerCopy.bin",
     "origin": null,
-    "sha256": "e06cb61da0a878f074c18e237b4fcbc1c8f228e3df5aa0ceb10562fe65a49e5e"
+    "sha256": "920e3f42bed92b67a9c8cb3d2cf19cce3fc1a12f7455f18c14ed072815b2791b",
+    "format": "BANK_ARCHIVE_TILE_LAYER_COPY"
+  },
+  {
+    "slot": 33,
+    "offset": 7671,
+    "length": 73,
+    "kind": "unclassified",
+    "path": "Source/Resources/33_BANK0/Unclassified1DF7_1E40.bin",
+    "origin": null,
+    "sha256": "9c56f48ae9bafd205262034bfcc2232b2c63348cb723d681ec39f13409f990cc"
   },
   {
     "slot": 33,
@@ -20963,10 +21873,11 @@
     "slot": 34,
     "offset": 7497,
     "length": 201,
-    "kind": "unclassified",
-    "path": "Source/Resources/34_BANK1/Unclassified1D49_1E12.bin",
+    "kind": "binary_resource",
+    "path": "Source/Resources/34_BANK1/ArchiveTileLayerCopy.bin",
     "origin": null,
-    "sha256": "d20c4f628f11fd8763e4075e6d24cf27251a6331853dc063b470ea7a599d1170"
+    "sha256": "d20c4f628f11fd8763e4075e6d24cf27251a6331853dc063b470ea7a599d1170",
+    "format": "BANK_ARCHIVE_TILE_LAYER_COPY"
   },
   {
     "slot": 34,
@@ -21020,10 +21931,11 @@
     "slot": 35,
     "offset": 7431,
     "length": 267,
-    "kind": "unclassified",
-    "path": "Source/Resources/35_BANK2/Unclassified1D07_1E12.bin",
+    "kind": "binary_resource",
+    "path": "Source/Resources/35_BANK2/ArchiveTileLayerCopy.bin",
     "origin": null,
-    "sha256": "06c7a6605136350bf5e295bf7822e0be0fd77c0719eb5906c80328d615e629d3"
+    "sha256": "06c7a6605136350bf5e295bf7822e0be0fd77c0719eb5906c80328d615e629d3",
+    "format": "BANK_ARCHIVE_TILE_LAYER_COPY"
   },
   {
     "slot": 35,
@@ -21116,10 +22028,11 @@
     "slot": 37,
     "offset": 7095,
     "length": 603,
-    "kind": "unclassified",
-    "path": "Source/Resources/37_BANK4/Unclassified1BB7_1E12.bin",
+    "kind": "binary_resource",
+    "path": "Source/Resources/37_BANK4/ArchiveTileLayerCopy.bin",
     "origin": null,
-    "sha256": "b7085f96c664fa7199a859b94ff8db3562c0d432bd5d348b74780c6db00b73a6"
+    "sha256": "b7085f96c664fa7199a859b94ff8db3562c0d432bd5d348b74780c6db00b73a6",
+    "format": "BANK_ARCHIVE_TILE_LAYER_COPY"
   },
   {
     "slot": 37,
@@ -21191,10 +22104,11 @@
     "slot": 38,
     "offset": 7521,
     "length": 177,
-    "kind": "unclassified",
-    "path": "Source/Resources/38_BANK5/Unclassified1D61_1E12.bin",
+    "kind": "binary_resource",
+    "path": "Source/Resources/38_BANK5/ArchiveTileLayerCopy.bin",
     "origin": null,
-    "sha256": "83d8605eacc9021a83e1ade70cdf5871bafcbfb89986bc53356ee6b73c69c775"
+    "sha256": "83d8605eacc9021a83e1ade70cdf5871bafcbfb89986bc53356ee6b73c69c775",
+    "format": "BANK_ARCHIVE_TILE_LAYER_COPY"
   },
   {
     "slot": 38,

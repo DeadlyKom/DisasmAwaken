@@ -10,6 +10,16 @@
     "(True, False)": 636,
     "(False, True)": 720
   },
+  "inherited_local_phases": {
+    "profiles": 256,
+    "original_phase_writer_and_reader": true,
+    "reader_stop_before_multiply": 27910,
+    "field_byte_offsets": [
+      13,
+      14,
+      15
+    ]
+  },
   "all_first_two_offset_bytes_for_core": true,
   "all_phase1_phase2_bytes_for_state04": true,
   "all_rate_and_third_offset_bytes_covered": true,

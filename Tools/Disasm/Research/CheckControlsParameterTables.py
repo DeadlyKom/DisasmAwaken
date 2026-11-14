@@ -38,7 +38,7 @@ def seed_writes(first,second,control,bc):
     return writes
 
 
-def main():
+def main(report_name='ControlsParameterTablesVerification.json', inspect_store_domains=False):
     source = (ROOT/'Tools/Disasm/Extracted/Active/17_ACTION.C.bin').read_bytes()
     original = base_memory()
     original[0x6000:0xC000] = source[:0x6000]
@@ -52,6 +52,8 @@ def main():
     counts = Counter()
     covered_pairs = set()
     total_calls = 0
+    store_domains = {0xDE69: set(), 0xDE88: set(), 0xDE93: set()}
+    store_counts = Counter()
 
     def check(first,second,control,kind):
         nonlocal touched,total_calls
@@ -114,6 +116,13 @@ def main():
         for _ in range(25000):
             if simulator.registers[PC]==0x3FFF:
                 break
+            # Наблюдение только собственных трёх косвенных записей построителя.
+            pc = simulator.registers[PC]
+            if inspect_store_domains and pc in store_domains:
+                registers = simulator.registers
+                address = ((registers[8] << 8) | registers[9]) if pc == 0xDE69 else ((registers[6] << 8) | registers[7])
+                store_domains[pc].add(address)
+                store_counts[pc] += 1
             simulator.run()
         else:
             raise AssertionError(('возврат',first,second,control))
@@ -151,7 +160,18 @@ def main():
         exact_registers_flags_r_and_sp=True,every_ram_byte_and_write_checked=True,
         all_input_combinations_exhausted=False,game_field_names_proved=False,
         assembly_executed=False,irq_executed=False,native_execution=False)
-    (ROOT/'Tools/Disasm/Reports/ControlsParameterTablesVerification.json').write_bytes(
+    if inspect_store_domains:
+        # Проверка полных областей назначений при всех восьмидесяти выходных сочетаниях.
+        assert store_domains == {0xDE69: set(range(0x9BA4, 0x9BB3)),
+            0xDE88: {0x7B97}, 0xDE93: {0x7B97 + 6 * index for index in range(1, 9)}}
+        assert store_counts == Counter({0xDE69: 15 * sum(counts.values()),
+            0xDE88: sum(counts.values()), 0xDE93: 8 * sum(counts.values())})
+        report['own_indirect_store_domains'] = [dict(pc=pc, addresses=sorted(addresses), executions=store_counts[pc])
+            for pc, addresses in store_domains.items()]
+        report['own_indirect_stores_do_not_reach_DB01_DB02_in_model_cases'] = True
+        report['bank1_selected_and_original_code_required'] = True
+        report['all_callers_or_stack_addresses_proved'] = False
+    (ROOT/'Tools/Disasm/Reports'/report_name).write_bytes(
         (json.dumps(report,indent=2)+'\n').encode('utf-8'))
     print(json.dumps(report,indent=2))
 

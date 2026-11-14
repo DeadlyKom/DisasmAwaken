@@ -1,0 +1,351 @@
+{
+  "passed": true,
+  "archive_sha256": "cd51aa138ee47bf7ce4d74351a1e5f56473efa967ef81e533ddb7fd3cc57eb90",
+  "scl_member": "MKDEMO2.SCL",
+  "scl_sha256": "78369216ce7ec2f876c8a050d4d48882cbf30dca39db88ed0b6d4756116506f0",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "scl_checksum_verified": true,
+  "matching_allocated_bytes": 248832,
+  "files": [
+    {
+      "scl_index": 0,
+      "trd_slot": 30,
+      "published_key": "scene1pos",
+      "original_header_hex": "7363656e6531706f737072f448490757",
+      "original_disk_offset": 358144,
+      "logical_bytes": 18676,
+      "allocated_bytes": 18688,
+      "physical_sha256": "059af5067ceffbf683fa614911809394cee26fdd3f118728f6f3490a419c19b1"
+    },
+    {
+      "scl_index": 1,
+      "trd_slot": 31,
+      "published_key": "choose1 C",
+      "original_header_hex": "63686f6f73653120432020001b1b005c",
+      "original_disk_offset": 376832,
+      "logical_bytes": 6912,
+      "allocated_bytes": 6912,
+      "physical_sha256": "b0f3b04d5873d0d8495675c515659b873945fbe0b2aa657efc288b4b5cf6c13a"
+    },
+    {
+      "scl_index": 2,
+      "trd_slot": 32,
+      "published_key": "choose2 C",
+      "original_header_hex": "63686f6f73653220432020001b1b0b5d",
+      "original_disk_offset": 383744,
+      "logical_bytes": 6912,
+      "allocated_bytes": 6912,
+      "physical_sha256": "12da2ad69f2e8027c01cf9e455b42c7642d548aa3bf9c86f1113fcf4a0c7a375"
+    },
+    {
+      "scl_index": 3,
+      "trd_slot": 33,
+      "published_key": "BANK0   C",
+      "original_header_hex": "42414e4b302020204300c0004040065f",
+      "original_disk_offset": 390656,
+      "logical_bytes": 16384,
+      "allocated_bytes": 16384,
+      "physical_sha256": "7f1ee7d1f6280d1c646d0066c9c42e56d4c7d2f8eec17f8bcba1e825e2d8ff07"
+    },
+    {
+      "scl_index": 4,
+      "trd_slot": 34,
+      "published_key": "BANK1   C",
+      "original_header_hex": "42414e4b312020204300c00040400663",
+      "original_disk_offset": 407040,
+      "logical_bytes": 16384,
+      "allocated_bytes": 16384,
+      "physical_sha256": "9d8c5cd116db7ba399cd1d07eb6123d16eefc6cef1cd29320ffb803e0b39fbf6"
+    },
+    {
+      "scl_index": 5,
+      "trd_slot": 35,
+      "published_key": "BANK2   C",
+      "original_header_hex": "42414e4b322020204300c00040400667",
+      "original_disk_offset": 423424,
+      "logical_bytes": 16384,
+      "allocated_bytes": 16384,
+      "physical_sha256": "e5596e1080d8886e5084a43317fd6632cdf5ea4e78fb9f69a50631a37c189a3b"
+    },
+    {
+      "scl_index": 6,
+      "trd_slot": 36,
+      "published_key": "BANK3   C",
+      "original_header_hex": "42414e4b332020204300c0004040066b",
+      "original_disk_offset": 439808,
+      "logical_bytes": 16384,
+      "allocated_bytes": 16384,
+      "physical_sha256": "2b64332cdb6e4c41454195fb2f2040f09d2f7a23ecdbc0fa0d2a42bd5b4054f5"
+    },
+    {
+      "scl_index": 7,
+      "trd_slot": 37,
+      "published_key": "BANK4   C",
+      "original_header_hex": "42414e4b342020204300c0004040066f",
+      "original_disk_offset": 456192,
+      "logical_bytes": 16384,
+      "allocated_bytes": 16384,
+      "physical_sha256": "4fbfd86e50c378a09522557902b9a52364246b0623d5beb4e32a21bf1d2cd9b3"
+    },
+    {
+      "scl_index": 8,
+      "trd_slot": 38,
+      "published_key": "BANK5   C",
+      "original_header_hex": "42414e4b352020204300c00040400673",
+      "original_disk_offset": 472576,
+      "logical_bytes": 16384,
+      "allocated_bytes": 16384,
+      "physical_sha256": "475a6e428c648fd4f4bd0bc4c1d8082171763f927cdc78a5d825a2fef62d9445"
+    },
+    {
+      "scl_index": 9,
+      "trd_slot": 39,
+      "published_key": "BAR     C",
+      "original_header_hex": "4241522020202020430080040c0d0677",
+      "original_disk_offset": 488960,
+      "logical_bytes": 3076,
+      "allocated_bytes": 3328,
+      "physical_sha256": "08bd40978ed4800e6faff00508b79290e571d232a358bd8478d094e94aa7627f"
+    },
+    {
+      "scl_index": 10,
+      "trd_slot": 40,
+      "published_key": "BD0     C",
+      "original_header_hex": "42443020202020204300c08c3f400378",
+      "original_disk_offset": 492288,
+      "logical_bytes": 16268,
+      "allocated_bytes": 16384,
+      "physical_sha256": "a4d47c9ca6b7fc974748b84aed91ef16a419949ccc2c0fe91a31399afbb8c0a5"
+    },
+    {
+      "scl_index": 11,
+      "trd_slot": 41,
+      "published_key": "BD1     C",
+      "original_header_hex": "42443120202020204300c0183f40037c",
+      "original_disk_offset": 508672,
+      "logical_bytes": 16152,
+      "allocated_bytes": 16384,
+      "physical_sha256": "b74e0669392cf962e331319a352619c8589695793c7d57625b296b4654e3a847"
+    },
+    {
+      "scl_index": 12,
+      "trd_slot": 42,
+      "published_key": "BD2     C",
+      "original_header_hex": "42443220202020204300c0783f400380",
+      "original_disk_offset": 525056,
+      "logical_bytes": 16248,
+      "allocated_bytes": 16384,
+      "physical_sha256": "994e5c1afa7eda5d6b1f825c6204040bb3ed019bb75883e28eec892a07a47bdd"
+    },
+    {
+      "scl_index": 13,
+      "trd_slot": 43,
+      "published_key": "BD3     C",
+      "original_header_hex": "42443320202020204300c0102f300384",
+      "original_disk_offset": 541440,
+      "logical_bytes": 12048,
+      "allocated_bytes": 12288,
+      "physical_sha256": "6e5a9a6b502ef74d855523ad69307ae0eef284d301ae52e5522005a7ed30b77b"
+    },
+    {
+      "scl_index": 14,
+      "trd_slot": 44,
+      "published_key": "MK-II.d2B",
+      "original_header_hex": "004b2d49492e6432421c001c00010387",
+      "original_disk_offset": 553728,
+      "logical_bytes": 28,
+      "allocated_bytes": 256,
+      "physical_sha256": "db12e96a418d88c9f93a99b5a0bc6b49725b128d3765370e8123b9a00284e591"
+    },
+    {
+      "scl_index": 15,
+      "trd_slot": 45,
+      "published_key": "RUN     C",
+      "original_header_hex": "00554e2020202020430060dd3c3d0487",
+      "original_disk_offset": 553984,
+      "logical_bytes": 15581,
+      "allocated_bytes": 15616,
+      "physical_sha256": "6177f09f1b723ce97e5722e395338bfb7f7b708dc5a699c2f6bdf72d1cc434c6"
+    },
+    {
+      "scl_index": 16,
+      "trd_slot": 46,
+      "published_key": "ENGINE  C",
+      "original_header_hex": "004e47494e4520204300805b1011018b",
+      "original_disk_offset": 569600,
+      "logical_bytes": 4187,
+      "allocated_bytes": 4352,
+      "physical_sha256": "9c9f6a90d91a5ea52d5a47b2b6b63af63967f1baf252ccb84494c3ab03a9a09d"
+    },
+    {
+      "scl_index": 17,
+      "trd_slot": 47,
+      "published_key": "START   C",
+      "original_header_hex": "0054415254202020430060c78081028c",
+      "original_disk_offset": 573952,
+      "logical_bytes": 32967,
+      "allocated_bytes": 33024,
+      "physical_sha256": "2cb9d7b7b3660f0a1fc78b0482c54564218fa4b5953217407d10729781f9fde8"
+    }
+  ],
+  "readme_sha256": "f14421c92183f0ceeeae3f8e6d486474d67ed87f4e71f397c6402de5b89829ea",
+  "readme_logical_bytes": 439,
+  "readme_exact_copy_in_trd": false,
+  "controls": [
+    {
+      "record": 18498,
+      "primary": [
+        {
+          "key": "W",
+          "role": "jump",
+          "port": 64510,
+          "mask": 2,
+          "action_from_idle": 3
+        },
+        {
+          "key": "S",
+          "role": "crouch",
+          "port": 65022,
+          "mask": 2,
+          "action_from_idle": 4
+        },
+        {
+          "key": "D",
+          "role": "right",
+          "port": 65022,
+          "mask": 4,
+          "action_from_idle": 1
+        },
+        {
+          "key": "A",
+          "role": "left",
+          "port": 65022,
+          "mask": 1,
+          "action_from_idle": 2
+        },
+        {
+          "key": "V",
+          "role": "block",
+          "port": 65278,
+          "mask": 16,
+          "action_from_idle": 9
+        }
+      ],
+      "mirrored_key_order": [
+        "W",
+        "S",
+        "A",
+        "D",
+        "V"
+      ],
+      "extra": [
+        {
+          "key": "C",
+          "role": "low punch",
+          "port": 65278,
+          "mask": 8,
+          "action_from_idle": 12
+        },
+        {
+          "key": "F",
+          "role": "high punch",
+          "port": 65022,
+          "mask": 8,
+          "action_from_idle": 13
+        },
+        {
+          "key": "B",
+          "role": "low kick",
+          "port": 32766,
+          "mask": 16,
+          "action_from_idle": 14
+        },
+        {
+          "key": "G",
+          "role": "high kick",
+          "port": 65022,
+          "mask": 16,
+          "action_from_idle": 15
+        }
+      ]
+    },
+    {
+      "record": 18581,
+      "primary": [
+        {
+          "key": "7",
+          "role": "jump",
+          "port": 61438,
+          "mask": 8,
+          "action_from_idle": 3
+        },
+        {
+          "key": "U",
+          "role": "crouch",
+          "port": 57342,
+          "mask": 8,
+          "action_from_idle": 4
+        },
+        {
+          "key": "I",
+          "role": "right",
+          "port": 57342,
+          "mask": 4,
+          "action_from_idle": 1
+        },
+        {
+          "key": "Y",
+          "role": "left",
+          "port": 57342,
+          "mask": 16,
+          "action_from_idle": 2
+        },
+        {
+          "key": "En",
+          "role": "block",
+          "port": 49150,
+          "mask": 1,
+          "action_from_idle": 9
+        }
+      ],
+      "mirrored_key_order": [
+        "7",
+        "U",
+        "Y",
+        "I",
+        "En"
+      ],
+      "extra": [
+        {
+          "key": "K",
+          "role": "low punch",
+          "port": 49150,
+          "mask": 4,
+          "action_from_idle": 12
+        },
+        {
+          "key": "O",
+          "role": "high punch",
+          "port": 57342,
+          "mask": 2,
+          "action_from_idle": 13
+        },
+        {
+          "key": "L",
+          "role": "low kick",
+          "port": 49150,
+          "mask": 2,
+          "action_from_idle": 14
+        },
+        {
+          "key": "P",
+          "role": "high kick",
+          "port": 57342,
+          "mask": 1,
+          "action_from_idle": 15
+        }
+      ]
+    }
+  ],
+  "assembly_executed": false
+}

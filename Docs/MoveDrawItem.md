@@ -63,3 +63,11 @@ FDrawShiftFrame на время LDIR содержит FoundHandler, SearchKey, N
 также из отключённых RET-обёрток. Геометрия игры не исполняется, прерывания
 отключены, нативный запуск не подтверждён.
 Отчёт [MoveDrawItemVerification.json](../Tools/Disasm/Reports/MoveDrawItemVerification.json).
+
+## RAM при восстановленных регистрах
+
+MoveItemToTail меняет R, список и его физический хвост, а также
+слова FDrawMoveFrame/FDrawShiftFrame под восстановленным SP.
+Совпавший индекс запускает исходный LDIR ровно на 128 байтов,
+добавление без совпадения пишет указатель и новый ограничитель.
+Сохранение DE и BC не возвращает прежнее содержимое RAM стека.

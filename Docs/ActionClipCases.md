@@ -828,4 +828,4 @@ I означает внутри, R справа, L слева, B снизу, T �
 
 Сборка, IRQ и нативный игровой вывод не выполнялись. Подробные договоры помощников находятся в [произведениях](ActionClipProducts.md), [пересечениях](ActionClipIntersections.md), [сравнениях](ActionClipComparisons.md) и [писателях](ActionClipPointWriters.md).
 
-[Физический префикс CF00..CF07](ClipDispatchPrefixData.md) разделяет шесть младших адресных байтов и два рабочих состояния, CF08 не переклассифицирован.
+[Физический префикс CF00..CF07](ClipDispatchPrefixData.md) разделяет шесть младших адресных байтов и два рабочих состояния. [Три ячейки CF08..CF0A](ActionClipTableAlias.md) оформлены отдельно.

@@ -8,6 +8,7 @@ from skoolkit.simutils import get_registers,A,F,PC,SP,H,L,D,E
 from CheckRowHighlight import make_context
 from CheckTextStream import reference as text_reference
 from CheckInsetFrame import bitmap_address
+from CheckStationSpans import increment_flags
 
 
 def expected(m,index,width,height,origin):
@@ -78,6 +79,8 @@ def main():
             m[address]=value
         m[0x4000:0x5B00]=bytes((i*73+(i>>5)*19+17)&255 for i in range(6912));m[0x7FFE:0x8000]=bytes([255,63])
         image,positions,cursor,count,market,owned,kind,glyphs=expected(m,index,width,height,origin);calls=[]
+        r[14]=(stock^owned_stock)&255;r[27]=height%3;before=r.copy()
+        arrays=(bytes(m[0x9555:0x9592]),bytes(m[0x9852:0x988E]))
         for _ in range(180000):
             pc=r[PC]
             if pc==0x3FFF:break
@@ -88,6 +91,9 @@ def main():
         assert calls==positions,(stock,owned_stock,index,width,height,origin,'glyph_attempts',calls[:12],positions[:12])
         assert m[0x4000:0x5B00]==image,(stock,owned_stock,index,width,height,origin,'bitmap')
         assert (m[0x6320],m[0x6321])==cursor and r[16]==count
+        assert r[17]==(increment_flags((count-1)&255,0) if count else 0x44)
+        assert all(r[i]==before[i] for i in (14,26,27))
+        assert (bytes(m[0x9555:0x9592]),bytes(m[0x9852:0x988E]))==arrays
         assert (r[D]*256+r[E],r[H]*256+r[L])==(market,owned),(stock,owned_stock,index,width,height,origin,'pointers',r[D]*256+r[E],market,r[H]*256+r[L],owned)
         assert r[8:12]==initial[8:12] and r[18:24]==initial[18:24] and r[SP]==0x8000
         # INC FF сохраняет Carry предыдущей проверки строки, остальные биты результата определены.
@@ -103,6 +109,8 @@ def main():
     report=dict(passed=True,cases=cases,independently_composed_glyphs=accepted,glyph_attempts=attempts,exit_kinds=kinds,
                 visited_conditional_return_addresses=sorted(seen_returns),all_market_and_owned_quantity_bytes=True,
                 glyph_attempts_cursor_count_and_row_pointers_compared=True,whole_bitmap_and_attributes_compared=True,
+                exact_alternate_counter_af=True,both_field_arrays_unchanged_at_return=True,
+                i_im_iff_preserved=True,iff_fixture=0,
                 real_name_text_numbers_and_glyphs=True,owned_ff_is_not_end_marker=True,
                 market_sale_ban_proof_report='OriginalTradeScriptVerification.json',cargo_mark_game_meaning_unknown=True,irq_executed=False,native_execution=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/TradeNumericColumnsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))

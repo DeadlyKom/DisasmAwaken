@@ -11,8 +11,9 @@ from ValidateNotes import validate_notes
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('facts',nargs='?',default='ActionTargetCommandsFacts',choices=('ActionTargetCommandsFacts','ActionOverlayModeCommandFacts','ActionTractorModeCommandFacts','ActionFreeFlightCommandFacts','ActionStationReturnCommandFacts','ActionEjectCommandsFacts','ActionReverseViewBasisFacts','ActionViewDirectionCommandFacts','ActionTractorCollectFacts','ActionAntimissileCommandFacts','ActionBoostCommandFacts','ActionBoostAdvanceFacts','ActionHyperJumpFacts','ActionHyperJumpPreparationFacts','ActionHyperReloadFacts','ControlsDirectStationRelayFacts','ControlsStateStationRelayFacts','ControlsResetFlightContextFacts','ControlsLegacyLoadChainFacts','SecondaryEquipmentRowsFacts','ControlsBodyPrimaryMaskFacts','DrawCenteredWithoutOwnerFacts','ArcHalfLimitInputsFacts','IntroDetachedTailFacts','IntroAttributeCountTailFacts','StationAllFilledBandFacts','ActionRandomClassGateEntryFacts'));args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('facts',nargs='?',default='ActionTargetCommandsFacts',choices=('ActionTargetCommandsFacts','ActionOverlayModeCommandFacts','ActionTractorModeCommandFacts','ActionFreeFlightCommandFacts','ActionStationReturnCommandFacts','ActionEjectCommandsFacts','ActionReverseViewBasisFacts','ActionViewDirectionCommandFacts','ActionTractorCollectFacts','ActionAntimissileCommandFacts','ActionBoostCommandFacts','ActionBoostAdvanceFacts','ActionHyperJumpFacts','ActionHyperJumpPreparationFacts','ActionHyperReloadFacts','ControlsDirectStationRelayFacts','ControlsStateStationRelayFacts','ControlsResetFlightContextFacts','ControlsLegacyLoadChainFacts','SecondaryEquipmentRowsFacts','ControlsBodyPrimaryMaskFacts','DrawCenteredWithoutOwnerFacts','ArcHalfLimitInputsFacts','IntroDetachedTailFacts','IntroAttributeCountTailFacts','IntroDetachedUnpackGateFacts','IntroAttributeScanPrefixFacts','StationAllFilledBandFacts','ActionRandomClassGateEntryFacts','ControlsEvenSpanPrefixFacts'));args=parser.parse_args()
     facts=importlib.import_module(args.facts);tag=facts.TAG;alias=tag.upper();module=args.facts
+    document=getattr(facts,'DOCUMENT',tag)
     slot=getattr(facts,'SLOT',17);region_name=getattr(facts,'REGION','Action');assert slot in (3,4,7,17,22,23)
     if slot!=17:assert not facts.KEYS
     disk_name={3:'AWAKEN',4:'STATIONF',7:'KARTA',17:'ACTION',22:'CONTROL0',23:'CONTROL'}[slot]
@@ -20,7 +21,9 @@ def main():
     def read(name):return json.loads((reports/(name+'.json')).read_bytes())
     def encode(value):return (json.dumps(value,ensure_ascii=False,indent=2)+'\n').encode('utf-8')
     with contextlib.redirect_stdout(io.StringIO()):VerifySources.main()
-    proof=read(getattr(facts,'PROOF',tag+'Verification'));assert proof['passed'] and proof.get('total_cases',proof.get('cases'))==facts.CASES
+    proof=read(getattr(facts,'PROOF',tag+'Verification'))
+    proof_cases=facts.proof_cases(proof) if hasattr(facts,'proof_cases') else proof.get('total_cases',proof.get('cases'))
+    assert proof['passed'] and proof_cases==facts.CASES
     sm,symbols,inventory,functions,flow,modified=[read(n) for n in ('SourceMap','Symbols','Inventory','Functions','ControlFlow','ModifiedCode')]
     suffix = '.B.sectors.bin' if slot == 3 else '.C.bin'
     raw=(ROOT/('Tools/Disasm/Extracted/Active/'+format(slot,'02d')+'_'+disk_name+suffix)).read_bytes();start,end=min(facts.FUNCTIONS),max(facts.ENDS.values())
@@ -60,7 +63,7 @@ def main():
         for a,label in labels.items():
             key=region_name+'.'+name+'.'+label;assert key not in symbols;symbols[key]=a
         lines=['                module '+region_name,'                module '+name,
-            '                ; Документация ['+facts.TITLE+'](../../Docs/'+tag+'.md)',
+            '                ; Документация ['+facts.TITLE+'](../../Docs/'+document+'.md)',
             '                ; -----------------------------------------','                ; '+description,
             '                ; исходная запись '+str(slot)+', '+getattr(facts,'LOCATION','перенесённое ядро банка 5')+', адреса '+format(address,'04X')+'..'+format(stop-1,'04X')]
         for heading,values in zip(('In','Out','Corrupt','Note'),facts.CONTRACTS[region_name,address]):
@@ -137,7 +140,7 @@ def main():
     callback=tag.lower()+'_name_operands'
     text=text.replace(needle,needle+'\n    operation = '+callback+'(region,function_address,operation)')
     text+='\nfrom '+module+' import name_operands as '+callback+'\n'
-    for address in facts.FUNCTIONS:text+=f"DOCUMENTS[{region_name!r},{address}]=('{tag}','{facts.TITLE}')\n"
+    for address in facts.FUNCTIONS:text+=f"DOCUMENTS[{region_name!r},{address}]=('{document}','{facts.TITLE}')\n"
     for address,name in facts.LOCAL.items():text+=f"LABELS[{region_name!r},{address}]='{name}'\n"
     pending[p]=text.encode('utf-8')
     p=ROOT/'Tools/Disasm/Research/ExportSources.py';text=p.read_text('utf-8');needle='\n\nif __name__ == "__main__":';assert text.count(needle)==1
@@ -157,7 +160,7 @@ def main():
         needle='| #'+format(next_fn['address'],'04X')+' | ['+region_name+'.'+next_fn['name']+']';assert text.count(needle)==1
         pending[p]=text.replace(needle,rows+needle).encode('utf-8')
     p=ROOT/('Docs/FunctionDetails/'+region_name+'.md');text=p.read_text('utf-8')
-    sections=''.join('## '+f['name']+'\n\n['+region_name+'.'+f['name']+'](../../'+f['path']+')\n\n'+f['description']+'.\n\n[Договоры и границы проверки](../'+tag+'.md).\n\n' for f in new_functions)
+    sections=''.join('## '+f['name']+'\n\n['+region_name+'.'+f['name']+'](../../'+f['path']+')\n\n'+f['description']+'.\n\n[Договоры и границы проверки](../'+document+'.md).\n\n' for f in new_functions)
     if next_fn is None:
         pending[p]=(text.rstrip()+'\n\n'+sections.rstrip()+'\n').encode('utf-8')
     else:

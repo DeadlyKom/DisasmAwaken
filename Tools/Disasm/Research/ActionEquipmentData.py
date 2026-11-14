@@ -14,7 +14,7 @@ SHIP=(
     ('TractorBeam','система «Силовой луч»'),('Guidance','система наведения'),('HyperTrail','система «Гиперслед»'),
     ('ReturnSystem','система возврата'),('FreeFlight','система свободного полёта'),
     ('RefuelSystem','система заправки, FF запрещает ветвь пополнения счётчика'),
-    ('Recognition','система распознавания'),('TargetIdentity','идентификатор целей'),('RoutePlanner','маршрутизатор'),
+    ('FuelAdditive','система распознавания'),('TargetIdentity','идентификатор целей'),('RoutePlanner','маршрутизатор'),
     ('Cryogen','криогенная установка'),('LandingModule','посадочный модуль'),('CyberKiller','киберкиллер ККР-0562'),
     ('HyperDiablo','гиперсистема «Дьявол»'),('EndMarker','полный завершающий байт 80 авторского блока'))
 SKIMMER=(
@@ -34,9 +34,14 @@ def render(source,table):
     text=text.replace('[подготовка и обход объектов](../../../Docs/PreviewQueueBuild.md)',
                       '[происхождение имён и проверенные потребители](../../../Docs/ActionEquipmentCodes.md)')
     meanings=SHIP if table[0]=='ActionShipEquipment' else SKIMMER
+    resolved={
+        'FuelAdditive':'В заметке «С распознавания», на станции «Присадка к топливу», наличие сокращает ожидание гиперперехода',
+        'TargetIdentity':'Идентификатор целей, при отсутствии радар рисует все допущенные объекты формой 1',
+        'HyperDiablo':'В заметке гиперсистема «Дьявол», станционная строка «Анекдот», остаточный сброс проверяет весь код',
+    }
     for name,note in meanings:
         needle='                ; исходная физическая запись '+name+'\n';assert text.count(needle)==1
-        text=text.replace(needle,needle+'                ; По встроенному описанию, '+note+'\n')
+        text=text.replace(needle,needle+'                ; '+resolved.get(name,'По встроенному описанию, '+note)+'\n')
     return text,labels
 
 

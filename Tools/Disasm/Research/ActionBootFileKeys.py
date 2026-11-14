@@ -31,8 +31,11 @@ def parse(text):
 
 
 def name_operands(region, function_address, operation):
+    if (region,function_address)==('ActionBoot',0x42AB):
+        return operation.replace('LD BC, #0009','LD BC, @FTrDosFileKey').replace('LD DE, #5CDD','LD DE, @TrDosState.Descriptor')
     if (region,function_address)!=('ActionBoot',0x4200):
         return operation
+    operation = operation.replace('LD HL, #DADE', 'LD HL, @Controls.RunTemporaryModule.Entry')
     for index, (name, _) in enumerate(KEYS):
         operation = operation.replace(f'LD HL, #{0x42D0+9*index:04X}', 'LD HL, @ActionBootFileKeys.'+name)
-    return operation
+    return operation.replace('LD A, #09','LD A, @FTrDosFileKey').replace('(#5D06)','(@TrDosState.SearchKeyLength)').replace('LD BC, #0009','LD BC, @FTrDosFileKey').replace('LD DE, #5CDD','LD DE, @TrDosState.Descriptor')

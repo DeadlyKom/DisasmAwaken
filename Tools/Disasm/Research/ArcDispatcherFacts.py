@@ -141,3 +141,10 @@ def name_operands(region,address,operation):
   operation=operation.replace('BIT 0, E','BIT @MapArcBit.NonnegativeX, E').replace('BIT 0, A','BIT @MapArcBit.NonnegativeX, A')
   operation=operation.replace('BIT 1, E','BIT @MapArcBit.NonnegativeY, E').replace('BIT 1, A','BIT @MapArcBit.NonnegativeY, A')
  return operation
+
+
+# Уточнение R по полным вызовам, экспорт исходников не запускается.
+_refresh_contract = CONTRACTS['Map',0xDFC3]
+_refresh_contract[0].append('IRQ не вмешиваются, стек и bitmap не перекрывают исполняемый код')
+_refresh_contract[2][:] = [line.replace(", BC', AF', рабочее состояние дуги",", BC', AF', R, рабочее состояние дуги") for line in _refresh_contract[2]]
+_refresh_contract[3].insert(0,'R меняется по достигнутым инструкциям и префиксам, бит 7 сохраняется, равенство после полного оборота не означает сохранение регистра')

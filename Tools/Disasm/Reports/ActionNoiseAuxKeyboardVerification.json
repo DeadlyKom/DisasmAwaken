@@ -1,0 +1,785 @@
+{
+  "passed": true,
+  "profiles": [
+    {
+      "rom": "48.rom",
+      "profiles": [
+        {
+          "wraps": 15,
+          "even": false,
+          "ay_input": 223,
+          "visits": [
+            703,
+            858
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 97
+        },
+        {
+          "wraps": 15,
+          "even": false,
+          "ay_input": 255,
+          "visits": [
+            703,
+            858
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 97
+        },
+        {
+          "wraps": 15,
+          "even": true,
+          "ay_input": 223,
+          "visits": [
+            703,
+            858
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 97
+        },
+        {
+          "wraps": 15,
+          "even": true,
+          "ay_input": 255,
+          "visits": [
+            703,
+            858
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 97
+        },
+        {
+          "wraps": 16,
+          "even": false,
+          "ay_input": 223,
+          "visits": [
+            703
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 230
+        },
+        {
+          "wraps": 16,
+          "even": false,
+          "ay_input": 255,
+          "visits": [
+            703
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 230
+        },
+        {
+          "wraps": 16,
+          "even": true,
+          "ay_input": 223,
+          "visits": [
+            703
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 230
+        },
+        {
+          "wraps": 16,
+          "even": true,
+          "ay_input": 255,
+          "visits": [
+            703
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 230
+        }
+      ]
+    },
+    {
+      "rom": "128-1.rom",
+      "profiles": [
+        {
+          "wraps": 15,
+          "even": false,
+          "ay_input": 223,
+          "visits": [
+            703,
+            858
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 97
+        },
+        {
+          "wraps": 15,
+          "even": false,
+          "ay_input": 255,
+          "visits": [
+            703,
+            858
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 97
+        },
+        {
+          "wraps": 15,
+          "even": true,
+          "ay_input": 223,
+          "visits": [
+            703,
+            858
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 97
+        },
+        {
+          "wraps": 15,
+          "even": true,
+          "ay_input": 255,
+          "visits": [
+            703,
+            858
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 97
+        },
+        {
+          "wraps": 16,
+          "even": false,
+          "ay_input": 223,
+          "visits": [
+            14914,
+            703
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 230
+        },
+        {
+          "wraps": 16,
+          "even": false,
+          "ay_input": 255,
+          "visits": [
+            14914,
+            703
+          ],
+          "rom_ports": [],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 230
+        },
+        {
+          "wraps": 16,
+          "even": true,
+          "ay_input": 223,
+          "visits": [
+            14914,
+            14752,
+            14648,
+            703
+          ],
+          "rom_ports": [
+            [
+              "write",
+              14472,
+              65533,
+              7
+            ],
+            [
+              "read",
+              14474,
+              65533,
+              0
+            ],
+            [
+              "write",
+              14478,
+              65533,
+              14
+            ],
+            [
+              "read",
+              14480,
+              65533,
+              223
+            ],
+            [
+              "write",
+              14498,
+              65533,
+              14
+            ],
+            [
+              "read",
+              14500,
+              65533,
+              223
+            ],
+            [
+              "write",
+              14489,
+              65533,
+              14
+            ],
+            [
+              "write",
+              14492,
+              49149,
+              255
+            ]
+          ],
+          "workspace_before": "000000",
+          "workspace_after": "000000",
+          "key": 230
+        },
+        {
+          "wraps": 16,
+          "even": true,
+          "ay_input": 255,
+          "visits": [
+            14914,
+            14752,
+            14648,
+            703
+          ],
+          "rom_ports": [
+            [
+              "write",
+              14472,
+              65533,
+              7
+            ],
+            [
+              "read",
+              14474,
+              65533,
+              0
+            ],
+            [
+              "write",
+              14478,
+              65533,
+              14
+            ],
+            [
+              "read",
+              14480,
+              65533,
+              255
+            ],
+            [
+              "write",
+              14498,
+              65533,
+              14
+            ],
+            [
+              "read",
+              14500,
+              65533,
+              255
+            ]
+          ],
+          "workspace_before": "000000",
+          "workspace_after": "014c00",
+          "key": 230
+        }
+      ],
+      "continuous_high_input": {
+        "frames_after_wrap": 154,
+        "even_polls": 77,
+        "countdown_from": 76,
+        "workspace_cleared": true,
+        "latch_writes": [
+          254,
+          255
+        ],
+        "initial_and_timeout_reads": 34,
+        "timeout_port_trace": [
+          [
+            "write",
+            14472,
+            65533,
+            7
+          ],
+          [
+            "read",
+            14474,
+            65533,
+            50
+          ],
+          [
+            "write",
+            14478,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14480,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14489,
+            65533,
+            14
+          ],
+          [
+            "write",
+            14492,
+            49149,
+            254
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14498,
+            65533,
+            14
+          ],
+          [
+            "read",
+            14500,
+            65533,
+            255
+          ],
+          [
+            "write",
+            14489,
+            65533,
+            14
+          ],
+          [
+            "write",
+            14492,
+            49149,
+            255
+          ]
+        ]
+      }
+    }
+  ],
+  "flag_address": 64892,
+  "bank": 0,
+  "original_rom_irq_executed": true,
+  "refresh_and_frames_prepared": true,
+  "ay_input_modeled": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

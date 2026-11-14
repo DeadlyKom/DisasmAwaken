@@ -27,7 +27,7 @@ def main():
     pending[include_path]=include.encode('utf-8')
     inventory['ranges_by_kind']=dict(Counter(p['kind'] for p in sm));inventory['physical_bytes_by_kind']={k:sum(p['length'] for p in sm if p['kind']==k) for k in inventory['ranges_by_kind']}
     for stem,value in (('SourceMap',sm),('Symbols',symbols),('Inventory',inventory)):pending[ROOT/('Tools/Disasm/Reports/'+stem+'.json')]=encode(value)
-    path=ROOT/'Includes/Structs/Include.inc';text=path.read_text('utf-8');assert 'struct FOverlayLine' not in text and 'struct FClassSpawnByte' not in text
+    path=ROOT/'Includes/Structs/Include.inc';text=path.read_text('utf-8');assert 'struct FOverlayLine' not in text and 'struct FMissileRepeatDelay' not in text
     pending[path]=text.replace('                endif',facts.structures()+'\n                endif').encode('utf-8')
     # Удаление только двух адресных модулей с единственной привязкой, реальная память остаётся на прежнем месте.
     path=ROOT/'Includes/Variables/Include.inc';text=path.read_text('utf-8')
@@ -35,8 +35,8 @@ def main():
         start=text.index('                module '+module+'\n');end=text.index('                endmodule',start)+len('                endmodule\n')
         block=text[start:end];assert sum('equ #' in line for line in block.splitlines())==1;text=text[:start]+text[end:]
     pending[path]=text.encode('utf-8')
-    renames=(('@ActionOverlayPairState.LineStream','@ActionOverlayLineData.Line'),('@ActionSpawnWindowState.ClassValues','@ActionClassSpawnValues.Class0.Value'))
-    for relative in ('Source/Action/ToggleTargetOverlay.asm','Source/Action/CheckClass17SpawnWindow.asm',
+    renames=(('@ActionOverlayPairState.LineStream','@ActionOverlayLineData.Line'),('@ActionSpawnWindowState.ClassValues','@ActionClassSpawnValues.Class0.Counter'))
+    for relative in ('Source/Action/ToggleTargetOverlay.asm','Source/Action/CheckMissileSpawnWindow.asm',
                      'Tools/Disasm/Research/ActionOverlayPairFacts.py','Tools/Disasm/Research/ActionSpawnWindowFacts.py'):
         path=ROOT/relative;text=path.read_text('utf-8')
         for before,after in renames:text=text.replace(before,after)
@@ -51,7 +51,7 @@ def main():
         assert all(symbols.get(k.upper())==v for k,v in labels.items())
         rows=[p for p in source_map if p['path']==path]
         assert len(rows)==1 and (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(start,end-start,start+0x6000)
-    assert symbols['FOVERLAYLINE']==4 and symbols['FCLASSSPAWNBYTE']==1
+    assert symbols['FOVERLAYLINE']==4 and symbols['FMISSILEREPEATDELAY']==1
 
 '''
     pending[path]=text.replace(needle,hook+needle).encode('utf-8')
@@ -68,7 +68,7 @@ def main():
     assert 'data_by_slot' in text and 'special[17,' in text
     pending[path]=text.replace(needle,hook+needle).encode('utf-8')
     for relative,extra in (('Docs/ActionOverlayPair.md','\nИсходные четыре байта оформлены физическим [экземпляром FOverlayLine](../Source/Action/Data/OverlayLine.asm). Адресный EQU заменён ссылкой на этот экземпляр, поля и конец потока проверяются отдельно.\n'),
-                           ('Docs/ActionSpawnWindow.md','\nДевять исходных значений оформлены физическими [FClassSpawnByte Class0..Class8](../Source/Action/Data/ClassSpawnValues.asm). Полное индексирование за последним элементом не ограничено и по-прежнему читает следующие исходные байты.\n')):
+                           ('Docs/ActionSpawnWindow.md','\nДевять исходных значений оформлены физическими [FMissileRepeatDelay Class0..Class8](../Source/Action/Data/ClassSpawnValues.asm). Полное индексирование за последним элементом не ограничено и по-прежнему читает следующие исходные байты.\n')):
         path=ROOT/relative;pending[path]=(path.read_text('utf-8')+extra).encode('utf-8')
     candidate=ROOT/'Tools/Disasm/Research/Candidates/ActionLinkedStateData';history=ROOT/'Tools/Disasm/Research/History/BeforeActionLinkedStateData'
     assert not candidate.exists() and not history.exists();plan=[(p,p.read_bytes() if p.exists() else None,a) for p,a in pending.items()]

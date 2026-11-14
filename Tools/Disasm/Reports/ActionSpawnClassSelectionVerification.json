@@ -14,6 +14,8 @@
   },
   "all_random_high_and_folded_maximum_values": true,
   "unreachable_class_three": true,
+  "threshold_scope": "original_operands_before_BuildParameterTables",
+  "generated_thresholds_tested": false,
   "stopped_before_model_selection": true,
   "assembly_executed": false
 }

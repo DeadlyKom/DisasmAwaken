@@ -79,3 +79,14 @@ def name_operands(region,address,operation):
             .replace('IX + #02','IX + FInterfaceItem.Width')
             .replace('SUB #21','SUB @ScreenConst.ColumnEndLimit')
             .replace('CALL #C908','CALL @Map.XorSelectionBand.Entry'))
+
+
+# Побочные эффекты двух входов банкового XOR, включая сохранение тени порта.
+HIGHLIGHT_CORRUPT = [
+    'HL, DE, BC, AF, R',
+    'bitmap полосы, MapHighlightState.WidthSkip банка 1, StationState.CurrentPage, управление 7FFD и временные слова CPU-стека',
+]
+for _address in (0xA2BB,0xA2B4):
+    _parts = list(CONTRACTS['Station',_address])
+    _parts[2] = list(HIGHLIGHT_CORRUPT)
+    CONTRACTS['Station',_address] = tuple(_parts)

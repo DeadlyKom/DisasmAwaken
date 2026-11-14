@@ -65,11 +65,34 @@ def main():
         for main_flags in range(256):
             for selector in (0,1,128,255):
                 check(radius,selector,main_flags,main_flags^255,'saved_flags')
+    # На входах вне договора прослеживаем записи до первого изменения кода.
+    invalid_cases = 0
+    for radius in (0, 1):
+        for selector in (0, 1):
+            memory.recording = False
+            memory[0xD990:0xD9B0] = [0xA5] * 32
+            memory[0xD9B0] = original[0xD9B0]
+            simulator.registers[:] = get_registers(
+                {'AF': radius << 8, '^AF': selector << 8, 'SP': 0xBFFE, 'PC': 0xD9B0}, None, False)
+            memory.writes = []
+            memory.recording = True
+            for _ in range(160):
+                simulator.run()
+                if len(memory.writes) == 33:
+                    break
+            else:
+                raise AssertionError(('первое перекрытие кода', radius, selector))
+            memory.recording = False
+            assert memory.writes == [(address, 0) for address in range(0xD990, 0xD9B1)]
+            assert memory[0xD9B0] == 0 and original[0xD9B0] == 0x5F
+            invalid_cases += 1
     result=dict(passed=True,total_cases=sum(counts.values()),cases_by_kind=dict(counts),
         all_valid_radii=True,all_selector_bytes=True,all_main_flag_bytes=True,
         primary_mask_signed_shift_preserved=True,first_row_always_overridden_from_alternate=True,
         every_ram_byte_and_write_checked=True,exact_registers_flags_and_r=True,
         maximum_written_bytes=12,physical_seed_bytes=18,radius_0_1_outside_contract=True,
+        invalid_cases_to_first_code_overwrite=invalid_cases, invalid_mask_tail_bytes_written=20,
+        first_overwritten_code_address=0xD9B0,
         irq_executed=False,native_execution=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/ControlsSmallMasksVerification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,indent=2))

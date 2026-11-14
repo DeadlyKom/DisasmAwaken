@@ -4,6 +4,11 @@
   "method": "original_two_unary_modes_and_all_seven_handlers_until_next_command",
   "zero_resource_mode_leaves_numeric_argument_unconsumed": true,
   "calls_stubbed": false,
+  "exact_R_and_own_call_writes_before_each_handler_checked": true,
+  "full_R_cases": 1073,
+  "active_resource_full_R_proved": false,
+  "original_return_word_preserved": true,
+  "full_index_mode_R_cartesian_product_checked": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

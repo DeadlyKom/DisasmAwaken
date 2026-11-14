@@ -3,6 +3,7 @@ from collections import Counter,defaultdict
 import json
 from ClassifyControlsTextDisplay import ROOT
 from CheckActionParameterActivation import flat_action
+from ActionModelPhysicalData import verify_bound_mantissa
 
 
 def main():
@@ -11,6 +12,8 @@ def main():
     entry=next(e for e in manifest['entries'] if e['slot']==24)
     data=(ROOT/'Tools/Disasm/Extracted/Active/24_OBJECT3D.C.sectors.bin').read_bytes()
     assert len(data)==entry['allocated_length']==10752
+    scale_proof = json.loads((reports/'ActionScaleHeaderVerification.json').read_bytes())
+    assert scale_proof['passed'] and scale_proof['original_header_bound_mantissa_use']['distinct_physical_headers'] == 95
     action=flat_action();aliases=defaultdict(list)
     # Проверка потребителей полей по фактическим инструкциям двух родительских обработчиков.
     for address in (0xDBC3,0xDC21,0xDD29,0xDD6F):assert bytes(action[address:address+2])==bytes((0xE6,0x0F))
@@ -50,8 +53,9 @@ def main():
         assert data[cursor]==0
         cursor+=1
         assert cursor<=entry['length']
+        assert verify_bound_mantissa(data[start:cursor]) == len(fixed)
         packets.append(dict(offset=start,end=cursor,length=cursor-start,pointer_indices=indices,
-            header_unknown=data[start],scale_exponent=data[start+1],fixed_groups=fixed,
+            bound_mantissa=data[start],scale_exponent=data[start+1],fixed_groups=fixed,
             fixed_end_offset=fixed_end,records=records,variable_end_offset=cursor-1))
     # Проверка отсутствия наложений и сохранения промежутков и хвостов как отдельных непонятых данных.
     gaps=[];cursor=0
@@ -77,7 +81,9 @@ def main():
         mutation_groups=[dict(source_offset=s,source_header=data[s],targets=v) for s,v in sorted(groups.items())],
         uninterpreted_gaps=gaps,unreferenced_logical_tail=dict(offset=cursor,length=entry['length']-cursor),
         sector_tail=dict(offset=entry['length'],length=len(data)-entry['length']),
-        first_header_byte_meaning_proved=False,all_runtime_writers_proved=False,
+        first_header_byte_use_as_bound_mantissa_proved=True,physical_units_proved=False,all_runtime_writers_proved=False,
+        bound_mantissa_matches_max_signed_component_in_each_nonempty_packet=True,
+        empty_packet_bound_mantissa=1,
         assembly_executed=False,native_execution=False,packets=packets)
     (reports/'ActionModelPacketsVerification.json').write_bytes((json.dumps(result,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
     print(json.dumps({k:v for k,v in result.items() if k not in ('packets','mutation_groups')},ensure_ascii=False,indent=2))

@@ -1,0 +1,282 @@
+{
+  "passed": true,
+  "method": "all_original_unrolled_XOR_row_entries_against_byte_page_and_explicit_stack",
+  "cases": 131072,
+  "entries": [
+    {
+      "name": "Bytes01",
+      "address": 50669,
+      "width": 1,
+      "cases": 4096,
+      "M1": 5,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes02",
+      "address": 50665,
+      "width": 2,
+      "cases": 4096,
+      "M1": 9,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes03",
+      "address": 50661,
+      "width": 3,
+      "cases": 4096,
+      "M1": 13,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes04",
+      "address": 50657,
+      "width": 4,
+      "cases": 4096,
+      "M1": 17,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes05",
+      "address": 50653,
+      "width": 5,
+      "cases": 4096,
+      "M1": 21,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes06",
+      "address": 50649,
+      "width": 6,
+      "cases": 4096,
+      "M1": 25,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes07",
+      "address": 50645,
+      "width": 7,
+      "cases": 4096,
+      "M1": 29,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes08",
+      "address": 50641,
+      "width": 8,
+      "cases": 4096,
+      "M1": 33,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes09",
+      "address": 50637,
+      "width": 9,
+      "cases": 4096,
+      "M1": 37,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes10",
+      "address": 50633,
+      "width": 10,
+      "cases": 4096,
+      "M1": 41,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes11",
+      "address": 50629,
+      "width": 11,
+      "cases": 4096,
+      "M1": 45,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes12",
+      "address": 50625,
+      "width": 12,
+      "cases": 4096,
+      "M1": 49,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes13",
+      "address": 50621,
+      "width": 13,
+      "cases": 4096,
+      "M1": 53,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes14",
+      "address": 50617,
+      "width": 14,
+      "cases": 4096,
+      "M1": 57,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes15",
+      "address": 50613,
+      "width": 15,
+      "cases": 4096,
+      "M1": 61,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes16",
+      "address": 50609,
+      "width": 16,
+      "cases": 4096,
+      "M1": 65,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes17",
+      "address": 50605,
+      "width": 17,
+      "cases": 4096,
+      "M1": 69,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes18",
+      "address": 50601,
+      "width": 18,
+      "cases": 4096,
+      "M1": 73,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes19",
+      "address": 50597,
+      "width": 19,
+      "cases": 4096,
+      "M1": 77,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes20",
+      "address": 50593,
+      "width": 20,
+      "cases": 4096,
+      "M1": 81,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes21",
+      "address": 50589,
+      "width": 21,
+      "cases": 4096,
+      "M1": 85,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes22",
+      "address": 50585,
+      "width": 22,
+      "cases": 4096,
+      "M1": 89,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes23",
+      "address": 50581,
+      "width": 23,
+      "cases": 4096,
+      "M1": 93,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes24",
+      "address": 50577,
+      "width": 24,
+      "cases": 4096,
+      "M1": 97,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes25",
+      "address": 50573,
+      "width": 25,
+      "cases": 4096,
+      "M1": 101,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes26",
+      "address": 50569,
+      "width": 26,
+      "cases": 4096,
+      "M1": 105,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes27",
+      "address": 50565,
+      "width": 27,
+      "cases": 4096,
+      "M1": 109,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes28",
+      "address": 50561,
+      "width": 28,
+      "cases": 4096,
+      "M1": 113,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes29",
+      "address": 50557,
+      "width": 29,
+      "cases": 4096,
+      "M1": 117,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes30",
+      "address": 50553,
+      "width": 30,
+      "cases": 4096,
+      "M1": 121,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes31",
+      "address": 50549,
+      "width": 31,
+      "cases": 4096,
+      "M1": 125,
+      "SP_delta": 4
+    },
+    {
+      "name": "Bytes32",
+      "address": 50545,
+      "width": 32,
+      "cases": 4096,
+      "M1": 129,
+      "SP_delta": 4
+    }
+  ],
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "original_row_sha256": "a51b7fd1ed15a0f61f9aa323c49f2d3e03ccfa79e44259ab026b8f0058c6ce28",
+  "all_widths_and_L_bytes_and_16_preserved_flag_combinations": true,
+  "all_input_F_values_covered_per_width": true,
+  "all_initial_R_values_covered_per_width": true,
+  "complete_L_F_R_joint_product": false,
+  "exact_registers_except_T_checked": true,
+  "every_CPU_RAM_write_value_and_order_checked": true,
+  "frame_unchanged": true,
+  "HorizontalSkip_not_read_or_written_by_inner_entries": true,
+  "E_not_used_for_inner_byte_count": true,
+  "R_bit7_preserved": true,
+  "CPU_write_watch_positive_control": true,
+  "no_own_stack_writes": true,
+  "destination_page_fixed_to_4000": true,
+  "all_saved_HL_values_or_stack_addresses_or_overlaps_checked": false,
+  "normal_driver_entry_not_executed": true,
+  "IRQ_or_native_execution": false,
+  "assembly_executed": false
+}

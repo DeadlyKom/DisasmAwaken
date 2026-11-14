@@ -8,10 +8,15 @@ from skoolkit.simutils import PC,SP
 def main():
  station,_,base=make_context();f=Fixture(base);m=f.memory;s=f.sim;initial=f.initial;counts=collections.Counter();before=[bytes(b) for b in m.banks]
  assert bytes(m[0x7F30:0x7F33])==bytes.fromhex('cdd863') and bytes(m[0x7F33:0x7F35])==bytes.fromhex('f1c9')
+ assert bytes(m[0xA014:0xA020])==bytes.fromhex('41dd6e00dd23dd6600dd23c9')
+ refresh_seeds=set();return_refresh_seeds=set()
  def refill(ix,c,flags):
-  word=m[ix]+256*m[(ix+1)&65535];s.registers[:]=initial;r=s.registers;r[8:10]=[ix>>8,ix&255];r[3]=c;r[1]=flags;s.run(start=0xA014,stop=0x3FFF)
+  word=m[ix]+256*m[(ix+1)&65535];s.registers[:]=initial;r=s.registers;r[8:10]=[ix>>8,ix&255];r[3]=c;r[1]=flags
+  initial_r=(word^ix^c^flags)&255;r[15]=initial_r;refresh_seeds.add(initial_r)
+  s.run(start=0xA014,stop=0x3FFF)
   assert tuple(r[:8])==(initial[0],flags,c,c,initial[4],initial[5],word>>8,word&255)
   assert r[8]*256+r[9]==(ix+2)&65535 and r[10:12]==initial[10:12] and r[16:24]==initial[16:24] and r[SP]==0x8000 and r[14]==initial[14] and r[26:28]==initial[26:28]
+  assert r[15]==(initial_r&128)|((initial_r+10)&127)
  # Проверка всех 65536 слов и всех сочетаний исходного C с полным F.
  for word in range(65536):put(m,0x9000,word.to_bytes(2,'little'));refill(0x9000,16,0x5D);counts['all_refill_words']+=1
  for cf in range(65536):refill(0x9000,cf>>8,cf&255);counts['all_counter_and_flags_pairs']+=1
@@ -19,12 +24,16 @@ def main():
  for ix in range(65536):refill(ix,16,0x5D);counts['all_stream_pointers']+=1
  # Проверка всех сохранённых AF, стек содержит SavedAF и внешний ReturnAddress.
  for af in range(65536):
-  put(m,0x7FFC,af.to_bytes(2,'little'));s.registers[:]=initial;r=s.registers;r[SP]=0x7FFC;s.run(start=0x7F33,stop=0x3FFF)
+  put(m,0x7FFC,af.to_bytes(2,'little'));s.registers[:]=initial;r=s.registers;r[SP]=0x7FFC
+  initial_r=af&255;r[15]=initial_r;return_refresh_seeds.add(initial_r);s.run(start=0x7F33,stop=0x3FFF)
   assert r[:2]==[af>>8,af&255] and r[2:12]==initial[2:12] and r[16:24]==initial[16:24] and r[SP]==0x8000;counts['all_saved_af_words']+=1
+  assert r[15]==(initial_r&128)|((initial_r+2)&127)
  # Проверка каждого SP за ровно POP AF и RET, произвольная извлечённая цель не исполняется.
  for sp in range(65536):
-  flags,a=m[sp],m[(sp+1)&65535];target=m[(sp+2)&65535]+256*m[(sp+3)&65535];s.registers[:]=initial;r=s.registers;r[SP]=sp;r[PC]=0x7F33;s.run();s.run()
+  flags,a=m[sp],m[(sp+1)&65535];target=m[(sp+2)&65535]+256*m[(sp+3)&65535];s.registers[:]=initial;r=s.registers;r[SP]=sp;r[PC]=0x7F33
+  initial_r=sp&255;r[15]=initial_r;return_refresh_seeds.add(initial_r);s.run();s.run()
   assert r[:2]==[a,flags] and r[PC]==target and r[SP]==(sp+4)&65535 and r[2:12]==initial[2:12] and r[16:24]==initial[16:24];counts['all_return_stack_pointers_two_steps_only']+=1
+  assert r[15]==(initial_r&128)|((initial_r+2)&127)
  # Проверка отсутствия записей инструкциями двух примитивов, исключены только входы, подготовленные самой моделью.
  allowed={(2,0x1000),(2,0x1001),(5,0x3FFC),(5,0x3FFD)}
  for bank,(old,new) in enumerate(zip(before,m.banks)):
@@ -41,6 +50,12 @@ def main():
   stream_and_stack_wrap_checked=True,primitives_do_not_write_memory=True,new_return_continuation_bytes='CD D8 63',
   synthetic_return_from_handle_item_00=True,independent_pointer_bitmap=True,saved_af_frame_bytes=4,return_sp_delta=4,
   irq_executed=False,native_execution=False,assembly_executed=False)
+ assert refresh_seeds==set(range(256))
+ report.update(refill_m1_count=10,refill_original_12_bytes_checked=True,
+  refill_R_initial_values=256,refill_R_bit7_preserved=True,refill_R_full_input_product=False)
+ assert return_refresh_seeds==set(range(256))
+ report.update(restore_AF_m1_count=2,restore_AF_R_initial_values=256,
+  restore_AF_R_bit7_preserved=True,restore_AF_R_full_input_product=False)
  (ROOT/'Tools/Disasm/Reports/PackedWordAndActionReturnVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 
 

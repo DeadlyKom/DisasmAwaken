@@ -51,17 +51,26 @@ def main():
  for _ in range(4096):
   vertices=[(rng.randrange(192),rng.randrange(256)) for _ in range(rng.randrange(3,128))]
   for carry in (0,1):check(vertices,rng.randrange(8),carry)
- wrappers=0
+ wrappers=0;wrapper_refresh_seeds=set()
+ assert bytes(m[0xD40F:0xD41B])==bytes.fromhex('086f082cc352d42e01c362d4')
  # Проверка двух верхних переходников на всех входных F и всех индексах кольца.
  for flags in range(256):
   for left in (False,True):
    for index in (range(1,256,2) if left else range(256)):
-    s.registers[:]=initial;r=s.registers;r[1]=flags;r[6]=0xC8;r[7]=0 if left else index;r[16]=index;saved=r[:]
+    s.registers[:]=initial;r=s.registers;r[1]=flags;r[6]=0xC8;r[7]=0 if left else index;r[16]=index
+    r[14]=index;r[15]=flags^index;r[26]=flags&1;r[27]=flags%3;saved=r[:];wrapper_refresh_seeds.add(r[15])
     saved[7]=(index+1)&255 if left else 1
     if left:saved[1]=column_context((index+1)&255,1,flags&1)
     m.writes=[];s.run(start=0xD40F if left else 0xD416,stop=0xD452 if left else 0xD462)
     assert r[:13]==saved[:13] and r[16:24]==saved[16:24] and not m.writes;wrappers+=1
+    m1=5 if left else 2
+    assert r[15]==(saved[15]&128)|((saved[15]+m1)&127)
+    assert r[14]==saved[14] and r[26:28]==saved[26:28]
  report=dict(passed=True,cases=cases,wrapper_cases=wrappers,all_even_contour_lengths_6_through_254=True,all_eight_preparation_modes=True,all_192_horizontal_exit_rows=True,both_input_carries=True,exact_main_alternate_and_index_context=True,exact_order_independent_operand_values_and_write_count=True,no_screen_writes=True,temporary_sp_and_cpu_hl_checked=True,all_wrapper_flags_and_indices=True,stop_before_scanline_loop=True,full_modes_5_6_7_rasterization_proved=False,irq_executed=False,native_execution=False,assembly_executed=False)
+ assert wrapper_refresh_seeds==set(range(256))
+ report.update(wrapper_m1_by_entry={'D40F':5,'D416':2},wrapper_R_initial_values=256,
+  wrapper_R_bit7_and_I_IM_IFF_preserved=True,wrapper_original_opcode_bytes_checked=True,
+  whole_preparation_R_cost_proved=False,wrapper_R_full_input_product=False)
  (ROOT/'Tools/Disasm/Reports/PreviewPolygonPreparationVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 
 

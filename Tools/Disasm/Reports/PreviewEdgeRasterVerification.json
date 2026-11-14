@@ -20,6 +20,23 @@
   "exact_main_and_alternate_af_checked": true,
   "shifted_and_unaligned_origins_checked": true,
   "onscreen_table_profile": true,
+  "direct_full_M1_and_R_checked": true,
+  "I_IM_IFF_preservation_checked": true,
+  "observed_M1_bounds": {
+    "degenerate": [
+      7,
+      7
+    ],
+    "shallow": [
+      62,
+      3792
+    ],
+    "steep": [
+      63,
+      3124
+    ]
+  },
+  "complete_joint_input_product_exhausted": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

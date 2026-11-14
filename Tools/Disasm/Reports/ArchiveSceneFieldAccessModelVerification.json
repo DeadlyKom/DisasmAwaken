@@ -1,0 +1,871 @@
+{
+  "passed": true,
+  "original_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "loads": [
+    {
+      "slot": 40,
+      "key": "BD0     C",
+      "address": 49152,
+      "port_value": 88,
+      "physical_sectors": null,
+      "final_sector_read": null
+    },
+    {
+      "slot": 41,
+      "key": "BD1     C",
+      "address": 49152,
+      "port_value": 89,
+      "physical_sectors": null,
+      "final_sector_read": null
+    },
+    {
+      "slot": 42,
+      "key": "BD2     C",
+      "address": 49152,
+      "port_value": 90,
+      "physical_sectors": null,
+      "final_sector_read": null
+    },
+    {
+      "slot": 43,
+      "key": "BD3     C",
+      "address": 49152,
+      "port_value": 91,
+      "physical_sectors": null,
+      "final_sector_read": null
+    },
+    {
+      "slot": 39,
+      "key": "BAR     C",
+      "address": 49152,
+      "port_value": 24,
+      "physical_sectors": null,
+      "final_sector_read": null
+    },
+    {
+      "slot": 39,
+      "key": "BAR     C",
+      "address": 53248,
+      "port_value": 24,
+      "physical_sectors": null,
+      "final_sector_read": null
+    }
+  ],
+  "headers_executed": 37,
+  "indexed_group_loads": 36,
+  "step_cases": 408,
+  "frame_counter_cases": 12288,
+  "action_switches": {
+    "group_switches": 9912,
+    "index_reversal_cases": 2048
+  },
+  "mask_cases": 336,
+  "mask_cases_cover_both_fighter_records": true,
+  "view_adjustment_cases": 2560,
+  "archived_fighter_code": true,
+  "horizontal_edge_cases": 29376,
+  "horizontal_edge_paths": {
+    "interior": 7344,
+    "left_held": 4080,
+    "left_scrolled": 6528,
+    "left_at_limit": 1632,
+    "right_held": 6528,
+    "right_scrolled": 1632,
+    "right_at_limit": 1632
+  },
+  "keyboard_actions": {
+    "scan_cases": 40,
+    "dispatch_cases": 73728,
+    "action_table": 17630,
+    "indexed_actions": 36,
+    "physical_rule_blocks": {
+      "17702": 14,
+      "17773": 4,
+      "17880": 4,
+      "17795": 8,
+      "17794": 0,
+      "17901": 4,
+      "17922": 4,
+      "17836": 2,
+      "17847": 2,
+      "17858": 2,
+      "17869": 2
+    },
+    "physical_rules": 46,
+    "action_rules": [
+      [
+        [
+          5,
+          5,
+          0,
+          0,
+          7
+        ],
+        [
+          9,
+          9,
+          0,
+          0,
+          8
+        ],
+        [
+          16,
+          16,
+          0,
+          0,
+          9
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          12
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          13
+        ],
+        [
+          0,
+          0,
+          4,
+          4,
+          14
+        ],
+        [
+          0,
+          0,
+          8,
+          8,
+          15
+        ],
+        [
+          8,
+          8,
+          8,
+          8,
+          20
+        ],
+        [
+          8,
+          8,
+          4,
+          4,
+          21
+        ],
+        [
+          4,
+          4,
+          0,
+          0,
+          1
+        ],
+        [
+          8,
+          8,
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          4
+        ],
+        [
+          255,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          5,
+          5,
+          0,
+          0,
+          7
+        ],
+        [
+          9,
+          9,
+          0,
+          0,
+          8
+        ],
+        [
+          16,
+          16,
+          0,
+          0,
+          9
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          12
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          13
+        ],
+        [
+          0,
+          0,
+          4,
+          4,
+          14
+        ],
+        [
+          0,
+          0,
+          8,
+          8,
+          15
+        ],
+        [
+          8,
+          8,
+          8,
+          8,
+          20
+        ],
+        [
+          8,
+          8,
+          4,
+          4,
+          21
+        ],
+        [
+          4,
+          4,
+          0,
+          0,
+          1
+        ],
+        [
+          8,
+          8,
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          4
+        ],
+        [
+          255,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          8,
+          8,
+          8,
+          8,
+          20
+        ],
+        [
+          8,
+          8,
+          4,
+          4,
+          21
+        ],
+        [
+          9,
+          9,
+          0,
+          0,
+          8
+        ],
+        [
+          255,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          1,
+          1,
+          28
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          28
+        ],
+        [
+          0,
+          0,
+          4,
+          4,
+          31
+        ],
+        [
+          0,
+          0,
+          8,
+          8,
+          31
+        ]
+      ],
+      [
+        [
+          18,
+          18,
+          0,
+          0,
+          11
+        ],
+        [
+          2,
+          2,
+          4,
+          4,
+          16
+        ],
+        [
+          2,
+          2,
+          8,
+          8,
+          17
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          19
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          19
+        ],
+        [
+          6,
+          4,
+          0,
+          0,
+          1
+        ],
+        [
+          10,
+          8,
+          0,
+          0,
+          2
+        ],
+        [
+          255,
+          0,
+          0,
+          0,
+          6
+        ]
+      ],
+      [
+        [
+          18,
+          18,
+          0,
+          0,
+          11
+        ],
+        [
+          2,
+          2,
+          4,
+          4,
+          16
+        ],
+        [
+          2,
+          2,
+          8,
+          8,
+          17
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          19
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          19
+        ],
+        [
+          6,
+          4,
+          0,
+          0,
+          1
+        ],
+        [
+          10,
+          8,
+          0,
+          0,
+          2
+        ],
+        [
+          255,
+          0,
+          0,
+          0,
+          6
+        ]
+      ],
+      [],
+      [
+        [
+          0,
+          0,
+          1,
+          1,
+          29
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          29
+        ],
+        [
+          0,
+          0,
+          4,
+          4,
+          32
+        ],
+        [
+          0,
+          0,
+          8,
+          8,
+          32
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          1,
+          1,
+          30
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          30
+        ],
+        [
+          0,
+          0,
+          4,
+          4,
+          33
+        ],
+        [
+          0,
+          0,
+          8,
+          8,
+          33
+        ]
+      ],
+      [
+        [
+          18,
+          18,
+          0,
+          0,
+          4
+        ],
+        [
+          255,
+          0,
+          0,
+          0,
+          10
+        ]
+      ],
+      [],
+      [
+        [
+          18,
+          2,
+          0,
+          0,
+          5
+        ],
+        [
+          18,
+          16,
+          0,
+          0,
+          6
+        ]
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+        [
+          18,
+          18,
+          0,
+          0,
+          11
+        ],
+        [
+          2,
+          2,
+          4,
+          4,
+          16
+        ],
+        [
+          2,
+          2,
+          8,
+          8,
+          17
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          19
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          19
+        ],
+        [
+          6,
+          4,
+          0,
+          0,
+          1
+        ],
+        [
+          10,
+          8,
+          0,
+          0,
+          2
+        ],
+        [
+          255,
+          0,
+          0,
+          0,
+          6
+        ]
+      ],
+      [],
+      [],
+      [],
+      [
+        [
+          0,
+          0,
+          1,
+          1,
+          23
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          26
+        ]
+      ],
+      [],
+      [
+        [
+          0,
+          0,
+          1,
+          1,
+          25
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          27
+        ]
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  "relative_positions": {
+    "crossing_cases": 1008,
+    "proximity_cases": 28,
+    "vertical_cases": 49,
+    "turn_cases": 4,
+    "direct_turn_requests": [
+      0,
+      1,
+      2,
+      4,
+      9,
+      11
+    ],
+    "turn_action_sequence": [
+      34,
+      35,
+      0
+    ]
+  },
+  "scene_restore": {
+    "cases": {
+      "page_13_only": 552,
+      "starts_at_row_178": 12,
+      "switches_to_page_14": 648
+    },
+    "source_split_row": 178,
+    "actual_restoration_entry": 18158,
+    "exact_read_bytes_and_fixed_destination": true,
+    "expanded_copies_unchanged": true,
+    "physical_sprite_sizes": 45,
+    "synthetic_one_byte_edge_profile": true,
+    "both_sprite_orientations": true
+  },
+  "archive_boot": {
+    "loads": [
+      {
+        "slot": 40,
+        "key": "BD0     C",
+        "address": 49152,
+        "port_value": 88,
+        "physical_sectors": null,
+        "final_sector_read": null
+      },
+      {
+        "slot": 41,
+        "key": "BD1     C",
+        "address": 49152,
+        "port_value": 89,
+        "physical_sectors": null,
+        "final_sector_read": null
+      },
+      {
+        "slot": 42,
+        "key": "BD2     C",
+        "address": 49152,
+        "port_value": 90,
+        "physical_sectors": null,
+        "final_sector_read": null
+      },
+      {
+        "slot": 43,
+        "key": "BD3     C",
+        "address": 49152,
+        "port_value": 91,
+        "physical_sectors": null,
+        "final_sector_read": null
+      },
+      {
+        "slot": 30,
+        "key": "scene1pos",
+        "address": 30464,
+        "port_value": 91,
+        "physical_sectors": null,
+        "final_sector_read": null
+      },
+      {
+        "slot": 39,
+        "key": "BAR     C",
+        "address": 49152,
+        "port_value": 24,
+        "physical_sectors": null,
+        "final_sector_read": null
+      },
+      {
+        "slot": 39,
+        "key": "BAR     C",
+        "address": 53248,
+        "port_value": 24,
+        "physical_sectors": null,
+        "final_sector_read": null
+      }
+    ],
+    "frame_entry": 16432,
+    "complete_cycles": 64,
+    "screen_bitmap_sha256": [
+      "7d041881f7fea92a04d7e55996471982faf2b4efcd9a67754e38f44337ef6c93",
+      "79b33990f30dade93ec16e1972f2d4f18daf7dcb1d867b6e383020151388f808",
+      "90d8b0674c6c1fe56dc101a65044e7297c5f9a48bc350c8dff2b3e83aae23b74",
+      "cf14cee2f6e83b229b43164f8efb1bf177a317469a655f19438dd56d4863b793",
+      "d1cdbb5555b6523256ec221c8c54354ceaf523cc497214428af1f1c22be5556e",
+      "b36793ba2fabca0eb0fc5080852ab860590ad8374e0058342734f3340ca4fe3e",
+      "15091b5676b36caee813e5e9a658925b659aed50a854242b2403153f60b46be5",
+      "64f3e2655bbe991aafc3f67e64d0df61d37471ab56edcb1c4f400e68972515dd",
+      "7a981dec1936922983c768e00db38c3592a9827e5f13c53b119316488a873788",
+      "88be7f62b246434be52027d3b9d126dea67b883ab3a7917bd7b2080d98223c9c",
+      "4aea277098ddae395fbbe00533f2828d07959bd015f83530f3314089edcbb729",
+      "01b92a3b2d7268af8ed6aeb32c219c70c82dcfcbadb08fd35c4f62148e88f856",
+      "c76e78e15763e61e7c961e1a27b81b783eb469f2fb19706706f6f4f0641cf7f3",
+      "603bd8a333c2d029f813829aa0771375fb89b9c58c613c28be8a70070611cdef",
+      "2656caffa3404e65964edbfcb7df2e80616e4ed891d266cddb8fd9ccc427fb60",
+      "0a2967af5eaef69102b8738bbe2dba12632675b8b1875c3bb6d713ae5d697966",
+      "3329124f0c8c464f6772990910aba3ef7407b91d45f8cba525c508ab7fca7c62",
+      "23c145325016e27e9a56bf52d8b996ea795b86ab2900d08666fa75c08c031a1a",
+      "dad57a08523a4e4a2a3eb5b28e3ac39b321798490e7f3fed30a1c832aed2c19f",
+      "e8f16076a628373f44ae28bfd5d06de20f643a0b8d049c2c0444419af844673c",
+      "4a24c8780478c08255a3eb3131f0b292a87d575890e2ee4763930e1daead45e4",
+      "fe640a53e5bb43e8f1d631f4e046af089a0ccb345ad73334fc67c03f207c9cb4",
+      "e8033f8532baa2ae75199c48a308b6f1dafc29fc82479b34a70cc3eb8557e9e7",
+      "272d808ffd16e413bc2938fde04b20b47e46bf8a487acc20a6408747a9f9bc1f",
+      "2d0068ed5336c8ac9accddd0c27bac80639fdff0aa77828227d2391111b931fe",
+      "b56bfd975cfa56d828798a505eb18ff4e1157544fe020b2473d64c099cdc1237",
+      "f9e24be3c665f77a578792fef62853e5247c5bac8806e2fe06e2327bd823a10f",
+      "f991acc7964cdae35355cab4754a0904fad7e4d2a59f55e7c3732d65baa96390",
+      "ff311025cf6ee2b83c86fbb2d7f5709c5880be6414df498be8d118619d7de853",
+      "3d54a70963f353d4d2724158146a3e70d0e276e1fd2961ed94258d156f808577",
+      "0f11a50a636920b5b4737091ffd064d209168e919ca67f151bb454ecf0fbc479",
+      "d201d6e8d9f76f71915284fe13d54da15b1391c1d52288e57485608b8fe7e50b",
+      "e955d22c8580c4c304269e0220655c3d95b325df1d5ee12a86847a62ee7e9c14",
+      "d21393b66521cf2722e47f80b63e686c0ba0cd9f0550fc03425f5f87e5ec2c09",
+      "c0ca1af79ba2aef5299e1fc858701913b2277020bd0c0deb1d5e0b2880bc08cc",
+      "d71db557d1c84932123c11c1f698721ed88b23086dfabe5c0839525816e3280c",
+      "669c90ce2df69e1a055dbb4554889921e387a6ce2450f5711abf03bd6d744334",
+      "361d5a47bdbb68328ed5649b9bdd618694460e52c1eec485f26b524dc7f6c319",
+      "109c83904be504bc8dd8e66b42acfef44748b04cdfa7d692e96be3322d4a5746",
+      "a71b231672aa032e2ca7c45217f8faf5a0516201a9fac6ed77677d7c60f80538",
+      "d57adb1b7cfdfdad5110c9bed8e7c51cf9974b5b91577a3d66a2d83c6c9104ce",
+      "a11be982463bd462f267ad992d172f485931ec627adebfcd07750a71c1656ce0",
+      "a71054a22b735a65eaa47a7f48ab26623d9b99c8d4c5ed98ca1358f8a6b3948f",
+      "2552fe56273cfabdc2c0d8f163310222d3982069ca83d85ff27354508c5caa90",
+      "5367a6ac297682817cf0cbe29a0d53cacb4a8e4ce5ecb53004a23b491d90b27b",
+      "70590e3c20287824830c445560314d9ba5e3d7168d969711b2307b7e6a868d23",
+      "a66e3452d2f4dd253c02ccda6509950ad8dabd42bc9b80d8c468ed660b44dbba",
+      "b048045b2bfe31fc53d615efe7bca2b2f7b6c40597b2102b5e43bf4b093993d7",
+      "16684421a1b21ce49e26e1deaa35abffcb5a62f08c8c5e2f2a8783f8ba0b0c88",
+      "730a26f66c13c81827ade7de390c3854d1f9ca1fc907dbb8e9274b02f78d56cc",
+      "3cad7298b302cfc5d7bbc4cad58ffef6ad46d7f82eabba17137cb85088c017e3",
+      "bfca4eb5cc406c7d7476674f45f34b64d13aeff2f93c315db5c55f272374257a",
+      "cbc0b03713313d026f5a782a0fc134c5ae9ea52bd9098699acbf52d15797e7ee",
+      "85e0475d58e1130da91cedb9e98d18737f73e9402c8924128c1f3c03f2cd899f",
+      "75fa6ed7c7734d95db0f65ade77035cf2431cb4f76c33e5c617dfb18c308200c",
+      "1bd70361cd289241ac9e373394d9279149ce5f1c46129d6e54c483f0333b79ae",
+      "2c29c310038c15b86255f5c207a138d994edb8c9b278d64ddb4346f9ce0db485",
+      "e5842f1984e41d327f33447fa2240d274c2fb55c78ced94aead2fcd2f517c87f",
+      "b44470dc7eac11d6b23076880aa46e92409cc535ec1a4a0f8cacd69bc7ae7f87",
+      "6ab63c4f4bd945b146d1f2b5c8fa6d2f0d8a7eec9eedfeb0c51140fbd7c341d6",
+      "e8654c0496f9da1ae76da61f3818e4761699b9dc43a40a2fdff15800e44d2ab1",
+      "8bbed2aa8726b4bbeb6c24a3a650ac8241eec847ff646471d934ea2643dfa276",
+      "e839130995b55bf0f941b1982701fd693e1b90f474627f673a1f756abbe91067",
+      "a12a9d287191fa6f8b13356ff047943eccd2f04e2d63f0ccb2dc3f9f04f11ca7"
+    ],
+    "distinct_bitmap_count": 64,
+    "opponent_state_xor": 215,
+    "expanded_scene_copy_reads_during_frame_cycles": 70535,
+    "expanded_scene_copy_read_page": 13,
+    "expanded_scene_copy_read_instruction": 18220,
+    "scene_split_reads_beyond_fixed_ram": 80,
+    "interrupts_scheduled_at_loop_boundaries": true,
+    "baseline_cycles_without_keys": true,
+    "key_cycles": [
+      {
+        "state": 18498,
+        "port": 65022,
+        "mask": 4,
+        "primary_bits": 4,
+        "entered_action": 1,
+        "released_action": 0
+      },
+      {
+        "state": 18581,
+        "port": 57342,
+        "mask": 4,
+        "primary_bits": 8,
+        "entered_action": 2,
+        "released_action": 0
+      }
+    ]
+  },
+  "archive_boot_with_rom": null,
+  "active_game_entry_proved": false,
+  "trdos_substituted": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

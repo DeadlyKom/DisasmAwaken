@@ -40,6 +40,24 @@
   "equal_points_draw_nothing": true,
   "temporary_opcodes_match_actual_caller": true,
   "code_writes_limited_to_selected_kernel": true,
+  "exact_main_and_alternate_AF_checked": true,
+  "direct_full_M1_and_R_checked": true,
+  "I_IM_IFF_preservation_checked": true,
+  "observed_M1_bounds": {
+    "shallow": [
+      62,
+      3626
+    ],
+    "steep": [
+      75,
+      3154
+    ],
+    "equal": [
+      7,
+      7
+    ]
+  },
+  "complete_joint_input_product_exhausted": false,
   "calls_stubbed": false,
   "irq_executed": false,
   "native_execution": false,

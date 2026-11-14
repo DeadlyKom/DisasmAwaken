@@ -19,7 +19,7 @@ for address in (0xA380, 0xA390):
         ["HL - позиция после последнего найденного ограничителя либо после исчерпанного прохода CPIR",
          "DE и BC восстановлены, SkipCrRecords записывает LF в Separator перед возвратом",
          "AF - F=#42 OR входной Carry, A=LF после SkipCrRecords либо текущий операнд Separator после SkipLfRecords"],
-        ["HL, AF"],
+        ["HL, AF, R, TextSelectState.Separator и шесть временных байтов CPU-стека"] if address == 0xA380 else ["HL, AF, R и четыре байта сохранённых DE, BC на CPU-стеке"],
         ["альтернативные и индексные регистры, I и IFF сохраняются, SP восстанавливается",
          "поиск не проверяет успех CPIR, финальный Z=1 сформирован DEC E и не доказывает найденный ограничитель",
          "лимит BC не перезагружается для каждого ограничителя, после исчерпания следующий CPIR с BC=0 сканирует 65536 байтов",
@@ -33,7 +33,7 @@ for address in (0xA36E, 0xA37A, 0xA374):
         (["HL, DE, BC, AF - результат PrintJustified после выбранного ограничителя, точные состояния описаны в JustifiedText.md"] if justified else
          ["HL - позиция остановки PrintText после выбранной записи",
           "DE и BC сохранены, AF - статус PrintText, описанный в TextStream.md"]),
-        ["HL, DE, BC, AF"] if justified else ["HL, AF"],
+        ["HL, DE, BC, AF, R, TextWindow.CursorX, TextWindow.CursorY, JustifyState.PrintWidth, bitmap, GlyphState.DispatchTarget и временные слова CPU-стека"] if justified else ["HL, AF, R, TextWindow.CursorX, TextWindow.CursorY, bitmap, GlyphState.DispatchTarget и временные слова CPU-стека" + (", TextSelectState.Separator" if address == 0xA36E else "")],
         ["сначала выполняется полный контракт SkipCrRecords либо SkipLfRecords, затем хвостовой JP в печататель",
          "у альтернативных и индексных регистров, I и IFF сохраняется исходное состояние, стек сбалансирован",
          "все ограничения поиска, состояния курсора, отказов и завершения вызываемых алгоритмов сохраняются"])

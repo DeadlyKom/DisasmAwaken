@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 109,
+  "resources": 1,
+  "archive_template_offset": 312,
+  "archive_template_address": 57675,
+  "target_template_offset": 315,
+  "target_template_bytes": 130,
+  "identical_prefix_bytes": 12,
+  "changed_header_offsets": [
+    12,
+    21
+  ],
+  "exact_suffix_offsets": [
+    336,
+    445
+  ],
+  "exact_suffix_bytes": 109,
+  "exact_suffix_sha256": "942258d8fa3a1274308368810e75cc2f8209d61c3f5c918161f8e66adf1a2a3f",
+  "archive_copy_target": 39869,
+  "archive_machine_copy_length": 512,
+  "archive_source_copy_length": 512,
+  "target_runtime_reader_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

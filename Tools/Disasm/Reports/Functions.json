@@ -70,14 +70,14 @@
   },
   {
     "region": "Action",
-    "name": "CreateClass17LinkedRecord",
+    "name": "CreateLinkedMissileRecord",
     "address": 24808,
     "slot": 17,
     "offset": 805,
-    "description": "Создание записи класса 17 из альтернативных компонент и обновление связи целевой записи",
+    "description": "Создание связанной ракеты игрока или персонажа из альтернативных компонент",
     "semantic_status": "described",
     "end_offset": 898,
-    "path": "Source/Action/CreateClass17LinkedRecord.asm"
+    "path": "Source/Action/CreateLinkedMissileRecord.asm"
   },
   {
     "region": "Action",
@@ -92,24 +92,24 @@
   },
   {
     "region": "Action",
-    "name": "ReleaseClass14Records",
+    "name": "ReleaseBoostDebrisRecords",
     "address": 24946,
     "slot": 17,
     "offset": 943,
-    "description": "Пометка всех активных записей класса 14 через повторный поиск от начала массива",
+    "description": "Освобождение всех активных записей мусора форсажа через повторный поиск",
     "semantic_status": "described",
     "end_offset": 954,
-    "path": "Source/Action/ReleaseClass14Records.asm"
+    "path": "Source/Action/ReleaseBoostDebrisRecords.asm"
   },
   {
     "region": "Action",
-    "name": "CreateRandomClass20Record",
+    "name": "CreateBoostDebrisRecord",
     "address": 24957,
     "slot": 17,
     "offset": 954,
     "end_offset": 1086,
-    "path": "Source/Action/CreateRandomClass20Record.asm",
-    "description": "Создание записи класса 20 из двух случайных компонент и транспонированного преобразования",
+    "path": "Source/Action/CreateBoostDebrisRecord.asm",
+    "description": "Создание случайной записи мусора форсажа, авторский T_TRASH",
     "semantic_status": "described"
   },
   {
@@ -213,13 +213,13 @@
   },
   {
     "region": "Action",
-    "name": "SpawnClass19AndUpdateList",
+    "name": "CreateCargoAndUpdateList",
     "address": 25623,
     "slot": 17,
     "offset": 1620,
     "end_offset": 1820,
-    "path": "Source/Action/SpawnClass19AndUpdateList.asm",
-    "description": "Создание записи класса 19 по двухбитовому счётчику и обновление списка кодом из сохранённого HL",
+    "path": "Source/Action/CreateCargoAndUpdateList.asm",
+    "description": "Создание груза по двухбитовому счётчику и обновление списка кодом из сохранённого HL",
     "semantic_status": "described"
   },
   {
@@ -972,14 +972,14 @@
   },
   {
     "region": "Action",
-    "name": "SelectPreferredByte",
+    "name": "SelectFuelStock",
     "address": 29947,
     "slot": 17,
     "offset": 5944,
-    "description": "Выбор ненулевого предпочтительного байта либо запасного значения с возвратом адреса выбранного поля",
+    "description": "Выбор топлива МРП при ненулевом запасе, иначе топлива ЛНП, с возвратом адреса поля",
     "semantic_status": "described",
     "end_offset": 5953,
-    "path": "Source/Action/SelectPreferredByte.asm"
+    "path": "Source/Action/SelectFuelStock.asm"
   },
   {
     "region": "Action",
@@ -2534,17 +2534,6 @@
   },
   {
     "region": "Action",
-    "name": "UnknownCF08",
-    "address": 53000,
-    "slot": 17,
-    "offset": 28424,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 28427,
-    "path": "Source/Action/UnknownCF08.asm"
-  },
-  {
-    "region": "Action",
     "name": "ClearWorkBuffer",
     "address": 53514,
     "slot": 17,
@@ -2985,6 +2974,17 @@
   },
   {
     "region": "Action",
+    "name": "DoubleRecordScale",
+    "address": 58783,
+    "slot": 17,
+    "offset": 34207,
+    "end_offset": 34208,
+    "path": "Source/Action/DoubleRecordScale.asm",
+    "description": "Дополнительное удвоение масштаба перед обновлением компонент",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "UpdateRecordComponents",
     "address": 58784,
     "slot": 17,
@@ -3018,13 +3018,13 @@
   },
   {
     "region": "Action",
-    "name": "ReleaseClass12Records",
+    "name": "ReleaseStationPartsOrRestoreOffsets",
     "address": 58975,
     "slot": 17,
     "offset": 34399,
     "end_offset": 34437,
-    "path": "Source/Action/ReleaseClass12Records.asm",
-    "description": "Обнуление двух байтов состояния и пометка всех активных записей класса 12 либо хвост восстановления смещений",
+    "path": "Source/Action/ReleaseStationPartsOrRestoreOffsets.asm",
+    "description": "Освобождение частей станции либо восстановление рабочих смещений",
     "semantic_status": "described"
   },
   {
@@ -3535,6 +3535,17 @@
   },
   {
     "region": "Action",
+    "name": "ReturnFromObjectState",
+    "address": 61308,
+    "slot": 17,
+    "offset": 36732,
+    "end_offset": 36733,
+    "path": "Source/Action/ReturnFromObjectState.asm",
+    "description": "Пустой вход с немедленным возвратом",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "AdvanceObjectOffsetRise",
     "address": 61309,
     "slot": 17,
@@ -3689,35 +3700,35 @@
   },
   {
     "region": "Action",
-    "name": "CheckClass17SpawnWindow",
+    "name": "CheckMissileSpawnWindow",
     "address": 61986,
     "slot": 17,
     "offset": 37410,
     "end_offset": 37455,
-    "path": "Source/Action/CheckClass17SpawnWindow.asm",
-    "description": "Проверка случайного окна создания класса 17 и загрузка байта допуска по полному классу",
+    "path": "Source/Action/CheckMissileSpawnWindow.asm",
+    "description": "Проверка случайного окна создания ракеты и загрузка байта допуска по полному классу",
     "semantic_status": "described"
   },
   {
     "region": "Action",
-    "name": "SpawnLinkedClass17AndContinue",
+    "name": "CreateMissileAndContinueOffsets",
     "address": 62031,
     "slot": 17,
     "offset": 37455,
     "end_offset": 37461,
-    "path": "Source/Action/SpawnLinkedClass17AndContinue.asm",
-    "description": "Создание класса 17 по текущей связи и продолжение общего расчёта смещений",
+    "path": "Source/Action/CreateMissileAndContinueOffsets.asm",
+    "description": "Создание ракеты по текущей связи и продолжение общего расчёта смещений",
     "semantic_status": "described"
   },
   {
     "region": "Action",
-    "name": "SpawnClass17FromCurrentLink",
+    "name": "CreateMissileFromCurrentLink",
     "address": 62037,
     "slot": 17,
     "offset": 37461,
     "end_offset": 37504,
-    "path": "Source/Action/SpawnClass17FromCurrentLink.asm",
-    "description": "Подготовка компонент и индексов текущей записи для общего создателя класса 17",
+    "path": "Source/Action/CreateMissileFromCurrentLink.asm",
+    "description": "Подготовка компонент и индексов текущей записи для создания связанной ракеты",
     "semantic_status": "described"
   },
   {
@@ -4272,6 +4283,17 @@
   },
   {
     "region": "Controls",
+    "name": "FillSpan31",
+    "address": 52917,
+    "slot": 22,
+    "offset": 3765,
+    "end_offset": 3767,
+    "description": "Обратное заполнение 31 байта при прямом входе",
+    "semantic_status": "described",
+    "path": "Source/Controls/FillSpan31.asm"
+  },
+  {
+    "region": "Controls",
     "name": "FillEvenSpanHead",
     "address": 52919,
     "slot": 22,
@@ -4287,7 +4309,7 @@
     "address": 52943,
     "slot": 22,
     "offset": 3791,
-    "description": "Последние 18 записей заполнителя, восстановление HL и чтение режима",
+    "description": "Последние 18 записей заполнителя, восстановление HL и чтение направления",
     "semantic_status": "described",
     "end_offset": 3833,
     "path": "Source/Controls/FillEvenSpanTail.asm"
@@ -4602,6 +4624,17 @@
   },
   {
     "region": "Controls",
+    "name": "ReturnUnfilledMask",
+    "address": 54529,
+    "slot": 22,
+    "offset": 5377,
+    "description": "Возврат маски архивной ветви незаполненного контура",
+    "semantic_status": "described",
+    "end_offset": 5380,
+    "path": "Source/Controls/ReturnUnfilledMask.asm"
+  },
+  {
+    "region": "Controls",
     "name": "LoadCircleMidpoint",
     "address": 54532,
     "slot": 22,
@@ -4782,7 +4815,7 @@
     "address": 56030,
     "slot": 23,
     "offset": 0,
-    "description": "Сохранение памяти по банкам, распаковка временного модуля и восстановление полётного кода",
+    "description": "Неиспользуемый блок сохранения памяти, распаковки временного модуля и восстановления полётного кода",
     "semantic_status": "described",
     "end_offset": 127,
     "path": "Source/Controls/RunTemporaryModule.asm"
@@ -5776,6 +5809,19 @@
   },
   {
     "region": "D3D",
+    "name": "SquarePreviewSignedWord",
+    "address": 59495,
+    "slot": 6,
+    "offset": 10343,
+    "end_offset": 10345,
+    "path": "Source/D3D/SquarePreviewSignedWord.asm",
+    "description": "Подготовка двух одинаковых знаковых сомножителей для общего умножения",
+    "semantic_status": "described",
+    "fragment_scope": "conditional_square_entry",
+    "fallthrough_continuation": 59497
+  },
+  {
+    "region": "D3D",
     "name": "MultiplyPreviewSignedWords",
     "address": 59497,
     "slot": 6,
@@ -6488,7 +6534,7 @@
     "address": 27804,
     "slot": 3,
     "offset": 2460,
-    "description": "Создание трёх развёрнутых обработчиков, фазовых таблиц и таблицы указателей эффекта",
+    "description": "Создание трёх развёрнутых обработчиков, фазовых таблиц и строк значений выборки",
     "semantic_status": "described",
     "end_offset": 2666,
     "path": "Source/Intro/InitializeLookupEffect.asm"
@@ -6583,6 +6629,17 @@
   },
   {
     "region": "IntroUnpack",
+    "name": "SetAttributeScanDest",
+    "address": 29844,
+    "slot": 3,
+    "offset": 11412,
+    "end_offset": 11415,
+    "description": "Выбор #FF01 и последовательный вход в условный обход атрибутов",
+    "semantic_status": "described",
+    "path": "Source/IntroUnpack/SetAttributeScanDest.asm"
+  },
+  {
+    "region": "IntroUnpack",
     "name": "ScanAttributeCountTail",
     "address": 29847,
     "slot": 3,
@@ -6624,6 +6681,17 @@
     "description": "Копирование экрана из выбранного окна C000 в 4000",
     "semantic_status": "described",
     "path": "Source/IntroUnpack/CopyScreenFromBankWindow.asm"
+  },
+  {
+    "region": "IntroUnpack",
+    "name": "UnpackTailGate",
+    "address": 29932,
+    "slot": 3,
+    "offset": 11500,
+    "end_offset": 11519,
+    "description": "Внутренний вызов распаковщика и проверка двух байтов после его возврата",
+    "semantic_status": "described",
+    "path": "Source/IntroUnpack/UnpackTailGate.asm"
   },
   {
     "region": "Map",
@@ -7358,7 +7426,7 @@
     "slot": 7,
     "offset": 8857,
     "end_offset": 8875,
-    "description": "Загрузка смещений и ненулевого начального состояния альтернативной пары C', E'",
+    "description": "Загрузка смещений и начального состояния отсечённого прохода",
     "semantic_status": "described",
     "path": "Source/Map/LoadClippedArcInputs.asm"
   },
@@ -11593,7 +11661,7 @@
     "slot": 4,
     "offset": 18973,
     "end_offset": 18995,
-    "description": "Сумма двух байтов банка 4 с возвратом банка языка 6",
+    "description": "Индекс модели из строки и базы списка D3D с возвратом LANG",
     "semantic_status": "described",
     "path": "Source/Station/SumBank4Index.asm"
   },
@@ -13381,25 +13449,25 @@
   },
   {
     "region": "Text",
-    "name": "ReadFieldLowerj",
+    "name": "PushUsedTonnage",
     "address": 49729,
     "slot": 5,
     "offset": 577,
     "description": "Добавление байта #9850 в стек выражений через общий байтовый вход",
     "semantic_status": "described",
     "end_offset": 588,
-    "path": "Source/Text/ReadFieldLowerj.asm"
+    "path": "Source/Text/PushUsedTonnage.asm"
   },
   {
     "region": "Text",
-    "name": "ReadFieldUpperJ",
+    "name": "PushTonnageCapacity",
     "address": 49740,
     "slot": 5,
     "offset": 588,
     "description": "Добавление байта #9851 в стек выражений",
     "semantic_status": "described",
     "end_offset": 594,
-    "path": "Source/Text/ReadFieldUpperJ.asm"
+    "path": "Source/Text/PushTonnageCapacity.asm"
   },
   {
     "region": "Text",
@@ -13898,47 +13966,47 @@
   },
   {
     "region": "Text",
-    "name": "IsByteMissingFromFour",
+    "name": "IsShipTypeMissingFromRow",
     "address": 50520,
     "slot": 5,
     "offset": 1368,
-    "description": "Проверка отсутствия выбранного байта в четырёхбайтовой записи",
+    "description": "Проверка отсутствия типа корабля в строке ограничений оснащения",
     "semantic_status": "described",
     "end_offset": 1399,
-    "path": "Source/Text/IsByteMissingFromFour.asm"
+    "path": "Source/Text/IsShipTypeMissingFromRow.asm"
   },
   {
     "region": "Text",
-    "name": "GetHighBitCode",
+    "name": "ReadShipEquipmentLimit",
     "address": 50551,
     "slot": 5,
     "offset": 1399,
-    "description": "Возврат кода 127 при снятом bit7 либо 1 при установленном",
+    "description": "Чтение предела количества корабельного оснащения из бита 7",
     "semantic_status": "described",
     "end_offset": 1418,
-    "path": "Source/Text/GetHighBitCode.asm"
+    "path": "Source/Text/ReadShipEquipmentLimit.asm"
   },
   {
     "region": "Text",
-    "name": "Property070",
+    "name": "ReadSecondaryEquipmentPrice",
     "address": 50570,
     "slot": 5,
     "offset": 1418,
     "description": "Чтение слова с шагом два по базе #95D4",
     "semantic_status": "described",
     "end_offset": 1424,
-    "path": "Source/Text/Property070.asm"
+    "path": "Source/Text/ReadSecondaryEquipmentPrice.asm"
   },
   {
     "region": "Text",
-    "name": "Property071",
+    "name": "ReadSecondaryEquipmentWeight",
     "address": 50576,
     "slot": 5,
     "offset": 1424,
     "description": "Чтение байта с шагом два по базе #9633",
     "semantic_status": "described",
     "end_offset": 1430,
-    "path": "Source/Text/Property071.asm"
+    "path": "Source/Text/ReadSecondaryEquipmentWeight.asm"
   },
   {
     "region": "Text",
@@ -13964,25 +14032,25 @@
   },
   {
     "region": "Text",
-    "name": "Property072",
+    "name": "IsSkimmerTypeMissingFromRow",
     "address": 50610,
     "slot": 5,
     "offset": 1458,
-    "description": "Проверка отсутствия байта #984A в записи таблицы #9484",
+    "description": "Проверка отсутствия типа скимера в строке оснащения",
     "semantic_status": "described",
     "end_offset": 1467,
-    "path": "Source/Text/Property072.asm"
+    "path": "Source/Text/IsSkimmerTypeMissingFromRow.asm"
   },
   {
     "region": "Text",
-    "name": "Property073",
+    "name": "ReadSkimmerEquipmentLimit",
     "address": 50619,
     "slot": 5,
     "offset": 1467,
-    "description": "Чтение кода старшего разряда по базе #98F6",
+    "description": "Чтение предела количества оснащения скимера из бита 7",
     "semantic_status": "described",
     "end_offset": 1473,
-    "path": "Source/Text/Property073.asm"
+    "path": "Source/Text/ReadSkimmerEquipmentLimit.asm"
   },
   {
     "region": "Text",
@@ -14052,36 +14120,36 @@
   },
   {
     "region": "Text",
-    "name": "Property080",
+    "name": "ReadShipSaleField",
     "address": 50697,
     "slot": 5,
     "offset": 1545,
     "description": "Чтение байта по индексу из CPU-стека с шагом пять и базой #9806",
     "semantic_status": "described",
     "end_offset": 1551,
-    "path": "Source/Text/Property080.asm"
+    "path": "Source/Text/ReadShipSaleField.asm"
   },
   {
     "region": "Text",
-    "name": "Property086",
+    "name": "ReadSkimmerPriceField",
     "address": 50703,
     "slot": 5,
     "offset": 1551,
     "description": "Чтение слова по индексу из CPU-стека с шагом пять и базой #9826",
     "semantic_status": "described",
     "end_offset": 1557,
-    "path": "Source/Text/Property086.asm"
+    "path": "Source/Text/ReadSkimmerPriceField.asm"
   },
   {
     "region": "Text",
-    "name": "Property087",
+    "name": "ReadSkimmerLoadAddend",
     "address": 50709,
     "slot": 5,
     "offset": 1557,
     "description": "Чтение байта по индексу из CPU-стека с шагом пять и базой #9829",
     "semantic_status": "described",
     "end_offset": 1563,
-    "path": "Source/Text/Property087.asm"
+    "path": "Source/Text/ReadSkimmerLoadAddend.asm"
   },
   {
     "region": "Text",
@@ -15438,17 +15506,6 @@
   },
   {
     "region": "ThreeD",
-    "name": "UnknownCF08",
-    "address": 53000,
-    "slot": 19,
-    "offset": 3848,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 3851,
-    "path": "Source/ThreeD/UnknownCF08.asm"
-  },
-  {
-    "region": "ThreeD",
     "name": "ClearWorkBuffer",
     "address": 53514,
     "slot": 19,
@@ -15853,18 +15910,5 @@
     "path": "Source/Voxel/DrawProjectedEffect.asm",
     "description": "Проекция двух углов эффекта и передача прямоугольника на отсечение",
     "semantic_status": "described"
-  },
-  {
-    "region": "D3D",
-    "name": "SquarePreviewSignedWord",
-    "address": 59495,
-    "slot": 6,
-    "offset": 10343,
-    "end_offset": 10345,
-    "path": "Source/D3D/SquarePreviewSignedWord.asm",
-    "description": "Подготовка двух одинаковых знаковых сомножителей для общего умножения",
-    "semantic_status": "described",
-    "fragment_scope": "conditional_square_entry",
-    "fallthrough_continuation": 59497
   }
 ]

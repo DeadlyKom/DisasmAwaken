@@ -26,6 +26,19 @@
   "effect_body_executed": false,
   "all_joint_inputs_exhausted": false,
   "refresh_and_timing_proved": false,
+  "consumer_refresh_proved": true,
+  "consumer_m1_paths": {
+    "9": 65536,
+    "13": 65536,
+    "17": 2560,
+    "21": 1280,
+    "22": 1280
+  },
+  "consumer_R_initial_values": 256,
+  "consumer_R_bit7_preserved": true,
+  "effect_call_included_in_consumer_m1": true,
+  "apply_parameter_set_refresh_proved": false,
+  "effect_body_refresh_proved": false,
   "irq_executed": false,
   "assembly_executed": false,
   "native_execution": false

@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "method": "original_four_type_match_all_initial_refresh_values",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "source_sha256": "92f1f656d150b82844697329625d4fea9607f9a62181e8558091f6594e4a27b1",
+  "total_cases": 61440,
+  "cases_by_entry_and_base": {
+    "0xc558_0x9400": 15360,
+    "0xc5b2_0x9484": 15360,
+    "0xc55e_0xa000": 15360,
+    "0xc55e_0xffff": 15360
+  },
+  "cases_by_first_match_or_absence": {
+    "0": 13824,
+    "1": 12288,
+    "2": 12288,
+    "3": 11520,
+    "4": 11520
+  },
+  "selector_table_alias_cases": 3840,
+  "initial_R_values": 256,
+  "R_bit7_preserved": true,
+  "R_low7_wrap_checked": true,
+  "M1_by_first_match_0_1_2_3_or_absence": {
+    "C558": [
+      12,
+      15,
+      18,
+      19,
+      21
+    ],
+    "C5B2": [
+      13,
+      16,
+      19,
+      20,
+      22
+    ],
+    "C55E": [
+      10,
+      13,
+      16,
+      17,
+      19
+    ]
+  },
+  "all_registers_except_T_and_entire_RAM_checked": true,
+  "original_return_word_and_consumed_index_unchanged": true,
+  "wrapped_four_byte_read_at_FFFF_checked": true,
+  "all_index_value_and_flag_combinations_proved": false,
+  "arbitrary_stack_addresses_proved": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

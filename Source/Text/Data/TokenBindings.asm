@@ -137,11 +137,11 @@ LowerR:         FScriptToken {
                 }
 LowerJ:         FScriptToken {
                     #6A,                                                        ; Symbol, исходный ASCII-код
-                    @Text.ReadFieldLowerj.Entry                                 ; Handler, адрес из исходной записи
+                    @Text.PushUsedTonnage.Entry                                 ; Handler, адрес из исходной записи
                 }
 UpperJ:         FScriptToken {
                     #4A,                                                        ; Symbol, исходный ASCII-код
-                    @Text.ReadFieldUpperJ.Entry                                 ; Handler, адрес из исходной записи
+                    @Text.PushTonnageCapacity.Entry                             ; Handler, адрес из исходной записи
                 }
 LowerY:         FScriptToken {
                     #79,                                                        ; Symbol, исходный ASCII-код
@@ -288,27 +288,27 @@ LowerV:         FScriptToken {
                 }
 LowerS3:        FScriptToken {
                     #73,                                                        ; Symbol, исходный ASCII-код
-                    @Text.IsByteMissingFromFour.Entry                           ; Handler, адрес из исходной записи
+                    @Text.IsShipTypeMissingFromRow.Entry                        ; Handler, адрес из исходной записи
                 }
 LowerK:         FScriptToken {
                     #6B,                                                        ; Symbol, исходный ASCII-код
-                    @Text.GetHighBitCode.Entry                                  ; Handler, адрес из исходной записи
+                    @Text.ReadShipEquipmentLimit.Entry                          ; Handler, адрес из исходной записи
                 }
 LowerC2:        FScriptToken {
                     #63,                                                        ; Symbol, исходный ASCII-код
-                    @Text.Property070.Entry                                     ; Handler, адрес из исходной записи
+                    @Text.ReadSecondaryEquipmentPrice.Entry                     ; Handler, адрес из исходной записи
                 }
 LowerV2:        FScriptToken {
                     #76,                                                        ; Symbol, исходный ASCII-код
-                    @Text.Property071.Entry                                     ; Handler, адрес из исходной записи
+                    @Text.ReadSecondaryEquipmentWeight.Entry                    ; Handler, адрес из исходной записи
                 }
 LowerS4:        FScriptToken {
                     #73,                                                        ; Symbol, исходный ASCII-код
-                    @Text.Property072.Entry                                     ; Handler, адрес из исходной записи
+                    @Text.IsSkimmerTypeMissingFromRow.Entry                     ; Handler, адрес из исходной записи
                 }
 LowerK2:        FScriptToken {
                     #6B,                                                        ; Symbol, исходный ASCII-код
-                    @Text.Property073.Entry                                     ; Handler, адрес из исходной записи
+                    @Text.ReadSkimmerEquipmentLimit.Entry                       ; Handler, адрес из исходной записи
                 }
 LowerC3:        FScriptToken {
                     #63,                                                        ; Symbol, исходный ASCII-код
@@ -336,7 +336,7 @@ LowerT:         FScriptToken {
                 }
 LowerS6:        FScriptToken {
                     #73,                                                        ; Symbol, исходный ASCII-код
-                    @Text.Property080.Entry                                     ; Handler, адрес из исходной записи
+                    @Text.ReadShipSaleField.Entry                               ; Handler, адрес из исходной записи
                 }
 LowerS7:        FScriptToken {
                     #73,                                                        ; Symbol, исходный ASCII-код
@@ -360,11 +360,11 @@ LowerG:         FScriptToken {
                 }
 LowerC7:        FScriptToken {
                     #63,                                                        ; Symbol, исходный ASCII-код
-                    @Text.Property086.Entry                                     ; Handler, адрес из исходной записи
+                    @Text.ReadSkimmerPriceField.Entry                           ; Handler, адрес из исходной записи
                 }
 LowerV3:        FScriptToken {
                     #76,                                                        ; Symbol, исходный ASCII-код
-                    @Text.Property087.Entry                                     ; Handler, адрес из исходной записи
+                    @Text.ReadSkimmerLoadAddend.Entry                           ; Handler, адрес из исходной записи
                 }
 LowerC8:        FScriptToken {
                     #63,                                                        ; Symbol, исходный ASCII-код

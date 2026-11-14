@@ -1,0 +1,296 @@
+{
+  "passed": true,
+  "method": "original_four_intersections_refresh_witnesses",
+  "cases": 16,
+  "profiles": [
+    {
+      "kind": 0,
+      "entry": 55646,
+      "cached": false,
+      "initial_R": 0,
+      "final_R": 112,
+      "observed_M1": 240,
+      "output_point": [
+        0,
+        0
+      ]
+    },
+    {
+      "kind": 0,
+      "entry": 55646,
+      "cached": false,
+      "initial_R": 149,
+      "final_R": 133,
+      "observed_M1": 240,
+      "output_point": [
+        0,
+        0
+      ]
+    },
+    {
+      "kind": 0,
+      "entry": 55649,
+      "cached": true,
+      "initial_R": 0,
+      "final_R": 31,
+      "observed_M1": 159,
+      "output_point": [
+        0,
+        0
+      ]
+    },
+    {
+      "kind": 0,
+      "entry": 55649,
+      "cached": true,
+      "initial_R": 149,
+      "final_R": 180,
+      "observed_M1": 159,
+      "output_point": [
+        0,
+        0
+      ]
+    },
+    {
+      "kind": 1,
+      "entry": 55721,
+      "cached": false,
+      "initial_R": 0,
+      "final_R": 118,
+      "observed_M1": 246,
+      "output_point": [
+        255,
+        255
+      ]
+    },
+    {
+      "kind": 1,
+      "entry": 55721,
+      "cached": false,
+      "initial_R": 149,
+      "final_R": 139,
+      "observed_M1": 246,
+      "output_point": [
+        255,
+        255
+      ]
+    },
+    {
+      "kind": 1,
+      "entry": 55724,
+      "cached": true,
+      "initial_R": 0,
+      "final_R": 23,
+      "observed_M1": 151,
+      "output_point": [
+        255,
+        255
+      ]
+    },
+    {
+      "kind": 1,
+      "entry": 55724,
+      "cached": true,
+      "initial_R": 149,
+      "final_R": 172,
+      "observed_M1": 151,
+      "output_point": [
+        255,
+        255
+      ]
+    },
+    {
+      "kind": 2,
+      "entry": 55796,
+      "cached": false,
+      "initial_R": 0,
+      "final_R": 119,
+      "observed_M1": 247,
+      "output_point": [
+        0,
+        0
+      ]
+    },
+    {
+      "kind": 2,
+      "entry": 55796,
+      "cached": false,
+      "initial_R": 149,
+      "final_R": 140,
+      "observed_M1": 247,
+      "output_point": [
+        0,
+        0
+      ]
+    },
+    {
+      "kind": 2,
+      "entry": 55799,
+      "cached": true,
+      "initial_R": 0,
+      "final_R": 34,
+      "observed_M1": 162,
+      "output_point": [
+        0,
+        0
+      ]
+    },
+    {
+      "kind": 2,
+      "entry": 55799,
+      "cached": true,
+      "initial_R": 149,
+      "final_R": 183,
+      "observed_M1": 162,
+      "output_point": [
+        0,
+        0
+      ]
+    },
+    {
+      "kind": 3,
+      "entry": 55890,
+      "cached": false,
+      "initial_R": 0,
+      "final_R": 107,
+      "observed_M1": 235,
+      "output_point": [
+        255,
+        255
+      ]
+    },
+    {
+      "kind": 3,
+      "entry": 55890,
+      "cached": false,
+      "initial_R": 149,
+      "final_R": 128,
+      "observed_M1": 235,
+      "output_point": [
+        255,
+        255
+      ]
+    },
+    {
+      "kind": 3,
+      "entry": 55893,
+      "cached": true,
+      "initial_R": 0,
+      "final_R": 25,
+      "observed_M1": 153,
+      "output_point": [
+        255,
+        255
+      ]
+    },
+    {
+      "kind": 3,
+      "entry": 55893,
+      "cached": true,
+      "initial_R": 149,
+      "final_R": 174,
+      "observed_M1": 153,
+      "output_point": [
+        255,
+        255
+      ]
+    }
+  ],
+  "product_helper_profiles": [
+    {
+      "kind": 0,
+      "entry": 55522,
+      "caller_entry": 55646,
+      "return_pc": 55649,
+      "initial_R": 1,
+      "final_R": 81,
+      "observed_M1": 80
+    },
+    {
+      "kind": 0,
+      "entry": 55522,
+      "caller_entry": 55646,
+      "return_pc": 55649,
+      "initial_R": 150,
+      "final_R": 230,
+      "observed_M1": 80
+    },
+    {
+      "kind": 1,
+      "entry": 55553,
+      "caller_entry": 55721,
+      "return_pc": 55724,
+      "initial_R": 1,
+      "final_R": 95,
+      "observed_M1": 94
+    },
+    {
+      "kind": 1,
+      "entry": 55553,
+      "caller_entry": 55721,
+      "return_pc": 55724,
+      "initial_R": 150,
+      "final_R": 244,
+      "observed_M1": 94
+    },
+    {
+      "kind": 2,
+      "entry": 55584,
+      "caller_entry": 55796,
+      "return_pc": 55799,
+      "initial_R": 1,
+      "final_R": 85,
+      "observed_M1": 84
+    },
+    {
+      "kind": 2,
+      "entry": 55584,
+      "caller_entry": 55796,
+      "return_pc": 55799,
+      "initial_R": 150,
+      "final_R": 234,
+      "observed_M1": 84
+    },
+    {
+      "kind": 3,
+      "entry": 55615,
+      "caller_entry": 55890,
+      "return_pc": 55893,
+      "initial_R": 1,
+      "final_R": 82,
+      "observed_M1": 81
+    },
+    {
+      "kind": 3,
+      "entry": 55615,
+      "caller_entry": 55890,
+      "return_pc": 55893,
+      "initial_R": 150,
+      "final_R": 231,
+      "observed_M1": 81
+    }
+  ],
+  "product_helper_cases": 8,
+  "all_four_product_helpers_have_changed_R_witness": true,
+  "outer_CALL_excluded_from_product_M1": true,
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "original_physical_files_checked": [
+    4,
+    7
+  ],
+  "all_eight_entries_have_changed_R_witness": true,
+  "exact_R_from_observed_opcode_prefix_M1_checked": true,
+  "original_default_bounds_only": true,
+  "points": [
+    0,
+    0,
+    64,
+    64
+  ],
+  "all_coordinate_register_and_mutable_bound_combinations_proved": false,
+  "whole_RAM_write_sequence_T_or_hardware_bus_proved": false,
+  "original_children_executed": true,
+  "IRQ_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

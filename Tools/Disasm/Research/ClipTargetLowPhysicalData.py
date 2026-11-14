@@ -1,4 +1,4 @@
-"""Оставшиеся физические части младшей страницы, без рабочих STRUCT и спорного CF08."""
+"""Физические младшие адресные байты отдельно от наложенных рабочих STRUCT."""
 import json,re
 from CheckIntro import ROOT
 from PreviewSceneTables import render as render_records,parse as parse_records
@@ -6,6 +6,10 @@ from PreviewSceneTables import render as render_records,parse as parse_records
 FIELDS=tuple(('SecondSides'+format(i,'X'),1,'младший байт адреса при младшей тетраде второго кода '+format(i,'X')) for i in range(16))
 TABLES=[]
 for slot,origin,region in ((17,0x6000,'Action'),(19,0xC000,'ThreeD')):
+    start = 0xCF08 - origin
+    TABLES.append((slot, origin, (region + 'ClipTargetLowAlias',
+        'Source/' + region + '/Data/ClipTargetLowAlias.asm', start, start + 3,
+        'FClipTargetLowAlias', FIELDS[8:11], ('Row0Tail',))))
     for row in (1,2):
         start=0xCF00+16*row-origin
         TABLES.append((slot,origin,(region+'ClipTargetLowRow'+str(row),'Source/'+region+'/Data/ClipTargetLowRow'+str(row)+'.asm',
@@ -32,9 +36,9 @@ def validate_sources(sources):
             if index in rows:
                 assert raw[offset]+256*raw[offset+256]==rows[index]['target'];count+=1
             else:assert raw[offset]==0
-    assert count==144
+    assert count==150
     assert all(sources[slot][0xCF08-origin:0xCF0B-origin]==bytes.fromhex('F3AFC9') for slot,origin in ((17,0x6000),(19,0xC000)))
-    return dict(low_page_bytes=438,valid_low_entries=144,untouched_cf08_bytes=6)
+    return dict(low_page_bytes=444,valid_low_entries=150,cf08_table_bytes=6)
 
 
 def render(source,origin,table):
@@ -65,7 +69,8 @@ def parse(text,origin,table):
 
 def structures():
     lines=[]
-    for name,fields in (('FClipTargetLowRow',FIELDS),('FClipTargetLowHead',FIELDS[:11]),('FClipTargetLowTail',FIELDS[11:])):
+    for name,fields in (('FClipTargetLowRow',FIELDS),('FClipTargetLowHead',FIELDS[:11]),
+                        ('FClipTargetLowTail',FIELDS[11:]), ('FClipTargetLowAlias',FIELDS[8:11])):
         lines+=['                ; Физическая часть строки младших адресов, пропущенные части заняты отдельными структурами',
                 '                struct '+name]
         for field,width,meaning in fields:lines.append((field.ljust(16)+'db #00').ljust(80)+'; '+meaning)

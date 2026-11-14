@@ -1,6 +1,7 @@
 """E40F..E4A5, вставка в исходную связанную очередь и запись данных через SP."""
 from collections import Counter
 from itertools import product
+from functools import cache
 import json
 from ClassifyControlsTextDisplay import ROOT
 from CheckActionParameterActivation import flat_action
@@ -24,6 +25,8 @@ def main():
     carry_zero_offset = Counter()
     touched = set()
     flow = next(r for r in json.loads((ROOT / 'Tools/Disasm/Reports/ControlFlow.json').read_text('utf-8')) if r['name'] == 'Action')
+    # Сохранение стоимости неизменного диапазона, список инструкций этого запуска не изменяется.
+    @cache
     def cost(start, end):
         return sum(2 if i['hex'][:2] in ('cb', 'dd', 'ed', 'fd') else 1 for i in flow['instructions'] if start <= i['address'] < end)
 
@@ -134,12 +137,18 @@ def main():
         simulator.registers[:] = initial
         memory.writes = []
         memory.recording = True
+        measured_m1 = 0
         for _ in range(400):
             if simulator.registers[PC] in (0xE0E2, 0xE4A6):
                 break
+            before_r = simulator.registers[15]
             simulator.run()
+            increment = (simulator.registers[15] - before_r) & 127
+            assert increment in (1, 2)
+            measured_m1 += increment
         else:
             raise AssertionError('граница вставки')
+        assert measured_m1 == m1, (path, 'full M1', measured_m1, m1)
         memory.recording = False
         compared = (*range(13), 14, 15, *range(16, 24), PC, 26, 27)
         assert all(wanted[i] == simulator.registers[i] for i in compared), (path, depth, node_depths, offsets,
@@ -170,6 +179,7 @@ def main():
     assert set(counts) == {a + b for a in ('insert_', 'full_') for b in ('head', 'tail', 'middle')}
     report = dict(passed=True, total_cases=counts.total(), paths=dict(counts), zero_offset_borrow_paths=dict(carry_zero_offset),
         method='independent_finite_linked_list_and_overlapping_payload_oracle', exact_registers_flags_refresh_sp=True,
+        full_M1_count_compared_not_only_R_modulo_128=True,
         every_ram_byte_and_write_multiplicity_checked=True, original_sign_only_compare_with_borrow_preserved=True,
         tested_node_counts=list(range(19)), free_offset_domain='00,0E,..,EE or FC full', node_stride=14,
         payload_offsets_written=list(range(3, 14)), offsets_1_and_2_preserved=True, push_af_low_byte_overwritten=True,

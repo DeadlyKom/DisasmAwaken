@@ -1,5 +1,16 @@
 {
   "passed": true,
+  "disabled_entry": {
+    "cases": 65536,
+    "all_af_words": true,
+    "exact_refresh_m1": 1,
+    "ordinary_context_and_i_im_iff_preserved": true,
+    "both_iff_values_without_irq": true,
+    "no_cpu_memory_writes": true,
+    "all_banks_unchanged": true,
+    "no_out": true
+  },
+  "final_ix_matches_real_finish_script": true,
   "cases": 38,
   "completed": 28,
   "branches": {

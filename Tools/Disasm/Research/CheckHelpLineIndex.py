@@ -2,6 +2,7 @@
 import collections,json,random
 from ProbeShipPreviewCallbacks import Fixture,ROOT,make_context,payload,put
 from CheckJustifiedText import reference as layout
+from CheckStationFlightCycle import ENTRIES
 from skoolkit.simutils import PC,SP
 
 
@@ -22,6 +23,9 @@ def expected(text,selector,width,height,widths,bc):
 def main():
  _,_,base=make_context();raw=payload(8);base[7][0x1B00:0x1B00+len(raw)]=list(raw);fixture=Fixture(base);m=fixture.memory;s=fixture.sim;initial=fixture.initial
  widths=list(m[0x8900:0x8A00]);counts=collections.Counter();maximum=0;actual_records=raw[0x8E2:].count(10)-1;rng=random.Random(0xDB00)
+ declared_length=ENTRIES[8]['length'];logical_records=raw[0x8E2:declared_length].count(10)-1
+ suffix_start=0xDB00+declared_length;suffix_first_lf=0xDB00+raw.index(10,declared_length)
+ assert (logical_records,actual_records,suffix_start,suffix_first_lf)==(8,9,0xF221,0xF27B)
  def check(text,selector,width,height,boundary=False):
   nonlocal maximum
   m.out7ffd(0x17);m[0x6306]=0x17;put(m,0xE3E2,text);put(m,0xDB7C,bytes([0xA7])*2048)
@@ -42,11 +46,19 @@ def main():
   assert r[8]*256+r[9]==0xDB7C+2*n and r[10:12]==initial[10:12] and r[16:24]==initial[16:24] and r[SP]==0x8000
   assert (m[0x6320],m[0x6321])==(x,y) and bytes(m[0xAED5:0xAED8])==bytes((0x68,0x48,0x26)) and bytes(m.banks[5][:6912])==before_screen
   counts['normal_index_passes']+=1;counts['rows_indexed']+=n
+  return pointers
  # Проверка всех реально отделённых LF-записей дискового HELP, разных размеров и раннего выхода по высоте.
  text=raw[0x8E2:]+bytes([10])*1024
  for selector in range(actual_records):
   for width in (96,168,248):
-   for height in (8,13,24,192):check(text,selector,width,height)
+   for height in (8,13,24,192):
+    pointers=check(text,selector,width,height)
+    if selector<logical_records:
+     assert all(address<suffix_start for address in pointers)
+     counts['logical_help_passes']+=1
+    else:
+     assert pointers[0]==suffix_start and all(address<=suffix_first_lf for address in pointers)
+     counts['physical_suffix_passes']+=1
  # Проверка каждого байта селектора на читаемых искусственных записях, поиск использует настоящий SkipLfRecords.
  for selector in range(256):
   text=bytes([10])*(selector+1)+b'ONE TWO THREE FOUR\rFIVE SIX\n'+bytes([10])*1024
@@ -66,6 +78,8 @@ def main():
  assert s.registers[4]*256+s.registers[5]==row+1
  counts['nonprogress_stopped_before_repeated_store']+=1
  report=dict(passed=True,cases_by_path=dict(counts),actual_disk_records=actual_records,all_256_selector_bytes=True,entire_2048_byte_cache_and_end_guard_checked=True,
+  logical_help_records=logical_records,physical_suffix_selector=logical_records,
+  physical_suffix_first_line=suffix_start,physical_suffix_first_lf=suffix_first_lf,
   independent_lf_selection_and_justified_row_layout=True,exact_main_index_alternate_context=True,final_flags_from_actual_zero_fill_ldi=True,
   maximum_rows_probed=maximum,safe_complete_domain_rows=[1,1023],n_1024_yields_ldir_count_65535=True,destructive_boundary_ldir_not_executed=True,
   glyph_prefix_restored=True,no_bitmap_writes=True,nonprogress_height_14_proved=True,irq_executed=False,native_execution=False,assembly_executed=False)

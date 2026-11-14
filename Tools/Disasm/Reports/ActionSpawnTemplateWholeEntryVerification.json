@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "total_cases": 3072,
+  "original_banked_seeded_indices": true,
+  "all_original_template_pointers": true,
+  "assembly_executed": false,
+  "outcomes": {
+    "no_slot": 1024,
+    "created_first": 1024,
+    "skipped_FF_created_second": 1024
+  },
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "original_physical_files_checked": [
+    17,
+    22,
+    23
+  ],
+  "original_common_code_relocation_checked": true,
+  "original_font_and_control_bank_composition_checked": true,
+  "actual_Entry_to_external_RET_executed": true,
+  "CPU_state_not_reset_at_template_loop": true,
+  "all_1664_pool_bytes_compared": true,
+  "original_single_row_templates_unmodified": true,
+  "no_slot_preserves_both_flags_and_pending_16": true,
+  "successful_creation_writes_class_12_state_09": true,
+  "FF_skip_clears_first_reuse_and_creates_second_record": true,
+  "SP_IX_AF_and_success_HL_DE_BC_checked": true,
+  "all_registers_full_RAM_R_T_and_write_order_not_independently_compared": true,
+  "saved_word_branch_executed": false,
+  "IRQ_executed": false,
+  "native_game_loop_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "archived_snapshots": 1216,
+  "removed_expanded_files": 22492,
+  "archived_logical_bytes": 5559571678,
+  "unique_content_objects": 11827,
+  "unique_content_bytes": 2754379662,
+  "archive_bytes": 344358186,
+  "archive": "Tools/Disasm/Research/Archives/RecentSnapshots-20261109-Awaken.zip",
+  "archive_sha256": "7b2520d54b78409df9473eda1ae9cbfa9c6e264d04f285c86d596b2277fee4ad",
+  "retained_candidates": [
+    "AnimatedVariantCodeScoped",
+    "EventActionCodeScoped",
+    "PeriodicVariantCodeScoped"
+  ],
+  "active_files_checked": 7734,
+  "active_files_unchanged": true,
+  "originals_and_research_scripts_preserved": true,
+  "snapshot_directory_guards_preserved": true,
+  "assembly_executed": false
+}

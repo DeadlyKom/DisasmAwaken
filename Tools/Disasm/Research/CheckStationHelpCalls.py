@@ -4,10 +4,12 @@ from ProbeShipPreviewCallbacks import Fixture,ROOT,make_context,payload,put
 from CheckHelpLineIndex import expected as line_index
 from CheckJustifiedText import reference as justified
 from skoolkit.simutils import SP
+from CheckActionParameterActivation import RecordedBanks
+from ReferenceControlsPointRespawn import refresh
 
 
 def main():
- _,_,base=make_context();raw=payload(8);base[7][0x1B00:0x1B00+len(raw)]=list(raw);fixture=Fixture(base);m=fixture.memory;s=fixture.sim;initial=fixture.initial
+ _,_,base=make_context();raw=payload(8);base[7][0x1B00:0x1B00+len(raw)]=list(raw);fixture=Fixture(base,memory_type=RecordedBanks);m=fixture.memory;s=fixture.sim;initial=fixture.initial
  widths=list(m[0x8900:0x8A00]);counts=collections.Counter()
  def prepare(page,width,height):
   m.out7ffd(page);m[0x6306]=page;put(m,0x7FFE,(255,63));s.registers[:]=initial
@@ -46,10 +48,16 @@ def main():
  # Проверка всех AF и всех прежних байтов Style на исходной пятибайтовой процедуре.
  prepare(0x10,96,192)
  for af in range(65536):
-  put(m,0x7FFE,(255,63));s.registers[:]=initial;r=s.registers;r[0],r[1]=af>>8,af&255;m[0xBD26]=(r[0]^r[1]);s.run(start=0x6A7E,stop=0x3FFF)
+  put(m,0x7FFE,(255,63));s.registers[:]=initial;r=s.registers;r[0],r[1]=af>>8,af&255;m[0xBD26]=(r[0]^r[1])
+  r[14]=(af>>8)^r[1];r[15]=af&255;r[26]=(af>>8)&1;r[27]=(af>>8)%3
+  before=r.copy();m.writes=[];m.recording=True;s.run(start=0x6A7E,stop=0x3FFF);m.recording=False
+  assert r[15]==refresh(before[15],3) and all(r[i]==before[i] for i in (14,26,27))
+  assert m.writes==[(2,0x3D26,0)] and not fixture.trace.writes
   assert r[:2]==[0,0x44] and r[2:12]==initial[2:12] and r[16:24]==initial[16:24] and r[SP]==0x8000 and m[0xBD26]==0
   counts['disable_wrap_all_af']+=1
- report=dict(passed=True,cases_by_path=dict(counts),real_bank_switch_helpers_and_help_instructions=True,both_screen_page_bits=True,
+ report=dict(passed=True,cases_by_path=dict(counts),disable_wrap_exact_refresh_m1=3,disable_wrap_i_im_iff_preserved=True,
+  disable_wrap_both_iff_values_without_irq=True,disable_wrap_only_style_byte_written=True,
+  real_bank_switch_helpers_and_help_instructions=True,both_screen_page_bits=True,
   independent_line_index_and_print_layout=True,entire_cache_and_stored_word_checked=True,irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/StationHelpCallsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 

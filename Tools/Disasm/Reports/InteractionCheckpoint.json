@@ -1,13 +1,13 @@
 {
   "status": "in_progress",
   "all_plan_stages_completed": false,
-  "fragments": 1436,
-  "described": 1434,
+  "fragments": 1438,
+  "described": 1436,
   "unknown": 2,
   "unproved_contracts": 1,
   "named_without_contract": 1,
-  "instruction_count": 50947,
-  "unclassified_bytes": 15519,
+  "instruction_count": 50950,
+  "unclassified_bytes": 13917,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -5019,7 +5019,7 @@
     ],
     "table_role_proved": true,
     "decoded_regions": 20,
-    "decoded_instructions": 50909,
+    "decoded_instructions": 50950,
     "explicit_references_to_cf08_cf0a": [],
     "raw_words_disk_offsets": {
       "CF08": [
@@ -5045,6 +5045,284 @@
       198
     ],
     "target_exclusion_cases": 1024,
+    "object_dispatch_target_exclusion": [
+      {
+        "dispatcher": "DispatchRecordClass",
+        "jump": 25839,
+        "table": 25840,
+        "profiles": 256,
+        "distinct_targets": 67,
+        "page_cf_targets": 0
+      },
+      {
+        "dispatcher": "DispatchObjectState.CallHandler",
+        "jump": 63581,
+        "table": 61264,
+        "profiles": 256,
+        "distinct_targets": 108,
+        "page_cf_targets": 0
+      },
+      {
+        "dispatcher": "HandleLinkedTargetState.SelectSaved",
+        "jump": 61813,
+        "table": 61264,
+        "profiles": 256,
+        "distinct_targets": 108,
+        "page_cf_targets": 0
+      },
+      {
+        "dispatcher": "HandleLinkedPhaseState.SelectSaved",
+        "jump": 62150,
+        "table": 61264,
+        "profiles": 256,
+        "distinct_targets": 108,
+        "page_cf_targets": 0
+      }
+    ],
+    "registered_indirect_sources": {
+      "indirect_jump_sites": {
+        "Action": [
+          25839,
+          27903,
+          28493,
+          45043,
+          49264,
+          51602,
+          53650,
+          56222,
+          56231,
+          56242,
+          56252,
+          61813,
+          62150,
+          63581
+        ],
+        "ThreeD": [
+          49264,
+          51602,
+          53650,
+          56222,
+          56231,
+          56242,
+          56252
+        ]
+      },
+      "known_bank3_callback_sources": [
+        {
+          "branch": 31264,
+          "load": 31261,
+          "target": 60416
+        },
+        {
+          "branch": 31834,
+          "load": 31831,
+          "target": 60416
+        },
+        {
+          "branch": 59993,
+          "load": 59988,
+          "target": 60443
+        },
+        {
+          "branch": 63244,
+          "load": 63241,
+          "target": 60416
+        }
+      ],
+      "known_vector_sources": [
+        {
+          "branch": 27306,
+          "load": 27302,
+          "target": 27309
+        },
+        {
+          "branch": 27709,
+          "load": 27705,
+          "target": 27712
+        },
+        {
+          "branch": 27822,
+          "load": 27818,
+          "target": 27825
+        },
+        {
+          "branch": 28110,
+          "load": 28106,
+          "target": 28113
+        },
+        {
+          "branch": 44292,
+          "load": 44288,
+          "target": 44295
+        },
+        {
+          "branch": 57673,
+          "load": 57669,
+          "target": 57676
+        }
+      ],
+      "known_multiply_sources": [
+        {
+          "branch": 27924,
+          "load": 27920,
+          "target": 27927
+        },
+        {
+          "branch": 27938,
+          "load": 27934,
+          "target": 27941
+        },
+        {
+          "branch": 27951,
+          "load": 27947,
+          "target": 27954
+        },
+        {
+          "branch": 28287,
+          "load": 28283,
+          "target": 28290
+        },
+        {
+          "branch": 28306,
+          "load": 28302,
+          "target": 28309
+        },
+        {
+          "branch": 28325,
+          "load": 28321,
+          "target": 28328
+        },
+        {
+          "branch": 44881,
+          "load": 44877,
+          "target": 44884
+        },
+        {
+          "branch": 44895,
+          "load": 44891,
+          "target": 44898
+        },
+        {
+          "branch": 44914,
+          "load": 44910,
+          "target": 44917
+        },
+        {
+          "branch": 44936,
+          "load": 44932,
+          "target": 44939
+        },
+        {
+          "branch": 44951,
+          "load": 44947,
+          "target": 44954
+        },
+        {
+          "branch": 44971,
+          "load": 44967,
+          "target": 44974
+        },
+        {
+          "branch": 44993,
+          "load": 44989,
+          "target": 44996
+        },
+        {
+          "branch": 45008,
+          "load": 45004,
+          "target": 45011
+        },
+        {
+          "branch": 45028,
+          "load": 45024,
+          "target": 45031
+        }
+      ],
+      "known_vertex_sources_in_both_copies": [
+        {
+          "branch": 55062,
+          "load": 55059,
+          "target": 55065
+        },
+        {
+          "branch": 55084,
+          "load": 55081,
+          "target": 55188
+        },
+        {
+          "branch": 55094,
+          "load": 55091,
+          "target": 55097
+        },
+        {
+          "branch": 55107,
+          "load": 55104,
+          "target": 55110
+        },
+        {
+          "branch": 55120,
+          "load": 55117,
+          "target": 55123
+        },
+        {
+          "branch": 55133,
+          "load": 55130,
+          "target": 55136
+        },
+        {
+          "branch": 55146,
+          "load": 55143,
+          "target": 55149
+        },
+        {
+          "branch": 55159,
+          "load": 55156,
+          "target": 55162
+        },
+        {
+          "branch": 55172,
+          "load": 55169,
+          "target": 55175
+        },
+        {
+          "branch": 55185,
+          "load": 55182,
+          "target": 55188
+        }
+      ],
+      "original_keyboard_targets": [
+        30547,
+        30582,
+        30477,
+        30512,
+        30407,
+        30442,
+        29463,
+        30336,
+        30371,
+        44203,
+        29410,
+        29374,
+        28748,
+        28789,
+        28808,
+        29859,
+        30028,
+        29824,
+        30214,
+        29753,
+        29230,
+        30100,
+        30159,
+        28918,
+        28747,
+        30250,
+        49353
+      ],
+      "computed_rets_covered": false,
+      "direct_entries_bypassing_known_register_loads": [],
+      "outside_regions_or_modified_producers_covered": false
+    },
     "complete_paths": [
       {
         "overlay": "Action",
@@ -33182,7 +33460,7 @@
     "all_runtime_clip_states_proved": false
   },
   "resource_semantic_limits": {
-    "classified_format_or_extent_bytes_with_unproved_game_use": 119903,
+    "classified_format_or_extent_bytes_with_unproved_game_use": 121452,
     "complete_unknown_resource_graph_proved": false,
     "report": "Tools/Disasm/Reports/ResourceSemanticLimits.json"
   }

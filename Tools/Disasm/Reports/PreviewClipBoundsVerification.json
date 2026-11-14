@@ -160,5 +160,21 @@
   "full_register_and_flags_checked": true,
   "irq_executed": false,
   "native_execution": false,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "original_code_instructions": 46,
+  "original_code_bytes": 110,
+  "R_full_M1": 50,
+  "all_256_R_values": true,
+  "R_bit7_and_I_IM_IFF_preserved": true,
+  "all_34_CPU_writes_values_and_multiplicity_checked": true,
+  "hardware_bus_write_order_proved": false,
+  "R_full_joint_input_product": false,
+  "return_frame_alias_probe": {
+    "input_SP": 59322,
+    "initial_return": 16383,
+    "actual_return": 4386,
+    "bounded_instructions": 46,
+    "target_executed": false,
+    "overwriting_field": "D3DClipState.MinCorner"
+  }
 }

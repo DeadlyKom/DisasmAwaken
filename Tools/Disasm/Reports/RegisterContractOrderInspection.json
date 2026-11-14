@@ -1,0 +1,15 @@
+{
+  "method": "explicit_unconditional_register_declarations_first_appearance_review_candidates",
+  "source_map_sha256": "9a37fbccac5150d5a83e593c8490d82336f525ba6f2ebd0b5885b3c1d4fce455",
+  "source_code_files_sha256": "1a371469d728741b122ba2ba4c9c2227635cba3539a3935e0516ca9d8692204f",
+  "checked_files": 1440,
+  "checked_sections": 4344,
+  "candidate_count": 0,
+  "candidates": [],
+  "conditional_paragraphs_not_validated": true,
+  "register_aliases_normalized": true,
+  "completeness_of_contracts_proved": false,
+  "candidates_are_not_confirmed_errors": true,
+  "source_files_modified": false,
+  "assembly_executed": false
+}

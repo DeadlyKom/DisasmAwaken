@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "original_action_sha256": "63f2ac2717bb7f630b25ec3cb92671e5f78f2174f36d7370d1bae39baf3fc39a",
+  "total_cases": 15616,
+  "paths": {
+    "03/02/preserve": 3205,
+    "09/13/preserve": 3205,
+    "14/02/preserve": 3205,
+    "03/02/increment": 1915,
+    "09/13/increment": 1915,
+    "14/02/increment": 1915,
+    "marker": 256
+  },
+  "entry": 61688,
+  "stop": 16383,
+  "complete_external_return": true,
+  "real_coefficient_and_three_multiply_children": true,
+  "exact_registers_including_R": true,
+  "all_64K_bytes_and_ordered_assignments": true,
+  "all_low_scale_bytes": true,
+  "high_scale_samples": [
+    0,
+    1,
+    127,
+    128,
+    255
+  ],
+  "limit_samples": [
+    0,
+    1,
+    127,
+    255
+  ],
+  "class_state_profiles": [
+    [
+      3,
+      2
+    ],
+    [
+      9,
+      19
+    ],
+    [
+      20,
+      2
+    ]
+  ],
+  "I_IM_IFF_varied_and_preserved": true,
+  "stack_locations": [
+    36872,
+    49150
+  ],
+  "original_tables_used": true,
+  "all_input_products_exhausted": false,
+  "exact_T_claimed": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

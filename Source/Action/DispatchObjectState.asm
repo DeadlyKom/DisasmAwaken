@@ -38,7 +38,7 @@ Entry:          LD A, (IX + @FActionRecord.ClassCode)
                 JP @Action.DispatchObjectState.CallHandler
 
                 ; Запись остатка после вычитания порога и проверка класса.
-StoreRemainder: LD (IX + @FActionRecord.Unknown13), A
+StoreRemainder: LD (IX + @FActionRecord.EffectReserve), A
                 LD A, (IX + @FActionRecord.ClassCode)
                 CP #10
                 JP NC, @Action.DispatchObjectState.CallHandler                  ; переход, если класс не меньше #10, сохранить состояние

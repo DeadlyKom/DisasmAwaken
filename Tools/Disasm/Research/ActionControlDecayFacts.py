@@ -10,14 +10,14 @@ CONTRACTS={('Action',0x6F55):(
     ['HL, DE, BC, AF входных аргументов не задают, сохраняемые части зависят от падающего фронта Request',
      'Request и SkipDetail содержат текущий и предыдущий общие запросы, X/Y/TurnPrev и Next задают защёлки каналов',
      'X/Y/TurnPhase содержат полные байты кольцевой фазы, XControl, YControl, TurnControl содержат signed8',
-     'операнды стабильны при чтении, на падающем фронте доступны процедуры и конечный список ReleaseClass14Records банка 0',
+     'операнды стабильны при чтении, на падающем фронте доступны процедуры и конечный список ReleaseBoostDebrisRecords банка 0',
      'перенесённый ACTION банка 5 доступен, CPU-стек допускает шесть дополнительных байтов и внешний возврат, IRQ не вмешиваются'],
     ['HL=0088, D=14, BC=0040 и IY указывает маркер только при Request=0 и прежнем SkipDetail не ноль',
      'иначе HL, DE, B и IY сохраняются, C=прежний SkipDetail',
      'E, альтернативные регистры и IX сохраняются, I, IM, IFF и 7FFD сохраняются, SP=входной SP+2',
      'SkipDetail получает прежний Request, Request обнулён, каждый Prev получает соответствующий Next',
      'канал со старым Prev не ноль пропущен, остальные сбрасывают пару операндов, вращают Phase и при прежнем бите 0 равном единице сдвигают signed8 к нулю',
-     'на падающем фронте освобождён класс 14, LimitWord и SignedWord равны 0088, SixthRequest=1',
+     'на падающем фронте освобождён класс 14, LimitWord и SpeedWord равны 0088, SixthRequest=1',
      'AF определяется последним каналом, точные формулы и R приведены в документации'],
     ['HL и D только на падающем фронте, BC, AF, IY только на падающем фронте, R, существующие операнды, поля освобождённых записей и шесть временных байтов стека'],
     ['ветвление использует старый Prev, хотя новое Next уже записано, это исходная задержка одного вызова',
@@ -33,8 +33,8 @@ COMMENTS={
 0x6F5F:(['Проверка прежнего общего запроса, падение существует только при прежнем ненулевом C.'],None),
 0x6F60:([], 'переход, если прежний запрос также нулевой, падающего фронта нет'),
 0x6F62:(['Освобождение всех активных записей класса 14 настоящим повторным поиском.'],None),
-0x6F65:(['Обновление исходного ограничивающего слова и рабочего SignedWord значением 0088.'],None),
-0x6F71:(['Создание запроса перерисовки шестой шкалы после сброса SignedWord.'],None),
+0x6F65:(['Обновление исходного ограничивающего слова и рабочего SpeedWord значением 0088.'],None),
+0x6F71:(['Создание запроса перерисовки шестой шкалы после сброса SpeedWord.'],None),
 0x6F76:(['Обнуление накопленного общего Request, SkipDetail сохраняет его значение до следующего вызова.'],None)}
 for start,branch,defaults,phase,phase_branch,load,zero,positive,add,negative,reduce,reduce_branch,store,label in (
     (0x6F7A,0x6F82,0x6F84,0x6F8C,0x6F92,0x6F94,0x6F98,0x6F9A,0x6F9D,0x6F9F,0x6FA6,0x6FA8,0x6FAC,'X'),
@@ -55,7 +55,7 @@ for start,branch,defaults,phase,phase_branch,load,zero,positive,add,negative,red
     COMMENTS[reduce_branch]=([], 'переход, если результат вычитания неотрицательный, записать его')
     COMMENTS[store]=(['Обновление соответствующего байта управления с сохранением флагов выбранного арифметического пути.'],None)
 CONST_BLOCK='\n                ; Исходные значения сброса управления и накопителей клавиатурных каналов\n                module ActionControlDecayConst\n'
-for name,value,note in (('ResetWord',0x88,'значение LimitWord и SignedWord на падающем фронте'),('RequestOn',1,'запрос перерисовки шкалы'),
+for name,value,note in (('ResetWord',0x88,'значение LimitWord и SpeedWord на падающем фронте'),('RequestOn',1,'запрос перерисовки шкалы'),
     ('XYReset',200,'исходный байт сброса двух накопителей X либо Y'),('TurnReset',250,'исходный байт сброса накопителей поворота'),
     ('PhaseSeed',0x92,'начальный восьмибитный цикл, три единичных бита'),('StepUnit',1,'шаг signed8 к нулю')):
     CONST_BLOCK+=name.ljust(16)+('equ #'+format(value,'04X' if name=='ResetWord' else '02X')).ljust(64)+'; '+note+'\n'
@@ -63,7 +63,7 @@ CONST_BLOCK+='                endmodule\n\n'
 STRUCT_BLOCK=('\n                ; Динамическая рамка внутри NextActiveRecord при падающем фронте Request\n'+
     '                struct FControlDecayFrame\n'+
     'ReturnIterator'.ljust(16)+'dw #E997'.ljust(64)+'; возврат итератора в FindRecordByCode\n'+
-    'ReturnFindCode'.ljust(16)+'dw #6177'.ljust(64)+'; возврат поиска в ReleaseClass14Records\n'+
+    'ReturnFindCode'.ljust(16)+'dw #6177'.ljust(64)+'; возврат поиска в ReleaseBoostDebrisRecords\n'+
     'ReturnRelease'.ljust(16)+'dw #6F65'.ljust(64)+'; возврат освобождения в обработку падающего фронта\n'+
     'CallerReturn'.ljust(16)+'dw #0000'.ljust(64)+'; внешний возврат LatchControlsAndDecay\n'+
     '                ends\n                assert FControlDecayFrame == #08\n\n')
@@ -81,7 +81,7 @@ def name_operands(region,address,operation):
     if (region,address)!=('Action',0x6F55):return operation
     for name,value,_ in FIELDS:operation=operation.replace('#'+format(value,'04X'),'@ActionControlDecayState.'+name)
     for value,name in ((0x6F59,'ActionProjectionClipState.SkipDetail'),(0x669F,'ActionPanelGaugesState.SixthRequest'),
-        (0xA78F,'ActionPanelGaugesState.SignedWord'),(0x9B95,'ControlsPointMotionState.YControl'),
+        (0xA78F,'ActionPanelGaugesState.SpeedWord'),(0x9B95,'ControlsPointMotionState.YControl'),
         (0x9B96,'ControlsPointMotionState.XControl'),(0x9B97,'ControlsPointMotionState.TurnControl')):
         operation=operation.replace('#'+format(value,'04X'),'@'+name)
     return operation.replace('#0088','@ActionControlDecayConst.ResetWord').replace('LD A, #01','LD A, @ActionControlDecayConst.RequestOn').replace('#C8','@ActionControlDecayConst.XYReset').replace('#FA','@ActionControlDecayConst.TurnReset').replace('#92','@ActionControlDecayConst.PhaseSeed').replace('ADD A, #01','ADD A, @ActionControlDecayConst.StepUnit').replace('SUB #01','SUB @ActionControlDecayConst.StepUnit')

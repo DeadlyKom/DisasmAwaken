@@ -24,11 +24,15 @@
   "all_market_and_owned_quantity_bytes": true,
   "glyph_attempts_cursor_count_and_row_pointers_compared": true,
   "whole_bitmap_and_attributes_compared": true,
+  "exact_alternate_counter_af": true,
+  "both_field_arrays_unchanged_at_return": true,
+  "i_im_iff_preserved": true,
+  "iff_fixture": 0,
   "real_name_text_numbers_and_glyphs": true,
   "owned_ff_is_not_end_marker": true,
+  "market_sale_ban_proof_report": "OriginalTradeScriptVerification.json",
+  "cargo_mark_game_meaning_unknown": true,
   "irq_executed": false,
   "native_execution": false,
-  "assembly_executed": false,
-  "market_sale_ban_proof_report": "OriginalTradeScriptVerification.json",
-  "cargo_mark_game_meaning_unknown": true
+  "assembly_executed": false
 }

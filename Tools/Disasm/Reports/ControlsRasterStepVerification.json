@@ -1,14 +1,14 @@
 {
   "passed": true,
-  "total_cases": 196608,
+  "total_cases": 196672,
   "cases_by_entry": {
-    "D925": 98304,
-    "D940": 98304
+    "D925": 98336,
+    "D940": 98336
   },
   "outcomes": {
     "page_carry": 16320,
     "same_page": 114688,
-    "unwind": 65600
+    "unwind": 65664
   },
   "all_hl_both_directions": true,
   "all_saved_af_words": true,
@@ -18,7 +18,10 @@
   "actual_nonlinear_stack_return": true,
   "e_wrap_does_not_change_d": true,
   "ixl_toggled_before_early_return": true,
+  "direct_full_M1_count_checked": true,
+  "complete_context_product_exhausted": false,
   "irq_executed": false,
   "native_execution": false,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "saved_frame_7fff_8000_address_boundary_and_overlap_checked": true
 }

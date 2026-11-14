@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "count_cases": 506,
+  "count_cases": 762,
   "print_cases": 2512,
   "independent_glyphs": 91976,
   "all_selectors_checked": true,
@@ -10,6 +10,11 @@
   "real_skip_count_print_and_glyph_callees": true,
   "whole_bitmap_and_attributes_compared": true,
   "original_descriptions_preserved": true,
+  "direct_count_carry_and_low_height_exit_checked": true,
+  "all_input_B_at_low_height_checked": true,
+  "I_IM_IFF_preservation_checked": true,
+  "complete_joint_input_product_exhausted": false,
+  "R_proved": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

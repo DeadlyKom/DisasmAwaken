@@ -33,6 +33,7 @@
   "observed_m1_min": 15,
   "observed_m1_max": 544,
   "independent_list_predicate_oracle": true,
+  "full_M1_count_compared_not_only_R_modulo_128": true,
   "full_list_product_exhausted": false,
   "game_array_capacity_proved": false,
   "assembly_executed": false,

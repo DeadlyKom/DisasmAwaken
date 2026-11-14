@@ -20,6 +20,22 @@
     "12": 4096,
     "13": 4096
   },
+  "timed_state_sequence": {
+    "profiles": 64,
+    "dispatched_ticks": 5280,
+    "states": [
+      17,
+      16
+    ],
+    "phase_11_duration_range": [
+      5,
+      20
+    ],
+    "phase_10_duration": 70,
+    "previous_code_restored": true,
+    "unavailable_link_fixture": true,
+    "common_tail_executed": false
+  },
   "exact_registers_flags_r_sp": true,
   "full_eight_bank_ram_and_write_multiplicity_compared": true,
   "restores_three_words_before_outer_RET": true,

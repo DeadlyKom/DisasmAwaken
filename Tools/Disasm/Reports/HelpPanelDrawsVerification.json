@@ -12,6 +12,9 @@
   "entire_index_cache_checked": true,
   "irq_only_at_caption_halt": true,
   "music_disabled": true,
+  "disabled_ret_full_m1": 1,
+  "disabled_ret_i_im_iff_preserved": true,
+  "disabled_ret_iff_fixture": 1,
   "independent_whole_bitmap_oracle": false,
   "native_execution": false,
   "assembly_executed": false

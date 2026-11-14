@@ -1,0 +1,209 @@
+{
+  "passed": true,
+  "method": "original_four_function_control_flow_stack_and_store_invariants",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "functions": {
+    "Action.ClassifyCoordinateRegion": {
+      "entry": 28203,
+      "end_exclusive": 28268,
+      "original_code_sha256": "fe74b1700fc3ac0127d2e49c10318c0b943d582074381ea4245b24799e79d11c",
+      "original_bytes": 65,
+      "stack_depths": [],
+      "own_stores": {},
+      "calls": {},
+      "return_sites": [
+        28221,
+        28240,
+        28246,
+        28252,
+        28258,
+        28264,
+        28267
+      ]
+    },
+    "Controls.StepWordRandom": {
+      "entry": 56669,
+      "end_exclusive": 56711,
+      "original_code_sha256": "037deb67a9c45aa47a0adb28f31cfe59ae240e81a05ccfc47a97063ee591e9dc",
+      "original_bytes": 42,
+      "stack_depths": [
+        1,
+        2
+      ],
+      "own_stores": {
+        "56698": {
+          "kind": "absolute",
+          "addresses": [
+            39701,
+            39702
+          ]
+        },
+        "56701": {
+          "kind": "absolute",
+          "addresses": [
+            39703,
+            39704
+          ]
+        }
+      },
+      "calls": {},
+      "return_sites": [
+        56710
+      ]
+    },
+    "Controls.BuildSeededIndices": {
+      "entry": 56986,
+      "end_exclusive": 57052,
+      "original_code_sha256": "8f714ad68f29e6e8b85301f3f140bff42b74a35a686d4629c9e66e0fa8d5b33a",
+      "original_bytes": 66,
+      "stack_depths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "own_stores": {
+        "57000": {
+          "kind": "absolute",
+          "addresses": [
+            39701,
+            39702
+          ]
+        },
+        "57003": {
+          "kind": "absolute",
+          "addresses": [
+            39703,
+            39704
+          ]
+        }
+      },
+      "calls": {
+        "57009": 28203,
+        "57021": 56669
+      },
+      "return_sites": [
+        57051
+      ]
+    },
+    "Controls.BuildParameterTables": {
+      "entry": 56848,
+      "end_exclusive": 56986,
+      "original_code_sha256": "826a1668e80da537c9c302dbe562970e4dca876599395701dfbed30b04a3b5e9",
+      "original_bytes": 138,
+      "stack_depths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "own_stores": {
+        "56861": {
+          "kind": "absolute",
+          "addresses": [
+            26763
+          ]
+        },
+        "56937": {
+          "kind": "indexed",
+          "addresses": []
+        },
+        "56968": {
+          "kind": "HL",
+          "addresses": []
+        },
+        "56979": {
+          "kind": "HL",
+          "addresses": []
+        }
+      },
+      "calls": {
+        "56858": 56986
+      },
+      "return_sites": [
+        56985
+      ]
+    }
+  },
+  "nonstack_destinations": [
+    26763,
+    31639,
+    31645,
+    31651,
+    31657,
+    31663,
+    31669,
+    31675,
+    31681,
+    31687,
+    39701,
+    39702,
+    39703,
+    39704,
+    39844,
+    39845,
+    39846,
+    39847,
+    39848,
+    39849,
+    39850,
+    39851,
+    39852,
+    39853,
+    39854,
+    39855,
+    39856,
+    39857,
+    39858
+  ],
+  "nonstack_destination_count": 29,
+  "nonstack_destinations_disjoint_from_DB01_DB02": true,
+  "maximum_additional_stack_bytes": 8,
+  "stack_byte_depths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "stack_overlap_input_SP": [
+    56066,
+    56067,
+    56068,
+    56069,
+    56070,
+    56071,
+    56072,
+    56073,
+    56074
+  ],
+  "unsupported_mutations_rejected": [
+    "LD (DE),A",
+    "LD SP,HL",
+    "CALL #DB01"
+  ],
+  "all_seeds_and_step_counts_covered_by_static_write_domains": true,
+  "required_preconditions": [
+    "вход через исходный BuildParameterTables.Entry",
+    "банк 1 выбран и общее ядро ACTION перенесено в 6000",
+    "исходные код и таблицы не меняются извне, исходные ненулевые маски коэффициентов",
+    "восемь байтов рамки и внешний возврат доступны, стек не перекрывает код, таблицы и рабочие данные",
+    "IRQ, NMI, DMA и иные внешние писатели не вмешиваются"
+  ],
+  "instruction_execution_or_bus_timing_simulated": false,
+  "all_callers_stack_and_banking_preconditions_proved": false,
+  "entire_program_length_writers_excluded": false,
+  "legitimate_temporary_module_entry_proved": false,
+  "nonzero_temporary_module_length_writer_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

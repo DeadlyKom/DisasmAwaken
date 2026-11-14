@@ -466,8 +466,11 @@
     "offset": 10580,
     "length": 172
   },
-  "first_header_byte_meaning_proved": false,
+  "first_header_byte_use_as_bound_mantissa_proved": true,
+  "physical_units_proved": false,
   "all_runtime_writers_proved": false,
+  "bound_mantissa_matches_max_signed_component_in_each_nonempty_packet": true,
+  "empty_packet_bound_mantissa": 1,
   "assembly_executed": false,
   "native_execution": false,
   "packets": [
@@ -478,7 +481,7 @@
       "pointer_indices": [
         0
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -654,7 +657,7 @@
       "pointer_indices": [
         2
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -928,7 +931,7 @@
       "pointer_indices": [
         28
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -1034,7 +1037,7 @@
       "pointer_indices": [
         30
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -1343,7 +1346,7 @@
       "pointer_indices": [
         64
       ],
-      "header_unknown": 105,
+      "bound_mantissa": 105,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -1449,7 +1452,7 @@
       "pointer_indices": [
         66
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -1777,7 +1780,7 @@
       "pointer_indices": [
         68
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -1868,7 +1871,7 @@
       "pointer_indices": [
         70
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -2077,7 +2080,7 @@
       "pointer_indices": [
         4
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -2168,7 +2171,7 @@
       "pointer_indices": [
         6
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -2381,7 +2384,7 @@
       "pointer_indices": [
         120
       ],
-      "header_unknown": 86,
+      "bound_mantissa": 86,
       "scale_exponent": 4,
       "fixed_groups": [
         {
@@ -2677,7 +2680,7 @@
       "pointer_indices": [
         122
       ],
-      "header_unknown": 101,
+      "bound_mantissa": 101,
       "scale_exponent": 4,
       "fixed_groups": [
         {
@@ -3052,7 +3055,7 @@
       "pointer_indices": [
         48
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -3239,7 +3242,7 @@
       "pointer_indices": [
         50
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -3516,7 +3519,7 @@
       "pointer_indices": [
         32
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -3764,7 +3767,7 @@
       "pointer_indices": [
         34
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -4173,7 +4176,7 @@
       "pointer_indices": [
         72
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -4264,7 +4267,7 @@
       "pointer_indices": [
         74
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -4648,7 +4651,7 @@
       "pointer_indices": [
         52
       ],
-      "header_unknown": 104,
+      "bound_mantissa": 104,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -4855,7 +4858,7 @@
       "pointer_indices": [
         54
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -5263,7 +5266,7 @@
         124,
         126
       ],
-      "header_unknown": 103,
+      "bound_mantissa": 103,
       "scale_exponent": 4,
       "fixed_groups": [
         {
@@ -5716,7 +5719,7 @@
       "pointer_indices": [
         76
       ],
-      "header_unknown": 96,
+      "bound_mantissa": 96,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -5861,7 +5864,7 @@
       "pointer_indices": [
         78
       ],
-      "header_unknown": 104,
+      "bound_mantissa": 104,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -6210,7 +6213,7 @@
       "pointer_indices": [
         36
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -6458,7 +6461,7 @@
       "pointer_indices": [
         38
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -6866,7 +6869,7 @@
         128,
         130
       ],
-      "header_unknown": 105,
+      "bound_mantissa": 105,
       "scale_exponent": 4,
       "fixed_groups": [
         {
@@ -7304,7 +7307,7 @@
       "pointer_indices": [
         16
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -7395,7 +7398,7 @@
       "pointer_indices": [
         18
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -7603,7 +7606,7 @@
         132,
         134
       ],
-      "header_unknown": 103,
+      "bound_mantissa": 103,
       "scale_exponent": 4,
       "fixed_groups": [
         {
@@ -8063,7 +8066,7 @@
       "pointer_indices": [
         20
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -8167,7 +8170,7 @@
       "pointer_indices": [
         22
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -8352,7 +8355,7 @@
       "pointer_indices": [
         40
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -8467,7 +8470,7 @@
       "pointer_indices": [
         42
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -8790,7 +8793,7 @@
       "pointer_indices": [
         12
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -8894,7 +8897,7 @@
       "pointer_indices": [
         14
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -9195,7 +9198,7 @@
       "pointer_indices": [
         24
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -9310,7 +9313,7 @@
       "pointer_indices": [
         26
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -9497,7 +9500,7 @@
       "pointer_indices": [
         8
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -9601,7 +9604,7 @@
       "pointer_indices": [
         10
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -9941,7 +9944,7 @@
       "pointer_indices": [
         56
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -10115,7 +10118,7 @@
       "pointer_indices": [
         58
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -10412,7 +10415,7 @@
       "pointer_indices": [
         60
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -10616,7 +10619,7 @@
       "pointer_indices": [
         62
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -10942,7 +10945,7 @@
         136,
         140
       ],
-      "header_unknown": 92,
+      "bound_mantissa": 92,
       "scale_exponent": 1,
       "fixed_groups": [
         {
@@ -11019,7 +11022,7 @@
       "pointer_indices": [
         138
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 1,
       "fixed_groups": [
         {
@@ -11231,7 +11234,7 @@
       "pointer_indices": [
         142
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 1,
       "fixed_groups": [
         {
@@ -11392,7 +11395,7 @@
         168,
         170
       ],
-      "header_unknown": 96,
+      "bound_mantissa": 96,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -11637,7 +11640,7 @@
         156,
         158
       ],
-      "header_unknown": 76,
+      "bound_mantissa": 76,
       "scale_exponent": 1,
       "fixed_groups": [
         {
@@ -11854,7 +11857,7 @@
         164,
         166
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 1,
       "fixed_groups": [
         {
@@ -12038,7 +12041,7 @@
         148,
         150
       ],
-      "header_unknown": 72,
+      "bound_mantissa": 72,
       "scale_exponent": 1,
       "fixed_groups": [
         {
@@ -12255,7 +12258,7 @@
         160,
         162
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 1,
       "fixed_groups": [
         {
@@ -12370,7 +12373,7 @@
       "pointer_indices": [
         44
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -12567,7 +12570,7 @@
       "pointer_indices": [
         46
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -12860,7 +12863,7 @@
       "pointer_indices": [
         88
       ],
-      "header_unknown": 95,
+      "bound_mantissa": 95,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -13021,7 +13024,7 @@
       "pointer_indices": [
         90
       ],
-      "header_unknown": 105,
+      "bound_mantissa": 105,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -13269,7 +13272,7 @@
       "pointer_indices": [
         92
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -13414,7 +13417,7 @@
       "pointer_indices": [
         94
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -13753,7 +13756,7 @@
         116,
         118
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 4,
       "fixed_groups": [
         {
@@ -14141,7 +14144,7 @@
       "pointer_indices": [
         96
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -14306,7 +14309,7 @@
       "pointer_indices": [
         98
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -14741,7 +14744,7 @@
       "pointer_indices": [
         100
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -14930,7 +14933,7 @@
       "pointer_indices": [
         102
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -15304,7 +15307,7 @@
       "pointer_indices": [
         108
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -15452,7 +15455,7 @@
       "pointer_indices": [
         110
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -15738,7 +15741,7 @@
       "pointer_indices": [
         104
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -15919,7 +15922,7 @@
       "pointer_indices": [
         106
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -16194,7 +16197,7 @@
       "pointer_indices": [
         80
       ],
-      "header_unknown": 120,
+      "bound_mantissa": 120,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -16439,7 +16442,7 @@
       "pointer_indices": [
         82
       ],
-      "header_unknown": 120,
+      "bound_mantissa": 120,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -16860,7 +16863,7 @@
       "pointer_indices": [
         84
       ],
-      "header_unknown": 96,
+      "bound_mantissa": 96,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -17107,7 +17110,7 @@
       "pointer_indices": [
         86
       ],
-      "header_unknown": 96,
+      "bound_mantissa": 96,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -17401,7 +17404,7 @@
         184,
         186
       ],
-      "header_unknown": 36,
+      "bound_mantissa": 36,
       "scale_exponent": 1,
       "fixed_groups": [
         {
@@ -17475,7 +17478,7 @@
         144,
         146
       ],
-      "header_unknown": 82,
+      "bound_mantissa": 82,
       "scale_exponent": 1,
       "fixed_groups": [
         {
@@ -17693,7 +17696,7 @@
         188,
         190
       ],
-      "header_unknown": 1,
+      "bound_mantissa": 1,
       "scale_exponent": 1,
       "fixed_groups": [],
       "fixed_end_offset": 6324,
@@ -17708,7 +17711,7 @@
         192,
         194
       ],
-      "header_unknown": 40,
+      "bound_mantissa": 40,
       "scale_exponent": 1,
       "fixed_groups": [
         {
@@ -17782,7 +17785,7 @@
         152,
         154
       ],
-      "header_unknown": 62,
+      "bound_mantissa": 62,
       "scale_exponent": 1,
       "fixed_groups": [
         {
@@ -18016,7 +18019,7 @@
         172,
         174
       ],
-      "header_unknown": 89,
+      "bound_mantissa": 89,
       "scale_exponent": 4,
       "fixed_groups": [
         {
@@ -18366,7 +18369,7 @@
         176,
         178
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -18554,7 +18557,7 @@
         180,
         182
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 2,
       "fixed_groups": [
         {
@@ -18707,7 +18710,7 @@
       "pointer_indices": [
         112
       ],
-      "header_unknown": 60,
+      "bound_mantissa": 60,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -18931,7 +18934,7 @@
       "pointer_indices": [
         114
       ],
-      "header_unknown": 68,
+      "bound_mantissa": 68,
       "scale_exponent": 3,
       "fixed_groups": [
         {
@@ -19110,7 +19113,7 @@
         196,
         198
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -19666,7 +19669,7 @@
         200,
         202
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -20148,7 +20151,7 @@
         204,
         206
       ],
-      "header_unknown": 108,
+      "bound_mantissa": 108,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -20609,7 +20612,7 @@
         208,
         210
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -21000,7 +21003,7 @@
         212,
         214
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -21389,7 +21392,7 @@
         216,
         218
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -21811,7 +21814,7 @@
         220,
         222
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -22365,7 +22368,7 @@
         224,
         226
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -22907,7 +22910,7 @@
         228,
         230
       ],
-      "header_unknown": 104,
+      "bound_mantissa": 104,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -23218,7 +23221,7 @@
         232,
         234
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -23690,7 +23693,7 @@
         236,
         238
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -24028,7 +24031,7 @@
         240,
         242
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -24680,7 +24683,7 @@
         244,
         246
       ],
-      "header_unknown": 109,
+      "bound_mantissa": 109,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -24998,7 +25001,7 @@
         248,
         250
       ],
-      "header_unknown": 84,
+      "bound_mantissa": 84,
       "scale_exponent": 5,
       "fixed_groups": [
         {
@@ -25453,7 +25456,7 @@
         252,
         254
       ],
-      "header_unknown": 107,
+      "bound_mantissa": 107,
       "scale_exponent": 5,
       "fixed_groups": [
         {

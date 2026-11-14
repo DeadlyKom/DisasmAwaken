@@ -578,12 +578,6 @@
 
 Композиция исходной матрицы и ориентации с одноосным режимом и точными четвертями.
 
-## UnknownCF08
-
-[ThreeD.UnknownCF08](../../Source/ThreeD/UnknownCF08.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
 ## ClearWorkBuffer
 
 [ThreeD.ClearWorkBuffer](../../Source/ThreeD/ClearWorkBuffer.asm)

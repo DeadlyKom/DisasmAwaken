@@ -1,0 +1,585 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "physical_images_scanned": 6,
+  "physical_bytes_scanned": 3932160,
+  "recognized_sources_excluded": 129,
+  "queried_names": [
+    "RDS",
+    "SEDETECT",
+    "STPA",
+    "STPB",
+    "STPG",
+    "EYE_A",
+    "EYE_B",
+    "EYE_G",
+    "SETS",
+    "JL1",
+    "JL2",
+    "NEWS",
+    "ORDER",
+    "ABONS",
+    "PLAYER",
+    "SHILD",
+    "CNKR",
+    "CNSK",
+    "LZS",
+    "RCO",
+    "EXAS",
+    "EFF"
+  ],
+  "all_raw_occurrence_counts": {
+    "SEDETECT": 18,
+    "STPA": 4,
+    "STPB": 4,
+    "STPG": 4,
+    "EYE_A": 23,
+    "EYE_B": 21,
+    "EYE_G": 23,
+    "SETS": 49,
+    "JL1": 4,
+    "JL2": 3,
+    "NEWS": 6,
+    "ORDER": 7,
+    "ABONS": 11,
+    "PLAYER": 20,
+    "SHILD": 20,
+    "LZS": 27,
+    "RCO": 16,
+    "EFF": 3,
+    "RDS": 15,
+    "CNKR": 4,
+    "CNSK": 4,
+    "EXAS": 3
+  },
+  "occurrences_outside_recognized_sources": [
+    {
+      "member": "awk1.trd",
+      "identifier": "EFF",
+      "disk_offset": 496,
+      "physical_region": "catalog",
+      "owner": null,
+      "context_disk_offset": 461,
+      "context_hex": "0104274f424a454354535361736d5c4c4d05274f424a454354533261736d101617022c4546462020202020636f64350506092d4f424a47454e455261736d8534350f2d455155532020202061736dbd191a0431444f4f4d20",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk2.trd",
+      "identifier": "SETS",
+      "disk_offset": 209263,
+      "physical_region": "allocated_file_payload",
+      "owner": {
+        "slot": 45,
+        "name": "NXT     C",
+        "disk_offset": 206336,
+        "allocated_bytes": 4352,
+        "declared_length_word": 4272,
+        "file_offset": 2927
+      },
+      "context_disk_offset": 209228,
+      "context_hex": "37abc833293981075c89010379cb260203880638cb09a9043937022f084c4401412c285365747329000e2f084f52012849582b23303129000e2f084a50014d2c4c61316634000d35b10c0334b10d03583e3c037fcb26020388",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk2.trd",
+      "identifier": "SETS",
+      "disk_offset": 209437,
+      "physical_region": "allocated_file_payload",
+      "owner": {
+        "slot": 45,
+        "name": "NXT     C",
+        "disk_offset": 206336,
+        "allocated_bytes": 4352,
+        "declared_length_word": 4272,
+        "file_offset": 3101
+      },
+      "context_disk_offset": 209402,
+      "context_hex": "cb09a909cb6602008237b100085c89010379cb260204aa063b37022f084c4401412c285365747329000e2f084f52012849592b23303129000e2f084a50014d2c4c61323236000d35b90c0334b90d03583e3c037fcb26020680",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk2.trd",
+      "identifier": "SETS",
+      "disk_offset": 264815,
+      "physical_region": "allocated_file_payload",
+      "owner": {
+        "slot": 62,
+        "name": "XR1     C",
+        "disk_offset": 261888,
+        "allocated_bytes": 4352,
+        "declared_length_word": 4272,
+        "file_offset": 2927
+      },
+      "context_disk_offset": 264780,
+      "context_hex": "37abc833293981075c89010379cb260203880638cb09a9043937022f084c4401412c285365747329000e2f084f52012849582b23303129000e2f084a50014d2c4c61316634000d35b10c0334b10d03583e3c037fcb26020388",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk2.trd",
+      "identifier": "SETS",
+      "disk_offset": 264989,
+      "physical_region": "allocated_file_payload",
+      "owner": {
+        "slot": 62,
+        "name": "XR1     C",
+        "disk_offset": 261888,
+        "allocated_bytes": 4352,
+        "declared_length_word": 4272,
+        "file_offset": 3101
+      },
+      "context_disk_offset": 264954,
+      "context_hex": "cb09a909cb6602008237b100085c89010379cb260204aa063b37022f084c4401412c285365747329000e2f084f52012849592b23303129000e2f084a50014d2c4c61323236000d35b90c0334b90d03583e3c037fcb26020680",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk2.trd",
+      "identifier": "ORDER",
+      "disk_offset": 285475,
+      "physical_region": "allocated_file_payload",
+      "owner": {
+        "slot": 64,
+        "name": "LAND    C",
+        "disk_offset": 282624,
+        "allocated_bytes": 11520,
+        "declared_length_word": 11518,
+        "file_offset": 2851
+      },
+      "context_disk_offset": 285440,
+      "context_hex": "b807066cdc4141414100dd0900000000cc733a32388b062f4e554d4245525301494e014f52444552015052494e5400182f412d4e554d424552000a33370232df02c53727a604cc6a3826ac052f412d4e554d424552014f46014d",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk2.trd",
+      "identifier": "PLAYER",
+      "disk_offset": 133410,
+      "physical_region": "allocated_file_payload",
+      "owner": {
+        "slot": 22,
+        "name": "BLK2    C",
+        "disk_offset": 133120,
+        "allocated_bytes": 5632,
+        "declared_length_word": 5386,
+        "file_offset": 290
+      },
+      "context_disk_offset": 133375,
+      "context_hex": "2c4243272d5a00132f432d5355424a454354000b2f41272d312d524f4b4554014f4601504c415945522c302d524f4b4554014f4601534f4d45424f00282f445900042f422d4b544f018f934354888b0150414b4554930015a3c433",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk2.trd",
+      "identifier": "LZS",
+      "disk_offset": 133749,
+      "physical_region": "allocated_file_payload",
+      "owner": {
+        "slot": 22,
+        "name": "BLK2    C",
+        "disk_offset": 133120,
+        "allocated_bytes": 5632,
+        "declared_length_word": 5386,
+        "file_offset": 629
+      },
+      "context_disk_offset": 133714,
+      "context_hex": "43549c00122f50414b45549b014b018883504f4b93013c3e3000152f424d4543544f014c5a53000c4b35023689112f524f4b455441000b4b3502c4733734b036dd2f9d48455083889f0010373502553783d235b91bc4332a",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk2.trd",
+      "identifier": "LZS",
+      "disk_offset": 220654,
+      "physical_region": "allocated_file_payload",
+      "owner": {
+        "slot": 49,
+        "name": "EQUS    C",
+        "disk_offset": 219392,
+        "allocated_bytes": 2304,
+        "declared_length_word": 2214,
+        "file_offset": 1262
+      },
+      "context_disk_offset": 220619,
+      "context_hex": "182f4d5350442d4841014b4f834f0148418f5041428b4548410150414b45544100202f4c5a53012d3d302d50414b455441018f4550434f484186412c013c3e302d8883504f4b410026000000000000cfde0ae32f98808301",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk2.trd",
+      "identifier": "EFF",
+      "disk_offset": 48185,
+      "physical_region": "allocated_file_payload",
+      "owner": {
+        "slot": 3,
+        "name": "PAGE4   C",
+        "disk_offset": 32000,
+        "allocated_bytes": 16384,
+        "declared_length_word": 16384,
+        "file_offset": 16185
+      },
+      "context_disk_offset": 48150,
+      "context_hex": "baed28ef96f004f272f3e0f44ef6bcf72af90060b6606c612262d8628e634464fa64b06566661c67d26788683e69f469aa6a606b166ccc6c826d386e00000000000000000000000000000000000000000000000000000000",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk3.trd",
+      "identifier": "SHILD",
+      "disk_offset": 140481,
+      "physical_region": "allocated_file_sector_tail",
+      "owner": {
+        "slot": 17,
+        "name": "3D-I_   a",
+        "disk_offset": 134912,
+        "allocated_bytes": 5632,
+        "declared_length_word": 5563,
+        "file_offset": 5569
+      },
+      "context_disk_offset": 140446,
+      "context_hex": "5348068705200683037e2c300d068c05290682057e0d0d068c05240d0d0005200683285348494c44292c057e0d068c05240d0d0d0d00068c05240d0d0d0d00068c05240d0d0d0d00494c44292c057e0d068c05240d0d0d0d000d",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk4.trd",
+      "identifier": "SHILD",
+      "disk_offset": 140481,
+      "physical_region": "allocated_file_sector_tail",
+      "owner": {
+        "slot": 17,
+        "name": "3D-I_   a",
+        "disk_offset": 134912,
+        "allocated_bytes": 5632,
+        "declared_length_word": 5563,
+        "file_offset": 5569
+      },
+      "context_disk_offset": 140446,
+      "context_hex": "5348068705200683037e2c300d068c05290682057e0d0d068c05240d0d0005200683285348494c44292c057e0d068c05240d0d0d0d00068c05240d0d0d0d00068c05240d0d0d0d00494c44292c057e0d068c05240d0d0d0d000d",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    },
+    {
+      "member": "awk6.trd",
+      "identifier": "PLAYER",
+      "disk_offset": 80145,
+      "physical_region": "allocated_file_payload",
+      "owner": {
+        "slot": 14,
+        "name": "MUZ1    C",
+        "disk_offset": 80128,
+        "allocated_bytes": 6144,
+        "declared_length_word": 6054,
+        "file_offset": 17
+      },
+      "context_disk_offset": 80110,
+      "context_hex": "11c4fe00218cfe00411cfe00813cff0001002121e91827c358dec340de205054203320506c617965722076312e30206279204e69636b206f662047444320f32248db225fdb226cdb22abe2016400097e3294e723235e2350e52100",
+      "occurrence_is_not_instruction_or_memory_access_proof": true
+    }
+  ],
+  "C00B_C_header_candidates": [
+    {
+      "member": "awk2.trd",
+      "slot": 9,
+      "name": "CNVVOXSPC",
+      "disk_offset": 90880,
+      "allocated_bytes": 256,
+      "declared_length_word": 125,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 12,
+      "name": "CNVVOXTBC",
+      "disk_offset": 101120,
+      "allocated_bytes": 256,
+      "declared_length_word": 115,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 16,
+      "name": "VOXL    C",
+      "disk_offset": 108544,
+      "allocated_bytes": 3584,
+      "declared_length_word": 3337,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 18,
+      "name": "VOXP    C",
+      "disk_offset": 115200,
+      "allocated_bytes": 7680,
+      "declared_length_word": 7428,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 19,
+      "name": "VOXEL   C",
+      "disk_offset": 122880,
+      "allocated_bytes": 4864,
+      "declared_length_word": 4798,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 21,
+      "name": "BLK1    C",
+      "disk_offset": 128512,
+      "allocated_bytes": 4608,
+      "declared_length_word": 4458,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 22,
+      "name": "BLK2    C",
+      "disk_offset": 133120,
+      "allocated_bytes": 5632,
+      "declared_length_word": 5386,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 23,
+      "name": "BLK3    C",
+      "disk_offset": 138752,
+      "allocated_bytes": 512,
+      "declared_length_word": 357,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 24,
+      "name": "BLK5    C",
+      "disk_offset": 139264,
+      "allocated_bytes": 512,
+      "declared_length_word": 416,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 25,
+      "name": "BLK6    C",
+      "disk_offset": 139776,
+      "allocated_bytes": 3584,
+      "declared_length_word": 3393,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 26,
+      "name": "BLK7    C",
+      "disk_offset": 143360,
+      "allocated_bytes": 4096,
+      "declared_length_word": 3902,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 29,
+      "name": "XCLP    C",
+      "disk_offset": 149248,
+      "allocated_bytes": 6912,
+      "declared_length_word": 6878,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 32,
+      "name": "INVTAB3DC",
+      "disk_offset": 157184,
+      "allocated_bytes": 256,
+      "declared_length_word": 95,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 33,
+      "name": "xR2     C",
+      "disk_offset": 157440,
+      "allocated_bytes": 10240,
+      "declared_length_word": 10029,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 39,
+      "name": "CNVVOXS3C",
+      "disk_offset": 188160,
+      "allocated_bytes": 256,
+      "declared_length_word": 180,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 45,
+      "name": "NXT     C",
+      "disk_offset": 206336,
+      "allocated_bytes": 4352,
+      "declared_length_word": 4272,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 47,
+      "name": "SERV    C",
+      "disk_offset": 213760,
+      "allocated_bytes": 1536,
+      "declared_length_word": 1417,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 48,
+      "name": "DATAM   C",
+      "disk_offset": 215296,
+      "allocated_bytes": 4096,
+      "declared_length_word": 4074,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 49,
+      "name": "EQUS    C",
+      "disk_offset": 219392,
+      "allocated_bytes": 2304,
+      "declared_length_word": 2214,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 50,
+      "name": "OBJX    C",
+      "disk_offset": 221696,
+      "allocated_bytes": 1792,
+      "declared_length_word": 1595,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 61,
+      "name": "VXXX    C",
+      "disk_offset": 256512,
+      "allocated_bytes": 5376,
+      "declared_length_word": 5171,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 62,
+      "name": "XR1     C",
+      "disk_offset": 261888,
+      "allocated_bytes": 4352,
+      "declared_length_word": 4272,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 64,
+      "name": "LAND    C",
+      "disk_offset": 282624,
+      "allocated_bytes": 11520,
+      "declared_length_word": 11518,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 65,
+      "name": "LOADER  C",
+      "disk_offset": 294144,
+      "allocated_bytes": 256,
+      "declared_length_word": 162,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 66,
+      "name": "VSPRITE C",
+      "disk_offset": 294400,
+      "allocated_bytes": 11520,
+      "declared_length_word": 11466,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 67,
+      "name": "S3D     C",
+      "disk_offset": 305920,
+      "allocated_bytes": 5376,
+      "declared_length_word": 5269,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 68,
+      "name": "XR2     C",
+      "disk_offset": 311296,
+      "allocated_bytes": 10496,
+      "declared_length_word": 10427,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 69,
+      "name": "BLOK1   C",
+      "disk_offset": 321792,
+      "allocated_bytes": 1536,
+      "declared_length_word": 1423,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 14,
+      "name": "LOAD+   C",
+      "disk_offset": 158976,
+      "allocated_bytes": 768,
+      "declared_length_word": 662,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 15,
+      "name": "INVDISK C",
+      "disk_offset": 159744,
+      "allocated_bytes": 256,
+      "declared_length_word": 115,
+      "whole_file_source_format_proved": false
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 16,
+      "name": "LOAD    C",
+      "disk_offset": 160000,
+      "allocated_bytes": 768,
+      "declared_length_word": 767,
+      "whole_file_source_format_proved": false
+    }
+  ],
+  "storm_reference_blocks": [
+    {
+      "member": "awk2.trd",
+      "slot": 0,
+      "name": "STORM   B",
+      "file_offset": 282,
+      "packed_bytes": 368,
+      "restored_bytes": 646,
+      "packed_sha256": "2b154035e1789962626612f804d0ea001e7bfea61a0391e5d90f10291fa3ef12",
+      "restored_sha256": "e352d2e62e677757fd8dff97938b5a471d9b653080450856daf8fa547b899a7b",
+      "lookahead_bytes_read": 0,
+      "decoder_is_independent_research_tool": true,
+      "restored_program_executed": false
+    },
+    {
+      "member": "awk2.trd",
+      "slot": 0,
+      "name": "STORM   B",
+      "file_offset": 1024,
+      "packed_bytes": 16094,
+      "restored_bytes": 20455,
+      "packed_sha256": "907d767db6786a686db64ba65cea5c492a01a0dbe9b5c9380b0f7d9213a54c6b",
+      "restored_sha256": "c10f57499e45f206bef1c633639d15a2efdcea7653cda59bf0c3a24d48727757",
+      "lookahead_bytes_read": 0,
+      "decoder_is_independent_research_tool": true,
+      "restored_program_executed": false
+    }
+  ],
+  "additional_full_source_decoding_required": true,
+  "current_field_semantics_established": false,
+  "numeric_compressed_or_encoded_identifiers_excluded": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

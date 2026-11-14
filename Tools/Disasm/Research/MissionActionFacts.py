@@ -6,12 +6,12 @@ DOCUMENTS={('Station',address):('MissionAction','условия принятия
 LABELS={('Station',0x6EA9):'SaveContext',('Station',0x6ED6):'TestActive',('Station',0x6F14):'FinishAction',
  ('Station',0x6F34):'WarnTonnage',('Station',0x6F73):'RecomputeLoad',('Station',0x6F94):'PrintCancelled',
  ('Station',0x6FA5):'ClearQuantity',('Station',0x6FAC):'ClearCredits'}
-COMMON_OUT=[
- 'общий хвост вызывает BeginScreenUpdate, DrawItem31, DrawItem32, DrawItem00 и EndScreenUpdate',
- 'HL, DE, B, IX и IY восстановлены из FMissionActionFrame перед CloseMenuOnRow',
- 'C равен PointerY SHR 3, A=FF, F от CloseMenuOnRow, MissionHoverState.Row=FF',
- 'при совпадении строк CloseMenuOnRow удаляет выбранный элемент через DropItemDraw, иначе список не меняется этим вызовом',
+COMMON_OUT=['HL и DE восстановлены из FMissionActionFrame, BC - B восстановлен из кадра, C=PointerY SHR 3',
+ 'AF - A=#FF, F от CP TextWindow.OriginYLow SHR 3 и PointerY SHR 3 при разных строках, иначе от DropItemDraw',
  "HL', DE', BC', AF' не восстанавливаются общим кадром и соответствуют вложенным игровым и графическим вызовам",
+ 'IX и IY восстановлены из FMissionActionFrame перед CloseMenuOnRow',
+ 'общий хвост вызывает BeginScreenUpdate, DrawItem31, DrawItem32, DrawItem00 и EndScreenUpdate',
+ 'MissionHoverState.Row=#FF, при совпадении строк CloseMenuOnRow удаляет выбранный элемент через DropItemDraw, иначе список не меняется этим вызовом',
  'конечная страница 10, блокировка указателя снята EndScreenUpdate, I и IFF собственным кодом не меняются']
 CONTRACTS={('Station',0x6E9C):(
  ['HL - запасная обёртка, DE - выбранный индекс, BC - контекст по RepaintAndFlag',
@@ -26,11 +26,13 @@ CONTRACTS={('Station',0x6E9C):(
   'при Row не равном 1 или совпавших ключах пропускает собственное принятие и отмену, но выполняет общий хвост',
   'при Row=1 и разных ключах ActiveCode=1 ведёт в CancelMission на этом же кадре',
   'при прочих кодах ActiveCode сравнивает вместимость с младшим байтом суммы используемого и требуемого тоннажа',
-  'успех пишет ActiveCode=1, CompletionCode=0, байтовые суммы в 9852 и 9850, значение 0A в 9853',
+  'успех пишет ActiveCode=1, CompletionCode=0, байтовые суммы в Row00.QuantityAndMark и UsedTonnage, значение 0A в Row00.Price',
   'отказ печатает предупреждение, ждёт два HALT, заменяет предложение генератором и выполняет общий хвост',
   *COMMON_OUT,
   'SP обычного возврата равен входному SP+2 при выполнении договоров вызываемых обработчиков'],
- ["HL, DE, BC, AF, HL', DE', BC', AF', IX, IY по RepaintAndFlag, собственный кадр сохраняет шесть пар"],
+ ["HL, DE, BC, AF, HL', DE', BC', AF', IX, IY по RepaintAndFlag, R, собственный кадр сохраняет шесть пар",
+ 'MissionHoverState.Row, временные слова CPU-стека и побочные записи RepaintAndFlag, BeginScreenUpdate, DrawItem31, DrawItem32, DrawItem00, EndScreenUpdate и CloseMenuOnRow',
+ 'на собственных ветвях изменяются MissionState, Row00.QuantityAndMark, Row00.Price, UsedTonnage, при генерации и отмене действуют договоры GenerateMissionOffer и LANG'],
  ['собственный FinishAction требует кадр от SaveContext, обычный CALL к этому хвосту недопустим',
   'на ветви принятия сравнивается обёрнутая байтовая сумма, перенос выше 255 не вызывает отдельного отказа',
   'пропуск собственного изменения не запрещает завершение миссии в DrawItem32 при уже достигнутой цели',
@@ -39,16 +41,18 @@ CONTRACTS={('Station',0x6E9C):(
   'модель не исполняет IRQ и не подтверждает аппаратный ввод, ROM Unreal или нативное прохождение']),
  ('Station',0x6F5D):(
  ['HL - H старший байт разности слов ключей, DE - D старший байт слова предлагаемого ключа',
-  '9852 содержит байтовое количество, RequiredTonnage байтовое требование, их запись заменит только L и E',
+  'OwnedCargoRows.Row00.QuantityAndMark содержит сырое количество, RequiredTonnage байтовое требование, их запись заменит только L и E',
   'SP у SavedIY готового FMissionActionFrame, ниже сохранены IX, AF, BC, HL, DE и исходный возврат',
   'действуют договоры LANG, GenerateMissionOffer, DrawItem00 и общего FinishAction родительской процедуры'],
- ['ActiveCode=0, количество 9852 обнулено при полном займе изменённых HL-DE, иначе получает младший байт разности',
-  'выполнен исходный LANG с событием 11, оба T пересчитали используемый тоннаж 9850',
-  'денежное слово 984E получает max(прежние деньги-1000,0)',
+ ['ActiveCode=0, Row00.QuantityAndMark обнулено при полном займе изменённых HL-DE, иначе получает младший байт разности',
+  'выполнен исходный LANG с событием 11, оба T пересчитали PlayerSaveHeader.Entry.UsedTonnage',
+  'PlayerSaveHeader.Entry.Money получает max(прежние деньги-1000,0)',
   'выведено сообщение отмены, выполнены два HALT, новое предложение и дополнительный DrawItem00',
   *COMMON_OUT,
   'SP после исходного возврата равен входному SP+14, двенадцать байтов сохранений и два байта PC сняты'],
- ["HL, DE, BC, AF, HL', DE', BC', AF', IX, IY до восстановления из FMissionActionFrame"],
+ ["HL, DE, BC, AF, HL', DE', BC', AF', IX, IY до восстановления из FMissionActionFrame, R",
+ 'MissionState.ActiveCode, Row00.QuantityAndMark, PlayerSaveHeader.Entry.Money и UsedTonnage, MissionHoverState.Row, временные слова CPU-стека',
+ 'побочные записи LANG, GenerateMissionOffer, DrawItem00 и общего хвоста BeginScreenUpdate, DrawItem31, DrawItem32, EndScreenUpdate и CloseMenuOnRow'],
  ['это продолжение через JP, собственного кадра CALL и собственных POP до FinishAction нет',
   'снятие количества не является насыщенным байтовым вычитанием, H и D участвуют в проверке полного займа',
   'при H больше D младший заём может дать обёрнутый результат, при H меньше D возможно обнуление достаточного количества',
@@ -59,7 +63,8 @@ CONTRACTS={('Station',0x6E9C):(
 
 def name_operands(region,address,operation):
  if region=='Station' and address in FUNCTIONS:
-  for raw,name in ((0x6F54,'MissionHoverState.Row'),(0x99A3,'MissionState.ActiveCode'),(0x99A4,'MissionState.CompletionCode'),
+  for raw,name in ((0x9850,'PlayerSaveHeader.Entry + FPlayerSaveHeader.UsedTonnage'),(0x9851,'PlayerSaveHeader.Entry + FPlayerSaveHeader.Capacity'),
+   (0x9852,'OwnedCargoRows.Row00 + FOwnedCargoRow.QuantityAndMark'),(0x9853,'OwnedCargoRows.Row00 + FOwnedCargoRow.Price'),(0x6F54,'MissionHoverState.Row'),(0x99A3,'MissionState.ActiveCode'),(0x99A4,'MissionState.CompletionCode'),
    (0x983F,'SignatureInput.Entry.FirstWord'),(0x9841,'SignatureInput.Entry.SecondWord'),
    (0x98B0,'MissionOffer.Entry.FirstWord'),(0x98B2,'MissionOffer.Entry.SecondWord'),(0x98BE,'MissionOffer.Entry.RequiredTonnage')):
    operation=operation.replace('(#'+format(raw,'04X')+')','(@'+name+')')

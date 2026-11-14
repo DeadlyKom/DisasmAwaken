@@ -42,7 +42,25 @@
       "hex": "90a0aaa5e2a020e3e8aba02e0d"
     }
   },
-  "subtype_meaning_of_two_counters_proved": false,
+  "station_row_names": [
+    "Ракета рп1",
+    "Ракета рп2"
+  ],
+  "station_rows": [
+    2,
+    3
+  ],
+  "station_quantity_addresses": [
+    39056,
+    39057
+  ],
+  "action_counter_addresses": [
+    39954,
+    39955
+  ],
+  "station_transfer_report": "Tools/Disasm/Reports/BootBankFileReadsVerification.json",
+  "subtype_row_identity_proved": true,
+  "subtype_gameplay_differences_proved": false,
   "caller_handlers_executed": false,
   "assembly_executed": false,
   "irq_executed": false,

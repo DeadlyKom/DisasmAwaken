@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "original_action_sha256": "63f2ac2717bb7f630b25ec3cb92671e5f78f2174f36d7370d1bae39baf3fc39a",
+  "total_cases": 13312,
+  "paths": {
+    "not_found/preserve": 4141,
+    "not_found/marker_return": 6631,
+    "not_found/increment": 2490,
+    "found/preserve": 13,
+    "found/marker_return": 25,
+    "found/increment": 12
+  },
+  "witnesses": {
+    "active": {
+      "found": true,
+      "selected": 41984,
+      "prefix_IY": 41984,
+      "final_IY": 42114,
+      "final_AF": 23816,
+      "proximity_index": 12
+    },
+    "marker": {
+      "found": true,
+      "selected": 41984,
+      "prefix_IY": 41984,
+      "final_IY": 41984,
+      "final_AF": 32834,
+      "proximity_index": 12
+    }
+  },
+  "full_external_return": true,
+  "actual_search_index_and_common_children": true,
+  "all_256_candidate_codes_and_26_positions": true,
+  "all_low_scale_bytes": true,
+  "active_and_marker_current_records": true,
+  "current_record_outside_search_list": true,
+  "self_selection_covered_by_separate_prefix_model": true,
+  "correlated_phases_limits_classes_states": true,
+  "high_scale_samples": [
+    0,
+    1,
+    128,
+    255
+  ],
+  "exact_registers_including_R": true,
+  "all_eight_banks_and_write_multiplicity": true,
+  "no_OUT": true,
+  "all_input_products_exhausted": false,
+  "exact_T_claimed": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

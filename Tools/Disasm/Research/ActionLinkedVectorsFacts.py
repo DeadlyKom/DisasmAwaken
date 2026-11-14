@@ -6,7 +6,7 @@ MODIFIED_WRITERS=((0xE7A6,0xAF48,0xAF47,2),(0xE7AA,0xAF56,0xAF55,2),(0xE7AE,0xAF
 CONTRACTS={('Action',0xE794):(
     ['HL, DE, BC и AF числовых аргументов не задают, IX указывает доступный LinkedIndex текущей FActionRecord',
      'операнд RecordPointer по E796 предварительно установлен PrepareLinkedRecordContext, кроме особой связи 1A, которая игнорирует его',
-     'выбранная запись читается по Components и словам 1A, 1C и 1E, первый старший байт этого второго набора задаёт отказ при 80',
+     'выбранная запись читается по Components и ViewPosition, старший байт X задаёт отказ при 80',
      'ACTION банка 0 выбран, Input0..2 банка 2 и Output0..2 банка 0 доступны для записи, IRQ и повторный вход исключены'],
     ['сначала IY получает RecordPointer, при LinkedIndex=1A он заменяется A780 независимо от подготовленного адреса',
      'при связи 1A Input0..2 и Output0 равны нулю, Output1=FFB0, Output2=FFFF, HL=FFB0, DE=FFFF, BC=0, AF=1A18',

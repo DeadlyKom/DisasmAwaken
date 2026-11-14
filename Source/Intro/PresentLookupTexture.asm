@@ -1,12 +1,13 @@
                 module Intro
                 module PresentLookupTexture
-; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
+                ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
                 ; Документация [алгоритм и проверка](../../Docs/IntroLookupContinuation.md)
-; -----------------------------------------
-; Восстановление SP после #A800, две серии выборок и общий вывод кадра
-; исходная запись 3, файловые смещения #08BC..#08E2
+                ; -----------------------------------------
+                ; Восстановление SP после #A800, две серии выборок и общий вывод кадра
+                ; исходная запись 3, файловые смещения #08BC..#08E2
                 ; In:
                 ;   IntroLookupState.SavedSP по 6BBD содержит исходный CPU SP с внешним возвратом, текущий SP ещё является курсором переноса A800
+                ;   в SecondSampler по 6BDA сохранён исходный CALL RunTextureSampler, договор полного кадра относится к этому опкоду
                 ;   IFF=0, IM=1, IY=5C3A, проверенный 48K ROM, клавиши не нажаты и первые байты KSTATE по 5C00 и 5C04 равны FF
                 ;   цепочка 9100 создана, таблица 9300 подготовлена, AD00..BFFF содержит 38 строк по 64 слова источников
                 ;   состояние масштаба имеет WarmupLeft=1..161, RampLevel=0..63, CycleIndex=0..39, таблица 6C62 исходная
@@ -57,7 +58,7 @@ Entry:          LD SP, #3131
                 LD HL, @IntroLookupRowsConst.SecondWords
                 LD BC, @IntroLookupRowsConst.SecondBuffer
                 ; Заполнение оставшихся 1600 байтов, полный буфер выборок заканчивается по 897F.
-                CALL @Intro.RunTextureSampler.Entry
+SecondSampler:  CALL @Intro.RunTextureSampler.Entry
                 ; Второе обновление масштаба, переход на циклическую фазу может произойти именно здесь.
                 CALL @Intro.AdvanceTextureScale.Entry
                 ; Передача управления целому чередующемуся кадру без дополнительного CALL, его RET снимет внешний возврат.

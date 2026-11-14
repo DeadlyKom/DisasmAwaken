@@ -12,7 +12,7 @@ for entry in FUNCTIONS:
  CONTRACTS['D3D',entry]=(
   ["DE, BC, AF - входной контекст, при пустом списке DE и младший C сохраняются",
    "ModelOffset в PreviewQueueState задаёт одно из 22 смещений 0,2,...,42 исходной страницы указателей D0",
-   ("Coeff11..Coeff33 в PreviewMatrixComposeState содержат композицию матриц для общего входа" if entry==0xD896 else "AngleSecond и PreviewSharedSeed.Value.Unknown01 задают второй угол модели и вычитаемый угловой отсчёт"),
+   ("Coeff11..Coeff33 в PreviewMatrixComposeState содержат композицию матриц для общего входа" if entry==0xD896 else "AngleSecond и PreviewSharedSeed.Value.PlanarAngleBase задают второй угол модели и вычитаемый угловой отсчёт"),
    "базы и центры перспективы уже подготовлены, показатель 1..6 читается из выбранного заголовка",
    "модель имеет заголовок из двух байтов, группы Mask/B/C/D и однобайтовый нулевой ограничитель",
    "суммарно не более 50 вершин, рабочая область страницы C6 не пересекается с кодом и CPU-стеком",
@@ -24,7 +24,7 @@ for entry in FUNCTIONS:
    "HL', DE', BC', AF', IX и IY принадлежат последней группе, при пустом списке сохраняются",
    "NextOffset равен 4+5*n, где n число спроектированных вершин, все исходы проекции занимают одинаковый шаг",
    "три операнда JR масштаба настроены по заголовку, записи результатов и маркеров отказа выполнены в странице C6",
-   ("CosFirst, SinFirst, SinSecond, CosSecond плоского входа не записываются" if entry==0xD896 else "CosFirst=CosSecond=S(delta+64), SinFirst=SinSecond=S(delta), delta=AngleSecond-Unknown01 по модулю 256"),
+   ("CosFirst, SinFirst, SinSecond, CosSecond плоского входа не записываются" if entry==0xD896 else "CosFirst=CosSecond=S(delta+64), SinFirst=SinSecond=S(delta), delta=AngleSecond-PlanarAngleBase по модулю 256"),
    "при непустом списке SavedSP генератора содержит входной CPU-SP минус четыре, после общего RET SP равен входному+2",
    "I, IFF и IM сохраняются, обычный CPU-адрес возврата не записывается"],
   ["HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, шесть байтов под CPU-SP, операнды и буфер проекции",
@@ -34,9 +34,9 @@ for entry in FUNCTIONS:
    "после каждого вызова сохраняемый указатель восстанавливается из CPU-стека, рабочий SP восстанавливает генератор",
    "в образе 10 уникальных моделей с 62 группами, 22 указателя включают повторения и парные варианты",
    ("плоская процедура доказана как отдельный вход, её реальный игровой вызывающий путь пока не установлен" if entry==0xD819 else "этот вход вызывается проходом подготовленной очереди по EF39 после композиции матриц"),
-   "Unknown01 в этом входе используется как угловой отсчёт, глобальное назначение трёх исходных Seed ещё не установлено"])
+   "PlanarAngleBase в этом входе используется как угловой отсчёт, глобальное назначение трёх исходных Seed ещё не установлено"])
 COMMENTS={
- 0xD819:(["-----------------------------------------","Относительный угол плоской модели","-----------------------------------------","чтение исходного углового отсчёта, более общий смысл Unknown01 пока не установлен"],None),
+ 0xD819:(["-----------------------------------------","Относительный угол плоской модели","-----------------------------------------","чтение исходного углового отсчёта, более общий смысл PlanarAngleBase пока не установлен"],None),
  0xD81D:(["чтение второго угла текущего распакованного объекта"],None),
  0xD820:(["расчёт относительного угла с байтовым оборачиванием"],None),
  0xD822:(["расчёт индекса косинуса добавлением четверти оборота"],None),
@@ -67,7 +67,7 @@ def name_operands(region,address,operation):
   from PreviewVertexProductsFacts import STATE as PLANAR_STATE
   for pointer,label in STATE.items():operation=operation.replace('(#'+format(pointer,'04X')+')','(@PreviewQueueState.'+label+')')
   for pointer,label in PLANAR_STATE.items():operation=operation.replace('(#'+format(pointer,'04X')+')','(@PreviewPlanarProductsState.'+label+')')
-  operation=operation.replace('(#C201)','(@PreviewSharedSeed.Value.Unknown01)').replace('(#D90D)','(@PreviewVertexGroupState.NextOffset)')
+  operation=operation.replace('(#C201)','(@PreviewSharedSeed.Value.PlanarAngleBase)').replace('(#D90D)','(@PreviewVertexGroupState.NextOffset)')
   operation=operation.replace('LD H, #D0','LD H, @PreviewQueueBuildConst.ModelPage').replace('LD A, #04','LD A, @FPreviewProjectedVertex.Outcode')
   operation=operation.replace('LD H, #C4','LD H, @PreviewModelMatrixConst.SinePage').replace('ADD A, #40','ADD A, @PreviewModelMatrixConst.QuarterTurn')
   operation=operation.replace('CALL #DBD9','CALL @D3D.ConfigurePreviewProjectionScale.Entry').replace('CALL #D85E','CALL @D3D.ProjectPlanarVertexGroup.Entry').replace('CALL #D8BE','CALL @D3D.PreparePreviewVertexProducts.Entry')

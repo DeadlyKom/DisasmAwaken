@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "original_action_sha256": "63f2ac2717bb7f630b25ec3cb92671e5f78f2174f36d7370d1bae39baf3fc39a",
+  "creator_results": [
+    {
+      "class_code": 3,
+      "state": 2,
+      "limit": 150,
+      "initialized_scale": 30,
+      "cases": 256,
+      "paths": {
+        "increment": 150,
+        "preserve": 106
+      },
+      "exact_registers_including_R": true,
+      "all_banks_and_ordered_writes": true,
+      "stop": 27910,
+      "no_lifetime_or_destruction_claim": true
+    },
+    {
+      "class_code": 9,
+      "state": 2,
+      "limit": 90,
+      "initialized_scale": 1,
+      "cases": 256,
+      "paths": {
+        "increment": 90,
+        "preserve": 166
+      },
+      "exact_registers_including_R": true,
+      "all_banks_and_ordered_writes": true,
+      "stop": 27910,
+      "no_lifetime_or_destruction_claim": true
+    },
+    {
+      "class_code": 9,
+      "state": 14,
+      "limit": 90,
+      "initialized_scale": 1,
+      "cases": 256,
+      "paths": {
+        "increment": 90,
+        "preserve": 166
+      },
+      "exact_registers_including_R": true,
+      "all_banks_and_ordered_writes": true,
+      "stop": 27910,
+      "no_lifetime_or_destruction_claim": true
+    }
+  ],
+  "all_256_scale_bytes_per_created_profile": true,
+  "previous_local_byte11_validations_also_executed": true,
+  "candidate_255_wraps_to_zero_below_positive_limit": true,
+  "full_child_lifecycle_executed": false,
+  "downstream_6D06_executed": false,
+  "exact_model_T_claimed": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

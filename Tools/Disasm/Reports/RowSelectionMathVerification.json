@@ -13,6 +13,14 @@
     "below": 178839,
     "inside": 84329
   },
+  "height_full_m1_values": [
+    16,
+    18
+  ],
+  "height_exact_refresh_checked": true,
+  "height_i_im_iff_preserved": true,
+  "height_iff_fixture": 0,
+  "height_no_memory_writes": true,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

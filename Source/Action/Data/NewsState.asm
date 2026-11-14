@@ -1,6 +1,7 @@
                 module ActionNewsState
                 ; Документация [исходные записи и стоимость гиперперехода](../../../Docs/ActionNewsOrdersAndJumpCost.md)
                 assert $ == #9C41
+                ; При вылете первый байт получает MissionOffer.MessageIndex, шесть следующих приходят из #98C0..#98C5.
                 ; -----------------------------------------
                 ; исходная физическая запись Initial
 Initial:        FActionNewsState {

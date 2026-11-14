@@ -5,9 +5,82 @@ import json,sys
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/'Tools/Disasm/Research/vendor/skoolkit-10.1'),str(ROOT/'Tools/Disasm/Research')]
 from skoolkit.simulator import Simulator
+from skoolkit.pagingtracer import SliceableMemory
 from skoolkit.simutils import get_registers,A,F,D,E,SP,PC
 from CheckMultiplyBranches import reference as multiply
 from CheckGlyphRenderer import compare_flags
+
+
+EXPRESSION_START = 0xCA67
+ASSIGNMENT_START = 0xCA7B
+PREFIX_START = 0xCA81
+PREFIX_PROVEN_END = 0xCA85
+SCRIPT_START = 0xCA8F
+WATCH_END = 0xCA95
+
+
+class LangWorkspaceMemory(SliceableMemory):
+    """Учитывает обращения только к физическим байтам LANG в банке 6."""
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.reads = set()
+        self.writes = set()
+        self.registers = None
+        self.prefix_reads = []
+        self.prefix_writes = []
+
+    def __getitem__(self, address):
+        value = super().__getitem__(address)
+        if isinstance(address, int) and EXPRESSION_START <= address < SCRIPT_START and self.o7ffd & 7 == 6:
+            self.reads.add(address)
+            if address >= PREFIX_START and self.registers is not None:
+                self.prefix_reads.append((self.registers[PC], address, value))
+        return value
+
+    def __setitem__(self, address, value):
+        if EXPRESSION_START <= address < WATCH_END and self.o7ffd & 7 == 6:
+            self.writes.add(address)
+            if PREFIX_START <= address < SCRIPT_START and self.registers is not None:
+                self.prefix_writes.append((self.registers[PC], address, value))
+        super().__setitem__(address, value)
+
+    def check_nested_assignment(self, right):
+        values = (0xDF, 0xC3, right & 0xFF, right >> 8)
+        addresses = range(PREFIX_START, PREFIX_PROVEN_END)
+        assert self.prefix_writes == list(zip((0xC7B0, 0xC7B2, 0xC1BC, 0xC1BE), addresses, values))
+        assert self.prefix_reads == list(zip((0xC836, 0xC838, 0xC83E, 0xC840), addresses, values))
+
+
+def check_nested_storage(source, initial):
+    profiles = []
+    for depth in range(11):
+        banks = [bytearray(0x4000) for _ in range(8)]
+        banks[6][:len(source)] = source
+        text = (('1+(' * depth) + '1+2' + (')' * depth) + ':').encode()
+        banks[2][0x3000:0x3000 + len(text)] = text
+        memory = LangWorkspaceMemory(banks=banks, out7ffd=0x16)
+        simulator = Simulator(memory)
+        simulator.registers[:] = initial
+        memory.registers = simulator.registers
+        simulator.run(0xC039, 0xC00C)
+        high = EXPRESSION_START + 4 * depth + 6
+        assert memory.writes == set(range(EXPRESSION_START, high))
+        assert bytes(memory[EXPRESSION_START:EXPRESSION_START + 2]) == (depth + 3).to_bytes(2, 'little')
+        assert simulator.registers[SP] == initial[SP]
+        if high > SCRIPT_START:
+            assert bytes(memory[SCRIPT_START:high]) != source[SCRIPT_START - 0xC000:high - 0xC000]
+        tail_addresses = set(range(PREFIX_PROVEN_END, min(high, SCRIPT_START)))
+        tail_writes = {address for _, address, _ in memory.prefix_writes if address >= PREFIX_PROVEN_END}
+        tail_reads = {address for _, address, _ in memory.prefix_reads if address >= PREFIX_PROVEN_END}
+        assert tail_reads == tail_writes == tail_addresses
+        profiles.append(dict(right_nested_groups=depth, result=depth + 3, highest_written_address=high - 1,
+                             assignment_bytes_written=len({a for a in memory.writes if ASSIGNMENT_START <= a < PREFIX_START}),
+                             prefix_bytes_written=len({a for a in memory.writes if PREFIX_START <= a < SCRIPT_START}),
+                             additional_buffer_tail_bytes_read=len(tail_reads),
+                             additional_buffer_tail_bytes_written=len(tail_writes),
+                             script_bytes_overwritten=high > SCRIPT_START))
+    return profiles
 
 
 def main():
@@ -43,6 +116,7 @@ def main():
   for kind in ('parenthesis','condition','inverse'):check(body,result,kind);nested+=1
  check('1:2:3',3,'parenthesis');nested+=1
  report=dict(passed=True,operator_cases=count,nested_and_chain_cases=nested,
+  nested_storage_profiles=check_nested_storage(source,initial),
   method='original_numeric_readers_dispatch_operators_expression_call_and_control',all_eleven_operators=True,
   evaluation_left_to_right=True,explicit_nested_parentheses=True,calls_stubbed=False,
   irq_executed=False,native_execution=False,assembly_executed=False)

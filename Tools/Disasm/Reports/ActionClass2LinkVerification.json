@@ -1,22 +1,23 @@
 {
   "passed": true,
-  "total_cases": 7418,
+  "total_cases": 8442,
   "cases_by_profile": {
     "active_override": 6096,
     "all_R_zero_and_ff_override": 32768,
     "fold_edges": 20480,
     "all_stream0_words": 262144,
     "all_stream8_words": 65536,
-    "all_special_gate_bytes": 15360
+    "all_special_gate_bytes": 15360,
+    "all_candidate_class_codes": 3072
   },
   "cases_by_class": {
     "1": 72954,
-    "2": 7418,
+    "2": 8442,
     "3": 88314,
-    "4": 7418,
+    "4": 8442,
     "5": 72954,
     "6": 72954,
-    "7": 7418,
+    "7": 8442,
     "8": 72954
   },
   "paths_by_class": {
@@ -40,13 +41,13 @@
     "2": {
       "override_nonzero": 762,
       "parent_override_return": 762,
-      "override_zero": 5200,
-      "parent_R_below112": 2912,
-      "marker": 2808,
-      "parent_filter_Z": 2808,
-      "found": 936,
-      "parent_filter_link": 936,
-      "no_override": 5200
+      "override_zero": 5968,
+      "parent_R_below112": 3424,
+      "marker": 3316,
+      "parent_filter_Z": 3316,
+      "found": 940,
+      "parent_filter_link": 940,
+      "no_override": 5968
     },
     "3": {
       "override_nonzero": 762,
@@ -66,13 +67,13 @@
     "4": {
       "override_nonzero": 762,
       "parent_override_return": 762,
-      "override_zero": 3328,
-      "parent_R_below112": 2912,
-      "marker": 2808,
-      "parent_filter_Z": 2808,
-      "found": 936,
-      "parent_filter_link": 936,
-      "no_override": 3328
+      "override_zero": 3840,
+      "parent_R_below112": 3424,
+      "marker": 3316,
+      "parent_filter_Z": 3316,
+      "found": 940,
+      "parent_filter_link": 940,
+      "no_override": 3840
     },
     "5": {
       "override_nonzero": 762,
@@ -110,13 +111,14 @@
     "7": {
       "override_nonzero": 762,
       "parent_override_return": 762,
-      "override_zero": 3328,
-      "parent_R_below112": 2912,
-      "found": 2808,
-      "parent_filter_link": 2808,
-      "marker": 936,
-      "parent_filter_Z": 936,
-      "no_override": 3328
+      "override_zero": 3840,
+      "parent_R_below112": 3424,
+      "found": 3314,
+      "parent_filter_link": 3314,
+      "marker": 940,
+      "parent_filter_Z": 942,
+      "no_override": 3840,
+      "found_ff_returns_Z": 2
     },
     "8": {
       "override_nonzero": 762,
@@ -156,6 +158,13 @@
   "full_stream8_words_at_fold0_class3": true,
   "all_256_special_gate_bytes_at_six_low_r_values": true,
   "zero_override_writes_and_continues_preserved": true,
+  "all_first_candidate_class_codes_for_classes": [
+    2,
+    4,
+    7
+  ],
+  "candidate_class_code_parent_cases": 3072,
+  "class7_FF_candidate_returns_Z_without_link": true,
   "opposite_class6_predicate_preserved": true,
   "all_state_list_products_exhausted": false,
   "random_distribution_and_period_proved": false,

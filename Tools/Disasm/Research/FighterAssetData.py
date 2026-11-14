@@ -103,9 +103,19 @@ def render(bar, pointers, groups):
         lines.append('                }')
     for index, pointer in enumerate(pointers):
         row(f'Index{index:02}', 'FFighterPosePointer', 2 * index)
+    documented_groups = {
+        0x0048: 'действие 0, исходная неподвижная последовательность без нажатий',
+        0x00D8: 'действие 1, девять шагов MoveX=+1 относительно стороны бойца',
+        0x015A: 'действие 2, девять шагов MoveX=-1 относительно стороны бойца',
+        0x01DC: 'действие 3, вертикальная последовательность без смещения X',
+        0x0316: 'действие 7, вертикальная последовательность с MoveX=+1',
+        0x03D0: 'действие 8, вертикальная последовательность с MoveX=-1',
+    }
     for group in groups:
         offset = group['offset']
         lines.append(f'                assert $ == #{offset:04X}')
+        if offset in documented_groups:
+            lines.append('                ; ' + documented_groups[offset])
         row(f'Group{offset:04X}', 'FFighterPoseHeader', offset)
         for index, record in enumerate(group['records']):
             row(f'R{offset:04X}_{index:02}', 'FFighterPoseStep', record['offset'])

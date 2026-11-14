@@ -67,16 +67,22 @@ def main():
         simulator.registers[:] = initial
         memory.writes = []
         memory.recording = True
+        measured_m1 = 0
         for _ in range(8000):
             if simulator.registers[PC] == 0x3FFF:
                 break
+            old_r = simulator.registers[15]
             simulator.run()
+            increment = (simulator.registers[15]-old_r)&127
+            assert increment in (1,2)
+            measured_m1 += increment
         else:
             raise AssertionError(('возврат',entry,y,rows))
         memory.recording = False
         compared = (*range(13),14,15,*range(16,24),26,27)
         assert all(wanted[i] == simulator.registers[i] for i in compared), (entry,y,rows,[(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
         assert memory == expected and Counter(memory.writes) == Counter(writes), (entry,y,rows)
+        assert measured_m1 == m1
         touched = {a for a,_ in writes}
         counts[format(entry,'04X')] += 1
 
@@ -101,6 +107,7 @@ def main():
         both_direction_patches=True,thirty_inner_bytes_only=True,boundaries_clamp_to_96_rows=True,
         every_ram_byte_and_write_checked=True,exact_registers_flags_and_r=True,
         prepare_mode_read_has_no_output_effect=True,zero_count_still_writes_patches_and_stack=True,
+        direct_full_M1_count_checked=True,complete_joint_input_product_exhausted=False,
         irq_executed=False,native_execution=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/ControlsInteriorRowsVerification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,indent=2))

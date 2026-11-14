@@ -13,13 +13,13 @@
                 ;   выбранный DE-индекс присутствует в списке, устанавливаемая цель Station.RefreshMissionOfferPanels.Entry доступна в своём банковом контексте при последующем вызове
                 ; Out:
                 ;   NextCallback всегда получает Station.RefreshMissionOfferPanels.Entry до проверки селектора, сама эта цель здесь не исполняется
-                ;   при A=0 и выполненной геометрии HL=Station.RefreshMissionOfferPanels.Entry, DE, BC и IX сохранены, AF=#0045, результат соответствует TrackItemGeometry
-                ;   при A=0 и отсутствии интерактивного действия результат соответствует ToggleItemBounds, HL=DE-индекс,IX=адрес записи,Carry=1
-                ;   при ненулевом A результат соответствует ActivateItem, HL=Station.RefreshMissionOfferPanels.Entry,DE и BC сохранены
-                ;   IY сохраняется, HL' и AF' рабочие только на пути перерисовок ActivateItem
+                ;   при A=0 и выполненной геометрии HL=Station.RefreshMissionOfferPanels.Entry, DE и BC сохранены, AF=#0045, IX сохранён, результат соответствует TrackItemGeometry
+                ;   при A=0 и отсутствии интерактивного действия результат соответствует ToggleItemBounds, HL=DE-индекс, Carry=1, IX=адрес записи
+                ;   при ненулевом A результат соответствует ActivateItem, HL=Station.RefreshMissionOfferPanels.Entry, DE и BC сохранены
+                ;   HL' - H' сохраняется и L' рабочий только при перерисовке ActivateItem, AF' рабочий на том же пути, IY сохраняется
                 ;   после CALL общего обработчика выполняется собственный RET, SP обычного возврата входному+2
                 ; Corrupt:
-                ;   HL, AF, HL', AF', IX согласно выбранной ветви
+                ;   HL, AF, L', AF', IX, R, NextCallback и побочные записи выбранных TrackItemGeometry/ToggleItemBounds/ActivateItem, включая RAM стека
                 ; Note:
                 ;   бит 7 ненулевого A обходит пробу TrackItemGeometry сразу, остальные ненулевые значения проходят ту же активацию через FinishItemAction
                 ;   OR A перед условным CALL обеспечивает Z=1 для A=0, поэтому интерактивный вход использует удерживаемый код 1

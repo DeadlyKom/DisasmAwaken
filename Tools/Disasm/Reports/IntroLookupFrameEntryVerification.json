@@ -1,8 +1,26 @@
 {
   "passed": true,
-  "total_cases": 128,
+  "total_cases": 512,
   "actual_rom_executed": true,
   "untouched_outer_stack_pointer": true,
   "stopped_before_renderer": true,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "original_entry_sha256": "24cf2b9c20d4bc8e7d111afd53b3761897874501bd1d468a66a4969504588665",
+  "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+  "tested_IY": [
+    23610,
+    23567
+  ],
+  "prepared_FRAMES": [
+    0,
+    65535
+  ],
+  "exact_data_registers_and_preserved_context_compared": true,
+  "exactly_one_IRQ_at_WaitInterrupt_HALT": true,
+  "IFF_after_phase_updates": 1,
+  "I": 60,
+  "IM": 1,
+  "timing_and_refresh_R_proved": false,
+  "natural_IY_5C0F_frame_entry_reachability_proved": false,
+  "native_execution": false
 }

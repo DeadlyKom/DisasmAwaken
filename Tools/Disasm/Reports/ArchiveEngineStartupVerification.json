@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "memory_mode_targets": [
+    20408,
+    20431,
+    20453
+  ],
+  "shadow_bitmap_bytes": 6144,
+  "shadow_attribute_bytes": 768,
+  "im2_vector_bytes": 257,
+  "irq": {
+    "logical_pages": 16,
+    "stack_start": 17959,
+    "stack_end_exclusive": 17983,
+    "stack_word_writers": {
+      "4627": [
+        20404
+      ],
+      "4629": [
+        17454,
+        17461,
+        19679,
+        19682,
+        19685,
+        19691
+      ],
+      "462B": [
+        18003,
+        18006,
+        18009
+      ],
+      "462D": [
+        18002
+      ],
+      "462F": [
+        18001
+      ],
+      "4631": [
+        18000
+      ],
+      "4633": [
+        17999
+      ],
+      "4635": [
+        17996
+      ],
+      "4637": [
+        17995
+      ],
+      "4639": [
+        17994
+      ],
+      "463B": [
+        17993
+      ],
+      "463D": [
+        17991
+      ]
+    },
+    "return_stack_operand": 18025,
+    "main_and_alternate_registers_preserved": true
+  },
+  "timer": {
+    "seconds_values": 100,
+    "irq_subticks": 50,
+    "cases": 5000,
+    "stopped_cases": 1,
+    "zero_reached_after_irqs": 4950,
+    "halt_after_irqs": 5000,
+    "halt_pc": 19075
+  },
+  "separate_transfer": {
+    "entry": 16553,
+    "destination": 23590,
+    "incoming_literal_in_engine": false,
+    "destination_untouched": true,
+    "destination_execution_proved": false
+  },
+  "assembly_executed": false,
+  "native_execution": false
+}

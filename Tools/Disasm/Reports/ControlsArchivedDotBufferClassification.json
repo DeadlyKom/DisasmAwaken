@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 186,
+  "resources": 1,
+  "archive_proof": "ControlsArchivedDotBufferVerification.json",
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

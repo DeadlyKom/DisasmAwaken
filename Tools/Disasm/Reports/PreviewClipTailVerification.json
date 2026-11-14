@@ -17,5 +17,49 @@
   "original_immediates_not_replaced_in_source": true,
   "irq_executed": false,
   "native_execution": false,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "R_m1_costs": {
+    "difference": 7,
+    "point": 10,
+    "second_then_point": 14,
+    "corner_rejected": 3,
+    "corner_appended": 15
+  },
+  "all_256_R_values_per_entry": true,
+  "R_bit7_and_I_IM_IFF_preserved": true,
+  "checked_original_code_bytes": 89,
+  "R_full_joint_input_product": false,
+  "configurer_R_cost_proved": false,
+  "return_frame_alias_probes": [
+    {
+      "input_SP": 51454,
+      "input_cursor": 254,
+      "initial_return": 16383,
+      "actual_return": 4660,
+      "final_SP": 51456,
+      "point": 4660,
+      "bounded_instructions": 10,
+      "target_executed": false
+    },
+    {
+      "input_SP": 51455,
+      "input_cursor": 254,
+      "initial_return": 16383,
+      "actual_return": 16146,
+      "final_SP": 51457,
+      "point": 4660,
+      "bounded_instructions": 10,
+      "target_executed": false
+    },
+    {
+      "input_SP": 49707,
+      "input_cursor": 255,
+      "initial_return": 16383,
+      "actual_return": 16129,
+      "final_SP": 49709,
+      "point": 4660,
+      "bounded_instructions": 10,
+      "target_executed": false
+    }
+  ]
 }

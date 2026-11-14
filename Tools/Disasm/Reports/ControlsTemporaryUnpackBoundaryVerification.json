@@ -145,6 +145,16 @@
   ],
   "original_ldir_and_action_unpacker_executed": true,
   "call_frame_at_6500_checked": true,
+  "unpacker_entry": {
+    "pc": 43811,
+    "hl": 25600,
+    "de": 25600,
+    "bc": 0,
+    "a": 17,
+    "alternate_hl_de_af_preserved": true,
+    "alternate_bc": 32765,
+    "stack_contains_wrapper_return_and_saved_ix": true
+  },
   "source_and_length_supplied_in_model": true,
   "hypothetical_template_relocation": true,
   "payload_instructions_executed": false,

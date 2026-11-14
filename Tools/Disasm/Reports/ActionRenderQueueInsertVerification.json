@@ -15,6 +15,7 @@
   },
   "method": "independent_finite_linked_list_and_overlapping_payload_oracle",
   "exact_registers_flags_refresh_sp": true,
+  "full_M1_count_compared_not_only_R_modulo_128": true,
   "every_ram_byte_and_write_multiplicity_checked": true,
   "original_sign_only_compare_with_borrow_preserved": true,
   "tested_node_counts": [

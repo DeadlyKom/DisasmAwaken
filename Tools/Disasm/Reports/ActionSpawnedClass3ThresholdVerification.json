@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "original_action_sha256": "63f2ac2717bb7f630b25ec3cb92671e5f78f2174f36d7370d1bae39baf3fc39a",
+  "real_creator_entry": 62448,
+  "real_creator_complete_return": true,
+  "real_creator_write_events": 38,
+  "created_record": 41216,
+  "created_class": 3,
+  "created_state": 2,
+  "initialized_field11": 70,
+  "compared_local_entry": 61969,
+  "local_original_bytes": "7dddbe11300b",
+  "cases": 65536,
+  "branches": {
+    "below": 17920,
+    "at_or_above": 47616
+  },
+  "every_low_byte_and_input_F": true,
+  "threshold_unchanged": true,
+  "exact_all_registers_including_R_and_model_T": true,
+  "I_IM_IFF_varied_and_preserved": true,
+  "all_eight_banks_unchanged_by_comparison": true,
+  "full_State02_executed": false,
+  "random_stream_sampled": false,
+  "selected_children_executed": false,
+  "native_probability_claimed": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

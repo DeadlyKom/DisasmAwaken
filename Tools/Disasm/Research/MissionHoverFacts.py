@@ -39,3 +39,11 @@ def name_operands(region,address,operation):
  if region=='Station' and address==0x6F4D:
   return operation.replace('LD DE, #0203','LD DE, @MissionHoverConst.LimitAndOffset').replace('LD HL, #6FC5','LD HL, @Station.DrawItem31.Entry').replace('(#6F54)','(@MissionHoverState.Row)')
  return operation
+
+
+# Миссия использует тот же дочерний вывод и собственный изменяемый номер строки.
+from RowHoverFacts import HOVER_CORRUPT
+for _address in (0x6F4D,0x6E99):
+    _parts = list(CONTRACTS['Station',_address])
+    _parts[2] = [*HOVER_CORRUPT, 'MissionHoverState.Row при возвращённом Z=0']
+    CONTRACTS['Station',_address] = tuple(_parts)

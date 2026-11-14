@@ -11,9 +11,9 @@ Request по 6F56 является текущим общим запросом, S
 хранит предыдущее значение. Предыдущее значение сначала читается в C,
 затем SkipDetail получает Request. Только сочетание Request=0 и прежнего
 SkipDetail не ноль вызывает настоящий
-[ReleaseClass14Records](../Source/Action/ReleaseClass14Records.asm).
+[ReleaseBoostDebrisRecords](../Source/Action/ReleaseBoostDebrisRecords.asm).
 Это падающий фронт, ненулевое значение не трактуется как отдельный бит.
-Затем LimitWord по 7693 и SignedWord по A78F получают 0088, SixthRequest
+Затем LimitWord по 7693 и SpeedWord по A78F получают 0088, SixthRequest
 по 669F получает единицу. Request очищается независимо от фронта.
 
 | Канал | Старая защёлка | Новая защёлка | Фаза | Значение | Сбрасываемые операнды |

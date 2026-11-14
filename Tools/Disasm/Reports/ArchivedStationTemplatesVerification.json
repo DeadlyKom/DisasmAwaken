@@ -1,0 +1,621 @@
+{
+  "passed": true,
+  "method": "authored_OBJGENER_station_templates_and_LABELS_offsets_normalized_to_current_layout",
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "source": {
+    "member": "awk1.trd",
+    "slot": 32,
+    "name": "OBJGENERa",
+    "sha256": "aa6ac99c21cbca0e089c579da7b9080b7919e182c94dfb61a31ed806dd787d7f"
+  },
+  "offset_listing": {
+    "member": "awk1.trd",
+    "slot": 63,
+    "name": "LABELS  a",
+    "sha256": "be18556bbf497e3068fcc0c924a1493e7e0de3739bb90a8d4fe07ba4edcf7cf6",
+    "records": [
+      {
+        "line": 104,
+        "name": "IST1",
+        "value": 196,
+        "raw_hex": "49535431068b0466313936"
+      },
+      {
+        "line": 105,
+        "name": "IST2",
+        "value": 200,
+        "raw_hex": "49535432068b0466323030"
+      },
+      {
+        "line": 106,
+        "name": "IST3",
+        "value": 204,
+        "raw_hex": "49535433068b0466323034"
+      },
+      {
+        "line": 107,
+        "name": "IST4",
+        "value": 208,
+        "raw_hex": "49535434068b0466323038"
+      },
+      {
+        "line": 114,
+        "name": "IST5",
+        "value": 212,
+        "raw_hex": "49535435068b0466323132"
+      },
+      {
+        "line": 116,
+        "name": "IST6",
+        "value": 216,
+        "raw_hex": "49535436068b0466323136"
+      },
+      {
+        "line": 117,
+        "name": "IST7",
+        "value": 220,
+        "raw_hex": "49535437068b0466323230"
+      },
+      {
+        "line": 119,
+        "name": "IST8",
+        "value": 224,
+        "raw_hex": "49535438068b0466323234"
+      },
+      {
+        "line": 122,
+        "name": "IST9",
+        "value": 228,
+        "raw_hex": "49535439068b0466323238"
+      },
+      {
+        "line": 259,
+        "name": "IST10",
+        "value": 232,
+        "raw_hex": "4953543130068a0466323332"
+      },
+      {
+        "line": 261,
+        "name": "IST11",
+        "value": 236,
+        "raw_hex": "4953543131068a0466323336"
+      },
+      {
+        "line": 265,
+        "name": "IST12",
+        "value": 240,
+        "raw_hex": "4953543132068a0466323430"
+      },
+      {
+        "line": 267,
+        "name": "IST13",
+        "value": 244,
+        "raw_hex": "4953543133068a0466323434"
+      },
+      {
+        "line": 269,
+        "name": "IST14",
+        "value": 248,
+        "raw_hex": "4953543134068a0466323438"
+      },
+      {
+        "line": 273,
+        "name": "IST15",
+        "value": 252,
+        "raw_hex": "4953543135068a0466323532"
+      },
+      {
+        "line": 277,
+        "name": "IST16",
+        "value": 0,
+        "raw_hex": "4953543136068a046630"
+      }
+    ]
+  },
+  "normalized_current_base": 30617,
+  "archived_absolute_addresses_proved": false,
+  "bytes_matched": 192,
+  "serialized_sha256": "2f9b80d49c34398293797378c57a4b61c550c4afe519d0c1ab27703e8d3e1abc",
+  "archived_word_terminators": 16,
+  "terminator_word": 33023,
+  "rows": [
+    {
+      "index": 0,
+      "archived_label": "ST9k",
+      "current_address": 30729,
+      "source_template": "Template00",
+      "source_end": "End00",
+      "authored_model_name": "St9",
+      "authored_model_bank4_address": 57412,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 228,
+      "model_name": "St9",
+      "model_bank4_address": 57412,
+      "model_source": "Source/Action/Data/ModelSt9.asm",
+      "near_model_name": "St9",
+      "near_model_bank4_address": 57412
+    },
+    {
+      "index": 1,
+      "archived_label": "ST14k",
+      "current_address": 30779,
+      "source_template": "Template01",
+      "source_end": "End01",
+      "authored_model_name": "St14",
+      "authored_model_bank4_address": 58157,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 248,
+      "model_name": "St14",
+      "model_bank4_address": 58157,
+      "model_source": "Source/Action/Data/ModelSt14.asm",
+      "near_model_name": "St14",
+      "near_model_bank4_address": 58157
+    },
+    {
+      "index": 2,
+      "archived_label": "ST13k",
+      "current_address": 30769,
+      "source_template": "Template02",
+      "source_end": "End02",
+      "authored_model_name": "St13",
+      "authored_model_bank4_address": 58041,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 244,
+      "model_name": "St13",
+      "model_bank4_address": 58041,
+      "model_source": "Source/Action/Data/ModelSt13.asm",
+      "near_model_name": "St13",
+      "near_model_bank4_address": 58041
+    },
+    {
+      "index": 3,
+      "archived_label": "ST4k",
+      "current_address": 30679,
+      "source_template": "Template03",
+      "source_end": "End03",
+      "authored_model_name": "St4",
+      "authored_model_bank4_address": 56556,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 208,
+      "model_name": "St4",
+      "model_bank4_address": 56556,
+      "model_source": "Source/Action/Data/ModelSt4.asm",
+      "near_model_name": "St4",
+      "near_model_bank4_address": 56556
+    },
+    {
+      "index": 4,
+      "archived_label": "ST2k",
+      "current_address": 30659,
+      "source_template": "Template04",
+      "source_end": "End04",
+      "authored_model_name": "St2",
+      "authored_model_bank4_address": 56192,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 200,
+      "model_name": "St2",
+      "model_bank4_address": 56192,
+      "model_source": "Source/Action/Data/ModelSt2.asm",
+      "near_model_name": "St2",
+      "near_model_bank4_address": 56192
+    },
+    {
+      "index": 5,
+      "archived_label": "ST1k",
+      "current_address": 30649,
+      "source_template": "Template05",
+      "source_end": "End05",
+      "authored_model_name": "St1",
+      "authored_model_bank4_address": 55978,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 196,
+      "model_name": "St1",
+      "model_bank4_address": 55978,
+      "model_source": "Source/Action/Data/ModelSt1.asm",
+      "near_model_name": "St1",
+      "near_model_bank4_address": 55978
+    },
+    {
+      "index": 6,
+      "archived_label": "ST6k",
+      "current_address": 30699,
+      "source_template": "Template06",
+      "source_end": "End06",
+      "authored_model_name": "St6",
+      "authored_model_bank4_address": 56850,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 216,
+      "model_name": "St6",
+      "model_bank4_address": 56850,
+      "model_source": "Source/Action/Data/ModelSt6.asm",
+      "near_model_name": "St6",
+      "near_model_bank4_address": 56850
+    },
+    {
+      "index": 7,
+      "archived_label": "ST5k",
+      "current_address": 30689,
+      "source_template": "Template07",
+      "source_end": "End07",
+      "authored_model_name": "St5",
+      "authored_model_bank4_address": 56706,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 212,
+      "model_name": "St5",
+      "model_bank4_address": 56706,
+      "model_source": "Source/Action/Data/ModelSt5.asm",
+      "near_model_name": "St5",
+      "near_model_bank4_address": 56706
+    },
+    {
+      "index": 8,
+      "archived_label": "ST11k",
+      "current_address": 30749,
+      "source_template": "Template08",
+      "source_end": "End08",
+      "authored_model_name": "St11",
+      "authored_model_bank4_address": 57682,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 236,
+      "model_name": "St11",
+      "model_bank4_address": 57682,
+      "model_source": "Source/Action/Data/ModelSt11.asm",
+      "near_model_name": "St11",
+      "near_model_bank4_address": 57682
+    },
+    {
+      "index": 9,
+      "archived_label": "ST7k",
+      "current_address": 30709,
+      "source_template": "Template09",
+      "source_end": "End09",
+      "authored_model_name": "St7",
+      "authored_model_bank4_address": 57004,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 220,
+      "model_name": "St7",
+      "model_bank4_address": 57004,
+      "model_source": "Source/Action/Data/ModelSt7.asm",
+      "near_model_name": "St7",
+      "near_model_bank4_address": 57004
+    },
+    {
+      "index": 10,
+      "archived_label": "ST8k",
+      "current_address": 30719,
+      "source_template": "Template10",
+      "source_end": "End10",
+      "authored_model_name": "St8",
+      "authored_model_bank4_address": 57206,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 224,
+      "model_name": "St8",
+      "model_bank4_address": 57206,
+      "model_source": "Source/Action/Data/ModelSt8.asm",
+      "near_model_name": "St8",
+      "near_model_bank4_address": 57206
+    },
+    {
+      "index": 11,
+      "archived_label": "ST16k",
+      "current_address": 30799,
+      "source_template": "Template11",
+      "source_end": "End11",
+      "authored_model_name": "St16",
+      "authored_model_bank4_address": 58473,
+      "current_selector_matches_authored_name": false,
+      "model_offset": 0,
+      "model_name": "KN01pol1",
+      "model_bank4_address": 49152,
+      "model_source": "Source/Action/Data/ModelKN01pol1.asm",
+      "near_model_name": "Kd1",
+      "near_model_bank4_address": 49216
+    },
+    {
+      "index": 12,
+      "archived_label": "ST12k",
+      "current_address": 30759,
+      "source_template": "Template12",
+      "source_end": "End12",
+      "authored_model_name": "St12",
+      "authored_model_bank4_address": 57803,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 240,
+      "model_name": "St12",
+      "model_bank4_address": 57803,
+      "model_source": "Source/Action/Data/ModelSt12.asm",
+      "near_model_name": "St12",
+      "near_model_bank4_address": 57803
+    },
+    {
+      "index": 13,
+      "archived_label": "ST3k",
+      "current_address": 30669,
+      "source_template": "Template13",
+      "source_end": "End13",
+      "authored_model_name": "St3",
+      "authored_model_bank4_address": 56378,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 204,
+      "model_name": "St3",
+      "model_bank4_address": 56378,
+      "model_source": "Source/Action/Data/ModelSt3.asm",
+      "near_model_name": "St3",
+      "near_model_bank4_address": 56378
+    },
+    {
+      "index": 14,
+      "archived_label": "ST15k",
+      "current_address": 30789,
+      "source_template": "Template14",
+      "source_end": "End14",
+      "authored_model_name": "St15",
+      "authored_model_bank4_address": 58323,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 252,
+      "model_name": "St15",
+      "model_bank4_address": 58323,
+      "model_source": "Source/Action/Data/ModelSt15.asm",
+      "near_model_name": "St15",
+      "near_model_bank4_address": 58323
+    },
+    {
+      "index": 15,
+      "archived_label": "ST10k",
+      "current_address": 30739,
+      "source_template": "Template15",
+      "source_end": "End15",
+      "authored_model_name": "St10",
+      "authored_model_bank4_address": 57520,
+      "current_selector_matches_authored_name": true,
+      "model_offset": 232,
+      "model_name": "St10",
+      "model_bank4_address": 57520,
+      "model_source": "Source/Action/Data/ModelSt10.asm",
+      "near_model_name": "St10",
+      "near_model_bank4_address": 57520
+    }
+  ],
+  "declarations": [
+    {
+      "label": "ST1k",
+      "current_address": 30649,
+      "authored_model": "St1",
+      "model_offset": 196,
+      "line": 46,
+      "source_records_hex": [
+        "5354316b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c05670683495354312c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000c400ff80"
+    },
+    {
+      "label": "ST2k",
+      "current_address": 30659,
+      "authored_model": "St2",
+      "model_offset": 200,
+      "line": 52,
+      "source_records_hex": [
+        "5354326b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c05670683495354322c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000c800ff80"
+    },
+    {
+      "label": "ST3k",
+      "current_address": 30669,
+      "authored_model": "St3",
+      "model_offset": 204,
+      "line": 57,
+      "source_records_hex": [
+        "5354336b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c05670683495354332c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000cc00ff80"
+    },
+    {
+      "label": "ST4k",
+      "current_address": 30679,
+      "authored_model": "St4",
+      "model_offset": 208,
+      "line": 61,
+      "source_records_hex": [
+        "5354346b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c05670683495354342c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000d000ff80"
+    },
+    {
+      "label": "ST5k",
+      "current_address": 30689,
+      "authored_model": "St5",
+      "model_offset": 212,
+      "line": 65,
+      "source_records_hex": [
+        "5354356b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c05670683495354352c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000d400ff80"
+    },
+    {
+      "label": "ST6k",
+      "current_address": 30699,
+      "authored_model": "St6",
+      "model_offset": 216,
+      "line": 69,
+      "source_records_hex": [
+        "5354366b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c05670683495354362c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000d800ff80"
+    },
+    {
+      "label": "ST7k",
+      "current_address": 30709,
+      "authored_model": "St7",
+      "model_offset": 220,
+      "line": 73,
+      "source_records_hex": [
+        "5354376b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c05670683495354372c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000dc00ff80"
+    },
+    {
+      "label": "ST8k",
+      "current_address": 30719,
+      "authored_model": "St8",
+      "model_offset": 224,
+      "line": 77,
+      "source_records_hex": [
+        "5354386b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c05670683495354382c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000e000ff80"
+    },
+    {
+      "label": "ST9k",
+      "current_address": 30729,
+      "authored_model": "St9",
+      "model_offset": 228,
+      "line": 81,
+      "source_records_hex": [
+        "5354396b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c05670683495354392c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000e400ff80"
+    },
+    {
+      "label": "ST10k",
+      "current_address": 30739,
+      "authored_model": "St10",
+      "model_offset": 232,
+      "line": 85,
+      "source_records_hex": [
+        "535431306b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c0567068349535431302c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000e800ff80"
+    },
+    {
+      "label": "ST11k",
+      "current_address": 30749,
+      "authored_model": "St11",
+      "model_offset": 236,
+      "line": 89,
+      "source_records_hex": [
+        "535431316b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c0567068349535431312c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000ec00ff80"
+    },
+    {
+      "label": "ST12k",
+      "current_address": 30759,
+      "authored_model": "St12",
+      "model_offset": 240,
+      "line": 93,
+      "source_records_hex": [
+        "535431326b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c0567068349535431322c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000f000ff80"
+    },
+    {
+      "label": "ST13k",
+      "current_address": 30769,
+      "authored_model": "St13",
+      "model_offset": 244,
+      "line": 97,
+      "source_records_hex": [
+        "535431336b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c0567068349535431332c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000f400ff80"
+    },
+    {
+      "label": "ST14k",
+      "current_address": 30779,
+      "authored_model": "St14",
+      "model_offset": 248,
+      "line": 101,
+      "source_records_hex": [
+        "535431346b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c0567068349535431342c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000f800ff80"
+    },
+    {
+      "label": "ST15k",
+      "current_address": 30789,
+      "authored_model": "St15",
+      "model_offset": 252,
+      "line": 105,
+      "source_records_hex": [
+        "535431356b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c0567068349535431352c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "000000000000fc00ff80"
+    },
+    {
+      "label": "ST16k",
+      "current_address": 30799,
+      "authored_model": "St16",
+      "model_offset": 0,
+      "line": 109,
+      "source_records_hex": [
+        "535431366b",
+        "068c0568068323303030302c23303030302c2330303030",
+        "068c0567068349535431362c233030",
+        "068c056806832338304646"
+      ],
+      "bytes_hex": "0000000000000000ff80"
+    }
+  ],
+  "current_model_names_match_count": 15,
+  "IST16_byte_alias_to_KN01pol1_preserved": true,
+  "current_EndCode_read": {
+    "address": 31034,
+    "offset": 7031,
+    "hex": "dd7e01fe80"
+  },
+  "direct_terminator_predicate_reads_high_only": true,
+  "header_reader_byte_index_in_9e_proved": true,
+  "header_reader_prefix_hex": "6f269e7e2c666f",
+  "standalone_low_FF_role_proved": false,
+  "all_indirect_consumers_excluded": false,
+  "execution_model_run": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -217,8 +217,9 @@
                 include "../Map/RasterizeMapLine.asm"
                 ent
                 assert $ == #1418
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/07_KARTA/BeforeMapLineMasks.bin"
+                ; Заполнение до 16-байтовой границы таблицы масок ld1l
+                ; Документация [выравнивание масок](../../Docs/MapLine.md)
+                incbin "../Map/Resources/LineMaskAlignment.bin"
                 assert $ == #1420
                 disp #D420
                 include "../Map/Data/MapLineMasks.asm"
@@ -329,11 +330,10 @@
                 include "../Map/DivideSigned32To16.asm"
                 ent
                 assert $ == #1DB0
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 ; Документация [таблицы и сохранённые промежутки](../../Docs/MapClipTablePages.md)
                 assert $ == #1DB0
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/07_KARTA/Unclassified1DB0_1E00.bin"
+                ; Заполнение ADRXX00 перед младшей страницей таблицы отсечения l95
+                incbin "../Map/Resources/ClipPageAlignment.bin"
                 assert $ == #1E00
                 disp #DE00
                 include "../Map/Data/ClipLowRow0.asm"
@@ -557,8 +557,9 @@
                 include "../Map/SeededSqrt16.asm"
                 ent
                 assert $ == #28BE
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/07_KARTA/Unclassified010.bin"
+                ; Заполнение ADRXX00 перед таблицей квадратов CIRCL_TB.dat
+                ; Документация [размещение таблиц](../../Docs/MapMath.md)
+                incbin "../Map/Resources/DistanceTableAlignment.bin"
                 assert $ == #2900
                 ; таблица квадратов, 256 младших и 256 старших байтов
                 incbin "../Map/Resources/Squares.bin"

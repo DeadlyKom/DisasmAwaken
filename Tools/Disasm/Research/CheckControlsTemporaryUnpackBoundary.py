@@ -3,6 +3,7 @@ import json
 
 from CheckControlsTemporaryModule import ROOT, RecordedBanks, flat_action, base_memory, decode
 from CheckMusic import PC, SP, Simulator, get_registers
+from skoolkit.simutils import A, B, C, D, E, H, IXh, IXl, L
 from CheckScreenUpdate import PortTrace, put
 
 
@@ -37,7 +38,9 @@ def main():
         put(memory, relocated(0xDB01), size.to_bytes(2, 'little'))
         simulator = Simulator(memory, config={'fast_ldir': False, 'fast_djnz': False})
         r = simulator.registers
-        r[:] = get_registers({'PC': base, 'SP': 0x5FF0, 'IX': 0x1234}, None, False)
+        r[:] = get_registers({'PC': base, 'SP': 0x5FF0, 'IX': 0x1234,
+                             'HL': 0x1357, 'DE': 0x2468, 'BC': 0x369C, 'AF': 0x48D7,
+                             '^HL': 0x59AD, '^DE': 0x6ABE, '^BC': 0x7BCF, '^AF': 0x8CD1}, None, False)
         trace = PortTrace(simulator)
         simulator.set_tracer(trace)
         saw_unpack = False
@@ -45,7 +48,10 @@ def main():
             if r[PC] == 0x6500:
                 break
             if r[PC] == 0xAB23:
-                assert not saw_unpack and r[4:8] == [0x64, 0, 0x64, 0]
+                assert not saw_unpack and (r[H], r[L], r[D], r[E], r[B], r[C]) == (0x64, 0, 0x64, 0, 0, 0)
+                assert r[A] == 0x11 and r[16:24] == [0x8C, 0xD1, 0x7F, 0xFD, 0x24, 0x68, 0x13, 0x57]
+                assert (r[SP], r[IXh], r[IXl]) == (0x5FEC, 0x12, 0x34)
+                assert bytes(memory[0x5FEC:0x5FF0]) == relocated(0xDB23).to_bytes(2, 'little') + b'\x34\x12'
                 assert bytes(memory[0x6400:0x6400 + size]) == packed
                 saw_unpack = True
             simulator.run()
@@ -62,6 +68,9 @@ def main():
     assert len(cases) == 20
     report = dict(passed=True, total_cases=len(cases), cases=cases,
                   original_ldir_and_action_unpacker_executed=True, call_frame_at_6500_checked=True,
+                  unpacker_entry=dict(pc=0xAB23, hl=0x6400, de=0x6400, bc=0, a=0x11,
+                                      alternate_hl_de_af_preserved=True, alternate_bc=0x7FFD,
+                                      stack_contains_wrapper_return_and_saved_ix=True),
                   source_and_length_supplied_in_model=True, hypothetical_template_relocation=True,
                   payload_instructions_executed=False, actual_game_caller_proved=False,
                   assembly_executed=False, native_execution=False)

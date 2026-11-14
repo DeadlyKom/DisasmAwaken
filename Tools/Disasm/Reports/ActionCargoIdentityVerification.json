@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "method": "author_cargo_type_current_model_and_eject_mine_prepared_call",
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "author_name": "T_CARGO",
+  "class_code": 19,
+  "author_comment": "ГРУЗ",
+  "original_definition_hex": "545f434152474f068505660682233133fe83909387",
+  "corresponding_icon": {
+    "class_code": 19,
+    "archived_label": "MCARGO",
+    "current_address": 59069,
+    "current_shape": "BarI",
+    "type_constants": [
+      "T_CARGO"
+    ]
+  },
+  "model_label": "CRG1",
+  "model_address": 55506,
+  "model_offset": 152,
+  "model_pointer_address": 40600,
+  "archived_model_label_hex": "43524731068b04663535353036",
+  "full_object3d_file_match_bytes": 10580,
+  "current_instruction_witnesses": [
+    {
+      "address": 25714,
+      "offset": 1711,
+      "hex": "FD360698",
+      "operation": "LD (IY+#06),#98"
+    },
+    {
+      "address": 25769,
+      "offset": 1766,
+      "hex": "FD361213",
+      "operation": "LD (IY+#12),#13"
+    },
+    {
+      "address": 30193,
+      "offset": 6190,
+      "hex": "CD4164",
+      "operation": "CALL #6441"
+    },
+    {
+      "address": 30196,
+      "offset": 6193,
+      "hex": "D5",
+      "operation": "PUSH DE"
+    },
+    {
+      "address": 30197,
+      "offset": 6194,
+      "hex": "1102F4",
+      "operation": "LD DE,#F402"
+    },
+    {
+      "address": 30200,
+      "offset": 6197,
+      "hex": "CD4060",
+      "operation": "CALL #6040"
+    },
+    {
+      "address": 30203,
+      "offset": 6200,
+      "hex": "D1",
+      "operation": "POP DE"
+    },
+    {
+      "address": 30204,
+      "offset": 6201,
+      "hex": "C9",
+      "operation": "RET"
+    }
+  ],
+  "prepared_entry": 25665,
+  "eject_mine_calls_same_creator": true,
+  "own_eject_mine_tail_does_not_retype_record": true,
+  "created_class_and_model_are_distinct_from_command_message_identity": true,
+  "full_created_object_lifecycle_proved": false,
+  "native_mine_behavior_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

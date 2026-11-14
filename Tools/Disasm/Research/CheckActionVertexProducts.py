@@ -39,6 +39,12 @@ def main():
         last,index,difference_square=product(coefficients[2][1],factors[2])
         wanted=list(initial)
         wanted[0:2]=[last,sub8_flags(square(index),difference_square)]
+        # Проверка знака табличной разности, оба вычитаемых значения не превосходят 127.
+        assert last!=0x80
+        assert not wanted[1]&4
+        assert bool(wanted[1]&128)==bool(wanted[1]&1)
+        assert (wanted[1]&1)==bool(last&128)
+        assert bool(wanted[1]&64)==(last==0)
         wanted[5],wanted[6],wanted[7]=difference_square,0x98,index
         wanted[15]=refresh(initial[15],127)
         wanted[PC]=0xD694
@@ -50,12 +56,17 @@ def main():
         simulator.registers[:]=initial
         memory.writes=[]
         memory.recording=True
+        measured_m1=0
         for _ in range(110):
             if simulator.registers[PC]==0xD694:
                 break
-            simulator.run()
+            before_r=simulator.registers[15];simulator.run()
+            increment=(simulator.registers[15]-before_r)&127
+            assert increment in (1,2)
+            measured_m1+=increment
         else:
             raise AssertionError('продолжение D694')
+        assert measured_m1==127,(coefficients,factors,measured_m1)
         memory.recording=False
         compared=(*range(16),*range(16,24),PC,26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared),(coefficients,factors,[(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
@@ -81,6 +92,8 @@ def main():
     report=dict(passed=True,total_cases=counts.total(),profiles=dict(counts),
         original_square_table_verified=True,all_primitive_pairs=True,all_nine_coefficient_slices=True,all_three_factor_slices=True,
         exact_registers_flags_refresh=True,every_physical_ram_byte_and_write_multiplicity_checked=True,
+        full_M1_count_compared_not_only_R_modulo_128=True,constant_refresh_M1=127,
+        final_difference_PV_zero_S_equals_C_and_Z_checked=True,
         stack_untouched=True,fallthrough_D694=True,whole_group_composition_executed=False,all_joint_inputs_exhausted=False,
         assembly_executed=False,irq_executed=False,native_execution=False)
     (ROOT/'Tools/Disasm/Reports/ActionVertexProductsVerification.json').write_bytes((json.dumps(report,indent=2)+'\n').encode('utf-8'))

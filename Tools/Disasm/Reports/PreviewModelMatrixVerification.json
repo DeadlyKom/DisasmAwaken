@@ -16,5 +16,18 @@
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false,
-  "full_frame_semantics_proved": false
+  "full_frame_semantics_proved": false,
+  "direct_full_M1_count_scope": "matrix_cases",
+  "matrix_R_I_IM_IFF_checked": true,
+  "coefficient_write_multiplicity_checked": true,
+  "matrix_M1_values": [
+    26,
+    315,
+    318,
+    319,
+    321,
+    322,
+    323
+  ],
+  "full_angle_product_exhausted": false
 }

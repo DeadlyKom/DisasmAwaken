@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "method": "archived_sources_and_full_original_loop_comparison",
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "archived_map": "awk6.trd:KARTA.C",
+  "loop_start": 49401,
+  "loop_bytes": 43,
+  "unchanged_loop_body_bytes": 36,
+  "archived_loop_hex": "dd21799921419a7e23a72817fa24c1e5dd5e00dd5601dd4e02dd460321c3cecd31c2e1010400dd09c300c1",
+  "current_loop_hex": "dd217b9921a3997e23a72817fa24c1e5dd5e00dd5601dd4e02dd460321c3cecd31c2e1010400dd09c300c1",
+  "archived_points": 39289,
+  "archived_codes": 39489,
+  "archived_capacity": 50,
+  "current_points": 39291,
+  "current_codes": 39331,
+  "current_capacity": 10,
+  "archived_contact_code_versions": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "current_code_hex": "0000010101010101010100",
+  "current_following_byte": 129,
+  "current_marker_cancellation": {
+    "passed": true,
+    "cases": 800,
+    "profiles": [
+      "physical",
+      "positive_two",
+      "positive_127",
+      "one_disabled",
+      "early_end"
+    ],
+    "phase_count": 8,
+    "viewports": [
+      [
+        128,
+        96
+      ],
+      [
+        208,
+        112
+      ]
+    ],
+    "bitmap_and_attributes_compared": true,
+    "original_keys_preserved": true,
+    "physical_positive_marker_calls": 8,
+    "eight_identical_XOR_markers_cancel": true,
+    "visible_odd_marker_cases": 96,
+    "even_marker_cases": 480,
+    "fragment_start": 49401,
+    "fragment_stop": 49444,
+    "original_marker_called_without_stubs": true,
+    "complete_scene_executed": false,
+    "current_unknown_code_roles_proved": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "current_contact_gameplay_proved": false,
+  "current_unknown_code_roles_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

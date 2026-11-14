@@ -5,11 +5,12 @@ ROOT=Path(__file__).resolve().parents[3]
 sys.path.insert(0,str(ROOT/'Tools/Disasm/Research'))
 from CheckMusic import Simulator, get_registers, PC, SP
 from CheckMusicGateTicks import Memory, xor_flags
+from ReferenceControlsPointRespawn import refresh
 
 
 def main(profiles=None,stem="MusicChannelCFinish"):
  if profiles is None:profiles=((0xE2CB,0xE2EB,0xE2CC,0xE29D,0xE2D5,0xE1EE,0xE2E3,0xE2E7,0xDC0A),)
- raw=(ROOT/'Tools/Disasm/Extracted/Active/10_MUZ1.C.bin').read_bytes();m=Memory([0]*65536);m[0xDB00:0xDB00+len(raw)]=raw;s=Simulator(m);cases=0
+ raw=(ROOT/'Tools/Disasm/Extracted/Active/10_MUZ1.C.bin').read_bytes();m=Memory([0]*65536);m[0xDB00:0xDB00+len(raw)]=raw;s=Simulator(m);cases=0;costs=set()
  # Проверка основного входа перезагрузки, сохранения текущего счётчика и одного восстановления AF.
  for finish,stop,reload,slide_counter,gate_counter,state_address,off_address,on_address,amplitude in profiles:
   for entry in (finish,finish+2,finish+5):
@@ -19,11 +20,19 @@ def main(profiles=None,stem="MusicChannelCFinish"):
       level=state^counter;delay=(counter*73+state)&255;current=(counter+state*31)&255;off=state^0xA5;on=counter^0x5A
       m.recording=False;m[reload]=delay;m[slide_counter]=0xA5;m[gate_counter]=counter;m[state_address]=state;m[off_address]=off;m[on_address]=on;m[amplitude]=0xA5
       initial=get_registers({'HL':0x1357,'DE':0x2468,'BC':0x369C,'AF':current*256+state,'IX':0xABCD,'IY':0x5C3A,'^HL':0x1234,'^DE':0x5678,'^BC':0x9ABC,'^AF':level*256+carry,'SP':0xDD00,'PC':entry},None,False)
-      s.registers[:]=initial;m.writes=[];m.recording=True
+      initial[14],initial[15],initial[26],initial[27]=(counter^state)&255,(counter*73+state)&255,0,state%3
+      s.registers[:]=initial;m.writes=[];m.recording=True;measured=0
       for n in range(22):
        if s.registers[PC]==stop:break
-       s.run()
+       previous_r=s.registers[15];s.run();increment=(s.registers[15]-previous_r)&127
+       assert increment==1
+       measured+=increment
       else:raise AssertionError('finish_c_boundary')
+      # Расчёт полного M1 до соседнего канала либо OutputAyFrame, продолжение не исполняется.
+      prefix={finish:3,finish+2:2,finish+5:1}[entry]
+      cost=prefix+(4 if counter==0 or counter>=129 else 12+int(state==255) if counter==1 else 6)
+      assert measured==cost and s.registers[15]==refresh(initial[15],cost),(entry,counter,state,measured,cost)
+      costs.add(cost)
       m.recording=False;expected=[]
       if entry!=finish+5:expected.append((slide_counter,delay if entry==finish else current))
       expected.append((amplitude,level));a=(counter-1)&255;f=carry|(a&0xA8)|(0x40 if not a else 0)|(4 if counter==128 else 0)|(16 if counter&15==0 else 0)|2;hl=0x1357
@@ -33,10 +42,10 @@ def main(profiles=None,stem="MusicChannelCFinish"):
        expected.append((gate_counter,a))
       r=s.registers;assert m.writes==expected and r[0]==a and r[1]==f and r[6]*256+r[7]==hl
       assert r[16]==(delay if entry==finish else current) and r[17]==state
-      assert all(r[i]==initial[i] for i in (2,3,4,5,8,9,10,11,SP,*range(18,24)))
+      assert all(r[i]==initial[i] for i in (2,3,4,5,8,9,10,11,14,SP,*range(18,24),26,27))
       cases+=1
  report={'passed':True,'cases':cases,'entries':[f+delta for f,*rest in profiles for delta in (0,2,5)],'all_gate_counter_and_state_bytes':True,'both_saved_carry_values':True,
-  'alternate_af_exactly_checked':True,'every_memory_write_observed':True,'stop_addresses':[p[1] for p in profiles],'ay_output_executed':False,'irq_executed':False,'assembly_executed':False}
+  'alternate_af_exactly_checked':True,'direct_full_M1_and_R_checked':True,'I_IM_IFF_preservation_checked':True,'observed_M1_values':sorted(costs),'continuation_executed':False,'every_memory_write_observed':True,'stop_addresses':[p[1] for p in profiles],'ay_output_executed':False,'irq_executed':False,'assembly_executed':False}
  (ROOT/('Tools/Disasm/Reports/'+stem+'Verification.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');print(json.dumps(report,indent=2))
 
 

@@ -12,6 +12,29 @@
   "all_timer_phase1_carry_products": true,
   "all_phase_pairs_on_state_transition": true,
   "AF_prime_contains_second_phase_add_result": true,
+  "opposite_timer_and_phase_Z_witnesses": {
+    "transition_even_when_phase_NZ": {
+      "timer_in": 1,
+      "phase1_in": 14,
+      "phase2_in": 255,
+      "final_AF": 66,
+      "final_AF_prime": 273,
+      "timer_out": 70,
+      "state_out": 16,
+      "outcome": "state_10"
+    },
+    "continue_even_when_phase_Z": {
+      "timer_in": 2,
+      "phase1_in": 28,
+      "phase2_in": 254,
+      "final_AF": 258,
+      "final_AF_prime": 81,
+      "timer_out": 1,
+      "state_out": 17,
+      "outcome": "continue"
+    }
+  },
+  "all_joint_input_products_exhausted": false,
   "exact_registers_flags_r_sp": true,
   "full_eight_bank_ram_and_write_multiplicity_compared": true,
   "cpu_stack_written": false,

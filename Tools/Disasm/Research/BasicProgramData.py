@@ -5,6 +5,10 @@ import re
 from CheckIntro import ROOT
 
 ENTRY, PROGRAM_BASE = 23873, 23867
+DETACHED_LINE_START, DETACHED_LINE_END = 0x007B, 0x0084
+DETACHED_LINE_PATH = 'Source/Basic/Data/DetachedLineSuffix.asm'
+DETACHED_NUMBER_START, DETACHED_NUMBER_END = 0x0084, 0x0090
+DETACHED_NUMBER_PATH = 'Source/Basic/Data/DetachedSectorNumber.asm'
 TYPES = {'FBasicLineHeader': (1, 1, 2), 'FBasicSmallInteger': (1, 1, 1, 1, 1)}
 PARTS = (
     (0, 6, PROGRAM_BASE, 'Prefix', '''                module BasicProgramPrefix
@@ -76,3 +80,29 @@ def original_program():
     for start, end, origin, _, source in PARTS:
         assert parse(source, origin)[0] == data[start:end]
     return data, lines
+
+
+def detached_sector_number(allocation):
+    raw = allocation[DETACHED_NUMBER_START:DETACHED_NUMBER_END]
+    assert raw == b'15616\x0E\x00\x00\x00\x3D\x00\r'
+    assert int(raw[:5]) == int.from_bytes(raw[8:10], 'little') == 0x3D00
+    return raw
+
+
+def detached_line_suffix(allocation):
+    raw = allocation[DETACHED_LINE_START:DETACHED_LINE_END]
+    assert raw == b'uck"\xCA20\r\x80'
+    return raw
+
+
+def line_token_from_rom(basic):
+    # Таблица ROM 1 кодирует последний символ каждого токена установленным битом 7.
+    token_start = 0x96
+    tokens = []
+    for offset in range(token_start, 0x1E4):
+        if basic[offset] & 128:
+            tokens.append(basic[token_start:offset] + bytes((basic[offset] & 127,)))
+            token_start = offset + 1
+    assert tokens[0] == b'RND' and tokens[0xC0 - 0xA5] == b'USR'
+    assert tokens[0xCA - 0xA5] == b'LINE'
+    return 0xCA

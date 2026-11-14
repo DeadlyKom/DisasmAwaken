@@ -115,16 +115,23 @@ def main():
                     operations.extend(calculated['writes']);operations.extend(local['writes'])
                     wanted=local['registers'];wanted[PC]=0xF0F8;ports=calculated['ports'];kind='far_step'
                     wanted[15]=refresh(wanted[15],1)
+            total_m1=timing.m1_count+(10 if kind=='near_reuse' else 30+calculated['refresh_m1']+local['refresh_m1'] if kind=='far_step' else 0)
             writes=[]
             for address,value in operations:
                 bank=5 if address<0x8000 else 2 if address<0xC000 else 0
                 expected[bank][address&0x3FFF]=value;writes.append((bank,address&0x3FFF,value))
             simulator.registers[:]=initial;trace=PortTrace(simulator);simulator.set_tracer(trace)
             memory.writes=[];memory.recording=True
+            measured_m1=0
             for _ in range(20000):
                 if simulator.registers[PC] in (0xF0F8,0x3FFF):break
+                previous_r=simulator.registers[15]
                 simulator.run()
+                increment=(simulator.registers[15]-previous_r)&127
+                assert increment in (1,2)
+                measured_m1+=increment
             else:raise AssertionError(('не достигнут выход',index,mode))
+            assert measured_m1==total_m1,(index,mode,'M1',measured_m1,total_m1)
             memory.recording=False
             compared=(*range(25),26,27)
             assert all(wanted[i]==simulator.registers[i] for i in compared),(index,mode,kind,[(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
@@ -142,6 +149,7 @@ def main():
         actual_selector_search_distance_geometry_and_reuse_executed=True,
         exact_registers_including_r=True,full_eight_bank_ram_and_write_multiplicity_compared=True,
         maximum_extra_stack_bytes=max_stack,real_ports_verified=True,common_offset_tail_executed=False,
+        full_M1_count_compared_not_only_R_modulo_128=True,
         near_path_external_ret_executed=True,all_record_contents_product_exhausted=False,
         assembly_executed=False,irq_executed=False,native_execution=False)
     (ROOT/'Tools/Disasm/Reports/ActionSelectedRecordProximityVerification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')

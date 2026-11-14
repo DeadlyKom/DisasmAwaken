@@ -9,6 +9,20 @@
   "all_gate_counter_and_state_bytes": true,
   "both_saved_carry_values": true,
   "alternate_af_exactly_checked": true,
+  "direct_full_M1_and_R_checked": true,
+  "I_IM_IFF_preservation_checked": true,
+  "observed_M1_values": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    15,
+    16
+  ],
+  "continuation_executed": false,
   "every_memory_write_observed": true,
   "stop_addresses": [
     58091

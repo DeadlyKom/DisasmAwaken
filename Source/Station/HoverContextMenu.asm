@@ -9,12 +9,16 @@
 ;   IX - запись контекстного меню Item40, действуют договоры UpdatePixelHover и его графических вызовов
 ;   операнд PreviousRow по #757A доступен для записи, после DrawItem40 он равен #FF
 ;   PointerY=0..191, таблицы экрана и владельцев подготовлены, банк 0 выбран и не заблокирован
-; Out:
-;   HL, DE, BC, AF и AF' соответствуют UpdatePixelHover с HL=DrawItem40, D=64, E=3
-;   при Z=0 A записан в операнд PreviousRow, при Z=1 прежний операнд сохранён
-;   HL', DE', BC', IX, IY, I и IFF сохранены, SP восстановлен
-; Corrupt:
-;   HL, DE, BC, AF, AF'
+                ; Out:
+                ;   HL, DE, BC и AF соответствуют UpdatePixelHover с параметрами HL=DrawItem40, D=64, E=3
+                ;   HL', DE', BC' сохранены, AF' рабочий по UpdatePixelHover, IX, IY, I и IFF сохранены, SP восстановлен
+                ;   при Z=0 A записан в операнд PreviousRow, при Z=1 прежний операнд сохранён
+                ; Corrupt:
+                ;   HL, DE, BC, AF, AF', R
+                ;   bitmap полосы, MapHighlightState.WidthSkip банка 1, StationState.CurrentPage, управление 7FFD и временные слова CPU-стека
+                ;   PointerState.UpdateBlocked, PointerState.RestoredFlag, PointerState.SpriteBase, PointerState.BackgroundAddr и PointerState.VisibleRows
+                ;   InterfaceState.HoverItem, InterfaceState.HoverCallback и строки PointerBackground
+                ;   PopupState.PreviousRow при возвращённом Z=0
 ; Note:
 ;   пиксельная область высотой 64 задаёт восемь строк с верхним отступом 3
 ;   самомодификация меняет только непосредственный байт LD A, код операции сохраняется

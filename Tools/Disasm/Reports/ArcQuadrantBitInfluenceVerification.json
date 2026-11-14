@@ -1,0 +1,472 @@
+{
+  "passed": true,
+  "cases": 6144,
+  "paths": {
+    "small_radius": 1024,
+    "inside_two_x_borders": 1024,
+    "outside_y_far_vertical": 1024,
+    "outside_x_two_borders": 1024,
+    "outside_xy_far_vertical": 1536,
+    "outside_xy_one_edge": 512
+  },
+  "window_profiles": [
+    [
+      16,
+      24
+    ],
+    [
+      64,
+      64
+    ]
+  ],
+  "all_256_quadrant_bytes": true,
+  "command_read_address_write_address_traces_identical_with_same_low_bits": true,
+  "independent_bitmap_and_attributes_checked": true,
+  "original_code_byte_preserved": true,
+  "changed_register_indices": [
+    0,
+    1
+  ],
+  "changed_written_memory_addresses": [
+    32762,
+    32763
+  ],
+  "full_register_and_stack_byte_equality_claimed": false,
+  "all_geometries_proved": false,
+  "original_0f_initializer_purpose_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "single_high_bit_influence": {
+    "2": {
+      "cases": 96,
+      "cases_with_returned_difference": 80,
+      "returned_register_xor_masks": {
+        "0": 4
+      },
+      "written_memory_xor_masks": {
+        "7FFB": 4
+      },
+      "first_difference": {
+        "width": 16,
+        "height": 24,
+        "radius": 40,
+        "abs_x": 0,
+        "abs_y": 0,
+        "low_quadrant": 0,
+        "mode": 48,
+        "baseline_AF": [
+          0,
+          84
+        ],
+        "actual_AF": [
+          4,
+          84
+        ],
+        "last_instruction_addresses": [
+          58987,
+          58989,
+          58990,
+          58992,
+          58995,
+          59027,
+          58476,
+          58479,
+          58480,
+          58501,
+          58502,
+          58503,
+          58505,
+          58506,
+          58507,
+          58511,
+          58512,
+          58514,
+          58515,
+          58516,
+          58518,
+          58519,
+          57447,
+          57450
+        ],
+        "flag_restore_chain": [
+          57439,
+          57442,
+          57444,
+          59023,
+          58518,
+          58519,
+          57447,
+          57450
+        ]
+      }
+    },
+    "3": {
+      "cases": 96,
+      "cases_with_returned_difference": 80,
+      "returned_register_xor_masks": {
+        "0": 8,
+        "1": 8
+      },
+      "written_memory_xor_masks": {
+        "7FFA": 8,
+        "7FFB": 8
+      },
+      "first_difference": {
+        "width": 16,
+        "height": 24,
+        "radius": 40,
+        "abs_x": 0,
+        "abs_y": 0,
+        "low_quadrant": 0,
+        "mode": 48,
+        "baseline_AF": [
+          0,
+          84
+        ],
+        "actual_AF": [
+          8,
+          92
+        ],
+        "last_instruction_addresses": [
+          58987,
+          58989,
+          58990,
+          58992,
+          58995,
+          59027,
+          58476,
+          58479,
+          58480,
+          58501,
+          58502,
+          58503,
+          58505,
+          58506,
+          58507,
+          58511,
+          58512,
+          58514,
+          58515,
+          58516,
+          58518,
+          58519,
+          57447,
+          57450
+        ],
+        "flag_restore_chain": [
+          57439,
+          57442,
+          57444,
+          59023,
+          58518,
+          58519,
+          57447,
+          57450
+        ]
+      }
+    },
+    "4": {
+      "cases": 96,
+      "cases_with_returned_difference": 80,
+      "returned_register_xor_masks": {
+        "0": 16
+      },
+      "written_memory_xor_masks": {
+        "7FFB": 16
+      },
+      "first_difference": {
+        "width": 16,
+        "height": 24,
+        "radius": 40,
+        "abs_x": 0,
+        "abs_y": 0,
+        "low_quadrant": 0,
+        "mode": 48,
+        "baseline_AF": [
+          0,
+          84
+        ],
+        "actual_AF": [
+          16,
+          84
+        ],
+        "last_instruction_addresses": [
+          58987,
+          58989,
+          58990,
+          58992,
+          58995,
+          59027,
+          58476,
+          58479,
+          58480,
+          58501,
+          58502,
+          58503,
+          58505,
+          58506,
+          58507,
+          58511,
+          58512,
+          58514,
+          58515,
+          58516,
+          58518,
+          58519,
+          57447,
+          57450
+        ],
+        "flag_restore_chain": [
+          57439,
+          57442,
+          57444,
+          59023,
+          58518,
+          58519,
+          57447,
+          57450
+        ]
+      }
+    },
+    "5": {
+      "cases": 96,
+      "cases_with_returned_difference": 80,
+      "returned_register_xor_masks": {
+        "0": 32,
+        "1": 32
+      },
+      "written_memory_xor_masks": {
+        "7FFA": 32,
+        "7FFB": 32
+      },
+      "first_difference": {
+        "width": 16,
+        "height": 24,
+        "radius": 40,
+        "abs_x": 0,
+        "abs_y": 0,
+        "low_quadrant": 0,
+        "mode": 48,
+        "baseline_AF": [
+          0,
+          84
+        ],
+        "actual_AF": [
+          32,
+          116
+        ],
+        "last_instruction_addresses": [
+          58987,
+          58989,
+          58990,
+          58992,
+          58995,
+          59027,
+          58476,
+          58479,
+          58480,
+          58501,
+          58502,
+          58503,
+          58505,
+          58506,
+          58507,
+          58511,
+          58512,
+          58514,
+          58515,
+          58516,
+          58518,
+          58519,
+          57447,
+          57450
+        ],
+        "flag_restore_chain": [
+          57439,
+          57442,
+          57444,
+          59023,
+          58518,
+          58519,
+          57447,
+          57450
+        ]
+      }
+    },
+    "6": {
+      "cases": 96,
+      "cases_with_returned_difference": 80,
+      "returned_register_xor_masks": {
+        "0": 64
+      },
+      "written_memory_xor_masks": {
+        "7FFB": 64
+      },
+      "first_difference": {
+        "width": 16,
+        "height": 24,
+        "radius": 40,
+        "abs_x": 0,
+        "abs_y": 0,
+        "low_quadrant": 0,
+        "mode": 48,
+        "baseline_AF": [
+          0,
+          84
+        ],
+        "actual_AF": [
+          64,
+          84
+        ],
+        "last_instruction_addresses": [
+          58987,
+          58989,
+          58990,
+          58992,
+          58995,
+          59027,
+          58476,
+          58479,
+          58480,
+          58501,
+          58502,
+          58503,
+          58505,
+          58506,
+          58507,
+          58511,
+          58512,
+          58514,
+          58515,
+          58516,
+          58518,
+          58519,
+          57447,
+          57450
+        ],
+        "flag_restore_chain": [
+          57439,
+          57442,
+          57444,
+          59023,
+          58518,
+          58519,
+          57447,
+          57450
+        ]
+      }
+    },
+    "7": {
+      "cases": 96,
+      "cases_with_returned_difference": 80,
+      "returned_register_xor_masks": {
+        "0": 128
+      },
+      "written_memory_xor_masks": {
+        "7FFB": 128
+      },
+      "first_difference": {
+        "width": 16,
+        "height": 24,
+        "radius": 40,
+        "abs_x": 0,
+        "abs_y": 0,
+        "low_quadrant": 0,
+        "mode": 48,
+        "baseline_AF": [
+          0,
+          84
+        ],
+        "actual_AF": [
+          128,
+          84
+        ],
+        "last_instruction_addresses": [
+          58987,
+          58989,
+          58990,
+          58992,
+          58995,
+          59027,
+          58476,
+          58479,
+          58480,
+          58501,
+          58502,
+          58503,
+          58505,
+          58506,
+          58507,
+          58511,
+          58512,
+          58514,
+          58515,
+          58516,
+          58518,
+          58519,
+          57447,
+          57450
+        ],
+        "flag_restore_chain": [
+          57439,
+          57442,
+          57444,
+          59023,
+          58518,
+          58519,
+          57447,
+          57450
+        ]
+      }
+    }
+  },
+  "first_witness_flag_chain": [
+    {
+      "address": 57439,
+      "hex": "3AADDF",
+      "operation": "LD A,(#DFAD)"
+    },
+    {
+      "address": 57442,
+      "hex": "CB47",
+      "operation": "BIT 0,A"
+    },
+    {
+      "address": 57444,
+      "hex": "CC8FE6",
+      "operation": "CALL Z,#E68F"
+    },
+    {
+      "address": 59023,
+      "hex": "F5",
+      "operation": "PUSH AF"
+    },
+    {
+      "address": 58518,
+      "hex": "F1",
+      "operation": "POP AF"
+    },
+    {
+      "address": 58519,
+      "hex": "C9",
+      "operation": "RET"
+    },
+    {
+      "address": 57447,
+      "hex": "C481E6",
+      "operation": "CALL NZ,#E681"
+    },
+    {
+      "address": 57450,
+      "hex": "C9",
+      "operation": "RET"
+    }
+  ],
+  "register_index_names": {
+    "0": "A",
+    "1": "F"
+  },
+  "compared_memory_values_scope": "addresses_written_during_dispatcher_not_unchanged_input_QuadrantCode",
+  "global_high_bit_purpose_proved": false
+}

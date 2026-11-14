@@ -2,6 +2,7 @@
 from collections import Counter
 from itertools import product
 import json
+from struct import pack
 
 from CheckActionParameterActivation import RecordedBanks, flat_action
 from CheckActionPatchedVector import COEFFICIENTS, OUTPUTS
@@ -9,9 +10,98 @@ from CheckActionVisualEffectTransfer import effect_raster
 from CheckEffects import memory_image
 from CheckIntro import ROOT
 from CheckMusic import PC, SP, Simulator, get_registers
-from CheckScreenUpdate import PortTrace
+from CheckScreenUpdate import PortTrace, put
 from ReferenceActionLogRatio import EXP, LOG
 from ReferenceActionPatchedVector import evaluate
+
+
+class FrameCycleMemory(RecordedBanks):
+    def __init__(self, banks):
+        super().__init__(banks=[bank.copy() for bank in banks], out7ffd=0x13)
+        self.voxel_tail_accesses = []
+
+    def __getitem__(self, address):
+        if isinstance(address, int) and self.o7ffd & 7 == 3 and 0xE1C0 <= address < 0xE500:
+            self.voxel_tail_accesses.append(('read', address))
+        return super().__getitem__(address)
+
+    def __setitem__(self, address, value):
+        if self.o7ffd & 7 == 3 and 0xE1C0 <= address < 0xE500:
+            self.voxel_tail_accesses.append(('write', address))
+        super().__setitem__(address, value)
+
+
+def check_frame_cycles(banks, voxel, matrix):
+    reports = []
+    stack = 0xBFFE
+    variants = ((0xEC00, 0xD800, 0xC0, 13, 12),
+                (0xEC1B, 0xC400, 0x280, 8, 20))
+    for entry, first, stride, count, size in variants:
+        for index in (0, 7):
+            memory = FrameCycleMemory(banks)
+            sim = Simulator(memory)
+            trace = PortTrace(sim)
+            sim.set_tracer(trace)
+            record = 0xA795 + index * 18
+            vector = (0, 0, 0x0800)
+            state = count * 2 + 1
+            mode = 2
+            put(memory, stack, (0xFF, 0x3F))
+            sim.registers[:] = get_registers(
+                {'PC': entry, 'SP': stack, 'IY': record - 18, 'A': mode,
+                 '^A': state, '^HL': vector[0], '^DE': vector[1], '^BC': vector[2]},
+                None, False)
+            sim.run(entry, 0x3FFF)
+            expected_record = bytearray(pack('<HHHBBHHBBHBB', *vector, mode, state,
+                                             first, first, 1, count, stride, size, size))
+            assert bytes(memory[record:record + 18]) == expected_record
+            assert sim.registers[SP] == stack + 2 and not trace.writes
+
+            memory.out7ffd(0x10)
+            memory[0x6D39], memory[0x6D3D] = 1, state
+            memory[0xBFFE], memory[0xBFFF] = 255, 63
+            for address in (0xE5B3, 0xE5D2, 0xE5ED):
+                put(memory, address, (0, 0))
+            for addresses, values in zip(COEFFICIENTS, matrix):
+                for address, value in zip(addresses, values):
+                    memory[address] = value
+            outputs = [memory[a] | memory[a + 1] << 8 for a in OUTPUTS]
+            raster = list(memory.banks[2][:0xC00])
+            frame_addresses, changed_ticks = [], 0
+            for tick in range(state + 1):
+                if tick < state:
+                    phase = tick % count
+                    frame = first + stride * phase
+                    frame_addresses.append(frame)
+                    expected_record[7] = state - tick - 1
+                    expected_record[8:10] = pack('<H', frame)
+                    expected_record[12] = count - phase
+                    result = evaluate(vector, matrix, outputs)
+                    outputs = result['outputs']
+                    x, y, depth = outputs
+                    assert not result['overflow'] and 0 < depth < 32768
+                    previous_raster = raster
+                    raster = effect_raster(raster, voxel, x, y, depth, mode, size, size, frame)
+                    changed_ticks += raster != previous_raster
+                    ports = [(0x7FFD, 0x13), (0x7FFD, 0x10)]
+                else:
+                    memory[0x6D39], memory[0x6D3D] = 1, 2
+                    ports = []
+                put(memory, stack, (0xFF, 0x3F))
+                trace.writes.clear()
+                sim.registers[:] = get_registers({'PC': 0x6D38, 'SP': stack}, None, False)
+                sim.run(0x6D38, 0x3FFF)
+                context = (hex(entry), index, tick)
+                assert sim.registers[SP] == stack + 2 and memory.o7ffd == 0x10, context
+                assert bytes(memory[record:record + 18]) == expected_record, context
+                assert list(memory.banks[2][:0xC00]) == raster and trace.writes == ports, context
+            assert changed_ticks and not memory.voxel_tail_accesses
+            reports.append(dict(creator=hex(entry), record_index=index,
+                                frame_addresses=[hex(value) for value in frame_addresses],
+                                frame_bytes=stride, last_frame_end=hex(first + count * stride),
+                                changed_raster_ticks=changed_ticks, voxel_tail_accesses=0,
+                                inactive_tick_verified=True))
+    return reports
 
 
 def main():
@@ -83,6 +173,7 @@ def main():
         counts['cases'] += 1
     report = dict(passed=True, total_cases=counts['cases'], outcomes=dict(counts),
                   all_eight_record_positions=True, whole_raster_compared=True,
+                  original_creator_frame_cycles=check_frame_cycles(banks, voxel, matrix),
                   assembly_executed=False, native_execution=False)
     payload = json.dumps(report, indent=2) + '\n'
     (ROOT / 'Tools/Disasm/Reports/ActionVisualEffectListVerification.json').write_text(payload, encoding='utf-8')

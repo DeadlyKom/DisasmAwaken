@@ -11,14 +11,15 @@
                 ;   HELP загружен в банк 7, страница 10 либо 18 согласована с портом, переключения не заблокированы
                 ; Out:
                 ;   HL указывает на остановку PrintCrRecordAndRows, DE равен входному ContentsTop, BC сохранён
-                ;   AF содержит число строк и флаги формулы PrintCrRecordAndRows, AF' равен 1000 либо 180C
-                ;   HL', DE', BC', IX и IY сохранены, I, IFF и IM сохраняются при договоре IRQ
+                ;   AF содержит число строк и флаги формулы PrintCrRecordAndRows
+                ;   HL', DE', BC' сохранены, AF' равен 1000 либо 180C, IX и IY сохранены, I, IM и IFF сохраняются при договоре IRQ
                 ;   IndexRow=FF, Style=0, VisibleTitles получает полный байтовый результат числа строк
                 ;   CursorY=8, CursorX после печати, bitmap содержит рамку и оставшиеся заголовки от ContentsTop
                 ;   банк 0 и экранный бит восстановлены, SP после RET входному+2
-                ;   при временном C9 в Entry сохраняются все регистры, флаги и память, SP после RET входному+2
+                ;   при временном C9 в Entry обычные пары и память сохранены, R получает один M1 с сохранением бита 7, SP после RET входному+2
                 ; Corrupt:
-                ;   HL, DE, AF, AF', IndexRow, VisibleTitles, курсор, окно, bitmap и изменяемые операнды помощников
+                ;   HL, DE, AF, AF', R, IndexRow, VisibleTitles, курсор, окно, bitmap и изменяемые операнды помощников
+                ;   CurrentPage, порт #7FFD, временные слова CPU-стека и записи регистрации StationState.ItemIndex, DirtyCells, CellSpanSkip
                 ; Note:
                 ;   VisibleTitles является операндом D в UpdateIndexListHover, он ограничивает область вычисления строки
                 ;   между CR-заголовками нет LF, печатается остаток потока до общего LF либо отказа окна

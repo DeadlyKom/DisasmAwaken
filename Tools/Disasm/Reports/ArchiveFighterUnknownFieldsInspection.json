@@ -1,0 +1,592 @@
+{
+  "passed": true,
+  "original_engine_sha256": "9c9f6a90d91a5ea52d5a47b2b6b63af63967f1baf252ccb84494c3ab03a9a09d",
+  "inspected_registered_instructions": 1325,
+  "structured_source_bytes": 653,
+  "fighter_bases": [
+    18498,
+    18581
+  ],
+  "field_offsets": [
+    8,
+    10
+  ],
+  "original_zero_byte_addresses": [
+    18506,
+    18508,
+    18589,
+    18591
+  ],
+  "direct_byte_and_word_accesses": [],
+  "indexed_displacement_accesses": [],
+  "indexed_exclusion_requires_index_at_record_base": true,
+  "unresolved_other_indirect_operations": [
+    {
+      "pc": 16413,
+      "operation": "LDE,(HL)"
+    },
+    {
+      "pc": 16415,
+      "operation": "LDD,(HL)"
+    },
+    {
+      "pc": 16509,
+      "operation": "LD(HL),#0"
+    },
+    {
+      "pc": 16516,
+      "operation": "LD(HL),#7"
+    },
+    {
+      "pc": 16568,
+      "operation": "LD(HL),#5F"
+    },
+    {
+      "pc": 16862,
+      "operation": "CP(HL)"
+    },
+    {
+      "pc": 16865,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 17110,
+      "operation": "LDE,(HL)"
+    },
+    {
+      "pc": 17112,
+      "operation": "LDD,(HL)"
+    },
+    {
+      "pc": 17115,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 17120,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 17125,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 17130,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 17185,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 17190,
+      "operation": "LDC,(HL)"
+    },
+    {
+      "pc": 17192,
+      "operation": "LDB,(HL)"
+    },
+    {
+      "pc": 17230,
+      "operation": "LDC,(HL)"
+    },
+    {
+      "pc": 17232,
+      "operation": "LDB,(HL)"
+    },
+    {
+      "pc": 17247,
+      "operation": "LDC,(HL)"
+    },
+    {
+      "pc": 17249,
+      "operation": "LDB,(HL)"
+    },
+    {
+      "pc": 17266,
+      "operation": "LDC,(HL)"
+    },
+    {
+      "pc": 17268,
+      "operation": "LDB,(HL)"
+    },
+    {
+      "pc": 17283,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 17288,
+      "operation": "LDE,(HL)"
+    },
+    {
+      "pc": 17290,
+      "operation": "LDD,(HL)"
+    },
+    {
+      "pc": 17298,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 17303,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 17314,
+      "operation": "ADDA,(HL)"
+    },
+    {
+      "pc": 17362,
+      "operation": "CP(HL)"
+    },
+    {
+      "pc": 17401,
+      "operation": "CP(HL)"
+    },
+    {
+      "pc": 17487,
+      "operation": "LDC,(HL)"
+    },
+    {
+      "pc": 17489,
+      "operation": "LDB,(HL)"
+    },
+    {
+      "pc": 17493,
+      "operation": "AND(HL)"
+    },
+    {
+      "pc": 17523,
+      "operation": "LDC,(HL)"
+    },
+    {
+      "pc": 17525,
+      "operation": "LDB,(HL)"
+    },
+    {
+      "pc": 17529,
+      "operation": "AND(HL)"
+    },
+    {
+      "pc": 17590,
+      "operation": "LDE,(HL)"
+    },
+    {
+      "pc": 17592,
+      "operation": "LDD,(HL)"
+    },
+    {
+      "pc": 17595,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 17601,
+      "operation": "AND(HL)"
+    },
+    {
+      "pc": 17603,
+      "operation": "XOR(HL)"
+    },
+    {
+      "pc": 17608,
+      "operation": "AND(HL)"
+    },
+    {
+      "pc": 17610,
+      "operation": "XOR(HL)"
+    },
+    {
+      "pc": 17625,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 18153,
+      "operation": "LD(HL),D"
+    },
+    {
+      "pc": 18321,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 18324,
+      "operation": "LDE,(HL)"
+    },
+    {
+      "pc": 18326,
+      "operation": "LDA,(DE)"
+    },
+    {
+      "pc": 18329,
+      "operation": "LDE,(HL)"
+    },
+    {
+      "pc": 18331,
+      "operation": "LDA,(DE)"
+    },
+    {
+      "pc": 18334,
+      "operation": "LD(HL),A"
+    },
+    {
+      "pc": 18397,
+      "operation": "LDA,(DE)"
+    },
+    {
+      "pc": 18398,
+      "operation": "AND(HL)"
+    },
+    {
+      "pc": 18400,
+      "operation": "OR(HL)"
+    },
+    {
+      "pc": 18402,
+      "operation": "LD(DE),A"
+    },
+    {
+      "pc": 18670,
+      "operation": "CP(HL)"
+    },
+    {
+      "pc": 18683,
+      "operation": "CP(HL)"
+    },
+    {
+      "pc": 18904,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 18905,
+      "operation": "LD(DE),A"
+    },
+    {
+      "pc": 19080,
+      "operation": "DEC(HL)"
+    },
+    {
+      "pc": 19158,
+      "operation": "LDA,(HL)"
+    },
+    {
+      "pc": 19166,
+      "operation": "LDA,(DE)"
+    },
+    {
+      "pc": 19167,
+      "operation": "AND(HL)"
+    },
+    {
+      "pc": 19168,
+      "operation": "LD(HL),A"
+    },
+    {
+      "pc": 19170,
+      "operation": "LDA,(DE)"
+    },
+    {
+      "pc": 19171,
+      "operation": "OR(HL)"
+    },
+    {
+      "pc": 19172,
+      "operation": "LD(HL),A"
+    },
+    {
+      "pc": 19220,
+      "operation": "LDA,(DE)"
+    },
+    {
+      "pc": 19221,
+      "operation": "LD(HL),A"
+    },
+    {
+      "pc": 19224,
+      "operation": "LDA,(DE)"
+    },
+    {
+      "pc": 19225,
+      "operation": "LD(HL),A"
+    },
+    {
+      "pc": 19618,
+      "operation": "LD(HL),#14"
+    },
+    {
+      "pc": 19631,
+      "operation": "LD(HL),#14"
+    },
+    {
+      "pc": 19701,
+      "operation": "CP(HL)"
+    },
+    {
+      "pc": 19720,
+      "operation": "XOR(HL)"
+    },
+    {
+      "pc": 19721,
+      "operation": "LD(HL),A"
+    },
+    {
+      "pc": 19748,
+      "operation": "CP(HL)"
+    },
+    {
+      "pc": 19767,
+      "operation": "XOR(HL)"
+    },
+    {
+      "pc": 19768,
+      "operation": "LD(HL),A"
+    },
+    {
+      "pc": 20493,
+      "operation": "LDA,(HL)"
+    }
+  ],
+  "block_operations": [
+    {
+      "pc": 16514,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 16521,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 16573,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 17168,
+      "operation": "RLD"
+    },
+    {
+      "pc": 18042,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 18063,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 18091,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 18123,
+      "operation": "RRD"
+    },
+    {
+      "pc": 18127,
+      "operation": "RRD"
+    },
+    {
+      "pc": 18131,
+      "operation": "RRD"
+    },
+    {
+      "pc": 18135,
+      "operation": "RRD"
+    },
+    {
+      "pc": 18139,
+      "operation": "RRD"
+    },
+    {
+      "pc": 18143,
+      "operation": "RRD"
+    },
+    {
+      "pc": 18147,
+      "operation": "RRD"
+    },
+    {
+      "pc": 18151,
+      "operation": "RRD"
+    },
+    {
+      "pc": 18220,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18719,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 18782,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 18801,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 18902,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18919,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18921,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18939,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18941,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18945,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18947,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18949,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18951,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18953,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18955,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18957,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18959,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18961,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18963,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18965,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18967,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18969,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18971,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18973,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18975,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18977,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18979,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18981,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18983,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18985,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18987,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18989,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18991,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18993,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18995,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18997,
+      "operation": "LDI"
+    },
+    {
+      "pc": 18999,
+      "operation": "LDI"
+    },
+    {
+      "pc": 19001,
+      "operation": "LDI"
+    },
+    {
+      "pc": 19003,
+      "operation": "LDI"
+    },
+    {
+      "pc": 19005,
+      "operation": "LDI"
+    },
+    {
+      "pc": 19007,
+      "operation": "LDI"
+    },
+    {
+      "pc": 19620,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 19633,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 19661,
+      "operation": "LDIR"
+    },
+    {
+      "pc": 20537,
+      "operation": "RLD"
+    }
+  ],
+  "mutable_displacements_and_other_index_bases_excluded": false,
+  "global_unusedness_proved": false,
+  "padding_or_word_high_part_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -53,4 +53,4 @@ if __name__ == '__main__':
     path.write_text(json.dumps(symbols,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     main(facts,'ControlsEvenSpan','ControlsEvenSpan',(
         ('TailOffset',0xCEB4,'изменяемое знаковое смещение JR'),
-        ('Mode',0xD18B,'общий байт режима, Z возвращает его нулевое состояние')))
+        ('Direction',0xD18B,'направление строк большого круга, Z установлен при движении вверх')))

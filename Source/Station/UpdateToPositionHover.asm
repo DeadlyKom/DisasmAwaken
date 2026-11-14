@@ -11,14 +11,19 @@
                 ;   PanelHoverState.ToPositionRow содержит прежний номер либо FF, его операнд доступен для записи
                 ;   действуют договоры UpdatePixelHover, XorItemRow, XorPointerRow, SuspendPointer и ResumePointer
                 ; Out:
+                ;   HL, DE, BC и AF принадлежат UpdatePixelHover
+                ;   HL', DE', BC' сохраняются, AF' рабочий только на обновлении указателя, IX и IY сохраняются
                 ;   перед UpdatePixelHover установлены HL=DrawSaveSlotPanel.Entry, DE=2803, A прежний номер
                 ;   D=40 пикселей передаётся прямо, E=3, высота FInterfaceItem не ограничивает область этого входа
                 ;   при Z=1 возвращённого UpdatePixelHover сохранённый номер не меняется, выходные регистры принадлежат соответствующей ветви отказа или совпадения
                 ;   при Z=0 весь возвращённый A записан в PanelHoverState.ToPositionRow, даже если A=0 либо повторная проверка вернула высоту
-                ;   HL, DE, BC и AF принадлежат UpdatePixelHover, HL', DE', BC', IX, IY сохраняются, AF' рабочий только на обновлении указателя
                 ;   при соблюдении договоров SP обычного возврата равен входному SP+2, I, IFF и IM не меняются
                 ; Corrupt:
-                ;   HL, DE, BC, AF, AF' на изменении полосы и указателя
+                ;   HL, DE, BC, AF, AF', R
+                ;   bitmap полосы, MapHighlightState.WidthSkip банка 1, StationState.CurrentPage, управление 7FFD и временные слова CPU-стека
+                ;   PointerState.UpdateBlocked, PointerState.RestoredFlag, PointerState.SpriteBase, PointerState.BackgroundAddr и PointerState.VisibleRows
+                ;   InterfaceState.HoverItem, InterfaceState.HoverCallback и строки PointerBackground
+                ;   PanelHoverState.ToPositionRow при возвращённом Z=0
                 ; Note:
                 ;   обновление допускается лишь для точного адреса рисователя в последнем слове списка
                 ;   Z показывает отсутствие обновления, он не равнозначен нулю A

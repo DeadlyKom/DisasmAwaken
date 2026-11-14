@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "total_cases": 2048,
+  "scroll_calls": 1391,
+  "all_input_byte_values": true,
+  "all_initial_columns_for_zero_and_255": true,
+  "exact_registers_except_R": true,
+  "all_physical_RAM_except_8_stack_bytes": true,
+  "nonstack_write_multiplicity_checked": true,
+  "actual_glyph_and_scroll_executed": true,
+  "last_glyph_AFprime_column_and_BIT_flags_checked": true,
+  "complete_joint_input_product_exhausted": false,
+  "stack_residue_values_proved": false,
+  "R_proved": false,
+  "timing_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

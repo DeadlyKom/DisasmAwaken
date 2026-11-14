@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "original_final_payload_sha256": "3f6ed3e986ff2b4d8e64802fa72aec8aed12d08e7811975f13d4c1c5837fa3b5",
+  "profiles": [
+    {
+      "entry_SP": 24574,
+      "minimum_SP": 24560,
+      "SP_before_frame_pair": 24574,
+      "temporary_stack_bytes": 14,
+      "input_SP": 24572,
+      "copied_bitmap_differences": [],
+      "first_pair_HL": 43319,
+      "first_pair_DE": 32771,
+      "first_pair_BC": 0,
+      "first_pair_AF": 411,
+      "first_pair_I": 190,
+      "first_pair_IM": 2,
+      "first_pair_IFF": 0,
+      "paging": 1
+    },
+    {
+      "entry_SP": 24575,
+      "minimum_SP": 24561,
+      "SP_before_frame_pair": 24575,
+      "temporary_stack_bytes": 14,
+      "input_SP": 24573,
+      "copied_bitmap_differences": [],
+      "first_pair_HL": 43319,
+      "first_pair_DE": 32771,
+      "first_pair_BC": 0,
+      "first_pair_AF": 411,
+      "first_pair_I": 190,
+      "first_pair_IM": 2,
+      "first_pair_IFF": 0,
+      "paging": 1
+    },
+    {
+      "entry_SP": 32766,
+      "minimum_SP": 32752,
+      "SP_before_frame_pair": 32766,
+      "temporary_stack_bytes": 14,
+      "input_SP": 32764,
+      "copied_bitmap_differences": [
+        {
+          "source_address": 32760,
+          "bank": 0,
+          "offset": 1359,
+          "expected": 6,
+          "actual": 169
+        },
+        {
+          "source_address": 32761,
+          "bank": 0,
+          "offset": 1360,
+          "expected": 0,
+          "actual": 122
+        },
+        {
+          "source_address": 32762,
+          "bank": 0,
+          "offset": 1361,
+          "expected": 12,
+          "actual": 253
+        },
+        {
+          "source_address": 32763,
+          "bank": 0,
+          "offset": 1362,
+          "expected": 27,
+          "actual": 127
+        },
+        {
+          "source_address": 32764,
+          "bank": 0,
+          "offset": 1363,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "source_address": 32765,
+          "bank": 0,
+          "offset": 1364,
+          "expected": 96,
+          "actual": 192
+        }
+      ],
+      "first_pair_HL": 43319,
+      "first_pair_DE": 32771,
+      "first_pair_BC": 0,
+      "first_pair_AF": 411,
+      "first_pair_I": 190,
+      "first_pair_IM": 2,
+      "first_pair_IFF": 0,
+      "paging": 1
+    }
+  ],
+  "actual_prepare_frame_and_builder_executed": true,
+  "stopped_before_first_EI_and_HALT": true,
+  "initial_IFF": 0,
+  "maximum_temporary_stack_bytes": 14,
+  "stack_outside_generated_code_alone_is_insufficient": true,
+  "natural_game_stack_at_7FFE_proved": false,
+  "all_stack_locations_proved": false,
+  "IRQ_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

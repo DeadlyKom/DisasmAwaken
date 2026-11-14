@@ -1,0 +1,53 @@
+{
+  "full_verification_passed": false,
+  "serial": 31750,
+  "linked": 62,
+  "reuse": 3,
+  "no_free": false,
+  "path": [
+    "parameter_0A",
+    "free_record",
+    "class17_created"
+  ],
+  "child_address": 41280,
+  "modified_coefficient_code": [
+    {
+      "address": 45135,
+      "original": 0,
+      "expected": 128,
+      "actual": 128
+    }
+  ],
+  "creator_writes_in_full_coefficient_builder": [
+    {
+      "address": 45196,
+      "value": 107,
+      "original": 105
+    },
+    {
+      "address": 45195,
+      "value": 1,
+      "original": 47
+    }
+  ],
+  "creator_writes_in_coefficient_code": [],
+  "register_differences": [
+    {
+      "index": 0,
+      "expected": 131,
+      "actual": 2
+    },
+    {
+      "index": 1,
+      "expected": 66,
+      "actual": 0
+    },
+    {
+      "index": 15,
+      "expected": 76,
+      "actual": 55
+    }
+  ],
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -25,8 +25,16 @@
                 include "../Controls/CallLegacyDosRom.asm"                      ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #013B
-                ; Unknown, соседний диапазон сохраняется без классификации
-                incbin "../Resources/23_CONTROL/Unclassified013B_01BD.bin"
+                ; Совпадающие байты счётчика и двух ключей STATIONF, потребитель CONTROL неизвестен
+                ; Документация [префикс станционного контекста](../../Docs/ControlsTemporaryModule.md)
+                incbin "../Controls/Resources/LegacyContextPrefix.bin"
+                assert $ == #0148
+                ; Изменённая часть заголовка исходного NDATA, потребители полей не установлены
+                incbin "../Controls/Resources/LegacyResetRevisedHeader.bin"
+                assert $ == #0150
+                ; Хвост шаблона NDATA для сброса перед возвратом на станцию в раннем CONTROL
+                ; Документация [происхождение шаблона](../../Docs/ControlsTemporaryModule.md)
+                incbin "../Controls/Resources/LegacyResetContextTail.bin"
                 assert $ == #01BD
                 disp #DC9B
                 include "../Controls/RelocateStationReload.asm"

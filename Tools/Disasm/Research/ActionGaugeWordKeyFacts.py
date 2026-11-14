@@ -1,4 +1,4 @@
-"""Точные исходные условия двух клавиатурных писателей SignedWord."""
+"""Точные исходные условия двух клавиатурных писателей SpeedWord."""
 LAYOUT=((0x7680,0x76A3,'IncreaseGaugeWord','ActionKeyGaugeIncrease'),(0x76A3,0x76C7,'DecreaseGaugeWord','ActionKeyGaugeDecrease'))
 CONST_BLOCK='\n                ; Исходные проверки опкода и шага слова шестой шкалы\n                module ActionGaugeKeyConst\n'
 for name,value,note in (('MotionOpcode',0x3A,'опкод LD A,(nn) в начале координатной цепочки 6E72'),
@@ -17,33 +17,33 @@ def create(start):
     outputs=(
         ['при SkipDetail не ноль A=SkipDetail, F соответствует OR A, HL, DE и BC сохраняются',
          'иначе при MotionOpcode не 3A A=MotionOpcode, F соответствует CP 3A, HL, DE и BC сохраняются',
-         'иначе HL=(SignedWord+8) AND FFFF, DE=LimitWord, BC сохранён',
-         'если знак обёрнутой разности HL-LimitWord отрицателен, SignedWord=HL, SixthRequest=1 и A=1, иначе память сохранена и A=3A',
+         'иначе HL=(SpeedWord+8) AND FFFF, DE=LimitWord, BC сохранён',
+         'если знак обёрнутой разности HL-LimitWord отрицателен, SpeedWord=HL, SixthRequest=1 и A=1, иначе память сохранена и A=3A',
          'F сохраняет S/Z/PV от SBC и получает остальные биты от обратного ADD, точная формула приведена в документации',
          'R получает 3, 6, 15 либо 19 M1 в зависимости от пути, бит 7 R сохраняется'] if increase else
         ['при MotionOpcode не 3A A=MotionOpcode, F соответствует CP 3A, HL, DE и BC сохраняются',
          'иначе при SkipDetail не ноль A=SkipDetail, F соответствует AND A, HL, DE и BC сохраняются',
-         'иначе HL=SignedWord, DE=8, BC сохранён, отрицательное слово с нулевым битом 4 младшего байта не записывается',
-         'при этом отказе A=0, F=54 OR (L AND 28), в остальных случаях HL=(SignedWord-8) AND FFFF',
-         'при записи SignedWord=HL, SixthRequest=1, A=1, F соответствует 16-битному вычитанию с Carry=0',
+         'иначе HL=SpeedWord, DE=8, BC сохранён, отрицательное слово с нулевым битом 4 младшего байта не записывается',
+         'при этом отказе A=0, F=54 OR (L AND 28), в остальных случаях HL=(SpeedWord-8) AND FFFF',
+         'при записи SpeedWord=HL, SixthRequest=1, A=1, F соответствует 16-битному вычитанию с Carry=0',
          'R получает 3, 6, 14, 18 либо 21 M1 в зависимости от пути, бит 7 R сохраняется'])
     outputs += ["HL', DE', BC', AF', IX, IY сохраняются, SP=входной SP+2, I, IM, IFF и 7FFD сохраняются, CPU-стек не записывается"]
     contracts={('Action',start):(
         ['HL, DE, BC, AF входных аргументов не задают',
-         'SkipDetail, MotionOpcode и SignedWord доступны, '+('LimitWord является стабильным изменяемым операндом этого входа' if increase else 'старшее и младшее слова SignedWord не меняются параллельно'),
+         'SkipDetail, MotionOpcode и SpeedWord доступны, '+('LimitWord является стабильным изменяемым операндом этого входа' if increase else 'оба байта скорости не меняются параллельно'),
          'перенесённый код доступен в фиксированном банке 5, CPU-стек содержит внешний возврат, IRQ не вмешиваются'],
-        outputs,['HL, DE, AF, R, при записи SignedWord и SixthRequest'],notes)}
+        outputs,['HL, DE, AF, R, при записи SpeedWord и SixthRequest'],notes)}
     comments=({
         0x7680:(['Проверка общего запроса SkipDetail, ненулевой байт запрещает увеличение слова.'],None),
         0x7684:([], 'выход, если SkipDetail ненулевой, сохранить слово и запрос шкалы'),
         0x7685:(['Проверка исходного опкода 3A координатной цепочки, остальные байты не допускают изменение.'],None),
         0x768A:([], 'выход, если MotionOpcode отличается от 3A, сохранить слово'),
-        0x768B:(['Расчёт кандидата SignedWord+8 по модулю 65536.'],None),
+        0x768B:(['Расчёт кандидата SpeedWord+8 по модулю 65536.'],None),
         0x7692:(['Чтение изменяемого LimitWord, исходное значение 0088 может восстанавливаться падающим фронтом запроса.'],None),
         0x7695:(['Проверка знака обёрнутой разности кандидата и ограничения, Carry предварительно очищается.'],None),
         0x7698:(['Восстановление кандидата обратным сложением, флаг Sign остаётся от SBC.'],None),
-        0x7699:([], 'выход, если разность кандидата и ограничения неотрицательна по биту 15, сохранить SignedWord'),
-        0x769A:(['Обновление SignedWord только после исходной знаковой проверки.'],None),
+        0x7699:([], 'выход, если разность кандидата и ограничения неотрицательна по биту 15, сохранить SpeedWord'),
+        0x769A:(['Обновление SpeedWord только после исходной знаковой проверки.'],None),
         0x769D:(['Создание запроса перерисовки шестой шкалы после изменения слова.'],None)} if increase else {
         0x76A3:(['Проверка опкода координатной цепочки до чтения общего запроса.'],None),
         0x76A8:([], 'выход, если MotionOpcode отличается от 3A, сохранить слово'),
@@ -52,15 +52,15 @@ def create(start):
         0x76AE:(['Чтение слова и проверка знака, отрицательная половина имеет дополнительное условие допуска.'],None),
         0x76B6:([], 'переход, если слово неотрицательное, уменьшить его без проверки младшего бита 4'),
         0x76B8:(['Проверка бита 4 младшего байта отрицательного слова, это исходное побитовое условие.'],None),
-        0x76BA:([], 'выход, если у отрицательного слова бит 4 младшего байта нулевой, сохранить SignedWord'),
-        0x76BB:(['Расчёт SignedWord-8 с предварительно очищенным Carry.'],None),
-        0x76BE:(['Обновление SignedWord результатом вычитания по модулю 65536.'],None),
+        0x76BA:([], 'выход, если у отрицательного слова бит 4 младшего байта нулевой, сохранить SpeedWord'),
+        0x76BB:(['Расчёт SpeedWord-8 с предварительно очищенным Carry.'],None),
+        0x76BE:(['Обновление SpeedWord результатом вычитания по модулю 65536.'],None),
         0x76C1:(['Создание запроса перерисовки шестой шкалы после изменения слова.'],None)})
-    if increase:comments[0x7685]=(comments[0x7685][0]+['Внутренний вход MotionGate из AdvanceBoost, проверка SkipDetail уже пропущена.', 'In:', '  HL, DE, BC и AF числовых аргументов не задают, доступны MotionOpcode, SignedWord и LimitWord', 'Out:', '  при MotionOpcode не 3A HL, DE и BC сохранены, A равен опкоду, F соответствует CP 3A', '  иначе действуют расчёт и выходы основного входа после проверки SkipDetail, внешний RET задаёт SP=входной SP+2', 'Corrupt:', '  HL, DE, AF, R, SignedWord и SixthRequest только на допущенном пути', 'Документация [шестнадцать вызовов ускорения](../../Docs/ActionBoostAdvance.md).'],None)
+    if increase:comments[0x7685]=(comments[0x7685][0]+['Внутренний вход MotionGate из AdvanceBoost, проверка SkipDetail уже пропущена.', 'In:', '  HL, DE, BC и AF числовых аргументов не задают, доступны MotionOpcode, SpeedWord и LimitWord', 'Out:', '  при MotionOpcode не 3A HL, DE и BC сохранены, A равен опкоду, F соответствует CP 3A', '  иначе действуют расчёт и выходы основного входа после проверки SkipDetail, внешний RET задаёт SP=входной SP+2', 'Corrupt:', '  HL, DE, AF, R, SpeedWord и SixthRequest только на допущенном пути', 'Документация [шестнадцать вызовов ускорения](../../Docs/ActionBoostAdvance.md).'],None)
     def name_operands(region,address,operation):
         if (region,address)!=('Action',start):return operation
         for old,new in (('#6F59','@ActionProjectionClipState.SkipDetail'),('#6E72','@ActionGaugeWordKeysState.MotionOpcode'),
-            ('#A78F','@ActionPanelGaugesState.SignedWord'),('#669F','@ActionPanelGaugesState.SixthRequest'),
+            ('#A78F','@ActionPanelGaugesState.SpeedWord'),('#669F','@ActionPanelGaugesState.SixthRequest'),
             ('#0008','@ActionGaugeKeyConst.StepWord'),('#0088','@ActionControlDecayConst.ResetWord'),
             ('CP #3A','CP @ActionGaugeKeyConst.MotionOpcode'),('BIT 7, H','BIT @ActionAbs32Const.SignBit, H'),
             ('BIT 4, L','BIT @ActionGaugeKeyConst.NegAllowBit, L'),('LD A, #01','LD A, @ActionControlDecayConst.RequestOn')):

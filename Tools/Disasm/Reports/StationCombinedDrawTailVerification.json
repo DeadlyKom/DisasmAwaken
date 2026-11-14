@@ -1,0 +1,713 @@
+{
+  "passed": true,
+  "combined": {
+    "kind": "combined_original_openers",
+    "entries": 39,
+    "removed_index": 44,
+    "read_end_exclusive": 62636,
+    "write_end_exclusive": 62634
+  },
+  "all_handlers": {
+    "kind": "all_46_physical_handlers",
+    "entries": 46,
+    "removed_index": 45,
+    "read_end_exclusive": 62650,
+    "write_end_exclusive": 62648
+  },
+  "rebuild_at_structural_limit": {
+    "cases": [
+      {
+        "entries": 46,
+        "read_end_exclusive": 62650,
+        "write_end_exclusive": 62648
+      },
+      {
+        "entries": 47,
+        "read_end_exclusive": 62652,
+        "write_end_exclusive": 62650
+      },
+      {
+        "entries": 48,
+        "read_end_exclusive": 62654,
+        "write_end_exclusive": 62652
+      },
+      {
+        "entries": 49,
+        "read_end_exclusive": 62656,
+        "write_end_exclusive": 62654
+      },
+      {
+        "entries": 50,
+        "read_end_exclusive": 62658,
+        "write_end_exclusive": 62656
+      },
+      {
+        "entries": 51,
+        "read_end_exclusive": 62660,
+        "write_end_exclusive": 62658
+      },
+      {
+        "entries": 52,
+        "read_end_exclusive": 62662,
+        "write_end_exclusive": 62660
+      },
+      {
+        "entries": 53,
+        "read_end_exclusive": 62664,
+        "write_end_exclusive": 62662
+      },
+      {
+        "entries": 54,
+        "read_end_exclusive": 62666,
+        "write_end_exclusive": 62664
+      },
+      {
+        "entries": 55,
+        "read_end_exclusive": 62668,
+        "write_end_exclusive": 62666
+      },
+      {
+        "entries": 56,
+        "read_end_exclusive": 62670,
+        "write_end_exclusive": 62668
+      },
+      {
+        "entries": 57,
+        "read_end_exclusive": 62672,
+        "write_end_exclusive": 62670
+      },
+      {
+        "entries": 58,
+        "read_end_exclusive": 62674,
+        "write_end_exclusive": 62672
+      },
+      {
+        "entries": 59,
+        "read_end_exclusive": 62676,
+        "write_end_exclusive": 62674
+      },
+      {
+        "entries": 60,
+        "read_end_exclusive": 62678,
+        "write_end_exclusive": 62676
+      },
+      {
+        "entries": 61,
+        "read_end_exclusive": 62680,
+        "write_end_exclusive": 62678
+      },
+      {
+        "entries": 62,
+        "read_end_exclusive": 62682,
+        "write_end_exclusive": 62680
+      },
+      {
+        "entries": 63,
+        "read_end_exclusive": 62684,
+        "write_end_exclusive": 62682
+      }
+    ],
+    "maximum_tested_entries": 63,
+    "actual_wrappers_and_flags": true,
+    "repeated_original_pointers_supplied": true,
+    "original_bytes_from_0xF4BA_read": 34,
+    "original_bytes_from_0xF4BA_written": 32,
+    "draw_callbacks_executed": false,
+    "actual_game_path_with_repeated_pointers_proved": false
+  },
+  "popup_removal_at_structural_limit": {
+    "cases": [
+      {
+        "entries": 63,
+        "popup_index": 40,
+        "end_marker_preserved": true,
+        "read_end_exclusive": 62684,
+        "write_end_exclusive": 62682
+      },
+      {
+        "entries": 64,
+        "popup_index": 40,
+        "end_marker_preserved": true,
+        "read_end_exclusive": 62686,
+        "write_end_exclusive": 62684
+      }
+    ],
+    "original_popup_filter_and_removal_executed": true,
+    "repeated_original_pointers_supplied": true,
+    "normal_game_list_proved": false
+  },
+  "literal_bounds_restore_sources": [
+    {
+      "call_site": 30064,
+      "wrapper": 29842,
+      "bound_index": 43
+    },
+    {
+      "call_site": 31381,
+      "wrapper": 27048,
+      "bound_index": 23
+    },
+    {
+      "call_site": 31387,
+      "wrapper": 27227,
+      "bound_index": 22
+    },
+    {
+      "call_site": 31409,
+      "wrapper": 28116,
+      "bound_index": 24
+    },
+    {
+      "call_site": 31436,
+      "wrapper": 31569,
+      "bound_index": 21
+    },
+    {
+      "call_site": 31442,
+      "wrapper": 31992,
+      "bound_index": 18
+    },
+    {
+      "call_site": 31448,
+      "wrapper": 30351,
+      "bound_index": 19
+    },
+    {
+      "call_site": 31454,
+      "wrapper": 31656,
+      "bound_index": 12
+    },
+    {
+      "call_site": 31460,
+      "wrapper": 31774,
+      "bound_index": 13
+    },
+    {
+      "call_site": 31466,
+      "wrapper": 31870,
+      "bound_index": 14
+    },
+    {
+      "call_site": 31472,
+      "wrapper": 31926,
+      "bound_index": 15
+    },
+    {
+      "call_site": 31478,
+      "wrapper": 32036,
+      "bound_index": 17
+    },
+    {
+      "call_site": 31484,
+      "wrapper": 32083,
+      "bound_index": 16
+    },
+    {
+      "call_site": 31490,
+      "wrapper": 28072,
+      "bound_index": 11
+    },
+    {
+      "call_site": 31496,
+      "wrapper": 30860,
+      "bound_index": 20
+    },
+    {
+      "call_site": 32138,
+      "wrapper": 28613,
+      "bound_index": 31
+    },
+    {
+      "call_site": 32144,
+      "wrapper": 43599,
+      "bound_index": 33
+    },
+    {
+      "call_site": 32150,
+      "wrapper": 43653,
+      "bound_index": 32
+    },
+    {
+      "call_site": 32172,
+      "wrapper": 32119,
+      "bound_index": 35
+    },
+    {
+      "call_site": 32178,
+      "wrapper": 28785,
+      "bound_index": 34
+    },
+    {
+      "call_site": 32204,
+      "wrapper": 27318,
+      "bound_index": 39
+    },
+    {
+      "call_site": 32210,
+      "wrapper": 31552,
+      "bound_index": 36
+    },
+    {
+      "call_site": 32216,
+      "wrapper": 31525,
+      "bound_index": 37
+    },
+    {
+      "call_site": 32222,
+      "wrapper": 29223,
+      "bound_index": 38
+    },
+    {
+      "call_site": 32248,
+      "wrapper": 31253,
+      "bound_index": 30
+    },
+    {
+      "call_site": 32254,
+      "wrapper": 31362,
+      "bound_index": 29
+    },
+    {
+      "call_site": 32260,
+      "wrapper": 31317,
+      "bound_index": 28
+    },
+    {
+      "call_site": 32266,
+      "wrapper": 26592,
+      "bound_index": 25
+    },
+    {
+      "call_site": 32272,
+      "wrapper": 26949,
+      "bound_index": 27
+    },
+    {
+      "call_site": 32278,
+      "wrapper": 26743,
+      "bound_index": 26
+    },
+    {
+      "call_site": 40564,
+      "wrapper": 30083,
+      "bound_index": 40
+    },
+    {
+      "call_site": 42982,
+      "wrapper": 27557,
+      "bound_index": 41
+    },
+    {
+      "call_site": 42988,
+      "wrapper": 30263,
+      "bound_index": 42
+    },
+    {
+      "call_site": 42994,
+      "wrapper": 29979,
+      "bound_index": 44
+    },
+    {
+      "call_site": 43110,
+      "wrapper": 28298,
+      "bound_index": 10
+    }
+  ],
+  "list_entry_references": {
+    "direct_calls": [
+      {
+        "region": "Station",
+        "pc": 26849,
+        "path": "Source/Station/RefreshShipPanels.asm"
+      },
+      {
+        "region": "Station",
+        "pc": 30922,
+        "path": "Source/Station/RefreshVariantPanel.asm"
+      },
+      {
+        "region": "Station",
+        "pc": 32546,
+        "path": "Source/Station/HandleStatusPanelAction.asm"
+      },
+      {
+        "region": "Station",
+        "pc": 40576,
+        "path": "Source/Station/CloseActiveItem.asm"
+      },
+      {
+        "region": "Station",
+        "pc": 52147,
+        "path": "Source/Station/RestoreItemBounds.asm"
+      },
+      {
+        "region": "Station",
+        "pc": 52222,
+        "path": "Source/Station/RepaintItemCore.asm"
+      },
+      {
+        "region": "Station",
+        "pc": 52278,
+        "path": "Source/Station/ToggleItemBounds.asm"
+      },
+      {
+        "region": "Station",
+        "pc": 52353,
+        "path": "Source/Station/ActivateItem.asm"
+      }
+    ],
+    "conditional_fallthrough": 48695,
+    "direct_head_writer": 16820,
+    "initialized_head": 62430,
+    "registered_regions_checked": 20,
+    "indirect_head_writes_proved": false
+  },
+  "periodic_list_references": {
+    "periodic_keys": [
+      20,
+      26
+    ],
+    "direct_removal_sites": [
+      {
+        "pc": 26506,
+        "operand": 31254,
+        "key": 30
+      },
+      {
+        "pc": 26513,
+        "operand": 26744,
+        "key": 26
+      },
+      {
+        "pc": 26520,
+        "operand": 26950,
+        "key": 27
+      },
+      {
+        "pc": 26527,
+        "operand": 31318,
+        "key": 28
+      },
+      {
+        "pc": 26534,
+        "operand": 31363,
+        "key": 29
+      },
+      {
+        "pc": 27019,
+        "operand": 27228,
+        "key": 22
+      },
+      {
+        "pc": 27121,
+        "operand": 27049,
+        "key": 23
+      },
+      {
+        "pc": 27685,
+        "operand": 31570,
+        "key": 21
+      },
+      {
+        "pc": 27692,
+        "operand": 31657,
+        "key": 12
+      },
+      {
+        "pc": 27699,
+        "operand": 31775,
+        "key": 13
+      },
+      {
+        "pc": 27706,
+        "operand": 31871,
+        "key": 14
+      },
+      {
+        "pc": 27713,
+        "operand": 31927,
+        "key": 15
+      },
+      {
+        "pc": 27720,
+        "operand": 32037,
+        "key": 17
+      },
+      {
+        "pc": 27727,
+        "operand": 32084,
+        "key": 16
+      },
+      {
+        "pc": 27734,
+        "operand": 31993,
+        "key": 18
+      },
+      {
+        "pc": 27741,
+        "operand": 30352,
+        "key": 19
+      },
+      {
+        "pc": 27748,
+        "operand": 30861,
+        "key": 20
+      },
+      {
+        "pc": 28294,
+        "operand": null,
+        "key": null
+      },
+      {
+        "pc": 28674,
+        "operand": 32120,
+        "key": 35
+      },
+      {
+        "pc": 29062,
+        "operand": 31526,
+        "key": 37
+      },
+      {
+        "pc": 29069,
+        "operand": 31553,
+        "key": 36
+      },
+      {
+        "pc": 29076,
+        "operand": 27319,
+        "key": 39
+      },
+      {
+        "pc": 29819,
+        "operand": null,
+        "key": null
+      },
+      {
+        "pc": 29956,
+        "operand": null,
+        "key": null
+      },
+      {
+        "pc": 30025,
+        "operand": null,
+        "key": null
+      },
+      {
+        "pc": 31242,
+        "operand": 26593,
+        "key": 25
+      },
+      {
+        "pc": 40520,
+        "operand": null,
+        "key": null
+      },
+      {
+        "pc": 42925,
+        "operand": null,
+        "key": null
+      },
+      {
+        "pc": 43632,
+        "operand": 28614,
+        "key": 31
+      },
+      {
+        "pc": 43639,
+        "operand": 43654,
+        "key": 32
+      },
+      {
+        "pc": 43646,
+        "operand": 43600,
+        "key": 33
+      }
+    ],
+    "event_close_entries": [
+      30779,
+      26682
+    ],
+    "closes_use_row_guard": 51294,
+    "group_removals_reset_periodic": true,
+    "popup_filter_excludes_periodic_keys": true,
+    "indirect_mutations_outside_registered_paths_proved": false
+  },
+  "periodic_panel_removals": {
+    "cases": [
+      {
+        "entry": "HandleSystemMapAction",
+        "periodic_key": 20,
+        "selected": 20,
+        "removed": [
+          20
+        ],
+        "periodic_before": 30934,
+        "periodic_after": 39512
+      },
+      {
+        "entry": "HandleModelPreviewClick",
+        "periodic_key": 26,
+        "selected": 26,
+        "removed": [
+          26
+        ],
+        "periodic_before": 26858,
+        "periodic_after": 39512
+      },
+      {
+        "entry": "HandleMapPanelEvent",
+        "periodic_key": 20,
+        "selected": 11,
+        "removed": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "periodic_before": 30934,
+        "periodic_after": 39512
+      },
+      {
+        "entry": "DropShipDetailPanels",
+        "periodic_key": 26,
+        "selected": null,
+        "removed": [
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "periodic_before": 26858,
+        "periodic_after": 39512
+      },
+      {
+        "entry": "CloseAllItems",
+        "periodic_key": 20,
+        "selected": null,
+        "removed": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          45
+        ],
+        "periodic_before": 30934,
+        "periodic_after": 39512
+      },
+      {
+        "entry": "CloseAllItems",
+        "periodic_key": 26,
+        "selected": null,
+        "removed": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          45
+        ],
+        "periodic_before": 26858,
+        "periodic_after": 39512
+      },
+      {
+        "entry": "RemoveOtherPopups",
+        "periodic_key": 20,
+        "selected": null,
+        "removed": [
+          40
+        ],
+        "periodic_before": 30934,
+        "periodic_after": 30934
+      },
+      {
+        "entry": "RemoveOtherPopups",
+        "periodic_key": 26,
+        "selected": null,
+        "removed": [
+          40
+        ],
+        "periodic_before": 26858,
+        "periodic_after": 26858
+      }
+    ],
+    "periodic_and_selected_event_context_prepared": true,
+    "original_panel_openers_and_close_handlers_executed": true
+  },
+  "unique_list_move_and_remove": {
+    "profiles": 2162,
+    "max_original_handlers": 46,
+    "every_position_checked": true,
+    "read_end_exclusive": 62650,
+    "all_normal_game_callers_proved": false
+  },
+  "openers": [
+    "OpenMapPanelGroup",
+    "OpenHelpPanels",
+    "OpenEquipmentPanels",
+    "OpenShipPanels",
+    "OpenContractPanels",
+    "OpenGameOptions",
+    "OpenEnvOptions",
+    "OpenRestoreDialog"
+  ],
+  "observed_lengths": [
+    21,
+    23,
+    27,
+    33,
+    36,
+    37,
+    38,
+    39
+  ],
+  "appended_indices": [
+    1,
+    10,
+    24,
+    34,
+    35,
+    40,
+    43,
+    44
+  ],
+  "original_wrappers_requeued_without_duplicate": 46,
+  "original_bytes_beyond_previous_boundary": 50,
+  "all_46_handlers_simultaneously_reachable_in_game_proved": false,
+  "disk_calls_substituted": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

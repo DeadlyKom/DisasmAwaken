@@ -6,20 +6,24 @@
                 ; Инверсия выбранной строки с восстановлением указателя, FF означает отсутствие строки
                 ; исходная запись 4, файловые смещения #426F..#427F
                 ; In:
-                ;   HL и BC - контекст, DE - D запрос числа строк, E пиксельный верхний отступ для ClampRowHeight
+                ;   HL - контекст, DE - D запрос числа строк, E пиксельный верхний отступ для ClampRowHeight, BC - контекст
                 ;   AF - A сохранённый номер строки, FF означает отсутствие выбранной строки
                 ;   IX - FInterfaceItem, при A не FF действуют договоры ClampRowHeight, SuspendPointer, XorItemRow и ResumePointer
                 ;   таблицы адресации и владельцев, банки и стек подготовлены, callback указателя допустим
                 ; Out:
                 ;   при A=FF немедленный выход, A=0, F=(входной F AND 1) OR 50, остальные общие и индексные регистры и память сохранены
-                ;   при A не FF сначала выполнены ClampRowHeight и SuspendPointer, затем прежний номер и его F восстановлены перед XorItemRow
+                ;   при A не FF сначала выполнены ClampRowHeight и SuspendPointer, затем прежний номер и F от DEC A после проверки FF восстановлены перед XorItemRow
                 ;   инвертируется строка с исходным A и отступом E по правилам XorItemRow, затем хвостовой ResumePointer восстанавливает указатель
                 ;   HL, DE, BC и AF соответствуют XorItemRow, ResumePointer сохраняет этот основной результат, UpdateBlocked=0
-                ;   HL', DE', BC', IX, IY сохраняются, AF' рабочий от ResumePointer на основном пути
+                ;   HL', DE', BC' сохраняются, AF' рабочий от ResumePointer на основном пути, IX и IY сохраняются
                 ;   при соблюдении договоров SP обычного возврата равен входному SP+2, I, IFF и IM не меняются
                 ;   при принятой XOR-полосе выбран банк 0 с ROM 1 по XorItemRow, при отказе полосы страница не меняется
                 ; Corrupt:
-                ;   HL, DE, BC, AF, AF', рисунок полосы и указателя, состояние указателя и XOR-ядра на основном пути
+                ;   HL, DE, BC, AF, AF', R
+                ;   bitmap полосы, MapHighlightState.WidthSkip банка 1, StationState.CurrentPage, управление 7FFD и временные слова CPU-стека
+                ;   PointerState.UpdateBlocked, PointerState.RestoredFlag, PointerState.SpriteBase, PointerState.BackgroundAddr и PointerState.VisibleRows
+                ;   InterfaceState.HoverItem, InterfaceState.HoverCallback и строки PointerBackground
+                ;   при входном A=FF изменяются только AF и R, собственных записей RAM нет
                 ; Note:
                 ;   INC A проверяет весь байт FF, это не проверка знака или отдельных флаговых битов
                 ;   ClampRowHeight меняет D, но XorItemRow затем заменяет D исходным A, номер строки не ограничивается возвращённой высотой

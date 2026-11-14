@@ -29,6 +29,7 @@ NAMED_TARGETS={
     '@Action.RequestTurnPositive.Entry':('Index05',0x76EA),
     '@Action.IncreaseGaugeWord.Entry':('Index07',0x7680),
     '@Action.DecreaseGaugeWord.Entry':('Index08',0x76A3),
+    '@Action.QueueDiagnosticCounters.Entry':('Index09',0xACAB),
     '@Action.IgnoreKey.Entry':('Index18',0x704B),
     '@Action.RequestMissile0.Entry':('Index0C',0x704C),
     '@Action.RequestMissile1.Entry':('Index0D',0x7075),

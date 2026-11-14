@@ -16,7 +16,20 @@
   "exact_registers_flags_r_sp_and_all_ram": true,
   "any_memory_write_rejected": true,
   "all_input_words_product_exhausted": false,
-  "runtime_caller_found": false,
+  "source_caller_relationship": {
+    "method": "static_source_relationship_not_native_execution",
+    "direct_helper_calls": 3,
+    "created_state": 8,
+    "created_class": 17,
+    "class_17_preserves_state_at_dispatch_entry": true,
+    "source_sha256": {
+      "Source/Action/ApproachTargetRecordAndResolve.asm": "139f42e21d33cb6a0ec5f68621a1d9941b3123c6da138bb924933f5f800505f9",
+      "Source/Action/CreateLinkedMissileRecord.asm": "15e129d206f7b037bc7f96e9049bf6950ba64ef9cef64b984b7eef4c0d038add",
+      "Source/Action/DispatchObjectState.asm": "b887580c65310529d85fff150caae47cf5664a395d8a449a532e9355861c7d03",
+      "Source/Action/Data/ObjectStateHandlers.asm": "75844afcbeac480313f8a7639670a4392c933576e3c34b3146d70d12f9cb62a0"
+    },
+    "native_creation_to_dispatch_execution_proved": false
+  },
   "assembly_executed": false,
   "irq_executed": false,
   "native_execution": false

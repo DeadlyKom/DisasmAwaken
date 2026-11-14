@@ -5,7 +5,7 @@ from CheckScreenUpdate import PortTrace
 from CheckWeightedLoad import reference as load_reference
 from CheckActiveNeighbors import reference as neighbor_reference
 from CheckWorldSignature import signature
-from skoolkit.pagingtracer import SliceableMemory
+from CheckExpressionControl import LangWorkspaceMemory, PREFIX_START
 from skoolkit.simulator import Simulator
 from skoolkit.simutils import get_registers,A,PC,SP
 
@@ -18,7 +18,7 @@ def main():
  initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5D,'IX':0x2468,'IY':0x5C3A,
   '^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
  def execute(event,index,quantity,owned,credits,capacity=255,neighbor=False):
-  page=0x16 if sum(counts.values())&1 else 0x1E;m=SliceableMemory(banks=[b.copy() for b in base],out7ffd=page);s=Simulator(m);s.set_tracer(PortTrace(s))
+  page=0x16 if sum(counts.values())&1 else 0x1E;m=LangWorkspaceMemory(banks=[b.copy() for b in base],out7ffd=page);s=Simulator(m);s.set_tracer(PortTrace(s))
   m[0x6306]=page;m[0x983A]=event;m[0x7217]=index;m[0x71B9]=0;m[0x9849]=owned;m[0x984A]=255;m[0x9851]=capacity
   put(m,0x9852,bytes(60));put(m,0x988E,bytes(52));put(m,0x98F6,bytes(14));m[0x988E+index]=quantity
   if neighbor:m[0x988E+((index+1)%30)]=1
@@ -53,6 +53,7 @@ def main():
   assert m[0x9850]==load_reference(bytearray(m[0:65536]),0xC0DB)[0] and m[0x9849]==owned and m[0x9851]==capacity
   assert bytes(m.banks[6][0xA8F:0xF18])==script and s.registers[SP]==0x8000 and m.o7ffd==m[0x6306]==page
   assert m[0x6E91]==(observed[-1] if observed else 0xA7)
+  assert all(address<PREFIX_START for address in m.reads | m.writes)
   counts[str(event)]+=1;messages.update(observed)
  # Проверка всех тридцати строк и обеих кодировок количества с денежными границами.
  for event in (5,6):
@@ -68,7 +69,8 @@ def main():
     for capacity in (0,1,255):execute(5,index,0,owned,65535,capacity,neighbor)
  report=dict(passed=True,per_event=dict(counts),queued_messages=dict(messages),all_30_equipment_rows=True,all_quantity_bytes=True,
   original_script_bytes_unchanged=True,actual_interpreter_and_original_script=True,independent_quantity_credits_conditions_and_messages=True,
-  inverse_at_checks_missing_ship=True,real_bank_switching=True,station_display_not_executed=True,irq_executed=False,native_execution=False,assembly_executed=False)
+  lang_prefix_reads=0,lang_prefix_writes=0,inverse_at_checks_missing_ship=True,real_bank_switching=True,
+  station_display_not_executed=True,irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/OriginalEquipmentTradeVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 
 

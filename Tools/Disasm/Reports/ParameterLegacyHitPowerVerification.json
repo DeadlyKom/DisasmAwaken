@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "source_archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "declaration": "awk1.trd:3DTABS.a:PLANDICTAT",
+  "setter_source": "awk1.trd:BODY.a",
+  "historical_field_offset": 1,
+  "historical_setter": 44333,
+  "current_coefficient_triplet": [
+    3,
+    2,
+    8
+  ],
+  "historical_setter_stop_before_reset_tail": 44413,
+  "historical_operand": 43509,
+  "historical_shield": 43156,
+  "shield_subtraction_cases": 65536,
+  "historical_underflow_wrap_preserved": true,
+  "current_setter": 44125,
+  "current_field": 39845,
+  "current_value_variants": 256,
+  "current_setter_output_independent": true,
+  "historical_behavior_restored_in_current_game": false,
+  "entire_current_game_unusedness_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

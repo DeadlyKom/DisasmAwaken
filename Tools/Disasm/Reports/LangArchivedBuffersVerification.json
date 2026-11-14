@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "source": "awk6.trd:LANG.a",
+  "argument_buffer": [
+    51815,
+    51835
+  ],
+  "additional_buffer": [
+    51835,
+    51855
+  ],
+  "known_assignment_words_bytes": 10,
+  "published_tail": [
+    51845,
+    51855
+  ],
+  "script_start": 51855,
+  "assembly_executed": false,
+  "native_execution": false
+}

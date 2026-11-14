@@ -143,10 +143,10 @@ CheckBound2:    CP B
                 ; CPU-стек и разрешение предупреждения
                 ; Восстановление действительного CPU SP из непосредственного операнда SavedCpuSP до первого настоящего CALL.
 RestoreCpuSP:   LD SP, #0000
-                ; Проверка полного неизвестного байта состояния, ноль отключает поиск записи класса 12.
-                LD A, (@ActionParameterActivationState.UnknownByte1)
+                ; Проверка ThirdGate, ноль отключает поиск записи класса 12 для предупреждения.
+                LD A, (@ActionGlyphIndicatorState.Control.ThirdGate)
                 AND A
-                JP Z, @Action.RestoreHalvedOffsets.Entry                        ; переход, если UnknownByte1 равен нулю, завершить через восстановитель смещений
+                JP Z, @Action.RestoreHalvedOffsets.Entry                        ; переход, если ThirdGate равен нулю, завершить через восстановитель смещений
 
                 ; Поиск первой активной записи TransferClass, это полный код 12, не маска битов.
                 LD D, @ActionCloseRecordConst.TransferClass

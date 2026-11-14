@@ -1,6 +1,7 @@
                 module ThreeD
                 module UpdatePolygonLeftEdge
                 ; Документация [алгоритм и проверка](../../Docs/ThreeDOverlayMirror.md)
+                ; Документация [граница обновления ребра](../../Docs/ActionPolygonLeftEdge.md)
                 ; -----------------------------------------
                 ; Поиск восходящего левого ребра, вычисление целого шага и ошибки, выбор продолжения заливки
                 ; исходная запись 19, банк 0, смещения #1272..#13A7
@@ -14,18 +15,21 @@
                 ;   HL' содержит сохраняемый H' и заменяемую ошибку L', DE' сохраняется, BC' заменяется шагом, AF', IX и IY сохраняются
                 ;   SP=FFE0, под ним доступны два байта существующего временного стека, IRQ не вмешиваются, 3DPART банка 0 доступен для записи
                 ; Out:
+                ;   HL сохраняет H, L становится входным RightEndRow
+                ;   DE сохраняет D, E равен первоначальной Second при abs(dx)<Height, иначе E=(abs(dx) DIV Height) XOR #FF
+                ;   BC сохраняется
+                ;   AF содержит A=входной D и F от CP D,RightEndRow, условие готовности правой цепочки уже проверено
+                ;   HL' сохраняет H', L'=Height DIV 2
+                ;   DE' сохраняется, BC'=(#2000+32*s) AND #FFFF, s=ceil(dx/Height) для ненулевого dx, при dx=0 s=1 с дробной компенсацией
+                ;   AF', IX и IY сохраняются
                 ;   LeftCursor указывает найденный конец, LeftEndRow равен его First, Height равен разности First конца и входного D
                 ;   dx равен Second найденного конца минус Second первоначальной вершины, пропущенные вершины начальную Second не заменяют
-                ;   BC сохранён, DE сохраняет D, E равен исходной Second при abs(dx)<Height, иначе E=(abs(dx) DIV Height) XOR FF
-                ;   HL сохраняет H, L становится входным RightEndRow, A равен входному D, F от CP D,RightEndRow
-                ;   BC'=(2000+32*s) AND FFFF, s=ceil(dx/Height) для ненулевого dx, при dx=0 s=1 с дробной компенсацией
-                ;   L'=floor(Height/2), H', DE', AF', IX и IY сохраняются
                 ;   Subtract при dx<0 равен abs(dx) MOD Height, при неотрицательном точном длинном наклоне равен нулю, иначе Height-(dx MOD Height)
-                ;   если D меньше RightEndRow, управление передано SelectPolygonRowLimit.Entry, RowLimit и RowBranch пока не записаны
-                ;   иначе RowLimit=RightEndRow, RowBranch=3B и выполнен JP D229 для подготовки правого ребра
-                ;   SP восстановлен до FFE0, два байта под ним содержат входной H и D, внешнего RET нет, I/IM/IFF и paging сохранены, R меняется
+                ;   если D меньше RightEndRow, управление передано SelectPolygonRowLimit.Entry, RowLimit и RowBranch ещё не записаны
+                ;   иначе RowLimit=RightEndRow, RowBranch=#3B и выполнен JP D229 для подготовки правого ребра
+                ;   SP восстановлен до FFE0, два байта под ним содержат входные D и H, внешнего RET нет, I, IM, IFF и paging сохранены, R меняется
                 ; Corrupt:
-                ;   HL, только L, DE, только E, AF, L', BC', R, LeftCursor, Height, Subtract, LeftEndRow, два байта под SP и при необходимости RowLimit/RowBranch
+                ;   L, E, AF, L', BC', R, LeftCursor, Height, Subtract, LeftEndRow, два байта под SP и при необходимости RowLimit/RowBranch
                 ; Note:
                 ;   дисковая копия слота 19 побайтово совпадает с ACTION по исходным смещениям 6000..801F
                 ;   перенос доказательств требует тех же внешней RAM, банка 0, состояния входа и договоров общих процедур вне файла

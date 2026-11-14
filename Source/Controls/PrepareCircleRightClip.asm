@@ -12,7 +12,8 @@
                 ;   для X=(128+WorkX-Radius) AND FF и P=8000+32*CenterY+(X DIV 8)
                 ;   HL=(P AND FF00) OR ((LOW P) OR 31), D=Radius, E=LOW P
                 ;   B=(FF << (7-(X AND 7))) AND FF, C=FF, A=LOW HL, F соответствует OR этого A
-                ;   C'=(-Radius) AND FF, E'=0, остальные альтернативные регистры, IX и IY сохраняются
+                ;   HL' сохраняется, D' сохраняется, E'=0, B' сохраняется, C'=(-Radius) AND FF
+                ;   AF', IX, IY, I, IM и IFF сохраняются
                 ;   I, IM и IFF сохраняются, SP=входной SP+2, R получает 58+4*(X AND 7) M1
                 ; Corrupt:
                 ;   HL, DE, BC, AF, E', C', два байта CPU-стека, R

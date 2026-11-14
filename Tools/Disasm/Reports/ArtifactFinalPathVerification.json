@@ -1,0 +1,125 @@
+{
+  "passed": true,
+  "disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "profiles": [
+    {
+      "variant": 0,
+      "key_size": 16,
+      "bought_equipment_index": 18,
+      "purchase_cost": 25000,
+      "item_code_before": 255,
+      "item_code_after": 254,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_sectors": 75,
+      "last_sector": [
+        [
+          87,
+          7
+        ],
+        23845
+      ],
+      "last_sector_copy": {
+        "disk_offset": 357888,
+        "writer": 12272,
+        "destination": 43520,
+        "copied_bytes": 170,
+        "last_logical_byte": [
+          43689,
+          163
+        ],
+        "untouched_destination_bytes": 86,
+        "later_tail_reads": 0,
+        "later_last_sector_writes": 0
+      },
+      "logical_file_bytes": 19114,
+      "returned_entry": 24576,
+      "halted_pc": 24939,
+      "rendered_bitmaps": [
+        "7f68afb76f8e8a14e203d9a695c7d923528749e292a4b03827d2c547164b5318",
+        "c4c3660deb126f95208e785eb9e8d64002bcaf7277f1d7479fd9e50883cd6f34"
+      ]
+    },
+    {
+      "variant": 5,
+      "key_size": 15,
+      "bought_equipment_index": 18,
+      "purchase_cost": 25000,
+      "item_code_before": 255,
+      "item_code_after": 254,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "data_sectors": 75,
+      "last_sector": [
+        [
+          87,
+          7
+        ],
+        23845
+      ],
+      "last_sector_copy": {
+        "disk_offset": 357888,
+        "writer": 12272,
+        "destination": 43520,
+        "copied_bytes": 170,
+        "last_logical_byte": [
+          43689,
+          163
+        ],
+        "untouched_destination_bytes": 86,
+        "later_tail_reads": 0,
+        "later_last_sector_writes": 0
+      },
+      "logical_file_bytes": 19114,
+      "returned_entry": 24576,
+      "halted_pc": 24939,
+      "rendered_bitmaps": [
+        "7f68afb76f8e8a14e203d9a695c7d923528749e292a4b03827d2c547164b5318",
+        "c4c3660deb126f95208e785eb9e8d64002bcaf7277f1d7479fd9e50883cd6f34"
+      ]
+    }
+  ],
+  "shop_writer": {
+    "bank": 6,
+    "pc": 50914,
+    "address": 39072,
+    "buy": [
+      255,
+      254
+    ],
+    "sell": [
+      254,
+      255
+    ]
+  },
+  "native_execution": false,
+  "assembly_executed": false,
+  "original_dos_executed": true,
+  "controller_model": true,
+  "station_purchase_context_prepared": true
+}

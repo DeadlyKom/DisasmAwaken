@@ -9,12 +9,36 @@ from CheckRowHighlight import make_context
 from CheckMapViewCenter import reference as center_reference
 
 
+class BeforePointsWatch(bytearray):
+ """Обращения перед первым списком, наблюдение включается только внутри исследуемого поиска."""
+ watch_enabled=False
+ reads=0
+ writes=0
+
+ def watched(self,index):
+  if isinstance(index,int):return 0x9904<=index<0x990A
+  return any(0x9904<=address<0x990A for address in range(*index.indices(len(self))))
+
+ def __getitem__(self,index):
+  if self.watch_enabled and self.watched(index):self.reads+=1
+  return super().__getitem__(index)
+
+ def __setitem__(self,index,value):
+  if self.watch_enabled and self.watched(index):self.writes+=1
+  super().__setitem__(index,value)
+
+
 def main():
- _,map_source,banks=make_context();memory=bytearray(65536)
+ # Положительный контроль чтения байта, слова и записи через настоящий CPU.
+ probe=BeforePointsWatch(65536);probe[0x7000:0x7009]=bytes.fromhex('3A04993205992A0499')
+ cpu=Simulator(probe);cpu.registers[PC]=0x7000;probe.watch_enabled=True
+ for _ in range(3):cpu.run()
+ assert probe.reads==3 and probe.writes==1
+ _,map_source,banks=make_context();memory=BeforePointsWatch(65536)
  memory[0x4000:0x8000]=bytes(banks[5]);memory[0x8000:0xC000]=bytes(banks[2]);memory[0xC000:0xC000+len(map_source)]=map_source
  sim=Simulator(memory);initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5C,
   'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
- cases=0;hits=ends=0
+ cases=0;hits=ends=0;before_points_cases=0
  # Проверка всех первых байтов записи, позиций, значений и несовпадения второго слова.
  for marker in range(256):
   for position in range(9):
@@ -34,10 +58,16 @@ def main():
       memory[0x990A:0x993D]=table;memory[0x993D:0x9970]=table;memory[0x9844:0x9848]=bytes([0x38,0x4B,0xF3,0x4A]);memory[0x9848]=0xA5
       memory[0x7FFE:0x8000]=bytes([255,63]);memory[0x6304:0x6306]=bytes([32,24]);sim.registers[:]=initial;r=sim.registers;r[PC]=entry
       if entry==0xC325:r[D],r[E],r[H],r[L]=0x4B,0x38,0x4A,0xF3
+      # Проверка обращений перед списком только для трёх входов поиска, без центрирования карты.
+      memory.watch_enabled=entry in (0xC40F,0xC894,0xC88F)
       for _ in range(1000):
        if r[PC]==0x3FFF:break
        sim.opcodes[memory[r[PC]]]()
       else:raise AssertionError(('instruction_limit',entry,marker,position))
+      if memory.watch_enabled:
+       assert memory.reads==memory.writes==0,(entry,marker,position)
+       before_points_cases+=1
+      memory.watch_enabled=False
       assert r[SP]==0x8000 and r[10:12]==initial[10:12] and r[16:24]==initial[16:24]
       if entry==0xC40F:
        expected=0 if chosen is None else table[chosen*5+4]
@@ -60,6 +90,10 @@ def main():
  report=dict(passed=True,cases=cases,found=hits,terminated=ends,
   method='original_two_stored_point_searches_and_complete_selection_centering_all_markers_positions_values',
   record_size=5,empty_byte='FF',terminator_range='80..FE',all_alternate_registers_preserved=True,
+  before_first_list=dict(start=0x9904,end_exclusive=0x990A,cases=before_points_cases,
+   entries=[0xC40F,0xC894,0xC88F],reads=memory.reads,writes=memory.writes,
+   positive_byte_word_read_and_write_control_passed=True,
+   centering_path_included=False,other_consumers_or_global_unusedness_proved=False),
   calls_stubbed=False,irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/StoredMapPointsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))

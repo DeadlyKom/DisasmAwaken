@@ -64,5 +64,6 @@ P3B:            FIntroLookupParameter { #29 }                                   
 P3C:            FIntroLookupParameter { #29 }                                   ; начальный IYL очередной последовательности
 P3D:            FIntroLookupParameter { #29 }                                   ; начальный IYL очередной последовательности
 P3E:            FIntroLookupParameter { #29 }                                   ; начальный IYL очередной последовательности
-                assert $ == #66A2
+P3F:            FIntroLookupParameter { #29 }                                   ; последний отсчёт IM_IT, за пределом 63 чтений построителя
+                assert $ == #66A3
                 endmodule

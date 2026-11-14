@@ -1,4 +1,6 @@
 """Два станционных кода событий и физический префикс особой родительской записи ACTION."""
+import json
+from CheckIntro import ROOT
 from PreviewSceneTables import parse as parse_records, render as render_records
 
 
@@ -10,12 +12,12 @@ SPECIAL_FIELDS = (
     ('Component0', 2, 'первое слово родителя для SpawnPrepared, UpdateFrame очищает старший байт'),
     ('Component1', 2, 'второе слово родителя, его старший байт совпадает с позицией до списка эффектов'),
     ('Component2', 2, 'третье слово родителя для SpawnPrepared'),
-    ('Byte06', 1, 'исходный байт по смещению 06, использование у особой записи не доказано'),
+    ('ModelOffset', 1, 'байтовое смещение модели игрока, PrepareLargeEffect читает заголовок OBJECT3D'),
     ('OffsetPhase0', 1, 'первый фазовый байт, копируется из родителя в создаваемую запись'),
     ('OffsetPhase1', 1, 'второй фазовый байт, копируется из родителя в создаваемую запись'),
     ('OffsetPhase2', 1, 'третий фазовый байт, копируется из родителя в создаваемую запись'),
-    ('Byte0A', 1, 'исходный FF, его обработка как кода состояния особой записи не доказана'),
-    ('Byte0B', 1, 'исходный ноль по смещению 0B, использование у особой записи не доказано'),
+    ('PlayerMarker', 1, 'маркер игрока FF, на ближнем пути State08 запрещает освобождение текущей ракеты'),
+    ('LinkedIndex', 1, 'индекс связанной записи, при создании ракеты с целью 1A получает её индекс'),
 )
 TABLES = (
     (4, 0x6000, ('StationEventCodes', 'Source/Station/Data/EventCodes.asm',
@@ -28,7 +30,8 @@ BINDINGS = (
     ('ScriptCallState', 'EventCode', 0x983A, 'StationEventCodes.Value.ScriptCode'),
 )
 REQUIRED_REPORTS = ('EventDispatchVerification', 'TradePanelEventVerification', 'ActionEjectCommandsVerification',
-                    'ActionBankedCallbackVerification', 'ActionVisualEffectTransferVerification')
+                    'ActionBankedCallbackVerification', 'ActionVisualEffectTransferVerification',
+                    'ActionPlayerEffectFieldsVerification')
 DOCUMENT = 'InterfaceEventAndSpecialRecord'
 TAG = DOCUMENT
 
@@ -52,10 +55,14 @@ def validate_sources(sources):
     assert action[0x48CC:0x48CF] == bytes.fromhex('32 81 a7')
     assert action[0x0F34:0x0F38] == bytes.fromhex('fd 21 83 a7')
     assert action[0x4795:0x4797] == bytes(2)
+    assert action[0x8A37:0x8A3A] == bytes.fromhex('DD 7E 06')
+    effect = json.loads((ROOT / 'Tools/Disasm/Reports/ActionPlayerEffectFieldsVerification.json').read_bytes())
+    assert effect['passed'] and effect['cases'] == 512 and effect['model_offset_address'] == 0xA786
     return dict(station_event_code_bytes=2, special_record_prefix_bytes=12,
                 banked_effect_scan_anchor=0xA783, first_effect_address=0xA795,
                 special_record_prefix_starts_after_initial_marker=True,
-                full_special_record_layout_proved=False)
+                full_special_record_layout_proved=False,
+                special_player_model_offset_reader=0xEA37, player_target_effect_profiles=512)
 
 
 def render(source, origin, table):

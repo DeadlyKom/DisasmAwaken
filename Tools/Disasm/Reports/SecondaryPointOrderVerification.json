@@ -6,6 +6,34 @@
   "empty_FF_skipped": true,
   "order_is_dense_multiples_of_five_not_compacted_slot_offsets": true,
   "backward_search_guard_explicit": true,
+  "empty_original_route": {
+    "cases": 256,
+    "read_pc": 51713,
+    "original_counter": 100,
+    "addresses_through_transition_counter": [
+      39229,
+      39224,
+      39219,
+      39214,
+      39209,
+      39204,
+      39199,
+      39194,
+      39189,
+      39184,
+      39179,
+      39174
+    ],
+    "additional_addresses_for_counter_7F_through_FF": [
+      39169,
+      39164,
+      39159,
+      39154
+    ],
+    "resulting_cursor": 39229,
+    "resulting_layout": 32,
+    "resulting_count": 0
+  },
   "calls_stubbed": false,
   "irq_executed": false,
   "native_execution": false,

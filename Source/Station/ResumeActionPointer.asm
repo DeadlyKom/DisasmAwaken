@@ -9,11 +9,12 @@
                 ;   SP указывает на FActionReturnFrame после RET рисователя, SavedAF по +0 и внешний ReturnAddress по +2
                 ;   перед JP (HL) HandleStatusPanelAction создал FActionDrawFrame с DrawReturn=7F30, рисователь уже снял это первое слово
                 ; Out:
-                ;   HL, DE, BC, HL', DE', BC', IX и IY сохранены по ResumePointer, AF восстановлен из SavedAF
-                ;   AF' рабочий указателя, I, IFF и IM сохранены, страница не меняется
+                ;   HL, DE и BC сохранены по ResumePointer, AF восстановлен из SavedAF
+                ;   HL', DE', BC' сохранены, AF' рабочий указателя, IX и IY сохранены по ResumePointer
+                ;   I, IM и IFF сохранены, страница не меняется
                 ;   UpdateBlocked=0, указатель возобновлён согласно его договору, PC равен внешнему ReturnAddress, SP увеличен на четыре
                 ; Corrupt:
-                ;   AF, AF' по указателю, SP по кадру, bitmap и состояние указателя согласно ResumePointer
+                ;   AF, AF' по указателю, SP по кадру, bitmap и состояние указателя согласно ResumePointer, R и временные слова CPU-стека CALL и ResumePointer
                 ; Note:
                 ;   единственная инструкция CALL ResumePointer занимает три ранее невыделенных байта CD D8 63 по 7F30
                 ;   после неё исполнение физически продолжается в RestoreActionAF, порядок include (0), (1) жёсткий

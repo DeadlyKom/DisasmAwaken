@@ -436,3 +436,10 @@ def name_operands(region,address,operation):
    operation=operation.replace('CP #F0','CP @MapClipConst.InsideCode').replace('AND #F0','AND @MapClipConst.Complement').replace('AND #0F','AND @MapClipConst.SideMask')
    operation=operation.replace('LD H, #DE','LD H, @MapClipConst.DispatchLowPage').replace('LD DE, #D4DD','LD DE, @Map.MapClipCases.Entry')
  return operation
+
+
+# Уточнение R и предусловия исходных путей отсечения, без запуска экспорта.
+_refresh_contract = CONTRACTS['Map',0xD48B]
+_refresh_contract[0].append('IRQ не вмешиваются, стек и рабочие области не перекрывают исполняемый код')
+_refresh_contract[2][:] = [line.replace("AF', IX", "AF', IX, R") for line in _refresh_contract[2]]
+_refresh_contract[3].insert(0,'R меняется по реально достигнутым инструкциям диспетчера, выбранного случая и арифметических помощников')

@@ -7,20 +7,21 @@ LABELS={('Station',a):s for a,s in {0xA94C:'NextRow',0xA95F:'AddBasePrice',0xA97
 CONTRACTS={('Station',0xA91B):(
  ['SignatureInput.Entry содержит текущие FirstWord, SecondWord и Variant',
   'MarketState.MarkMode равен #80 для нового маркера либо 0 для сохранения прежнего bit7',
-  'байт #983D участвует в Seed1.HighByte после AND #FC, его игровые единицы не установлены',
+  'пара StationTimer.Counter.MidLow участвует в Seed1.HighByte после AND #FC',
   'таблицы #94DC и #9518 исходные, массив #9555..#9590 доступен для записи',
   'действует банковый договор DescribeCurrentKey, прерывания не меняют рабочие состояния'],
  ['HL=#9590, DE и BC зависят от выбранного пути, точные варианты приведены в MarketGeneration.md',
   'AF - при генерации A=#FA, F=#43, при очистке A=0 либо 4, F=#40',
-  "при генерации IX=#954E, HL'= #94F7, D'=старший байт последнего случайного слова, E'=0 либо 8",
-  'при очистке IX и альтернативные HL, DE, BC сохранены, Seed1 не изменяется',
-  'IY, I и IFF сохранены, SP восстановлен, рабочий ключ изменяется во всех случаях',
+  "HL', DE', BC' при генерации рабочие, HL'=#94F7, D' старший байт последнего случайного слова, E'=0 либо 8, точный BC' приведён в MarketGeneration.md",
+  'при очистке альтернативные HL, DE, BC сохранены, Seed1 не изменяется',
   "AF' содержит банковый результат DescribeCurrentKey, #7FFD и его тень возвращают банк 0 с ROM 1",
+  'IX=#954E при генерации, при очистке сохранён, IY, I, IM и IFF сохранены, SP восстановлен, рабочий ключ изменяется во всех случаях',
   'при генерации изменяются Seed1 и два операнда MinorCode и MajorCode, маркер #9591 сохранён'],
- ["HL, DE, BC, AF, HL', DE', BC', AF', IX"],
+ ["HL, DE, BC, AF, HL', DE', BC', AF', IX, R, тридцать записей MarketRows, SignatureState.WorkKey, CurrentPage, порт #7FFD и временные слова CPU-стека",
+  'при генерации также RandomStates.Seed1, MarketState.MinorCode и MarketState.MajorCode'],
  ['27 обычных записей рассчитываются, три последние получают нулевой запас и фиксированные цены',
   'цены 1..4 допустимы, 5 является запасным значением при неположительном результате, а не нижней границей',
-  'игровое значение bit7 запаса не доказано, это маркер с наблюдаемым влиянием на вывод и текстовый запрос',
+  'bit7 рыночного StockAndSaleBan запрещает продажу со штрафом 1000 и списанием текущего груза в исходном LANG, разбор в OriginalTradeScript.md',
   'режимы кроме 0 и #80 не подтверждены вызывающим кодом, исходные байты не изменены'])}
 COMMENTS={
  0xA91B:(['получение числовых признаков текущего ключа через настоящий банк MAP'],None),
@@ -30,7 +31,7 @@ COMMENTS={
  0xA925:(['обновление операнда MajorCode числовым признаком H'],None),
  0xA929:(['обновление операнда MinorCode младшим двухбитовым признаком E'],None),
  0xA92C:(['создание начального младшего слова Seed1 из текущего SecondWord'],None),
- 0xA932:(['расчёт HighByte потока как (#983D AND #FC) XOR Variant, единицы #983D ещё не установлены'],None),
+ 0xA932:(['расчёт HighByte потока из средней младшей BCD-пары, её два младших бита отбрасываются перед XOR варианта'],None),
  0xA93F:(['выбор 27 категорий, указатель сохраняется в альтернативном HL между случайными шагами'],None),
  0xA943:(['выбор двухбайтовых правил и первого поля Price выходного массива'],None),
  0xA94A:(['выбор числа рассчитываемых строк, ещё три строки заполняются отдельно'],None),
@@ -93,6 +94,7 @@ def name_operands(region,address,operation):
                   '#A9A9':'@MarketState.MarkMode','#9841':'@SignatureInput.Entry.SecondWord',
                   '#9843':'@SignatureInput.Entry.Variant','#A8AF':'@RandomStates.Seed1.LowWord',
                   '#A8B1':'@RandomStates.Seed1.HighByte','#94DC':'@MarketCategories.Category00',
+                  '#983D':'@StationTimer.Counter.MidLow',
                   '#9518':'@MarketRules.Rule00','#9556':'@MarketRows.Row00.Price'}.items():operation=operation.replace(raw,name)
  operation=operation.replace('(IX + #00)','(IX + @FMarketRule.BasePrice)').replace('(IX + #01)','(IX + @FMarketRule.StockRule)')
  operation=operation.replace('(IX + #02)','(IX + @FMarketRule + @FMarketRule.BasePrice)')

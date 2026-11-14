@@ -10,9 +10,160 @@
     "0xc5ec": 65536,
     "0xc5fc": 65536
   },
+  "arbitrary_base_cases": 262144,
+  "all_65536_bases_for_index_profiles": [
+    0,
+    255
+  ],
+  "word_read_wrap_cases": 2,
+  "stack_read_overlap_cases": 18,
+  "stack_overlap_witnesses": [
+    {
+      "entry": 50668,
+      "index": 0,
+      "base": 32761,
+      "address": 32761,
+      "result": 83
+    },
+    {
+      "entry": 50668,
+      "index": 0,
+      "base": 32762,
+      "address": 32762,
+      "result": 0
+    },
+    {
+      "entry": 50668,
+      "index": 0,
+      "base": 32763,
+      "address": 32763,
+      "result": 65280
+    },
+    {
+      "entry": 50668,
+      "index": 0,
+      "base": 32764,
+      "address": 32764,
+      "result": 16383
+    },
+    {
+      "entry": 50668,
+      "index": 0,
+      "base": 32765,
+      "address": 32765,
+      "result": 31551
+    },
+    {
+      "entry": 50668,
+      "index": 255,
+      "base": 31486,
+      "address": 32761,
+      "result": 65363
+    },
+    {
+      "entry": 50668,
+      "index": 255,
+      "base": 31487,
+      "address": 32762,
+      "result": 255
+    },
+    {
+      "entry": 50668,
+      "index": 255,
+      "base": 31488,
+      "address": 32763,
+      "result": 65280
+    },
+    {
+      "entry": 50668,
+      "index": 255,
+      "base": 31489,
+      "address": 32764,
+      "result": 16383
+    },
+    {
+      "entry": 50668,
+      "index": 255,
+      "base": 31490,
+      "address": 32765,
+      "result": 31551
+    },
+    {
+      "entry": 50684,
+      "index": 0,
+      "base": 32762,
+      "address": 32762,
+      "result": 0
+    },
+    {
+      "entry": 50684,
+      "index": 0,
+      "base": 32763,
+      "address": 32763,
+      "result": 0
+    },
+    {
+      "entry": 50684,
+      "index": 0,
+      "base": 32764,
+      "address": 32764,
+      "result": 255
+    },
+    {
+      "entry": 50684,
+      "index": 0,
+      "base": 32765,
+      "address": 32765,
+      "result": 63
+    },
+    {
+      "entry": 50684,
+      "index": 255,
+      "base": 31487,
+      "address": 32762,
+      "result": 255
+    },
+    {
+      "entry": 50684,
+      "index": 255,
+      "base": 31488,
+      "address": 32763,
+      "result": 0
+    },
+    {
+      "entry": 50684,
+      "index": 255,
+      "base": 31489,
+      "address": 32764,
+      "result": 255
+    },
+    {
+      "entry": 50684,
+      "index": 255,
+      "base": 31490,
+      "address": 32765,
+      "result": 63
+    }
+  ],
   "all_byte_indices": true,
   "all_initial_flags": true,
   "index_high_byte_discarded": true,
+  "physical_disk_and_sector_hashes_checked": true,
+  "CPU_write_watch_positive_control": true,
+  "exact_CPU_write_sequence_checked": true,
+  "original_return_word_preserved": true,
+  "exact_R_M1": {
+    "C5E9": 13,
+    "C5F9": 12,
+    "C609": 13,
+    "C60F": 14,
+    "C615": 13,
+    "C5EC": 12,
+    "C5FC": 11
+  },
+  "I_IFF_IM_and_R_bit7_checked": true,
+  "all_stack_addresses_and_bases_checked": false,
+  "stack_bus_cycle_order_verified": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

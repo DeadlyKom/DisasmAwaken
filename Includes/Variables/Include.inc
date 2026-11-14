@@ -340,6 +340,7 @@ PreviousAction  equ #9AD0                                                       
 
                 module RankState
 Score           equ #984C                                                       ; слово счётчика, определяющего печатаемый ранг
+                assert Score == @PlayerSaveHeader.Entry + @FPlayerSaveHeader.RankScore
                 endmodule
 
                 module SystemNameState
@@ -358,7 +359,7 @@ CompletionCode  equ #99A4                                                       
 
 
                 module PlayerStatusState
-Status984B      equ #984B                                                       ; разряды 7..5 выбирают полицейский статус, младшие здесь не установлены
+Status984B      equ #984B                                                       ; полный числовой полицейский статус, подпись выбирается по старшим трём битам
                 endmodule
 
 
@@ -541,7 +542,8 @@ Entry           equ #E262                                                       
 
                 module DecodedPanelState
 ItemIndex       equ #6DD5                                                       ; изменяемый индекс FInterfaceItem панели расшифровки
-Unknown98A0     equ #98A0                                                       ; Unknown, только FE допускает финал при заданном ключе
+ArtifactCode    equ #98A0                                                       ; код количества X артефакта, строка 18 списка оснащения
+                assert ArtifactCode == @EquipmentQuantityCodes.Item18
                 endmodule
 
                 module QueuedMessageState
@@ -618,6 +620,7 @@ LoadOptions     equ #DE8F                                                       
                 endmodule
 
                 module TrDosState
+SearchKeyLength equ #5D06                                                       ; число сравниваемых байтов ключа, 9 включает имя и тип файла
 Descriptor      equ #5CDD                                                       ; системный FTrDosEntry, начало имени и каталожного дескриптора
                 endmodule
 
@@ -664,6 +667,11 @@ RegisterTarget  equ #C2F9                                                       
                 endmodule
 
                 module IntroTailState
+ScanDest        equ #FF01                                                       ; адрес приёмника семи байтов из хвоста вступления
+UnpackBody      equ #6E3C                                                       ; вход после получения PC и подготовки смещения потока
+WriterTail      equ #68EE                                                       ; исходный NOP, при построении становится записью слова из HL
+ProbeOffset     equ #0008                                                       ; смещение читаемого байта относительно выходного HL
+ProbeValue      equ #0043                                                       ; значение для условия относительного перехода
 PaperSample     equ #8157                                                       ; адрес записи PAPER, после переноса попадает в исходный bitmap
 KeyByte         equ #5C08                                                       ; исходный байт ожидания после очистки
                 endmodule
@@ -1295,7 +1303,8 @@ TurnYStore      equ #CE0B                                                       
                 ; Существующее состояние, память не выделяется
                 module ControlsEvenSpanState
 TailOffset      equ #CEB4                                                       ; изменяемое знаковое смещение JR
-Mode            equ #D18B                                                       ; общий байт режима, Z возвращает его нулевое состояние
+Direction       equ #D18B                                                       ; направление строк большого круга, Z установлен при движении вверх
+                assert Direction == @ControlsCircleWork.Value.Direction
                 endmodule
 
 
@@ -1362,7 +1371,7 @@ StepControl     equ #9BC5                                                       
 SeedIndex       equ #688B                                                       ; изменяемый операнд LD A, n по 688A общего ядра ACTION
 Parameters      equ #9BA4                                                       ; пятнадцать последовательных вычисляемых байтов
                 assert Parameters == @ActionParameterSet.Value.Link1ABaseLimit
-CoordRows       equ #7B97                                                       ; первая из девяти записей с физическим шагом шесть
+ClassLimits     equ #7B97                                                       ; первый из девяти операндов CP выбора класса ScheduleSpawn, шаг шесть
                 endmodule
 
 
@@ -1383,15 +1392,6 @@ SavedLowLimit   equ #79A4                                                       
 SpawnValueMask  equ #7E07                                                       ; поле 0C, маска OR кандидата Unknown13 в обоих создателях, адрес изменяемого операнда 7E07
 SpawnValueCap   equ #7E09                                                       ; поле 0D, исключённый верхний предел Unknown13, ноль даёт FF, адрес изменяемого операнда 7E09
 SpawnField11    equ #7DE4                                                       ; поле 0E, значение Unknown11 после непересекающихся случайных масок, адрес изменяемого операнда 7DE4
-                endmodule
-
-
-                ; Существующее состояние, память не выделяется
-                module ActionParameterActivationState
-UnknownWord0    equ #ECA9                                                       ; первое обнуляемое слово банка 0, игровой смысл не установлен
-UnknownWord1    equ #ECF6                                                       ; второе обнуляемое слово банка 0, игровой смысл не установлен
-UnknownByte0    equ #9B83                                                       ; первый обнуляемый байт фиксированного банка 2, игровой смысл не установлен
-UnknownByte1    equ #9B82                                                       ; второй обнуляемый байт фиксированного банка 2, игровой смысл не установлен
                 endmodule
 
 
@@ -1418,11 +1418,11 @@ FifthRequest    equ #668E                                                       
 SixthRequest    equ #669F                                                       ; операнд шестого LD A,n, сбрасывается перед расчётом значения
 FourthValue     equ #6682                                                       ; операнд LD A,n с готовым значением четвёртой шкалы
 FifthValue      equ #6693                                                       ; операнд LD A,n с готовым значением пятой шкалы
-FirstValue      equ #A794                                                       ; существующий байтовый источник первой шкалы, игровой смысл ещё не установлен
+FirstValue      equ #A794                                                       ; уровень защиты игрока SHILD, источник первой шкалы
                 assert FirstValue == @ActionPanelFirstLevel.Value.Value
 ThirdValue      equ #A8BC                                                       ; операнд LD A,n по A8BB внутри UpdateFrame, источник третьей шкалы
-SignedWord      equ #A78F                                                       ; существующее знаковое слово для модуля шестой шкалы, игровой смысл ещё не установлен
-                assert SignedWord == @ActionPanelSignedWord.Value.Value
+SpeedWord       equ #A78F                                                       ; знаковая скорость, масштабирует вектор движения и задаёт шестую шкалу
+                assert SpeedWord == @ActionPanelSignedWord.Value.Value
                 endmodule
 
 
@@ -1566,8 +1566,6 @@ Component2      equ #E5ED                                                       
                 ; Исходные байты обработчика близкой записи, память не выделяется
                 module ActionCloseRecordState
 InhibitCode     equ #E507                                                       ; операнд LD A,n, 00 допускает корневой вход, ненулевой байт запрещает
-UnknownA794     equ #A794                                                       ; состояние, обнуляемое общим хвостом для класса 12, игровой смысл не доказан
-                assert UnknownA794 == @ActionPanelFirstLevel.Value.Value
                 endmodule
 
 
@@ -1805,6 +1803,7 @@ SavedSP         equ #66F8                                                       
 
                 module IntroLookupState
 SavedSP         equ #6BBD                                                       ; исходный операнд LD SP,nn в PresentLookupTexture
+PointerRowPhase equ #6D40                                                       ; байт фазы LD A,n, 00 и 80 чередуют уменьшение D, остальные коды исключают уменьшение
                 endmodule
 
 
@@ -1856,9 +1855,12 @@ SavedCpuSP      equ #6CB2                                                       
 
                 ; Существующее состояние, память не выделяется
                 module ActionThirdGlyphVectorState
-SourceWord0     equ #9B79                                                       ; первое читаемое слово источника третьего знака, единицы ещё не установлены
-SourceWord1     equ #9B7C                                                       ; второе читаемое слово источника, промежуточный байт не копируется
-SourceWord2     equ #9B7F                                                       ; третье читаемое слово источника, полного типа соседних байтов пока нет
+SourceWord0     equ #9B79                                                       ; разряды 23..8 первой компоненты ActionWorkVector станции, младший байт не читается
+SourceWord1     equ #9B7C                                                       ; разряды 23..8 второй компоненты ActionWorkVector станции, младший байт не читается
+SourceWord2     equ #9B7F                                                       ; разряды 23..8 третьей компоненты ActionWorkVector станции, младший байт не читается
+                assert SourceWord0 == @ActionWorkVector.Value.Component0.LowWord + 1
+                assert SourceWord1 == @ActionWorkVector.Value.Component1.LowWord + 1
+                assert SourceWord2 == @ActionWorkVector.Value.Component2.LowWord + 1
                 endmodule
 
 
@@ -1876,8 +1878,8 @@ ClassTable      equ #64F0                                                       
 
                 ; Существующие операнды и состояние, память не выделяется
                 module ActionPreferredChanceState
-UnknownGate     equ #9BCD                                                       ; исходный внешний байт порога, полный игровой смысл ещё не доказан
-                assert UnknownGate == @ActionIndexedGate.Value.Value
+StatusCode      equ #9BCD                                                       ; полётный статус для проверки порога поиска
+                assert StatusCode == @ActionFlightStatus.Value.Code
                 endmodule
 
 
@@ -2021,6 +2023,7 @@ SavedSP         equ #6DD2                                                       
 
                 ; Изменяемые операнды кода банка 3, память не выделяется
                 module VoxelSpriteState
+RowEntry        equ #EE78                                                       ; операнд JP начала каждой строки, первый блок либо его вход с нечётным X
 RightMaskFull   equ #F8B5                                                       ; маска правого кода после ненулевой левой половины
 RightMaskOnly   equ #F8DB                                                       ; маска правого кода при прозрачной левой половине
 RowHalfOp       equ #F905                                                       ; второй байт команды SET или RES для бита 5 адреса
@@ -2113,8 +2116,8 @@ InitialParam    equ #612E                                                       
 
                 ; Существующие операнды и состояние, память не выделяется
                 module ActionArrivalState
-ArrivalCount    equ #9BCE                                                       ; существующее слово, увеличивается при ближней цели класса 0, 5, 6 или 7 и ненулевом Unknown11
-                assert ArrivalCount == @ActionArrivalCounter.Value.Value
+RankScore       equ #9BCE                                                       ; очки ранга за уничтожение целей классов 0, 5, 6 или 7 при ненулевом Unknown11
+                assert RankScore == @ActionRankScore.Value.Value
                 endmodule
 
 

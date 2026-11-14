@@ -2,11 +2,12 @@
                 module InitializeFlight
                 ; Имена ресурсов [физические ключи](../../Docs/ActionBootFileKeys.md)
                 ; Документация [загрузка банков и вход в полёт](../../Docs/ActionFlightCycle.md)
+                ; Режимы CPU [граница перед DI](../../Docs/ActionFlightCycle.md#режимы-cpu-на-границе-startflight)
                 ; Документация [адреса старых операндов CONTROL](../../Docs/ControlsLegacyLoadChain.md)
-; Документация [ActionBoot](../../Docs/FunctionDetails/ActionBoot.md)
-; -----------------------------------------
-; Перенос ядра в #6000, загрузка графических банков и запуск полётного режима
-; исходная запись 17, файловые смещения #0043..#00ED
+                ; Документация [ActionBoot](../../Docs/FunctionDetails/ActionBoot.md)
+                ; -----------------------------------------
+                ; Перенос ядра в #6000, загрузка графических банков и запуск полётного режима
+                ; исходная запись 17, файловые смещения #0043..#00ED
                 ; In:
                 ;   HL указывает исходное полётное ядро, доступны файлы оригинального диска и запись в 7FFD
                 ;   код загрузчика уже перенесён в #4200, IRQ не вмешиваются в загрузку
@@ -14,13 +15,22 @@
                 ;   ядро перенесено в #6000, загружены банки 6, 3, 1 и 4, панель распакована
                 ;   построены таблицы #9100..#97FF, инициализированы потоки и текстовое окно
                 ;   выбрана страница #19, SP=#BFFE хранит исходный HL, управление передано StartFlight через JP
+                ;   на границе перед первой DI StartFlight I, IM и IFF сохраняют результат последнего TR-DOS, свой начальный режим подготовитель не восстанавливает
                 ; Corrupt:
-                ;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, SP, R, банки, таблицы, потоковое состояние и системные поля TR-DOS
+                ;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, SP, I, IM, IFF по TR-DOS, R, банки, таблицы, потоковое состояние и системные поля TR-DOS
                 ; Note:
+                ;   TrDosState.SearchKeyLength получает размер FTrDosFileKey, поиск включает восемь символов имени и тип, это числовая длина
                 ;   при входе из RelocateBootstrap сохранённый HL равен #623D
                 ;   дочерние вызовы каталога и загрузки используют успешные ответы, обработка ошибок диска этой моделью не подтверждена
                 ;   в модели оригинальные данные диска подставлены на входе TR-DOS, вызовы и переходы Z80 исполняются
-; -----------------------------------------
+                ;   отдельная модель ROM проверяет полные сектора, CONTROL перекрывает 34 байта суффикса CONTROL0 по #DADE
+                ;   [секторные хвосты](../../Docs/AllocatedSectorSuffixes.md#повторы-внутри-файлов)
+                ;   при запуске через вступление записи по #5E20, #5E21 и #5E23 меняют хвост его копии, код CONTROL остаётся в банке 1
+                ;   в модели TR-DOS 5.04T следующие чтения секторов в #5D25 перезаписывают эти три байта общей RAM
+                ;   [проверка окна #5DA0..#5EDA](../../Docs/ControlsTemporaryModule.md)
+                ;   18 условных профилей сохраняют явно заданные I/IM/IFF дисковой службы до A82D, следующая DI сбрасывает только IFF
+                ;   в этих профилях интерфейс DOS подставлен и аппаратные IRQ подавлены, все заданные режимы не объявляются выходами настоящей ROM
+                ; -----------------------------------------
 Entry:          LD SP, #C000
                 PUSH HL
                 LD DE, #6000
@@ -28,11 +38,12 @@ Entry:          LD SP, #C000
                 LDIR
                 LD A, #1E
                 CALL @Action.SelectMemoryPage.Entry
-                LD A, #09
-                LD (#5D06), A
+                ; Поиск сравнивает восемь символов имени и отдельный байт типа файла.
+                LD A, @FTrDosFileKey
+                LD (@TrDosState.SearchKeyLength), A
                 LD HL, @ActionBootFileKeys.Panel
-                LD DE, #5CDD
-                LD BC, #0009
+                LD DE, @TrDosState.Descriptor
+                LD BC, @FTrDosFileKey
                 LDIR
                 LD HL, #C000
                 PUSH HL
@@ -46,13 +57,13 @@ Entry:          LD SP, #C000
                 LD A, #1B
                 CALL @Action.SelectMemoryPage.Entry
                 LD HL, @ActionBootFileKeys.Voxal0
-                LD DE, #5CDD
-                LD BC, #0009
+                LD DE, @TrDosState.Descriptor
+                LD BC, @FTrDosFileKey
                 LDIR
                 CALL @ActionBoot.LoadFileToBank.Entry
                 LD HL, @ActionBootFileKeys.Voxal
-                LD DE, #5CDD
-                LD BC, #0009
+                LD DE, @TrDosState.Descriptor
+                LD BC, @FTrDosFileKey
                 LDIR
                 LD HL, #EC00
                 PUSH HL
@@ -70,13 +81,14 @@ Entry:          LD SP, #C000
                 CALL @ActionBoot.LoadFileToBank.Entry
                 LD HL, @ActionBootFileKeys.Control
                 CALL @ActionBoot.GetFileLocation.Entry
-                LD HL, #DADE
+                ; Выбор начала CONTROL в банке 1 как адреса загрузки, вызов временного модуля здесь не выполняется.
+                LD HL, @Controls.RunTemporaryModule.Entry
                 CALL @ActionBoot.LoadFileAtAddress.Entry
                 LD A, #1C
                 CALL @Action.SelectMemoryPage.Entry
                 LD HL, @ActionBootFileKeys.Object3D
-                LD DE, #5CDD
-                LD BC, #0009
+                LD DE, @TrDosState.Descriptor
+                LD BC, @FTrDosFileKey
                 LDIR
                 CALL @ActionBoot.LoadFileToBank.Entry
                 LD A, #18

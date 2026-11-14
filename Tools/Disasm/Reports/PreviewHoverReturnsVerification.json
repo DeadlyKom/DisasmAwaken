@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "entries": {
+    "6837": {
+      "cases": 65536,
+      "m1": 2,
+      "physical_owner": 26
+    },
+    "686F": {
+      "cases": 65536,
+      "m1": 1,
+      "physical_owner": 26
+    },
+    "6913": {
+      "cases": 65536,
+      "m1": 2,
+      "physical_owner": 27
+    },
+    "693D": {
+      "cases": 65536,
+      "m1": 1,
+      "physical_owner": 27
+    }
+  },
+  "total_cases": 262144,
+  "all_AF_values_per_entry": true,
+  "all_initial_R_values_per_entry": true,
+  "every_instruction_and_R_step_checked": true,
+  "I_IM_IFF_preserved": true,
+  "all_GPR_and_alternates_preserved": true,
+  "all_bank_bytes_unchanged": true,
+  "no_memory_writes_from_verified_JP_RET_opcodes": true,
+  "no_port_writes": true,
+  "fixed_stack_fixture": true,
+  "full_joint_register_cartesian": false,
+  "returned_target_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

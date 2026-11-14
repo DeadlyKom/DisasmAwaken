@@ -5,5 +5,7 @@
   "exact_pointer_bytes": 4096,
   "phase_updates_per_case": 40,
   "actual_rom_executed": true,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "output_registers_compared": true,
+  "nonzero_alternate_AF_preserved": true
 }

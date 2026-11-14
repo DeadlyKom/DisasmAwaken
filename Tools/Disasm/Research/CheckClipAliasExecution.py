@@ -1,4 +1,4 @@
-"""Условный вход CF08, точный эффект трёх байтов не доказывает игровой вызывающий путь."""
+"""Условные входы CF08..CF0A без предположения о наличии игрового вызова."""
 import json
 from itertools import product
 
@@ -16,27 +16,35 @@ def main():
     before = list(memory)
     simulator = Simulator(memory)
     count = 0
+    by_entry = {}
     # Проверка всех флагов, обоих состояний IFF, трёх режимов IM и разных значений A.
-    for a, flags, iff, mode in product((0, 1, 127, 128, 255), range(256), (0, 1), range(3)):
-        initial = get_registers({'PC': 0xCF08, 'SP': 0xBFFE, 'AF': (a << 8) | flags,
+    for entry, a, flags, iff, mode in product(range(0xCF08, 0xCF0B),
+                                             (0, 1, 127, 128, 255), range(256), (0, 1), range(3)):
+        instructions = 0xCF0B - entry
+        initial = get_registers({'PC': entry, 'SP': 0xBFFE, 'AF': (a << 8) | flags,
                                  'HL': 0x1357, 'DE': 0x2468, 'BC': 0x369C,
                                  '^HL': 0xABCD, '^DE': 0x5678, '^BC': 0x9ABC, '^AF': 0xDEFF,
                                  'IX': 0xBEEF, 'IY': 0x5C3A}, None, False)
         initial[14], initial[15], initial[26], initial[27] = count & 255, count & 255, iff, mode
         expected = list(initial)
-        expected[0:2] = [0, 0x44]
-        expected[PC], expected[SP], expected[26] = 0x3FFF, 0xC000, 0
-        expected[15] = refresh(initial[15], 3)
+        if entry <= 0xCF09:
+            expected[0:2] = [0, 0x44]
+        if entry == 0xCF08:
+            expected[26] = 0
+        expected[PC], expected[SP] = 0x3FFF, 0xC000
+        expected[15] = refresh(initial[15], instructions)
         simulator.registers[:] = initial
-        for _ in range(3):
+        for _ in range(instructions):
             simulator.run()
         compared = (*range(13), 14, 15, *range(16, 24), PC, 26, 27)
         assert all(simulator.registers[index] == expected[index] for index in compared)
         assert memory == before
+        by_entry[entry] = by_entry.get(entry, 0) + 1
         count += 1
     result = dict(passed=True, total_cases=count, original_alias_copies=2,
                   conditional_instruction_effect_proved=True, all_memory_unchanged=True,
-                  exact_registers_flags_and_R=True, iff_cleared=True, instruction_count=3,
+                  exact_registers_flags_and_R=True, iff_cleared_only_from_cf08=True,
+                  cases_by_entry={f'{entry:04X}': cases for entry, cases in by_entry.items()},
                   execution_entry_proved=False, nonexecution_proved=False,
                   unknown_purpose_preserved=True, assembly_executed=False, native_execution=False)
     (ROOT / 'Tools/Disasm/Reports/ClipAliasExecutionVerification.json').write_text(

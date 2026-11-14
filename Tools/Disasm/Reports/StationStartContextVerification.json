@@ -1,0 +1,529 @@
+{
+  "passed": true,
+  "total_cases": 16,
+  "profiles": [
+    {
+      "initial_R": 0,
+      "backdrop": 5,
+      "device_ports": [
+        [
+          543,
+          0
+        ],
+        [
+          64479,
+          254
+        ],
+        [
+          65503,
+          253
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        10280,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 1,
+      "backdrop": 6,
+      "device_ports": [
+        [
+          543,
+          1
+        ],
+        [
+          64479,
+          254
+        ],
+        [
+          65503,
+          253
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        30840,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 2,
+      "backdrop": 7,
+      "device_ports": [
+        [
+          543,
+          0
+        ],
+        [
+          64479,
+          255
+        ],
+        [
+          65503,
+          253
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        26744,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 3,
+      "backdrop": 8,
+      "device_ports": [
+        [
+          543,
+          1
+        ],
+        [
+          64479,
+          255
+        ],
+        [
+          65503,
+          253
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        30824,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 4,
+      "backdrop": 9,
+      "device_ports": [
+        [
+          543,
+          0
+        ],
+        [
+          64479,
+          254
+        ],
+        [
+          65503,
+          255
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        30840,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 5,
+      "backdrop": 10,
+      "device_ports": [
+        [
+          543,
+          1
+        ],
+        [
+          64479,
+          254
+        ],
+        [
+          65503,
+          255
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        30824,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 6,
+      "backdrop": 11,
+      "device_ports": [
+        [
+          543,
+          0
+        ],
+        [
+          64479,
+          255
+        ],
+        [
+          65503,
+          255
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        22616,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 7,
+      "backdrop": 12,
+      "device_ports": [
+        [
+          543,
+          1
+        ],
+        [
+          64479,
+          255
+        ],
+        [
+          65503,
+          255
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        26728,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 8,
+      "backdrop": 13,
+      "device_ports": [
+        [
+          543,
+          0
+        ],
+        [
+          64479,
+          254
+        ],
+        [
+          65503,
+          253
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        26728,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 9,
+      "backdrop": 14,
+      "device_ports": [
+        [
+          543,
+          1
+        ],
+        [
+          64479,
+          254
+        ],
+        [
+          65503,
+          253
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        28784,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 10,
+      "backdrop": 15,
+      "device_ports": [
+        [
+          543,
+          0
+        ],
+        [
+          64479,
+          255
+        ],
+        [
+          65503,
+          253
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        29041,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 11,
+      "backdrop": 0,
+      "device_ports": [
+        [
+          543,
+          1
+        ],
+        [
+          64479,
+          255
+        ],
+        [
+          65503,
+          253
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        30840,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 12,
+      "backdrop": 1,
+      "device_ports": [
+        [
+          543,
+          0
+        ],
+        [
+          64479,
+          254
+        ],
+        [
+          65503,
+          255
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        26728,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 13,
+      "backdrop": 2,
+      "device_ports": [
+        [
+          543,
+          1
+        ],
+        [
+          64479,
+          254
+        ],
+        [
+          65503,
+          255
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        30840,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 14,
+      "backdrop": 3,
+      "device_ports": [
+        [
+          543,
+          0
+        ],
+        [
+          64479,
+          255
+        ],
+        [
+          65503,
+          255
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        30840,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    },
+    {
+      "initial_R": 15,
+      "backdrop": 4,
+      "device_ports": [
+        [
+          543,
+          1
+        ],
+        [
+          64479,
+          255
+        ],
+        [
+          65503,
+          255
+        ]
+      ],
+      "final_AF": 25,
+      "final_BC": 65488,
+      "final_DE": 6823,
+      "final_HL": 39229,
+      "final_alternate_pairs": [
+        10072,
+        26985,
+        0,
+        42330
+      ],
+      "final_IX": 62429,
+      "final_IY": 23610,
+      "final_SP": 24575
+    }
+  ],
+  "original_interface_records": 46,
+  "all_16_backdrops_observed": true,
+  "all_8_binary_device_predicate_combinations": true,
+  "map_dimensions": [
+    152,
+    96
+  ],
+  "map_origin": [
+    14503,
+    19226
+  ],
+  "four_loaded_modules_and_allocated_suffixes_compared": true,
+  "decoded_backdrop_except_five_replaced_attributes_compared": true,
+  "own_IM2_and_screen_tables_compared": true,
+  "restored_geometry_and_handler_indices_compared": true,
+  "final_registers_except_R_T_compared": true,
+  "final_I": 128,
+  "final_IM": 2,
+  "final_IFF": 1,
+  "original_station_boot_executed": true,
+  "TRDOS_calls_substituted": true,
+  "initial_station_RAM_and_entry_prepared": true,
+  "independent_full_RAM_comparison": false,
+  "all_saved_settings_or_input_states_exhausted": false,
+  "IRQ_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

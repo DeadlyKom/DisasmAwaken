@@ -21,6 +21,9 @@
   "maximum_additional_stack_bytes": 6,
   "AF_prime_cleared_before_child": true,
   "complete_input_product_exhausted": false,
+  "full_M1_count_compared_not_only_R_modulo_128": true,
+  "target_is_child_cases": 257,
+  "self_target_final_LinkFlags_2_and_LinkedIndex_child": true,
   "assembly_executed": false,
   "irq_executed": false,
   "native_execution": false

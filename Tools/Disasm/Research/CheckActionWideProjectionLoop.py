@@ -18,7 +18,7 @@ def signed(value, bits):
     return (value ^ sign) - sign
 
 
-def main():
+def main(report_name='ActionWideProjectionLoopVerification.json'):
     flat = flat_action()
     baseline = [bytearray(0x4000) for _ in range(8)]
     for bank, start in ((5, 0x4000), (2, 0x8000), (0, 0xC000)):
@@ -26,6 +26,11 @@ def main():
     baseline[1][:] = bytes(base_memory()[0xC000:])
     rng = Random(0x6B16)
     counts = Counter()
+    pair_indices = {'HL': (6, 7), 'DE': (4, 5), 'BC': (2, 3), 'AF': (0, 1),
+                    "HL'": (22, 23), "DE'": (20, 21), "BC'": (18, 19),
+                    "AF'": (16, 17), 'IX': (8, 9), 'IY': (10, 11)}
+    register_changes = Counter()
+    first_register_changes = {}
     for count, equal, selected, scenario in product(range(7), (False, True), (0, 1, 3, 5, 255), range(8)):
         memory = RecordedBanks(banks=[bank.copy() for bank in baseline], out7ffd=16)
         sim = Simulator(memory)
@@ -62,6 +67,7 @@ def main():
             for axis, value in enumerate(values):
                 put(0x9B27 + 12 * index + 4 * axis, value, 4)
         sim.registers[:] = get_registers({'PC': 0x6B16, 'SP': stack, 'IY': original_iy}, None, False)
+        initial_registers = tuple(sim.registers)
         outputs = [word(address) for address in OUTPUTS]
         index = 0
         published = [128, 128, 128]
@@ -107,13 +113,24 @@ def main():
         assert sim.registers[10:12] == [original_iy >> 8, original_iy & 255], context
         assert list(memory[0x9B87:0x9B8A]) == published, (context, published)
         assert trace.writes == expected_ports and memory.o7ffd == 16, context
+        # Наблюдение конечных пар фиксирует эффекты настоящих дочерних вызовов.
+        for name, indices in pair_indices.items():
+            before = [initial_registers[i] for i in indices]
+            after = [sim.registers[i] for i in indices]
+            if before != after:
+                register_changes[name] += 1
+                first_register_changes.setdefault(name, dict(profile=context,
+                    before=before[0] * 256 + before[1], after=after[0] * 256 + after[1]))
         counts['cases'] += 1
     assert counts['draw_changed'] and counts['draw_unchanged']
     report = dict(passed=True, total_cases=counts['cases'], outcomes=dict(counts),
                   actual_banked_draw_executed=True, record_counts=list(range(7)),
+                  observed_register_pair_changes=dict(register_changes),
+                  first_register_change_examples=first_register_changes,
+                  observation_is_not_complete_register_contract_proof=True,
                   assembly_executed=False, native_execution=False)
     payload = json.dumps(report, indent=2) + '\n'
-    (ROOT / 'Tools/Disasm/Reports/ActionWideProjectionLoopVerification.json').write_text(payload, encoding='utf-8')
+    (ROOT / 'Tools/Disasm/Reports' / report_name).write_text(payload, encoding='utf-8')
     print(payload)
 
 

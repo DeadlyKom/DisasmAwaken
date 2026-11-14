@@ -23,5 +23,68 @@
   "input_points_preserved": true,
   "irq_executed": false,
   "native_execution": false,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "full_M1_and_each_R_step_checked": true,
+  "all_256_R_values_per_entry": true,
+  "R_bit7_and_I_IM_IFF_preserved": true,
+  "original_opcodes_with_independently_configured_operands_checked": true,
+  "exactly_one_division_and_expected_multiply_per_call": true,
+  "entries": {
+    "58980": 34185,
+    "58983": 34185,
+    "59055": 34188,
+    "59058": 34188,
+    "59130": 34176,
+    "59133": 34176,
+    "59223": 34197,
+    "59226": 34197
+  },
+  "independent_own_projection_M1_checked": true,
+  "FromProduct_own_M1_horizontal": [
+    29,
+    31
+  ],
+  "FromProduct_own_M1_vertical": [
+    28,
+    31,
+    32
+  ],
+  "full_entry_setup_extra_M1_without_multiply": 18,
+  "full_M1_bounds_by_entry": {
+    "0xe664": [
+      218,
+      334
+    ],
+    "0xe667": [
+      147,
+      183
+    ],
+    "0xe6af": [
+      218,
+      334
+    ],
+    "0xe6b2": [
+      147,
+      183
+    ],
+    "0xe6fa": [
+      218,
+      340
+    ],
+    "0xe6fd": [
+      145,
+      184
+    ],
+    "0xe757": [
+      218,
+      374
+    ],
+    "0xe75a": [
+      145,
+      184
+    ]
+  },
+  "total_M1": 59212331,
+  "independent_whole_intersection_M1_oracle": false,
+  "R_full_joint_input_product": false
 }

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "archive_disk": "awk1.trd",
+  "source_tables": {
+    "TUNEL.a": "30879d0619532a02398ac1cc4a46e53b41b3a534a2de657994152f3eb4ea951b",
+    "HIPER.a": "96fbb8335411fa5b6a921ba964fee636a01d56df2bf5a575daccdde6ae727dc3",
+    "DOOM.a": "5802701f1ece89b9d14a430cdb80ab3f213f4028a1b6a7956bac958d891037ec"
+  },
+  "unpacked_table_offsets": {
+    "EFF.c": 1871,
+    "EFF1.c": 460
+  },
+  "table_sha256": "d158941d7f509082e445bcb41ecaea5bf197b618346a1ac390b28838c5f76e64",
+  "intro_file_offsets": [
+    867,
+    931
+  ],
+  "intro_address": 26211,
+  "parameters_read_by_current_builder": 63,
+  "last_index": 63,
+  "last_value": 41,
+  "assembly_executed": false,
+  "native_execution": false
+}

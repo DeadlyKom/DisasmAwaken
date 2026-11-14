@@ -4,11 +4,11 @@ import json,sys
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/'Tools/Disasm/Research/vendor/skoolkit-10.1'),str(ROOT/'Tools/Disasm/Research')]
 from skoolkit.simulator import Simulator
-from skoolkit.pagingtracer import SliceableMemory
 from skoolkit.simutils import get_registers,A,PC,SP
 from CheckRowHighlight import make_context
 from CheckScreenUpdate import PortTrace,put
 from CheckWeightedLoad import reference as weighted_load
+from CheckExpressionControl import LangWorkspaceMemory, PREFIX_START, PREFIX_PROVEN_END
 
 
 def store7(old,result):
@@ -44,9 +44,10 @@ def main():
     raw_script=lang[0xA8F:];active=raw_script[:raw_script.index(0)+1];q_address=0xCA8F+active.index(b'Qn');assert 81 not in [banks[6][0x983+3*i] for i in range(36)]
     initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5D,'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
     cases=invalid_q=overflow_continued=empty_stock_buys=illegal_fines=0;counts={9:0,10:0,11:0};messages_seen={};ports=0
+    prefix_cases=0;prefix_example=None
     def execute(event,stock,cargo,price,credits,capacity=255):
-        nonlocal cases,invalid_q,overflow_continued,empty_stock_buys,illegal_fines,ports
-        page=0x16 if cases&1 else 0x1E;m=SliceableMemory(banks=[b.copy() for b in banks],out7ffd=page);s=Simulator(m);trace=PortTrace(s);s.set_tracer(trace)
+        nonlocal cases,invalid_q,overflow_continued,empty_stock_buys,illegal_fines,ports,prefix_cases,prefix_example
+        page=0x16 if cases&1 else 0x1E;m=LangWorkspaceMemory(banks=[b.copy() for b in banks],out7ffd=page);s=Simulator(m);trace=PortTrace(s);s.set_tracer(trace)
         index=cases%30;base=index//2;selected=index-base;m[0x6306]=page;m[0x983A]=event;m[0x7026]=base;m[0x7068]=selected;m[0x984A]=255;m[0x9851]=capacity
         # Остальные грузы и оснащение пусты, исходные таблицы физических весов не меняются.
         put(m,0x9852,bytes(60));put(m,0x988E,bytes(52));put(m,0x98F6,bytes(14));put(m,0x984E,credits.to_bytes(2,'little'))
@@ -54,6 +55,7 @@ def main():
         put(m,0x6E8B,[10,0]);put(m,0x9CA6,[0xDE,0xF3]);put(m,0xF3DE,[0x8A,0x6E,1,1]);m[0x9A82]=0xA7;m[0x6E91]=0xA7
         projected_load=weighted_load(bytearray(m[0:65536]),index)[0]
         put(m,0x7FFE,[255,63]);s.registers[:]=initial;s.registers[PC]=0xC000;observed=[];q_skips=0
+        m.registers=s.registers
         for _ in range(220000):
             r=s.registers;pc=r[PC]
             if pc==0x3FFF:break
@@ -67,6 +69,15 @@ def main():
         assert observed==expected_messages and m[0x6E91]==(expected_messages[-1] if expected_messages else 0xA7)
         assert m.banks[6][0x28]==int(stop) and s.registers[SP]==0x8000 and m.o7ffd==page and m[0x6306]==page
         assert bytes(m.banks[6][0xA8F:len(lang)])==raw_script
+        prefix_addresses=set(range(PREFIX_START,PREFIX_PROVEN_END)) if event==11 and cargo and not stock&128 else set()
+        assert {address for address in m.reads if address>=PREFIX_START}==prefix_addresses
+        assert {address for address in m.writes if address>=PREFIX_START}==prefix_addresses
+        if prefix_addresses:
+            m.check_nested_assignment(cargo)
+            prefix_cases+=1
+            if prefix_example is None:
+                prefix_example=dict(event=event, price=price, cargo=cargo,
+                                    reads=m.prefix_reads, writes=m.prefix_writes)
         assert q_skips==int(event==9),(event,stock,cargo,price,credits,q_skips,hex(q_address))
         memory=bytearray(m[0:65536]);assert m[0x9850]==weighted_load(memory,0xC0DB)[0]
         if expected_messages:assert m[0x9A82]==0
@@ -95,6 +106,7 @@ def main():
                 overflow_message_then_trade_cases=overflow_continued,empty_stock_purchase_cases=empty_stock_buys,illegal_market_fine_cases=illegal_fines,
                 queued_messages=messages_seen,ports_checked_as_real_banking=ports,all_ship_capacity_bytes=True,
                 actual_interpreter_and_original_script_executed=True,actual_weight_tables_preserved=True,
+                lang_nested_assignment_cases=prefix_cases,lang_nested_assignment_example=prefix_example,
                 station_display_not_executed=True,irq_executed=False,native_execution=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/OriginalTradeScriptVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 

@@ -45,6 +45,7 @@ def reference(horizontal, vertical, depth):
 
 
 def main():
+    from ReferenceActionOverlayProjection import evaluate as projection_reference
     baseline = flat_action()
     baseline[0x9100:0x9200] = [value & 255 for value in LOG]
     baseline[0x9200:0x9300] = [value >> 8 for value in LOG]
@@ -53,6 +54,7 @@ def main():
     memory = Memory(baseline)
     simulator = Simulator(memory)
     counts, touched = Counter(), set()
+    refresh_values, full_costs = set(), set()
     def check(horizontal, vertical, depth):
         nonlocal touched
         memory.recording = False
@@ -71,16 +73,26 @@ def main():
             wanted[position:position + 2] = [value >> 8, value & 255]
         wanted[0:2], wanted[16:18] = expected['af'], expected['alternate_af']
         wanted[PC], wanted[SP] = 0x3FFF, 0xC000
+        # Расчёт полного M1 существующей составной моделью двух отношений и знаковых ветвей.
+        composed = projection_reference(initial)
+        wanted[15] = composed['registers'][15]
+        refresh_values.add(initial[15]);full_costs.add(composed['refresh_m1'])
         simulator.registers[:] = initial
         memory.writes, memory.recording = [], True
+        measured_m1 = 0
         for _ in range(450):
             if simulator.registers[PC] == 0x3FFF:
                 break
+            before_r = simulator.registers[15]
             simulator.run()
+            increment = (simulator.registers[15] - before_r) & 127
+            assert increment in (1, 2)
+            measured_m1 += increment
         else:
             raise AssertionError(('нет возврата', horizontal, vertical, depth))
         memory.recording = False
-        compared = (*range(13), 14, *range(16, 24), PC, 26, 27)
+        assert measured_m1 == composed['refresh_m1'], (horizontal, vertical, depth, measured_m1, composed['refresh_m1'])
+        compared = (*range(13), 14, 15, *range(16, 24), PC, 26, 27)
         assert all(wanted[index] == simulator.registers[index] for index in compared), (
             horizontal, vertical, depth, [(i, wanted[i], simulator.registers[i]) for i in compared
                                          if wanted[i] != simulator.registers[i]])
@@ -98,8 +110,12 @@ def main():
     for _ in range(4096):
         check(*(rng.randrange(65536) for _ in range(3)))
     assert set(counts) == {'accepted', 'vertical_rejected', 'horizontal_rejected'}
+    assert refresh_values == set(range(256))
     result = dict(passed=True, total_cases=counts.total(), outcomes=dict(counts),
-                  exact_registers_except_R_and_T=True, exact_order_of_all_memory_writes=True,
+                  exact_registers_except_R_and_T=False, exact_registers_including_R=True,
+                  full_M1_count_compared_not_only_R_modulo_128=True, all_256_initial_R_values=True,
+                  observed_M1_min=min(full_costs), observed_M1_max=max(full_costs), exact_T_proved=False,
+                  exact_order_of_all_memory_writes=True,
                   stack_frame_bytes=6, actual_divider_executed=True, all_joint_inputs_exhausted=False,
                   assembly_executed=False, native_execution=False, irq_executed=False)
     (ROOT / 'Tools/Disasm/Reports/ActionOverlayProjectionVerification.json').write_text(

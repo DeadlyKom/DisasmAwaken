@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "total_cases": 1289,
+  "cases_by_kind": {
+    "all_table_cases": 265,
+    "all_counts_by_region": 1024
+  },
+  "all_table_h_c_pairs": 80,
+  "calls_to_original_random": 131849,
+  "real_helpers_without_stubs": true,
+  "coefficient_stride": 3,
+  "coefficient_records": 15,
+  "overlapping_h4_template_preserved": true,
+  "final_exx_register_bank_checked": true,
+  "exact_registers_flags_r_and_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "all_input_combinations_exhausted": false,
+  "game_field_names_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "own_indirect_store_domains": [
+    {
+      "pc": 56937,
+      "addresses": [
+        39844,
+        39845,
+        39846,
+        39847,
+        39848,
+        39849,
+        39850,
+        39851,
+        39852,
+        39853,
+        39854,
+        39855,
+        39856,
+        39857,
+        39858
+      ],
+      "executions": 19335
+    },
+    {
+      "pc": 56968,
+      "addresses": [
+        31639
+      ],
+      "executions": 1289
+    },
+    {
+      "pc": 56979,
+      "addresses": [
+        31645,
+        31651,
+        31657,
+        31663,
+        31669,
+        31675,
+        31681,
+        31687
+      ],
+      "executions": 10312
+    }
+  ],
+  "own_indirect_stores_do_not_reach_DB01_DB02_in_model_cases": true,
+  "bank1_selected_and_original_code_required": true,
+  "all_callers_or_stack_addresses_proved": false
+}

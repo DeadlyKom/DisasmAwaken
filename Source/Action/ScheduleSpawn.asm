@@ -2,6 +2,7 @@
                 module ScheduleSpawn
                 ; Документация [алгоритм и проверка](../../Docs/ActionSpawnSchedule.md)
                 ; -----------------------------------------
+                ; Генерируемые пороги [писатель и проверка](../../Docs/ControlsParameterTables.md)
                 ; Планирование создания объекта, выбор класса, модели и начальных координат
                 ; исходная запись 17, перенесённое ядро 6000..7F8E, смещения #1D95..#2010
                 ; In:
@@ -14,7 +15,7 @@
                 ; Corrupt:
                 ;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, R, рабочие записи, операнды кода, состояния потоков, 7FFD
                 ; Note:
-                ;   класс 3 недостижим через повторный порог #50, класс 8 дополнительно проверяет #9B82
+                ;   класс 3 недостижим только при исходных равных порогах #50, BuildParameterTables меняет все девять порогов, класс 8 проверяет #9B82
                 ;   BuildPosition зацикливается, если все три компоненты равны 0 или #8000, игровая достижимость не установлена
                 ;   модели разделяют точки входа, полный выход регистров после диспетчера, IRQ и нативный игровой запуск не проверены
                 ; -----------------------------------------
@@ -64,39 +65,39 @@ CheckClassZero: NEG
                 CP #0A
                 LD A, H
                 NOP
-                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если скорректированное значение меньше 10, выбран класс 0
+                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если скорректированное значение меньше текущего порога класса 0, выбран класс 0
 
                 CP #43
                 LD C, #01
-                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше #43, выбран класс 1
+                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше текущего порога класса 1, выбран класс 1
 
                 CP #50
                 LD C, #02
-                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше #50, выбран класс 2
+                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше текущего порога класса 2, выбран класс 2
 
                 CP #50
                 LD C, #03
-                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше #50, путь недостижим после предыдущей проверки
+                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше текущего порога класса 3, выбран класс 3
 
                 CP #5A
                 LD C, #04
-                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше #5A, выбран класс 4
+                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше текущего порога класса 4, выбран класс 4
 
                 CP #5E
                 LD C, #05
-                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше #5E, выбран класс 5
+                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше текущего порога класса 5, выбран класс 5
 
                 CP #63
                 LD C, #06
-                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше #63, выбран класс 6
+                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше текущего порога класса 6, выбран класс 6
 
                 CP #6B
                 LD C, #07
-                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше #6B, выбран класс 7
+                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше текущего порога класса 7, выбран класс 7
 
                 CP #70
                 LD C, #08
-                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше #70, выбран класс 8
+                JR C, @Action.ScheduleSpawn.CheckClassEight                     ; переход, если старший байт потока меньше текущего порога класса 8, выбран класс 8
 
                 POP DE
                 RET
@@ -105,9 +106,9 @@ CheckClassEight:LD A, C
                 CP #08
                 JR NZ, @Action.ScheduleSpawn.SelectModel                        ; переход, если выбран класс, отличный от 8
 
-                LD A, (#9B82)
+                LD A, (@ActionGlyphIndicatorState.Control.ThirdGate)
                 OR A
-                JR Z, @Action.ScheduleSpawn.SelectModel                         ; переход, если #9B82 равен нулю и разрешает класс 8
+                JR Z, @Action.ScheduleSpawn.SelectModel                         ; переход, если ThirdGate равен нулю и разрешает класс 8
 
                 POP DE
                 RET
@@ -134,7 +135,7 @@ SelectModel:    LD (IX + @FActionRecord.ClassCode), C
                 LD (IX + @FActionRecord.ModelOffset), A
                 INC HL
                 LD L, (HL)
-                LD (IX + @FActionRecord.TargetIndex), L
+                LD (IX + @FActionRecord.Phase2OrTarget), L
                 LD H, D
                 POP DE
                 LD L, A
@@ -207,9 +208,9 @@ TryNearby:      LD A, R
                 JP Z, @Action.ScheduleSpawn.BuildPosition                       ; переход, если считанный бит 1 регистра R сброшен
 
                 CALL @Action.FindRecordByCode.Entry
-                LD A, (#9B83)
+                LD A, (@ActionGlyphIndicatorState.Control.TemplateMode)
                 AND A
-                JP Z, @Action.ScheduleSpawn.BuildPosition                       ; переход, если #9B83 равен нулю
+                JP Z, @Action.ScheduleSpawn.BuildPosition                       ; переход, если TemplateMode равен нулю, выбрать общий расчёт позиции
 
                 LD A, (IX + @FActionRecord.ClassCode)
                 CP #00
@@ -406,7 +407,7 @@ ReduceIndex:    CP H
                 JR @Action.ScheduleSpawn.ReduceIndex
 
                 ; Сохранение индекса и вычисление адреса широкой цели с шагом 12 байтов.
-SelectTarget:   LD (IX + @FActionRecord.Unknown26), A
+SelectTarget:   LD (IX + @FActionRecord.WideTargetIndex), A
                 LD IY, #9B1B
                 LD DE, #000C
                 LD B, A

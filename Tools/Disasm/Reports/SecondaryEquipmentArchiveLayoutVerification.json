@@ -1,0 +1,296 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "member": "awk6.trd",
+  "authored_count": "DATA_M.a:WSKMI",
+  "authored_text": "DATAT.a:TWSKM1",
+  "authored_quantities": "000000ffffffffffffffffffffff80",
+  "authored_names": [
+    "Топливо СМРП",
+    "Ракета срп1",
+    "Ракета срп2",
+    "Лазер 'Бейл'",
+    "Лазер 'Эксиал'",
+    "Лазер 'Фэйк'",
+    "Система Защиты 'Дьюорф'",
+    "Система Защиты 'Интенд'",
+    "Прыжковый Движок 'Плизант'",
+    "Прыжковый Движок 'Сэйкрид'",
+    "Противоракетная Система",
+    "Стыковочный Узел",
+    "Ходовой Модуль",
+    "Бомба"
+  ],
+  "original_text_address": 61542,
+  "original_quantity_address": 39158,
+  "original_marker_byte": 80,
+  "original_text_names_present": 1,
+  "original_has_delivery_after_fuel": true,
+  "authored_trade_events": [
+    7,
+    8
+  ],
+  "lang_reader": {
+    "entry": 49644,
+    "load_base": 49660,
+    "archived_base": 39086,
+    "current_base": 39158,
+    "instructions_match_except_base": true
+  },
+  "profiles": [
+    {
+      "top_row": 0,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39178,
+        255
+      ]
+    },
+    {
+      "top_row": 0,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 15,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 1,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39179,
+        255
+      ]
+    },
+    {
+      "top_row": 1,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 14,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 2,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39180,
+        255
+      ]
+    },
+    {
+      "top_row": 2,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 13,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 3,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39181,
+        255
+      ]
+    },
+    {
+      "top_row": 3,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 12,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 4,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39182,
+        255
+      ]
+    },
+    {
+      "top_row": 4,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 11,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 5,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39183,
+        255
+      ]
+    },
+    {
+      "top_row": 5,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 10,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 6,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39184,
+        255
+      ]
+    },
+    {
+      "top_row": 6,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 9,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 7,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39185,
+        255
+      ]
+    },
+    {
+      "top_row": 7,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 8,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 8,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39186,
+        255
+      ]
+    },
+    {
+      "top_row": 8,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 7,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 9,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39187,
+        255
+      ]
+    },
+    {
+      "top_row": 9,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 6,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 10,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39188,
+        255
+      ]
+    },
+    {
+      "top_row": 10,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 5,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 11,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39189,
+        255
+      ]
+    },
+    {
+      "top_row": 11,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 4,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 12,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39190,
+        255
+      ]
+    },
+    {
+      "top_row": 12,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 3,
+      "last_read": [
+        39172,
+        128
+      ]
+    },
+    {
+      "top_row": 13,
+      "archived_quantity_bytes_restored": false,
+      "read_count": 21,
+      "last_read": [
+        39191,
+        255
+      ]
+    },
+    {
+      "top_row": 13,
+      "archived_quantity_bytes_restored": true,
+      "read_count": 2,
+      "last_read": [
+        39172,
+        128
+      ]
+    }
+  ],
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,64 @@
+{
+  "method": "bounded_public_archive_download_and_sha256_comparison",
+  "archives": [
+    {
+      "url": "https://opensourcezx.narod.ru/files/awaken/awaken.zip",
+      "bytes": 1157453,
+      "sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+      "identical_to_existing": "ArchiveAwakenSources.zip",
+      "members": [
+        {
+          "name": "awk1.trd",
+          "size": 655360,
+          "sha256": "6aeebbb470e75fd5b5b2bde7a276668aaa15080260bb8a7ad405a71f065d165a"
+        },
+        {
+          "name": "awk2.trd",
+          "size": 655360,
+          "sha256": "8f7a783b413773d9649645e201eb8360de3592a15164d163f5ef2e88e329bde8"
+        },
+        {
+          "name": "awk3.trd",
+          "size": 655360,
+          "sha256": "cfc7c3282e23d6c2a1bfea2328cfcbbdab0e3fecf443eeca90f4a17eaa5d7a90"
+        },
+        {
+          "name": "awk4.trd",
+          "size": 655360,
+          "sha256": "d18983fc62af01807890a5d3762a60bf30e6e4cb4f28a9c31a6931e34ebc6bbd"
+        },
+        {
+          "name": "awk5.trd",
+          "size": 655360,
+          "sha256": "f59f6776e299ca077e34dde84c7f77bcae2cec3e3285d65a5d4f3d388a5bd52a"
+        },
+        {
+          "name": "awk6.trd",
+          "size": 655360,
+          "sha256": "776a176cbcdbd604f5a5f6aca295eaa5df70ec1be5dd99987b48fba4dbaab90e"
+        },
+        {
+          "name": "opensourcezx.diz",
+          "size": 348,
+          "sha256": "717d08f3172620e729d8e3360bf777b53dc6a30a98bf68fbbd8e30dd2dc842e7"
+        }
+      ],
+      "saved_path": "Tools/Disasm/Research/References/AuthorArchives/ArchiveAwakenSources.zip"
+    },
+    {
+      "url": "https://zxpress.ru/files/CITY53.ZIP",
+      "bytes": 228943,
+      "sha256": "8e392dbff49f386acdcdc0ebf664fe3f59a86e1ae5d80d95199c28409c9c924a",
+      "identical_to_existing": null,
+      "members": [
+        {
+          "name": "CITY53.SCL",
+          "size": 265569,
+          "sha256": "e051e30297971da78e9f12f15ba7fa59742f36f70df874318a66e877eddb6a04"
+        }
+      ],
+      "saved_path": "Tools/Disasm/Research/References/AuthorArchives/ArchiveCity53.zip"
+    }
+  ],
+  "assembly_executed": false
+}

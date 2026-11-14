@@ -16,6 +16,10 @@ def main():
     manifest = json.loads((ROOT / "Tools/Disasm/Disk/Manifest.json").read_text(encoding="utf-8"))
     entry = next(e for e in manifest["entries"] if e["slot"] == 4)
     source = (ROOT / (entry["path"]+".sectors.bin")).read_bytes()
+    disk = (ROOT / "Tools/Disasm/Disk/original.trd").read_bytes()
+    assert hashlib.sha256(disk).hexdigest() == manifest["sha256"]
+    assert len(source) == entry["allocated_length"]
+    assert disk[entry["offset"]:entry["offset"] + len(source)] == source
     memory = ObservedMemory()
     memory[0x6000:] = source
     simulator = Simulator(memory)
@@ -38,7 +42,11 @@ def main():
         simulator.registers[A], simulator.registers[F] = sentinel_low ^ flags, flags
         memory.written.clear()
         memory.recording = True
+        # Проверка R включает все проходы указателей и конечное чтение ограничителя.
+        refresh = (sentinel_low + flags + length) & 255
+        simulator.registers[15] = refresh
         simulator.run(start=start, stop=0x3FFF)
+        assert simulator.registers[15] == (refresh & 0x80) | ((refresh + 12 * length + 6) & 0x7F)
         memory.recording = False
         expected_d = targets[-1] >> 8 if length else 0x24
         if (simulator.registers[H]*256+simulator.registers[L], simulator.registers[D], simulator.registers[E],
@@ -69,6 +77,9 @@ def main():
     report = dict(method="original_draw_list_opcode_patch_against_pointer_list", passed=True,
                   cases=cases, by_entry=counts, source_sha256=hashlib.sha256(source).hexdigest(),
                   sentinel_high_byte_only=True, list_length_not_limited_to_128=True,
+                  original_disk_sha256=hashlib.sha256(disk).hexdigest(),
+                  exact_R_checked=True, R_bit7_preserved=True, M1_formula="12*N+6",
+                  all_initial_R_values_covered=True, full_joint_input_product=False,
                   exact_write_set_checked=True, irq_enabled=False, native_execution_verified=False, assembly_executed=False)
     (ROOT / "Tools/Disasm/Reports/DrawListPatchVerification.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")

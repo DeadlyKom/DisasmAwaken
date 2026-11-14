@@ -2,11 +2,66 @@
 from collections import Counter
 import json
 from ClassifyControlsTextDisplay import ROOT
-from CheckActionParameterActivation import flat_action
+from CheckActionParameterActivation import RecordedBanks, flat_action
 from CheckMusic import Simulator,get_registers,PC,SP
 from CheckMusicGateTicks import Memory
+from CheckScreenUpdate import PortTrace, put
 from ReferenceControlsBufferPoints import sub8_flags
 from ReferenceControlsPointRespawn import refresh
+
+
+def check_original_bound_mantissas(flat, objects):
+    banks = [bytearray(0x4000) for _ in range(8)]
+    for bank, start in ((5, 0x4000), (2, 0x8000), (0, 0xC000)):
+        banks[bank][:] = bytes(flat[start:start + 0x4000])
+    banks[4][:len(objects)] = objects
+    distinct_headers = set()
+    passed_by_delta = Counter()
+    for index in range(0, 256, 2):
+        pointer = flat[0x9E00 + index] | flat[0x9E01 + index] << 8
+        offset = pointer - 0xC000
+        mantissa, exponent = objects[offset:offset + 2]
+        assert 1 <= exponent <= 5 and 1 <= mantissa <= 120
+        distinct_headers.add(pointer)
+        original = mantissa << (exponent - 1)
+        # Подготовка компоненты на один выше половины исходной границы.
+        component = original // 2 + 1
+        for delta in (0, 4):
+            memory = RecordedBanks(banks=[bank.copy() for bank in banks], out7ffd=0x10)
+            memory.banks[4][offset] = mantissa + delta
+            put(memory, 0xBFFE, b'\xB9\xE1')
+            put(memory, 0xAF48, component.to_bytes(2, 'little'))
+            put(memory, 0xAF56, b'\x00\x00')
+            put(memory, 0xAF69, b'\x00\x00')
+            memory[0xE507] = 1
+            cpu = Simulator(memory, {'PC': 0xAACC, 'SP': 0xBFFE, 'AF': index << 8})
+            ports = PortTrace(cpu)
+            cpu.set_tracer(ports)
+            cpu.run(stop=0xE1B9)
+            assert cpu.registers[6:8] == [exponent, mantissa + delta]
+            cpu.run(stop=0xE1D1)
+            scaled = (mantissa + delta) << (exponent - 1)
+            assert cpu.registers[6:8] == [scaled >> 8, scaled & 255]
+            assert int.from_bytes(memory[0xE2C5:0xE2C7], 'little') == scaled
+            # Проверка действительного допуска CALL при изменении одного байта заголовка.
+            dispatched = False
+            for _ in range(45):
+                pc = cpu.registers[PC]
+                if pc == 0xE213:
+                    break
+                dispatched |= pc == 0xE506
+                cpu.run()
+            else:
+                raise AssertionError((index, delta, cpu.registers[PC]))
+            assert dispatched == bool(delta) and cpu.registers[SP] == 0xC000
+            assert ports.writes == [(0x7FFD, 0x14), (0x7FFD, 0x10)]
+            passed_by_delta[delta] += 1
+    assert passed_by_delta == {0: 128, 4: 128} and len(distinct_headers) == 95
+    return dict(original_even_indices=128, distinct_physical_headers=len(distinct_headers),
+                original_mantissas_rejected_component=passed_by_delta[0],
+                increased_mantissas_admitted_dispatch=passed_by_delta[4],
+                banked_read_scaling_and_dispatch_gate_executed=True,
+                dispatch_inhibit_set_in_fixture=True)
 
 
 def main():
@@ -25,6 +80,9 @@ def main():
         if shift:
             previous=mantissa<<(shift-1)
             f=(f&0xC4)|((scaled>>8)&0x28)|(16 if (previous&4095)*2>4095 else 0)
+        # Проверка замкнутой таблицы F, нулевой HL не задаёт Z после цепочки ADD.
+        closed_flags=2 if exponent==1 else 0 if exponent<=4 else (mantissa>>4)&8 if exponent==5 else 0x40|((mantissa>>3)&0x18)
+        assert f==closed_flags,(mantissa,exponent,f,closed_flags)
         writes=[(0xE1C8,6-exponent),(0xE232,6-exponent),(0xE26B,6-exponent),(0xE2C5,scaled&255),(0xE2C6,scaled>>8)]
         for address,value in writes:expected[address]=value
         wanted[0:2]=[6-exponent,f];wanted[6:8]=[scaled>>8,scaled&255]
@@ -47,11 +105,14 @@ def main():
         assert 0<=offset<len(objects)-1
         mantissa,exponent=objects[offset:offset+2];assert 1<=exponent<=6
         headers.append((mantissa,exponent));check(mantissa,exponent)
+    bound_mantissas = check_original_bound_mantissas(baseline, objects)
     report=dict(passed=True,total_cases=counts.total(),cases_by_exponent=dict(counts),
         method='independent_integer_scaling_flags_and_patch_oracle',
         all_valid_header_words=True,valid_exponents=[1,2,3,4,5,6],original_even_table_headers_checked=128,
         original_header_exponents=sorted({h for _,h in headers}),
+        original_header_bound_mantissa_use=bound_mantissas,
         exact_registers_flags_refresh_sp=True,every_ram_byte_and_write_checked=True,
+        closed_AF_table_checked_for_all_1536_valid_headers=True,
         execution_boundary='E1B9..E1D1, no continuation executed',maximum_additional_stack_bytes=0,
         invalid_exponents_executed=False,whole_projection_scan_proved=False,
         all_joint_inputs_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)

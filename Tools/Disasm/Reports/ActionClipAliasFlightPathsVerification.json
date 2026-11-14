@@ -1,0 +1,233 @@
+{
+  "passed": true,
+  "idle_frames": 65,
+  "idle_dispatches": {},
+  "idle_targets": [],
+  "single_key_profiles": [
+    {
+      "row": 253,
+      "mask": 2,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 254,
+      "mask": 4,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 191,
+      "mask": 4,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 191,
+      "mask": 2,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 127,
+      "mask": 8,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 127,
+      "mask": 4,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 253,
+      "mask": 1,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 127,
+      "mask": 1,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 127,
+      "mask": 2,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 223,
+      "mask": 1,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 191,
+      "mask": 16,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 254,
+      "mask": 8,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 247,
+      "mask": 1,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 247,
+      "mask": 2,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 247,
+      "mask": 4,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 191,
+      "mask": 8,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 253,
+      "mask": 8,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 254,
+      "mask": 2,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 251,
+      "mask": 8,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 127,
+      "mask": 16,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 251,
+      "mask": 1,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 251,
+      "mask": 2,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 251,
+      "mask": 4,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 253,
+      "mask": 16,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 253,
+      "mask": 4,
+      "dispatches": {},
+      "targets": []
+    },
+    {
+      "row": 254,
+      "mask": 16,
+      "dispatches": {},
+      "targets": []
+    }
+  ],
+  "populated_flight_render": {
+    "render_entries": 17,
+    "render_instructions_with_iff_clear": 824055,
+    "queue_nodes": 51,
+    "clipped_nodes": 51,
+    "render_returns": 17,
+    "fixture_model_offsets": [
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      36,
+      40,
+      44,
+      48,
+      52,
+      56,
+      60,
+      64,
+      68,
+      72,
+      76,
+      80,
+      84,
+      88,
+      92,
+      96,
+      100,
+      104,
+      108,
+      112,
+      116,
+      120,
+      124,
+      128,
+      132,
+      136,
+      140,
+      144
+    ],
+    "dispatches": {
+      "C070": 552
+    },
+    "targets": [
+      49274,
+      49379,
+      50660,
+      50899
+    ],
+    "table_writes": 0,
+    "clip_alias_entries": 0,
+    "all_render_instructions_executed_with_iff_clear": true,
+    "fixture_records_restored_after_render": true
+  },
+  "bank": 0,
+  "watched_entry_bytes": [
+    53000,
+    53001,
+    53002
+  ],
+  "observed_clip_dispatches": 552,
+  "alias_execution_seen": false,
+  "all_runtime_profiles_proved": false,
+  "trdos_stub": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

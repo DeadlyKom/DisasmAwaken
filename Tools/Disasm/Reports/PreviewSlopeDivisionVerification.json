@@ -10,6 +10,21 @@
   "zero_divisor_original_behavior_preserved": true,
   "discarded_ninth_bit_preserved": true,
   "no_memory_writes": true,
+  "direct_full_M1_and_R_checked": true,
+  "I_IM_IFF_preservation_checked": true,
+  "direct_zero_divisor_AF_checked": true,
+  "observed_M1_values": [
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "complete_joint_input_product_exhausted": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

@@ -5,6 +5,10 @@
     "print_banked_line": 72,
     "disable_wrap_all_af": 65536
   },
+  "disable_wrap_exact_refresh_m1": 3,
+  "disable_wrap_i_im_iff_preserved": true,
+  "disable_wrap_both_iff_values_without_irq": true,
+  "disable_wrap_only_style_byte_written": true,
   "real_bank_switch_helpers_and_help_instructions": true,
   "both_screen_page_bits": true,
   "independent_line_index_and_print_layout": true,

@@ -16,7 +16,7 @@ class PairedAimMachine(Machine):
         self.put(result['patch'][0],opcode);self.put(result['patch'][1],branch)
         for pair,key in ((6,'hl'),(4,'de'),(2,'bc')):self.pair(pair,result[key])
         self.r[0:2],self.r[16:18]=result['af'],result['alt_af']
-        self.r[12]+=2;self.r[24]=return_address
+        self.m1(result['refresh_m1']);self.r[12]+=2;self.r[24]=return_address
         if first==second:self.path.append('packed_equal_runs_256')
         self.path.append('packed_line')
         return self
@@ -37,4 +37,6 @@ class PairedAimMachine(Machine):
         stack=self.r[12];self.put_word(stack-2,y*256+x);self.r[12]-=2;self.pair(6,0x5F40);self.m1(2)
         self.call(0xDDFC,0x6410,lambda:self.packed_line(0x6410))
         self.pair(6,0x5FC0);self.r[12]+=2;self.pair(4,y*256+x)
+        # Учёт LD HL,nn, POP DE и хвостового JP ко второй линии.
+        self.m1(3)
         self.path.append('two_aim_lines');return self.packed_line(self.word(self.r[12]))

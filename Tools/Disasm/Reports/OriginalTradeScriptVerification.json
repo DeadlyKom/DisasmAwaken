@@ -27,6 +27,56 @@
   "all_ship_capacity_bytes": true,
   "actual_interpreter_and_original_script_executed": true,
   "actual_weight_tables_preserved": true,
+  "lang_nested_assignment_cases": 632,
+  "lang_nested_assignment_example": {
+    "event": 11,
+    "price": 17,
+    "cargo": 128,
+    "reads": [
+      [
+        51254,
+        51841,
+        223
+      ],
+      [
+        51256,
+        51842,
+        195
+      ],
+      [
+        51262,
+        51843,
+        128
+      ],
+      [
+        51264,
+        51844,
+        0
+      ]
+    ],
+    "writes": [
+      [
+        51120,
+        51841,
+        223
+      ],
+      [
+        51122,
+        51842,
+        195
+      ],
+      [
+        49596,
+        51843,
+        128
+      ],
+      [
+        49598,
+        51844,
+        0
+      ]
+    ]
+  },
   "station_display_not_executed": true,
   "irq_executed": false,
   "native_execution": false,

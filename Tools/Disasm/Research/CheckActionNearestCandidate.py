@@ -68,13 +68,18 @@ def profiles():
         yield (254,),((0,0,0),),old,'empty_stale'
         yield (255,255,254),((0,0,0),),old,'skipped_stale'
         yield (1,1,254),((0,0,0),(0,0,0)),old,'duplicate_unavailable'
+    # Проверка разных источников окончательных A, IY, HL' и DE'.
+    records=((0,0,0),(1,0,0),(512,256,768),(32768,0,0))
+    yield (1,2,254),records,126,'last_available_is_not_best'
+    yield (1,2,3,254),records,126,'unavailable_after_available'
+    yield (3,254),records,126,'only_unavailable_context'
 
 
 def main():
     flat=flat_action();banks=[bytearray([0xA0+i]*0x4000) for i in range(8)]
     banks[5],banks[2],banks[0]=bytearray(flat[0x4000:0x8000]),bytearray(flat[0x8000:0xC000]),bytearray(flat[0xC000:])
     memory=RecordedBanks(banks=banks,out7ffd=16);baseline=[bytearray(bank) for bank in banks]
-    simulator=Simulator(memory);cases=0;counts=Counter();paths=Counter();max_stack=0
+    simulator=Simulator(memory);cases=0;counts=Counter();paths=Counter();max_stack=0;costs=set()
     for items,records,old,profile in profiles():
         memory.recording=False
         for page in (0,2,5):memory.banks[page][:]=baseline[page]
@@ -91,21 +96,39 @@ def main():
         initial[14],initial[15],initial[26],initial[27]=cases&255,(cases*17)&255,cases&1,cases%3
         model=NearestMachine(memory.banks,initial);model.nearest()
         simulator.registers[:]=initial;memory.writes=[];memory.recording=True
+        measured_m1=0
         for _ in range(2000):
             if simulator.registers[24]==0x3FFF:break
+            previous_r=simulator.registers[15]
             simulator.run()
+            increment=(simulator.registers[15]-previous_r)&127
+            assert increment in (1,2),(cases,'неожиданное изменение R',increment)
+            measured_m1+=increment
         else:raise AssertionError(('нет возврата',profile,items))
+        assert measured_m1==model.m1_count,(cases,'M1',measured_m1,model.m1_count)
+        costs.add(measured_m1)
         memory.recording=False
         assert all(model.r[i]==simulator.registers[i] for i in (*range(25),26,27)),(cases,profile,model.path,[(i,model.r[i],simulator.registers[i]) for i in (*range(25),26,27) if model.r[i]!=simulator.registers[i]])
         assert memory.banks==model.banks and Counter(memory.writes)==Counter(model.writes),(cases,'RAM',model.path)
+        # Проверка явно заданных контекстов, последний обработанный кандидат отличается от лучшего.
+        def pair(index):return simulator.registers[index]*256+simulator.registers[index+1]
+        if profile=='last_available_is_not_best':
+            assert (simulator.registers[0],pair(10),pair(22),pair(20))==(1,0xA180,768,512)
+        elif profile=='unavailable_after_available':
+            assert (simulator.registers[0],pair(10),pair(22),pair(20))==(1,0xA180,0xA1C1,512)
+            assert memory[0xA01E]==255
+        elif profile=='only_unavailable_context':
+            assert (simulator.registers[0],pair(10),pair(22),pair(20))==(126,0x5C3A,0xA1C1,0x5678)
         max_stack=max(max_stack,max((stack-(offset+(0x4000 if bank==5 else 0x8000)) for bank,offset,_ in memory.writes if bank in (2,5) and stack-8<=offset+(0x4000 if bank==5 else 0x8000)<stack),default=0))
         paths.update(model.path);counts[profile]+=1;cases+=1
         if cases%32768==0:print(str(cases)+' nearest candidate cases passed',flush=True)
-    assert cases==67541 and max_stack==6 and paths['invalidate'] and paths['tie_or_farther']
+    assert cases==67544 and max_stack==6 and paths['invalidate'] and paths['tie_or_farther']
     result=dict(passed=True,total_cases=cases,profiles=dict(counts),paths=dict(paths),stack_bytes=max_stack,
         exact_registers_flags_r_sp=True,full_eight_bank_ram_and_write_multiplicity_compared=True,
         real_index_and_distance_children_executed=True,all_254_ordinary_index_bytes=True,
         no_valid_candidate_preserves_old_result_operand=True,first_equal_distance_wins=True,
+        full_M1_count_compared_not_only_R_modulo_128=True,observed_M1_min=min(costs),observed_M1_max=max(costs),
+        explicit_last_available_not_best_and_mixed_alternate_context_cases=3,
         all_possible_lists_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)
     (ROOT/'Tools/Disasm/Reports/ActionNearestCandidateVerification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,indent=2))

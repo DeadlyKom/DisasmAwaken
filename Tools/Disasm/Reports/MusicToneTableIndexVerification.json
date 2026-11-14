@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "compared_period_words": 96,
+  "compared_period_bytes": 192,
+  "period_table_address": 56576,
+  "player_relative_period_offset": 512,
+  "header_address": 59235,
+  "module_relative_field_offset": 99,
+  "original_index": 2,
+  "table_name": "ASM/PSC",
+  "period_sha256": "684133c2a8145abd2528643b6cbaf0827a72b782ad4e4545015c765d4d5c4dfb",
+  "initialization_cases": 256,
+  "exact_registers_r_t_ram_writes_and_ports": true,
+  "original_module_initialization_only": true,
+  "format_reference": "https://groups.google.com/g/fido7.zx.spectrum/c/StZ1c9uHVnc/m/cVQD3SrNZ80J",
+  "period_reference": "https://github.com/oisee/vti/blob/master/trfuncs.pas",
+  "reference_constant": "PT3NoteTable_ASM",
+  "assembly_executed": false,
+  "native_execution": false
+}

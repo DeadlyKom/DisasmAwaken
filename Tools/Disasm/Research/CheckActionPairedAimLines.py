@@ -32,8 +32,17 @@ def main():
         initial[14],initial[15],initial[26],initial[27]=serial&255,r,serial&1,serial%3
         model=PairedAimMachine(memory.banks,initial);model.paired_aim()
         simulator.registers[:]=initial;memory.writes=[];memory.recording=True
-        simulator.run(start=0x63B6,stop=0x3FFF);memory.recording=False
-        drawn='two_aim_lines' in model.path;compared=[i for i in (*range(25),26,27) if i!=15 or not drawn]
+        measured_m1=0
+        for _ in range(16000):
+            if simulator.registers[24]==0x3FFF:break
+            before_r=simulator.registers[15];simulator.run()
+            increment=(simulator.registers[15]-before_r)&127
+            assert increment in (1,2)
+            measured_m1+=increment
+        else:raise AssertionError(('нет возврата',serial))
+        memory.recording=False
+        assert measured_m1==model.m1_count,(serial,model.path,'M1',measured_m1,model.m1_count)
+        drawn='two_aim_lines' in model.path;compared=[*range(25),26,27]
         assert all(model.r[i]==simulator.registers[i] for i in compared),(serial,phase,step,charge,x,y,r,model.path,[(i,model.r[i],simulator.registers[i]) for i in compared if model.r[i]!=simulator.registers[i]])
         assert memory.banks==model.banks and Counter(memory.writes)==Counter(model.writes),(serial,'RAM',model.path)
         for page,offset,_ in memory.writes:
@@ -44,9 +53,9 @@ def main():
     result=dict(passed=True,total_cases=counts.total(),profiles=dict(counts),paths=dict(paths),
         all_256_phase_by_256_increment_values=True,all_256_ThirdValue_values=True,all_256_aim_X_values=True,
         aim_Y_profile=[0,43,87,88],actual_two_packed_entry_rasters_executed=True,
-        packed_equal_endpoint_runs_256_preserved=True,exact_registers_except_R_on_raster=True,
+        packed_equal_endpoint_runs_256_preserved=True,exact_registers_except_R_on_raster=False,exact_registers_including_R=True,
         exact_R_on_nondrawing_cases=r_cases,full_eight_bank_ram_and_write_multiplicity_compared=True,
-        maximum_additional_stack_bytes=depth,raster_R_proved=False,aim_Y_above_88_proved=False,
+        maximum_additional_stack_bytes=depth,raster_R_proved=True,full_M1_count_compared_not_only_R_modulo_128=True,aim_Y_above_88_proved=False,
         complete_input_product_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)
     path=ROOT/'Tools/Disasm/Reports/ActionPairedAimLinesVerification.json'
     temporary=path.with_suffix('.json.tmp');temporary.write_text(json.dumps(result,indent=2)+'\n','utf-8');temporary.replace(path)

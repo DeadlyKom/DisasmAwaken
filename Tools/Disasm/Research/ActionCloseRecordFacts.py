@@ -39,17 +39,17 @@ CONTRACTS={('Action',0xE506):(
   'после последнего условного JP возможен проход в соседний ReverseCloseRecordState, include имеют жёсткий порядок']) ,
  ('Action',0xE54A):(
  ['HL, DE, BC и AF числовых аргументов не задают, DE и BC сохраняются, IX адрес читаемой FActionRecord',
-  'InhibitCode задаёт исходный полный байт, ClassCode определяет дополнительное обнуление UnknownA794',
+  'InhibitCode задаёт исходный полный байт, ClassCode определяет дополнительное обнуление FirstValue',
   'действует договор ReverseScaledVector, состояние доступно для записи, банк 0 выбран, два дополнительных байта CPU-стека доступны, IRQ не вмешиваются'],
  ['InhibitCode уменьшается на один по модулю 256, входной 00 превращается в FF',
-  'Component0, Component2, Component1 меняют знак, SignedWord обновляется по договору ReverseScaledVector, EnabledCode получает 1',
-  'HL новое SignedWord, DE и BC сохраняются, при классе не 12 A=ClassCode и F от CP с 12',
-  'при классе 12 UnknownA794 получает 0 и AF=0044, это условие не заменяется корневым переходом в другой режим',
+  'Component0, Component2, Component1 меняют знак, SpeedWord обновляется по договору ReverseScaledVector, EnabledCode получает 1',
+  'HL новое SpeedWord, DE и BC сохраняются, при классе не 12 A=ClassCode и F от CP с 12',
+  'при классе 12 FirstValue получает 0 и AF=0044, это условие не заменяется корневым переходом в другой режим',
   "HL', DE', BC', AF', IX, IY, I, IM и IFF сохраняются, SP=входной SP+2, OUT отсутствуют",
   'R получает 51 M1 для классов не 12 и 54 M1 для класса 12'],
- ['HL, AF, R, два байта временного CPU-стека, InhibitCode, три компоненты, SignedWord, EnabledCode, UnknownA794 только при классе 12'],
+ ['HL, AF, R, два байта временного CPU-стека, InhibitCode, три компоненты, SpeedWord, EnabledCode, FirstValue только при классе 12'],
  ['InhibitCode уменьшается косвенным DEC (HL), писатель существующего операнда по E507 зарегистрирован отдельно',
-  'игровой смысл UnknownA794 остаётся неизвестным, обнуление по классу 12 установлено точно'])}
+  'FirstValue читается при выводе первой шкалы, условие обнуления по классу 12 установлено точно'])}
 COMMENTS={
  0xE506:(['Проверка полного InhibitCode, ноль допускает обработку записи, любые другие значения завершают её.'],None),
  0xE509:([],'выход, если InhibitCode ненулевой, запись и состояние не обрабатывать'),
@@ -75,10 +75,10 @@ COMMENTS={
  0xE545:(['Проверка последней компоненты перед передачей следующему режиму.'],None),
  0xE547:([],'переход, если проверяемый старший байт Component2 меньше 4, выполнить TransferToStationLoader'),
  0xE54A:(['Уменьшение полного InhibitCode по модулю байта, исходное 00 получает FF.'],None),
- 0xE54E:(['Инвертирование масштабированных компонент и отдельное обновление SignedWord настоящим дочерним вызовом.'],None),
- 0xE551:(['Проверка ClassCode после инверсии, только класс 12 дополнительно обнуляет UnknownA794.'],None),
- 0xE556:([],'выход, если ClassCode не равен 12, UnknownA794 сохранить'),
- 0xE557:(['Обнуление неизвестного состояния UnknownA794 для класса 12 и формирование AF=0044.'],None)}
+ 0xE54E:(['Инвертирование масштабированных компонент и отдельное обновление SpeedWord настоящим дочерним вызовом.'],None),
+ 0xE551:(['Проверка ClassCode после инверсии, только класс 12 дополнительно обнуляет FirstValue.'],None),
+ 0xE556:([],'выход, если ClassCode не равен 12, FirstValue сохранить'),
+ 0xE557:(['Обнуление значения первой шкалы FirstValue для класса 12 и формирование AF=0044.'],None)}
 
 
 def name_operands(region,function_address,operation):
@@ -88,7 +88,7 @@ def name_operands(region,function_address,operation):
         for offset,name in ((1,'Components.Component0.High'),(3,'Components.Component1.High'),(5,'Components.Component2.High'),(18,'ClassCode'),(24,'ReuseByte')):
             operation=operation.replace('(IX + #'+format(offset,'02X')+')','(IX + FActionRecord.'+name+')')
         operation=operation.replace('LD HL, #E507','LD HL, @ActionCloseRecordState.InhibitCode')
-        operation=operation.replace('(#A794)','(@ActionCloseRecordState.UnknownA794)')
+        operation=operation.replace('(#A794)','(@ActionPanelGaugesState.FirstValue)')
         operation=operation.replace('CP #11','CP @ActionMissileCreateConst.MissileClass')
         operation=operation.replace('CP #14','CP @ActionCloseRecordConst.IgnoredClass')
         operation=operation.replace('CP #12','CP @ActionCloseRecordConst.TransferClass')

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "channel": "C",
+  "entries": {
+    "DE0A": {
+      "cases": 65536,
+      "m1_per_call": 9,
+      "total_m1": 589824
+    },
+    "DE12": {
+      "cases": 65536,
+      "m1_per_call": 6,
+      "total_m1": 393216
+    }
+  },
+  "total_cases": 131072,
+  "all_duration_pairs": true,
+  "all_initial_R_values_per_entry": true,
+  "all_input_flags_per_entry": true,
+  "full_joint_register_cartesian": false,
+  "every_instruction_and_R_step_checked": true,
+  "every_cpu_write_checked": true,
+  "I_IM_IFF_preserved": true,
+  "fixed_disjoint_stream_and_stack_fixture": true,
+  "all_address_aliases_proved": false,
+  "irq_executed": false,
+  "full_music_playback_proved": false,
+  "assembly_executed": false
+}

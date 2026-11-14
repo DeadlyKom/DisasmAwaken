@@ -28,11 +28,13 @@ def profiles():
         yield (-1,1)[randomizer.randrange(2)],x,y,randomizer.randrange(x,256-x),randomizer.randrange(96),randomizer.randrange(65536),randomizer.randrange(65536),randomizer.randrange(256),'mixed_arcs'
 
 
-def pixel_half(memory,cx,row,x,y,direction,fill,toggle):
+def pixel_half(memory,cx,row,x,y,direction,fill,toggle,end_state=None):
     error=0;rows=0
     while 0<=row<96:
         left,right=cx-x,cx+x
         if left//8>=right//8:break
+        # Сохранение младшего адреса правой границы именно последней реально рисуемой строки.
+        if end_state is not None:end_state['last_right_low']=(32*row+right//8)&255
         for pixel in range(left+1,right):
             index=32*row+pixel//8;bit=128>>(pixel&7)
             memory[index]=(memory[index]&(~bit&255))|(fill&bit)
@@ -63,7 +65,8 @@ def main():
             'IX':pattern,'IY':0x5C3A,'SP':stack,'PC':entry},None,False)
         initial[14],initial[15],initial[26],initial[27]=serial&255,serial&255,serial&1,serial%3
         local=evaluate_half(initial,cx,cy,x,y,direction);wanted=local['registers'];expected_banks=[bytearray(bank) for bank in memory.banks]
-        raster=[background]*3072;fill,rows=pixel_half(raster,cx,cy,x,y,direction,pattern&255,pattern>>8)
+        raster=[background]*3072;pixel_state={}
+        fill,rows=pixel_half(raster,cx,cy,x,y,direction,pattern&255,pattern>>8,end_state=pixel_state)
         assert wanted[9]==fill and local['paths'][0]['rows']==rows,(serial,'geometry',local['paths'],rows)
         expected_banks[2][:3072]=bytes(raster)
         for address,value in local['writes']:expected_banks[5 if address<0x8000 else 2 if address<0xC000 else 1][address&0x3FFF]=value
@@ -72,6 +75,11 @@ def main():
         compared=(*range(15),*range(16,25),26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared),(serial,hex(entry),x,y,cx,cy,local['paths'],
             [(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
+        # Проверка сохраняемых AF и AF', старших счётчиков и D независимо от регистрового эталона.
+        assert simulator.registers[0:2]==initial[0:2] and simulator.registers[16:18]==initial[16:18]
+        assert simulator.registers[18]==255 and simulator.registers[20]==0
+        assert simulator.registers[4]==(pixel_state['last_right_low'] if rows else initial[4])
+        assert simulator.registers[9]==(initial[9]^(initial[8] if rows&1 else 0))
         nonpixel=[]
         for bank,offset,value in memory.writes:
             if bank==2 and offset<3072:continue
@@ -87,6 +95,7 @@ def main():
         all_input_AF_both_directions=True,exact_registers_except_R=True,refresh_R_proved=False,
         all_physical_ram_bytes_proved=True,all_nonpixel_values_and_write_multiplicity_proved=True,
         independent_pixel_intervals_and_second_order_error=True,pixel_write_multiplicity_proved=False,
+        direct_preserved_AF_and_last_drawn_right_low_checked=True,
         initial_same_byte_exit_preserved=True,maximum_additional_stack_bytes=6,no_port_or_page_writes=True,
         complete_coordinate_pattern_product_exhausted=False,noncanonical_spans_proved=False,
         horizontal_clipping_kernels_proved=False,assembly_executed=False,irq_executed=False,native_execution=False,timing_proved=False)

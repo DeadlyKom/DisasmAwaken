@@ -272,11 +272,12 @@ SaveLevel:      LD (@ActionAyEffectsState.ChannelCLevel), A
                 AND A
                 JP M, @Action.RenderSceneFrame.AdvanceRecord                    ; переход, если глубина отрицательна, пропустить запись
 
-                CP #1F
+                ; Выбор указателя по преобразованной глубине, вторая запись пары относится к ближнему варианту.
+                CP @ActionObjectCopyConst.NearDepthEnd
                 LD A, (@ActionObjectVerticesState.ModelByteOffset)
-                JP P, @Action.RenderSceneFrame.ReadModelHeader                  ; переход, если старший байт глубины не меньше #1F
+                JP P, @Action.RenderSceneFrame.ReadModelHeader                  ; переход, если старший байт глубины не меньше порога, сохранить исходное смещение
 
-                ADD A, #02
+                ADD A, @FObjectDataPointer
                 LD (@ActionObjectVerticesState.ModelByteOffset), A
                 ; Восстановление настоящего SP перед чтением заголовка модели.
 ReadModelHeader:LD SP, (#E4A7)

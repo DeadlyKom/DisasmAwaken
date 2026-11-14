@@ -84,7 +84,18 @@ def main():
         wanted[2:8]=[number,c,0,64,address>>8,address&255]
         wanted[15]=refresh(initial[15],m1);wanted[SP],wanted[PC]=stack+2,0x3FFF
         simulator.registers[:]=initial;memory.writes=[];memory.recording=True
-        simulator.run(start=0x62CF,stop=0x3FFF);memory.recording=False
+        actual_m1=0
+        # Проверка полного числа M1 без потери кратных 128 в конечном R.
+        for _ in range(20000):
+            if simulator.registers[24]==0x3FFF:break
+            old_r=simulator.registers[15]
+            simulator.run()
+            increment=(simulator.registers[15]-old_r)&127
+            assert increment in (1,2),(serial,'неожиданное изменение R',increment)
+            actual_m1+=increment
+        else:raise AssertionError(('счётчик не вернулся',serial))
+        assert actual_m1==m1,(serial,'M1',actual_m1,m1)
+        memory.recording=False
         assert wanted[:25]==simulator.registers[:25] and wanted[26:28]==simulator.registers[26:28],(serial,rows,target,
             [(i,wanted[i],simulator.registers[i]) for i in (*range(25),26,27) if wanted[i]!=simulator.registers[i]])
         assert not memory.writes and memory.o7ffd==old,(serial,'RAM_or_page_write')
@@ -98,6 +109,7 @@ def main():
         marker_returns_byte0_pointer=True,two_matches_return_byte1_pointer=True,C_tracks_last_active_header_low=True,
         count_saturates_at_two=True,FF_link_is_compared_as_ordinary_byte=True,all_64_initial_paging_values_distributed=True,
         observed_m1_min=min(costs),observed_m1_max=max(costs),independent_list_predicate_oracle=True,
+        full_M1_count_compared_not_only_R_modulo_128=True,
         full_list_product_exhausted=False,game_array_capacity_proved=False,
         assembly_executed=False,irq_executed=False,native_execution=False,timing_proved=False)
     assert counts.total()==202350

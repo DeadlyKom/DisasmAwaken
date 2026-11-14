@@ -1,4 +1,4 @@
-"""F222, все пары A/H и все полные классы с байтом Unknown14, настоящий создатель."""
+"""F222, все пары A/H и все полные классы с байтом MissileRepeatDelay, настоящий создатель."""
 from collections import Counter
 import json
 from CheckIntro import ROOT
@@ -44,7 +44,7 @@ def main():
         counts[profile]+=1;paths.update(model.path)
     assert counts.total()==131072 and depth==8,(counts,depth)
     result=dict(passed=True,total_cases=counts.total(),profiles=dict(counts),paths=dict(paths),
-        all_256_A_by_256_H=True,all_256_classes_by_256_Unknown14=True,full_class_table_index_not_clamped=True,
+        all_256_A_by_256_H=True,all_256_classes_by_256_class17_delay=True,full_class_table_index_not_clamped=True,
         actual_current_link_and_class17_children_executed=True,exact_registers_flags_r_sp=True,
         full_eight_bank_ram_and_write_multiplicity_compared=True,maximum_additional_stack_bytes=depth,
         common_F0F8_executed=False,complete_input_product_exhausted=False,

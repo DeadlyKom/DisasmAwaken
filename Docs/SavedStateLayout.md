@@ -11,12 +11,24 @@ SAVE0..SAVE4 отличаются от исходного блока STATIONF т
 Нулевой SAVE5 сохраняется в исходном виде, пригодность такого состояния
 для игры не установлена. В том числе его границы списков равны нулю,
 а не исходному #80. Нормализация либо исправление не выполняются.
+Пять видимых позиций при обычном наведении используют файлы SAVE0..SAVE4.
+[Сопоставление позиций](SaveSlots.md#соответствие-видимых-позиций-файлам)
 
-В каждом файле 473 байта оформлены существующими структурами, 29 байтов
-составляют физический хвост переноса, 10 байтов остаются в неизвестных
+В каждом файле 479 байтов оформлены структурами, 29 байтов
+составляют физический хвост переноса, 4 байта остаются в неизвестных
 диапазонах. Поля Unknown внутри известных
 структур сохраняют неизвестный смысл. Размер и порядок всех полей
 следуют из уже разобранных потребителей станции, новых адресов нет.
+Для четырёх неизвестных байтов подтверждён перенос в ACTION и обратно.
+Исходный торговый сценарий при событиях 3, 4, 7 и 8 читает некоторые
+из них только при заранее подставленных индексах скимера за границей
+ценового списка. [Перенос](ActionContextTail.md#перенос-тела-news-и-соседних-байтов)
+· [Проверка чтений](SecondaryContextAliases.md#исходный-торговый-сценарий)
+
+При явно заданных индексах LANG может записать все четыре байта
+через писатель количеств. Запись и обратное чтение через ROM TR-DOS
+сохраняют эти значения во всех шести файлах.
+[Условия и границы проверки](SecondaryContextAliases.md#явное-присваивание-и-сохранение)
 
 | Смещение SAVE | Длина | Поля станции |
 | --- | --- | --- |
@@ -28,7 +40,7 @@ SAVE0..SAVE4 отличаются от исходного блока STATIONF т
 | #053 | 30 | [EquipmentQuantityCodes.asm](../Source/Station/Data/EquipmentQuantityCodes.asm) |
 | #071 | 4 | [PrimaryQuantityTail.asm](../Source/Station/Data/PrimaryQuantityTail.asm) |
 | #075 | 16 | [MissionOffer.asm](../Source/Station/Data/MissionOffer.asm) |
-| #085 | 6 | [Unclassified38C0_38C6.bin](../Source/Resources/04_STATIONF/Unclassified38C0_38C6.bin) |
+| #085 | 6 | [NewsTransfer.asm](../Source/Station/Data/NewsTransfer.asm) |
 | #08B | 48 | [OrderCompatibleSlots.asm](../Source/Station/Data/OrderCompatibleSlots.asm) |
 | #0BB | 14 | [SecondaryQuantities.asm](../Source/Station/Data/SecondaryQuantities.asm) |
 | #0C9 | 2 | [Unclassified3904_3906.bin](../Source/Resources/04_STATIONF/Unclassified3904_3906.bin) |
@@ -45,6 +57,11 @@ SAVE0..SAVE4 отличаются от исходного блока STATIONF т
 | #187 | 6 | [InterfaceColors.asm](../Source/Station/Data/InterfaceColors.asm) |
 | #18D | 86 | [ControlOptions.asm](../Source/Station/Data/ControlOptions.asm) |
 | #1E3 | 29 | [InitialTransferTrailer.bin](../Source/Station/Resources/InitialTransferTrailer.bin) |
+
+Последние два байта `ControlOptions` по `#1E1..#1E2` образуют
+`FScriptResourceSelection`. В станционной RAM это счётчики ресурса LANG
+по `#9A1C..#9A1D`. При возврате из ACTION они, как и следующие 29 байтов,
+остаются значениями свежего STATIONF. [Потребители](StationScriptFields.md)
 
 Хвост +1E3..+1FF входит в двухсекторные операции SAVE. При переходе в
 ACTION он попадает в 9DA0..9DBC. При возврате к станции загрузчик

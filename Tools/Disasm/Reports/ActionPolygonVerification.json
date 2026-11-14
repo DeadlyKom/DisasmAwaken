@@ -20,5 +20,31 @@
   "refresh_and_timing_independently_checked": false,
   "assembly_executed": false,
   "irq_executed": false,
-  "native_execution": false
+  "native_execution": false,
+  "immediate_continue_clip_polygon_end": {
+    "passed": true,
+    "total_cases": 65536,
+    "all_output_sizes_and_saved_C": true,
+    "saved_B": 1,
+    "synthetic_private_frame": true,
+    "full_game_execution": false,
+    "exact_registers_flags_r_sp": true,
+    "m1_increment": 6,
+    "any_memory_write_rejected": true,
+    "loop_branch_proved_by_this_series": false,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "actual_edge_context_invariants": {
+    "entered": 15265,
+    "no_division_preserves_AF_alt": 10610,
+    "no_wide_multiply_preserves_IXH": 12516,
+    "no_wide_multiply_or_division_preserves_IX": 9284,
+    "no_DE_writer_returns_C071": 5640,
+    "normal": 11826,
+    "special": 3439,
+    "no_division_preserves_earlier_edge_AF_alt": 3796,
+    "no_wide_multiply_preserves_earlier_edge_IXH": 2875
+  }
 }

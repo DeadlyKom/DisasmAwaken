@@ -1,5 +1,9 @@
-"""Две реальные выборки прокручиваемого кадра до входа экранного переноса."""
+"""Две реальные выборки прокручиваемого кадра до входа экранного переноса.
+
+Документация: ../../../Docs/IntroScrolledFrame.md#независимые-приращения-и-граница-вывода
+"""
 from collections import Counter
+from hashlib import sha256
 from itertools import product
 from random import Random
 import json
@@ -11,6 +15,7 @@ from CheckIntroScrolledInitialization import IntroPorts
 from CheckMusic import PC, SP, Simulator, get_registers
 from CheckScreenUpdate import put
 from ReferenceIntroFrame import Frame
+from CheckStationFlightCycle import DISK, ENTRIES
 
 
 def advance(phase, step, delta):
@@ -21,10 +26,15 @@ def advance(phase, step, delta):
 def main():
     flat = original_memory()
     rom = (ROOT / 'Tools/Disasm/Research/vendor/skoolkit-10.1/skoolkit/resources/48.rom').read_bytes()
+    assert sha256(rom).hexdigest() == 'd55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42'
+    body = bytes(flat[0x66A3:0x66E2])
+    offset_in_disk = ENTRIES[3]['offset'] + 0x3A3
+    assert body == DISK[offset_in_disk:offset_in_disk + len(body)]
     rng = Random(0x66A3)
     cases = 0
     wrapper_cases = 0
-    for page, offset, direction, signs in product((17, 22), (0, 0x1F, 0x3F), (0, 1, 255), range(4)):
+    directions = ((0,0), (1,1), (255,255), (1,255), (255,1))
+    for page, offset, (dstep, estep), signs in product((17, 22), (0, 0x1F, 0x3F), directions, range(4)):
         banks = [bytearray([0xA0 + i] * 0x4000) for i in range(8)]
         banks[5][:] = bytes(flat[0x4000:0x8000])
         banks[2][:] = rng.randbytes(0x4000)
@@ -69,7 +79,7 @@ def main():
                     put(memory, table + 2 * col, source.to_bytes(2, 'little'))
             put(memory, 0x60C0 + 256 * half, rng.randbytes(64))
         expected = memory.banks[2].copy()
-        offset_word = (128 + ((offset + direction) & 63)) * 256 + ((offset + direction) & 63)
+        offset_word = (128 + ((offset + estep) & 63)) * 256 + ((offset + dstep) & 63)
         for row, values in enumerate(pointers):
             for col, pointer in enumerate(values):
                 source = ((pointer + offset_word) & 0xBFFF) - 0x8000
@@ -77,15 +87,18 @@ def main():
         simulator = Simulator(memory)
         trace = IntroPorts(simulator)
         simulator.set_tracer(trace)
-        wrapper = page == 22 and direction == 255
+        wrapper = page == 22 and dstep == estep == 255
         entry = 0x661E if wrapper else 0x66A3
-        initial = get_registers({'PC': entry, 'SP': 0x5FFE, 'IY': 0x5C3A, 'A': page,
-                                 'DE': direction * 257, 'HL': 0x662C, 'BC': 0x6632}, None, False)
-        initial[27] = 1
+        initial = get_registers({'PC': entry, 'SP': 0x5FFE, 'IY': 0x5C3A, 'AF':page * 256 + 0xA5,
+            'DE': dstep * 256 + estep, 'HL': 0x662C, 'BC': 0x6632, 'IX':0xABCD, 'I':0x3C,
+            '^AF':0xA55A, '^HL':0x1357, '^DE':0x2468, '^BC':0x369A}, {'im':1, 'iff':0}, False)
         simulator.registers[:] = initial
         simulator.run(entry, 0x67F1, interrupts=True)
-        context = (page, offset, direction, signs)
+        context = (page, offset, dstep, estep, signs)
         assert simulator.registers[PC] == 0x67F1 and simulator.registers[SP] == 0x5FFE, context
+        # Проверка сохраняемого контекста до первого действия вывода кадра.
+        assert all(simulator.registers[i] == initial[i] for i in (*range(8,12),14,16,17,27)), context
+        assert simulator.registers[26] == 0, context
         assert bytes(memory.banks[2]) == expected, context
         for address, words in ((0x662C, advance(*first)), (0x6632, advance(*second))):
             assert bytes(memory[address:address + 6]) == b''.join(word.to_bytes(2, 'little') for word in words), context
@@ -126,7 +139,13 @@ def main():
         cases += 1
     report = dict(passed=True, total_cases=cases, actual_generated_chain_and_rom_executed=True,
                   exact_source_buffer_compared=True, irq_count_before_present=2, final_wrapper_cases=wrapper_cases,
-                  final_screen_transfer_executed=True, all_physical_banks_compared=True, assembly_executed=False)
+                  final_screen_transfer_executed=True, all_physical_banks_compared=True, assembly_executed=False,
+                  original_body_sha256=sha256(body).hexdigest(), rom_sha256=sha256(rom).hexdigest(),
+                  nonzero_AF_alternate_IX_IY_preserved_before_present=True,
+                  initial_I=0x3C, initial_IM=1, initial_IFF=0, IFF_before_present=0,
+                  pointer_tables_prepared_by_model=True, native_original_pointer_graph_proved=False,
+                  tested_D_E_pairs=[list(pair) for pair in directions],
+                  exact_R_and_timing_proved=False, native_execution=False)
     (ROOT / 'Tools/Disasm/Reports/IntroScrolledFrameVerification.json').write_text(
         json.dumps(report, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(report, indent=2))

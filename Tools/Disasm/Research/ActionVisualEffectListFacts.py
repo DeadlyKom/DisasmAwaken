@@ -1,5 +1,6 @@
 """Кадровый проход эффектов и продолжение после восстановления стека."""
 from ActionVisualEffectResumeFacts import COMMENTS as RESUME_COMMENTS
+from ActionVisualEffectResumeFacts import CONTRACTS as RESUME_CONTRACTS
 
 
 FUNCTIONS = {
@@ -25,14 +26,7 @@ CONTRACTS = {
         ['сквозная модель проверяет восемь позиций, переходы времени, курсоры, растр и переключения',
          'побочные записи вне списка и буфера и точный полный набор регистров отдельно не сверялись'],
     ),
-    ('Action', 0x6DD1): (
-        ['AF задаёт P/V вычислителя, IX указывает текущий эффект, SavedSP заполнен обходчиком',
-         'три слова результата доступны в странице 0'],
-        ['настоящий SP восстановлен, при переполнении либо неположительной глубине управление передаётся SetStride',
-         'на пути рисования выбирается страница 3, после возврата восстановлены IX и страница 0, затем переход в SetStride'],
-        ['HL, DE, BC, AF, HL\', DE\', BC\', AF\', IY, R, буфер и побочные записи рисователя на пути вызова'],
-        ['в сквозных моделях сверены все выходы ветвления, рамка, страницы и 3072 байта растрового буфера'],
-    ),
+    ('Action', 0x6DD1): RESUME_CONTRACTS['Action', 0x6DD1],
 }
 COMMENTS = {**RESUME_COMMENTS,
     0x6D38: (['Проверка разрешения кадрового обхода.'], None),
@@ -55,8 +49,8 @@ def name_operands(region, address, operation):
     if region != 'Action' or address not in FUNCTIONS:
         return operation
     fields = ('SavedHL', 'SavedHL + 1', 'SavedDE', 'SavedDE + 1', 'SavedBC', 'SavedBC + 1',
-              'Mode', 'State', 'Source', 'Source + 1', 'Cursor', 'Cursor + 1',
-              'Unknown0C', 'Unknown0D', 'Unknown0E', 'Unknown0E + 1', 'Unknown10', 'Unknown11')
+              'Mode', 'State', 'FramePointer', 'FramePointer + 1', 'FirstFrame', 'FirstFrame + 1',
+              'FrameCount', 'FrameReload', 'FrameStride', 'FrameStride + 1', 'FrameWidth', 'FrameHeight')
     for offset, field in enumerate(fields):
         operation = operation.replace(f'IX+#{offset:02X}', 'IX + @FVisualEffect.' + field)
     aliases = {

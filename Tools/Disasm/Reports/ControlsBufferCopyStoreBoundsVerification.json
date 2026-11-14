@@ -1,0 +1,914 @@
+{
+  "passed": true,
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "entry": 51330,
+  "end_exclusive": 51853,
+  "original_code_bytes": 523,
+  "original_code_sha256": "0a8e02b8460a0cef37a1a1f8ee2d11cd2e2911505fdd2c90bcfcd809e19282ae",
+  "registered_instructions": 416,
+  "address_domain_profiles": [
+    {
+      "third": 0,
+      "first_character_row": 0,
+      "pages": 1,
+      "destination": 16399,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 0,
+      "first_character_row": 0,
+      "pages": 2,
+      "destination": 16399,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 0,
+      "first_character_row": 0,
+      "pages": 3,
+      "destination": 16399,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 0,
+      "first_character_row": 0,
+      "pages": 4,
+      "destination": 16399,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 0,
+      "first_character_row": 0,
+      "pages": 5,
+      "destination": 16399,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 0,
+      "first_character_row": 0,
+      "pages": 6,
+      "destination": 16399,
+      "screen_bytes": 1536,
+      "code_store_count": 8
+    },
+    {
+      "third": 0,
+      "first_character_row": 0,
+      "pages": 7,
+      "destination": 16399,
+      "screen_bytes": 1792,
+      "code_store_count": 9
+    },
+    {
+      "third": 0,
+      "first_character_row": 0,
+      "pages": 8,
+      "destination": 16399,
+      "screen_bytes": 2048,
+      "code_store_count": 10
+    },
+    {
+      "third": 0,
+      "first_character_row": 1,
+      "pages": 1,
+      "destination": 16431,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 0,
+      "first_character_row": 1,
+      "pages": 2,
+      "destination": 16431,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 0,
+      "first_character_row": 1,
+      "pages": 3,
+      "destination": 16431,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 0,
+      "first_character_row": 1,
+      "pages": 4,
+      "destination": 16431,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 0,
+      "first_character_row": 1,
+      "pages": 5,
+      "destination": 16431,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 0,
+      "first_character_row": 1,
+      "pages": 6,
+      "destination": 16431,
+      "screen_bytes": 1536,
+      "code_store_count": 8
+    },
+    {
+      "third": 0,
+      "first_character_row": 1,
+      "pages": 7,
+      "destination": 16431,
+      "screen_bytes": 1792,
+      "code_store_count": 9
+    },
+    {
+      "third": 0,
+      "first_character_row": 2,
+      "pages": 1,
+      "destination": 16463,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 0,
+      "first_character_row": 2,
+      "pages": 2,
+      "destination": 16463,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 0,
+      "first_character_row": 2,
+      "pages": 3,
+      "destination": 16463,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 0,
+      "first_character_row": 2,
+      "pages": 4,
+      "destination": 16463,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 0,
+      "first_character_row": 2,
+      "pages": 5,
+      "destination": 16463,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 0,
+      "first_character_row": 2,
+      "pages": 6,
+      "destination": 16463,
+      "screen_bytes": 1536,
+      "code_store_count": 8
+    },
+    {
+      "third": 0,
+      "first_character_row": 3,
+      "pages": 1,
+      "destination": 16495,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 0,
+      "first_character_row": 3,
+      "pages": 2,
+      "destination": 16495,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 0,
+      "first_character_row": 3,
+      "pages": 3,
+      "destination": 16495,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 0,
+      "first_character_row": 3,
+      "pages": 4,
+      "destination": 16495,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 0,
+      "first_character_row": 3,
+      "pages": 5,
+      "destination": 16495,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 0,
+      "first_character_row": 4,
+      "pages": 1,
+      "destination": 16527,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 0,
+      "first_character_row": 4,
+      "pages": 2,
+      "destination": 16527,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 0,
+      "first_character_row": 4,
+      "pages": 3,
+      "destination": 16527,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 0,
+      "first_character_row": 4,
+      "pages": 4,
+      "destination": 16527,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 0,
+      "first_character_row": 5,
+      "pages": 1,
+      "destination": 16559,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 0,
+      "first_character_row": 5,
+      "pages": 2,
+      "destination": 16559,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 0,
+      "first_character_row": 5,
+      "pages": 3,
+      "destination": 16559,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 0,
+      "first_character_row": 6,
+      "pages": 1,
+      "destination": 16591,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 0,
+      "first_character_row": 6,
+      "pages": 2,
+      "destination": 16591,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 0,
+      "first_character_row": 7,
+      "pages": 1,
+      "destination": 16623,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 1,
+      "first_character_row": 0,
+      "pages": 1,
+      "destination": 18447,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 1,
+      "first_character_row": 0,
+      "pages": 2,
+      "destination": 18447,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 1,
+      "first_character_row": 0,
+      "pages": 3,
+      "destination": 18447,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 1,
+      "first_character_row": 0,
+      "pages": 4,
+      "destination": 18447,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 1,
+      "first_character_row": 0,
+      "pages": 5,
+      "destination": 18447,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 1,
+      "first_character_row": 0,
+      "pages": 6,
+      "destination": 18447,
+      "screen_bytes": 1536,
+      "code_store_count": 8
+    },
+    {
+      "third": 1,
+      "first_character_row": 0,
+      "pages": 7,
+      "destination": 18447,
+      "screen_bytes": 1792,
+      "code_store_count": 9
+    },
+    {
+      "third": 1,
+      "first_character_row": 0,
+      "pages": 8,
+      "destination": 18447,
+      "screen_bytes": 2048,
+      "code_store_count": 10
+    },
+    {
+      "third": 1,
+      "first_character_row": 1,
+      "pages": 1,
+      "destination": 18479,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 1,
+      "first_character_row": 1,
+      "pages": 2,
+      "destination": 18479,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 1,
+      "first_character_row": 1,
+      "pages": 3,
+      "destination": 18479,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 1,
+      "first_character_row": 1,
+      "pages": 4,
+      "destination": 18479,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 1,
+      "first_character_row": 1,
+      "pages": 5,
+      "destination": 18479,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 1,
+      "first_character_row": 1,
+      "pages": 6,
+      "destination": 18479,
+      "screen_bytes": 1536,
+      "code_store_count": 8
+    },
+    {
+      "third": 1,
+      "first_character_row": 1,
+      "pages": 7,
+      "destination": 18479,
+      "screen_bytes": 1792,
+      "code_store_count": 9
+    },
+    {
+      "third": 1,
+      "first_character_row": 2,
+      "pages": 1,
+      "destination": 18511,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 1,
+      "first_character_row": 2,
+      "pages": 2,
+      "destination": 18511,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 1,
+      "first_character_row": 2,
+      "pages": 3,
+      "destination": 18511,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 1,
+      "first_character_row": 2,
+      "pages": 4,
+      "destination": 18511,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 1,
+      "first_character_row": 2,
+      "pages": 5,
+      "destination": 18511,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 1,
+      "first_character_row": 2,
+      "pages": 6,
+      "destination": 18511,
+      "screen_bytes": 1536,
+      "code_store_count": 8
+    },
+    {
+      "third": 1,
+      "first_character_row": 3,
+      "pages": 1,
+      "destination": 18543,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 1,
+      "first_character_row": 3,
+      "pages": 2,
+      "destination": 18543,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 1,
+      "first_character_row": 3,
+      "pages": 3,
+      "destination": 18543,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 1,
+      "first_character_row": 3,
+      "pages": 4,
+      "destination": 18543,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 1,
+      "first_character_row": 3,
+      "pages": 5,
+      "destination": 18543,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 1,
+      "first_character_row": 4,
+      "pages": 1,
+      "destination": 18575,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 1,
+      "first_character_row": 4,
+      "pages": 2,
+      "destination": 18575,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 1,
+      "first_character_row": 4,
+      "pages": 3,
+      "destination": 18575,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 1,
+      "first_character_row": 4,
+      "pages": 4,
+      "destination": 18575,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 1,
+      "first_character_row": 5,
+      "pages": 1,
+      "destination": 18607,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 1,
+      "first_character_row": 5,
+      "pages": 2,
+      "destination": 18607,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 1,
+      "first_character_row": 5,
+      "pages": 3,
+      "destination": 18607,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 1,
+      "first_character_row": 6,
+      "pages": 1,
+      "destination": 18639,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 1,
+      "first_character_row": 6,
+      "pages": 2,
+      "destination": 18639,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 1,
+      "first_character_row": 7,
+      "pages": 1,
+      "destination": 18671,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 2,
+      "first_character_row": 0,
+      "pages": 1,
+      "destination": 20495,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 2,
+      "first_character_row": 0,
+      "pages": 2,
+      "destination": 20495,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 2,
+      "first_character_row": 0,
+      "pages": 3,
+      "destination": 20495,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 2,
+      "first_character_row": 0,
+      "pages": 4,
+      "destination": 20495,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 2,
+      "first_character_row": 0,
+      "pages": 5,
+      "destination": 20495,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 2,
+      "first_character_row": 0,
+      "pages": 6,
+      "destination": 20495,
+      "screen_bytes": 1536,
+      "code_store_count": 8
+    },
+    {
+      "third": 2,
+      "first_character_row": 0,
+      "pages": 7,
+      "destination": 20495,
+      "screen_bytes": 1792,
+      "code_store_count": 9
+    },
+    {
+      "third": 2,
+      "first_character_row": 0,
+      "pages": 8,
+      "destination": 20495,
+      "screen_bytes": 2048,
+      "code_store_count": 10
+    },
+    {
+      "third": 2,
+      "first_character_row": 1,
+      "pages": 1,
+      "destination": 20527,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 2,
+      "first_character_row": 1,
+      "pages": 2,
+      "destination": 20527,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 2,
+      "first_character_row": 1,
+      "pages": 3,
+      "destination": 20527,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 2,
+      "first_character_row": 1,
+      "pages": 4,
+      "destination": 20527,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 2,
+      "first_character_row": 1,
+      "pages": 5,
+      "destination": 20527,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 2,
+      "first_character_row": 1,
+      "pages": 6,
+      "destination": 20527,
+      "screen_bytes": 1536,
+      "code_store_count": 8
+    },
+    {
+      "third": 2,
+      "first_character_row": 1,
+      "pages": 7,
+      "destination": 20527,
+      "screen_bytes": 1792,
+      "code_store_count": 9
+    },
+    {
+      "third": 2,
+      "first_character_row": 2,
+      "pages": 1,
+      "destination": 20559,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 2,
+      "first_character_row": 2,
+      "pages": 2,
+      "destination": 20559,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 2,
+      "first_character_row": 2,
+      "pages": 3,
+      "destination": 20559,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 2,
+      "first_character_row": 2,
+      "pages": 4,
+      "destination": 20559,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 2,
+      "first_character_row": 2,
+      "pages": 5,
+      "destination": 20559,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 2,
+      "first_character_row": 2,
+      "pages": 6,
+      "destination": 20559,
+      "screen_bytes": 1536,
+      "code_store_count": 8
+    },
+    {
+      "third": 2,
+      "first_character_row": 3,
+      "pages": 1,
+      "destination": 20591,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 2,
+      "first_character_row": 3,
+      "pages": 2,
+      "destination": 20591,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 2,
+      "first_character_row": 3,
+      "pages": 3,
+      "destination": 20591,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 2,
+      "first_character_row": 3,
+      "pages": 4,
+      "destination": 20591,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 2,
+      "first_character_row": 3,
+      "pages": 5,
+      "destination": 20591,
+      "screen_bytes": 1280,
+      "code_store_count": 7
+    },
+    {
+      "third": 2,
+      "first_character_row": 4,
+      "pages": 1,
+      "destination": 20623,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 2,
+      "first_character_row": 4,
+      "pages": 2,
+      "destination": 20623,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 2,
+      "first_character_row": 4,
+      "pages": 3,
+      "destination": 20623,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 2,
+      "first_character_row": 4,
+      "pages": 4,
+      "destination": 20623,
+      "screen_bytes": 1024,
+      "code_store_count": 6
+    },
+    {
+      "third": 2,
+      "first_character_row": 5,
+      "pages": 1,
+      "destination": 20655,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 2,
+      "first_character_row": 5,
+      "pages": 2,
+      "destination": 20655,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 2,
+      "first_character_row": 5,
+      "pages": 3,
+      "destination": 20655,
+      "screen_bytes": 768,
+      "code_store_count": 5
+    },
+    {
+      "third": 2,
+      "first_character_row": 6,
+      "pages": 1,
+      "destination": 20687,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    },
+    {
+      "third": 2,
+      "first_character_row": 6,
+      "pages": 2,
+      "destination": 20687,
+      "screen_bytes": 512,
+      "code_store_count": 4
+    },
+    {
+      "third": 2,
+      "first_character_row": 7,
+      "pages": 1,
+      "destination": 20719,
+      "screen_bytes": 256,
+      "code_store_count": 3
+    }
+  ],
+  "profile_count": 108,
+  "source_page_base_symbolic": true,
+  "pixel_words_do_not_feed_address_registers": true,
+  "input_SP_not_used_for_worker_push_destinations": true,
+  "worker_screen_physical_bank": 5,
+  "screen_union_start": 16384,
+  "screen_union_end_exclusive": 22528,
+  "screen_union_bytes": 6144,
+  "code_physical_bank": 1,
+  "code_write_addresses": [
+    51844,
+    51850,
+    51851
+  ],
+  "worker_own_writes_disjoint_from_bank1_DB01_DB02": true,
+  "out_of_contract_destination_reaches_DB01_DB02": true,
+  "POP_HL_negative_control_rejected": true,
+  "parent_stack_alias": {
+    "entry": 51312,
+    "input_SP": 56067,
+    "call_pc": 51321,
+    "return_address": 51324,
+    "final_SP": 56069,
+    "bank1_length_operand_written": 51324,
+    "write_addresses": [
+      56065,
+      56066
+    ],
+    "complete_copy_and_return_executed": true,
+    "prepared_external_stack": true,
+    "natural_game_caller_proved": false
+  },
+  "worker_execution_models_rerun": false,
+  "caller_stack_domains_and_all_runtime_modifications_proved": false,
+  "natural_temporary_module_length_writer_proved": false,
+  "IRQ_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "parent_code_sha256": "3458c232be24b12c398fe4f3005a037e2d7f2a18dd3aff60feee0afdcbdf4fdf"
+}

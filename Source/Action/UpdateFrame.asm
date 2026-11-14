@@ -5,27 +5,28 @@
                 ; Документация [порядок вызовов кадра](../../Docs/ActionFlightCycle.md)
                 ; Документация [пороговые и событийные ветки кадра](../../Docs/ActionFrameGates.md)
                 ; Документация [банковые записи кадра](../../Docs/ActionBank4Writes.md)
-; Документация [Action](../../Docs/FunctionDetails/Action.md)
-; -----------------------------------------
-; Обработка таймеров, управления, визуальных модулей и игровых объектов
-; исходная запись 17, файловые смещения #485E..#4ACB
-; In:
-;   состояние задаётся StartFlight и предыдущими кадрами, при обычном входе выбрана страница #10
-;   стек содержит возврат в MainLoop по #A85C, рабочие банки доступны
-;   записи, состояния и ресурсы удовлетворяют договорам ScheduleSpawn, UpdateObjects и рисователей
-;   IRQ не используют временные стеки рендереров, NMI не рассматривается
-; Out:
-;   обычный кадр возвращается со страницей #10, AF=#1042, DE=#0040, IX указывает маркер списка #8080
-;   HL, BC, альтернативные регистры содержат результат DrawRadar, остальные значения определяются дочерними договорами
-;   SP после RET равен входному SP+2, внешний возврат передаёт управление MainLoop
-;   при переходе через шум к загрузке станции выбирается #11, SP кадра не снимается
-; Corrupt:
-;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, R, IFF по дочерним вызовам
-;   объекты, эффекты, рабочие векторы, экран, очередь, звук, таблицы OBJECT3D банка 4, операнды, стек и 7FFD
-; Note:
-;   64 полных кадра сверены с исходными вызовами, отдельный выход проверен до входа #4000
-;   модели не исчерпывают все совместные состояния объектов, ввод, IRQ и нативный игровой процесс
-; -----------------------------------------
+                ; Документация [Action](../../Docs/FunctionDetails/Action.md)
+                ; -----------------------------------------
+                ; Обработка таймеров, управления, визуальных модулей и игровых объектов
+                ; исходная запись 17, файловые смещения #485E..#4ACB
+                ; In:
+                ;   состояние задаётся StartFlight и предыдущими кадрами, при обычном входе выбрана страница #10
+                ;   стек содержит возврат в MainLoop по #A85C, рабочие банки доступны
+                ;   записи, состояния и ресурсы удовлетворяют договорам ScheduleSpawn, UpdateObjects и рисователей
+                ;   IRQ не используют временные стеки рендереров, NMI не рассматривается
+                ; Out:
+                ;   при обычном возврате HL содержит результат DrawRadar, DE=#0040, BC содержит результат DrawRadar, AF=#1042
+                ;   HL', DE', BC', AF' содержат результат DrawRadar, IX указывает маркер списка #8080, IY определяется предшествующими дочерними вызовами
+                ;   после обычного кадра выбрана страница #10, остальные состояния определяются дочерними договорами
+                ;   SP после RET равен входному SP+2, внешний возврат передаёт управление MainLoop
+                ;   при переходе через шум к загрузке станции выбирается #11, SP кадра не снимается
+                ; Corrupt:
+                ;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, R, IFF по дочерним вызовам
+                ;   объекты, эффекты, рабочие векторы, экран, очередь, звук, таблицы OBJECT3D банка 4, операнды, стек и 7FFD
+                ; Note:
+                ;   64 полных кадра сверены с исходными вызовами, отдельный выход проверен до входа #4000
+                ;   модели не исчерпывают все совместные состояния объектов, ввод, IRQ и нативный игровой процесс
+                ; -----------------------------------------
 Entry:          LD A, #00
                 DEC A
                 JP M, @Action.UpdateFrame.BeginScene                            ; переход, если уменьшенный байт задержки отрицателен, оставить прежний операнд
@@ -45,12 +46,12 @@ BeginScene:     CALL @Action.ScheduleSpawn.Entry
                 ; Проверка двух порогов шкал и списание при установленном признаке близкой записи.
                 LD A, #01
                 LD (#E310), A
-                LD A, (#6693)
+                LD A, (@ActionPanelGaugesState.FifthValue)
                 CP #2E
                 JP NC, @Action.ShowNoiseBeforeReload.Entry                      ; переход, если пятая шкала достигла #2E
 
 
-                LD A, (#6682)
+                LD A, (@ActionPanelGaugesState.FourthValue)
                 CP #2E
                 JP NC, @Action.ShowNoiseBeforeReload.Entry                      ; переход, если четвёртая шкала достигла #2E
 
@@ -62,14 +63,14 @@ BeginScene:     CALL @Action.ScheduleSpawn.Entry
 
                 XOR A
                 LD (@ActionCloseRecordState.InhibitCode), A
-                LD A, (#A794)
+                LD A, (@ActionPanelGaugesState.FirstValue)
                 SUB #28
                 JP C, @Action.ShowNoiseBeforeReload.Entry                       ; переход, если значение первой шкалы меньше 40
 
 
-                LD (#A794), A
+                LD (@ActionPanelGaugesState.FirstValue), A
                 LD A, #02
-                LD (#664A), A
+                LD (@ActionPanelGaugesState.FirstRequest), A
                 ; Обновление фазы третьей шкалы, поле 05 ApplyParameterSet задаёт ThirdGaugeStep, исходно 14.
 StepGaugePhase: LD A, #00
                 ADD A, #14
@@ -83,8 +84,8 @@ StepGaugePhase: LD A, #00
 
 
                 INC A
-                LD (#A8BC), A
-                LD (#666B), A
+                LD (@ActionPanelGaugesState.ThirdValue), A
+                LD (@ActionPanelGaugesState.ThirdRequest), A
 UpdateRecords:  CALL @Action.UpdateObjects.Entry
                 ; Очистка старшего байта первого компонента особой родительской записи.
                 XOR A
@@ -100,17 +101,17 @@ UpdateRecords:  CALL @Action.UpdateObjects.Entry
                 CALL @Action.SelectMemoryPage.Entry
                 CALL @Action.ApplyPendingRecordLink.Entry
                 ; Сохранение исходной маски событий для трёх последовательных проверок.
-                LD A, (#A78C)
+                LD A, (@ActionPanelEvents.Value.Flags)
                 LD C, A
-                BIT 0, C
+                BIT @ActionPanelEventConst.CostBit, C
                 JR Z, @Action.UpdateFrame.CheckBlink                            ; переход, если бит 0 сохранённой маски событий сброшен
 
 
                 ; Запрос потока AY и выбор стоимости события по трём байтам.
                 XOR A
-                LD (#A78C), A
-                LD HL, #EF22
-                LD (#ECA9), HL
+                LD (@ActionPanelEvents.Value.Flags), A
+                LD HL, @ActionAyStreams.EventBit0Row00
+                LD (@ActionAyEffectState.CursorA), HL
                 LD B, #04
                 LD A, (@ActionShipEquipment.ShieldFortress.Value)
                 DEC B
@@ -131,15 +132,15 @@ UpdateRecords:  CALL @Action.UpdateObjects.Entry
 
 
                 LD B, #04
-ApplyEventCost: LD A, (#A794)
+ApplyEventCost: LD A, (@ActionPanelGaugesState.FirstValue)
                 SUB B
                 JP C, @Action.ShowNoiseBeforeReload.Entry                       ; переход, если первая шкала меньше выбранной стоимости
 
 
-                LD (#A794), A
+                LD (@ActionPanelGaugesState.FirstValue), A
                 LD A, #01
-                LD (#664A), A
-CheckBlink:     BIT 1, C
+                LD (@ActionPanelGaugesState.FirstRequest), A
+CheckBlink:     BIT @ActionPanelEventConst.BlinkBit, C
                 JR Z, @Action.UpdateFrame.ClearBlink                            ; переход, если бит 1 сохранённой маски событий сброшен
 
 
@@ -151,32 +152,32 @@ CheckBlink:     BIT 1, C
                 JR NC, @Action.UpdateFrame.StoreBlink                           ; переход, если прежний младший бит фазы мигания сброшен
 
 
-                LD HL, #ED8F
-                LD (#ECF6), HL
+                LD HL, @ActionAyStreams.EventBit1Row00
+                LD (@ActionAyEffectsState.CursorB), HL
                 LD A, #35
 StoreBlink:     LD (#5A1C), A
                 XOR A
-                LD (#A78C), A
+                LD (@ActionPanelEvents.Value.Flags), A
                 JP @Action.UpdateFrame.CheckDrain
 
 
 ClearBlink:     LD A, #05
                 LD (#5A1C), A
-CheckDrain:     BIT 2, C
+CheckDrain:     BIT @ActionPanelEventConst.FixedCostBit, C
                 JR Z, @Action.UpdateFrame.StepRegenPhase                        ; переход, если бит 2 сохранённой маски событий сброшен
 
 
                 ; Списание 40 из первой шкалы при установленном бите 2.
                 XOR A
-                LD (#A78C), A
-                LD A, (#A794)
+                LD (@ActionPanelEvents.Value.Flags), A
+                LD A, (@ActionPanelGaugesState.FirstValue)
                 SUB #28
                 JP C, @Action.ShowNoiseBeforeReload.Entry                       ; переход, если значение первой шкалы меньше 40
 
 
-                LD (#A794), A
+                LD (@ActionPanelGaugesState.FirstValue), A
                 LD A, #01
-                LD (#664A), A
+                LD (@ActionPanelGaugesState.FirstRequest), A
                 ; Обновление фазы восстановления, поле 03 ApplyParameterSet задаёт RegenPhaseStep, исходно 50.
 StepRegenPhase: LD A, #00
                 ADD A, #50
@@ -184,15 +185,15 @@ StepRegenPhase: LD A, #00
                 JR NC, @Action.UpdateFrame.BeginEffects                         ; переход, если прибавление текущего RegenPhaseStep не переполнило байт
 
 
-                LD A, (#A794)
+                LD A, (@ActionPanelGaugesState.FirstValue)
                 CP #2E
                 JR NC, @Action.UpdateFrame.BeginEffects                         ; переход, если первая шкала уже достигла #2E
 
 
                 INC A
-                LD (#A794), A
+                LD (@ActionPanelGaugesState.FirstValue), A
                 LD A, #01
-                LD (#664A), A
+                LD (@ActionPanelGaugesState.FirstRequest), A
 BeginEffects:   CALL @Action.UpdateAyEffects.Entry
                 ; Выбор банка 4 для трёх групп заголовков граней OBJECT3D.
                 ; [Физические поля и проверка банков](../../Docs/ActionBank4Writes.md)

@@ -1,9 +1,10 @@
-"""Обращения к неизвестным физическим байтам D3D при подготовке и кадрах просмотра."""
+"""Обращения к резервам и выравниваниям D3D при подготовке и кадрах просмотра."""
 from collections import Counter, defaultdict
 import hashlib
 import json
 
 from CheckInitialZeroTailAccesses import WatchedCPU
+from ClassifyPreviewArchivedStorage import RESERVE, ALIGNMENT
 from ProbeShipPreviewCallbacks import Fixture, ROOT, make_context, payload, put
 from skoolkit.pagingtracer import SliceableMemory
 from skoolkit.simutils import PC
@@ -12,9 +13,11 @@ from skoolkit.simutils import PC
 def main():
     reports = ROOT / 'Tools/Disasm/Reports'
     source_map = (reports / 'SourceMap.json').read_bytes()
-    ranges = [row for row in json.loads(source_map) if row['slot'] == 6 and row['kind'] == 'unclassified']
+    ranges = [row for row in json.loads(source_map)
+              if row['slot'] == 6 and row.get('format') in (RESERVE, ALIGNMENT)]
     watched = {0xC000 + offset: row['path'] for row in ranges
                for offset in range(row['offset'], row['offset'] + row['length'])}
+    assert len(ranges) == 16 and len(watched) == 945
     accesses = defaultdict(Counter)
     first_access = defaultdict(set)
 

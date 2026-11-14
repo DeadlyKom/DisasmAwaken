@@ -5,10 +5,14 @@ ROOT=Path(__file__).resolve().parents[3]
 sys.path.insert(0,str(ROOT/'Tools/Disasm/Research'))
 from CheckMusic import Simulator,get_registers,PC,SP
 from CheckMusicGateTicks import Memory
+from ReferenceControlsPointRespawn import refresh
 
 
 def main(compose=False):
- raw=(ROOT/'Tools/Disasm/Extracted/Active/10_MUZ1.C.bin').read_bytes();m=Memory([0]*65536);m[0xDB00:0xDB00+len(raw)]=raw;s=Simulator(m);counts=collections.Counter()
+ raw=(ROOT/'Tools/Disasm/Extracted/Active/10_MUZ1.C.bin').read_bytes();m=Memory([0]*65536);m[0xDB00:0xDB00+len(raw)]=raw;s=Simulator(m);counts=collections.Counter();refresh_cases=0
+ fixed_costs={0xE647:6,0xE652:6,0xE698:6,0xE6A3:6,0xE6EE:4,0xE6F4:4,0xDB8C:13,0xE6FA:4,0xDDEA:10,0xE6AE:16}
+ # Проверка исходной последовательности C, все 16 команд не имеют префиксов.
+ assert raw[0xBAE:0xBC9].hex()=='1a13329de232cce2eb5e235623eb22a6e23e1d32ade2af32d5e2c9'
  profiles={
  'A':{'entries':{1:0xE60C,2:0xE623,3:0xE647,4:0xE652,5:0xDDCA,8:0xDB8C,9:0xE6FA},'delay':0xDE7A,'step':0xDE82,'branch':0xDE88,'target':0xDE75,'pending':0xDE4D,'current':0xE0BB,'sample':0xDEA6,'sample_gate':0xDEA3,'ornament':0xDEB1,'ornament_gate':0xDEAE,'enabled':0xDE97,'disabled':0xDE9F,'gate':0xDE90},
  'B':{'entries':{1:0xE65D,2:0xE674,3:0xE698,4:0xE6A3,5:0xDDEA,8:0xDB8C,9:0xE6FA},'delay':0xDF08,'step':0xDF10,'branch':0xDF16,'target':0xDF03,'pending':0xDEDB,'current':0xE1BB,'sample':0xDF34,'sample_gate':0xDF31,'ornament':0xDF3F,'ornament_gate':0xDF3C,'enabled':0xDF25,'disabled':0xDF2D,'gate':0xDF1E},
@@ -21,11 +25,20 @@ def main(compose=False):
      limited_step=step^0xA55A;target=delay^0x5A;current=delay^0xA5;flags=(delay*73)&255
      parameters=[delay,step&255,step>>8,limited_step&255,limited_step>>8];stream=([effect,0xD0] if compose else [])+parameters
      m.recording=False;m[0x7000:0x7000+len(stream)]=stream;m[p['pending']]=target;m[p['current']]=current;m[0xBFFE:0xC000]=[255,63]
-     initial=get_registers({'HL':0xDB57 if compose else 0x1357,'DE':0x7000,'BC':0x2468,'AF':0x9800|flags,'IX':0xABCD,'IY':0x5C3A,'^HL':0x1234,'^DE':0x0618,'^BC':0x9ABC,'^AF':0xDEF0,'SP':0xBFFE,'PC':{'A':0xE439,'B':0xE4E6,'C':0xE583}[channel] if compose else entry},None,False);s.registers[:]=initial;m.writes=[];m.recording=True
+     initial=get_registers({'HL':0xDB57 if compose else 0x1357,'DE':0x7000,'BC':0x2468,'AF':0x9800|flags,'IX':0xABCD,'IY':0x5C3A,'^HL':0x1234,'^DE':0x0618,'^BC':0x9ABC,'^AF':0xDEF0,'SP':0xBFFE,'PC':{'A':0xE439,'B':0xE4E6,'C':0xE583}[channel] if compose else entry},None,False);initial[14],initial[15],initial[26],initial[27]=delay,(delay^step)&255,0,(delay+effect)%3;s.registers[:]=initial;m.writes=[];m.recording=True;measured=0
      for n in range(100):
       if s.registers[PC]==0x3FFF:break
-      s.run()
+      previous_r=s.registers[15];s.run();increment=(s.registers[15]-previous_r)&127
+      assert increment in (1,2)
+      if not compose and entry==0xE6AE:
+       assert increment==1 and s.registers[15]==refresh(previous_r,1)
+      measured+=increment
      else:raise AssertionError(('effect_return',channel,effect,delay))
+     if not compose and entry in fixed_costs:
+      cost=fixed_costs[entry]
+      assert measured==cost and s.registers[15]==refresh(initial[15],cost),(channel,effect,measured,cost)
+      refresh_cases+=1
+     assert all(s.registers[i]==initial[i] for i in (14,26,27))
      m.recording=False;expected=[];hl=entry if compose else 0x1357;de=0x7002 if compose else 0x7000;bc=0x1020 if compose else 0x2468;a=0 if compose else 0x98;f=0x41 if compose else flags;alt=initial[16:24].copy()
      if compose:
       expected += [(0xBFFD,entry>>8),(0xBFFC,entry&255)]
@@ -59,6 +72,7 @@ def main(compose=False):
      assert r[16:24]==alt and all(r[i]==initial[i] for i in (8,9,10,11));counts[channel+'.'+str(effect)]+=1
  report={'passed':True,'cases_by_effect':dict(counts),'total_cases':sum(counts.values()),'all_first_parameter_and_flag_bytes':True,
   'ignored_portamento_bytes_preserved':True,'six_step_boundary_words':True,'every_memory_write_observed':True,'real_handlers_executed':True,
+  'fixed_handler_full_M1_R_cases':refresh_cases,'fixed_M1_by_entry':{format(k,'04X'):v for k,v in fixed_costs.items()} if not compose else {},'I_IM_IFF_preservation_checked':True,
   'direct_handler_entries':not compose,'supported_single_effect_stack_composition':compose,'terminal_opcode':0xD0 if compose else None,'full_pattern_decode_proved':False,'irq_executed':False,'native_audio_verified':False,'assembly_executed':False}
  stem='MusicEffectsComposition' if compose else 'MusicEffects';(ROOT/('Tools/Disasm/Reports/'+stem+'Verification.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');print(json.dumps(report,indent=2))
 

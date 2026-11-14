@@ -47,12 +47,12 @@ COMMENTS={
  0x7E63:(['запрет прерываний перед непосредственной заменой страницы и экранной памяти'],None),
  0x7E64:(['выбор банка 7, теневого экрана и ROM 1 без обновления программной тени страницы'],None),
  0x7E6B:(['очистка атрибутов теневого экрана банка 7 копированием нулевого байта'],None),
- 0x7E77:(['проверка кода FF, запрещающего прибавление к счётчику 9906'],None),
+ 0x7E77:(['проверка системы Ус-01, код FF пропускает прибавление к StationTransitionCounter'],None),
  0x7E7B:([], 'переход, если исходный байт 98AA равен FF, не увеличивать счётчик'),
  0x7E7E:(['расчёт увеличенного на 30 счётчика с байтовым оборачиванием'],None),
  0x7E86:(['очистка атрибутов фиксированного экрана перед заменой его начала'],None),
  0x7E92:(['фиксация запрета прерываний и режима IM 1 для передаваемого состояния'],None),
- 0x7E99:(['перестановка двух байтов контекста перед сохранением его экранной копии'],None),
+ 0x7E99:(['перестановка младших пар BCD в физический порядок FFlightBcdCounter перед вылетом'],None),
  0x7EA7:(['копирование 512 байтов контекста в начало фиксированного экрана'],None),
  0x7EB2:(['копирование исходных 256 байтов перехода на исполняемый адрес 4200'],None),
  0x7EBD:(['передача управления скопированной версии кода, продолжение в банк LANG не предусматривается'],None),
@@ -64,4 +64,7 @@ TEXT_COMMENTS={a:v for a,v in COMMENTS.items() if a>=0xC000}
 
 def name_operands(region,address,operation):
  if region=='Text' and address==0xC103:return operation.replace('JP #7E5A','JP @Station.HandleItem08.BeginTransition')
+ if region=='Station' and address==0x7E53:
+  return (operation.replace('#983D','@StationTimer.Counter.MidLow').replace('#983E','@StationTimer.Counter.Low')
+          .replace('#983B','@StationTimer.Counter').replace('#98AA','@EquipmentQuantityCodes.Item28.Code'))
  return operation

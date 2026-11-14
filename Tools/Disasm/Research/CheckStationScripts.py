@@ -4,7 +4,7 @@ from ProbeShipPreviewCallbacks import ROOT,make_context,payload,put
 from CheckScreenUpdate import PortTrace
 from CheckWeightedLoad import reference as weight
 from CheckWorldSignature import signature
-from skoolkit.pagingtracer import SliceableMemory
+from CheckExpressionControl import LangWorkspaceMemory, PREFIX_START, PREFIX_PROVEN_END
 from skoolkit.simulator import Simulator
 from skoolkit.simutils import get_registers,A,PC,SP
 
@@ -14,11 +14,14 @@ CLEARED=(2,3,5,6,7,8,9,31)
 
 def main():
  _,_,base=make_context();lang=payload(5);base[6][:len(lang)]=list(lang);script=bytes(base[6][0xA8F:0xF18]);counts=collections.Counter();messages=collections.Counter()
+ prefix_cases=0;prefix_example=None;status_results={}
  initial=get_registers({'SP':0x7FFE,'AF':0x5A5D,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
  def execute(event,status,credits,quantity_seed=0,second=0x4A00,owned=255):
-  m=SliceableMemory(banks=[b.copy() for b in base],out7ffd=0x16);s=Simulator(m);s.set_tracer(PortTrace(s));m[0x6306]=0x16;m[0x983A]=event;m[0x984B]=status;m[0x9849]=owned;m[0x984A]=255
+  nonlocal prefix_cases,prefix_example
+  m=LangWorkspaceMemory(banks=[b.copy() for b in base],out7ffd=0x16);s=Simulator(m);s.set_tracer(PortTrace(s));m[0x6306]=0x16;m[0x983A]=event;m[0x984B]=status;m[0x9849]=owned;m[0x984A]=255
   put(m,0x984E,credits.to_bytes(2,'little'));put(m,0x9852,bytes(60));quantities=bytes((quantity_seed+29*i)&255 for i in range(32));put(m,0x988E,quantities);put(m,0x98F6,bytes(14));put(m,0x983F,bytes((0x38,0x4B))+second.to_bytes(2,'little')+bytes((0,)))
   put(m,0x6E8B,(24,0));put(m,0x9CA6,(0xDE,0xF3));put(m,0xF3DE,(1,1));m[0x6E91]=0xA7;m[0x9AB7]=0xA5;put(m,0x7FFE,(255,63));s.registers[:]=initial;s.registers[PC]=0xC000
+  m.registers=s.registers
   expected_credit=credits;expected_status=status;expected_quantities=bytearray(quantities);expected_messages=[];expected_transition=0xA5;exit_to_4200=False
   if event==15:
    if 48<=status<64:expected_credit=max(0,credits-50);expected_messages=[15]
@@ -41,10 +44,20 @@ def main():
   actual=(m[0x984E]+256*m[0x984F],m[0x984B],bytes(m[0x988E:0x98AE]),observed,m[0x9AB7])
   wanted=(expected_credit,expected_status,bytes(expected_quantities),expected_messages,expected_transition)
   assert actual==wanted,(event,status,credits,quantity_seed,second,owned,actual,wanted)
+  if event==15 and credits==1000:
+   status_results[status]=dict(initial_status=status,caption_index=min(status>>5,3),
+    final_status=actual[1],final_credits=actual[0],queued_message_indices=observed.copy())
   assert s.registers[PC]==(0x4200 if exit_to_4200 else 0x3FFF)
   if not exit_to_4200:assert s.registers[SP]==0x8000 and m.o7ffd==m[0x6306]==0x16
   assert ticks==1+int(event==17 or event==15 and status>=64) and w_calls==int(event==16 and expected_transition==255)
   assert m[0x9850]==weight(bytearray(m[0:65536]),0xC0DB)[0] and bytes(m.banks[6][0xA8F:0xF18])==script
+  prefix_addresses=set(range(PREFIX_START,PREFIX_PROVEN_END)) if event==16 and credits>unit else set()
+  assert {address for address in m.reads if address>=PREFIX_START}==prefix_addresses
+  assert {address for address in m.writes if address>=PREFIX_START}==prefix_addresses
+  if prefix_addresses:
+   m.check_nested_assignment(5)
+   prefix_cases+=1
+   if prefix_example is None:prefix_example=dict(event=event,unit=unit,reads=m.prefix_reads,writes=m.prefix_writes)
   counts[str(event)]+=1;counts['w_to_4200']+=exit_to_4200;counts['w_without_ship_returns']+=bool(w_calls and not exit_to_4200);messages.update(observed)
  # Проверка каждого байта статуса, границ двух штрафов и обеих кодировок количества.
  for status in range(256):
@@ -60,11 +73,22 @@ def main():
    for seed in (0,255):execute(16,0,credits,seed,second)
   execute(16,0,unit,0,second,0)
  for seed in range(256):execute(17,0,65000,seed)
+ # Проверка низких разрядов полного числа, подпись статуса не заменяет числовые штрафные условия.
+ assert len(status_results)==256
+ assert status_results[32]['caption_index']==status_results[48]['caption_index']==1
+ assert status_results[32]['final_credits']==1000 and status_results[48]['final_credits']==950
+ for bit in range(4):
+  assert status_results[64|(1<<bit)]['final_status']==16+(1<<bit)
+ assert status_results[65]['final_status']==17
+ examples=[status_results[value] for value in (0,31,32,47,48,63,64,65,66,68,72,79,80,95,96,255)]
  report=dict(passed=True,cases_by_event_and_exit=dict(counts),queued_messages=dict(messages),all_status_bytes=True,
   actual_interpreter_and_original_script=True,independent_credit_status_equipment_and_weight_oracle=True,
   equipment_explicit_indices_cleared=list(CLEARED),o32_writes_index31_beyond_first30=True,
   all_key_sizes_1_to_16=True,transition_threshold_credits_le_unit=True,ordinary_charge_is_five_times_unit=True,
   actual_w_executed=True,native_transition_code_4200_not_executed=True,script_bytes_unchanged=True,
+  lang_nested_assignment_cases=prefix_cases,lang_nested_assignment_example=prefix_example,
+  numeric_status_examples=examples,low_five_bits_are_part_of_numeric_status=True,
+  same_caption_does_not_imply_same_fine=True,status_caption_formula='min(status >> 5, 3)',
   station_display_not_executed=True,irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/StationScriptsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 

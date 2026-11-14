@@ -11,6 +11,8 @@
   },
   "real_queue_and_banking_executed": true,
   "all_registers_except_R_and_T_checked": true,
+  "internal_entry_contexts_exercised": false,
+  "complete_input_product_exhausted": false,
   "all_ram_except_18_byte_temporary_stack_checked": true,
   "maximum_stack_bytes": 18,
   "tested_entry_instruction_bytes_preserved": true,

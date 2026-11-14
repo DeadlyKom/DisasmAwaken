@@ -7,8 +7,10 @@
                 ; In:
                 ;   DE указывает на две длительности, входной F сохраняется
                 ; Out:
-                ;   HL и BC сохранены, DE=входной DE+2, A=06, F сохранён, альтернативные пары сохранены
+                ;   HL сохранён, DE=входной DE+2, BC сохранён, AF содержит A=06 и входной F
+                ;   HL', DE', BC', AF' сохранены
                 ;   EnabledTicks и DisabledTicks обновлены, GateCommand=06
+                ;   R получает 10 M1 вместе с общим хвостом SetGateTimingB
                 ; Corrupt:
                 ;   DE, AF только A, EnabledTicks, DisabledTicks, GateCommand, R
                 ; Note:

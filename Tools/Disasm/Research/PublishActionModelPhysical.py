@@ -6,12 +6,13 @@ import hashlib
 import importlib
 import io
 import json
+from pathlib import Path
 import sys
 
 from CheckIntro import ROOT
 sys.path.insert(0, str(ROOT / 'Tools/Disasm'))
 from VerifySources import main as verify
-from ActionModelPhysicalData import render, parse, structures
+from ActionModelPhysicalData import render, parse, structures, model_path
 
 
 def main():
@@ -59,7 +60,7 @@ def main():
         start, end = packet['offset'], packet['end']
         if cursor < start:
             gap(cursor, start)
-        path = f'Source/Action/Data/Model{start:04X}.asm'
+        path = model_path(start)
         text, labels = render(data, packet)
         decoded, parsed_labels = parse(text)
         assert decoded == data[start:end] and labels == parsed_labels
@@ -69,7 +70,7 @@ def main():
         spans.append(dict(slot=24, offset=start, length=end - start, kind='typed_data',
                           path=path, origin=0xC000 + start, sha256=hashlib.sha256(decoded).hexdigest()))
         includes.extend((f'                assert $ == #{start:04X}', f'                disp #{0xC000 + start:04X}',
-                         f'                include "../Action/Data/Model{start:04X}.asm"', '                ent'))
+                         f'                include "../Action/Data/{Path(path).name}"', '                ent'))
         cursor = end
     if cursor < last:
         gap(cursor, last)
@@ -121,13 +122,13 @@ def main():
         original = path.read_text(encoding='utf-8')
         needle = '    # Исходные байты подтверждённого назначения копирования, модели OBJECT3D в TRD не подставляются.'
         assert original.count(needle) == 1
-        export_hook = '''    from ActionModelPhysicalData import render as render_object_model
+        export_hook = '''    from ActionModelPhysicalData import render as render_object_model, model_path as object_model_path
     from CheckActionModelTail import read_packets as object_tail_packets
     model_report = json.loads((ROOT/'Tools/Disasm/Reports/ActionModelPacketsVerification.json').read_bytes())
     object_data = data_by_slot[24]
     for packet in model_report['packets'] + object_tail_packets(object_data,0x2469,0x2954):
         start,end=packet['offset'],packet['end']
-        path=f'Source/Action/Data/Model{start:04X}.asm'
+        path=object_model_path(start)
         model_text,model_labels=render_object_model(object_data,packet)
         write(path,model_text);symbols.update(model_labels)
         special[24,start]=(end,path,0xC000+start)

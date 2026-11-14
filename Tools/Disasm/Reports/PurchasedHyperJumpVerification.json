@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "purchase_ship_type_and_credits_fixture": true,
+  "map_key_selected_via_center_command": true,
+  "flight_request_state_patched": false,
+  "irq_executed_during_frames": true,
+  "irq_executed_during_request_or_warmup": false,
+  "trdos_calls_substituted": false,
+  "assembly_executed": false,
+  "native_execution": false,
+  "profiles": [
+    {
+      "initial_stock": [
+        0,
+        5
+      ],
+      "purchased_trail": 254,
+      "fuel_prices": [
+        4,
+        10
+      ],
+      "initial_context": "384bf34a00",
+      "selected_context": "384bea5500",
+      "measured_cost": 4,
+      "selected_fuel_index": 1,
+      "required_fuel": 4,
+      "accepted": true,
+      "rejected_other_fuel_row": 0,
+      "final_stock": [
+        0,
+        1
+      ],
+      "warmup_iterations": 128,
+      "relay_entries": [
+        29046,
+        16896
+      ],
+      "reload_data_sectors": 321,
+      "complete_frames_after_reload": 1,
+      "fixed_legacy_accesses_before_dos": 0,
+      "old_control_code_fetches_before_dos": 0
+    },
+    {
+      "initial_stock": [
+        9,
+        0
+      ],
+      "purchased_trail": 254,
+      "fuel_prices": [
+        4,
+        10
+      ],
+      "initial_context": "384bf34a00",
+      "selected_context": "384bea5500",
+      "measured_cost": 4,
+      "selected_fuel_index": 0,
+      "required_fuel": 8,
+      "accepted": true,
+      "rejected_other_fuel_row": null,
+      "final_stock": [
+        1,
+        0
+      ],
+      "warmup_iterations": 128,
+      "relay_entries": [
+        29046,
+        16896
+      ],
+      "reload_data_sectors": 321,
+      "complete_frames_after_reload": 1,
+      "fixed_legacy_accesses_before_dos": 0,
+      "old_control_code_fetches_before_dos": 0
+    },
+    {
+      "initial_stock": [
+        7,
+        0
+      ],
+      "purchased_trail": 254,
+      "fuel_prices": [
+        4,
+        10
+      ],
+      "initial_context": "384bf34a00",
+      "selected_context": "384bea5500",
+      "measured_cost": 4,
+      "selected_fuel_index": 0,
+      "required_fuel": 8,
+      "accepted": false,
+      "rejected_other_fuel_row": 1,
+      "final_stock": [
+        7,
+        0
+      ],
+      "warmup_iterations": 0,
+      "relay_entries": [],
+      "reload_data_sectors": 0,
+      "complete_frames_after_reload": 0,
+      "fixed_legacy_accesses_before_dos": 0,
+      "old_control_code_fetches_before_dos": 0
+    }
+  ]
+}

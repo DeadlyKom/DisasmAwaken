@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "cases": {
+    "AdvanceParameters": 729,
+    "AdvanceTexturePhases": 4096
+  },
+  "total_cases": 4825,
+  "all_phase_sign_combinations": true,
+  "all_sample_bytes_and_cursor_values": true,
+  "parent_stack_fixtures": [
+    24574,
+    49150
+  ],
+  "exact_registers_except_T": true,
+  "all_physical_banks_and_write_counts_compared": true,
+  "final_IFF": 1,
+  "child_M1": "19+7*old_phase_sign",
+  "parent_M1": "76+7*negative_phase_count",
+  "child_byte_writes": 8,
+  "parent_byte_writes": 36,
+  "parent_CPU_stack_byte_writes": 6,
+  "all_joint_word_inputs_exhausted": false,
+  "IRQ_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

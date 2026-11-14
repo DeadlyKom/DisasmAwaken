@@ -2,7 +2,7 @@
 import json
 from ClassifyControlsTextDisplay import ROOT
 from CheckActionParameterActivation import flat_action
-from CheckControlsTextQueue import base_memory
+from CheckControlsTextQueue import base_memory,payload
 from CheckMusic import Simulator,get_registers,PC,SP
 from CheckMusicGateTicks import Memory
 from CheckControlsEvenSpan import and_flags
@@ -40,12 +40,27 @@ def main():
         raw=bytes(controls[address:]).split(b'\x0A',1)[0]
         assert raw.decode('cp866')==expected,(hex(address),raw)
         texts[format(address,'04X')]=dict(bank=1,encoding='cp866',text=expected,hex=raw.hex())
+    # Проверка названий двух запасов по исходному STATIONF и переноса из станции.
+    equipment_names=payload(4)[0x8E57:].split(b'\r')
+    assert equipment_names[0]==b''
+    names=[equipment_names[index+1].decode('cp866') for index in (2,3)]
+    assert names==['Ракета рп1','Ракета рп2']
+    transfer=json.loads((ROOT/'Tools/Disasm/Reports/BootBankFileReadsVerification.json').read_bytes())
+    assert transfer['passed'] and len(transfer['intro_transitions'])==2
+    for profile in transfer['intro_transitions']:
+        outbound=bytes.fromhex(profile['flight_transition']['outbound_primary_equipment'])
+        assert len(outbound)==34 and outbound[-1]==0x80
+        assert outbound[2:4]==bytes([5,0])
     report=dict(passed=True,total_cases=sum(counts.values()),cases_by_path=counts,
         all_input_byte_pairs=True,exact_registers_flags_refresh_sp=True,
         every_ram_byte_checked=True,no_memory_or_stack_writes=True,
         physical_field_order=['Fallback','Preferred'],returned_pointer_selects_source=True,
         flags_describe_preferred_not_fallback=True,stock_role_source='calls at 70AC and 70DE, decrement at 70C6, queued fragments in bank 1',
-        text_evidence=texts,subtype_meaning_of_two_counters_proved=False,
+        text_evidence=texts,station_row_names=names,
+        station_rows=[2,3],station_quantity_addresses=[0x9890,0x9891],
+        action_counter_addresses=[0x9C12,0x9C13],
+        station_transfer_report='Tools/Disasm/Reports/BootBankFileReadsVerification.json',
+        subtype_row_identity_proved=True,subtype_gameplay_differences_proved=False,
         caller_handlers_executed=False,assembly_executed=False,irq_executed=False,native_execution=False)
     (ROOT/'Tools/Disasm/Reports/ActionMissileStockVerification.json').write_bytes(
         (json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))

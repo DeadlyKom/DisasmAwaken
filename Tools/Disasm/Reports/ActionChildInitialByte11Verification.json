@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "original_action_sha256": "63f2ac2717bb7f630b25ec3cb92671e5f78f2174f36d7370d1bae39baf3fc39a",
+  "seed": 59,
+  "outcomes": [
+    {
+      "entry": 59491,
+      "state": 2,
+      "class_code": 9,
+      "child": 41216,
+      "initialized_byte11": 40,
+      "real_creator_write_events": 44,
+      "real_creator_complete_return": true,
+      "local_cases": 65536,
+      "local_branches": {
+        "below": 10240,
+        "at_or_above": 55296
+      },
+      "exact_local_registers_R_model_T_and_all_RAM": true
+    },
+    {
+      "entry": 59499,
+      "state": 14,
+      "class_code": 9,
+      "child": 41216,
+      "initialized_byte11": 40,
+      "real_creator_write_events": 42,
+      "real_creator_complete_return": true,
+      "State0E_executed": false,
+      "threshold_role_for_State0E_claimed": false
+    }
+  ],
+  "local_compare_entry": 61969,
+  "all_low_bytes_and_input_F_for_created_State02": true,
+  "other_constructor_inputs_exhausted": false,
+  "full_State02_executed": false,
+  "original_State0E_caller_executed": false,
+  "random_stream_sampled_in_local_comparison": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

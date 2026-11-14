@@ -1,0 +1,870 @@
+{
+  "passed": true,
+  "frame_entries": [
+    2,
+    9,
+    65
+  ],
+  "identical_cases_in_all_snapshots": [
+    {
+      "length": 1,
+      "packed_size": 50843,
+      "reverse_copy_length": 50842
+    },
+    {
+      "length": 2,
+      "packed_size": 50843,
+      "reverse_copy_length": 50842
+    },
+    {
+      "length": 3,
+      "packed_size": 50843,
+      "reverse_copy_length": 50842
+    },
+    {
+      "length": 4,
+      "packed_size": 50843,
+      "reverse_copy_length": 50842
+    },
+    {
+      "length": 5,
+      "packed_size": 50688,
+      "reverse_copy_length": 50687
+    },
+    {
+      "length": 6,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25539,
+        "destination": 25603,
+        "count": 2,
+        "packed_bytes_through_last_read": 18
+      }
+    },
+    {
+      "length": 7,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25539,
+        "destination": 25603,
+        "count": 2,
+        "packed_bytes_through_last_read": 18
+      }
+    },
+    {
+      "length": 8,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25539,
+        "destination": 25603,
+        "count": 2,
+        "packed_bytes_through_last_read": 18
+      }
+    },
+    {
+      "length": 9,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25539,
+        "destination": 25603,
+        "count": 2,
+        "packed_bytes_through_last_read": 18
+      }
+    },
+    {
+      "length": 10,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25539,
+        "destination": 25603,
+        "count": 2,
+        "packed_bytes_through_last_read": 18
+      }
+    },
+    {
+      "length": 11,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25539,
+        "destination": 25603,
+        "count": 2,
+        "packed_bytes_through_last_read": 18
+      }
+    },
+    {
+      "length": 12,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25539,
+        "destination": 25603,
+        "count": 2,
+        "packed_bytes_through_last_read": 18
+      }
+    },
+    {
+      "length": 13,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25539,
+        "destination": 25603,
+        "count": 2,
+        "packed_bytes_through_last_read": 18
+      }
+    },
+    {
+      "length": 14,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25303,
+        "destination": 25606,
+        "count": 2,
+        "packed_bytes_through_last_read": 20
+      }
+    },
+    {
+      "length": 15,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25303,
+        "destination": 25606,
+        "count": 2,
+        "packed_bytes_through_last_read": 20
+      }
+    },
+    {
+      "length": 16,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25303,
+        "destination": 25606,
+        "count": 2,
+        "packed_bytes_through_last_read": 20
+      }
+    },
+    {
+      "length": 17,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25303,
+        "destination": 25606,
+        "count": 2,
+        "packed_bytes_through_last_read": 20
+      }
+    },
+    {
+      "length": 18,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25303,
+        "destination": 25606,
+        "count": 2,
+        "packed_bytes_through_last_read": 20
+      }
+    },
+    {
+      "length": 19,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25303,
+        "destination": 25606,
+        "count": 2,
+        "packed_bytes_through_last_read": 20
+      }
+    },
+    {
+      "length": 20,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25167,
+        "destination": 25606,
+        "count": 2,
+        "packed_bytes_through_last_read": 20
+      }
+    },
+    {
+      "length": 1024,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25167,
+        "destination": 25606,
+        "count": 2,
+        "packed_bytes_through_last_read": 20
+      }
+    },
+    {
+      "length": 7168,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25167,
+        "destination": 25606,
+        "count": 2,
+        "packed_bytes_through_last_read": 20
+      }
+    },
+    {
+      "length": 7169,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25167,
+        "destination": 25606,
+        "count": 2,
+        "packed_bytes_through_last_read": 20
+      }
+    },
+    {
+      "length": 11043,
+      "packed_size": 1024,
+      "invalid_match": {
+        "source": 25167,
+        "destination": 25606,
+        "count": 2,
+        "packed_bytes_through_last_read": 20
+      }
+    },
+    {
+      "length": 11044,
+      "overwritten_unpack_entry": true,
+      "opcode": 192,
+      "next_pc": 43812
+    },
+    {
+      "length": 14848,
+      "overwritten_unpack_entry": true,
+      "opcode": 192,
+      "next_pc": 43812
+    }
+  ],
+  "source_bank": 1,
+  "lengths_with_header_outside_staged_block": [
+    1,
+    5
+  ],
+  "lengths_with_invalid_history": [
+    6,
+    11043
+  ],
+  "lengths_with_overwritten_entry": [
+    11044,
+    14848
+  ],
+  "first_complete_invalid_prefix_bytes": 20,
+  "observed_buffer_words": [
+    {
+      "stage": "hyper_load",
+      "length": 50364,
+      "sector": [
+        67,
+        12
+      ]
+    },
+    {
+      "stage": "hyper_initialization",
+      "length": 20739,
+      "sector": [
+        0,
+        2
+      ]
+    }
+  ],
+  "conditional_buffer_word_cases": [
+    {
+      "length": 50364,
+      "transfers": [
+        {
+          "pc": 24010,
+          "source_after": 35516,
+          "target_after": 17596,
+          "reads_from_rom": 16384,
+          "writes_ignored_in_rom": 16384
+        },
+        {
+          "pc": 24021,
+          "source_after": 32768,
+          "target_after": 0,
+          "reads_from_rom": 0,
+          "writes_ignored_in_rom": 0
+        },
+        {
+          "pc": 24029,
+          "source_after": 17596,
+          "target_after": 10428,
+          "reads_from_rom": 16384,
+          "writes_ignored_in_rom": 10428
+        }
+      ],
+      "unpack_entry_hex": "7721895cbe3803340618cd000e",
+      "rom_subroutine": 3584,
+      "rom_calls": 93,
+      "rom_call_interval_steps": 8115,
+      "return_pc": 43852,
+      "return_target": 0,
+      "sp_after_return": 24566,
+      "reached_temporary_entry": false
+    },
+    {
+      "length": 20739,
+      "transfers": [
+        {
+          "pc": 24010,
+          "source_after": 5891,
+          "target_after": 53507,
+          "reads_from_rom": 5891,
+          "writes_ignored_in_rom": 0
+        },
+        {
+          "pc": 24021,
+          "source_after": 32768,
+          "target_after": 0,
+          "reads_from_rom": 0,
+          "writes_ignored_in_rom": 0
+        },
+        {
+          "pc": 24029,
+          "source_after": 53507,
+          "target_after": 46339,
+          "reads_from_rom": 0,
+          "writes_ignored_in_rom": 0
+        }
+      ],
+      "unpack_entry_hex": "7721895cbe3803340618cd000e",
+      "rom_subroutine": 3584,
+      "rom_calls": 93,
+      "rom_call_interval_steps": 8115,
+      "return_pc": 43852,
+      "return_target": 0,
+      "sp_after_return": 24566,
+      "reached_temporary_entry": false
+    }
+  ],
+  "full_length_boundary_cases": [
+    {
+      "length_word": 14849,
+      "requested_bytes": 14849,
+      "first": {
+        "copied": 14849,
+        "remaining": 0,
+        "next_pc": 24012,
+        "opcode_at_copy_site": 237
+      },
+      "third": {
+        "copied": 14849,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 192
+    },
+    {
+      "length_word": 18211,
+      "requested_bytes": 18211,
+      "first": {
+        "copied": 18211,
+        "remaining": 0,
+        "next_pc": 24012,
+        "opcode_at_copy_site": 237
+      },
+      "third": {
+        "copied": 18211,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 192
+    },
+    {
+      "length_word": 18212,
+      "requested_bytes": 18212,
+      "first": {
+        "copied": 18212,
+        "remaining": 0,
+        "next_pc": 24012,
+        "opcode_at_copy_site": 237
+      },
+      "third": {
+        "copied": 18212,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 18213,
+      "requested_bytes": 18213,
+      "first": {
+        "copied": 18213,
+        "remaining": 0,
+        "next_pc": 24012,
+        "opcode_at_copy_site": 237
+      },
+      "third": {
+        "copied": 18213,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 32768,
+      "requested_bytes": 32768,
+      "first": {
+        "copied": 32768,
+        "remaining": 0,
+        "next_pc": 24012,
+        "opcode_at_copy_site": 237
+      },
+      "third": {
+        "copied": 32768,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 39936,
+      "requested_bytes": 39936,
+      "first": {
+        "copied": 39936,
+        "remaining": 0,
+        "next_pc": 24012,
+        "opcode_at_copy_site": 237
+      },
+      "third": {
+        "copied": 39936,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 49152,
+      "requested_bytes": 49152,
+      "first": {
+        "copied": 49152,
+        "remaining": 0,
+        "next_pc": 24012,
+        "opcode_at_copy_site": 237
+      },
+      "third": {
+        "copied": 49152,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 56320,
+      "requested_bytes": 56320,
+      "first": {
+        "copied": 56320,
+        "remaining": 0,
+        "next_pc": 24012,
+        "opcode_at_copy_site": 237
+      },
+      "third": {
+        "copied": 56320,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 56778,
+      "requested_bytes": 56778,
+      "first": {
+        "copied": 56778,
+        "remaining": 0,
+        "next_pc": 24012,
+        "opcode_at_copy_site": 237
+      },
+      "third": {
+        "copied": 56778,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 56779,
+      "requested_bytes": 56779,
+      "first": {
+        "copied": 56779,
+        "remaining": 0,
+        "next_pc": 24012,
+        "opcode_at_copy_site": 62
+      },
+      "third": {
+        "copied": 56779,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 56780,
+      "requested_bytes": 56780,
+      "first": {
+        "copied": 56779,
+        "remaining": 1,
+        "next_pc": 24010,
+        "opcode_at_copy_site": 62
+      },
+      "third": {
+        "copied": 56780,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 63965,
+      "requested_bytes": 63965,
+      "first": {
+        "copied": 56779,
+        "remaining": 7186,
+        "next_pc": 24010,
+        "opcode_at_copy_site": 62
+      },
+      "third": {
+        "copied": 63965,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 237
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 63966,
+      "requested_bytes": 63966,
+      "first": {
+        "copied": 56779,
+        "remaining": 7187,
+        "next_pc": 24010,
+        "opcode_at_copy_site": 62
+      },
+      "third": {
+        "copied": 63966,
+        "remaining": 0,
+        "next_pc": 24031,
+        "opcode_at_copy_site": 221
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 63967,
+      "requested_bytes": 63967,
+      "first": {
+        "copied": 56779,
+        "remaining": 7188,
+        "next_pc": 24010,
+        "opcode_at_copy_site": 62
+      },
+      "third": {
+        "copied": 63966,
+        "remaining": 1,
+        "next_pc": 24029,
+        "opcode_at_copy_site": 221
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 65535,
+      "requested_bytes": 65535,
+      "first": {
+        "copied": 56779,
+        "remaining": 8756,
+        "next_pc": 24010,
+        "opcode_at_copy_site": 62
+      },
+      "third": {
+        "copied": 63966,
+        "remaining": 1569,
+        "next_pc": 24029,
+        "opcode_at_copy_site": 221
+      },
+      "unpack_entry_opcode": 119
+    },
+    {
+      "length_word": 0,
+      "requested_bytes": 65536,
+      "first": {
+        "copied": 56779,
+        "remaining": 8757,
+        "next_pc": 24010,
+        "opcode_at_copy_site": 62
+      },
+      "third": {
+        "copied": 63966,
+        "remaining": 1570,
+        "next_pc": 24029,
+        "opcode_at_copy_site": 221
+      },
+      "unpack_entry_opcode": 119
+    }
+  ],
+  "mixed_prefix_return_cases": [
+    {
+      "length_word": 11061,
+      "partial_unpacker_returned": true,
+      "bytes_at_temporary_entry_from_original_font": 48,
+      "reached_stop": 56,
+      "stack_at_stop": 6164,
+      "observed": [
+        {
+          "step": 0,
+          "pc": 43811,
+          "sp": 24556,
+          "page": 17,
+          "opcode": 192,
+          "stack_word": "e55d"
+        },
+        {
+          "step": 11,
+          "pc": 43828,
+          "sp": 24556,
+          "page": 17,
+          "opcode": 48,
+          "stack_word": "e55d"
+        },
+        {
+          "step": 12,
+          "pc": 43811,
+          "sp": 24556,
+          "page": 17,
+          "opcode": 192,
+          "stack_word": "e55d"
+        },
+        {
+          "step": 13,
+          "pc": 24037,
+          "sp": 24558,
+          "page": 17,
+          "opcode": 49,
+          "stack_word": "40a7"
+        },
+        {
+          "step": 14,
+          "pc": 24040,
+          "sp": 24576,
+          "page": 17,
+          "opcode": 205,
+          "stack_word": "083e"
+        },
+        {
+          "step": 15,
+          "pc": 25856,
+          "sp": 24574,
+          "page": 17,
+          "opcode": 74,
+          "stack_word": "eb5d"
+        },
+        {
+          "step": 51,
+          "pc": 25899,
+          "sp": 24574,
+          "page": 17,
+          "opcode": 232,
+          "stack_word": "eb5d"
+        },
+        {
+          "step": 52,
+          "pc": 24043,
+          "sp": 24576,
+          "page": 17,
+          "opcode": 243,
+          "stack_word": "083e"
+        },
+        {
+          "step": 28187,
+          "pc": 24576,
+          "sp": 24574,
+          "page": 17,
+          "opcode": 8,
+          "stack_word": "fd7f"
+        },
+        {
+          "step": 28197,
+          "pc": 60502,
+          "sp": 24572,
+          "page": 17,
+          "opcode": 155,
+          "stack_word": "0a60"
+        },
+        {
+          "step": 28219,
+          "pc": 56,
+          "sp": 6182,
+          "page": 16,
+          "opcode": 245,
+          "stack_word": "991e"
+        },
+        {
+          "step": 28328,
+          "pc": 56,
+          "sp": 6164,
+          "page": 16,
+          "opcode": 245,
+          "stack_word": "e7cd"
+        }
+      ],
+      "ports": [
+        [
+          32765,
+          22
+        ],
+        [
+          32765,
+          17
+        ],
+        [
+          32765,
+          22
+        ],
+        [
+          32765,
+          16
+        ],
+        [
+          32765,
+          17
+        ],
+        [
+          32765,
+          17
+        ],
+        [
+          32765,
+          16
+        ]
+      ]
+    },
+    {
+      "length_word": 18223,
+      "partial_unpacker_returned": true,
+      "bytes_at_temporary_entry_from_original_font": 48,
+      "reached_stop": 32,
+      "stack_at_stop": 24572,
+      "observed": [
+        {
+          "step": 0,
+          "pc": 43811,
+          "sp": 24556,
+          "page": 17,
+          "opcode": 119,
+          "stack_word": "e55d"
+        },
+        {
+          "step": 6,
+          "pc": 43821,
+          "sp": 24556,
+          "page": 17,
+          "opcode": 205,
+          "stack_word": "e55d"
+        },
+        {
+          "step": 7,
+          "pc": 51200,
+          "sp": 24554,
+          "page": 17,
+          "opcode": 0,
+          "stack_word": "30ab"
+        },
+        {
+          "step": 25,
+          "pc": 56,
+          "sp": 24552,
+          "page": 17,
+          "opcode": 245,
+          "stack_word": "1ac8"
+        },
+        {
+          "step": 210,
+          "pc": 32830,
+          "sp": 24556,
+          "page": 17,
+          "opcode": 192,
+          "stack_word": "e55d"
+        },
+        {
+          "step": 211,
+          "pc": 24037,
+          "sp": 24558,
+          "page": 17,
+          "opcode": 49,
+          "stack_word": "40a7"
+        },
+        {
+          "step": 212,
+          "pc": 24040,
+          "sp": 24576,
+          "page": 17,
+          "opcode": 205,
+          "stack_word": "083e"
+        },
+        {
+          "step": 213,
+          "pc": 25856,
+          "sp": 24574,
+          "page": 17,
+          "opcode": 74,
+          "stack_word": "eb5d"
+        },
+        {
+          "step": 274,
+          "pc": 44720,
+          "sp": 24574,
+          "page": 17,
+          "opcode": 231,
+          "stack_word": "eb5d"
+        },
+        {
+          "step": 275,
+          "pc": 32,
+          "sp": 24572,
+          "page": 17,
+          "opcode": 205,
+          "stack_word": "b1ae"
+        }
+      ],
+      "ports": [
+        [
+          32765,
+          22
+        ],
+        [
+          32765,
+          17
+        ]
+      ]
+    }
+  ],
+  "unpack_opcode_by_effective_length": [
+    {
+      "first": 1,
+      "last": 11043,
+      "opcode": 213
+    },
+    {
+      "first": 11044,
+      "last": 18211,
+      "opcode": 192
+    },
+    {
+      "first": 18212,
+      "last": 65536,
+      "opcode": 119
+    }
+  ],
+  "conditional_copy_base": 23968,
+  "original_caller_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

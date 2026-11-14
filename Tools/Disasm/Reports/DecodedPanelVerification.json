@@ -11,7 +11,7 @@
   "real_caption_message_and_music": true,
   "final_copy_512_bytes_checked": true,
   "explicit_halt_wakeups": 32,
-  "unknown_98A0_game_role_retained": true,
+  "artifact_quantity_code_address": 39072,
   "trdos_executed": false,
   "final_entry_executed": false,
   "whole_frame_bitmap_independent_oracle": false,

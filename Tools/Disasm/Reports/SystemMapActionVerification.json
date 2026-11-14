@@ -4,6 +4,7 @@
     "scene_preparation_im2": 48,
     "real_nearest_variant_and_redraw": 48,
     "real_caption_im2": 72,
+    "natural_End_full_action": 4,
     "zero_count_without_selection": 512,
     "nonselection_close_filter": 510
   },
@@ -12,10 +13,120 @@
   "first_minimum_index_independent": true,
   "zero_count_preserves_variant_and_callback": true,
   "close_disables_callback_only_on_matching_row": true,
+  "natural_End_profiles": [
+    {
+      "initial_page": 16,
+      "info_panel": false,
+      "callback_ticks": 249,
+      "actual_cursor_updates": 32,
+      "last_cursor_write": [
+        52021,
+        52023
+      ],
+      "pointer": [
+        171,
+        62
+      ],
+      "points": [
+        [
+          128,
+          16
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "selected": 0,
+      "minimum": 0
+    },
+    {
+      "initial_page": 16,
+      "info_panel": true,
+      "callback_ticks": 249,
+      "actual_cursor_updates": 32,
+      "last_cursor_write": [
+        52021,
+        52023
+      ],
+      "pointer": [
+        171,
+        62
+      ],
+      "points": [
+        [
+          128,
+          16
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "selected": 0,
+      "minimum": 0
+    },
+    {
+      "initial_page": 24,
+      "info_panel": false,
+      "callback_ticks": 249,
+      "actual_cursor_updates": 32,
+      "last_cursor_write": [
+        52021,
+        52023
+      ],
+      "pointer": [
+        171,
+        62
+      ],
+      "points": [
+        [
+          128,
+          16
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "selected": 0,
+      "minimum": 0
+    },
+    {
+      "initial_page": 24,
+      "info_panel": true,
+      "callback_ticks": 249,
+      "actual_cursor_updates": 32,
+      "last_cursor_write": [
+        52021,
+        52023
+      ],
+      "pointer": [
+        171,
+        62
+      ],
+      "points": [
+        [
+          128,
+          16
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "selected": 0,
+      "minimum": 0
+    }
+  ],
+  "End_reached_by_original_callback_without_cursor_patch": true,
+  "full_action_prefix_preserves_End_until_selector": true,
+  "all_UI_schedules_proved": false,
   "actual_helpers_and_banks": true,
   "independent_whole_redraw_bitmap": false,
   "irq_only_at_caption_halt": true,
   "music_disabled": true,
   "native_execution": false,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "modeled_pointer_inside_panel": true
 }

@@ -44,7 +44,7 @@ def name_operands(region,address,operation):
     if region=='StationBoot':
         for raw,name in [('CALL #A163','CALL @Station.FormatSettingsLabel.Entry'),
                          ('LD BC, #9728','LD BC, @SettingsText.Interface'),('LD BC, #9736','LD BC, @SettingsText.Controls'),
-                         ('LD DE, #99AE','LD DE, @InterfaceChoices.MouseOption'),('LD DE, #99C8','LD DE, @ControlOptions.Unknown00')]:operation=operation.replace(raw,name)
+                         ('LD DE, #99AE','LD DE, @InterfaceChoices.MouseOption'),('LD DE, #99C8','LD DE, @ControlOptions.MouseOption')]:operation=operation.replace(raw,name)
     if region=='Station' and address==0xA163:
         for raw,name in [('CP #7F','CP @SettingsLabelConst.FirstRow'),('ADD A, #30','ADD A, @SettingsLabelConst.DigitZero'),
                          ('CP #80','CP @SettingsLabelConst.NoTag'),('CP #81','CP @SettingsLabelConst.YesTag'),

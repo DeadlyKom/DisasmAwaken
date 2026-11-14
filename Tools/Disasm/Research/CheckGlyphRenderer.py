@@ -41,6 +41,77 @@ class ObservedMemory(list):
             self.targets.append(self[0xAF0A] + 256*self[0xAF0B])
 
 
+def check_return_entries():
+    """Исходные общие выходы, полный входной AF и снятие семи слов без записей RAM."""
+    class Memory(bytearray):
+        recording=False
+        def __init__(self,size):
+            super().__init__(size);self.writes=[]
+        def __setitem__(self,index,value):
+            if self.recording:self.writes.append(index)
+            super().__setitem__(index,value)
+    probe=Memory(65536);probe[0x4000:0x4003]=bytes.fromhex('320070')
+    cpu=Simulator(probe);cpu.registers[PC]=0x4000;probe.recording=True;cpu.run()
+    assert probe.writes==[0x7000]
+    manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_bytes())
+    entry=next(row for row in manifest['entries'] if row['slot']==4)
+    source=(ROOT/(entry['path']+'.sectors.bin')).read_bytes()
+    disk=(ROOT/'Tools/Disasm/Disk/original.trd').read_bytes()
+    assert hashlib.sha256(disk).hexdigest()==manifest['sha256']
+    assert len(source)==entry['allocated_length'] and disk[entry['offset']:entry['offset']+len(source)]==source
+    memory=Memory(65536);memory[0x6000:0x6000+len(source)]=source;sim=Simulator(memory)
+    entries=((0xB514,'success',13),(0xB516,'status',11),(0xAE6B,'height',14),
+             (0xAE71,'width',14),(0xAE77,'origin_x',15),(0xAE7F,'origin_y',None),
+             (0xAE88,'bottom',13))
+    cases={};costs={};frame_start=0x7FFE-14
+    for address,name,cost in entries:
+        cases[name]=0;costs[name]=set()
+        for value in range(256):
+            if name in ('origin_x','origin_y') and value==0:continue
+            for flags in range(256):
+                # Формирование допустимого кадра с различимыми семью сохранёнными словами.
+                words=[((value<<8)|flags)^mask for mask in (0xA55A,0x1357,0x2468,0x369C,0x47AD,0x58BE,0x69CF)]
+                frame=b''.join(word.to_bytes(2,'little') for word in words)+(0x3FFF).to_bytes(2,'little')
+                memory[frame_start:frame_start+16]=frame
+                initial=get_registers({'AF':(value<<8)|flags,'HL':0x1234,'DE':0x2345,'BC':0x3456,
+                    '^AF':0x4567,'^HL':0x5678,'^DE':0x6789,'^BC':0x789A,
+                    'IX':0x89AB,'IY':0x5C3A,'SP':frame_start,'PC':address},None,False)
+                initial[14],initial[15],initial[26],initial[27]=value^flags,(value+flags)&255,flags&1,flags%3
+                sim.registers[:]=initial;memory.writes.clear();memory.recording=True
+                sim.run(address,0x3FFF);memory.recording=False;r=sim.registers
+                # Независимый договор статуса, кадр не содержит обычный возвращаемый AF.
+                if name=='status':result=(value,flags)
+                elif name=='height':result=(2,and_flags(value))
+                elif name=='width':result=(3,and_flags(value))
+                elif name=='bottom':result=(1,flags)
+                elif name=='origin_x':result=(0,0x45 if value&128 else 0x44)
+                elif name=='origin_y':result=(0,0x45) if value&128 else (1,0)
+                else:result=(0,0x45)
+                actual_cost=(15 if value&128 else 16) if cost is None else cost
+                expected=initial.copy();expected[A],expected[F]=result
+                for register,word in ((6,words[4]),(4,words[6]),(2,words[5]),
+                                      (22,words[1]),(20,words[3]),(18,words[2]),(16,words[0])):
+                    expected[register],expected[register+1]=word>>8,word&255
+                expected[15]=(initial[15]&128)|((initial[15]+actual_cost)&127)
+                expected[SP],expected[PC]=0x8000,0x3FFF
+                compared=(*range(13),14,15,*range(16,25),26,27)
+                assert all(r[index]==expected[index] for index in compared),(name,value,flags)
+                assert not memory.writes and memory[frame_start:frame_start+16]==frame
+                costs[name].add(actual_cost);cases[name]+=1
+    report=dict(passed=True,cases=sum(cases.values()),cases_by_entry=cases,
+        refresh_m1_by_entry={name:sorted(values) for name,values in costs.items()},
+        all_valid_input_A_and_F_bytes=True,all_initial_R_values_covered=True,
+        physical_frame_bytes=16,stack_delta=16,exact_restored_registers_and_status=True,
+        no_cpu_memory_writes=True,watcher_positive_store_control_passed=True,
+        source_station_sha256=hashlib.sha256(source).hexdigest(),
+        source_bytes_matched_to_original_disk=True,
+        saved_word_combinations_exhausted=False,arbitrary_stack_overlap_proved=False,
+        irq_executed=False,native_execution=False,assembly_executed=False)
+    (ROOT/'Tools/Disasm/Reports/GlyphReturnEntriesVerification.json').write_text(
+        json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps(report,ensure_ascii=False))
+
+
 def main():
     manifest = json.loads((ROOT / "Tools/Disasm/Disk/Manifest.json").read_text(encoding="utf-8"))
     entry = next(e for e in manifest["entries"] if e["slot"] == 4)
@@ -255,4 +326,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    check_return_entries() if '--return-entries' in sys.argv else main()

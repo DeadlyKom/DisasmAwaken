@@ -19,5 +19,26 @@
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false,
-  "face_walk_not_executed": true
+  "face_walk_not_executed": true,
+  "own_M1_by_index_stride": {
+    "1": 91,
+    "2": 92
+  },
+  "two_real_multipliers_full_M1_checked": true,
+  "each_R_step_and_bit7_checked": true,
+  "all_256_R_values": true,
+  "I_IM_IFF_preserved": true,
+  "full_m1_bounds_by_index_stride": {
+    "1": [
+      207,
+      424
+    ],
+    "2": [
+      176,
+      442
+    ]
+  },
+  "total_M1": 45925481,
+  "independent_whole_control_flow_M1_oracle": false,
+  "R_full_joint_input_product": false
 }

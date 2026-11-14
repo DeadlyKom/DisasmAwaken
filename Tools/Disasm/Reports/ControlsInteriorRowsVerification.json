@@ -16,6 +16,8 @@
   "exact_registers_flags_and_r": true,
   "prepare_mode_read_has_no_output_effect": true,
   "zero_count_still_writes_patches_and_stack": true,
+  "direct_full_M1_count_checked": true,
+  "complete_joint_input_product_exhausted": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

@@ -72,7 +72,7 @@
                 ent
                 assert $ == #0325
                 disp #60E8
-                include "../Action/CreateClass17LinkedRecord.asm"               ; (1) жёсткий порядок, общий вход создания
+                include "../Action/CreateLinkedMissileRecord.asm"               ; (1) жёсткий порядок, общий вход создания
                 ent
                 assert $ == #0382
                 disp #6145
@@ -80,7 +80,7 @@
                 ent
                 assert $ == #03AF
                 disp #6172
-                include "../Action/ReleaseClass14Records.asm"
+                include "../Action/ReleaseBoostDebrisRecords.asm"
                 ent
                 assert $ == #03BA
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -88,7 +88,7 @@
                 assert $ == #03BA
                 assert $ == #03BA
                 disp #617D
-                include "../Action/CreateRandomClass20Record.asm"
+                include "../Action/CreateBoostDebrisRecord.asm"
                 ent
                 assert $ == #043E
                 disp #6201
@@ -137,7 +137,7 @@
                 ent
                 assert $ == #0654
                 disp #6417
-                include "../Action/SpawnClass19AndUpdateList.asm"
+                include "../Action/CreateCargoAndUpdateList.asm"
                 ent
                 assert $ == #071C
                 disp #64DF
@@ -229,10 +229,9 @@
                 include "../Action/UpdateBodyMotion.asm"
                 ent
                 assert $ == #0BBA
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                assert $ == #0BBA
-                ; Unknown, соседние байты вне доказанного входа BuildBankedParameterSet
-                incbin "../Resources/17_ACTION/Unclassified0BBA_0BBB.bin"
+                ; Документация [архивная ветвь и текущий RET](../../Docs/ActionArchivedBodyContext.md)
+                ; Байт #7B, остаток архивного LD A,E перед банковой обёрткой
+                incbin "../Action/Resources/LegacyBodyIndexLoad.bin"
                 assert $ == #0BBB
                 disp #697E
                 include "../Action/BuildBankedParameterSet.asm"
@@ -471,7 +470,7 @@
                 ent
                 assert $ == #1738
                 disp #74FB
-                include "../Action/SelectPreferredByte.asm"
+                include "../Action/SelectFuelStock.asm"
                 ent
                 assert $ == #1741
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -563,8 +562,10 @@
                 include "../Action/Data/SpawnModelChoices.asm"
                 ent
                 assert $ == #1D85
-                ; Соседние 16 байтов не имеют подтверждённого потребителя.
-                incbin "../Resources/17_ACTION/UnknownAfterSpawnModelChoices.bin"
+                ; Восемь дополнительных пар, штатный указатель на строку не установлен.
+                disp #7B48
+                include "../Action/Data/DetachedSpawnModelChoices.asm"
+                ent
                 assert $ == #1D95
                 disp #7B58
                 include "../Action/ScheduleSpawn.asm"                           ; (0) жёсткий порядок продолжения
@@ -954,14 +955,14 @@
                 include "../Action/Data/ProjectedPoints.asm"
                 ent
                 assert $ == #2EC8
-                ; Unknown, хвост перед страницей рабочих узлов
-                incbin "../Resources/17_ACTION/Unclassified2EC8_2F00.bin"
+                ; Последние 56 байтов авторской страницы L9C после ста пар проекции
+                incbin "../Action/Resources/ProjectedPointsPageTail.bin"
                 assert $ == #2F00
                 ; исходные 252 байта области восемнадцати рабочих узлов
                 incbin "../Action/Resources/InitialRenderQueuePool.bin"
                 assert $ == #2FFC
-                ; Unknown, при FreeOffset=FC вставка не создаёт узел
-                incbin "../Resources/17_ACTION/Unclassified2FFC_3000.bin"
+                ; Последние четыре байта авторской страницы L9D за полными узлами очереди
+                incbin "../Action/Resources/RenderQueuePageTail.bin"
                 assert $ == #3000
                 ; исходные 256 байтов рабочей страницы упакованных пар
                 incbin "../Action/Resources/InitialClipOutputPage.bin"
@@ -1064,11 +1065,9 @@
                 include "../Action/Data/FlightControls.asm"
                 ent
                 assert $ == #3B98
-                ; Unknown, соседнее состояние требует отдельного разбора
-                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionQueueParameterPhysicalData.md)
-                assert $ == #3B98
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/17_ACTION/Unclassified3B98_3BA1.bin"
+                disp #9B98
+                include "../Action/Data/ArchivedEyeState.asm"
+                ent
                 assert $ == #3BA1
                 disp #9BA1
                 include "../Action/Data/RenderQueueCursor.asm"
@@ -1082,11 +1081,9 @@
                 include "../Action/Data/ParameterSet.asm"
                 ent
                 assert $ == #3BB3
-                ; Unknown, соседние байты не объявляются свободными
-                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPanelPhysicalData.md)
-                assert $ == #3BB3
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/17_ACTION/Unclassified3BB3_3BBD.bin"
+                disp #9BB3
+                include "../Action/Data/ArchivedSpawnChances.asm"
+                ent
                 assert $ == #3BBD
                 disp #9BBD
                 include "../Action/Data/FlightCounter.asm"
@@ -1106,23 +1103,27 @@
                 disp #9BCA
                 include "../Action/Data/ContextIndex.asm"
                 ent
+                ; Документация [перенос индексов](../../Docs/ActionTransferredPlayerFields.md)
                 assert $ == #3BCB
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/17_ACTION/Unclassified3BCB_3BCD.bin"
+                disp #9BCB
+                include "../Action/Data/PlayerIndices.asm"
+                ent
                 assert $ == #3BCD
                 disp #9BCD
-                include "../Action/Data/IndexedGate.asm"
+                include "../Action/Data/FlightStatus.asm"
                 ent
                 assert $ == #3BCE
                 disp #9BCE
-                include "../Action/Data/ArrivalCounter.asm"
+                include "../Action/Data/RankScore.asm"
                 ent
+                ; Документация [перенос суммы](../../Docs/ActionTransferredPlayerFields.md)
                 assert $ == #3BD0
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/17_ACTION/Unclassified3BD0_3BD2.bin"
+                disp #9BD0
+                include "../Action/Data/PlayerMoney.asm"
+                ent
                 assert $ == #3BD2
                 disp #9BD2
-                include "../Action/Data/ByteLimitCounter.asm"
+                include "../Action/Data/FlightTonnage.asm"
                 ent
                 assert $ == #3BD4
                 ; Unknown, соседние байты не объявляются свободными
@@ -1169,15 +1170,17 @@
                 include "../Action/Data/TransitionCounter.asm"
                 ent
                 assert $ == #3C89
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/17_ACTION/Unclassified3C89_3C8A.bin"
+                ; Документация [раскладка SPEED и DALNO](../../Docs/ActionArchivedBodyContext.md)
+                ; Исходный второй байт архивной пары SPEED, роль после переноса неизвестна
+                incbin "../Action/Resources/InitialArchivedSkimmerSpeed.bin"
                 assert $ == #3C8A
                 disp #9C8A
                 include "../Action/Data/HyperJumpCost.asm"
                 ent
                 assert $ == #3C8B
-                ; исходный диапазон внутри 512-байтового назначения переноса, до таблицы активных клавиш
-                incbin "../Action/Resources/InitialTransferredContextMiddle.bin"
+                disp #9C8B
+                include "../Action/Data/ContextMapAndOptions.asm"
+                ent
                 assert $ == #3D4C
                 disp #9D4C
                 include "../Action/Data/KeyScanInputs.asm"
@@ -1195,8 +1198,8 @@
                 ; исходные 29 байтов назначения после последних станционных настроек
                 incbin "../Action/Resources/InitialTransferredContextTail.bin"
                 assert $ == #3DBD
-                ; Unknown, эти байты лежат после конца 512-байтового контекста
-                incbin "../Resources/17_ACTION/Unclassified3DBD_3E00.bin"
+                ; Остаток нулевого выравнивания ADRXX00 перед страницей указателей OBJECT3D
+                incbin "../Action/Resources/ObjectTablePageAlignment.bin"
                 assert $ == #3E00
                 disp #9E00
                 include "../Action/Data/ObjectPointers.asm"
@@ -1210,15 +1213,20 @@
                 ; исходные 238 байтов назначения CopyObjectData, подтверждённых всеми исходными чётными указателями
                 incbin "../Action/Resources/InitialObjectStreamBuffer.bin"
                 assert $ == #400A
-                ; Unknown, соседние байты вне доказанного назначения CopyObjectData
-                incbin "../Resources/17_ACTION/Unclassified400A_401C.bin"
+                ; исходный хвост назначения, проверены нечётный индекс #57 и дополнительный пакет #E859
+                incbin "../Action/Resources/InitialObjectStreamExtendedTail.bin"
+                assert $ == #4017
+                ; Последние пять исходных байтов резерва OBJBUF
+                ; Документация [границы OBJBUF](../../Docs/ActionObjectStreamStorage.md)
+                incbin "../Action/Resources/ObjectStreamBufferTail.bin"
                 assert $ == #401C
                 disp #A01C
                 include "../Action/Data/CandidateList.asm"
                 ent
                 assert $ == #4027
-                ; Unknown, соседние байты не классифицированы типизацией списка кандидатов
-                incbin "../Resources/17_ACTION/Unclassified4027_4100.bin"
+                ; Заполнение ADRXX00 после CARGS перед массивом CARSB
+                ; Документация [границы списка](../../Docs/ActionCandidateList.md)
+                incbin "../Action/Resources/ObjectRecordsAlignment.bin"
                 assert $ == #4100
                 disp #A100
                 include "../Action/Data/ObjectRecords.asm"
@@ -1238,15 +1246,19 @@
                 include "../Action/Data/PanelEvents.asm"
                 ent
                 assert $ == #478D
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/17_ACTION/Unclassified478D_478F.bin"
+                ; Документация [слово после ACTION](../../Docs/ActionPanelPhysicalData.md#архивное-объявление-player)
+                disp #A78D
+                include "../Action/Data/PlayerPanelWord.asm"
+                ent
                 assert $ == #478F
                 disp #A78F
                 include "../Action/Data/PanelSignedWord.asm"
                 ent
                 assert $ == #4791
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/17_ACTION/Unclassified4791_4794.bin"
+                ; Документация [байты перед SHILD](../../Docs/ActionPanelPhysicalData.md#архивное-объявление-player)
+                disp #A791
+                include "../Action/Data/PlayerPanelType.asm"
+                ent
                 assert $ == #4794
                 disp #A794
                 include "../Action/Data/PanelFirstLevel.asm"
@@ -1365,7 +1377,7 @@
                 assert $ == #516F
                 ; Документация [фрагмент заметок о данных](../../Docs/ActionEmbeddedNotes.md)
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                ; Фрагмент авторских заметок CP866, потребитель в игре не установлен
+                ; Фрагмент токенизированной редакции 3DTABS.a, потребитель в игре не установлен
                 ; Документация [формат и происхождение](../../Docs/ActionEmbeddedNotes.md)
                 incbin "../Resources/17_ACTION/EmbeddedAuthorNotes.bin"
                 assert $ == #6000
@@ -1753,8 +1765,8 @@
                 include "../Action/ComposeRenderMatrix.asm"
                 ent
                 assert $ == #6EE3
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified6EE3_6F00.bin"
+                ; Выравнивание ADRXX00 перед младшей страницей L95
+                incbin "../Action/Resources/ClipDispatchAlignment.bin"
                 assert $ == #6F00
                 ; Документация [префикс таблицы и два рабочих байта](../../Docs/ClipDispatchPrefixData.md)
                 disp #CF00
@@ -1762,7 +1774,7 @@
                 ent
                 assert $ == #6F08
                 disp #CF08
-                include "../Action/UnknownCF08.asm"
+                include "../Action/Data/ClipTargetLowAlias.asm"
                 ent
                 assert $ == #6F0B
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -1823,24 +1835,9 @@
                 include "../Action/MultiplySignedScaled.asm"
                 ent
                 assert $ == #7194
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                assert $ == #7194
-                ; Unknown, соседние байты вне доказанного входа ProjectRenderVertex
-                assert $ == #7194
-                ; Unknown, соседние байты вне доказанного входа ProjectRenderVertexGroup
-                assert $ == #7194
-                ; Unknown, соседние байты вне доказанного входа PrepareRenderVertexProducts
-                assert $ == #7194
-                ; Unknown, соседние байты вне доказанного входа TransformObjectVertices
-                assert $ == #7194
-                ; Unknown, соседние байты вне доказанного входа PreparePolygonFill
-                assert $ == #7194
-                ; Unknown, соседние байты вне доказанного входа SelectPolygonRowLimit
-                assert $ == #7194
-                ; Unknown, соседние байты вне доказанного входа UpdatePolygonLeftEdge
-                assert $ == #7194
-                ; Unknown, соседние байты вне доказанного входа PolygonFillRows
-                incbin "../Resources/17_ACTION/Unclassified028_BeforePolygonRows.bin"
+                ; Переход к смещению C0 внутри страницы перед записью пролёта
+                ; Документация [авторское выравнивание 3DPART](../../Docs/ThreeDOverlayMirror.md)
+                incbin "../Action/Resources/PolygonRowsAlignment.bin"
                 assert $ == #71C0
                 disp #D1C0
                 include "../Action/PolygonFillRows.asm"
@@ -1952,9 +1949,8 @@
                 include "../Action/CheckFaceOrientation.asm"
                 ent
                 assert $ == #8009
-                ; Unknown, соседние байты вне доказанного входа CheckFaceOrientation
-                assert $ == #8009
-                incbin "../Resources/17_ACTION/Unclassified028_BeforeLineMasks.bin"
+                ; Заполнение до 16-байтовой границы масок MASKS
+                incbin "../Action/Resources/LineMasksAlignment.bin"
                 assert $ == #8010
                 disp #E010
                 include "../Action/Data/LineMasks.asm"
@@ -2022,15 +2018,16 @@
                 include "../Action/PrepareRecordScale.asm"
                 ent
                 assert $ == #859F
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified032.bin"
+                disp #E59F
+                include "../Action/DoubleRecordScale.asm"                       ; (0) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #85A0
                 disp #E5A0
-                include "../Action/UpdateRecordComponents.asm"                  ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/UpdateRecordComponents.asm"                  ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #8655
                 disp #E655
-                include "../Action/FinishRecordWarning.asm"                     ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/FinishRecordWarning.asm"                     ; (2) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #8658
                 disp #E658
@@ -2038,7 +2035,7 @@
                 ent
                 assert $ == #865F
                 disp #E65F
-                include "../Action/ReleaseClass12Records.asm"                   ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/ReleaseStationPartsOrRestoreOffsets.asm"                   ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #8685
                 disp #E685
@@ -2355,14 +2352,13 @@
                 assert $ == #8F50
                 ; Unknown, соседние байты вне пяти доказанных потоков
                 assert $ == #8F50
-                ; Unknown, соседние байты вне доказанного входа MarkIYRecordForReuse
                 disp #EF50
                 include "../Action/Data/ObjectStateHandlers.asm"
                 ent
                 assert $ == #8F7C
-                assert $ == #8F7C
-                ; Unknown, соседние байты вне доказанного входа AdvanceObjectOffsetRise
-                incbin "../Resources/17_ACTION/AfterObjectStateHandlers_BeforeActionObjectOffsetRise.bin"
+                disp #EF7C
+                include "../Action/ReturnFromObjectState.asm"
+                ent
                 assert $ == #8F7D
                 disp #EF7D
                 include "../Action/AdvanceObjectOffsetRise.asm"
@@ -2437,16 +2433,16 @@
                 ent
                 assert $ == #9222
                 disp #F222
-                include "../Action/CheckClass17SpawnWindow.asm"
+                include "../Action/CheckMissileSpawnWindow.asm"
                 ent
                 assert $ == #924F
                 assert $ == #924F
                 disp #F24F
-                include "../Action/SpawnLinkedClass17AndContinue.asm"
+                include "../Action/CreateMissileAndContinueOffsets.asm"
                 ent
                 assert $ == #9255
                 disp #F255
-                include "../Action/SpawnClass17FromCurrentLink.asm"
+                include "../Action/CreateMissileFromCurrentLink.asm"
                 ent
                 assert $ == #9280
                 assert $ == #9280
@@ -2604,11 +2600,255 @@
                 include "../Action/DispatchObjectState.asm"
                 ent
                 assert $ == #9866
+                ; Конец кода и загрузка нулевого хвоста [сверка версий](../../Docs/ActionArchivedFileEnd.md)
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonFill.md)
                 assert $ == #9866
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/17_ACTION/Unclassified9866_9FDE.bin"
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9866_9A21.bin"
+                assert $ == #9A21
+                ; Исходный байт #FA21, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFA21.bin"
+                assert $ == #9A22
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9A22_9A27.bin"
+                assert $ == #9A27
+                ; Исходный байт #FA27, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFA27.bin"
+                assert $ == #9A28
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9A28_9A60.bin"
+                assert $ == #9A60
+                ; Исходный байт #FA60, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFA60.bin"
+                assert $ == #9A61
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9A61_9D01.bin"
+                assert $ == #9D01
+                ; Исходный байт #FD01, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFD01.bin"
+                assert $ == #9D02
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9D02_9D04.bin"
+                assert $ == #9D04
+                ; Исходный байт #FD04, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFD04.bin"
+                assert $ == #9D05
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9D05_9D07.bin"
+                assert $ == #9D07
+                ; Исходный байт #FD07, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFD07.bin"
+                assert $ == #9D08
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9D08_9D0A.bin"
+                assert $ == #9D0A
+                ; Исходный байт #FD0A, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFD0A.bin"
+                assert $ == #9D0B
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9D0B_9D0E.bin"
+                assert $ == #9D0E
+                ; Исходный байт #FD0E, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFD0E.bin"
+                assert $ == #9D0F
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9D0F_9D14.bin"
+                assert $ == #9D14
+                ; Исходный байт #FD14, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFD14.bin"
+                assert $ == #9D15
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9D15_9D3D.bin"
+                assert $ == #9D3D
+                ; Исходный байт #FD3D, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFD3D.bin"
+                assert $ == #9D3E
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9D3E_9D40.bin"
+                assert $ == #9D40
+                ; Исходный байт #FD40, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFD40.bin"
+                assert $ == #9D41
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9D41_9D43.bin"
+                assert $ == #9D43
+                ; Исходный байт #FD43, ROM читает его через IY+7 либо увеличивает при переполнении FRAMES
+                incbin "../Action/Resources/InitialNoiseIrqByteFD43.bin"
+                assert $ == #9D44
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9D44_9D4D.bin"
+                assert $ == #9D4D
+                ; Исходный байт #FD4D, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFD4D.bin"
+                assert $ == #9D4E
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9D4E_9D5D.bin"
+                assert $ == #9D5D
+                ; Исходный байт #FD5D, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFD5D.bin"
+                assert $ == #9D5E
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9D5E_9D63.bin"
+                assert $ == #9D63
+                ; Исходный байт #FD63, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFD63.bin"
+                assert $ == #9D64
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9D64_9D7C.bin"
+                assert $ == #9D7C
+                ; Исходный байт #FD7C, ROM обрабатывает флаги клавиатуры либо увеличивает байт при переполнении FRAMES
+                incbin "../Action/Resources/InitialNoiseIrqByteFD7C.bin"
+                assert $ == #9D7D
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9D7D_9D82.bin"
+                assert $ == #9D82
+                ; Исходный байт #FD82, обе ROM читают его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFD82.bin"
+                assert $ == #9D83
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9D83_9D9C.bin"
+                assert $ == #9D9C
+                ; Исходный байт #FD9C, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFD9C.bin"
+                assert $ == #9D9D
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9D9D_9D9F.bin"
+                assert $ == #9D9F
+                ; Исходный байт #FD9F, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFD9F.bin"
+                assert $ == #9DA0
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9DA0_9DA5.bin"
+                assert $ == #9DA5
+                ; Исходный байт #FDA5, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFDA5.bin"
+                assert $ == #9DA6
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9DA6_9DAB.bin"
+                assert $ == #9DAB
+                ; Исходный байт #FDAB, ROM проверяет бит 3 через IY+#30 при вводе буквы
+                incbin "../Action/Resources/InitialNoiseIrqByteFDAB.bin"
+                assert $ == #9DAC
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9DAC_9DBB.bin"
+                assert $ == #9DBB
+                ; Исходный байт #FDBB, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFDBB.bin"
+                assert $ == #9DBC
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9DBC_9DDE.bin"
+                assert $ == #9DDE
+                ; Исходный байт #FDDE, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFDDE.bin"
+                assert $ == #9DDF
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9DDF_9E24.bin"
+                assert $ == #9E24
+                ; Исходный байт #FE24, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFE24.bin"
+                assert $ == #9E25
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9E25_9E2A.bin"
+                assert $ == #9E2A
+                ; Исходный байт #FE2A, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFE2A.bin"
+                assert $ == #9E2B
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9E2B_9E5F.bin"
+                assert $ == #9E5F
+                ; Исходный байт #FE5F, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFE5F.bin"
+                assert $ == #9E60
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9E60_9E63.bin"
+                assert $ == #9E63
+                ; Исходный байт #FE63, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFE63.bin"
+                assert $ == #9E64
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9E64_9E65.bin"
+                assert $ == #9E65
+                ; Исходный байт #FE65, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFE65.bin"
+                assert $ == #9E66
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9E66_9E7F.bin"
+                assert $ == #9E7F
+                ; Исходный байт #FE7F, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFE7F.bin"
+                assert $ == #9E80
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9E80_9E85.bin"
+                assert $ == #9E85
+                ; Исходный байт #FE85, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFE85.bin"
+                assert $ == #9E86
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9E86_9E9E.bin"
+                assert $ == #9E9E
+                ; Исходный байт #FE9E, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFE9E.bin"
+                assert $ == #9E9F
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9E9F_9EBE.bin"
+                assert $ == #9EBE
+                ; Исходный байт #FEBE, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFEBE.bin"
+                assert $ == #9EBF
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9EBF_9ED4.bin"
+                assert $ == #9ED4
+                ; Исходный байт #FED4, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFED4.bin"
+                assert $ == #9ED5
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9ED5_9EDA.bin"
+                assert $ == #9EDA
+                ; Исходный байт #FEDA, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFEDA.bin"
+                assert $ == #9EDB
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9EDB_9F01.bin"
+                assert $ == #9F01
+                ; Исходный байт #FF01, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFF01.bin"
+                assert $ == #9F02
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9F02_9F07.bin"
+                assert $ == #9F07
+                ; Исходный байт #FF07, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFF07.bin"
+                assert $ == #9F08
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9F08_9F13.bin"
+                assert $ == #9F13
+                ; Исходный байт #FF13, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFF13.bin"
+                assert $ == #9F14
+                ; Unknown, назначения соседних байтов не установлены
+                incbin "../Resources/17_ACTION/Unclassified9F14_9F3F.bin"
+                assert $ == #9F3F
+                ; Исходный байт #FF3F, ROM 128K проверяет бит 4, обе ROM читают байт и ставят бит 5 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFF3F.bin"
+                assert $ == #9F40
+                ; Исходный байт #FF40, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFF40.bin"
+                assert $ == #9F41
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9F41_9F45.bin"
+                assert $ == #9F45
+                ; Исходный байт #FF45, ROM читает его через IY+7 при декодировании клавиши
+                incbin "../Action/Resources/InitialNoiseIrqByteFF45.bin"
+                assert $ == #9F46
+                ; Unknown, назначение соседних байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9F46_9F7E.bin"
+                assert $ == #9F7E
+                ; Исходный байт #FF7E, ROM увеличивает байт при переполнении FRAMES и смещённом IY
+                incbin "../Action/Resources/InitialNoiseIrqByteFF7E.bin"
+                assert $ == #9F7F
+                ; Unknown, назначение оставшихся байтов не установлено
+                incbin "../Resources/17_ACTION/Unclassified9F7F_9FDE.bin"
                 assert $ == #9FDE
                 disp #FFDE
                 include "../Action/Data/PolygonScratch.asm"

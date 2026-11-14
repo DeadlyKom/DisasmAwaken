@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "original_action_sha256": "63f2ac2717bb7f630b25ec3cb92671e5f78f2174f36d7370d1bae39baf3fc39a",
+  "total_cases": 65536,
+  "paths": {
+    "EF7D/countdown/preserve": 1548,
+    "EF7D/countdown/marker_return": 3072,
+    "EF7D/transition/preserve": 516,
+    "EF7D/transition/marker_return": 1024,
+    "EF7D/countdown/increment": 1524,
+    "EF7D/transition/increment": 508,
+    "EF9A/countdown/preserve": 1548,
+    "EF9A/countdown/marker_return": 3072,
+    "EF9A/transition/preserve": 516,
+    "EF9A/transition/marker_return": 1024,
+    "EF9A/countdown/increment": 1524,
+    "EF9A/transition/increment": 508,
+    "EFB5/component_release/increment": 3772,
+    "EFB5/continue/increment": 3772,
+    "EFB5/continue/marker_return": 8192,
+    "EFB5/class_release/increment": 7544,
+    "EFB5/class_release/marker_return": 8192,
+    "EFB5/component_release/preserve": 4420,
+    "EFB5/continue/preserve": 4420,
+    "EFB5/class_release/preserve": 8840
+  },
+  "full_external_return": true,
+  "real_F0F8_and_coefficients_and_three_multiplications": true,
+  "exact_registers_including_R": true,
+  "all_eight_banks_and_write_multiplicity": true,
+  "all_256_rise_fall_phase_bytes": true,
+  "rise_fall_timer_samples": [
+    0,
+    1,
+    2,
+    255
+  ],
+  "saved_state_samples": [
+    2,
+    19
+  ],
+  "rise_fall_class_samples": [
+    3,
+    20
+  ],
+  "marker_and_active_records": true,
+  "rise_fall_original_high_scale": 128,
+  "wait_all_256_high_scale_bytes": true,
+  "wait_phase_gate_samples": [
+    0,
+    1,
+    17,
+    34,
+    68,
+    128,
+    136,
+    255
+  ],
+  "wait_class_samples": [
+    0,
+    7,
+    8,
+    20
+  ],
+  "wait_component_profiles": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      20,
+      0,
+      0
+    ],
+    [
+      128,
+      127,
+      255
+    ]
+  ],
+  "phase_correlated_current_state_and_low_scale": true,
+  "full_input_product_exhausted": false,
+  "no_OUT": true,
+  "exact_T_claimed": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

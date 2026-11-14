@@ -26,5 +26,18 @@
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false,
-  "face_dispatch_not_executed": true
+  "face_dispatch_not_executed": true,
+  "direct_full_M1_and_R_checked": true,
+  "I_IM_IFF_preservation_checked": true,
+  "observed_M1_bounds": {
+    "completed": [
+      44,
+      10048
+    ],
+    "marker_80": [
+      14,
+      2072
+    ]
+  },
+  "complete_joint_input_product_exhausted": false
 }

@@ -20,7 +20,7 @@ COMMENTS={
 0xF52A:([], 'переход, если L не меньше 28, искать опору по классам'),
 0xF52C:(['Проверка существующего внешнего байта, его полное игровое назначение ещё не установлено.'],None),
 0xF531:(['Подготовка отдельного кода 1A без подмены его найденным индексом.'],None),
-0xF533:([], 'переход, если UnknownGate не меньше 50, использовать отдельный код 1A'),
+0xF533:([], 'переход, если StatusCode не меньше 50, использовать отдельный код 1A'),
 0xF535:(['Поиск первого активного класса 0, приоритет не зависит от позиции классов 7 и 5.'],None),
 0xF53A:([], 'переход, если класс 0 не найден, проверить класс 7'),
 0xF53C:(['Расчёт индекса найденного IY, полученный Z от сдвигов индекса здесь не означает отказ.'],None),
@@ -39,17 +39,17 @@ COMMENTS={
 0xF564:([], 'переход, если класс 18 не найден, только обнулить базовые операнды'),
 0xF566:(['Обновление StateCode целевой записи исходным кодом 0B.'],None),
 0xF56A:(['Восстановление выбранных A и F, в альтернативном AF остаётся результат поиска класса 18.'],None),
-0xF56B:(['Запись выбранного байта опоры в Unknown0D и исходного кода 02 в SavedStateCode целевой записи.'],None)}
+0xF56B:(['Запись выбранного байта опоры в Phase0OrLink и исходного кода 02 в SavedStateCode целевой записи.'],None)}
 
 
 def operands(region,address,operation):
     if region!='Action' or address not in FUNCTIONS:return operation
     targets={0xEBB8:'Action.NextRandomWord2.Entry',0xE98D:'Action.FindRecordByCode.Entry',
              0xE6BE:'Action.RecordIYToIndex.Entry',0xF572:'Action.ResetRecordUpdateBases.Entry',
-             0x9BCD:'ActionPreferredChanceState.UnknownGate'}
+             0x9BCD:'ActionPreferredChanceState.StatusCode'}
     targets.update({a:'Action.'+name+'.Entry' for a,(name,_) in FUNCTIONS.items()})
     for value,name in targets.items():operation=operation.replace('#'+format(value,'04X'),'@'+name)
-    for value,field in ((0x0A,'StateCode'),(0x0D,'Unknown0D'),(0x16,'SavedStateCode')):
+    for value,field in ((0x0A,'StateCode'),(0x0D,'Phase0OrLink'),(0x16,'SavedStateCode')):
         operation=operation.replace('(IY+#'+format(value,'02X')+')','(IY + @FActionRecord.'+field+')')
     values={'#E6':'ActionPreferredRecordConst.RLimit','#28':'ActionPreferredRecordConst.WordLimit',
             '#50':'ActionPreferredRecordConst.GateLimit','#1A':'ActionRandomRecordConst.DefaultCode',
@@ -70,23 +70,23 @@ def contract(entry):
             'только основной вход может вызвать NextRandomWord2, Stream2 доступен для записи, IRQ не вмешиваются']
     outputs=['HL=0, E сохраняется, BC=FActionRecord, D задаёт последний искавшийся класс, IY последнюю найденную запись либо маркер',
              'Base0, Base1 и Base2 равны нулю при каждом возврате, записи выполняются в исходном порядке',
-             'если опора выбрана, класс 3 отсутствует и класс 18 найден, его StateCode=0B, Unknown0D=выбранный A, SavedStateCode=02',
+             'если опора выбрана, класс 3 отсутствует и класс 18 найден, его StateCode=0B, Phase0OrLink=выбранный A, SavedStateCode=02',
              'остальные записи списка не изменяются, при запрете либо отсутствии цели эти три записи не выполняются',
              'AF и альтернативный AF зависят от пути обмена и последнего поиска, точные случаи приведены в документации',
              "HL', DE', BC' сохраняются без вызова генератора, иначе содержат результат Stream2, IX сохраняется",
              'SP=входной SP+2, I, IM, IFF и страница сохраняются, точный R доказан числовой моделью, бит 7 сохранён']
     notes=['каждый физический фрагмент наследует обычный внешний возврат, отдельная инструкция CALL между продолжениями не добавляется',
            'приоритет 0, затем 7, затем 5 выбирает первый экземпляр соответствующего класса, а не первую запись любого из трёх классов',
-           'отдельный код 26 допускается только после R>=E6, нового L<28 и UnknownGate>=50',
+           'отдельный код 26 допускается только после R>=E6, нового L<28 и StatusCode>=50',
            'после выбора наличие первого активного класса 3 блокирует обновление, изменяется только первый активный класс 18',
            '383744 сценария исполнили все восемь входов и настоящих детей, сопоставлены регистры включая R, восемь банков RAM и кратность записей',
-           'полные игровые роли UnknownGate, StateCode, Unknown0D и SavedStateCode, полный домен состояний и списков, распределение, период, IRQ, точные T, сборка и нативный запуск не доказаны']
+           'полные игровые роли StatusCode, StateCode, Phase0OrLink и SavedStateCode, полный домен состояний и списков, распределение, период, IRQ, точные T, сборка и нативный запуск не доказаны']
     return inputs,outputs,["HL, D, BC, AF, HL', DE', BC', AF', IY, R, три Base, Stream2 при вызове и поля первого класса 18 при разрешённом обновлении, шесть байтов CPU-стека"],notes
 
 
 BLOCK='\n                ; Пороги и числовые классы исходного выбора опоры F51E\n                module ActionPreferredRecordConst\n'
 for name,value,note in (('RLimit',0xE6,'граница чтения R для дополнительного выбора'),('WordLimit',0x28,'верхняя исключённая граница нового L'),
-                        ('GateLimit',0x50,'нижняя включённая граница UnknownGate'),('Class3',3,'класс, запрещающий обновление'),
+                        ('GateLimit',0x50,'нижняя включённая граница StatusCode'),('Class3',3,'класс, запрещающий обновление'),
                         ('RecordCode',11,'код StateCode целевой записи класса 18')):
     BLOCK+=name.ljust(16)+('equ #'+format(value,'02X')).ljust(64)+'; '+note+'\n'
 BLOCK+='                endmodule\n\n'
@@ -96,5 +96,5 @@ def fragment(entry):
     end=next((a for a in sorted(FUNCTIONS) if a>entry),0xF572)
     return SimpleNamespace(FUNCTIONS={entry:FUNCTIONS[entry]},LOCAL={},CONTRACTS={('Action',entry):contract(entry)},
         COMMENTS={a:v for a,v in COMMENTS.items() if entry<=a<end},name_operands=operands,FALLTHROUGH=entry in (0xF527,0xF557),
-        STATE_FIELDS=(('UnknownGate',0x9BCD,'исходный внешний байт порога, полный игровой смысл ещё не доказан'),) if entry==0xF527 else (),
+        STATE_FIELDS=(('StatusCode',0x9BCD,'исходный внешний байт порога, полный игровой смысл ещё не доказан'),) if entry==0xF527 else (),
         INCLUDE_BLOCKS=(('Includes/Const/Include.inc','module ActionPreferredRecordConst',BLOCK),) if entry==0xF557 else ())

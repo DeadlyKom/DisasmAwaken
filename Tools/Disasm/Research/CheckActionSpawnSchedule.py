@@ -10,6 +10,43 @@ from CheckMusicGateTicks import Memory
 from ReferenceActionFoldedRandom import step
 
 
+def check_model_table_rows():
+    flat = flat_action()
+    table = 0x7AC6
+    detached = 0x7B48
+    first_record = 0xA100
+    profiles = []
+    for code, substituted in (*((code, False) for code in range(10)), (9, True)):
+        memory = Memory(flat.copy())
+        word_address = table + 2 * code
+        if substituted:
+            memory[word_address:word_address + 2] = [detached & 0xFF, detached >> 8]
+        pointer = memory[word_address] | memory[word_address + 1] << 8
+        sim = Simulator(memory)
+        pairs = []
+        for variant in range(8):
+            initial = get_registers({'PC': 0x7BDB, 'SP': 0xBFFE, 'IX': first_record,
+                                     'BC': code, 'R': (variant - 13) & 7}, None, False)
+            sim.registers[:] = initial
+            address = pointer + 2 * variant
+            model, parameter = memory[address:address + 2]
+            memory.writes = []
+            memory.recording = True
+            sim.run(0x7BDB, 0x7BF5)
+            assert sim.registers[6] * 256 + sim.registers[7] == address
+            sim.run(0x7BF5, 0x7BFE)
+            memory.recording = False
+            assert sim.registers[SP] == 0xBFFE
+            assert memory.writes == [(first_record + 0x12, code),
+                                     (first_record + 6, model), (first_record + 0x0F, parameter)]
+            pairs.append((model, parameter))
+        profiles.append(dict(class_code=code, pointer=pointer, pointer_substituted=substituted, pairs=pairs))
+    assert profiles[-2]['pointer'] == 0x6440 and profiles[-1]['pointer'] == detached
+    assert all(not model & 1 for model, _ in profiles[-1]['pairs'])
+    return dict(total_cases=len(profiles) * 8, profiles=profiles,
+                original_reader_executed=True, detached_game_selection_proved=False)
+
+
 def main():
     memory = Memory(flat_action())
     memory[0xBFFE:0xC000] = [255, 63]
@@ -48,6 +85,7 @@ def main():
             assert memory.writes == writes, context
         outcomes[path] += 1
     report = dict(passed=True, total_cases=outcomes.total(), outcomes=dict(outcomes),
+                  physical_model_rows=check_model_table_rows(),
                   all_phase_and_countdown_bytes=True, stops_before_record_selection=True, assembly_executed=False)
     payload = json.dumps(report, indent=2) + '\n'
     (ROOT / 'Tools/Disasm/Reports/ActionSpawnScheduleVerification.json').write_text(payload, encoding='utf-8')

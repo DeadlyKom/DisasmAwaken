@@ -10,19 +10,19 @@ STATE_FIELDS=(('EnabledCode',0x6EAD,'операнд LD A,n, ноль запре�
 CONTRACTS={('Action',0x6EAC):(
     ['HL, DE, BC и AF числовых аргументов не задают',
      "входной A' возвращается как основной A только на активном пути записи слова, входной F' числового смысла не имеет",
-     'EnabledCode содержит код допуска, ActionPanelGaugesState.SignedWord задаёт исходное знаковое слово',
+     'EnabledCode содержит код допуска, ActionPanelGaugesState.SpeedWord задаёт исходное знаковое слово',
      'запрос ActionPanelGaugesState.SixthRequest доступен для записи в существующий операнд кода',
      'код ACTION доступен для самомодификации, на CPU-стеке внешний адрес возврата, IRQ не вмешиваются'],
     ['при EnabledCode=00 HL, DE, BC и альтернативный AF сохраняются, AF=0054, RAM не меняется',
      'при ненулевом EnabledCode HL содержит abs(слово)-2 с восстановлением исходного знака по модулю 65536, DE сохраняется, BC=0002',
      'при исходном модуле от двух AF=0044, EnabledCode обнуляется, исходное слово в RAM не меняется',
-     "при исходном модуле меньше двух HL записывается в SignedWord, A равен входному A', F соответствует SBC HL,0002 без входного займа, EnabledCode сохраняется",
+     "при исходном модуле меньше двух HL записывается в SpeedWord, A равен входному A', F соответствует SBC HL,0002 без входного займа, EnabledCode сохраняется",
      'при ненулевом EnabledCode SixthRequest получает его исходное значение независимо от ветви записи слова',
      "на активном неотрицательном пути A'=EnabledCode, F'=54 OR разряды 5 и 3 исходного старшего байта слова",
      "на активном отрицательном пути A'=NOT HIGH(abs(слово)-2), F'=92 OR разряды 5 и 3 этого A'",
      "HL', DE', BC', IX, IY, I, IM и IFF сохраняются, SP=входной SP+2",
      'R увеличивается на 3 M1 при входном EnabledCode=00, 19 или 20 M1 при активном неотрицательном слове, 33 или 34 M1 при активном отрицательном, меньшее число относится к записи слова'],
-    ["HL, BC, AF, AF', R, SixthRequest, EnabledCode либо два байта SignedWord, только на соответствующих активных путях"],
+    ["HL, BC, AF, AF', R, SixthRequest, EnabledCode либо два байта SpeedWord, только на соответствующих активных путях"],
     ['RAM слова изменяется только для исходных 0000, 0001 и FFFF, результаты соответственно FFFE, FFFF и 0001',
      'исходный JR NC выключает обработку при отсутствии займа, вычисленный HL на этом пути не записывается в слово',
      'CPU-стек не записывается, игровой смысл слова и причина такого условия пока не установлены',
@@ -51,6 +51,6 @@ def name_operands(region,function_address,operation):
     if region=='Action' and function_address==0x6EAC:
         operation=operation.replace('(#6EAD)','(@ActionNearZeroWordState.EnabledCode)')
         operation=operation.replace('(#669F)','(@ActionPanelGaugesState.SixthRequest)')
-        operation=operation.replace('(#A78F)','(@ActionPanelGaugesState.SignedWord)')
+        operation=operation.replace('(#A78F)','(@ActionPanelGaugesState.SpeedWord)')
         operation=operation.replace('LD BC, #0002','LD BC, @ActionNearZeroWordConst.Step')
     return operation

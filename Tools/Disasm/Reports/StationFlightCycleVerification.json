@@ -27,25 +27,25 @@
         {
           "slot": 10,
           "address": 56064,
-          "length": 7209,
+          "length": 7424,
           "bank": 3
         },
         {
           "slot": 8,
           "address": 56064,
-          "length": 5921,
+          "length": 6144,
           "bank": 7
         },
         {
           "slot": 6,
           "address": 49152,
-          "length": 15978,
+          "length": 16128,
           "bank": 4
         },
         {
           "slot": 5,
           "address": 49152,
-          "length": 3864,
+          "length": 4096,
           "bank": 6
         },
         {
@@ -67,7 +67,7 @@
         {
           "slot": 25,
           "address": 49152,
-          "length": 1463,
+          "length": 1536,
           "bank": 6
         },
         {
@@ -79,25 +79,25 @@
         {
           "slot": 21,
           "address": 60416,
-          "length": 3784,
+          "length": 3840,
           "bank": 3
         },
         {
           "slot": 22,
           "address": 49152,
-          "length": 6878,
+          "length": 6912,
           "bank": 1
         },
         {
           "slot": 23,
           "address": 56030,
-          "length": 6474,
+          "length": 6656,
           "bank": 1
         },
         {
           "slot": 24,
           "address": 49152,
-          "length": 10580,
+          "length": 10752,
           "bank": 4
         }
       ],
@@ -106,6 +106,8 @@
       "key_mask": 8,
       "key_index": 18,
       "handler": 30214,
+      "map_context_bytes": 193,
+      "map_context_preserved_after_64_frames": true,
       "return_requested": false,
       "next_flight_frame": 43102
     },
@@ -130,31 +132,31 @@
         {
           "slot": 10,
           "address": 56064,
-          "length": 7209,
+          "length": 7424,
           "bank": 3
         },
         {
           "slot": 8,
           "address": 56064,
-          "length": 5921,
+          "length": 6144,
           "bank": 7
         },
         {
           "slot": 6,
           "address": 49152,
-          "length": 15978,
+          "length": 16128,
           "bank": 4
         },
         {
           "slot": 5,
           "address": 49152,
-          "length": 3864,
+          "length": 4096,
           "bank": 6
         },
         {
-          "offset": 178688,
+          "offset": 198144,
           "address": 49152,
-          "length": 3584,
+          "length": 4864,
           "bank": 3
         }
       ],
@@ -170,7 +172,7 @@
         {
           "slot": 25,
           "address": 49152,
-          "length": 1463,
+          "length": 1536,
           "bank": 6
         },
         {
@@ -182,25 +184,25 @@
         {
           "slot": 21,
           "address": 60416,
-          "length": 3784,
+          "length": 3840,
           "bank": 3
         },
         {
           "slot": 22,
           "address": 49152,
-          "length": 6878,
+          "length": 6912,
           "bank": 1
         },
         {
           "slot": 23,
           "address": 56030,
-          "length": 6474,
+          "length": 6656,
           "bank": 1
         },
         {
           "slot": 24,
           "address": 49152,
-          "length": 10580,
+          "length": 10752,
           "bank": 4
         }
       ],
@@ -209,6 +211,103 @@
       "key_mask": 8,
       "key_index": 18,
       "handler": 30214,
+      "map_context_bytes": 193,
+      "map_context_preserved_after_64_frames": true,
+      "intro_boot": {
+        "usr_entry": 23873,
+        "basic_rom_interpreter_executed": false,
+        "initial_sector_load": {
+          "slot": 3,
+          "first_sector_index": 290,
+          "sectors": 44,
+          "destination": 25600,
+          "bytes_written_to_ram": 11264,
+          "bytes_addressed_to_rom": 0
+        },
+        "station_sector_load": {
+          "slot": 4,
+          "first_sector_index": 334,
+          "sectors": 192,
+          "destination": 24576,
+          "bytes_written_to_ram": 40960,
+          "bytes_addressed_to_rom": 8192
+        },
+        "intro_keyboard_polls": 3,
+        "fixed_entry_prefix": "46433e1611ffff212c66013266c3a3660080",
+        "before_legacy_operands": "2828282929",
+        "after_legacy_operands": "28054b291b",
+        "fixed_legacy_window_writes": [
+          [
+            24096,
+            5
+          ],
+          [
+            24097,
+            75
+          ],
+          [
+            24099,
+            27
+          ]
+        ],
+        "control_prefix_still_in_bank_1": true,
+        "control_fixed_copy_seen": false,
+        "control_execution_seen": false,
+        "adjacent_legacy_context": {
+          "file_offset": 315,
+          "length": 130,
+          "fixed_address": 24283,
+          "bank1_address": 56345,
+          "original_bytes_loaded_once": true,
+          "original_bank1_bytes_preserved": true,
+          "fixed_bytes_equal_to_original": false,
+          "fixed_bytes_preserved_since_entry": true,
+          "cpu_accesses_excluding_dos_model_load": []
+        },
+        "hyperjump": {
+          "key": [
+            253,
+            16
+          ],
+          "handler": 28918,
+          "preferred_spent": 14,
+          "context_bytes_restored": 481,
+          "reload_file": {
+            "slot": 17,
+            "name": "ACTION  C",
+            "destination": 24576,
+            "size": 40960,
+            "return_address": 16948
+          },
+          "complete_frames_after_reload": 2,
+          "gate_fixture_applied_at_handler": true,
+          "fixed_legacy_window_writes": [
+            [
+              24096,
+              5
+            ],
+            [
+              24097,
+              75
+            ],
+            [
+              24099,
+              27
+            ]
+          ],
+          "adjacent_legacy_context": {
+            "file_offset": 315,
+            "length": 130,
+            "fixed_address": 24283,
+            "bank1_address": 56345,
+            "original_bytes_loaded_once": true,
+            "original_bank1_bytes_preserved": true,
+            "fixed_bytes_equal_to_original": false,
+            "fixed_bytes_preserved_since_entry": true,
+            "cpu_accesses_excluding_dos_model_load": []
+          }
+        }
+      },
       "return_requested": true,
       "return_file": {
         "slot": 4,
@@ -218,6 +317,7 @@
         "return_address": 16927
       },
       "incoming_context_bytes": 481,
+      "map_context_restored_on_station_entry": true,
       "untouched_station_tail_bytes": 31,
       "station_restart_loads": [
         {
@@ -229,31 +329,31 @@
         {
           "slot": 10,
           "address": 56064,
-          "length": 7209,
+          "length": 7424,
           "bank": 3
         },
         {
           "slot": 8,
           "address": 56064,
-          "length": 5921,
+          "length": 6144,
           "bank": 7
         },
         {
           "slot": 6,
           "address": 49152,
-          "length": 15978,
+          "length": 16128,
           "bank": 4
         },
         {
           "slot": 5,
           "address": 49152,
-          "length": 3864,
+          "length": 4096,
           "bank": 6
         },
         {
-          "offset": 187136,
+          "offset": 206080,
           "address": 49152,
-          "length": 3840,
+          "length": 4096,
           "bank": 3
         }
       ],

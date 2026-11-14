@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "cases": 256,
+  "all_byte_origins": false,
+  "all_Y_origins": true,
+  "all_X_origins": true,
+  "all_joint_X_Y_pairs": false,
+  "independent_extended_ula_formula": true,
+  "full_memory_compared": true,
+  "all_768_table_bytes_compared": true,
+  "offscreen_addresses_preserved": true,
+  "full_main_and_alternate_flags_checked": true,
+  "full_m1_per_call": 3724,
+  "independent_block_m1_formula": true,
+  "all_initial_R_values": true,
+  "every_instruction_and_R_step_checked": true,
+  "I_IM_IFF_preserved": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

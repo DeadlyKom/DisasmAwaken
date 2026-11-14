@@ -24,5 +24,78 @@
   "cpu_return_executed": false,
   "irq_executed": false,
   "native_execution": false,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "wrapper_m1_by_entry": {
+    "D282": 1,
+    "D285": 3,
+    "D34B": 2
+  },
+  "wrapper_R_initial_values": 256,
+  "wrapper_R_bit7_and_I_IM_IFF_preserved": true,
+  "wrapper_original_opcode_bytes_checked": true,
+  "whole_edge_update_R_cost_proved": true,
+  "edge_R_scope": "all_two_point_screen_slopes_and_selected_skipping_rings",
+  "edge_m1_by_path_bounds": {
+    "left_negative_wide": [
+      105,
+      112
+    ],
+    "right_negative_wide": [
+      104,
+      111
+    ],
+    "left_positive_short": [
+      45,
+      45
+    ],
+    "right_positive_short": [
+      45,
+      45
+    ],
+    "left_positive_wide": [
+      104,
+      114
+    ],
+    "right_positive_wide": [
+      104,
+      114
+    ],
+    "left_negative_short": [
+      44,
+      44
+    ],
+    "right_negative_short": [
+      44,
+      44
+    ]
+  },
+  "edge_full_m1_total": 16972322,
+  "edge_R_initial_values": 256,
+  "edge_each_R_step_and_full_m1_checked": true,
+  "additional_skipped_ring_candidates": {
+    "cases": 2352,
+    "rejected_candidates_range": [
+      0,
+      6
+    ],
+    "points_range": [
+      2,
+      8
+    ],
+    "equal_and_lower_rows": true,
+    "both_wrap_directions": true,
+    "start_at_first_and_last_point": true,
+    "search_m1_bounds": [
+      7,
+      63
+    ],
+    "initial_R_values": 256,
+    "full_m1_and_each_R_step_checked": true,
+    "selected_endpoint_initial_column_and_output_operands_checked": true,
+    "all_joint_inputs_exhausted": false,
+    "native_execution": false,
+    "irq_executed": false
+  },
+  "additional_skipped_ring_candidates_R_cost_proved": true,
+  "wrapper_R_full_input_product": false
 }

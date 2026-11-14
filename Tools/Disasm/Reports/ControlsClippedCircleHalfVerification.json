@@ -32,6 +32,7 @@
   "original_EXX_active_exit_preserved": true,
   "pixel_write_multiplicity_proved": false,
   "maximum_additional_stack_bytes": 6,
+  "direct_arithmetic_register_set_and_last_drawn_right_low_checked": true,
   "no_port_or_page_writes": true,
   "complete_input_product_exhausted": false,
   "assembly_executed": false,

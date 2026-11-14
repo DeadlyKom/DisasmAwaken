@@ -19,11 +19,11 @@
 | SavedHL, SavedDE, SavedBC | три Components родителя |
 | Mode | старший байт заголовка модели |
 | State | 1A, десятичное 26 |
-| Source и Cursor | D800, ресурс малого эффекта |
-| Unknown0C | 1 |
-| Unknown0D | 0D |
-| Unknown0E | 00C0 |
-| Unknown10 и Unknown11 | 0C и 0C |
+| FramePointer и FirstFrame | D800, адрес первого кадра малого эффекта |
+| FrameCount | 1, первый обход загружает начальный кадр |
+| FrameReload | 0D, тринадцать кадров в цикле |
+| FrameStride | 00C0, шаг в байтах |
+| FrameWidth и FrameHeight | 0C и 0C, размеры исходного кадра |
 
 Отрицательный маркер прекращает поиск без заполнения записи. На обоих
 путях выполняется настоящий возврат через RestoreRuntimePage в ACTION.

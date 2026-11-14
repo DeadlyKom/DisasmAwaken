@@ -5,6 +5,12 @@
   "restored": 130816,
   "expanded": 256,
   "action_tail_cases": 65536,
+  "action_tail_R_checked": true,
+  "action_tail_M1_by_Carry": {
+    "set": 1,
+    "clear": 3
+  },
+  "full_geometry_R_proved": false,
   "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
   "original_visited": {
     "CC30": "af",

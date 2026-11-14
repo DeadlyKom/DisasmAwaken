@@ -12,7 +12,7 @@
                 ;   рамка и текст записаны в bitmap, таблица индексов и карта владельцев сохранены
                 ;   RegisterTarget восстановлен на RegisterItemCells.Entry, SP увеличен на два
                 ; Corrupt:
-                ;   AF, HL', AF', bitmap, курсор, текстовые операнды и временный CPU-стек
+                ;   AF, HL' в части L', AF', R, CenteredItemDrawState.RegisterTarget, TextWindow, bitmap, текстовые и растровые операнды, временные слова CPU-стека
                 ; Note:
                 ;   временная цель RegisterTarget указывает на собственный RET, реальный CALL сохраняет слово C2FB
                 ;   после возврата записывается постоянная цель BEAE, прежнее произвольное слово теряется

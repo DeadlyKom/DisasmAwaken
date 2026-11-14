@@ -8957,15 +8957,19 @@
     ],
     "roots": [
       28209,
+      29844,
       29847,
       29901,
       29912,
-      29924
+      29924,
+      29932
     ],
     "calls": [
-      8134
+      8134,
+      28220
     ],
     "branches": [
+      26862,
       28221,
       28226,
       28231,
@@ -9717,6 +9721,13 @@
         "offset": 9929
       },
       {
+        "address": 29844,
+        "operation": "LD DE,#FF01",
+        "hex": "1101ff",
+        "slot": 3,
+        "offset": 11412
+      },
+      {
         "address": 29847,
         "operation": "PUSH HL",
         "hex": "e5",
@@ -10065,6 +10076,69 @@
         "hex": "18f2",
         "slot": 3,
         "offset": 11498
+      },
+      {
+        "address": 29932,
+        "operation": "CALL #6E3C",
+        "hex": "cd3c6e",
+        "slot": 3,
+        "offset": 11500
+      },
+      {
+        "address": 29935,
+        "operation": "JP Z,#68EE",
+        "hex": "caee68",
+        "slot": 3,
+        "offset": 11503
+      },
+      {
+        "address": 29938,
+        "operation": "INC A",
+        "hex": "3c",
+        "slot": 3,
+        "offset": 11506
+      },
+      {
+        "address": 29939,
+        "operation": "CP (HL)",
+        "hex": "be",
+        "slot": 3,
+        "offset": 11507
+      },
+      {
+        "address": 29940,
+        "operation": "JP Z,#68EE",
+        "hex": "caee68",
+        "slot": 3,
+        "offset": 11508
+      },
+      {
+        "address": 29943,
+        "operation": "PUSH HL",
+        "hex": "e5",
+        "slot": 3,
+        "offset": 11511
+      },
+      {
+        "address": 29944,
+        "operation": "POP IX",
+        "hex": "dde1",
+        "slot": 3,
+        "offset": 11512
+      },
+      {
+        "address": 29946,
+        "operation": "LD A,(IX+#08)",
+        "hex": "dd7e08",
+        "slot": 3,
+        "offset": 11514
+      },
+      {
+        "address": 29949,
+        "operation": "CP #43",
+        "hex": "fe43",
+        "slot": 3,
+        "offset": 11517
       }
     ],
     "unresolved": [
@@ -10077,10 +10151,10 @@
       }
     ],
     "overlaps": [],
-    "instruction_count": 154,
-    "code_bytes": 239,
+    "instruction_count": 164,
+    "code_bytes": 261,
     "total_bytes": 1743,
-    "classified_fraction": 0.13711990820424555
+    "classified_fraction": 0.14974182444061962
   },
   {
     "name": "StationBoot",
@@ -152067,6 +152141,7 @@
       58655,
       58698,
       58716,
+      58783,
       58965,
       58975,
       59038,
@@ -152110,6 +152185,7 @@
       60372,
       60500,
       60584,
+      61308,
       61309,
       61338,
       61365,
@@ -202206,27 +202282,6 @@
         "offset": 28386
       },
       {
-        "address": 53000,
-        "operation": "DI",
-        "hex": "f3",
-        "slot": 17,
-        "offset": 28424
-      },
-      {
-        "address": 53001,
-        "operation": "XOR A",
-        "hex": "af",
-        "slot": 17,
-        "offset": 28425
-      },
-      {
-        "address": 53002,
-        "operation": "RET",
-        "hex": "c9",
-        "slot": 17,
-        "offset": 28426
-      },
-      {
         "address": 53514,
         "operation": "LD (#D129),SP",
         "hex": "ed7329d1",
@@ -223836,6 +223891,13 @@
         "offset": 34205
       },
       {
+        "address": 58783,
+        "operation": "ADD HL,HL",
+        "hex": "29",
+        "slot": 17,
+        "offset": 34207
+      },
+      {
         "address": 58784,
         "operation": "ADD HL,HL",
         "hex": "29",
@@ -230946,6 +231008,13 @@
         "hex": "c9",
         "slot": 17,
         "offset": 36238
+      },
+      {
+        "address": 61308,
+        "operation": "RET",
+        "hex": "c9",
+        "slot": 17,
+        "offset": 36732
       },
       {
         "address": 61309,
@@ -238142,10 +238211,10 @@
       }
     ],
     "overlaps": [],
-    "instruction_count": 12041,
-    "code_bytes": 23203,
+    "instruction_count": 12040,
+    "code_bytes": 23202,
     "total_bytes": 40387,
-    "classified_fraction": 0.5745165523559561
+    "classified_fraction": 0.5744917919132394
   },
   {
     "name": "ThreeD",
@@ -238258,7 +238327,6 @@
       51521,
       51611,
       52003,
-      53000,
       53514,
       53548,
       53696,
@@ -252395,27 +252463,6 @@
         "hex": "c9",
         "slot": 19,
         "offset": 3810
-      },
-      {
-        "address": 53000,
-        "operation": "DI",
-        "hex": "f3",
-        "slot": 19,
-        "offset": 3848
-      },
-      {
-        "address": 53001,
-        "operation": "XOR A",
-        "hex": "af",
-        "slot": 19,
-        "offset": 3849
-      },
-      {
-        "address": 53002,
-        "operation": "RET",
-        "hex": "c9",
-        "slot": 19,
-        "offset": 3850
       },
       {
         "address": 53514,
@@ -269081,10 +269128,10 @@
       }
     ],
     "overlaps": [],
-    "instruction_count": 4322,
-    "code_bytes": 7609,
+    "instruction_count": 4319,
+    "code_bytes": 7606,
     "total_bytes": 8224,
-    "classified_fraction": 0.9252188715953308,
+    "classified_fraction": 0.9248540856031129,
     "mirror_source_region": "Action",
     "mirror_logical_bytes": 8224,
     "external_resident_dependencies": [
@@ -293660,6 +293707,7 @@
       51968,
       52829,
       52900,
+      52917,
       52919,
       52986,
       53003,
@@ -293676,6 +293724,7 @@
       54234,
       54276,
       54405,
+      54529,
       54549,
       54835,
       55099,
@@ -301799,6 +301848,20 @@
         "offset": 3763
       },
       {
+        "address": 52917,
+        "operation": "DEC L",
+        "hex": "2d",
+        "slot": 22,
+        "offset": 3765
+      },
+      {
+        "address": 52918,
+        "operation": "LD (HL),A",
+        "hex": "77",
+        "slot": 22,
+        "offset": 3766
+      },
+      {
         "address": 52919,
         "operation": "DEC L",
         "hex": "2d",
@@ -307831,6 +307894,20 @@
         "hex": "c9",
         "slot": 22,
         "offset": 5376
+      },
+      {
+        "address": 54529,
+        "operation": "LD B,#7F",
+        "hex": "067f",
+        "slot": 22,
+        "offset": 5377
+      },
+      {
+        "address": 54531,
+        "operation": "RET",
+        "hex": "c9",
+        "slot": 22,
+        "offset": 5379
       },
       {
         "address": 54532,
@@ -333652,10 +333729,10 @@
       }
     ],
     "overlaps": [],
-    "instruction_count": 5628,
-    "code_bytes": 8781,
+    "instruction_count": 5632,
+    "code_bytes": 8786,
     "total_bytes": 13352,
-    "classified_fraction": 0.6576542840023967
+    "classified_fraction": 0.6580287597363691
   },
   {
     "name": "Final",

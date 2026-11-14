@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "cases": 14336,
+  "profiles": [
+    {
+      "address": 39092,
+      "decimal_script_index": 65471,
+      "cases": 1792
+    },
+    {
+      "address": 39093,
+      "decimal_script_index": 65472,
+      "cases": 1792
+    },
+    {
+      "address": 39094,
+      "decimal_script_index": 65473,
+      "cases": 1792
+    },
+    {
+      "address": 39095,
+      "decimal_script_index": 65474,
+      "cases": 1792
+    },
+    {
+      "address": 39096,
+      "decimal_script_index": 65475,
+      "cases": 1792
+    },
+    {
+      "address": 39097,
+      "decimal_script_index": 65476,
+      "cases": 1792
+    },
+    {
+      "address": 39098,
+      "decimal_script_index": 65477,
+      "cases": 1792
+    },
+    {
+      "address": 39099,
+      "decimal_script_index": 65478,
+      "cases": 1792
+    }
+  ],
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "lang_sha256": "dccd2a9c1800630a76da5bbac2ddd0ae3958d4f09bc1dfdd256d5b04dc6d6d99",
+  "original_market_script_bytes": 1161,
+  "original_market_script_sha256": "12386209f646b5820adfa3ba8b2eed9c7c4c32d0d810f774ada616309b53569f",
+  "original_market_script_contains_literal_i": false,
+  "runtime_script_mutations_excluded": false,
+  "all_old_byte_values": true,
+  "right_values": [
+    0,
+    35,
+    127,
+    128,
+    255,
+    256,
+    65535
+  ],
+  "original_lang_instructions_executed": true,
+  "substituted_script_text": true,
+  "exact_target_reads_and_state_writes": true,
+  "all_512_state_bytes_compared": true,
+  "ordinary_stack_return_and_bank_preserved": true,
+  "original_script_contains_these_assignments_proved": false,
+  "original_game_data_purpose_proved": false,
+  "global_writer_graph_complete": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

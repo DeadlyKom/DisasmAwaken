@@ -23,6 +23,7 @@
   "actual_all_children_executed": true,
   "horizontal_unclipped_domain": true,
   "vertical_clipping_proved": true,
+  "direct_Direction_one_Mode_preserved_and_saved_AF_checked": true,
   "maximum_additional_stack_bytes": 8,
   "stack_positions": [
     36872,

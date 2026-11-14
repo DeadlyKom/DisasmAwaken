@@ -1,5 +1,5 @@
 """Создание записи класса 20, значения неизвестных полей сохраняют исходные имена."""
-FUNCTIONS={0x617D:('CreateRandomClass20Record','Создание записи класса 20 из двух случайных компонент и транспонированного преобразования')}
+FUNCTIONS={0x617D:('CreateBoostDebrisRecord','Создание случайной записи мусора форсажа, авторский T_TRASH')}
 LOCAL={0x61A1:'PositiveX',0x61A3:'SelectYSign',0x61AB:'PositiveY',0x61AD:'SelectDepth',0x61B9:'Transform'}
 CONTRACTS={('Action',0x617D):(
     ['HL, DE, BC и AF числовых аргументов не задают, IX и IY задают сохраняемый контекст до поиска',
@@ -11,13 +11,13 @@ CONTRACTS={('Action',0x617D):(
      'компонента 0 равна 4*signed8(L) плюс 1024 при L<128 либо минус 1024 иначе, компонента 1 получена так же из H',
      'компонента 2 равна 30000 при байте 6E75=0 либо минус 30000 иначе, режим в данном входе не изменяется',
      'TransformVectorTransposed даёт HL, DE, BC, все три результата записываются в Components даже при частичном выходе преобразования',
-     'новая запись получает ModelOffset=C0, фазы 0C, 1D, 37, StateCode=04, ClassCode=14, Unknown13=FA',
-     'ReuseByte, LinkFlags и Unknown24 сбрасываются, TargetCodeStep, Unknown10 и TargetIndex получают 02, остальные поля сохраняются',
+     'новая запись получает ModelOffset=C0, фазы 0C, 1D, 37, StateCode=04, ClassCode=14, EffectReserve=FA',
+     'ReuseByte, LinkFlags и OffsetScaleHigh сбрасываются, TargetCodeStep, OffsetScaleLow и Phase2OrTarget получают 02, остальные поля сохраняются',
      "при успехе A=0 и F=44, HL, DE, BC содержат результат преобразования, HL', DE', BC' результат потока 8, AF' результат преобразования",
      'IX, I/IM/IFF и paging сохраняются, SP после внешнего RET увеличен на два, R учитывает оба пути поиска и все дочерние процедуры'],
     ["HL, DE, BC, AF, HL', DE', BC', AF', IY, R, выбранные поля записи, Stream8, операнды и выходы преобразования, CPU-стек"],
-    ['класс 14 указан шестнадцатерично и равен 20 десятично, назначение игрового объекта пока не доказано',
-     'внутри участка нет проверки существования записи класса 20 и нет записи обратной связи, штатный вызывающий вход не установлен',
+    ['класс 14 шестнадцатерично равен 20 десятично, авторский T_TRASH означает мусор для форсажа, указатель C0 выбирает модель TRASH',
+     'внутри участка нет проверки существования записи класса 20 и нет записи обратной связи, AdvanceBoost вызывает его при единичных старых битах 0 обоих вращений',
      'переполнение преобразования не отклоняет создание, неизменённые выходные компоненты используются согласно договору TransformVectorTransposed',
      'модель исполняет настоящий поиск, поток и транспонированное преобразование, сверяет регистры с R, восемь банков и кратность записей',
      'полное произведение матриц, состояний и полей, аппаратные IRQ, точные T, сборка и нативный запуск не проверялись'])}
@@ -54,10 +54,10 @@ Phase1          equ #1D                                                         
 Phase2          equ #37                                                         ; исходный код третьей фазы
 State           equ #04                                                         ; исходный обработчик движения
 Class           equ #14                                                         ; полный класс, 20 десятично
-Parameter       equ #FA                                                         ; исходное Unknown13, единицы не установлены
+Parameter       equ #FA                                                         ; исходное EffectReserve, единицы не установлены
 InitialStep     equ #02                                                         ; исходный TargetCodeStep
-Unknown10Value  equ #02                                                         ; исходное значение поля Unknown10
-TargetValue     equ #02                                                         ; исходное значение TargetIndex без создания связи
+ScaleLowValue  equ #02                                                         ; исходное значение поля OffsetScaleLow
+TargetValue     equ #02                                                         ; исходное значение Phase2OrTarget без создания связи
                 endmodule
 '''),)
 
@@ -67,8 +67,8 @@ def name_operands(region,function_address,operation):
     for offset in range(6):
         operation=operation.replace('(IY+#'+format(offset,'02X')+')','(IY + @FActionRecord.Components.Component'+str(offset//2)+('.High' if offset&1 else '.Low')+')')
     for offset,name in ((6,'ModelOffset'),(7,'OffsetPhase0'),(8,'OffsetPhase1'),(9,'OffsetPhase2'),(10,'StateCode'),
-                        (12,'LinkFlags'),(15,'TargetIndex'),(16,'Unknown10'),(18,'ClassCode'),(19,'Unknown13'),
-                        (24,'ReuseByte'),(36,'Unknown24'),(37,'TargetCodeStep')):
+                        (12,'LinkFlags'),(15,'Phase2OrTarget'),(16,'OffsetScaleLow'),(18,'ClassCode'),(19,'EffectReserve'),
+                        (24,'ReuseByte'),(36,'OffsetScaleHigh'),(37,'TargetCodeStep')):
         operation=operation.replace('(IY+#'+format(offset,'02X')+')','(IY + @FActionRecord.'+name+')')
     for address,name in ((0xE9A1,'FindReusableRecord'),(0xEBA3,'NextRandomWord8'),(0xACEA,'TransformVectorTransposed')):
         operation=operation.replace('CALL #'+format(address,'04X'),'CALL @Action.'+name+'.Entry')
@@ -77,8 +77,8 @@ def name_operands(region,function_address,operation):
     operation=operation.replace('LD BC, #8AD0','LD BC, @ActionClass20SpawnConst.NegativeDepth')
     for field,value,name in (('ModelOffset','C0','Model'),('OffsetPhase0','0C','Phase0'),
                              ('OffsetPhase1','1D','Phase1'),('OffsetPhase2','37','Phase2'),
-                             ('StateCode','04','State'),('ClassCode','14','Class'),('Unknown13','FA','Parameter'),
-                             ('TargetCodeStep','02','InitialStep'),('Unknown10','02','Unknown10Value'),('TargetIndex','02','TargetValue')):
+                             ('StateCode','04','State'),('ClassCode','14','Class'),('EffectReserve','FA','Parameter'),
+                             ('TargetCodeStep','02','InitialStep'),('OffsetScaleLow','02','ScaleLowValue'),('Phase2OrTarget','02','TargetValue')):
         operation=operation.replace('LD (IY + @FActionRecord.'+field+'), #'+value,
                                     'LD (IY + @FActionRecord.'+field+'), @ActionClass20SpawnConst.'+name)
     return operation

@@ -19,7 +19,7 @@
 пропускает FF и проверяет первый непропущенный байт, не проверяя
 доступность самой записи. [FindNearestListedRecord](../Source/Action/FindNearestListedRecord.asm)
 выбирает доступного кандидата по квантованному расстоянию и заменяет
-недоступные элементы FF. [SpawnClass19AndUpdateList](../Source/Action/SpawnClass19AndUpdateList.asm)
+недоступные элементы FF. [CreateCargoAndUpdateList](../Source/Action/CreateCargoAndUpdateList.asm)
 заменяет FF либо индекс недоступной записи своим вычисленным кодом.
 Производный код может оказаться FE и сократить последующий просмотр.
 
@@ -32,7 +32,15 @@ runtime-списка этим не доказывается, при потере
 
 [Публикация и проверка размещения](../Tools/Disasm/Research/ClassifyActionCandidateListData.py)
 сопоставляет каждое поле с исходным ACTION, символами и непересекающимися
-диапазонами SourceMap. Соседние байты до A01C и после A026 остаются
-неразмеченными. Использованы отдельные проверки реальных
+диапазонами SourceMap. В авторском `3DTABS.a` список `CARGS` содержит
+десять исходных ячеек и `#FE`. Следующий `ADRXX00` выравнивает массив
+записей `CARSB`. В текущем ACTION это 217 байтов `#A027..#A0FF`.
+Стартовые указатели обходчиков `#A0C0` и `#A0C1` находятся внутри
+этого выравнивания. Перед чтением записи обходчики добавляют `#40`.
+Пять байтов перед `CARGS` заканчивают резерв `OBJBUF`.
+[Выравнивание](../Source/Action/Resources/ObjectRecordsAlignment.bin) ·
+[Сверка авторского размещения](../Tools/Disasm/Reports/ActionArchivedLayoutVerification.json)
+
+Использованы отдельные проверки реальных
 [читателя допуска](ActionCandidateGate.md), [поиска ближайшего](ActionNearestCandidate.md)
 и [писателя](ActionClass19Spawn.md). Сборка и нативный запуск не выполнялись.

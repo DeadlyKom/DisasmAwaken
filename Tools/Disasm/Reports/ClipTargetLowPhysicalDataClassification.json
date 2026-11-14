@@ -1,16 +1,17 @@
 {
   "passed": true,
-  "typed_bytes": 438,
-  "physical_records": 30,
-  "physical_symbols": 468,
-  "files": 8,
-  "low_page_bytes": 438,
-  "valid_low_entries": 144,
-  "untouched_cf08_bytes": 6,
+  "typed_bytes": 444,
+  "physical_records": 32,
+  "physical_symbols": 476,
+  "files": 10,
+  "low_page_bytes": 444,
+  "valid_low_entries": 150,
   "original_bytes_addresses_and_instructions_preserved": true,
   "gaps_preserved": true,
   "invalid_pair_gameplay_proved": false,
-  "cf08_reclassified": false,
+  "cf08_reclassified": true,
   "assembly_executed": false,
-  "native_execution": false
+  "native_execution": false,
+  "cf08_table_bytes": 6,
+  "execution_entry_proved": false
 }

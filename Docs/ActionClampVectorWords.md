@@ -3,7 +3,7 @@
 [ClampPatchedVectorWords](../Source/Action/ClampPatchedVectorWords.asm)
 занимает 7F0E..7F75 перенесённого ACTION в физическом банке 5.
 Три пары операндов LD DE,nn и LD HL,nn содержат три исходных signed32.
-Их загружает [Unknown7EB7](../Source/Action/StepRecordTowardWideVector.asm) из трёх
+Их загружает [StepRecordTowardWideVector](../Source/Action/StepRecordTowardWideVector.asm) из трёх
 четырёхбайтовых компонент по IY. Полный контракт писателя теперь
 описан в [разборе цепочки](ActionWideTargetStep.md). Нулевые литералы в тексте являются изменяемыми
 операндами, они не означают, что процедура всегда обрабатывает нули.

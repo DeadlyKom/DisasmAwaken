@@ -1,0 +1,1374 @@
+{
+  "passed": true,
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "basic_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "initial_R": 0,
+  "final_R": 62,
+  "observed_LD_R_A": [],
+  "original_opcode_observer_positive_control": [
+    {
+      "pc": 11967,
+      "before": 91,
+      "after": 128
+    }
+  ],
+  "boot_profile": {
+    "basic_run": {
+      "logical_basic_bytes": 119,
+      "copied_bytes_before_buffer_release": 124,
+      "copied_byte_after_autostart": 117,
+      "detached_line_suffix": {
+        "token": 202,
+        "token_text": "LINE",
+        "decimal_digits": "20",
+        "original_command_established": false
+      },
+      "first_sector_tail": {
+        "file_offsets": [
+          124,
+          256
+        ],
+        "buffer_addresses": [
+          23969,
+          24101
+        ],
+        "reads_before_autostart": 0,
+        "writes_before_autostart": 132,
+        "original_reads_until_usr": 0,
+        "overwritten_before_usr": 132
+      },
+      "directory_and_service_reads": [
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "first_sector": [
+        18,
+        2
+      ],
+      "sector_read_destination": 23845,
+      "autostart_line": 20,
+      "actual_basic_usr_entry": 23873,
+      "next_intro_sector_word": 4610,
+      "catalogue_header_supplied": false,
+      "editor_command_parsing_executed": true,
+      "input_line_supplied_as_basic_tokens": true
+    },
+    "usr_entry": 23873,
+    "intro_keyboard_polls": 1,
+    "intro_sectors": 44,
+    "intro_tail_displacement": {
+      "source": 36864,
+      "destination": 29952,
+      "value": 0,
+      "both_jr_targets": 29953
+    },
+    "intro_stack_storage": {
+      "address": 26035,
+      "after_load": "00000000",
+      "after_intro": "00ff5f00",
+      "after_station_load": "98cd33c3"
+    },
+    "station_catalogue_reads": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "station_sectors": 192,
+    "station_boot_reached": 25344,
+    "initial_station_tail": {
+      "slot": 4,
+      "start": 62684,
+      "end_exclusive": 65536,
+      "bytes_overwritten": 2852
+    },
+    "startup_station_tail": {
+      "bank": 0,
+      "start": 62686,
+      "end_exclusive": 65536,
+      "accesses": []
+    },
+    "idle_station_tail": {
+      "bank": 0,
+      "start": 62686,
+      "end_exclusive": 65536,
+      "accesses": []
+    },
+    "main_loop_entry": 39513,
+    "frame_entry": 39553,
+    "completed_station_frames": 7,
+    "final_page": 16,
+    "station_bank_file_sequences_checked": 5,
+    "trdos_calls_substituted": false,
+    "flight_transition": {
+      "purchase": {
+        "event": 5,
+        "equipment_row": 23,
+        "eligible_fixture": true,
+        "ship": 0,
+        "starting_credits": 10000,
+        "remaining_credits": 0,
+        "equipment_byte": 254,
+        "queued_messages": []
+      },
+      "departure_entry": 32346,
+      "flight_frames": 64,
+      "outbound_initial_tail": {
+        "slot": 17,
+        "start": 63590,
+        "end_exclusive": 65536,
+        "bytes_overwritten": 1946
+      },
+      "legacy_workspace": {
+        "departure_load": {
+          "fixed_operands_before": "00000000000000",
+          "fixed_operands_after": "00000000000000",
+          "fixed_operand_addresses": [
+            24003,
+            24004,
+            24096,
+            24097,
+            24099,
+            24115,
+            24116
+          ],
+          "fixed_buffer_sector_reads": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              67,
+              12
+            ]
+          ],
+          "fixed_operand_writers": [
+            {
+              "address": 24003,
+              "pc": 6647,
+              "count": 1
+            },
+            {
+              "address": 24003,
+              "pc": 16364,
+              "count": 4
+            },
+            {
+              "address": 24004,
+              "pc": 6647,
+              "count": 1
+            },
+            {
+              "address": 24004,
+              "pc": 16364,
+              "count": 4
+            },
+            {
+              "address": 24096,
+              "pc": 6647,
+              "count": 1
+            },
+            {
+              "address": 24096,
+              "pc": 16364,
+              "count": 4
+            },
+            {
+              "address": 24097,
+              "pc": 6647,
+              "count": 1
+            },
+            {
+              "address": 24097,
+              "pc": 16364,
+              "count": 4
+            },
+            {
+              "address": 24099,
+              "pc": 6647,
+              "count": 1
+            },
+            {
+              "address": 24099,
+              "pc": 16364,
+              "count": 4
+            },
+            {
+              "address": 24115,
+              "pc": 5729,
+              "count": 1
+            },
+            {
+              "address": 24115,
+              "pc": 6647,
+              "count": 1
+            },
+            {
+              "address": 24116,
+              "pc": 5729,
+              "count": 1
+            },
+            {
+              "address": 24116,
+              "pc": 6647,
+              "count": 1
+            }
+          ],
+          "last_fixed_operand_writers": {
+            "24116": 6647,
+            "24115": 6647,
+            "24003": 6647,
+            "24004": 6647,
+            "24096": 6647,
+            "24097": 6647,
+            "24099": 6647
+          },
+          "fixed": [
+            {
+              "mode": "read",
+              "pc": 5729,
+              "accesses": 22,
+              "first": 23968,
+              "last": 23989,
+              "distinct_bytes": 22
+            },
+            {
+              "mode": "read",
+              "pc": 6647,
+              "accesses": 181,
+              "first": 24102,
+              "last": 24282,
+              "distinct_bytes": 181
+            },
+            {
+              "mode": "read",
+              "pc": 7381,
+              "accesses": 8,
+              "first": 23973,
+              "last": 24085,
+              "distinct_bytes": 8
+            },
+            {
+              "mode": "read",
+              "pc": 10004,
+              "accesses": 8,
+              "first": 23973,
+              "last": 24085,
+              "distinct_bytes": 8
+            },
+            {
+              "mode": "write",
+              "pc": 5729,
+              "accesses": 145,
+              "first": 24102,
+              "last": 24246,
+              "distinct_bytes": 145
+            },
+            {
+              "mode": "write",
+              "pc": 6467,
+              "accesses": 1,
+              "first": 24243,
+              "last": 24243,
+              "distinct_bytes": 1
+            },
+            {
+              "mode": "write",
+              "pc": 6647,
+              "accesses": 279,
+              "first": 23968,
+              "last": 24246,
+              "distinct_bytes": 279
+            },
+            {
+              "mode": "write",
+              "pc": 16364,
+              "accesses": 532,
+              "first": 23968,
+              "last": 24100,
+              "distinct_bytes": 133
+            }
+          ],
+          "bank1_font": [],
+          "viewport_code_opcode_sites": 0,
+          "viewport_code_first_pc": null,
+          "bank1_viewport_code": [],
+          "bank1_template": []
+        },
+        "action_initialization": {
+          "fixed_operands_before": "00000000000000",
+          "fixed_operands_after": "00000000000000",
+          "fixed_operand_addresses": [
+            24003,
+            24004,
+            24096,
+            24097,
+            24099,
+            24115,
+            24116
+          ],
+          "fixed_buffer_sector_reads": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "fixed_operand_writers": [
+            {
+              "address": 24003,
+              "pc": 6647,
+              "count": 10
+            },
+            {
+              "address": 24003,
+              "pc": 16364,
+              "count": 24
+            },
+            {
+              "address": 24004,
+              "pc": 6647,
+              "count": 10
+            },
+            {
+              "address": 24004,
+              "pc": 16364,
+              "count": 24
+            },
+            {
+              "address": 24096,
+              "pc": 6647,
+              "count": 10
+            },
+            {
+              "address": 24096,
+              "pc": 16364,
+              "count": 24
+            },
+            {
+              "address": 24096,
+              "pc": 16999,
+              "count": 1
+            },
+            {
+              "address": 24097,
+              "pc": 6647,
+              "count": 10
+            },
+            {
+              "address": 24097,
+              "pc": 16364,
+              "count": 24
+            },
+            {
+              "address": 24097,
+              "pc": 16999,
+              "count": 1
+            },
+            {
+              "address": 24099,
+              "pc": 6647,
+              "count": 10
+            },
+            {
+              "address": 24099,
+              "pc": 16364,
+              "count": 24
+            },
+            {
+              "address": 24099,
+              "pc": 17002,
+              "count": 1
+            },
+            {
+              "address": 24115,
+              "pc": 5729,
+              "count": 10
+            },
+            {
+              "address": 24115,
+              "pc": 6647,
+              "count": 10
+            },
+            {
+              "address": 24116,
+              "pc": 5729,
+              "count": 10
+            },
+            {
+              "address": 24116,
+              "pc": 6647,
+              "count": 10
+            }
+          ],
+          "last_fixed_operand_writers": {
+            "24116": 6647,
+            "24115": 6647,
+            "24003": 6647,
+            "24004": 6647,
+            "24096": 6647,
+            "24097": 6647,
+            "24099": 6647
+          },
+          "fixed": [
+            {
+              "mode": "read",
+              "pc": 5729,
+              "accesses": 220,
+              "first": 23968,
+              "last": 23989,
+              "distinct_bytes": 22
+            },
+            {
+              "mode": "read",
+              "pc": 6157,
+              "accesses": 42,
+              "first": 23968,
+              "last": 24004,
+              "distinct_bytes": 37
+            },
+            {
+              "mode": "read",
+              "pc": 6647,
+              "accesses": 1810,
+              "first": 24102,
+              "last": 24282,
+              "distinct_bytes": 181
+            },
+            {
+              "mode": "read",
+              "pc": 7381,
+              "accesses": 67,
+              "first": 23973,
+              "last": 24085,
+              "distinct_bytes": 8
+            },
+            {
+              "mode": "read",
+              "pc": 10004,
+              "accesses": 83,
+              "first": 23973,
+              "last": 24085,
+              "distinct_bytes": 24
+            },
+            {
+              "mode": "write",
+              "pc": 5729,
+              "accesses": 1450,
+              "first": 24102,
+              "last": 24246,
+              "distinct_bytes": 145
+            },
+            {
+              "mode": "write",
+              "pc": 6467,
+              "accesses": 6,
+              "first": 24243,
+              "last": 24243,
+              "distinct_bytes": 1
+            },
+            {
+              "mode": "write",
+              "pc": 6647,
+              "accesses": 2790,
+              "first": 23968,
+              "last": 24246,
+              "distinct_bytes": 279
+            },
+            {
+              "mode": "write",
+              "pc": 16364,
+              "accesses": 3192,
+              "first": 23968,
+              "last": 24100,
+              "distinct_bytes": 133
+            },
+            {
+              "mode": "write",
+              "pc": 16999,
+              "accesses": 2,
+              "first": 24096,
+              "last": 24097,
+              "distinct_bytes": 2
+            },
+            {
+              "mode": "write",
+              "pc": 17002,
+              "accesses": 1,
+              "first": 24099,
+              "last": 24099,
+              "distinct_bytes": 1
+            }
+          ],
+          "bank1_font": [
+            {
+              "mode": "write",
+              "pc": 16364,
+              "accesses": 624,
+              "first": 50688,
+              "last": 51311,
+              "distinct_bytes": 624
+            }
+          ],
+          "viewport_code_opcode_sites": 0,
+          "viewport_code_first_pc": null,
+          "bank1_viewport_code": [
+            {
+              "mode": "write",
+              "pc": 16364,
+              "accesses": 400,
+              "first": 51312,
+              "last": 51711,
+              "distinct_bytes": 400
+            }
+          ],
+          "bank1_template": [
+            {
+              "mode": "write",
+              "pc": 16364,
+              "accesses": 161,
+              "first": 56030,
+              "last": 56156,
+              "distinct_bytes": 127
+            }
+          ]
+        },
+        "hyper_command": {
+          "fixed_operands_before": "00000000000000",
+          "fixed_operands_after": "00000000000000",
+          "fixed_operand_addresses": [
+            24003,
+            24004,
+            24096,
+            24097,
+            24099,
+            24115,
+            24116
+          ],
+          "fixed_buffer_sector_reads": [],
+          "fixed_operand_writers": [],
+          "last_fixed_operand_writers": {},
+          "fixed": [],
+          "bank1_font": [
+            {
+              "mode": "read",
+              "pc": 61450,
+              "accesses": 33,
+              "first": 50688,
+              "last": 51294,
+              "distinct_bytes": 14
+            },
+            {
+              "mode": "read",
+              "pc": 61464,
+              "accesses": 33,
+              "first": 50689,
+              "last": 51295,
+              "distinct_bytes": 14
+            },
+            {
+              "mode": "read",
+              "pc": 61478,
+              "accesses": 33,
+              "first": 50690,
+              "last": 51296,
+              "distinct_bytes": 14
+            },
+            {
+              "mode": "read",
+              "pc": 61492,
+              "accesses": 33,
+              "first": 50691,
+              "last": 51297,
+              "distinct_bytes": 14
+            },
+            {
+              "mode": "read",
+              "pc": 61506,
+              "accesses": 33,
+              "first": 50692,
+              "last": 51298,
+              "distinct_bytes": 14
+            },
+            {
+              "mode": "read",
+              "pc": 61520,
+              "accesses": 33,
+              "first": 50693,
+              "last": 51299,
+              "distinct_bytes": 14
+            },
+            {
+              "mode": "read",
+              "pc": 61533,
+              "accesses": 21,
+              "first": 50688,
+              "last": 51306,
+              "distinct_bytes": 11
+            },
+            {
+              "mode": "read",
+              "pc": 61543,
+              "accesses": 21,
+              "first": 50689,
+              "last": 51307,
+              "distinct_bytes": 11
+            },
+            {
+              "mode": "read",
+              "pc": 61553,
+              "accesses": 21,
+              "first": 50690,
+              "last": 51308,
+              "distinct_bytes": 11
+            },
+            {
+              "mode": "read",
+              "pc": 61563,
+              "accesses": 21,
+              "first": 50691,
+              "last": 51309,
+              "distinct_bytes": 11
+            },
+            {
+              "mode": "read",
+              "pc": 61573,
+              "accesses": 21,
+              "first": 50692,
+              "last": 51310,
+              "distinct_bytes": 11
+            },
+            {
+              "mode": "read",
+              "pc": 61583,
+              "accesses": 21,
+              "first": 50693,
+              "last": 51311,
+              "distinct_bytes": 11
+            }
+          ],
+          "viewport_code_opcode_sites": 0,
+          "viewport_code_first_pc": null,
+          "bank1_viewport_code": [],
+          "bank1_template": []
+        },
+        "hyper_load": {
+          "fixed_operands_before": "00000000000000",
+          "fixed_operands_after": "bcc40000000000",
+          "fixed_operand_addresses": [
+            24003,
+            24004,
+            24096,
+            24097,
+            24099,
+            24115,
+            24116
+          ],
+          "fixed_buffer_sector_reads": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              67,
+              12
+            ]
+          ],
+          "fixed_operand_writers": [
+            {
+              "address": 24003,
+              "pc": 16364,
+              "count": 4
+            },
+            {
+              "address": 24004,
+              "pc": 16364,
+              "count": 4
+            },
+            {
+              "address": 24096,
+              "pc": 16364,
+              "count": 4
+            },
+            {
+              "address": 24097,
+              "pc": 16364,
+              "count": 4
+            },
+            {
+              "address": 24099,
+              "pc": 16364,
+              "count": 4
+            }
+          ],
+          "last_fixed_operand_writers": {
+            "24003": 16364,
+            "24004": 16364,
+            "24096": 16364,
+            "24097": 16364,
+            "24099": 16364
+          },
+          "fixed": [
+            {
+              "mode": "read",
+              "pc": 7381,
+              "accesses": 8,
+              "first": 23973,
+              "last": 24085,
+              "distinct_bytes": 8
+            },
+            {
+              "mode": "read",
+              "pc": 10004,
+              "accesses": 8,
+              "first": 23973,
+              "last": 24085,
+              "distinct_bytes": 8
+            },
+            {
+              "mode": "write",
+              "pc": 6467,
+              "accesses": 1,
+              "first": 23986,
+              "last": 23986,
+              "distinct_bytes": 1
+            },
+            {
+              "mode": "write",
+              "pc": 16364,
+              "accesses": 532,
+              "first": 23968,
+              "last": 24100,
+              "distinct_bytes": 133
+            }
+          ],
+          "bank1_font": [],
+          "viewport_code_opcode_sites": 0,
+          "viewport_code_first_pc": null,
+          "bank1_viewport_code": [],
+          "bank1_template": []
+        },
+        "hyper_initialization": {
+          "fixed_operands_before": "bcc40000000000",
+          "fixed_operands_after": "0351001b000000",
+          "fixed_operand_addresses": [
+            24003,
+            24004,
+            24096,
+            24097,
+            24099,
+            24115,
+            24116
+          ],
+          "fixed_buffer_sector_reads": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "fixed_operand_writers": [
+            {
+              "address": 24003,
+              "pc": 16364,
+              "count": 24
+            },
+            {
+              "address": 24004,
+              "pc": 16364,
+              "count": 24
+            },
+            {
+              "address": 24096,
+              "pc": 16364,
+              "count": 24
+            },
+            {
+              "address": 24096,
+              "pc": 16999,
+              "count": 1
+            },
+            {
+              "address": 24097,
+              "pc": 16364,
+              "count": 24
+            },
+            {
+              "address": 24097,
+              "pc": 16999,
+              "count": 1
+            },
+            {
+              "address": 24099,
+              "pc": 16364,
+              "count": 24
+            },
+            {
+              "address": 24099,
+              "pc": 17002,
+              "count": 1
+            }
+          ],
+          "last_fixed_operand_writers": {
+            "24003": 16364,
+            "24004": 16364,
+            "24096": 16364,
+            "24097": 16364,
+            "24099": 16364
+          },
+          "fixed": [
+            {
+              "mode": "read",
+              "pc": 6157,
+              "accesses": 42,
+              "first": 23968,
+              "last": 24004,
+              "distinct_bytes": 37
+            },
+            {
+              "mode": "read",
+              "pc": 7381,
+              "accesses": 67,
+              "first": 23973,
+              "last": 24085,
+              "distinct_bytes": 8
+            },
+            {
+              "mode": "read",
+              "pc": 10004,
+              "accesses": 83,
+              "first": 23973,
+              "last": 24085,
+              "distinct_bytes": 24
+            },
+            {
+              "mode": "write",
+              "pc": 6467,
+              "accesses": 6,
+              "first": 23986,
+              "last": 23986,
+              "distinct_bytes": 1
+            },
+            {
+              "mode": "write",
+              "pc": 16364,
+              "accesses": 3192,
+              "first": 23968,
+              "last": 24100,
+              "distinct_bytes": 133
+            },
+            {
+              "mode": "write",
+              "pc": 16999,
+              "accesses": 2,
+              "first": 24096,
+              "last": 24097,
+              "distinct_bytes": 2
+            },
+            {
+              "mode": "write",
+              "pc": 17002,
+              "accesses": 1,
+              "first": 24099,
+              "last": 24099,
+              "distinct_bytes": 1
+            }
+          ],
+          "bank1_font": [
+            {
+              "mode": "write",
+              "pc": 16364,
+              "accesses": 624,
+              "first": 50688,
+              "last": 51311,
+              "distinct_bytes": 624
+            }
+          ],
+          "viewport_code_opcode_sites": 0,
+          "viewport_code_first_pc": null,
+          "bank1_viewport_code": [
+            {
+              "mode": "write",
+              "pc": 16364,
+              "accesses": 400,
+              "first": 51312,
+              "last": 51711,
+              "distinct_bytes": 400
+            }
+          ],
+          "bank1_template": [
+            {
+              "mode": "write",
+              "pc": 16364,
+              "accesses": 161,
+              "first": 56030,
+              "last": 56156,
+              "distinct_bytes": 127
+            }
+          ]
+        }
+      },
+      "remapped_speed": null,
+      "hyperjump": {
+        "key": [
+          253,
+          16
+        ],
+        "handler": 28918,
+        "preferred_spent": 14,
+        "context_bytes_restored": 481,
+        "flight_frames_after_reload": 2,
+        "fuel_additive_code": 255,
+        "fuel_additive_bought": false,
+        "warmup_outer_iterations": 128,
+        "gate_fixture_applied_at_handler": true,
+        "data_sectors": 321,
+        "initial_tail": {
+          "slot": 17,
+          "start": 63590,
+          "end_exclusive": 65536,
+          "bytes_overwritten": 1946
+        }
+      },
+      "return_key": [
+        251,
+        8
+      ],
+      "return_handler": 30214,
+      "station_entry": 39513,
+      "inbound_initial_tail": {
+        "slot": 4,
+        "start": 62684,
+        "end_exclusive": 65536,
+        "bytes_overwritten": 2852
+      },
+      "arrival_station_tail": {
+        "bank": 0,
+        "start": 62686,
+        "end_exclusive": 65536,
+        "accesses": []
+      },
+      "docking_script": null,
+      "outbound_slots": [
+        17,
+        25,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "inbound_slots": [
+        4,
+        7,
+        10,
+        8,
+        6,
+        5
+      ],
+      "next_file_sector_after_action": [
+        67,
+        12
+      ],
+      "next_file_sector_after_station": [
+        30,
+        15
+      ],
+      "next_file_sector_scratch_address": 23845,
+      "station_context_restored": 481,
+      "station_context_suffix_from_disk": 31,
+      "station_player_indices_transferred": [
+        0,
+        255
+      ],
+      "station_rank_score_transferred": 5,
+      "station_money_transferred": 0,
+      "station_tonnage_transferred": {
+        "used": 14,
+        "capacity": 50
+      },
+      "outbound_player_prefix": "22011010384bf34a00384bf34a0000ff00050000000e32",
+      "source_station_player_prefix": "22011010384bf34a00384bf34a0000ff00050000000e32",
+      "station_artifact_code_transferred": 255,
+      "artifact_accesses_in_first_64_flight_frames": [],
+      "outbound_primary_equipment": "0000050000fefffffffffffffffffffffffffffffffffffeffffffffffffff00ff80",
+      "inbound_primary_equipment": "5600050000fefffffffffffffffffffffffffffffffffeffffffffffffffff00ff80",
+      "transferred_news_and_orders": "01000000000001ff000000000000000000000000000000ff000000000000000000000000000000ff000000000000000000000000000000ffffffffffffffffffffffffffff50ff",
+      "news_order_accesses_in_first_64_flight_frames": 0,
+      "transition_counter": {
+        "before": 100,
+        "transferred": 100,
+        "equipment_row": 28,
+        "bought": false,
+        "accesses_in_first_64_flight_frames": 0
+      },
+      "transferred_unknown_probe_offsets": [
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        201,
+        202,
+        204,
+        206
+      ],
+      "transferred_unknown_probe_bytes": "00000000000150ff0000",
+      "transferred_unknown_markers_injected": false,
+      "probe_accesses_in_first_64_flight_frames": 0,
+      "outbound_data_sectors": 321,
+      "inbound_data_sectors": 351,
+      "inbound_backdrop_sectors": 12,
+      "trdos_calls_substituted": false
+    },
+    "legacy_stack_returns": {
+      "taken_returns": 53714,
+      "counts": [
+        {
+          "phase": "flight_transition",
+          "opcode": 192,
+          "count": 2350
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 200,
+          "count": 4214
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 201,
+          "count": 28706
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 208,
+          "count": 6817
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 216,
+          "count": 468
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 240,
+          "count": 156
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 248,
+          "count": 1179
+        },
+        {
+          "phase": "intro",
+          "opcode": 192,
+          "count": 12
+        },
+        {
+          "phase": "intro",
+          "opcode": 200,
+          "count": 750
+        },
+        {
+          "phase": "intro",
+          "opcode": 201,
+          "count": 2691
+        },
+        {
+          "phase": "intro",
+          "opcode": 208,
+          "count": 214
+        },
+        {
+          "phase": "intro",
+          "opcode": 216,
+          "count": 246
+        },
+        {
+          "phase": "intro",
+          "opcode": 248,
+          "count": 242
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 192,
+          "count": 23
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 200,
+          "count": 90
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 201,
+          "count": 1214
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 216,
+          "count": 13
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 192,
+          "count": 61
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 200,
+          "count": 606
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 201,
+          "count": 3095
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 208,
+          "count": 104
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 216,
+          "count": 241
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 248,
+          "count": 222
+        }
+      ],
+      "matching_numeric_targets": [],
+      "returns_with_control_prefix": 0,
+      "starts_after_basic": true,
+      "all_possible_paths_proved": false
+    }
+  },
+  "original_boot_report_sha256": "d69f3b7671750a5113502fab74251f769fedb53ab502ad460f28dc9863e2277a",
+  "original_boot_report_unchanged": true,
+  "basic_editor_and_machine_initial_state_prepared": true,
+  "modelled_fdc_and_rom_paging": true,
+  "trdos_calls_substituted": false,
+  "original_profile_gate_fixtures_retained": true,
+  "whole_native_reset_and_game_proved": false,
+  "all_possible_paths_proved": false,
+  "native_refresh_bit7_reachability_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

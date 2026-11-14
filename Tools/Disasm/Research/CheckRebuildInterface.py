@@ -30,6 +30,7 @@ def main():
     for length,seed,hidden,active in scenarios:
         memory.banks=[bank.copy() for bank in base];memory.memory=[None,memory.banks[5],memory.banks[2],None]
         memory.out7ffd(0x10);simulator.registers[:]=initial;r=simulator.registers
+        refresh=(seed+hidden+length)&255;r[15]=refresh
         trace=PortTrace(simulator);simulator.set_tracer(trace)
         memory.banks[3][:]=bytes(background)
         put(memory,0x4000,screen);put(memory,0x7FFE,[255,63]);put(memory,0x6307,[255,191])
@@ -61,6 +62,8 @@ def main():
         else:raise AssertionError('Перестроение не завершилось')
         assert r[SP]==0x8000
         if active:
+            # Проверка трёх M1 раннего отказа, до экранных и стековых изменений.
+            assert r[15]==(refresh&0x80)|((refresh+3)&0x7F)
             assert not calls and not trace.writes and memory[0x4000:0x6000]==screen
             assert (r[A],memory[0x9A82],memory[0x9B16])==(active,0,0x5A)
             for reg in (*range(2,12),*range(16,24)):assert r[reg]==initial[reg]
@@ -89,6 +92,7 @@ def main():
                 cases=cases,active_refusals=refused,draw_wrapper_calls=draw_calls,enabled_wrapper_calls=enabled_calls,
                 reference_group_moves=moves,group_mask=0xE0,front_group=0x40,last_item_not_sorted=True,
                 actual_begin_end_background_code_executed=True,draw_wrappers_are_synthetic=True,
+                active_refusal_R_checked=True,active_refusal_M1=3,full_rebuild_R_proved=False,
                 dynamic_draw_frames_verified=True,
                 irq_executed=False,native_execution=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/RebuildInterfaceVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "source": "awk1.trd:STARHSUN.a",
+  "archived_control0_delta": 1333,
+  "txtr_zeros": [
+    55643,
+    55647
+  ],
+  "txtr_label": 55645,
+  "txtr_consumer_proved": false,
+  "small_mask_buffer": [
+    55696,
+    55728
+  ],
+  "small_mask_tail": [
+    55708,
+    55728
+  ],
+  "archived_unfilled_entry": 54529,
+  "unfilled_forced_entry_cases": 768,
+  "unfilled_current_game_caller_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

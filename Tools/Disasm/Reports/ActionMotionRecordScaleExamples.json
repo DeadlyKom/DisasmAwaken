@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "speed_word_signed": 20,
+      "coefficient": 127,
+      "class_code": 1,
+      "product_signed": 19,
+      "effective_active_signed": 19,
+      "initial_component": 4096,
+      "final_component": 4077,
+      "delta_signed": -19
+    },
+    {
+      "speed_word_signed": 20,
+      "coefficient": 127,
+      "class_code": 20,
+      "product_signed": 19,
+      "effective_active_signed": 9,
+      "initial_component": 4096,
+      "final_component": 4087,
+      "delta_signed": -9
+    },
+    {
+      "speed_word_signed": -20,
+      "coefficient": 127,
+      "class_code": 1,
+      "product_signed": -19,
+      "effective_active_signed": -19,
+      "initial_component": 4096,
+      "final_component": 4115,
+      "delta_signed": 19
+    },
+    {
+      "speed_word_signed": -20,
+      "coefficient": 127,
+      "class_code": 20,
+      "product_signed": -19,
+      "effective_active_signed": -10,
+      "initial_component": 4096,
+      "final_component": 4106,
+      "delta_signed": 10
+    },
+    {
+      "speed_word_signed": 1,
+      "coefficient": 127,
+      "class_code": 1,
+      "product_signed": 0,
+      "effective_active_signed": 0,
+      "initial_component": 4096,
+      "final_component": 4096,
+      "delta_signed": 0
+    },
+    {
+      "speed_word_signed": 1,
+      "coefficient": 127,
+      "class_code": 20,
+      "product_signed": 0,
+      "effective_active_signed": 0,
+      "initial_component": 4096,
+      "final_component": 4096,
+      "delta_signed": 0
+    },
+    {
+      "speed_word_signed": -1,
+      "coefficient": 127,
+      "class_code": 1,
+      "product_signed": 0,
+      "effective_active_signed": 0,
+      "initial_component": 4096,
+      "final_component": 4096,
+      "delta_signed": 0
+    },
+    {
+      "speed_word_signed": -1,
+      "coefficient": 127,
+      "class_code": 20,
+      "product_signed": 0,
+      "effective_active_signed": 0,
+      "initial_component": 4096,
+      "final_component": 4096,
+      "delta_signed": 0
+    }
+  ],
+  "update_frame_call_order": [
+    {
+      "procedure": "UpdateObjects",
+      "call_address": 43208,
+      "target": 63273
+    },
+    {
+      "procedure": "SubtractScaledWorkVector",
+      "call_address": 43215,
+      "target": 26322
+    },
+    {
+      "procedure": "UpdateMotionFromControls",
+      "call_address": 43224,
+      "target": 28268
+    }
+  ],
+  "original_multiply_entry": 53548,
+  "original_prepare_start": 58716,
+  "original_prepare_stop": 58766,
+  "original_update_entry": 58788,
+  "original_update_stop": 58830,
+  "assumed_valid_model_scale": 1,
+  "explicit_phase_boundary_register_setup": true,
+  "model_header_selection_executed": false,
+  "full_record_update_executed": false,
+  "whole_frame_executed": false,
+  "physical_unit_proved": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

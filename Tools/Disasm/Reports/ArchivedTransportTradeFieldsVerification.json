@@ -1,0 +1,149 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "archived_source": "awk6.trd:DATA_M.a",
+  "current_ship_start": 38914,
+  "current_skimmer_start": 38949,
+  "matched_bytes": 55,
+  "ship_records": [
+    {
+      "capacity": 100,
+      "price": 64000,
+      "speed": 130,
+      "last": 1
+    },
+    {
+      "capacity": 90,
+      "price": 44000,
+      "speed": 120,
+      "last": 1
+    },
+    {
+      "capacity": 60,
+      "price": 40000,
+      "speed": 140,
+      "last": 1
+    },
+    {
+      "capacity": 70,
+      "price": 35000,
+      "speed": 110,
+      "last": 1
+    },
+    {
+      "capacity": 72,
+      "price": 34000,
+      "speed": 90,
+      "last": 1
+    },
+    {
+      "capacity": 80,
+      "price": 27000,
+      "speed": 100,
+      "last": 1
+    },
+    {
+      "capacity": 50,
+      "price": 12000,
+      "speed": 70,
+      "last": 0
+    }
+  ],
+  "skimmer_records": [
+    {
+      "capacity": 0,
+      "price": 30000,
+      "speed": 170,
+      "last": 5
+    },
+    {
+      "capacity": 0,
+      "price": 27000,
+      "speed": 150,
+      "last": 4
+    },
+    {
+      "capacity": 0,
+      "price": 24000,
+      "speed": 130,
+      "last": 3
+    },
+    {
+      "capacity": 0,
+      "price": 18000,
+      "speed": 100,
+      "last": 2
+    }
+  ],
+  "declared_fields": [
+    "tonnage",
+    "price_word",
+    "speed",
+    "ship_legality_or_skimmer_weight"
+  ],
+  "active_archived_source_entries_checked": 129,
+  "identifier_references": [
+    {
+      "member": "awk6.trd",
+      "slot": 48,
+      "line": 1034,
+      "raw_hex": "068c05200683038b2c434e4b522b31"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 48,
+      "line": 1048,
+      "raw_hex": "068c05200683038b2c434e4b52"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 48,
+      "line": 1061,
+      "raw_hex": "068c05200683038b2c434e4b522b34"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 48,
+      "line": 1065,
+      "raw_hex": "068c05200683038b2c434e534b2b31"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 48,
+      "line": 1069,
+      "raw_hex": "068c05200683038b2c434e534b2b34"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 48,
+      "line": 1580,
+      "raw_hex": "068c05200683038c2c434e534b2b34"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 56,
+      "line": 689,
+      "raw_hex": "434e4b52"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 56,
+      "line": 700,
+      "raw_hex": "434e534b"
+    }
+  ],
+  "named_archived_accessors_use_only_offsets": [
+    0,
+    1,
+    4
+  ],
+  "numeric_or_aliased_references_excluded": false,
+  "current_ship_speed_consumer_proved": false,
+  "current_skimmer_speed_consumer_proved": false,
+  "current_skimmer_tonnage_consumer_proved": false,
+  "current_speed_units_proved": false,
+  "current_ship_sale_zero_branch_previously_proved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

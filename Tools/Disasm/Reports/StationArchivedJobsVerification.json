@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "source": "awk6.trd:DATA_M.a",
+  "archived_jobs_code": "awk6.trd:BLOCK2.a",
+  "before_exact_bytes": 58,
+  "after_exact_bytes": 15,
+  "start": 38754,
+  "end_exclusive": 38914,
+  "record_count": 10,
+  "record_bytes": 16,
+  "original_file_offsets": [
+    14178,
+    14338
+  ],
+  "original_literal_hits": [
+    218450
+  ],
+  "current_game_consumer_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

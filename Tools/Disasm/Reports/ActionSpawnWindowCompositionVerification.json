@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "total_cases": 262144,
+  "profiles": {
+    "all_A_H_pairs": 131072,
+    "all_classes_counters": 131072
+  },
+  "paths": {
+    "common/preserve": 106496,
+    "window_low_reject": 130560,
+    "common/marker_return": 131072,
+    "common/increment": 24576,
+    "window_high_reject": 190,
+    "parameter_32": 162,
+    "no_free_record": 81,
+    "class17_no_slot": 81,
+    "window_spawn_attempted": 832,
+    "free_record": 751,
+    "class17_created": 751,
+    "parameter_0A": 670,
+    "window_counter_reject": 130050,
+    "window_class9_reject": 512
+  },
+  "all_256_A_by_256_H": true,
+  "all_256_classes_by_256_class17_delay": true,
+  "full_class_table_index_not_clamped": true,
+  "actual_current_link_and_class17_children_executed": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "maximum_additional_stack_bytes": 8,
+  "common_F0F8_executed": true,
+  "full_external_return": true,
+  "active_and_marker_each_profile": true,
+  "initial_LinkedIndex": 2,
+  "correlated_phase_scale_profiles": true,
+  "no_OUT": true,
+  "exact_T_claimed": false,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

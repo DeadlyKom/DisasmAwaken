@@ -10,7 +10,7 @@ for index in range(15):
     targets=[(name,address,meaning) for name,address,meaning in TARGETS
              if int(meaning.split(',')[0].split()[1],16)==index]
     if index==1:
-        PARAMETER_FIELDS.append(('ReadOnly01',1,'ApplyParameterSet читает поле без записи, отдельный игровой смысл неизвестен'))
+        PARAMETER_FIELDS.append(('LegacyHitPower',1,'архивная мощность лазера по игроку PMLPI, текущий ApplyParameterSet читает без применения'))
     elif index==6:
         PARAMETER_FIELDS.append(('SpawnLowAndBias',1,'общий начальный SpawnLowLimit и база пересчёта SpawnBiasBase'))
     else:

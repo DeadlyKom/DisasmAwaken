@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "total_cases": 279552,
+  "entries": {
+    "C4F6": 69888,
+    "C540": 69888,
+    "C58B": 69888,
+    "C5E7": 69888
+  },
+  "paths": {
+    "horizontal_inside": 1059,
+    "horizontal_high": 69019,
+    "negative_word": 139333,
+    "vertical_low_byte": 35303,
+    "low_byte_negative": 34838
+  },
+  "actual_division_executed": true,
+  "all_intermediate_words_per_entry": true,
+  "all_output_offsets": true,
+  "original_vertical_low_byte_sign_rule_preserved": true,
+  "exact_registers_flags_except_R": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "extra_cpu_stack_bytes": 2,
+  "exact_refresh_R_checked": true,
+  "full_M1_count_compared": true,
+  "exact_T_claimed": false,
+  "all_joint_inputs_exhausted": false,
+  "refresh_and_timing_independently_checked": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

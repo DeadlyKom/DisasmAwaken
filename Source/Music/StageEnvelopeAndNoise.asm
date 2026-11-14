@@ -11,12 +11,13 @@
                 ;   прерывания запрещены согласно кадровому входу, SP остаётся доступным до дальнейшего AdvancePatternA
                 ; Out:
                 ;   граница выхода блока находится в AdvancePatternA по DF7F, собственного RET нет
+                ;   HL=Step при SlideGate=06, при SlideGate=18 и ненулевом входном Shape HL=0, иначе HL сохранён
+                ;   DE и C сохранены, B=#12 при SlideGate=06, иначе B сохранён
+                ;   AF содержит A=#18 при SlideGate=06, иначе A=Noise, F=44
+                ;   HL', DE', BC', AF', IX, IY, SP, I, IM и IFF сохранены
                 ;   буфер AY13 получает Shape, AY6 получает Noise, Phase=RowTempo готовит отложенный разбор каналов B и C
                 ;   ненулевой Shape переносит Base в EnvelopeBase, очищает Shape и SlideOffset, сбрасывает SlideCounter
-                ;   при SlideGate=06 дополнительно выполняется CommitEnvelopeSlide, HL=Step, B=12, A=18
-                ;   при SlideGate=18 A=Noise, B сохранён, HL=0 при ненулевом Shape, иначе входной HL
-                ;   C и DE сохранены, F=44, нулевая форма даёт OR 0, ненулевая ветвь завершается XOR A
-                ;   альтернативные пары, IX, IY, SP, I, IM и IFF сохранены до границы DF7F
+                ;   при SlideGate=06 дополнительно выполнен CommitEnvelopeSlide, Delay и Step приняты отложенным блоком
                 ; Corrupt:
                 ;   HL, BC, AF по условному договору, Shape, буфер AY6 и AY13, Phase, EnvelopeBase, SlideOffset, SlideCounter
                 ;   при включённом отложенном шаге также SlideStep, SlideReload и SlideGate, R продвигается

@@ -11,13 +11,14 @@ CONTRACTS = {("Station", 0x9E77): (
      "при активности HL и DE восстановлены поверх результата callback, BC и прочие регистры остаются от callback",
      "при активности A от callback, F=(F_callback AND #C4) OR (A_callback AND #28) OR 1",
      "активность сброшена до callback, его адрес после возврата заменён EmptyCallback"],
-    ["при активности BC, AF, HL', DE', BC', AF', IX, IY согласно результату callback, без активности только AF"],
+    ["при активности BC, AF, HL', DE', BC', AF', IX, IY и эффекты callback, Active, Callback, список, Flags и побочные записи ToggleItemFrame, RAM стека, без активности AF, R меняется на обоих путях"],
     ["перед callback MoveItemToTail возвращает выбранный HL, DE загружен активным индексом, BC сохранён",
      "после ToggleItemFrame XOR A подготавливает AF=#0044 для callback, до него индекс уже перенесён в конец списка",
      "FActiveCloseFrame содержит SavedHL, SavedDE, ReturnAddress, callback получает собственный адрес возврата поверх кадра",
      "изменение активности самим callback не отменяется, после него сбрасывается только адрес Callback",
      "сами инструкции закрытия не меняют I и IFF, итог зависит от callback и фактического ISR",
-     "SP восстанавливается при соблюдении договора callback, произвольные реальные callback этим разбором не признаны проверенными"])}
+     "SP восстанавливается при соблюдении договора callback, произвольные реальные callback этим разбором не признаны проверенными",
+     "при нулевой Active выполняются три M1 без собственных RAM-записей, старший бит R сохраняется"])}
 COMMENTS = {
     0x9E77: (["чтение целого байта активности из изменяемого операнда LD A"], None),
     0x9E79: (["проверка наличия активного элемента, ноль запрещает любые действия закрытия"], None),
@@ -35,6 +36,8 @@ COMMENTS = {
 
 
 def name_operands(region, address, operation):
+    if region == "StationBoot" and address == 0x4000:
+        return operation.replace("(#9E78)", "(@ActiveItemState.Active)")
     if region != "Station":
         return operation
     for value, name in ((0x9E78, "Active"), (0x9E7E, "Index"), (0x9E8B, "Callback"), (0xCCA4, "NextCallback")):

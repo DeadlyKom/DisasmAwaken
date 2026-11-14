@@ -1,8 +1,8 @@
 {
   "passed": true,
-  "total_cases": 393728,
+  "total_cases": 394240,
   "parameter_cases": 393216,
-  "composed_cases": 512,
+  "composed_cases": 1024,
   "all_65536_values_each_of_six_input_words_at_boundary": true,
   "parameter_registers_flags_r_exact": true,
   "parameter_ram_writes_rejected": true,
@@ -12,14 +12,20 @@
   "composed_registers_including_r_exact": true,
   "full_eight_bank_ram_and_write_multiplicity_compared": true,
   "paths": {
-    "first_written": 505,
-    "second_written": 286,
-    "second_skipped": 226,
-    "first_skipped": 7
+    "distinct_records": 512,
+    "first_written": 1011,
+    "second_written": 576,
+    "second_skipped": 448,
+    "first_skipped": 13,
+    "same_IX_IY": 512
   },
   "full_composed_r_proved": true,
+  "full_M1_count_compared_not_only_R_modulo_128": true,
+  "same_IX_IY_composed_cases": 512,
+  "distinct_record_composed_cases": 512,
   "complete_six_word_product_exhausted": false,
   "assembly_executed": false,
   "irq_executed": false,
-  "native_execution": false
+  "native_execution": false,
+  "full_M1_comparison_scope": "composed_cases"
 }

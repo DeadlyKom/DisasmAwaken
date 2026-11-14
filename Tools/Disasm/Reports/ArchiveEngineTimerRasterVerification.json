@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "multiply_cases": 67328,
+  "timer_address_cases": 708,
+  "timer_draw_and_restore_cases": 600,
+  "font_bytes": 320,
+  "first_screen_row": 2,
+  "last_screen_row": 17,
+  "screen_columns": [
+    15,
+    16
+  ],
+  "integrated_viewport_cases": 6,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "method": "original_reader_instructions_and_adjacent_physical_table_domains",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "reader_entry": 50681,
+  "reader_original_hex": "110298e12600e52929c109195e1600c9",
+  "reader_original_code_sha256": "588df343fb35a8e4fa97ff7938d72606e2e5a966a40858bcd26450a80b43cc8d",
+  "all_byte_indices_derived": 256,
+  "ship_base": 38914,
+  "ship_rows": 7,
+  "skimmer_base": 38949,
+  "skimmer_rows": 4,
+  "row_stride": 5,
+  "aliases": [
+    {
+      "ship_index": 7,
+      "address": 38949,
+      "skimmer_index": 0,
+      "field": "FStationSkimmerTradeRow.Unknown00",
+      "original_value": 0
+    },
+    {
+      "ship_index": 8,
+      "address": 38954,
+      "skimmer_index": 1,
+      "field": "FStationSkimmerTradeRow.Unknown00",
+      "original_value": 0
+    },
+    {
+      "ship_index": 9,
+      "address": 38959,
+      "skimmer_index": 2,
+      "field": "FStationSkimmerTradeRow.Unknown00",
+      "original_value": 0
+    },
+    {
+      "ship_index": 10,
+      "address": 38964,
+      "skimmer_index": 3,
+      "field": "FStationSkimmerTradeRow.Unknown00",
+      "original_value": 0
+    }
+  ],
+  "previous_CPU_model": "Tools/Disasm/Reports/StrideFiveVerification.json",
+  "previous_CPU_model_sha256": "52662245668f34d5e7889f8a29213202fd46774e51ea01f9afa47afcacb02547",
+  "current_reader_has_no_table_count_check": true,
+  "conditional_current_reader_of_all_four_Unknown00_proved": true,
+  "ordinary_ship_selection_reaches_indices_7_to_10_proved": false,
+  "actual_skimmer_purchase_or_capacity_use_proved": false,
+  "unknown_speed_fields_purpose_proved": false,
+  "CPU_execution_performed_by_this_check": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

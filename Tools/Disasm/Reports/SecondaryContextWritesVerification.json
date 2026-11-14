@@ -1,0 +1,235 @@
+{
+  "passed": true,
+  "single_assignment_cases": 168,
+  "assignments_in_reloaded_profiles": 24,
+  "profiles": [
+    {
+      "file": "SAVE0",
+      "directory_slot": 16,
+      "writes": [
+        [
+          39172,
+          50914,
+          35
+        ],
+        [
+          39173,
+          50914,
+          206
+        ],
+        [
+          39175,
+          50914,
+          65
+        ],
+        [
+          39177,
+          50914,
+          81
+        ]
+      ],
+      "sectors": [
+        [
+          57,
+          10
+        ],
+        [
+          57,
+          11
+        ]
+      ],
+      "bytes_reloaded": 512
+    },
+    {
+      "file": "SAVE1",
+      "directory_slot": 11,
+      "writes": [
+        [
+          39172,
+          50914,
+          35
+        ],
+        [
+          39173,
+          50914,
+          206
+        ],
+        [
+          39175,
+          50914,
+          65
+        ],
+        [
+          39177,
+          50914,
+          81
+        ]
+      ],
+      "sectors": [
+        [
+          56,
+          16
+        ],
+        [
+          57,
+          1
+        ]
+      ],
+      "bytes_reloaded": 512
+    },
+    {
+      "file": "SAVE2",
+      "directory_slot": 12,
+      "writes": [
+        [
+          39172,
+          50914,
+          35
+        ],
+        [
+          39173,
+          50914,
+          206
+        ],
+        [
+          39175,
+          50914,
+          65
+        ],
+        [
+          39177,
+          50914,
+          81
+        ]
+      ],
+      "sectors": [
+        [
+          57,
+          2
+        ],
+        [
+          57,
+          3
+        ]
+      ],
+      "bytes_reloaded": 512
+    },
+    {
+      "file": "SAVE3",
+      "directory_slot": 13,
+      "writes": [
+        [
+          39172,
+          50914,
+          35
+        ],
+        [
+          39173,
+          50914,
+          206
+        ],
+        [
+          39175,
+          50914,
+          65
+        ],
+        [
+          39177,
+          50914,
+          81
+        ]
+      ],
+      "sectors": [
+        [
+          57,
+          4
+        ],
+        [
+          57,
+          5
+        ]
+      ],
+      "bytes_reloaded": 512
+    },
+    {
+      "file": "SAVE4",
+      "directory_slot": 14,
+      "writes": [
+        [
+          39172,
+          50914,
+          35
+        ],
+        [
+          39173,
+          50914,
+          206
+        ],
+        [
+          39175,
+          50914,
+          65
+        ],
+        [
+          39177,
+          50914,
+          81
+        ]
+      ],
+      "sectors": [
+        [
+          57,
+          6
+        ],
+        [
+          57,
+          7
+        ]
+      ],
+      "bytes_reloaded": 512
+    },
+    {
+      "file": "SAVE5",
+      "directory_slot": 15,
+      "writes": [
+        [
+          39172,
+          50914,
+          35
+        ],
+        [
+          39173,
+          50914,
+          49
+        ],
+        [
+          39175,
+          50914,
+          65
+        ],
+        [
+          39177,
+          50914,
+          81
+        ]
+      ],
+      "sectors": [
+        [
+          57,
+          8
+        ],
+        [
+          57,
+          9
+        ]
+      ],
+      "bytes_reloaded": 512
+    }
+  ],
+  "substituted_lang_text": true,
+  "original_lang_interpreter": true,
+  "original_trdos_rom": true,
+  "physical_disk_written": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

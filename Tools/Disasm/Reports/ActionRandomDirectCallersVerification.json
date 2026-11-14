@@ -1,0 +1,996 @@
+{
+  "passed": true,
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "direct_instruction_count": 47,
+  "instruction_counts": {
+    "0": 18,
+    "1": 3,
+    "2": 4,
+    "3": 1,
+    "4": 5,
+    "5": 4,
+    "6": 0,
+    "7": 1,
+    "8": 2,
+    "9": 1,
+    "10": 2,
+    "11": 1,
+    "12": 2,
+    "13": 2,
+    "14": 1
+  },
+  "streams": [
+    {
+      "index": 0,
+      "entry": 60274,
+      "state": 60382,
+      "local_use": "подтверждены начальное заполнение потоков, планировщик создания, проверки классов, фаз и связей",
+      "direct_callers": [
+        {
+          "region": "ActionBoot",
+          "pc": 17175,
+          "file_offset": 346,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "caller_descriptions": [
+            "Начальное заполнение слов состояний от регистра R и повторных вызовов обработчика #EB72"
+          ],
+          "following_original_bytes_hex": "c110f922dbebcd72eb22ffebcd72eb22"
+        },
+        {
+          "region": "ActionBoot",
+          "pc": 17184,
+          "file_offset": 355,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "caller_descriptions": [
+            "Начальное заполнение слов состояний от регистра R и повторных вызовов обработчика #EB72"
+          ],
+          "following_original_bytes_hex": "22ffebcd72eb2202eccd72eb2205eccd"
+        },
+        {
+          "region": "ActionBoot",
+          "pc": 17190,
+          "file_offset": 361,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "caller_descriptions": [
+            "Начальное заполнение слов состояний от регистра R и повторных вызовов обработчика #EB72"
+          ],
+          "following_original_bytes_hex": "2202eccd72eb2205eccd72eb22e1ebcd"
+        },
+        {
+          "region": "ActionBoot",
+          "pc": 17196,
+          "file_offset": 367,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "caller_descriptions": [
+            "Начальное заполнение слов состояний от регистра R и повторных вызовов обработчика #EB72"
+          ],
+          "following_original_bytes_hex": "2205eccd72eb22e1ebcd72eb22e4ebcd"
+        },
+        {
+          "region": "ActionBoot",
+          "pc": 17202,
+          "file_offset": 373,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "caller_descriptions": [
+            "Начальное заполнение слов состояний от регистра R и повторных вызовов обработчика #EB72"
+          ],
+          "following_original_bytes_hex": "22e1ebcd72eb22e4ebcd72eb22e7ebcd"
+        },
+        {
+          "region": "ActionBoot",
+          "pc": 17208,
+          "file_offset": 379,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "caller_descriptions": [
+            "Начальное заполнение слов состояний от регистра R и повторных вызовов обработчика #EB72"
+          ],
+          "following_original_bytes_hex": "22e4ebcd72eb22e7ebcd72eb22eaeb3e"
+        },
+        {
+          "region": "ActionBoot",
+          "pc": 17214,
+          "file_offset": 385,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "caller_descriptions": [
+            "Начальное заполнение слов состояний от регистра R и повторных вызовов обработчика #EB72"
+          ],
+          "following_original_bytes_hex": "22e7ebcd72eb22eaeb3e01329aaa3e2e"
+        },
+        {
+          "region": "ActionBoot",
+          "pc": 17220,
+          "file_offset": 391,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "caller_descriptions": [
+            "Начальное заполнение слов состояний от регистра R и повторных вызовов обработчика #EB72"
+          ],
+          "following_original_bytes_hex": "22eaeb3e01329aaa3e2e32bca8c9dd21"
+        },
+        {
+          "region": "Action",
+          "pc": 25089,
+          "file_offset": 1086,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/Action/StepRandomizedThirdPhase.asm",
+          "caller_descriptions": [
+            "Случайное обновление счётчика направления и знаковый шаг третьей фазы записи"
+          ],
+          "following_original_bytes_hex": "7cfe7f20137de67ffe10380ce60fc620"
+        },
+        {
+          "region": "Action",
+          "pc": 25901,
+          "file_offset": 1898,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/Action/ConfigureClass5Link.asm",
+          "caller_descriptions": [
+            "Подстановка и общий выбор связи только при новом нулевом слове потока 0"
+          ],
+          "following_original_bytes_hex": "7cb5c0c31a66cd2b66c0dd360a12cd72"
+        },
+        {
+          "region": "Action",
+          "pc": 25918,
+          "file_offset": 1915,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/Action/ConfigureClass8Link.asm",
+          "caller_descriptions": [
+            "Подстановка, состояние 12 и общий выбор связи при нулевом аппаратном предикате"
+          ],
+          "following_original_bytes_hex": "ed5fa4b5c0c31a66cd2b66c0ed5ffe70"
+        },
+        {
+          "region": "Action",
+          "pc": 25991,
+          "file_offset": 1988,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/Action/ConfigureClass6Link.asm",
+          "caller_descriptions": [
+            "Подстановка с противоположными путями общего выбора и фильтра классов 6 и 7"
+          ],
+          "following_original_bytes_hex": "ed5fa4b5c21a66c35a65cd2b66c0dd36"
+        },
+        {
+          "region": "Action",
+          "pc": 26012,
+          "file_offset": 2009,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/Action/ConfigureClass1Link.asm",
+          "caller_descriptions": [
+            "Подстановка и условный общий выбор связи со сменой класса на 0 после успеха"
+          ],
+          "following_original_bytes_hex": "ed5fa4b5c0cd1a66c8dd361200c9cd2b"
+        },
+        {
+          "region": "Action",
+          "pc": 31590,
+          "file_offset": 7587,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/Action/ScheduleSpawn.asm",
+          "caller_descriptions": [
+            "Планирование создания объекта, выбор класса, модели и начальных координат"
+          ],
+          "following_original_bytes_hex": "7dfefdda4b79cda1e9c8fde5dde1e5cd"
+        },
+        {
+          "region": "Action",
+          "pc": 61590,
+          "file_offset": 37014,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/Action/UpdateNearVectorPhase.asm",
+          "caller_descriptions": [
+            "Проверка близких широких векторов, случайного состояния 6 и шага фазы записи"
+          ],
+          "following_original_bytes_hex": "7ccb3ffe28380c7dfe7f2007dd360a06"
+        },
+        {
+          "region": "Action",
+          "pc": 61966,
+          "file_offset": 37390,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/Action/HandleLinkedTargetState.asm",
+          "caller_descriptions": [
+            "Обновление связи, выбор дочерних действий и геометрическое сопровождение записи в состоянии 02"
+          ],
+          "following_original_bytes_hex": "7dddbe11300bcd04e83003cddf64c3f8"
+        },
+        {
+          "region": "Action",
+          "pc": 62432,
+          "file_offset": 37856,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/Action/StepTimedLinkedOverlay.asm",
+          "caller_descriptions": [
+            "Уменьшение таймера, восстановление состояния и обновление связанного сегмента либо создание класса 17"
+          ],
+          "following_original_bytes_hex": "7dddbe11d222f2cd04e8c3f8f03e0a3c"
+        },
+        {
+          "region": "Action",
+          "pc": 63134,
+          "file_offset": 38558,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd72eb",
+          "source": "Source/Action/DispatchClassOnHighRandomWord.asm",
+          "caller_descriptions": [
+            "Вызов обработчика класса только при новом слове потока 0 не меньше F000"
+          ],
+          "following_original_bytes_hex": "1100f0b7ed52d8c3df64dd3408dd3408"
+        }
+      ],
+      "direct_state_accesses": [
+        {
+          "region": "ActionBoot",
+          "pc": 17167,
+          "operation": "LD (#EBDE),HL",
+          "kind": "write",
+          "address": 60382,
+          "width": 2,
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "original_hex": "22deeb",
+          "field_offsets": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "entry": 60295,
+      "state": 60418,
+      "local_use": "подтверждены слово CheckStream и компонента Component1 при создании и поправке координат",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 31125,
+          "file_offset": 7122,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd87eb",
+          "source": "Source/Action/SpawnAlternate.asm",
+          "caller_descriptions": [
+            "Создание записей по шаблону либо по альтернативной ветке планировщика"
+          ],
+          "following_original_bytes_hex": "7cadc01100007afe23c07bfef2d83eff"
+        },
+        {
+          "region": "Action",
+          "pc": 31797,
+          "file_offset": 7794,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd87eb",
+          "source": "Source/Action/ScheduleSpawn.asm",
+          "caller_descriptions": [
+            "Планирование создания объекта, выбор класса, модели и начальных координат"
+          ],
+          "following_original_bytes_hex": "cb2ccb1ddd7502dd7403e5cd8eebcb2c"
+        },
+        {
+          "region": "Action",
+          "pc": 32119,
+          "file_offset": 8116,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd87eb",
+          "source": "Source/Action/ScheduleSpawn.asm",
+          "caller_descriptions": [
+            "Планирование создания объекта, выбор класса, модели и начальных координат"
+          ],
+          "following_original_bytes_hex": "7ce60f2002f607cb7c28012f67d119dd"
+        }
+      ],
+      "direct_state_accesses": [
+        {
+          "region": "ActionBoot",
+          "pc": 17193,
+          "operation": "LD (#EC02),HL",
+          "kind": "write",
+          "address": 60418,
+          "width": 2,
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "original_hex": "2202ec",
+          "field_offsets": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "entry": 60344,
+      "state": 60394,
+      "local_use": "подтверждены выбор планировщика, подготовка вектора и проверки состояний в StepSelectedWideVector и UpdatePreferredClass18",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 31332,
+          "file_offset": 7329,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdb8eb",
+          "source": "Source/Action/SpawnAlternate.asm",
+          "caller_descriptions": [
+            "Создание записей по шаблону либо по альтернативной ветке планировщика"
+          ],
+          "following_original_bytes_hex": "dd361200dd360c00dd361400dd3615ff"
+        },
+        {
+          "region": "Action",
+          "pc": 31608,
+          "file_offset": 7605,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdb8eb",
+          "source": "Source/Action/ScheduleSpawn.asm",
+          "caller_descriptions": [
+            "Планирование создания объекта, выбор класса, модели и начальных координат"
+          ],
+          "following_original_bytes_hex": "cd9c697dcb3fcb3f16995f1a570f0f0f"
+        },
+        {
+          "region": "Action",
+          "pc": 61671,
+          "file_offset": 37095,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdb8eb",
+          "source": "Source/Action/StepSelectedWideVector.asm",
+          "caller_descriptions": [
+            "Шаг кодов движения к выбранному широкому вектору и проверка следующих состояний"
+          ],
+          "following_original_bytes_hex": "7cfe4120097dfe5a3804dd360a0cdd7e"
+        },
+        {
+          "region": "Action",
+          "pc": 62756,
+          "file_offset": 38180,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdb8eb",
+          "source": "Source/Action/UpdatePreferredClass18.asm",
+          "caller_descriptions": [
+            "Выбор опоры по R и потоку 2 либо по приоритету классов с обновлением класса 18"
+          ],
+          "following_original_bytes_hex": "7dfe2830093acd9bfe503e1a30221600"
+        }
+      ],
+      "direct_state_accesses": [
+        {
+          "region": "ActionBoot",
+          "pc": 17223,
+          "operation": "LD (#EBEA),HL",
+          "kind": "write",
+          "address": 60394,
+          "width": 2,
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "original_hex": "22eaeb",
+          "field_offsets": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "entry": 60281,
+      "state": 60379,
+      "local_use": "подтверждены чтения LowWord Stream3 для Phase0OrLink и LocalPhase1, следующее обновление выполняется в конце SpawnAlternate",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 31407,
+          "file_offset": 7404,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd79eb",
+          "source": "Source/Action/SpawnAlternate.asm",
+          "caller_descriptions": [
+            "Создание записей по шаблону либо по альтернативной ветке планировщика"
+          ],
+          "following_original_bytes_hex": "dd7e0add7716ed5fe60f3ce60f47dd70"
+        }
+      ],
+      "direct_state_accesses": [
+        {
+          "region": "ActionBoot",
+          "pc": 17181,
+          "operation": "LD (#EBDB),HL",
+          "kind": "write",
+          "address": 60379,
+          "width": 2,
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "original_hex": "22dbeb",
+          "field_offsets": [
+            0,
+            1
+          ]
+        },
+        {
+          "region": "Action",
+          "pc": 31355,
+          "operation": "LD HL,(#EBDB)",
+          "kind": "read",
+          "address": 60379,
+          "width": 2,
+          "source": "Source/Action/SpawnAlternate.asm",
+          "original_hex": "2adbeb",
+          "field_offsets": [
+            0,
+            1
+          ]
+        },
+        {
+          "region": "Action",
+          "pc": 31404,
+          "operation": "LD (#EBDD),A",
+          "kind": "write",
+          "address": 60381,
+          "width": 1,
+          "source": "Source/Action/SpawnAlternate.asm",
+          "original_hex": "32ddeb",
+          "field_offsets": [
+            2
+          ]
+        },
+        {
+          "region": "Action",
+          "pc": 32248,
+          "operation": "LD HL,(#EBDB)",
+          "kind": "read",
+          "address": 60379,
+          "width": 2,
+          "source": "Source/Action/FinishSpawnRecord.asm",
+          "original_hex": "2adbeb",
+          "field_offsets": [
+            0,
+            1
+          ]
+        },
+        {
+          "region": "Action",
+          "pc": 32286,
+          "operation": "LD (#EBDD),A",
+          "kind": "write",
+          "address": 60381,
+          "width": 1,
+          "source": "Source/Action/FinishSpawnRecord.asm",
+          "original_hex": "32ddeb",
+          "field_offsets": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "entry": 60288,
+      "state": 60415,
+      "local_use": "подтверждены исходные компоненты и поправки координат создаваемых записей",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 31213,
+          "file_offset": 7210,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd80eb",
+          "source": "Source/Action/SpawnAlternate.asm",
+          "caller_descriptions": [
+            "Создание записей по шаблону либо по альтернативной ветке планировщика"
+          ],
+          "following_original_bytes_hex": "cb2ccb1ddd7504dd7405e5cd80ebcb2c"
+        },
+        {
+          "region": "Action",
+          "pc": 31227,
+          "file_offset": 7224,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd80eb",
+          "source": "Source/Action/SpawnAlternate.asm",
+          "caller_descriptions": [
+            "Создание записей по шаблону либо по альтернативной ветке планировщика"
+          ],
+          "following_original_bytes_hex": "cb2ccb1ddd7502dd7403e5cd80ebcb2c"
+        },
+        {
+          "region": "Action",
+          "pc": 31241,
+          "file_offset": 7238,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd80eb",
+          "source": "Source/Action/SpawnAlternate.asm",
+          "caller_descriptions": [
+            "Создание записей по шаблону либо по альтернативной ветке планировщика"
+          ],
+          "following_original_bytes_hex": "cb2ccb1ddd7500dd7401d1c1f1083e1a"
+        },
+        {
+          "region": "Action",
+          "pc": 31783,
+          "file_offset": 7780,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd80eb",
+          "source": "Source/Action/ScheduleSpawn.asm",
+          "caller_descriptions": [
+            "Планирование создания объекта, выбор класса, модели и начальных координат"
+          ],
+          "following_original_bytes_hex": "cb2ccb1ddd7504dd7405e5cd87ebcb2c"
+        },
+        {
+          "region": "Action",
+          "pc": 32095,
+          "file_offset": 8092,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd80eb",
+          "source": "Source/Action/ScheduleSpawn.asm",
+          "caller_descriptions": [
+            "Планирование создания объекта, выбор класса, модели и начальных координат"
+          ],
+          "following_original_bytes_hex": "7ce60f2002f607cb7c28012f67d119dd"
+        }
+      ],
+      "direct_state_accesses": [
+        {
+          "region": "ActionBoot",
+          "pc": 17187,
+          "operation": "LD (#EBFF),HL",
+          "kind": "write",
+          "address": 60415,
+          "width": 2,
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "original_hex": "22ffeb",
+          "field_offsets": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "entry": 60302,
+      "state": 60421,
+      "local_use": "подтверждены компонента Component0, поправка Component2, выбор начального индекса цели и проверка перехода фазы объекта",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 31811,
+          "file_offset": 7808,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd8eeb",
+          "source": "Source/Action/ScheduleSpawn.asm",
+          "caller_descriptions": [
+            "Планирование создания объекта, выбор класса, модели и начальных координат"
+          ],
+          "following_original_bytes_hex": "cb2ccb1ddd7500dd7401d1c1f1083e1a"
+        },
+        {
+          "region": "Action",
+          "pc": 32143,
+          "file_offset": 8140,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd8eeb",
+          "source": "Source/Action/ScheduleSpawn.asm",
+          "caller_descriptions": [
+            "Планирование создания объекта, выбор класса, модели и начальных координат"
+          ],
+          "following_original_bytes_hex": "7ce6032002f601cb7c28012f67d119dd"
+        },
+        {
+          "region": "Action",
+          "pc": 32171,
+          "file_offset": 8168,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd8eeb",
+          "source": "Source/Action/ScheduleSpawn.asm",
+          "caller_descriptions": [
+            "Планирование создания объекта, выбор класса, модели и начальных координат"
+          ],
+          "following_original_bytes_hex": "7de6076f3a8b68b7281c677dbc3804cb"
+        },
+        {
+          "region": "Action",
+          "pc": 59701,
+          "file_offset": 35125,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd8eeb",
+          "source": "Source/Action/CheckObjectPhaseTransition.asm",
+          "caller_descriptions": [
+            "Проверка случайного ожидания и перехода к фазовому смещению записи"
+          ],
+          "following_original_bytes_hex": "7cfefa380f7dfeef380add7e0add7716"
+        }
+      ],
+      "direct_state_accesses": [
+        {
+          "region": "ActionBoot",
+          "pc": 17199,
+          "operation": "LD (#EC05),HL",
+          "kind": "write",
+          "address": 60421,
+          "width": 2,
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "original_hex": "2205ec",
+          "field_offsets": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "entry": 60309,
+      "state": 60409,
+      "local_use": "в зарегистрированном коде прямых вызовов не найдено, это не доказывает отсутствие косвенного входа",
+      "direct_callers": [],
+      "direct_state_accesses": []
+    },
+    {
+      "index": 7,
+      "entry": 60316,
+      "state": 60412,
+      "local_use": "подтверждён выбор ModelOffset альтернативно создаваемой записи через XOR H с L и маску 1C",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 31188,
+          "file_offset": 7185,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cd9ceb",
+          "source": "Source/Action/SpawnAlternate.asm",
+          "caller_descriptions": [
+            "Создание записей по шаблону либо по альтернативной ветке планировщика"
+          ],
+          "following_original_bytes_hex": "7dace61cf640c600dd77066fdd360f64"
+        }
+      ],
+      "direct_state_accesses": []
+    },
+    {
+      "index": 8,
+      "entry": 60323,
+      "state": 60385,
+      "local_use": "подтверждены компоненты обломка ускорения и допуск связи класса 3",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 24961,
+          "file_offset": 958,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cda3eb",
+          "source": "Source/Action/CreateBoostDebrisRecord.asm",
+          "caller_descriptions": [
+            "Создание случайной записи мусора форсажа, авторский T_TRASH"
+          ],
+          "following_original_bytes_hex": "afcb049fcb0c575cafcb059fcb0d6729"
+        },
+        {
+          "region": "Action",
+          "pc": 26111,
+          "file_offset": 2108,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cda3eb",
+          "source": "Source/Action/ConfigureClass3Link.asm",
+          "caller_descriptions": [
+            "Подстановка, фильтр классов 5 и 14 либо специальный код 26 по потоку 8"
+          ],
+          "following_original_bytes_hex": "f1bdd87cfe03d0dd360b1ac9cd2b66c0"
+        }
+      ],
+      "direct_state_accesses": [
+        {
+          "region": "ActionBoot",
+          "pc": 17205,
+          "operation": "LD (#EBE1),HL",
+          "kind": "write",
+          "address": 60385,
+          "width": 2,
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "original_hex": "22e1eb",
+          "field_offsets": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "entry": 60330,
+      "state": 60388,
+      "local_use": "подтверждён расчёт OffsetPhase1 в SpawnAlternate через H и знаковую поправку из L",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 31288,
+          "file_offset": 7285,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdaaeb",
+          "source": "Source/Action/SpawnAlternate.asm",
+          "caller_descriptions": [
+            "Создание записей по шаблону либо по альтернативной ветке планировщика"
+          ],
+          "following_original_bytes_hex": "7de603cb7d2802ed4484dd7708cdb1eb"
+        }
+      ],
+      "direct_state_accesses": [
+        {
+          "region": "ActionBoot",
+          "pc": 17211,
+          "operation": "LD (#EBE4),HL",
+          "kind": "write",
+          "address": 60388,
+          "width": 2,
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "original_hex": "22e4eb",
+          "field_offsets": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "entry": 60337,
+      "state": 60391,
+      "local_use": "подтверждены OffsetPhase2 в SpawnAlternate и случайный вход фильтра поиска записей",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 31304,
+          "file_offset": 7301,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdb1eb",
+          "source": "Source/Action/SpawnAlternate.asm",
+          "caller_descriptions": [
+            "Создание записей по шаблону либо по альтернативной ветке планировщика"
+          ],
+          "following_original_bytes_hex": "7de61fdd7709cdc6eb7de6556f7ce62a"
+        },
+        {
+          "region": "Action",
+          "pc": 59106,
+          "file_offset": 34530,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdb1eb",
+          "source": "Source/Action/FindFilteredRecordOr26.asm",
+          "caller_descriptions": [
+            "Выбор кода 26 по потоку 10 либо поиск активного класса 1..15 или 18"
+          ],
+          "following_original_bytes_hex": "7dfea03e1a3c3dd0fd21c0a0014000cd"
+        }
+      ],
+      "direct_state_accesses": [
+        {
+          "region": "ActionBoot",
+          "pc": 17217,
+          "operation": "LD (#EBE7),HL",
+          "kind": "write",
+          "address": 60391,
+          "width": 2,
+          "source": "Source/ActionBoot/InitializeRandomStates.asm",
+          "original_hex": "22e7eb",
+          "field_offsets": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "entry": 60351,
+      "state": 60397,
+      "local_use": "подтверждён допуск создания дочерних записей класса 9 по младшему байту слова",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 59507,
+          "file_offset": 34931,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdbfeb",
+          "source": "Source/Action/SpawnLinkedClass9Records.asm",
+          "caller_descriptions": [
+            "Условное создание одной либо двух записей класса 9 с индексом родителя и копией его связи"
+          ],
+          "following_original_bytes_hex": "7dfe0ad0ddcb18d6ed5fe6013c47d9cd"
+        }
+      ],
+      "direct_state_accesses": []
+    },
+    {
+      "index": 12,
+      "entry": 60358,
+      "state": 60400,
+      "local_use": "подтверждены вызовы обоих создателей перед вычислением Unknown11, маски 55 и 2A не пересекаются",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 31313,
+          "file_offset": 7310,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdc6eb",
+          "source": "Source/Action/SpawnAlternate.asm",
+          "caller_descriptions": [
+            "Создание записей по шаблону либо по альтернативной ветке планировщика"
+          ],
+          "following_original_bytes_hex": "7de6556f7ce62aa56f3ae47db5dd7711"
+        },
+        {
+          "region": "Action",
+          "pc": 32216,
+          "file_offset": 8213,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdc6eb",
+          "source": "Source/Action/FinishSpawnRecord.asm",
+          "caller_descriptions": [
+            "Заполнение параметров новой записи и передача диспетчеру класса"
+          ],
+          "following_original_bytes_hex": "7de6556f7ce62aa5f620dd7711dd360c"
+        }
+      ],
+      "direct_state_accesses": []
+    },
+    {
+      "index": 13,
+      "entry": 60365,
+      "state": 60403,
+      "local_use": "подтверждён кандидат для поля 13 создаваемой записи с изменяемыми маской и пределом",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 31364,
+          "file_offset": 7361,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdcdeb",
+          "source": "Source/Action/SpawnAlternate.asm",
+          "caller_descriptions": [
+            "Создание записей по шаблону либо по альтернативной ветке планировщика"
+          ],
+          "following_original_bytes_hex": "3a077eb56f3a097e677dbc38027c3ddd"
+        },
+        {
+          "region": "Action",
+          "pc": 32257,
+          "file_offset": 8254,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdcdeb",
+          "source": "Source/Action/FinishSpawnRecord.asm",
+          "caller_descriptions": [
+            "Заполнение параметров новой записи и передача диспетчеру класса"
+          ],
+          "following_original_bytes_hex": "5c7df6322664bc38027c3ddd77137bf6"
+        }
+      ],
+      "direct_state_accesses": []
+    },
+    {
+      "index": 14,
+      "entry": 60372,
+      "state": 60406,
+      "local_use": "подтверждена проверка слова 8746 перед переходом режима движения в 2",
+      "direct_callers": [
+        {
+          "region": "Action",
+          "pc": 26434,
+          "file_offset": 2431,
+          "instruction": "CALL",
+          "condition": null,
+          "original_hex": "cdd4eb",
+          "source": "Source/Action/TransitionBodyMode.asm",
+          "caller_descriptions": [
+            "Переключение режима тела и изменение старших слов рабочего вектора"
+          ],
+          "following_original_bytes_hex": "7cfe87c28a687dfe46c28a683e023281"
+        }
+      ],
+      "direct_state_accesses": [
+        {
+          "region": "Action",
+          "pc": 26421,
+          "operation": "LD (#EBF6),HL",
+          "kind": "write",
+          "address": 60406,
+          "width": 2,
+          "source": "Source/Action/TransitionBodyMode.asm",
+          "original_hex": "22f6eb",
+          "field_offsets": [
+            0,
+            1
+          ]
+        },
+        {
+          "region": "Action",
+          "pc": 26426,
+          "operation": "LD (#EBF8),A",
+          "kind": "write",
+          "address": 60408,
+          "width": 1,
+          "source": "Source/Action/TransitionBodyMode.asm",
+          "original_hex": "32f8eb",
+          "field_offsets": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "other_bank_numeric_targets": [],
+  "current_source_call_counts_matched": true,
+  "all_original_wrapper_bytes_matched": true,
+  "computed_or_mutable_targets_excluded": false,
+  "all_reachable_gameplay_paths_proved": false,
+  "all_stream_roles_proved": false,
+  "probability_or_period_proved": false,
+  "execution_model_run": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

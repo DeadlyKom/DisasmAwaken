@@ -4,6 +4,16 @@
   "method": "original_LANG_key_choice_and_real_banked_wrappers",
   "all_choice_bytes": true,
   "field_handlers": 5,
+  "exact_non_stack_write_sequence_checked": true,
+  "bounded_stack_write_addresses_checked": true,
+  "stack_write_address_interval": [
+    32752,
+    32766
+  ],
+  "original_return_word_preserved": true,
+  "consumed_choice_word_reused_by_field_CALL": true,
+  "full_R_proved": false,
+  "all_key_words_variants_and_stack_addresses_checked": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

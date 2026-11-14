@@ -8,6 +8,11 @@
   "maximum_product_error_numerator_over_127": 471,
   "no_memory_writes": true,
   "all_preserved_context_checked": true,
+  "all_initial_R_values_in_each_entry": true,
+  "exact_R_compared": true,
+  "full_M1_count_compared": true,
+  "M1_per_entry": 13,
+  "exact_T_claimed": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

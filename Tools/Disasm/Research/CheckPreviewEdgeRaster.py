@@ -8,7 +8,8 @@ from skoolkit.simutils import get_registers,A,F,H,L,B,C,D,E,SP
 from Analyze import payload
 from CheckPreviewCoordinateMultiply import Memory
 from CheckRowHighlight import make_context
-from PreviewEdgeRasterOracle import address,points,raster,registers
+from PreviewEdgeRasterOracle import address,points,raster,registers,m1_count
+from ReferenceControlsPointRespawn import refresh
 PATCHES=((0xDE66,0xDE69),(0xDEA5,0xDEBF),(0xDEE2,0xDEE5),(0xDF21,0xDF3B))
 MODES={'xor':(0xA9,0x38,0xB0),'or':(0xB1,0x38,0xB0),'and':(0xA1,0x30,0xB8)}
 
@@ -20,13 +21,26 @@ def main():
  s.registers[:]=initial;s.registers[D]=240;s.registers[E]=248;s.run(start=0x6322,stop=0x3FFF)
  assert list(raw[0xDB0:0xDB8])==[128>>i for i in range(8)] and list(raw[0xDB8:0xDC0])==[255^(128>>i) for i in range(8)]
  buffers=(bytes(6144),bytes([255]*6144),bytes((i*37+11)&255 for i in range(6144)),bytes((85,170))*3072)
- cases=0;branches=collections.Counter();origin=(0,0)
+ cases=0;branches=collections.Counter();origin=(0,0);m1_bounds={}
  def check(first,second,mode):
   nonlocal cases
   source=buffers[cases%4];expected=raster(source,first,second,mode,origin);operator,branch,offset=MODES[mode]
   m.recording=False;m[0x4000:0x5800]=source;m[0xC24B:0xC24F]=[first[1],first[0],second[1],second[0]];m[0xC26F:0xC271]=[operator,branch];m[0xDE34]=offset
   for op,jump in PATCHES:m[op]=0;m[jump]=0x38
-  s.registers[:]=initial;r=s.registers;m.recording=True;m.writes=[];s.run(start=0xDE1C,stop=0x3FFF)
+  initial[14],initial[15],initial[26],initial[27]=cases&255,(cases*73)&255,0,cases%3
+  s.registers[:]=initial;r=s.registers;m.recording=True;m.writes=[];r[24]=0xDE1C;measured_m1=0
+  # Проверка каждой выборки настоящей инструкции, полный счётчик не теряет оборачивания R.
+  for _ in range(10000):
+   if r[24]==0x3FFF:break
+   old_r=r[15];s.run();increment=(r[15]-old_r)&127
+   assert increment in (1,2)
+   measured_m1+=increment
+  else:raise AssertionError('ребро не вернулось')
+  cost=m1_count(first,second,origin)
+  assert measured_m1==cost and r[15]==refresh(initial[15],cost),(first,second,mode,origin,measured_m1,cost)
+  assert all(r[i]==initial[i] for i in (14,26,27))
+  kind='degenerate' if first==second else ('steep' if abs(second[0]-first[0])>abs(second[1]-first[1]) else 'shallow')
+  lo,hi=m1_bounds.get(kind,(cost,cost));m1_bounds[kind]=(min(lo,cost),max(hi,cost))
   assert bytes(m[0x4000:0x5800])==expected,(first,second,mode)
   assert r[SP]==0x8000 and r[8:12]==initial[8:12] and r[18:24]==initial[18:24]
   assert m[0x7FFE:0x8000]==[255,63]
@@ -62,7 +76,7 @@ def main():
  for row_origin,column_origin in ((19,25),(57,40),(96,88)):
   m.recording=False;s.registers[:]=initial;s.registers[D]=(row_origin-16)&255;s.registers[E]=(column_origin-8)&255;s.run(start=0x6322,stop=0x3FFF);origin=(row_origin,column_origin//8*8)
   for _ in range(512):check((rng.randrange(192-row_origin),rng.randrange(256-origin[1])),(rng.randrange(192-row_origin),rng.randrange(256-origin[1])),rng.choice(tuple(MODES)))
- report=dict(passed=True,cases=cases,branches=dict(branches),independent_pixel_set_and_full_6144_byte_bitmap=True,real_sprite_line_table_setup=True,original_three_operator_and_branch_pairs=True,endpoint_excluded=True,all_64_by_64_slopes_both_directions=True,all_screen_start_rows=True,final_pointer_mask_major_minor_and_preserved_registers_checked=True,exact_two_self_modified_bytes_checked=True,screen_write_bounds_checked=True,exact_main_and_alternate_af_checked=True,shifted_and_unaligned_origins_checked=True,onscreen_table_profile=True,irq_executed=False,native_execution=False,assembly_executed=False)
+ report=dict(passed=True,cases=cases,branches=dict(branches),independent_pixel_set_and_full_6144_byte_bitmap=True,real_sprite_line_table_setup=True,original_three_operator_and_branch_pairs=True,endpoint_excluded=True,all_64_by_64_slopes_both_directions=True,all_screen_start_rows=True,final_pointer_mask_major_minor_and_preserved_registers_checked=True,exact_two_self_modified_bytes_checked=True,screen_write_bounds_checked=True,exact_main_and_alternate_af_checked=True,shifted_and_unaligned_origins_checked=True,onscreen_table_profile=True,direct_full_M1_and_R_checked=True,I_IM_IFF_preservation_checked=True,observed_M1_bounds=m1_bounds,complete_joint_input_product_exhausted=False,irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/PreviewEdgeRasterVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 
 

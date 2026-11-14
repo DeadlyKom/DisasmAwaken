@@ -15,9 +15,9 @@
                 include "../Controls/Data/BufferPoints.asm"
                 ent
                 assert $ == #0546
-                ; Unknown, исходные байты после физических записей координат
-                ; Unknown, 186 исходных байтов между точками буфера и растром шрифта
-                incbin "../Resources/22_CONTROL0/Unclassified0546_0600.bin"
+                ; Конец исходной страницы DOTB после 35 пар Y и X
+                ; Документация [резерв DOTB](../../Docs/ControlsBufferPoints.md)
+                incbin "../Controls/Resources/DotBufferPageTail.bin"
                 assert $ == #0600
                 ; Документация [шрифт и чтения за его границей](../../Docs/ControlsTextFont.md)
                 incbin "../Controls/Resources/TextFont4x6.bin"
@@ -58,15 +58,16 @@
                 include "../Controls/FillEvenSpan.asm"
                 ent
                 assert $ == #0EB5
-                ; Два байта CEB5..CEB6 не достигаются при A=0..15, назначение отдельно не установлено
-                incbin "../Resources/22_CONTROL0/Unclassified002_Prefix.bin"
+                disp #CEB5
+                include "../Controls/FillSpan31.asm"                            ; (0) жёсткий порядок, условное начало цепочки
+                ent
                 assert $ == #0EB7
                 disp #CEB7
-                include "../Controls/FillEvenSpanHead.asm"                      ; (0) жёсткий порядок, начало непрерывного хвоста
+                include "../Controls/FillEvenSpanHead.asm"                      ; (1) жёсткий порядок, первые двенадцать записей общего хвоста
                 ent
                 assert $ == #0ECF
                 disp #CECF
-                include "../Controls/FillEvenSpanTail.asm"                      ; (1) жёсткий порядок, продолжение хвоста
+                include "../Controls/FillEvenSpanTail.asm"                      ; (2) жёсткий порядок, продолжение хвоста
                 ent
                 assert $ == #0EF9
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -199,8 +200,9 @@
                 include "../Controls/PrepareCircleLeftClip.asm"
                 ent
                 assert $ == #1501
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified006.bin"
+                disp #D501
+                include "../Controls/ReturnUnfilledMask.asm"
+                ent
                 assert $ == #1504
                 disp #D504
                 include "../Controls/LoadCircleMidpoint.asm"
@@ -250,8 +252,8 @@
                 include "../Controls/AdvanceRasterDown.asm"
                 ent
                 assert $ == #195B
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified010.bin"
+                ; Две авторские пары нулевых байтов, метка TXTR у второй пары
+                incbin "../Controls/Resources/ArchivedTxtrPair.bin"
                 assert $ == #195F
                 disp #D95F
                 include "../Controls/ProjectAndCheckComponents.asm"
@@ -266,8 +268,8 @@
                 include "../Controls/Data/SmallMaskRows.asm"
                 ent
                 assert $ == #199C
-                ; Unknown, назначение следующих 20 исходных байтов отдельно не установлено
-                incbin "../Resources/22_CONTROL0/Unclassified011_AfterMasks.bin"
+                ; Конец исходного 32-байтового буфера LA8FA после 12 используемых строк
+                incbin "../Controls/Resources/SmallMaskBufferTail.bin"
                 assert $ == #19B0
                 disp #D9B0
                 include "../Controls/BuildSmallBodyMasks.asm"

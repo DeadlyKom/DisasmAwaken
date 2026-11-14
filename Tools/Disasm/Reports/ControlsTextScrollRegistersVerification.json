@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "total_cases": 1024,
+  "source_last_row_address": 22004,
+  "exact_registers_including_R": true,
+  "all_256_output_F_bytes": true,
+  "all_physical_ram_and_write_multiplicity_checked": true,
+  "real_initializer_executed": true,
+  "original_scroll_instructions_executed": true,
+  "instruction_count": 527,
+  "full_M1_count": 528,
+  "screen_byte_writes": 432,
+  "saved_SP_byte_writes": 2,
+  "stack_positions": [
+    32766,
+    32770,
+    40958,
+    49150
+  ],
+  "external_return_preserved": true,
+  "no_ports_or_paging_changes": true,
+  "complete_screen_product_exhausted": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

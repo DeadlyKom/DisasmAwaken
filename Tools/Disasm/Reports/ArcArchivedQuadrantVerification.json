@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "source": "awk6.trd:CIRCMATH.a",
+  "source_name": "RDS",
+  "current_address": 57261,
+  "matched_workspace_bytes": 24,
+  "initial_code": 15,
+  "source_notes_cp866_hex": [
+    "20878d808a882062302d582c62312d59202c312d504c5553",
+    "2092808a2086852062322c62333d312c31"
+  ],
+  "source_prescribes_bits_2_and_3_set": true,
+  "active_sources_checked": 129,
+  "named_references": [
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 30,
+      "raw_line_hex": "524453068905670683233046"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 83,
+      "raw_line_hex": "068c05200683038b2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 149,
+      "raw_line_hex": "068c05200683037e2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 159,
+      "raw_line_hex": "068c05200683037e2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 239,
+      "raw_line_hex": "068c05200683038b2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 266,
+      "raw_line_hex": "068c05200683037e2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 288,
+      "raw_line_hex": "068c05200683037e2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 295,
+      "raw_line_hex": "4c38393346068705200683038b2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 324,
+      "raw_line_hex": "068c05200683037e2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 335,
+      "raw_line_hex": "068c05200683038b2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 348,
+      "raw_line_hex": "068c05200683037e2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 359,
+      "raw_line_hex": "068c05200683037e2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 431,
+      "raw_line_hex": "068c05200683038b2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "line": 513,
+      "raw_line_hex": "068c05200683038b2c2852445329"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 37,
+      "name": "KARTA   a",
+      "line": 101,
+      "raw_line_hex": "068c0520068328524453292c057e"
+    }
+  ],
+  "high_bit_algorithmic_purpose_proved": false,
+  "numeric_alias_and_generated_references_excluded": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

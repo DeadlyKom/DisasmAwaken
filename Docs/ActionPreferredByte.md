@@ -1,6 +1,6 @@
-# Выбор байта с приоритетом 74FB
+# Выбор запаса топлива 74FB
 
-[SelectPreferredByte](../Source/Action/SelectPreferredByte.asm) читает
+[SelectFuelStock](../Source/Action/SelectFuelStock.asm) читает
 [PreferredByteState](../Source/Action/Data/PreferredByteState.asm), физический
 FPreferredBytePair по 9C10..9C11. Исходные два байта находятся в записи 17 ACTION,
 смещения 3C10..3C11. Поле Preferred занимает смещение 0, Fallback смещение 1.
@@ -8,8 +8,10 @@ FPreferredBytePair по 9C10..9C11. Исходные два байта нахо�
 
 Если Preferred ненулевой, A получает его значение, HL=9C10.
 Иначе A получает Fallback, HL=9C11. Процедура возвращает адрес выбранного поля
-вместе с самим значением. Локальные имена описывают только этот приоритет,
-игровое назначение пары пока не установлено.
+вместе с самим значением. При вылете поля приходят из строк 0 и 1
+станционного оснащения, «Топливо МРП» и «Топливо ЛНП» соответственно.
+Гиперпереход списывает эти же запасы. [Соответствие полей](ActionEquipmentCodes.md) ·
+[Расход](ActionHyperJump.md)
 
 ## Флаги и договор
 
@@ -24,7 +26,7 @@ SP увеличивается на два после RET. Процедура н�
 R увеличивается на 4 M1 при ненулевом Preferred и на 7 M1 при его нуле,
 с сохранением бита 7 и переполнением младших семи битов.
 
-В [Unknown6649](../Source/Action/UpdatePanelGauges.asm) сразу после вызова идёт RRA.
+В [UpdatePanelGauges](../Source/Action/UpdatePanelGauges.asm) сразу после вызова идёт RRA.
 Поскольку Carry сброшен на обоих путях, значение для шкалы делится на два.
 В [UpdateBodyMotion](../Source/Action/UpdateBodyMotion.asm) выбранное значение увеличивается,
 а при выполнении условия обновления записывается обратно через возвращённый HL.

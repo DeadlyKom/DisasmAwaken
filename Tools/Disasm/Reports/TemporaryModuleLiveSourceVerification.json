@@ -3,6 +3,15 @@
   "cases": [
     {
       "frame_entries": 2,
+      "direct_banked_entry": {
+        "inc_b_instructions": 9,
+        "rlca_instructions": 12,
+        "nop_instructions": 9472,
+        "instructions_from_banked_entry": 9498,
+        "final_page": 22,
+        "rom_entry": 0,
+        "sp_at_rom_entry": 24558
+      },
       "zero_length": {
         "copied_before_self_overwrite": 56779,
         "next_pc": 24010,
@@ -15,8 +24,16 @@
         "third_copy_count_remaining": 1570,
         "original_unpacker_entry_reached_with_replaced_code": true,
         "reached_rom": 3584,
+        "rom_calls": [
+          0,
+          8113
+        ],
+        "simulator_steps_after_first_rom_call": 717166,
+        "rom_error_instruction": 7148,
+        "rom_error_entry": 8,
+        "rom_error_byte": 22,
         "reached_temporary_entry": false,
-        "stopped_before_rom_execution": true
+        "stopped_before_error_handler_execution": true
       },
       "length_from_font_header": {
         "invalid_reference": 25167,
@@ -28,6 +45,15 @@
     },
     {
       "frame_entries": 9,
+      "direct_banked_entry": {
+        "inc_b_instructions": 9,
+        "rlca_instructions": 12,
+        "nop_instructions": 9472,
+        "instructions_from_banked_entry": 9498,
+        "final_page": 22,
+        "rom_entry": 0,
+        "sp_at_rom_entry": 24558
+      },
       "zero_length": {
         "copied_before_self_overwrite": 56779,
         "next_pc": 24010,
@@ -40,8 +66,16 @@
         "third_copy_count_remaining": 1570,
         "original_unpacker_entry_reached_with_replaced_code": true,
         "reached_rom": 3584,
+        "rom_calls": [
+          0,
+          8113
+        ],
+        "simulator_steps_after_first_rom_call": 717166,
+        "rom_error_instruction": 7148,
+        "rom_error_entry": 8,
+        "rom_error_byte": 22,
         "reached_temporary_entry": false,
-        "stopped_before_rom_execution": true
+        "stopped_before_error_handler_execution": true
       },
       "length_from_font_header": {
         "invalid_reference": 25167,
@@ -53,6 +87,15 @@
     },
     {
       "frame_entries": 65,
+      "direct_banked_entry": {
+        "inc_b_instructions": 9,
+        "rlca_instructions": 12,
+        "nop_instructions": 9472,
+        "instructions_from_banked_entry": 9498,
+        "final_page": 22,
+        "rom_entry": 0,
+        "sp_at_rom_entry": 24558
+      },
       "zero_length": {
         "copied_before_self_overwrite": 56779,
         "next_pc": 24010,
@@ -65,8 +108,16 @@
         "third_copy_count_remaining": 1570,
         "original_unpacker_entry_reached_with_replaced_code": true,
         "reached_rom": 3584,
+        "rom_calls": [
+          0,
+          8113
+        ],
+        "simulator_steps_after_first_rom_call": 717166,
+        "rom_error_instruction": 7148,
+        "rom_error_entry": 8,
+        "rom_error_byte": 22,
         "reached_temporary_entry": false,
-        "stopped_before_rom_execution": true
+        "stopped_before_error_handler_execution": true
       },
       "length_from_font_header": {
         "invalid_reference": 25167,
@@ -79,6 +130,8 @@
   ],
   "template_copy_base": 23968,
   "relocation_is_fixture": true,
+  "source_window_font_bytes": 624,
+  "source_window_viewport_code_bytes": 400,
   "trdos_substituted_during_flight_start": true,
   "native_execution": false,
   "actual_game_caller_proved": false,

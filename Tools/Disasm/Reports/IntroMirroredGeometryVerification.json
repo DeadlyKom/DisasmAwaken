@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "original_code_sha256": "f23dcde4b67b0f0e586daff20c7e04ad58dc83b80a08def286a9a8d6b30549cf",
+  "total_cases": 1281,
+  "source_grid": [
+    64,
+    38
+  ],
+  "crop_columns_inclusive": [
+    16,
+    47
+  ],
+  "crop_rows_inclusive": [
+    3,
+    34
+  ],
+  "destination_grid": [
+    64,
+    64
+  ],
+  "selected_source_bytes": 1024,
+  "every_selected_point_executed": true,
+  "four_symmetric_outputs_per_source_point": true,
+  "all_byte_values_checked": true,
+  "whole_byte_subtraction_with_borrow": true,
+  "unselected_source_bytes_excluded_by_control": true,
+  "both_4096_byte_physical_destinations_compared": true,
+  "source_renderer_executed": false,
+  "IRQ_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

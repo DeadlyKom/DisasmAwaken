@@ -72,7 +72,7 @@ def main():
                     'Delta2': 'знаковая поправка к третьей компоненте',
                     'ModelOffset': 'байт, записываемый в FActionRecord.ModelOffset',
                     'OffsetPhase1': 'байт, записываемый в FActionRecord.OffsetPhase1',
-                    'RecordByte0F': 'байт, записываемый в FActionRecord.TargetIndex, смысл зависит от класса',
+                    'RecordByte0F': 'байт, записываемый в FActionRecord.Phase2OrTarget, смысл зависит от класса',
                     'Unknown00': 'Unknown, младший байт ограничителя, исходно FF',
                     'EndCode': 'код 80 завершает обход, проверяется отдельно от предыдущих восьми байтов'}
     block = ''

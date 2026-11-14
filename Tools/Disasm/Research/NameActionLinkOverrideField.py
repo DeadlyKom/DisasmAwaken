@@ -52,7 +52,7 @@ def main():
             new=key.rsplit('.',1)[0]+'.'+NAME;assert new not in symbols
             symbols[new]=symbols.pop(key);renamed+=1
     assert renamed==26
-    assert 'ControlOptions.Unknown15' in symbols
+    assert 'ControlOptions.Missile3' in symbols
     pending[path]=(json.dumps(symbols,ensure_ascii=False,indent=2)+'\n').encode('utf-8')
     path=ROOT/'Docs/ActionObjectRecords.md';text=pending.get(path,path.read_bytes()).decode('utf-8')
     needle='| 16 | SavedStateCode |';assert text.count(needle)==1

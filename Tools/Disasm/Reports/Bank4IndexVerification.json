@@ -4,7 +4,21 @@
   "method": "original_bank4_sum_and_bank6_return",
   "all_byte_pairs": true,
   "all_unlocked_pages": true,
+  "row_operand_address": 57670,
+  "base_operand_address": 57672,
+  "original_d3d_opcodes": [
+    "LD A, n",
+    "ADD A, n"
+  ],
   "high_byte_E147_ignored": true,
+  "exact_R_M1": 37,
+  "exact_CPU_write_sequence_checked": true,
+  "CPU_write_watch_positive_control": true,
+  "original_return_word_preserved": true,
+  "full_index_components_page_and_R_cartesian_product_checked": false,
+  "physical_paging_lock_emulation_proved": false,
+  "arbitrary_stack_addresses_checked": false,
+  "stack_bus_cycle_order_verified": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

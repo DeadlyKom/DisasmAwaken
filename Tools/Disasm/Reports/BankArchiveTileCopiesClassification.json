@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "physical_copy_bytes": 1524,
+  "source_layers_read": 6912,
+  "copies": [
+    {
+      "slot": 33,
+      "begin": 7395,
+      "end_exclusive": 7671,
+      "archive_disk_offset": 606043
+    },
+    {
+      "slot": 34,
+      "begin": 7497,
+      "end_exclusive": 7698,
+      "archive_disk_offset": 606118
+    },
+    {
+      "slot": 35,
+      "begin": 7431,
+      "end_exclusive": 7698,
+      "archive_disk_offset": 606052
+    },
+    {
+      "slot": 37,
+      "begin": 7095,
+      "end_exclusive": 7698,
+      "archive_disk_offset": 605716
+    },
+    {
+      "slot": 38,
+      "begin": 7521,
+      "end_exclusive": 7698,
+      "archive_disk_offset": 606142
+    }
+  ],
+  "original_bytes_preserved": true,
+  "read_from_bank_copy_proved": false,
+  "assembly_executed": false
+}

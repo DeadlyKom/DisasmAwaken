@@ -1,0 +1,309 @@
+{
+  "passed": true,
+  "inactive_cases": 13312,
+  "original_code_sha256": "7a7c5e1fb0f9173cff7790f81aae5666ada00f99b082a795033167d2165f4cf4",
+  "entries": [
+    63273,
+    63285
+  ],
+  "inactive_record_counts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "all_R_values_crossed_with_both_entries_and_every_count": true,
+  "exact_M1_formulas": [
+    {
+      "entry": 63273,
+      "inactive_records": 0,
+      "M1": 14
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 1,
+      "M1": 25
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 2,
+      "M1": 36
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 3,
+      "M1": 47
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 4,
+      "M1": 58
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 5,
+      "M1": 69
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 6,
+      "M1": 80
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 7,
+      "M1": 91
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 8,
+      "M1": 102
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 9,
+      "M1": 113
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 10,
+      "M1": 124
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 11,
+      "M1": 135
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 12,
+      "M1": 146
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 13,
+      "M1": 157
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 14,
+      "M1": 168
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 15,
+      "M1": 179
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 16,
+      "M1": 190
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 17,
+      "M1": 201
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 18,
+      "M1": 212
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 19,
+      "M1": 223
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 20,
+      "M1": 234
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 21,
+      "M1": 245
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 22,
+      "M1": 256
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 23,
+      "M1": 267
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 24,
+      "M1": 278
+    },
+    {
+      "entry": 63273,
+      "inactive_records": 25,
+      "M1": 289
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 0,
+      "M1": 11
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 1,
+      "M1": 22
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 2,
+      "M1": 33
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 3,
+      "M1": 44
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 4,
+      "M1": 55
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 5,
+      "M1": 66
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 6,
+      "M1": 77
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 7,
+      "M1": 88
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 8,
+      "M1": 99
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 9,
+      "M1": 110
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 10,
+      "M1": 121
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 11,
+      "M1": 132
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 12,
+      "M1": 143
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 13,
+      "M1": 154
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 14,
+      "M1": 165
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 15,
+      "M1": 176
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 16,
+      "M1": 187
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 17,
+      "M1": 198
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 18,
+      "M1": 209
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 19,
+      "M1": 220
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 20,
+      "M1": 231
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 21,
+      "M1": 242
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 22,
+      "M1": 253
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 23,
+      "M1": 264
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 24,
+      "M1": 275
+    },
+    {
+      "entry": 63285,
+      "inactive_records": 25,
+      "M1": 286
+    }
+  ],
+  "registers_and_all_record_bytes_compared": true,
+  "no_memory_writes": true,
+  "no_handler_or_scale_calls": true,
+  "double_byte_marker_required": true,
+  "single_80_probe_stopped_at_real_CallHandler": true,
+  "active_handlers_executed": false,
+  "IRQ_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

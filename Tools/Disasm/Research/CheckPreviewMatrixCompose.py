@@ -9,12 +9,13 @@ from Analyze import payload
 from CheckPreviewCoordinateMultiply import Memory
 from PreviewModelMatrixOracle import matrix
 from PreviewMatrixComposeOracle import compose,SCENE,MODEL,OUTPUT
+from ReferenceControlsPointRespawn import refresh
 
 
 def main():
  raw=payload(6);m=Memory([0]*65536);m[0xC000:0xC000+len(raw)]=raw;m[0x7FFE:0x8000]=[255,63];s=Simulator(m)
  initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5D,'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
- cases=0;branches=collections.Counter();composed_frames=0
+ cases=0;branches=collections.Counter();composed_frames=0;m1_by_branch=collections.defaultdict(set)
  def check(scene,model,flags,angle):
   nonlocal cases
   expected=compose(scene,model,flags,angle);m.recording=False;m[0xCEFA]=flags;m[0xC21F]=angle
@@ -23,7 +24,19 @@ def main():
     for column in range(3):m[addresses[row][column]]=values[row][column]
   for row in OUTPUT:
    for pointer in row:m[pointer]=0xA5
-  s.registers[:]=initial;m.recording=True;m.writes=[];s.run(start=0xD54C,stop=0x3FFF);r=s.registers
+  initial[14],initial[15],initial[26],initial[27]=cases&255,(cases*73)&255,cases&1,cases%3
+  s.registers[:]=initial;m.recording=True;m.writes=[];r=s.registers;r[24]=0xD54C;measured_m1=0
+  for _ in range(1024):
+   if r[24]==0x3FFF:break
+   old_r=r[15];s.run();increment=(r[15]-old_r)&127
+   assert increment in (1,2)
+   measured_m1+=increment
+  else:raise AssertionError('композиция не вернулась')
+  assert measured_m1==expected['m1'] and r[15]==refresh(initial[15],expected['m1'])
+  assert all(r[i]==initial[i] for i in (14,26,27))
+  m1_by_branch[expected['branch']].add(measured_m1)
+  wanted_writes=collections.Counter((OUTPUT[row][column],expected['output'][row][column]) for row in range(3) for column in range(3))
+  assert collections.Counter((p,v) for p,v in m.writes if p in {q for row in OUTPUT for q in row})==wanted_writes
   assert [[m[p] for p in row] for row in OUTPUT]==expected['output'],(scene,model,flags,angle,expected)
   assert (r[A],r[F],r[SP],r[10]*256+r[11])==(*expected['af'],0x8000,0xCEFA),(scene,flags,angle,r[:12],expected)
   assert r[16:24]==initial[16:24] and m[0x7FFE:0x8000]==[255,63]
@@ -58,7 +71,7 @@ def main():
   model=tuple(tuple(m[p] for p in row) for row in MODEL)
   assert [model[row][column] for column in range(3) for row in range(3)]==list(matrix(angles,flags,raw[0x400:0x500])['values'])
   check(scene,model,flags,angles[1]);composed_frames+=1
- report=dict(passed=True,cases=cases,branches=dict(branches),real_matrix_producer_cases=composed_frames,all_bytes_in_four_quadrants=True,all_second_angles_in_one_axis_path=True,all_nine_composed_operands_checked=True,exact_registers_and_stack_writes_checked=True,independent_functional_composition=True,irq_executed=False,native_execution=False,assembly_executed=False,whole_projection_not_executed=True)
+ report=dict(passed=True,cases=cases,branches=dict(branches),real_matrix_producer_cases=composed_frames,all_bytes_in_four_quadrants=True,all_second_angles_in_one_axis_path=True,all_nine_composed_operands_checked=True,exact_registers_and_stack_writes_checked=True,independent_functional_composition=True,irq_executed=False,native_execution=False,assembly_executed=False,whole_projection_not_executed=True,direct_full_M1_and_R_scope='ComposePreviewMatrix_invocations_only',I_IM_IFF_preserved_checked=True,coefficient_write_multiplicity_checked=True,M1_by_branch={k:sorted(v) for k,v in m1_by_branch.items()},complete_joint_input_product_exhausted=False)
  (ROOT/'Tools/Disasm/Reports/PreviewMatrixComposeVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 
 

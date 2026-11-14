@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "source_disk": "awk6.trd",
+  "published_ranges": [
+    [
+      5144,
+      5152
+    ],
+    [
+      7600,
+      7680
+    ],
+    [
+      10430,
+      10496
+    ]
+  ],
+  "published_bytes": 154,
+  "source_mask_alignment": 16,
+  "source_page_alignment": 256,
+  "archived_sqrt_return": 59578,
+  "current_sqrt_return": 59581,
+  "square_and_root_tables_equal_bytes": 1280,
+  "assembly_executed": false,
+  "native_execution": false
+}

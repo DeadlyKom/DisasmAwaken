@@ -1,0 +1,444 @@
+{
+  "passed": true,
+  "cases": 512,
+  "player_index": 26,
+  "player_address": 42880,
+  "type_address": 42898,
+  "model_offset_address": 42886,
+  "original_type_code": 255,
+  "original_model_offset": 0,
+  "original_model_pointer": 49152,
+  "original_model_header": 621,
+  "exact_ChildMask_write_and_returned_OBJECT3D_header_verified": true,
+  "actual_reader_counts": {
+    "EA29": 512,
+    "EA37": 512,
+    "EA6F": 512,
+    "F63E": 256
+  },
+  "examples": [
+    {
+      "type_code": 0,
+      "notify": 0,
+      "field_reads": [
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 0
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 0
+        }
+      ],
+      "path": [
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "children_requested_3",
+        "children_created_3",
+        "large_current_record_released"
+      ],
+      "final_rank": 32767,
+      "child_mask": 160,
+      "returned_OBJECT3D_header": 621
+    },
+    {
+      "type_code": 0,
+      "notify": 1,
+      "field_reads": [
+        {
+          "pc": 63038,
+          "address": 42898,
+          "value": 0
+        },
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 0
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 0
+        }
+      ],
+      "path": [
+        "text_dropped",
+        "arrival_counter_incremented",
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "children_requested_5",
+        "children_created_5",
+        "large_current_record_released"
+      ],
+      "final_rank": 32768,
+      "child_mask": 160,
+      "returned_OBJECT3D_header": 621
+    },
+    {
+      "type_code": 5,
+      "notify": 0,
+      "field_reads": [
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 5
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 5
+        }
+      ],
+      "path": [
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "children_requested_3",
+        "children_created_3",
+        "large_current_record_released"
+      ],
+      "final_rank": 32767,
+      "child_mask": 160,
+      "returned_OBJECT3D_header": 621
+    },
+    {
+      "type_code": 5,
+      "notify": 1,
+      "field_reads": [
+        {
+          "pc": 63038,
+          "address": 42898,
+          "value": 5
+        },
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 5
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 5
+        }
+      ],
+      "path": [
+        "text_dropped",
+        "arrival_counter_incremented",
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "children_requested_3",
+        "children_created_3",
+        "large_current_record_released"
+      ],
+      "final_rank": 32768,
+      "child_mask": 160,
+      "returned_OBJECT3D_header": 621
+    },
+    {
+      "type_code": 6,
+      "notify": 0,
+      "field_reads": [
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 6
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 6
+        }
+      ],
+      "path": [
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "children_requested_3",
+        "children_created_3",
+        "large_current_record_released"
+      ],
+      "final_rank": 32767,
+      "child_mask": 160,
+      "returned_OBJECT3D_header": 621
+    },
+    {
+      "type_code": 6,
+      "notify": 1,
+      "field_reads": [
+        {
+          "pc": 63038,
+          "address": 42898,
+          "value": 6
+        },
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 6
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 6
+        }
+      ],
+      "path": [
+        "text_dropped",
+        "arrival_counter_incremented",
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "children_requested_5",
+        "children_created_5",
+        "large_current_record_released"
+      ],
+      "final_rank": 32768,
+      "child_mask": 160,
+      "returned_OBJECT3D_header": 621
+    },
+    {
+      "type_code": 7,
+      "notify": 0,
+      "field_reads": [
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 7
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 7
+        }
+      ],
+      "path": [
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "children_requested_3",
+        "children_created_3",
+        "large_current_record_released"
+      ],
+      "final_rank": 32767,
+      "child_mask": 160,
+      "returned_OBJECT3D_header": 621
+    },
+    {
+      "type_code": 7,
+      "notify": 1,
+      "field_reads": [
+        {
+          "pc": 63038,
+          "address": 42898,
+          "value": 7
+        },
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 7
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 7
+        }
+      ],
+      "path": [
+        "text_dropped",
+        "arrival_counter_incremented",
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "children_requested_3",
+        "children_created_3",
+        "large_current_record_released"
+      ],
+      "final_rank": 32768,
+      "child_mask": 160,
+      "returned_OBJECT3D_header": 621
+    },
+    {
+      "type_code": 8,
+      "notify": 0,
+      "field_reads": [
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 8
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 8
+        }
+      ],
+      "path": [
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "children_requested_4",
+        "children_created_4",
+        "large_current_record_released"
+      ],
+      "final_rank": 32767,
+      "child_mask": 64,
+      "returned_OBJECT3D_header": 621
+    },
+    {
+      "type_code": 8,
+      "notify": 1,
+      "field_reads": [
+        {
+          "pc": 63038,
+          "address": 42898,
+          "value": 8
+        },
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 8
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 8
+        }
+      ],
+      "path": [
+        "text_dropped",
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "children_requested_3",
+        "children_created_3",
+        "large_current_record_released"
+      ],
+      "final_rank": 32767,
+      "child_mask": 64,
+      "returned_OBJECT3D_header": 621
+    },
+    {
+      "type_code": 255,
+      "notify": 0,
+      "field_reads": [
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 255
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 255
+        }
+      ],
+      "path": [
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "large_current_record_released"
+      ],
+      "final_rank": 32767,
+      "child_mask": 160,
+      "returned_OBJECT3D_header": 621
+    },
+    {
+      "type_code": 255,
+      "notify": 1,
+      "field_reads": [
+        {
+          "pc": 63038,
+          "address": 42898,
+          "value": 255
+        },
+        {
+          "pc": 59945,
+          "address": 42898,
+          "value": 255
+        },
+        {
+          "pc": 59959,
+          "address": 42886,
+          "value": 0
+        },
+        {
+          "pc": 60015,
+          "address": 42898,
+          "value": 255
+        }
+      ],
+      "path": [
+        "text_dropped",
+        "approach_near_effect_target",
+        "large_effect_allocated",
+        "large_current_record_released"
+      ],
+      "final_rank": 32767,
+      "child_mask": 160,
+      "returned_OBJECT3D_header": 621
+    }
+  ],
+  "original_action_entry_and_all_called_helpers": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_memory_and_write_counts_compared": true,
+  "real_banked_queue_and_effect_executed": true,
+  "original_player_marker_preserved": true,
+  "target_and_near_projectile_coordinates_prepared": true,
+  "projectile_ownership_prepared": true,
+  "synthetic_ROM_used": true,
+  "original_type_model_and_notify_zero_profile_included": true,
+  "natural_reachability_of_all_mutated_type_notify_pairs_proved": false,
+  "original_arrival_report_sha256": "25e1fd8e9b100b163991248af70c7cde57c6d9e075ed4d43c4fa9cc80f93c735",
+  "original_arrival_report_unchanged": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

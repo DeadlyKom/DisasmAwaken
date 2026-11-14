@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "total_cases": 24840,
+  "fixed_packet": [
+    178,
+    0,
+    5,
+    0
+  ],
+  "M1_range": [
+    80,
+    3764
+  ],
+  "all_initial_R_values": true,
+  "exact_registers_including_R": true,
+  "full_M1_count_compared": true,
+  "all_eight_banks_and_write_multiplicity": true,
+  "fixed_clipped_packet_proved": true,
+  "explicit_zero_clip_code_branches": true,
+  "unconditional_C94B_branch": true,
+  "arbitrary_polygon_streams_proved": false,
+  "all_endpoint_pairs_exhausted": false,
+  "exact_T_claimed": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

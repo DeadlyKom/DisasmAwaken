@@ -74,8 +74,8 @@ I, IM и IFF сохраняются. RET даёт SP=входной SP+2.
 Ни одна RAM-ячейка не записывается, портовых операций и PUSH нет.
 R изменяется при исполнении.
 
-[UnknownD10A](../Source/Controls/ContinueProjectionRatio.asm) подготавливает A и B
-и продолжает выполнение в D165. [UnknownCF0B](../Source/Controls/BuildBodyProjection.asm)
+[ContinueProjectionRatio](../Source/Controls/ContinueProjectionRatio.asm) подготавливает A и B
+и продолжает выполнение в D165. [BuildBodyProjection](../Source/Controls/BuildBodyProjection.asm)
 использует оба входа через CALL. Проверка предусловий точного деления
 и смысл геометрических величин в этих вызывающих алгоритмах остаются
 отдельной задачей. Их входы не объявлены корректными лишь по наличию CALL.

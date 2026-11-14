@@ -494,9 +494,9 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## ReadFieldLowerj
+## PushUsedTonnage
 
-[Text.ReadFieldLowerj](../../Source/Text/ReadFieldLowerj.asm)
+[Text.PushUsedTonnage](../../Source/Text/PushUsedTonnage.asm)
 
 Добавление байта #9850 в стек выражений через общий байтовый вход.
 
@@ -508,9 +508,9 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## ReadFieldUpperJ
+## PushTonnageCapacity
 
-[Text.ReadFieldUpperJ](../../Source/Text/ReadFieldUpperJ.asm)
+[Text.PushTonnageCapacity](../../Source/Text/PushTonnageCapacity.asm)
 
 Добавление байта #9851 в стек выражений.
 
@@ -1152,11 +1152,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## IsByteMissingFromFour
+## IsShipTypeMissingFromRow
 
-[Text.IsByteMissingFromFour](../../Source/Text/IsByteMissingFromFour.asm)
+[Text.IsShipTypeMissingFromRow](../../Source/Text/IsShipTypeMissingFromRow.asm)
 
-Проверка отсутствия выбранного байта в четырёхбайтовой записи.
+Проверка отсутствия типа корабля в строке ограничений оснащения.
 
 Вход `#C558`, запись 5, смещения `#0558..#0576`.
 
@@ -1166,11 +1166,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## GetHighBitCode
+## ReadShipEquipmentLimit
 
-[Text.GetHighBitCode](../../Source/Text/GetHighBitCode.asm)
+[Text.ReadShipEquipmentLimit](../../Source/Text/ReadShipEquipmentLimit.asm)
 
-Возврат кода 127 при снятом bit7 либо 1 при установленном.
+Чтение предела количества корабельного оснащения из бита 7.
 
 Вход `#C577`, запись 5, смещения `#0577..#0589`.
 
@@ -1180,9 +1180,9 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Property070
+## ReadSecondaryEquipmentPrice
 
-[Text.Property070](../../Source/Text/Property070.asm)
+[Text.ReadSecondaryEquipmentPrice](../../Source/Text/ReadSecondaryEquipmentPrice.asm)
 
 Чтение слова с шагом два по базе #95D4.
 
@@ -1194,9 +1194,9 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Property071
+## ReadSecondaryEquipmentWeight
 
-[Text.Property071](../../Source/Text/Property071.asm)
+[Text.ReadSecondaryEquipmentWeight](../../Source/Text/ReadSecondaryEquipmentWeight.asm)
 
 Чтение байта с шагом два по базе #9633.
 
@@ -1236,11 +1236,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Property072
+## IsSkimmerTypeMissingFromRow
 
-[Text.Property072](../../Source/Text/Property072.asm)
+[Text.IsSkimmerTypeMissingFromRow](../../Source/Text/IsSkimmerTypeMissingFromRow.asm)
 
-Проверка отсутствия байта #984A в записи таблицы #9484.
+Проверка отсутствия типа скимера в строке оснащения.
 
 Вход `#C5B2`, запись 5, смещения `#05B2..#05BA`.
 
@@ -1250,11 +1250,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Property073
+## ReadSkimmerEquipmentLimit
 
-[Text.Property073](../../Source/Text/Property073.asm)
+[Text.ReadSkimmerEquipmentLimit](../../Source/Text/ReadSkimmerEquipmentLimit.asm)
 
-Чтение кода старшего разряда по базе #98F6.
+Чтение предела количества оснащения скимера из бита 7.
 
 Вход `#C5BB`, запись 5, смещения `#05BB..#05C0`.
 
@@ -1348,9 +1348,9 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Property080
+## ReadShipSaleField
 
-[Text.Property080](../../Source/Text/Property080.asm)
+[Text.ReadShipSaleField](../../Source/Text/ReadShipSaleField.asm)
 
 Чтение байта по индексу из CPU-стека с шагом пять и базой #9806.
 
@@ -1362,9 +1362,9 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Property086
+## ReadSkimmerPriceField
 
-[Text.Property086](../../Source/Text/Property086.asm)
+[Text.ReadSkimmerPriceField](../../Source/Text/ReadSkimmerPriceField.asm)
 
 Чтение слова по индексу из CPU-стека с шагом пять и базой #9826.
 
@@ -1376,9 +1376,9 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Property087
+## ReadSkimmerLoadAddend
 
-[Text.Property087](../../Source/Text/Property087.asm)
+[Text.ReadSkimmerLoadAddend](../../Source/Text/ReadSkimmerLoadAddend.asm)
 
 Чтение байта по индексу из CPU-стека с шагом пять и базой #9829.
 

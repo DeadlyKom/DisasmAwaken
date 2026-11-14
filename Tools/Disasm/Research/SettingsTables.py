@@ -3,6 +3,13 @@ CHOICES='Source/Station/Data/InterfaceChoices.asm'
 COLORS='Source/Station/Data/InterfaceColors.asm'
 CONTROLS='Source/Station/Data/ControlOptions.asm'
 TEXT='Source/Station/Data/SettingsText.asm'
+CONTROL_LABELS=(
+    'MouseOption', 'PitchUp', 'PitchDown', 'YawLeft', 'YawRight', 'RollLeft', 'RollRight',
+    'LaserKey', 'SpeedUp', 'SpeedDown', 'ComputerKey', 'MissileAim', 'ClearTargets',
+    'Missile1', 'Missile2', 'Missile3', 'BoostKey', 'FreeFlightKey', 'GuidanceKey',
+    'ReturnKey', 'TractorKey', 'AntimissileKey', 'CargoEject', 'MineEject', 'HyperJumpKey',
+    'NeonKey', 'ViewToggle', 'RadiationKey',
+)
 
 
 def words(source,module,labels,origin):
@@ -11,7 +18,13 @@ def words(source,module,labels,origin):
     symbols={}
     for i,label in enumerate(labels):
         offset=origin-0x6000+2*i;value,mask=source[offset:offset+2]
-        lines.append((label+':').ljust(16)+f'FSettingWord {{ #{value:02X}, #{mask:02X} }}'.ljust(64)+'; ValueOrRow, KeyMask, порядок исходного массива')
+        if label == 'ResourceSelect':
+            lines.append((label+':').ljust(16)+f'FScriptResourceSelection {{ #{value:02X}, #{mask:02X} }}'.ljust(64)
+                         +'; GroupCount, RecordCount, исходный выбор ресурса LANG')
+            symbols[module+'.'+label+'.GroupCount']=origin+2*i
+            symbols[module+'.'+label+'.RecordCount']=origin+2*i+1
+        else:
+            lines.append((label+':').ljust(16)+f'FSettingWord {{ #{value:02X}, #{mask:02X} }}'.ljust(64)+'; ValueOrRow, KeyMask, порядок исходного массива')
         symbols[module+'.'+label]=origin+2*i
     lines+=[f'                assert $ == #{origin+2*len(labels):04X}','                endmodule']
     return '\n'.join(lines)+'\n',symbols
@@ -22,7 +35,7 @@ def render(source):
     for path,module,labels,origin in (
             (CHOICES,'InterfaceChoices',('MouseOption','JoyOption','MusicMode','FillMode'),0x99AE),
             (COLORS,'InterfaceColors',('InkBits','PaperRotate','HighRotate'),0x99C2),
-            (CONTROLS,'ControlOptions',tuple(f'Unknown{i:02d}' for i in range(43)),0x99C8)):
+            (CONTROLS,'ControlOptions',(*CONTROL_LABELS, *[f'Unknown{i:02d}' for i in range(28,42)], 'ResourceSelect'),0x99C8)):
         text,local=words(source,module,labels,origin);outputs[path]=text;symbols.update(local)
     lines=['                module SettingsText','; Документация [изменяемые подписи](../../../Docs/SettingsLabels.md)',
            '; исходные тексты до FormatSettingsLabel, загрузчик заменяет их по длине до нуля',

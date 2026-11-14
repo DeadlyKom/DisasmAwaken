@@ -4,13 +4,47 @@ import json,sys
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/'Tools/Disasm/Research/vendor/skoolkit-10.1'),str(ROOT/'Tools/Disasm/Research')]
 from skoolkit.simulator import Simulator
-from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,SP
+from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,PC,SP
 from CheckRowHighlight import make_context
 from CheckMatrixKey import add_flags
 
 
+class BackwardReadMemory(bytearray):
+    def __getitem__(self, address):
+        if isinstance(address, int) and self.registers[PC] == 0xCA01 and address < 0xC000:
+            self.reads.append(address)
+        return super().__getitem__(address)
+
+
+def check_empty_route(station, source, initial):
+    memory = BackwardReadMemory(65536)
+    memory[0x6000:0x6000 + len(station)] = station
+    memory[0xC000:0xC000 + len(source)] = source
+    memory[0x7FFE:0x8000] = b'\xFF\x3F'
+    memory[0x6309:0x630B] = b'\x3D\x99'
+    assert memory[0x9970:0x997B] == b'\x22' + bytes(10)
+    original_prefix = list(range(0x993D, 0x9905, -5))
+    extended_prefix = [0x9901, 0x98FC, 0x98F7, 0x98F2]
+    assert bytes(station[address - 0x6000] for address in original_prefix) == bytes((0xFF,)) * 11 + b'\x64'
+    assert bytes(station[address - 0x6000] for address in extended_prefix) == b'\xFF\xFF\xFF\x00'
+    sim = Simulator(memory)
+    memory.registers = sim.registers
+    for counter in range(256):
+        memory[0x9906] = counter
+        memory[0x9970] = 0x22
+        memory.reads = []
+        sim.registers[:] = initial
+        sim.run(start=0xC9FB, stop=0x3FFF)
+        assert memory.reads == original_prefix + (extended_prefix if counter >= 0x7F else [])
+        assert memory[0x6309:0x630B] == b'\x3D\x99' and memory[0x9970:0x997B] == b'\x20' + bytes(10)
+    return dict(cases=256, read_pc=0xCA01, original_counter=0x64,
+                addresses_through_transition_counter=original_prefix,
+                additional_addresses_for_counter_7F_through_FF=extended_prefix,
+                resulting_cursor=0x993D, resulting_layout=0x20, resulting_count=0)
+
+
 def main():
- _,source,banks=make_context();memory=bytearray(65536);memory[0x4000:0x8000]=bytes(banks[5]);memory[0x8000:0xC000]=bytes(banks[2]);memory[0xC000:0xC000+len(source)]=source
+ station,source,banks=make_context();memory=bytearray(65536);memory[0x4000:0x8000]=bytes(banks[5]);memory[0x8000:0xC000]=bytes(banks[2]);memory[0xC000:0xC000+len(source)]=source
  sim=Simulator(memory);initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5C,'IX':0x2468,'IY':0x5C3A,
   '^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
  cases=0
@@ -44,7 +78,8 @@ def main():
  report=dict(passed=True,cases=cases,method='original_secondary_point_cursor_count_and_order_all_markers_slots_layout_bytes',
   marker_7F_terminates_count_and_is_skipped_backward=True,empty_FF_skipped=True,
   order_is_dense_multiples_of_five_not_compacted_slot_offsets=True,
-  backward_search_guard_explicit=True,calls_stubbed=False,irq_executed=False,native_execution=False,assembly_executed=False)
+  backward_search_guard_explicit=True,empty_original_route=check_empty_route(station,source,initial),
+  calls_stubbed=False,irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/SecondaryPointOrderVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))
 

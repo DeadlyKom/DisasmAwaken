@@ -11,21 +11,25 @@
       "entry": 25344,
       "source": 25369,
       "destination": 16384,
-      "size": 693
+      "size": 693,
+      "full_M1": 2929
     },
     {
       "region": "ActionBoot",
       "entry": 24576,
       "source": 24643,
       "destination": 16896,
-      "size": 506
+      "size": 506,
+      "full_M1": 28684
     }
   ],
   "all_initial_flags_values": true,
   "all_A_values_for_station": true,
   "all_six_bit_paging_values_for_action": true,
   "locked_paging_for_action": true,
-  "all_registers_except_R": true,
+  "all_registers_including_R": true,
+  "all_initial_R_values": true,
+  "full_M1_count_compared": true,
   "all_physical_ram_bytes_proved": true,
   "write_multiplicity_proved": true,
   "exact_ports": true,

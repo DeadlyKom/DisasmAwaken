@@ -1,5 +1,5 @@
 """Общий хвост удаления класса 12 с явным обходом восстановления операндов при маркере."""
-FUNCTIONS={0xE65F:('ReleaseClass12Records','Обнуление двух байтов состояния и пометка всех активных записей класса 12 либо хвост восстановления смещений')}
+FUNCTIONS={0xE65F:('ReleaseStationPartsOrRestoreOffsets','Освобождение частей станции либо восстановление рабочих смещений')}
 LOCAL={0xE674:'ScanNext'}
 CONTRACTS={('Action',0xE65F):(
     ['HL, DE и BC числовых аргументов не задают, IX - читаемая FActionRecord, её ClassCode определяет ветвь',
@@ -8,7 +8,7 @@ CONTRACTS={('Action',0xE65F):(
      'код ACTION доступен в банке 0, CPU-стек содержит внешний возврат, для класса 12 нужны два дополнительных байта',
      'CPU-стек, исполняемый код и входная запись не пересекаются с изменяемыми полями, IRQ не вмешивается'],
     ['при классе 12 HL и DE сохранены, BC=0040, AF=8042, IY указывает на маркер, SP после RET равен входному SP+2',
-     'при классе 12 байты UnknownByte0 и UnknownByte1 равны нулю, каждая активная запись класса 12 получает Component0=8000 и ReuseByte=FF',
+     'при классе 12 TemplateMode и ThirdGate равны нулю, каждая активная запись класса 12 получает Component0=8000 и ReuseByte=FF',
      'неактивные записи, маркер и активные записи других классов не меняются, после маркера RestoreHalvedOffsets не вызывается',
      'для другого класса выполнен хвост RestoreHalvedOffsets, HL и AF определены его договором, DE, BC и IY сохранены',
      "HL', DE', BC', AF' и IX сохраняются, I/IM/IFF и paging сохраняются",
@@ -17,10 +17,11 @@ CONTRACTS={('Action',0xE65F):(
     ['HL только для класса 14, BC только для класса 12, AF, IY только для класса 12, R',
      'для класса 12 два байта состояния, три поля каждой выбранной записи и два временных байта CPU-стека',
      'для класса 14 шесть байтов Active0..2, остальные коды не записывают RAM'],
-    ['(1) жёсткий порядок, сюда продолжается часть (0) RejectRecordUpdate.asm после CALL пометки',
+    ['полный класс 12 соответствует авторскому T_STATION, часть станции, ветвь остальных классов сохраняет исходный RestoreHalvedOffsets',
+     '(1) жёсткий порядок, сюда продолжается часть (0) RejectRecordUpdate.asm после CALL пометки',
      'доступность проверяет настоящий NextActiveRecord, High=80 означает пропуск, Low=80 дополнительно завершает проход',
      'пометка вызывает настоящий MarkIYRecordForReuse, следующий достигший записи поиск доступного места один раз пропустит FF',
-     'проверяется весь ClassCode, 12 не трактуется как битовая маска, игровые роли двух обнуляемых байтов пока не установлены',
+     'полный ClassCode=12 сбрасывает режим шаблонной группы и снимает запрет третьего знака и класса 8',
      '2129 сценариев проверили все коды класса, все входные F, каждую из 26 позиций в трёх состояниях, 1024 смешанных списка и крайние случаи',
      'сопоставлены все регистры включая R, восемь банков RAM и кратность записей, реальный итератор и оба дочерних хвоста не подменены',
      'полное пространство 3^26 состояний списка, порядок шинных циклов стека, IRQ, точные T, сборка и нативный запуск не доказаны'])}
@@ -39,14 +40,14 @@ COMMENTS={
 def name_operands(region,address,operation):
     if region!='Action':return operation
     if operation.startswith(('JP ','JR ')):
-        operation=operation.replace('#E65F','@Action.ReleaseClass12Records.Entry')
+        operation=operation.replace('#E65F','@Action.ReleaseStationPartsOrRestoreOffsets.Entry')
     if address!=0xE65F:return operation
     for offset,field in ((0x12,'ClassCode'),):
         for register in ('IX','IY'):
             operation=operation.replace('('+register+'+#'+format(offset,'02X')+')','('+register+'+FActionRecord.'+field+')')
     for before,after in (('#E685','@Action.RestoreHalvedOffsets.Entry'),('#E6D1','@Action.NextActiveRecord.Entry'),
-        ('#F03D','@Action.MarkIYRecordForReuse.Entry'),('(#9B83)','(@ActionParameterActivationState.UnknownByte0)'),
-        ('(#9B82)','(@ActionParameterActivationState.UnknownByte1)'),('CP #12','CP @ActionCloseRecordConst.TransferClass'),
+        ('#F03D','@Action.MarkIYRecordForReuse.Entry'),('(#9B83)','(@ActionGlyphIndicatorState.Control.TemplateMode)'),
+        ('(#9B82)','(@ActionGlyphIndicatorState.Control.ThirdGate)'),('CP #12','CP @ActionCloseRecordConst.TransferClass'),
         ('#A0C0','@ActionObjectRecords.Record00-FActionRecord'),('#0040','FActionRecord')):
         operation=operation.replace(before,after)
     return operation

@@ -6,7 +6,7 @@ from CheckIntro import ROOT
 BLOCKS = (
     (0x315, 9, 'StationFileKey', 'StationFileKey.asm'),
     (0x32C, 12, 'FinalTexturePhases', 'FinalTexturePhases.asm'),
-    (0x363, 63, 'AlternatingLookup', 'AlternatingLookup.asm'),
+    (0x363, 64, 'AlternatingLookup', 'AlternatingLookup.asm'),
     (0x693, 16, 'AttributeNibbleSeeds', 'AttributeNibbleSeeds.asm'),
     (0x873, 32, 'ColumnTailSamples', 'ColumnTailSamples.asm'),
     (0x962, 40, 'ScaleCycle', 'ScaleCycle.asm'),
@@ -66,7 +66,9 @@ def render(block, raw):
         for index, value in enumerate(raw):
             name = (('A' if index < 8 else 'B') + str(index % 8)
                     if module == 'AttributeNibbleSeeds' else f'P{index:02X}')
-            add(name, f'{struct} {{ #{value:02X} }}', note, index)
+            meaning = ('последний отсчёт IM_IT, за пределом 63 чтений построителя'
+                       if module == 'AlternatingLookup' and index == 63 else note)
+            add(name, f'{struct} {{ #{value:02X} }}', meaning, index)
     lines += [f'                assert $ == #{origin+length:04X}', '                endmodule', '']
     return '\n'.join(lines), labels
 

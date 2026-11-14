@@ -22,6 +22,14 @@
       "passed": true
     },
     {
+      "name": "BuildTextureLookupParameterSource",
+      "fixtures": 4,
+      "parameter_count": 63,
+      "parameter_address": 24704,
+      "both_opcode_variants_compared": true,
+      "passed": true
+    },
+    {
       "name": "BuildPhaseTable",
       "fixtures": 15,
       "passed": true

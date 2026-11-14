@@ -1,8 +1,8 @@
 """Физическая пара байтов ACTION по 9C10, локальный приоритет доказан читателем 74FB."""
 import re
 from PreviewSceneTables import render as render_records,parse as parse_records
-FIELDS=(('Preferred',1,'выбирается вместе со своим адресом, если байт ненулевой'),
-        ('Fallback',1,'выбирается вместе со своим адресом, если Preferred равен нулю'))
+FIELDS=(('Preferred',1,'топливо МРП, приоритет при ненулевом запасе'),
+        ('Fallback',1,'топливо ЛНП, выбирается при нуле МРП'))
 TABLE=('ActionPreferredByteState','Source/Action/Data/PreferredByteState.asm',0x3C10,0x3C12,
        'FPreferredBytePair',FIELDS,('Value',))
 
@@ -10,7 +10,7 @@ TABLE=('ActionPreferredByteState','Source/Action/Data/PreferredByteState.asm',0x
 def render(source):
     text,labels=render_records(source,TABLE,0x6000)
     return text.replace('[подготовка и обход объектов](../../../Docs/PreviewQueueBuild.md)',
-        '[выбор байта с приоритетом](../../../Docs/ActionPreferredByte.md)'),labels
+        '[выбор запаса топлива](../../../Docs/ActionPreferredByte.md)'),labels
 
 
 def parse(text):

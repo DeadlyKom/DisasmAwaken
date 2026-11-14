@@ -57,3 +57,10 @@ FRAMES увеличивается на два, включая переполне
 записей. Данные в сценариях контролируемые, не нативное прохождение эффекта.
 Произвольные входные состояния и времена, другие ROM, клавиши, IFF=1
 на входе, NMI, точные R/T и нативный показ не доказаны.
+
+
+## Опкод второй выборки
+
+Полный договор [PresentLookupTexture](../Source/Intro/PresentLookupTexture.asm) требует исходного CALL в SecondSampler по #6BDA. [BuildMirroredTexture](../Source/Intro/BuildMirroredTexture.asm) меняет только первый байт этой инструкции с #CD на #C3, двухбайтовый адрес RunTextureSampler остаётся прежним. После JP выборщик снимает возврат RenderLookupTexture, поэтому обновление масштаба по #6BDD и вывод через PresentInterlacedFrame по #6BE0 не исполняются. Полный договор кадра на этот путь не распространяется.
+
+Изменение сохраняется после возврата BuildMirroredTexture. Сквозная модель [CheckIntroMirroredComposition](../Tools/Disasm/Research/CheckIntroMirroredComposition.py) отдельно проверяет возврат по #6DE6 с исходным SP и построение отражения. Она не доказывает произвольные последующие вызовы полного кадра после изменения опкода.

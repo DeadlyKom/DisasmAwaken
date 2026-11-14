@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "source": "awk1.trd:SPACE.a",
+  "authored_label": "DOTB",
+  "dot_buffer_origin": 50432,
+  "dot_buffer_bytes": 256,
+  "current_known_point_bytes": 70,
+  "tail_origin": 50502,
+  "tail_bytes": 186,
+  "matched_control0_prefix": 1536,
+  "tail_game_reader_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

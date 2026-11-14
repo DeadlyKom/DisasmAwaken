@@ -49,6 +49,34 @@ def main(clipped=False):
         assert all(oracle.r[i]==sim.registers[i] for i in compared),(records,profile,'registers',[(i,oracle.r[i],sim.registers[i]) for i in compared if oracle.r[i]!=sim.registers[i]])
         assert all(a==b for a,b in zip(oracle.banks,memory.banks)),(records,profile,'RAM')
         assert Counter(oracle.writes)==Counter(memory.writes),(records,profile,'writes',Counter(oracle.writes)-Counter(memory.writes),Counter(memory.writes)-Counter(oracle.writes))
+        # Проверка общего выхода напрямую по структуре потока, независимо от композиционного эталона.
+        end=pointer+len(stream)-1
+        assert (sim.registers[6]<<8|sim.registers[7])==end
+        assert sim.registers[0:2]==[0,0x54] and sim.registers[SP]==0xC000
+        if not records:
+            # Проверка пустого потока, дочерние процедуры не должны менять контекст или RAM.
+            assert all(sim.registers[i]==initial[i] for i in (*range(2,12),14,*range(16,24),26,27))
+            assert memory.writes==[]
+        elif len(records)==1 and records[0][0]&128:
+            header,indices=records[0];count=header&15
+            if header&64 and gate:
+                # Проверка полного пропуска связанной ломаной, SkipRecord оставляет BC равным count+1.
+                assert sim.registers[2:4]==[0,count+1]
+                assert all(sim.registers[i]==initial[i] for i in (*range(4,6),*range(8,12),*range(16,24)))
+                assert memory.writes==[]
+            else:
+                # Проверка восстановления счётчика после последнего сегмента и сохранённого младшего C.
+                assert sim.registers[2:4]==[0,initial[3]]
+                if clipped:
+                    # Проверка полного последнего конца, включая сегменты, отвергнутые до растеризации.
+                    assert sim.registers[8:10]==[0x8E,indices[-1]]
+                    x,y=points[indices[-1]//5]
+                    for address,value in ((0x8D3E,x),(0x8D4A,y)):
+                        assert memory[address]|memory[address+1]<<8==value&65535
+                    index=indices[-1]//5
+                    region=(2 if x<0 else 1 if x>255 else 0)|(8 if y<0 else 4 if y>95 else 0)
+                    expected_code=(((region^15)<<4)|region) if codes is None else codes[index]
+                    assert memory[0x8D4D]==expected_code
         counts[profile]+=1
 
     # Проверка обеих ориентаций выпуклых контуров, всех штатных материалов и счётчиков до 15.
@@ -135,6 +163,8 @@ def main(clipped=False):
         actual_children_executed_without_stubs=True,composition_oracle=True,independent_full_geometry=False,
         exact_registers_flags_except_R=True,all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
         convex_onscreen_face_profile=True,clipped_convex_face_profile=clipped,
+        direct_final_stream_and_empty_context_invariants=True,
+        direct_single_line_counter_invariants=True,direct_clipped_endpoint_invariants=clipped,
         horizontal_degenerate_faces_checked=True,
         all_40_native_point_slots=True,line_counts_2_to_15=True,face_counts_3_to_15=True,
         record_stream_cross_page_boundaries_checked=True,

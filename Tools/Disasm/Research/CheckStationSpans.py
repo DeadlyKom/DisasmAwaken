@@ -7,6 +7,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "Tools/Disasm/Research/vendor/skoolkit-10.1"))
+from CheckPreviewCoordinateMultiply import Memory
+from ReferenceControlsPointRespawn import refresh
 from skoolkit.simulator import Simulator
 from skoolkit.simutils import get_registers, A, F, B, C, D, E, H, L, PC, SP, xA, xF, xH, xL
 
@@ -38,7 +40,7 @@ def main():
     manifest = json.loads((ROOT / "Tools/Disasm/Disk/Manifest.json").read_text(encoding="utf-8"))
     entry = next(e for e in manifest["entries"] if e["slot"] == 4)
     source = (ROOT / (entry["path"] + ".sectors.bin")).read_bytes()
-    memory = [0] * 65536
+    memory = Memory([0] * 65536)
     memory[0x6000:0x6000 + len(source)] = source
     memory[0xBFFE:0xC000] = [0xFF, 0x3F]
     simulator = Simulator(memory)
@@ -50,12 +52,20 @@ def main():
              "^HL": 0x6789, "^DE": 0x789A, "^BC": 0x89AB, "^AF": 0xA500, **config},
             None, False)
         initial = simulator.registers.copy()
+        memory.writes = []
+        memory.recording = address == 0xC165
         for _ in range(24):
             if simulator.registers[PC] == 0x3FFF:
                 break
             simulator.run()
         else:
             raise ValueError("Станционный помощник не вернулся")
+        memory.recording = False
+        if address == 0xC165:
+            assert not memory.writes
+            assert all(simulator.registers[i] == initial[i] for i in (14, 26, 27))
+            expected_m1 = 6 if simulator.registers[xL] & 128 else 9
+            assert simulator.registers[15] == refresh(initial[15], expected_m1)
         if simulator.registers[SP] != 0xC000:
             raise ValueError("Не восстановлен CPU-стек")
         return initial
@@ -94,7 +104,8 @@ def main():
     for previous in range(256):
         for flags in range(256):
             # Проверка переполнения знакового индекса и независимости результата от входного F.
-            initial = execute(0xC165, F=flags, **{"^HL": 0x2300 | previous})
+            initial = execute(0xC165, F=flags, I=(previous ^ flags), R=flags, IM=previous % 3,
+                              **{"^HL": 0x2300 | previous})
             row = (previous + 1) & 255
             if row & 128:
                 expected_a = row
@@ -129,7 +140,9 @@ def main():
         raise ValueError("Ожидаемая исходная копия образца не совпала")
     report = {"method": "original_z80_bytes_without_assembly", "pattern_cases": pattern_cases,
               "flat_pattern_cases": flat_cases, "clip_counter_cases": clip_cases,
-              "screen_address_cases": address_cases, "original_outline_copy_identical": duplicate_equal,
+              "clip_counter_full_m1_values": [6, 9], "clip_counter_exact_refresh_checked": True,
+              "clip_counter_no_memory_writes": True, "clip_counter_i_im_iff_preserved": True,
+              "clip_counter_iff_fixture": 0, "screen_address_cases": address_cases, "original_outline_copy_identical": duplicate_equal,
               "source_sha256": hashlib.sha256(source).hexdigest(), "passed": True,
               "whole_frame_rendering_verified": False, "assembly_executed": False}
     (ROOT / "Tools/Disasm/Reports/StationSpanVerification.json").write_text(

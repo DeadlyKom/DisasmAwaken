@@ -36,9 +36,25 @@
       "caption": "Добро пожаловать!"
     }
   ],
+  "adjacent_ret_bytes": {
+    "start": 43650,
+    "end_exclusive": 43652,
+    "physical_interface_records": 46,
+    "contract_hover_entry": 43605,
+    "contract_action_entry": 43608,
+    "contract_ret": 43652,
+    "physical_hover_action_or_draw_targets": 0,
+    "registered_direct_branch_targets": 0,
+    "dynamic_indirect_targets_exhausted": false
+  },
   "all_af_values_for_each_entry": true,
   "all_gpr_alternates_index_and_flags_preserved": true,
   "no_memory_or_port_writes": true,
+  "exact_R_checked": true,
+  "R_inputs_cover_all_byte_values": true,
+  "proxy_M1": 2,
+  "direct_RET_M1": 1,
+  "full_AF_by_R_cartesian_product_checked": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

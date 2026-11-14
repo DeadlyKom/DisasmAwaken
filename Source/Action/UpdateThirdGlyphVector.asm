@@ -7,7 +7,7 @@
                 ; In:
                 ;   HL, DE, BC и AF числовых аргументов не задают, B сохраняется, C сохраняется только при запрете
                 ;   ThirdGate физического Control разрешает расчёт только при нуле, остальные 255 значений завершают процедуру
-                ;   SourceWord0 по 9B79, SourceWord1 по 9B7C и SourceWord2 по 9B7F содержат три входных слова, их единицы и соседние байты ещё не установлены
+                ;   SourceWord0..2 содержат разряды 23..8 трёх компонент вектора станции ActionWorkVector, единицы расстояния не установлены
                 ;   действуют договоры ComputePatchedVector, RestoreThirdGlyphStack и PublishThirdGlyphVector, девять коэффициентов доступны в банке 0
                 ;   CPU SP содержит внешний возврат, его слово не пересекается с изменяемыми операндами и выходами, повторный вход и вмешательство IRQ исключены
                 ; Out:
@@ -41,13 +41,13 @@ Entry:          LD A, (@ActionGlyphIndicatorState.Control.ThirdGate)
 
                 ; -----------------------------------------
                 ; Подготовка входных слов вычислителя
-                ; Чтение SourceWord0 и обновление реального непосредственного Input0, соседний байт источника не копируется.
+                ; Чтение разрядов 23..8 первой компоненты станции и обновление Input0, младшие восемь разрядов отбрасываются.
                 LD HL, (@ActionThirdGlyphVectorState.SourceWord0)
                 LD (@ActionPatchedVectorState.Input0), HL
-                ; Чтение SourceWord1 и обновление Input1 из второго слова с исходным шагом три байта.
+                ; Чтение разрядов 23..8 второй компоненты станции и обновление Input1.
                 LD HL, (@ActionThirdGlyphVectorState.SourceWord1)
                 LD (@ActionPatchedVectorState.Input1), HL
-                ; Чтение SourceWord2 и обновление Input2, игровой смысл промежуточных байтов остаётся неизвестным.
+                ; Чтение разрядов 23..8 третьей компоненты станции и обновление Input2.
                 LD HL, (@ActionThirdGlyphVectorState.SourceWord2)
                 LD (@ActionPatchedVectorState.Input2), HL
                 ; -----------------------------------------

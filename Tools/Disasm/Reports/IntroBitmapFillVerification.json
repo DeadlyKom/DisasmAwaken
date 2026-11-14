@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "cases": 512,
+  "all_fill_bytes": true,
+  "all_initial_F": true,
+  "complete_fill_and_F_product_exhausted": false,
+  "exact_full_RAM_and_write_multiplicity": true,
+  "bytes_written_once": 4096,
+  "exact_main_alternate_and_index_registers": true,
+  "full_M1": 9069,
+  "R_I_IM_IFF_checked": true,
+  "tested_stack_addresses": [
+    32766,
+    32768,
+    32769,
+    49150
+  ],
+  "flat_loaded_intro_view": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

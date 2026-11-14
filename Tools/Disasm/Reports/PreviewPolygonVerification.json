@@ -1,6 +1,16 @@
 {
   "passed": true,
-  "cases": 10728,
+  "cases": 17088,
+  "cases_by_mode": {
+    "0": 2150,
+    "1": 2128,
+    "2": 2174,
+    "3": 2127,
+    "4": 2149,
+    "5": 2120,
+    "6": 2120,
+    "7": 2120
+  },
   "independent_geometric_edge_intersections": true,
   "full_6144_byte_bitmap": true,
   "consistent_fill_modes": [
@@ -10,13 +20,19 @@
     3,
     4
   ],
-  "modes_5_6_7_not_proved": true,
+  "literal_edge_mask_modes": [
+    5,
+    6,
+    7
+  ],
+  "normal_game_use_of_modes_5_to_7_proved": false,
   "top_included_bottom_excluded": true,
-  "left_included_right_excluded": true,
+  "left_included_right_excluded_for_consistent_modes": true,
   "signed_half_up_edge_rounding": true,
   "real_sprite_line_table_setup": true,
   "all_writes_accounted_for": true,
   "ignored_rom_write_attempts_with_unchanged_values": 780,
+  "literal_modes_rom_write_attempts": 468,
   "original_column_255_address_drift_preserved": true,
   "caller_hl_preserved": true,
   "convex_onscreen_profile": true,
@@ -24,5 +40,52 @@
   "degenerate_horizontal_contours_checked": true,
   "irq_executed": false,
   "native_execution": false,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "full_R_from_original_opcode_M1_checked": true,
+  "each_R_increment_and_bit7_checked": true,
+  "original_instructions_checked": 562,
+  "original_code_bytes_checked": 856,
+  "mutable_operand_bytes_checked": 18,
+  "immutable_code_preserved_by_every_CPU_write": true,
+  "R_initial_values": 256,
+  "I_IM_IFF_preserved": true,
+  "full_m1_total": 57150551,
+  "stepped_instructions_total": 51565576,
+  "m1_bounds_by_mode": {
+    "0": [
+      44,
+      23987
+    ],
+    "1": [
+      44,
+      24071
+    ],
+    "2": [
+      44,
+      22339
+    ],
+    "3": [
+      44,
+      22118
+    ],
+    "4": [
+      44,
+      22622
+    ],
+    "5": [
+      44,
+      22230
+    ],
+    "6": [
+      44,
+      22892
+    ],
+    "7": [
+      44,
+      21964
+    ]
+  },
+  "full_joint_R_input_product": false,
+  "independent_whole_control_flow_M1_oracle": false,
+  "hardware_refresh_timing_proved": false
 }

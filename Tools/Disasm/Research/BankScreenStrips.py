@@ -188,9 +188,12 @@ Height          db #00                                                          
 def verify_published(sources,source_map,symbols=None):
     from BankArchiveRouteCopies import TABLES as route_tables
     from BankStagingTails import RANGES as staging_ranges, path_for, split_gap
+    import BankArchiveTileCopies as tiles
 
     definitions=tables(sources)
     published = {row['path'] for row in source_map}
+    if any(tiles.path_for(slot) in published for slot in tiles.RANGES):
+        tiles.verify_original(sources)
     routes = {slot: table for slot, _, table in route_tables if table[1] in published}
     additions = [table for table in additional_tables(sources) + partial_copy_tables(sources)
                  if table['path'] in published]
@@ -224,6 +227,10 @@ def verify_published(sources,source_map,symbols=None):
             gap = next(row for row in expected if row[0] == staging_ranges[slot][0])
             assert gap[2] == 'unclassified'
             expected[expected.index(gap):expected.index(gap) + 1] = split_gap(slot, gap[0], gap[1])
+        if slot in tiles.RANGES and tiles.path_for(slot) in published:
+            gap = next(row for row in expected if row[0] == tiles.RANGES[slot][0])
+            assert gap[2] == 'unclassified'
+            expected[expected.index(gap):expected.index(gap) + 1] = tiles.split_gap(slot, gap[0], gap[1])
         assert [(r['offset'],r['length'],r['kind'],r['path']) for r in current]==expected
         for table in groups:
             raw,labels=parse((ROOT/table['path']).read_text('utf-8'),table)

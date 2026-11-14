@@ -12,7 +12,8 @@
                 ;   для X=(128+Radius-WorkX) AND FF и P=8000+32*CenterY+(X DIV 8)
                 ;   HL=P, D=Radius, E=((LOW P) AND E0) OR 1, B=0, C=FF >> (X AND 7)
                 ;   A=E, F соответствует AND Mode, Z установлен ровно при Mode=0, возвращаемый A всегда ненулевой
-                ;   C'=(-Radius) AND FF, E'=0, остальные альтернативные регистры, IX и IY сохраняются
+                ;   HL' сохраняется, D' сохраняется, E'=0, B' сохраняется, C'=(-Radius) AND FF
+                ;   AF', IX, IY, I, IM и IFF сохраняются
                 ;   SavedB=WorkX, I, IM и IFF сохраняются, SP=входной SP+2, R получает 93-4*(X AND 7) M1
                 ; Corrupt:
                 ;   HL, DE, BC, AF, E', C', SavedB, четыре байта CPU-стека, R

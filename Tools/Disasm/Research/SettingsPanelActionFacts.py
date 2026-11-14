@@ -25,7 +25,7 @@ for address,helper in ((0x6AE9,'UpdateEnvironmentHover'),(0x7599,'UpdateGameSett
   ['72 профиля прямого помощника и JP-обёртки дали одинаковые регистры, восемь банков памяти и записи портов'])
 for address,kind,last,values,records,top,hover,renderer,conditional in (
  (0x6AEC,'среды',12,'SettingsText.Interface','InterfaceChoices.MouseOption','EnvironmentPanelState.TopRow','PanelHoverState.EnvironmentRow','DrawEnvironmentPanel','TryDrawEnvironmentPanel'),
- (0x759C,'игры',26,'SettingsText.Controls','ControlOptions.Unknown00','GameSettingsPanelState.TopRow','PanelHoverState.GameSettingsRow','DrawGameSettings','TryDrawGameSettings')):
+ (0x759C,'игры',26,'SettingsText.Controls','ControlOptions.MouseOption','GameSettingsPanelState.TopRow','PanelHoverState.GameSettingsRow','DrawGameSettings','TryDrawGameSettings')):
  CONTRACTS['Station',address]=(
   ['HL запасной рисователь, DE ключ панели, BC, AF и IX выполняют договоры RepaintAndFlag и CloseMenuOnRow',
    'для закрытия '+values+' и массив FSettingWord от '+records+' доступны, подпись ограничена нулём',
@@ -42,20 +42,23 @@ for address,kind,last,values,records,top,hover,renderer,conditional in (
    'клавишное поле сначала получает подчёркивание, затем допустимый результат ReadMatrixKey, промежуточные отказы повторяют ввод',
    'после принятого значения BeginScreenUpdate, '+conditional+' и EndScreenUpdate дают A=10, F и HL, DE, BC результата последнего условного рисования',
    'на обычном завершении редактирования страница 10 и UpdateBlocked=0, альтернативные и индексные регистры по выполненным помощникам, SP после RET входному+2'],
-  ["HL, DE, BC, AF, AF', BC' по прокрутке, IX по фактическим помощникам, подпись либо FSettingWord по ветви, список, экраны, указатель, TopRow, подсветка и операнды"],
+  ["HL, DE, BC, AF, BC' по прокрутке, AF', IX по фактическим помощникам, подпись либо FSettingWord по ветви, список, экраны, указатель, TopRow, подсветка и операнды, R и временные слова CPU-стека"],
   ['подпись меняется при выборе, FSettingWord записываются только при закрытии, исполнения всех будущих потребителей этим нет',
    'полный TopRow используется прокруткой, выбор читает только младший байт и не отвергает FF сохранённой строки',
-   'индекс '+str(last)+' является исходным последним редактируемым индексом, фактическая проверка шага остаётся двухступенчатой в ScrollWindowRows',
+   ('индекс 12 является исходным последним редактируемым индексом' if last==12 else
+    'EndLimit='+str(last)+' ограничивает прокрутку')+', фактическая проверка шага остаётся двухступенчатой в ScrollWindowRows',
    'после записи подчёркивания старое значение не восстанавливается, Cancel не предусмотрен, Caps Shift повторяет ввод',
    'FSettingsEditFrame описывает два сохранённых слова перед рисованием, после POP BC остаётся FSettingsWaitFrame',
-   'модель реально сканирует матрицу, но HALT клавиатурной задержки освобождает явно без IRQ и без доказательства времени, IRQ рамки и прокрутки исполняются отдельно'])
+   'модель реально сканирует матрицу, но HALT клавиатурной задержки освобождает явно без IRQ и без доказательства времени, IRQ рамки и прокрутки исполняются отдельно',
+   'внутренний SelectValue при TopRow.L=FF возвращает AF=#0050 OR входной Carry за три M1 без записей RAM, основной вход приходит сюда с Carry=0'])
 CONTRACTS['Station',0x6AEC][3].extend([
  'индексы 0..3 переключают Y/N, 4..9 принимают любую клавишу кроме Caps Shift, 10..11 принимают коды 30..37, от 12 проверяются 30..31',
  'оба предварительных и заключительных обращения к панели условные, отсутствие точного адреса либо C9 может пропустить рисование и сброс подсветки'])
 CONTRACTS['Station',0x759C][3].extend([
  'только индекс 0 переключает Y/N, остальные редактируемые индексы 1..26 принимают любую клавишу кроме Caps Shift',
  'перед ожиданием клавиши вызывается прямой DrawGameSettings, заключительный вызов условный, алиас ключа не заменяет точного адреса для последнего',
- 'шаблон содержит 43 позиции, из них 16 последних CR-подписей пустые, предел исходной прокрутки остаётся 26, записи сохранены без сокращения'])
+ 'в исходном окне TopRow достигает 17, наведение даёт последнюю строку 9, их сумма даёт индекс 26',
+ 'шаблон содержит 43 позиции, строка 27 с защитой от излучения находится за пределом исходного окна, строки 28..42 содержат пробелы'])
 COMMENTS={
  0x6AE9:(['передача наведения в существующий обработчик строки среды без нового CPU-кадра'],None),
  0x6AEC:(['перерисовка и обработка геометрии до действия установок среды'],None),0x6AEF:([],'выход, если RepaintAndFlag вернул Carry, дальнейшее действие подавлено'),
@@ -92,7 +95,7 @@ COMMENTS={
  0x75A4:(['условное удаление текущей панели при совпадении символьных Y'],None),0x75A7:([],'переход, если строки различаются, выполнить прокрутку'),
  0x75A9:(['обновление физических FSettingWord всей игровой подписью после удаления панели'],None),
  0x75B2:(['подготовка игровой колонки и снятие прежней XOR-полосы'],None),0x75BF:(['сброс номера подсветки после снятия старой полосы'],None),
- 0x75C4:(['обновление callback на внутренний RenderRows без новой рамки'],None),0x75CA:(['подготовка последнего индекса 26 для исходной прокрутки'],None),
+ 0x75C4:(['обновление callback на внутренний RenderRows без новой рамки'],None),0x75CA:(['установка EndLimit=26 перед вычитанием высоты просмотра и текущего TopRow'],None),
  0x75D0:(['подготовка отступа 8 и полного TopRow'],None),0x75D8:(['сохранение полного итогового индекса прокрутки'],None),
  0x75DC:(['проверка FF только младшего байта TopRow'],None),0x75E0:([],'выход, если младший TopRow равен FF, ничего не редактировать'),
  0x75E1:(['расчёт байтовой суммы TopRow и сохранённой строки, FF строки отдельно не проверяется'],None),
@@ -116,7 +119,7 @@ TARGETS={0x6B8E:'Station.UpdateEnvironmentHover.Entry',0x7620:'Station.UpdateGam
  0x6B4F:'Station.HandleEnvironmentAction.BeginKeyEdit',0x6B4C:'Station.HandleEnvironmentAction.StoreToggle',0x6B84:'Station.HandleEnvironmentAction.Redraw',
  0xA49F:'Station.BeginScreenUpdate.Entry',0x6B9E:'Station.TryDrawEnvironmentPanel.Entry',0xA496:'Station.EndScreenUpdate.Entry',
  0xA116:'Station.ReadMatrixKey.Entry',0x6B5E:'Station.HandleEnvironmentAction.ReadKey',0x6B82:'Station.HandleEnvironmentAction.StoreKey',0x6B7A:'Station.HandleEnvironmentAction.CheckBright',
- 0x75DC:'Station.HandleGameSettingsAction.SelectValue',0x75B2:'Station.HandleGameSettingsAction.ScrollRows',0x9736:'SettingsText.Controls',0x99C8:'ControlOptions.Unknown00',
+ 0x75DC:'Station.HandleGameSettingsAction.SelectValue',0x75B2:'Station.HandleGameSettingsAction.ScrollRows',0x9736:'SettingsText.Controls',0x99C8:'ControlOptions.MouseOption',
  0x766C:'Station.SetupGameSettingsText.Entry',0x7621:'GameSettingsPanelState.HoverRows',0x7627:'PanelHoverState.GameSettingsRow',
  0x7648:'Station.DrawGameSettings.RenderRows',0x75D3:'GameSettingsPanelState.TopRow',0x75FE:'Station.HandleGameSettingsAction.BeginKeyEdit',
  0x75FB:'Station.HandleGameSettingsAction.StoreToggle',0x7616:'Station.HandleGameSettingsAction.Redraw',0x7637:'Station.DrawGameSettings.Entry',

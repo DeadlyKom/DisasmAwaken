@@ -7,9 +7,9 @@ r=0..5. Переход к следующему столбцу меняет то�
 Spectrum внутри одной вертикальной строки не поддерживается.
 
 Примеры вызовов через банковую обёртку находятся в
-[Unknown6649](../Source/Action/UpdatePanelGauges.asm), используются адреса
+[UpdatePanelGauges](../Source/Action/UpdatePanelGauges.asm), используются адреса
 49A1, 49E1, 5121, 5181, 51C1 и 49B9.
-Обёртка [Unknown6639](../Source/Action/DrawBankedGauge.asm) выбирает банк 1
+Обёртка [DrawBankedGauge](../Source/Action/DrawBankedGauge.asm) выбирает банк 1
 и после вызова возвращает банк 0. Её собственный договор здесь не доказывается.
 
 ## Точный алгоритм

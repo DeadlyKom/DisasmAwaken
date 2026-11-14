@@ -5,7 +5,53 @@ from CheckControlsTextQueue import base_memory,payload
 from CheckIntro import ROOT
 from CheckMusic import PC,SP,Simulator,get_registers
 from CheckActionTextQueueCalls import Ports
-from CheckScreenUpdate import put
+from CheckScreenUpdate import PortTrace, put
+
+
+def check_rom_returns(simulator):
+    memory, registers = simulator.memory, simulator.registers
+    rom = bytes(memory.roms[1])
+    ports = PortTrace(simulator)
+    simulator.set_tracer(ports)
+    returns = []
+    memory.writes = []
+    memory.recording = True
+    for _ in range(120):
+        pc = registers[PC]
+        if pc == 0xCDE7:
+            break
+        assert pc < 0x4000 and memory.o7ffd == 0x10
+        if pc == 0x062D:
+            # Проверка фактического писателя нового RST в ACTION.
+            write_count = len(memory.writes)
+            assert memory[0xCDE8] == 0x3A
+            simulator.run()
+            assert memory.writes[write_count:] == [(0, 0xCDE8 - 0xC000, 0xFF)]
+            continue
+        if memory[pc] != 0xC9:
+            simulator.run()
+            continue
+        # Проверка адреса RET из физического ПЗУ, CALL не мог сохранить слово в этой области.
+        sp = registers[SP]
+        target = int.from_bytes(rom[sp:sp + 2], 'little')
+        simulator.run()
+        assert registers[PC] == target and registers[SP] == sp + 2
+        returns.append((pc, sp, target))
+    else:
+        raise AssertionError('ПЗУ не вышло по CDE7')
+    assert returns == [(0x3895, 0x1812, 0x0620), (0x2C01, 0x1814, 0xCDE7)]
+    assert ports.writes == [(0xFFFD, 7), (0xFFFD, 14)]
+    assert (0, 0xCDE8 - 0xC000, 0xFF) in memory.writes
+    assert bytes(memory[0xCDE6:0xCDE9]) == bytes.fromhex('DD 67 FF')
+    # Исполнение с середины прежней LD IXH,A, затем изменённый байт вызывает ещё один RST 38.
+    simulator.run()
+    assert registers[PC] == 0xCDE8 and registers[SP] == 0x1816
+    simulator.run()
+    memory.recording = False
+    assert registers[PC] == 0x0038 and registers[SP] == 0x1814
+    assert bytes(memory.roms[1]) == rom and memory.o7ffd == 0x10
+    return dict(rom_returns=returns, first_bank0_entry=0xCDE7, changed_opcode_address=0xCDE8, opcode_writer=0x062D,
+                changed_opcode=0xFF, repeated_rom_entry=0x0038, repeated_rom_sp=0x1814)
 
 
 def main():
@@ -45,8 +91,17 @@ def main():
             assert simulator.registers[8:12]==[255]*4 and memory[0xFFFE]==16
             assert ports.events==[(0x7FFD,22),(0x7FFD,16),(0x7FFD,17),(0x7FFD,17),(0x7FFD,16)]
             assert bytes(memory[0x5E33:0x5E35])==saved_stack.to_bytes(2,'little')
+            # Проверка RST, запись адреса возврата приходится на недоступное для записи ПЗУ.
+            rom_bytes = memory[expected_HL - 2:expected_HL]
+            simulator.run()
+            assert simulator.registers[PC] == 0x0038 and simulator.registers[SP] == expected_HL - 2
+            assert memory[expected_HL - 2:expected_HL] == rom_bytes and memory.o7ffd == 0x10
+            rom_entry, rom_entry_sp = simulator.registers[PC], simulator.registers[SP]
+            continuation = check_rom_returns(simulator)
             cases.append(dict(initial_bitmap=pattern,saved_SP=saved_stack,boundaries=boundaries,
-                        indexed_write_address=0xFFFE,indexed_write_value=16,stopped_before_RST38=True))
+                        indexed_write_address=0xFFFE,indexed_write_value=16,
+                        rom_entry=rom_entry,rom_entry_sp=rom_entry_sp,
+                        rst_return_address=0x8002,rst_return_word_stored=False,rom_continuation=continuation))
     result=dict(passed=True,total_cases=len(cases),cases=cases,address_consistent_fixed_fixture=fixture,
         real_tail_clear_viewport_and_queue_wrapper_paging_executed=True,original_backup_core_6000_restored=True,
         bank1_E000_FFFF_backup_overwrites_actual_EC56_queue_consumer=True,
@@ -54,7 +109,9 @@ def main():
         final_HL_reads_bank1_word_D7A2_not_original_Action_output=True,
         continuation_at_7FFD_sets_SP_to_final_HL=True,observed_new_SP=expected_HL,
         cleared_8000_byte_changes_indexed_displacement_from_26_to_FF=True,
-        next_8001_byte_is_RST38=True,stopped_before_ROM_execution=True,
+        next_8001_byte_is_RST38=True,rst_executed_to_rom_entry=True,
+        original_128k_basic_rom_executed=True,port_input_profile='default_ff',
+        stopped_at_second_rom_entry=True,
         legitimate_game_entry_relocation_and_temporary_payload_proved=False,
         changing_backup_core_by_temporary_payload_not_excluded=True,
         complete_register_RAM_write_multiplicity_R_T_proof=False,assembly_executed=False,native_execution=False)

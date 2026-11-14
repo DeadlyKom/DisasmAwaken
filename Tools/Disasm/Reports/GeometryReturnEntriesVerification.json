@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "method": "original_geometry_return_entries_against_explicit_frames_and_RAM_write_watch",
+  "cases": 262144,
+  "cases_by_entry": {
+    "finish": 65536,
+    "mark": 65536,
+    "cancel_hit": 65536,
+    "return": 65536
+  },
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "original_common_tail_sha256": "7b11f57908ad75d05844a1ad16e18a7628b87bba844ca534416ff28a83b4a809",
+  "all_saved_A_and_initial_R_pairs": true,
+  "all_saved_AF_values_covered": true,
+  "saved_AF_and_R_full_joint_product": false,
+  "exact_registers_except_T_checked": true,
+  "R_bit7_preserved": true,
+  "M1_by_entry": {
+    "finish": 11,
+    "mark": 14,
+    "cancel_hit": 10,
+    "return": 8
+  },
+  "SP_delta_by_entry": {
+    "finish": 12,
+    "mark": 16,
+    "cancel_hit": 16,
+    "return": 12
+  },
+  "only_own_RAM_write_is_EventEnabled_zero_on_success": true,
+  "CPU_write_watch_positive_control": true,
+  "frame_bytes_unchanged": true,
+  "no_own_stack_writes": true,
+  "arbitrary_frame_addresses_or_overlaps_checked": false,
+  "MarkGeometry_current_caller_proved": false,
+  "input_hardware_or_ISR_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

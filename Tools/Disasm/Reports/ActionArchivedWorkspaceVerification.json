@@ -1,0 +1,174 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "source": "awk1.trd:3DTABS.a",
+  "common_prefix": 4044,
+  "archived_camera_fields": {
+    "EYE_X": [
+      39832,
+      2
+    ],
+    "EYE_Y": [
+      39834,
+      2
+    ],
+    "EYE_Z": [
+      39836,
+      2
+    ],
+    "STPA": [
+      39838,
+      1
+    ],
+    "STPB": [
+      39839,
+      1
+    ],
+    "STPG": [
+      39840,
+      1
+    ]
+  },
+  "archived_parameter_extent": [
+    39844,
+    39860
+  ],
+  "archived_spawn_chances": [
+    39860,
+    39869
+  ],
+  "initial_page_ranges": [
+    [
+      36352,
+      36608
+    ],
+    [
+      36608,
+      36864
+    ]
+  ],
+  "tail_file_ranges": [
+    [
+      11976,
+      12032
+    ],
+    [
+      12284,
+      12288
+    ]
+  ],
+  "camera_and_chances_current_game_users_proved": false,
+  "archived_step_references": {
+    "active_archived_source_entries_checked": 129,
+    "identifier_occurrences": [
+      {
+        "member": "awk1.trd",
+        "slot": 49,
+        "line": 131,
+        "name": "STPA",
+        "kind": "zero_byte_declaration",
+        "raw_hex": "535450413a06870567068330"
+      },
+      {
+        "member": "awk1.trd",
+        "slot": 49,
+        "line": 132,
+        "name": "STPB",
+        "kind": "zero_byte_declaration",
+        "raw_hex": "535450423a06870567068330"
+      },
+      {
+        "member": "awk1.trd",
+        "slot": 49,
+        "line": 133,
+        "name": "STPG",
+        "kind": "zero_byte_declaration",
+        "raw_hex": "535450473a06870567068330"
+      },
+      {
+        "member": "awk1.trd",
+        "slot": 63,
+        "line": 165,
+        "name": "STPA",
+        "kind": "symbol_listing",
+        "raw_hex": "53545041068b04663339383338"
+      },
+      {
+        "member": "awk1.trd",
+        "slot": 63,
+        "line": 167,
+        "name": "STPB",
+        "kind": "symbol_listing",
+        "raw_hex": "53545042068b04663339383339"
+      },
+      {
+        "member": "awk1.trd",
+        "slot": 63,
+        "line": 176,
+        "name": "STPG",
+        "kind": "symbol_listing",
+        "raw_hex": "53545047068b04663339383430"
+      },
+      {
+        "member": "awk3.trd",
+        "slot": 18,
+        "line": 103,
+        "name": "STPA",
+        "kind": "zero_byte_declaration",
+        "raw_hex": "535450413a06870567068330"
+      },
+      {
+        "member": "awk3.trd",
+        "slot": 18,
+        "line": 104,
+        "name": "STPB",
+        "kind": "zero_byte_declaration",
+        "raw_hex": "535450423a06870567068330"
+      },
+      {
+        "member": "awk3.trd",
+        "slot": 18,
+        "line": 105,
+        "name": "STPG",
+        "kind": "zero_byte_declaration",
+        "raw_hex": "535450473a06870567068330"
+      },
+      {
+        "member": "awk4.trd",
+        "slot": 18,
+        "line": 103,
+        "name": "STPA",
+        "kind": "zero_byte_declaration",
+        "raw_hex": "535450413a06870567068330"
+      },
+      {
+        "member": "awk4.trd",
+        "slot": 18,
+        "line": 104,
+        "name": "STPB",
+        "kind": "zero_byte_declaration",
+        "raw_hex": "535450423a06870567068330"
+      },
+      {
+        "member": "awk4.trd",
+        "slot": 18,
+        "line": 105,
+        "name": "STPG",
+        "kind": "zero_byte_declaration",
+        "raw_hex": "535450473a06870567068330"
+      }
+    ],
+    "named_archived_consumers_found": false,
+    "current_decoded_literal_references": [],
+    "watched_literal_addresses": [
+      39837,
+      39838,
+      39839,
+      39840
+    ],
+    "indirect_or_block_accesses_excluded": false,
+    "current_global_unusedness_proved": false
+  },
+  "assembly_executed": false,
+  "native_execution": false
+}

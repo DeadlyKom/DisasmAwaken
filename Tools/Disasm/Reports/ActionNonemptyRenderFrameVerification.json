@@ -1,13 +1,893 @@
 {
   "passed": true,
-  "total_cases": 96,
+  "total_cases": 224,
   "outcomes": {
-    "inside": 168,
-    "nodes": 224,
-    "clipped": 56
+    "inside": 294,
+    "nodes": 352,
+    "clipped": 58
+  },
+  "bank0_tail": {
+    "start": 63590,
+    "end_exclusive": 65536,
+    "profiles": 231,
+    "reads_before_first_write": 0,
+    "profiles_with_accesses": 229,
+    "word_operations": {
+      "write": 6332,
+      "read": 6332
+    },
+    "accesses": [
+      {
+        "operation": "read",
+        "pc": 54006,
+        "address": 65502,
+        "count": 372
+      },
+      {
+        "operation": "read",
+        "pc": 54006,
+        "address": 65503,
+        "count": 372
+      },
+      {
+        "operation": "read",
+        "pc": 54035,
+        "address": 65502,
+        "count": 614
+      },
+      {
+        "operation": "read",
+        "pc": 54035,
+        "address": 65503,
+        "count": 614
+      },
+      {
+        "operation": "read",
+        "pc": 54052,
+        "address": 65502,
+        "count": 934
+      },
+      {
+        "operation": "read",
+        "pc": 54052,
+        "address": 65503,
+        "count": 934
+      },
+      {
+        "operation": "read",
+        "pc": 54147,
+        "address": 65502,
+        "count": 855
+      },
+      {
+        "operation": "read",
+        "pc": 54147,
+        "address": 65503,
+        "count": 855
+      },
+      {
+        "operation": "read",
+        "pc": 54178,
+        "address": 65502,
+        "count": 371
+      },
+      {
+        "operation": "read",
+        "pc": 54178,
+        "address": 65503,
+        "count": 371
+      },
+      {
+        "operation": "read",
+        "pc": 54325,
+        "address": 65502,
+        "count": 383
+      },
+      {
+        "operation": "read",
+        "pc": 54325,
+        "address": 65503,
+        "count": 383
+      },
+      {
+        "operation": "read",
+        "pc": 54353,
+        "address": 65502,
+        "count": 542
+      },
+      {
+        "operation": "read",
+        "pc": 54353,
+        "address": 65503,
+        "count": 542
+      },
+      {
+        "operation": "read",
+        "pc": 54369,
+        "address": 65502,
+        "count": 1038
+      },
+      {
+        "operation": "read",
+        "pc": 54369,
+        "address": 65503,
+        "count": 1038
+      },
+      {
+        "operation": "read",
+        "pc": 54463,
+        "address": 65502,
+        "count": 848
+      },
+      {
+        "operation": "read",
+        "pc": 54463,
+        "address": 65503,
+        "count": 848
+      },
+      {
+        "operation": "read",
+        "pc": 54526,
+        "address": 65502,
+        "count": 375
+      },
+      {
+        "operation": "read",
+        "pc": 54526,
+        "address": 65503,
+        "count": 375
+      },
+      {
+        "operation": "write",
+        "pc": 53875,
+        "address": 65502,
+        "count": 3146
+      },
+      {
+        "operation": "write",
+        "pc": 53875,
+        "address": 65503,
+        "count": 3146
+      },
+      {
+        "operation": "write",
+        "pc": 54190,
+        "address": 65502,
+        "count": 3186
+      },
+      {
+        "operation": "write",
+        "pc": 54190,
+        "address": 65503,
+        "count": 3186
+      }
+    ]
   },
   "actual_frame_entry_executed": true,
   "original_object_bank_used": true,
+  "mixed_profiles": 96,
+  "catalogue_profiles": 128,
+  "clip_dispatches": {
+    "C070": 548
+  },
+  "clip_targets": [
+    49274,
+    49379,
+    50660,
+    50899
+  ],
+  "physical_tail_model_profiles": [
+    {
+      "pointer": 58473,
+      "paths": {
+        "inside": 1
+      },
+      "raster_bytes_changed": 295,
+      "clip_dispatches": {},
+      "destination_tail_accesses": []
+    },
+    {
+      "pointer": 58655,
+      "paths": {
+        "inside": 1
+      },
+      "raster_bytes_changed": 274,
+      "clip_dispatches": {},
+      "destination_tail_accesses": []
+    },
+    {
+      "pointer": 58817,
+      "paths": {
+        "inside": 1
+      },
+      "raster_bytes_changed": 245,
+      "clip_dispatches": {},
+      "destination_tail_accesses": []
+    },
+    {
+      "pointer": 58987,
+      "paths": {
+        "inside": 1
+      },
+      "raster_bytes_changed": 379,
+      "clip_dispatches": {},
+      "destination_tail_accesses": []
+    },
+    {
+      "pointer": 59307,
+      "paths": {
+        "inside": 1
+      },
+      "raster_bytes_changed": 487,
+      "clip_dispatches": {},
+      "destination_tail_accesses": []
+    },
+    {
+      "pointer": 59143,
+      "paths": {
+        "inside": 1
+      },
+      "raster_bytes_changed": 161,
+      "clip_dispatches": {},
+      "destination_tail_accesses": []
+    },
+    {
+      "pointer": 59481,
+      "paths": {
+        "inside": 1
+      },
+      "raster_bytes_changed": 316,
+      "clip_dispatches": {},
+      "destination_tail_accesses": [
+        [
+          "write",
+          43790,
+          40970,
+          5
+        ],
+        [
+          "write",
+          43790,
+          40971,
+          25
+        ],
+        [
+          "write",
+          43790,
+          40972,
+          68
+        ],
+        [
+          "write",
+          43790,
+          40973,
+          20
+        ],
+        [
+          "write",
+          43790,
+          40974,
+          0
+        ],
+        [
+          "write",
+          43790,
+          40975,
+          90
+        ],
+        [
+          "write",
+          43790,
+          40976,
+          120
+        ],
+        [
+          "write",
+          43790,
+          40977,
+          68
+        ],
+        [
+          "write",
+          43790,
+          40978,
+          155
+        ],
+        [
+          "write",
+          43790,
+          40979,
+          55
+        ],
+        [
+          "write",
+          43790,
+          40980,
+          50
+        ],
+        [
+          "write",
+          43790,
+          40981,
+          150
+        ],
+        [
+          "write",
+          43795,
+          40982,
+          0
+        ],
+        [
+          "read",
+          57281,
+          40970,
+          5
+        ],
+        [
+          "read",
+          56653,
+          40970,
+          5
+        ],
+        [
+          "read",
+          56653,
+          40971,
+          25
+        ],
+        [
+          "read",
+          56611,
+          40972,
+          68
+        ],
+        [
+          "read",
+          57277,
+          40973,
+          20
+        ],
+        [
+          "read",
+          57279,
+          40974,
+          0
+        ],
+        [
+          "read",
+          57281,
+          40975,
+          90
+        ],
+        [
+          "read",
+          56611,
+          40977,
+          68
+        ],
+        [
+          "read",
+          57277,
+          40978,
+          155
+        ],
+        [
+          "read",
+          57279,
+          40979,
+          55
+        ],
+        [
+          "read",
+          57281,
+          40980,
+          50
+        ],
+        [
+          "read",
+          56611,
+          40982,
+          0
+        ]
+      ]
+    }
+  ],
+  "physical_tail_pointer_substituted_in_9E00": true,
+  "original_high_page_at_each_clip_dispatch": true,
+  "clip_alias_execution_seen": false,
+  "taken_ret_count": 26790,
+  "ret_paths": [
+    {
+      "pc": 49274,
+      "bank": 0,
+      "stack_writer": 49263,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 213,
+      "target": 49265,
+      "count": 92
+    },
+    {
+      "pc": 49274,
+      "bank": 0,
+      "stack_writer": 56331,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 56334,
+      "count": 161
+    },
+    {
+      "pc": 50418,
+      "bank": 0,
+      "stack_writer": 50660,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 50663,
+      "count": 322
+    },
+    {
+      "pc": 50752,
+      "bank": 0,
+      "stack_writer": 49263,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 213,
+      "target": 49265,
+      "count": 161
+    },
+    {
+      "pc": 50752,
+      "bank": 0,
+      "stack_writer": 49379,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 49382,
+      "count": 161
+    },
+    {
+      "pc": 50921,
+      "bank": 0,
+      "stack_writer": 49263,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 213,
+      "target": 49265,
+      "count": 295
+    },
+    {
+      "pc": 51153,
+      "bank": 0,
+      "stack_writer": 50408,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 50411,
+      "count": 177
+    },
+    {
+      "pc": 51153,
+      "bank": 0,
+      "stack_writer": 57333,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 57336,
+      "count": 2641
+    },
+    {
+      "pc": 51153,
+      "bank": 0,
+      "stack_writer": 57339,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 57342,
+      "count": 2692
+    },
+    {
+      "pc": 51167,
+      "bank": 0,
+      "stack_writer": 50408,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 50411,
+      "count": 145
+    },
+    {
+      "pc": 51167,
+      "bank": 0,
+      "stack_writer": 57333,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 57336,
+      "count": 2140
+    },
+    {
+      "pc": 51167,
+      "bank": 0,
+      "stack_writer": 57339,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 57342,
+      "count": 2089
+    },
+    {
+      "pc": 51514,
+      "bank": 0,
+      "stack_writer": 50684,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 50687,
+      "count": 140
+    },
+    {
+      "pc": 51520,
+      "bank": 0,
+      "stack_writer": 50684,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 50687,
+      "count": 182
+    },
+    {
+      "pc": 51662,
+      "bank": 0,
+      "stack_writer": 58587,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58590,
+      "count": 240
+    },
+    {
+      "pc": 52002,
+      "bank": 0,
+      "stack_writer": 58587,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58590,
+      "count": 112
+    },
+    {
+      "pc": 52741,
+      "bank": 0,
+      "stack_writer": 58590,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58593,
+      "count": 112
+    },
+    {
+      "pc": 52870,
+      "bank": 0,
+      "stack_writer": 58590,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58593,
+      "count": 240
+    },
+    {
+      "pc": 53863,
+      "bank": 0,
+      "stack_writer": 56325,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 56328,
+      "count": 104
+    },
+    {
+      "pc": 53863,
+      "bank": 0,
+      "stack_writer": 56334,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 212,
+      "target": 56337,
+      "count": 148
+    },
+    {
+      "pc": 53863,
+      "bank": 0,
+      "stack_writer": 56668,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 56671,
+      "count": 1842
+    },
+    {
+      "pc": 54544,
+      "bank": 0,
+      "stack_writer": 56334,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 212,
+      "target": 56337,
+      "count": 13
+    },
+    {
+      "pc": 54544,
+      "bank": 0,
+      "stack_writer": 56668,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 56671,
+      "count": 37
+    },
+    {
+      "pc": 54760,
+      "bank": 0,
+      "stack_writer": 58593,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58596,
+      "count": 352
+    },
+    {
+      "pc": 55199,
+      "bank": 0,
+      "stack_writer": 54770,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 54773,
+      "count": 1680
+    },
+    {
+      "pc": 56255,
+      "bank": 0,
+      "stack_writer": 58618,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58621,
+      "count": 58
+    },
+    {
+      "pc": 56613,
+      "bank": 0,
+      "stack_writer": 58612,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58615,
+      "count": 294
+    },
+    {
+      "pc": 56810,
+      "bank": 0,
+      "stack_writer": 56272,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 56275,
+      "count": 282
+    },
+    {
+      "pc": 56826,
+      "bank": 0,
+      "stack_writer": 56775,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 56778,
+      "count": 14
+    },
+    {
+      "pc": 57071,
+      "bank": 0,
+      "stack_writer": 56531,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 56534,
+      "count": 4
+    },
+    {
+      "pc": 57071,
+      "bank": 0,
+      "stack_writer": 56775,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 56778,
+      "count": 175
+    },
+    {
+      "pc": 57139,
+      "bank": 0,
+      "stack_writer": 58596,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58599,
+      "count": 330
+    },
+    {
+      "pc": 57244,
+      "bank": 0,
+      "stack_writer": 58596,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58599,
+      "count": 20
+    },
+    {
+      "pc": 57269,
+      "bank": 0,
+      "stack_writer": 58596,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58599,
+      "count": 2
+    },
+    {
+      "pc": 57352,
+      "bank": 0,
+      "stack_writer": 56262,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 56265,
+      "count": 656
+    },
+    {
+      "pc": 57352,
+      "bank": 0,
+      "stack_writer": 56620,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 56623,
+      "count": 4125
+    },
+    {
+      "pc": 58625,
+      "bank": 0,
+      "stack_writer": null,
+      "stack_writer_bank": null,
+      "stack_writer_opcode": null,
+      "target": 16383,
+      "count": 224
+    },
+    {
+      "pc": 60814,
+      "bank": 0,
+      "stack_writer": 58584,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58587,
+      "count": 352
+    },
+    {
+      "pc": 43745,
+      "bank": 2,
+      "stack_writer": 57782,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 57785,
+      "count": 352
+    },
+    {
+      "pc": 43802,
+      "bank": 2,
+      "stack_writer": 54733,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 54736,
+      "count": 352
+    },
+    {
+      "pc": 43810,
+      "bank": 2,
+      "stack_writer": 43733,
+      "stack_writer_bank": 2,
+      "stack_writer_opcode": 205,
+      "target": 43736,
+      "count": 352
+    },
+    {
+      "pc": 43810,
+      "bank": 2,
+      "stack_writer": 43742,
+      "stack_writer_bank": 2,
+      "stack_writer_opcode": 205,
+      "target": 43745,
+      "count": 352
+    },
+    {
+      "pc": 43810,
+      "bank": 2,
+      "stack_writer": 43754,
+      "stack_writer_bank": 2,
+      "stack_writer_opcode": 205,
+      "target": 43757,
+      "count": 352
+    },
+    {
+      "pc": 43810,
+      "bank": 2,
+      "stack_writer": 43799,
+      "stack_writer_bank": 2,
+      "stack_writer_opcode": 205,
+      "target": 43802,
+      "count": 352
+    },
+    {
+      "pc": 43810,
+      "bank": 2,
+      "stack_writer": 44473,
+      "stack_writer_bank": 2,
+      "stack_writer_opcode": 205,
+      "target": 44476,
+      "count": 224
+    },
+    {
+      "pc": 43810,
+      "bank": 2,
+      "stack_writer": 44481,
+      "stack_writer_bank": 2,
+      "stack_writer_opcode": 205,
+      "target": 44484,
+      "count": 224
+    },
+    {
+      "pc": 44484,
+      "bank": 2,
+      "stack_writer": 57434,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 57437,
+      "count": 224
+    },
+    {
+      "pc": 44838,
+      "bank": 2,
+      "stack_writer": 58055,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58058,
+      "count": 2
+    },
+    {
+      "pc": 44838,
+      "bank": 2,
+      "stack_writer": 58075,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58078,
+      "count": 152
+    },
+    {
+      "pc": 44838,
+      "bank": 2,
+      "stack_writer": 58105,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58108,
+      "count": 248
+    },
+    {
+      "pc": 44866,
+      "bank": 2,
+      "stack_writer": 58055,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58058,
+      "count": 246
+    },
+    {
+      "pc": 44866,
+      "bank": 2,
+      "stack_writer": 58075,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 58078,
+      "count": 96
+    },
+    {
+      "pc": 59287,
+      "bank": 3,
+      "stack_writer": 44476,
+      "stack_writer_bank": 2,
+      "stack_writer_opcode": 205,
+      "target": 44479,
+      "count": 224
+    },
+    {
+      "pc": 27429,
+      "bank": 5,
+      "stack_writer": 57544,
+      "stack_writer_bank": 0,
+      "stack_writer_opcode": 205,
+      "target": 57547,
+      "count": 224
+    }
+  ],
+  "clip_returns_from_explicit_push": 548,
+  "ret_targets_and_last_writers_of_both_stack_bytes_observed": true,
+  "ret_targets_on_page_cf": 0,
+  "all_game_ret_paths_proved": false,
   "checked_order_payload_stack_and_paging": true,
   "assembly_executed": false,
   "native_execution": false

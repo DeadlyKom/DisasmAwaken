@@ -10,10 +10,10 @@ for start,end in ((0xD717,0xD727),(0xD80F,0xD81F),(0xD901,0xD911)):
 for resume,down in ((0xD81F,0xD82E),(0xD911,0xD920)):
     LABELS['Controls',resume] = 'ResumeRows'
     LABELS['Controls',down] = 'ResumeDown'
-    COMMENTS[resume] = (['чтение Mode после заполнения, нуль выбирает движение вверх, ненулевой байт вниз'],None)
-    COMMENTS[resume+3] = (['проверка направления следующей строки по нулевому состоянию Mode'],None)
+    COMMENTS[resume] = (['чтение Direction после заполнения, нуль выбирает движение вверх, ненулевой байт вниз'],None)
+    COMMENTS[resume+3] = (['проверка направления следующей строки по нулевому состоянию Direction'],None)
     COMMENTS[resume+4] = (['восстановление CPU-стека из SavedSP перед настоящим CALL помощника строки'],None)
-    COMMENTS[resume+8] = ([], 'переход, если Mode ненулевой, выполнить AdvanceRasterDown через ResumeDown')
+    COMMENTS[resume+8] = ([], 'переход, если Direction ненулевой, выполнить AdvanceRasterDown через ResumeDown')
     COMMENTS[resume+10] = (['шаг вверх, помощник может завершить весь рисователь через сохранённую рамку'],None)
     COMMENTS[down] = (['шаг вниз с тем же возможным нелокальным завершением рисователя'],None)
 for address in (0xD706,0xD7FE,0xD8F0):
@@ -24,5 +24,5 @@ for address in (0xD706,0xD7FE,0xD8F0):
 def name_operands(region,function_address,operation):
     if region=='Controls' and function_address in (0xD633,0xD727,0xD833):
         operation=operation.replace('(#D186)','(@ControlsRasterStepState.SavedSP)')
-        operation=operation.replace('(#D18B)','(@ControlsEvenSpanState.Mode)')
+        operation=operation.replace('(#D18B)','(@ControlsEvenSpanState.Direction)')
     return operation

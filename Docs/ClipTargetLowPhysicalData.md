@@ -1,9 +1,13 @@
 # Младшая страница диспетчера и наложенные рабочие записи
 
-Оформлены ещё 438 исходных байтов младших адресов, 219 в ACTION и 219 в 3DPART. Адресный диспетчер читает CF00+I и D000+I, где I=((NOT First.ClipCode) AND F0) OR (Second.ClipCode AND 0F). Новые экземпляры занимают только прежние неразмеченные промежутки, координаты, произведения и спорные инструкции не заменены таблицей.
+Физические записи младших адресов занимают 444 байта, по 222 в ACTION
+и 3DPART. Диспетчер читает CF00+I и D000+I, где
+`I = ((NOT First.ClipCode) AND F0) OR (Second.ClipCode AND 0F)`.
+Координаты, произведения и адресные ячейки имеют отдельные структуры.
 
 | CPU-адреса | ACTION | 3DPART | Тип |
 |---|---|---|---|
+| CF08..CF0A | [ClipTargetLowAlias](../Source/Action/Data/ClipTargetLowAlias.asm) | [ClipTargetLowAlias](../Source/ThreeD/Data/ClipTargetLowAlias.asm) | FClipTargetLowAlias, три младших байта |
 | CF10..CF1A | [ClipTargetLowRow1](../Source/Action/Data/ClipTargetLowRow1.asm) | [ClipTargetLowRow1](../Source/ThreeD/Data/ClipTargetLowRow1.asm) | FClipTargetLowHead, 11 байтов |
 | CF20..CF2A | [ClipTargetLowRow2](../Source/Action/Data/ClipTargetLowRow2.asm) | [ClipTargetLowRow2](../Source/ThreeD/Data/ClipTargetLowRow2.asm) | FClipTargetLowHead, 11 байтов |
 | CF3B..CF3F | [ClipTargetLowTail3](../Source/Action/Data/ClipTargetLowTail3.asm) | [ClipTargetLowTail3](../Source/ThreeD/Data/ClipTargetLowTail3.asm) | FClipTargetLowTail, 5 байтов |
@@ -11,14 +15,14 @@
 
 В полном FClipTargetLowRow поля SecondSides0..SecondSidesF имеют смещения 0..15. В FClipTargetLowHead остаются поля 0..A с теми же смещениями 0..10. Частичный FClipTargetLowTail начинается непосредственно по CF3B, поэтому его SecondSidesB..SecondSidesF имеют физические смещения 0..4, а не 11..15. Метка First3Tail обозначает начало этого хвоста, не начало строки CF30.
 
-Для 144 новых ячеек двух копий установлены нормальные цели. Инициализаторы записаны через LOW от имён реальных обработчиков, например LOW(@Action.ClipRightToInside.Entry). Остальные 294 байта этих новых фрагментов исходно равны нулю и имеют индексы вне 81 нормальной пары. Их формат чтения установлен, но допустимость игровых переходов с такими кодами не доказана. Нулевое заполнение не используется как доказательство свободной памяти или отсутствия потребителя.
+Для 150 ячеек двух копий установлены нормальные цели. Инициализаторы записаны через LOW от имён реальных обработчиков, например LOW(@Action.ClipRightToInside.Entry). Остальные 294 байта этих фрагментов исходно равны нулю и имеют индексы вне 81 нормальной пары. Их формат чтения установлен, но допустимость игровых переходов с такими кодами не доказана. Нулевое заполнение не используется как доказательство свободной памяти или отсутствия потребителя.
 
 ## Полная физическая разметка CF00..CFFF
 
 | Диапазон | Байтов | Фактическая запись |
 |---|---|---|
 | CF00..CF07 | 8 | [Шесть младших адресных байтов, CornerBlock и SeenFlags](ClipDispatchPrefixData.md) |
-| CF08..CF0A | 3 | [Unknown ACTION](../Source/Action/UnknownCF08.asm) и [Unknown 3DPART](../Source/ThreeD/UnknownCF08.asm), положительная табличная роль установлена, игровой вход исполнения неизвестен |
+| CF08..CF0A | 3 | Младшие байты целей для индексов 08, 09 и 0A, возможный вход исполнения разобран [отдельно](ActionClipTableAlias.md) |
 | CF0B..CF0F | 5 | [Первая точка ACTION](../Source/Action/Data/ClipFirstPoint.asm), [первая точка 3DPART](../Source/ThreeD/Data/ClipFirstPoint.asm) |
 | CF10..CF1A | 11 | Младшие адреса строки 1 |
 | CF1B..CF1F | 5 | [Вторая точка ACTION](../Source/Action/Data/ClipSecondPoint.asm), [вторая точка 3DPART](../Source/ThreeD/Data/ClipSecondPoint.asm) |
@@ -35,6 +39,6 @@
 
 ## Проверка
 
-[Описание записей и обратимый разбор LOW](../Tools/Disasm/Research/ClipTargetLowPhysicalData.py), [публикация кандидата](../Tools/Disasm/Research/PublishPhysicalDataTables.py), [отчёт](../Tools/Disasm/Reports/ClipTargetLowPhysicalDataClassification.json). Проверяются все 438 байтов, 30 физических записей, 468 имён, размеры и смещения трёх STRUCT. Для 144 нормальных ячеек обе части указателя сравниваются с исходным реестром целей. Дополнительно проверяется сохранение F3 AF C9 по CF08 в обеих копиях.
+[Описание записей и обратимый разбор LOW](../Tools/Disasm/Research/ClipTargetLowPhysicalData.py), [публикация кандидата](../Tools/Disasm/Research/PublishPhysicalDataTables.py), [отчёт](../Tools/Disasm/Reports/ClipTargetLowPhysicalDataClassification.json). Проверяются все 444 байта, 32 физические записи, 476 имён, размеры и смещения четырёх STRUCT. Для 150 нормальных ячеек обе части указателя сравниваются с исходным реестром целей. По CF08 обе копии сохраняют F3 AF C9.
 
-Синтаксис LOW является оператором [SjASMPlus](https://z00m128.github.io/sjasmplus/#s_expressions). Статическая проверка вычисляет его только для известных глобальных имён и сравнивает с оригиналом, ассемблер не запускается. Сборка и нативный запуск нового оформления не выполнялись. Unknown CF08 и незавершённость полного смыслового разбора остаются явно отмеченными.
+Синтаксис LOW является оператором [SjASMPlus](https://z00m128.github.io/sjasmplus/#s_expressions). Статическая проверка вычисляет его только для известных глобальных имён и сравнивает с оригиналом. Игровой вход исполнения по CF08..CF0A, сборка и нативный запуск нового оформления остаются за границей проверки.

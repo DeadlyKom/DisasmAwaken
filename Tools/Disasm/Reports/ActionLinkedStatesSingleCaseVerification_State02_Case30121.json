@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "state": 2,
+  "diagnostic_case": 30121,
+  "full_verification": false,
+  "ordinary_common_tail_executed": true,
+  "exact_R_on_nonrenderer_cases": 1,
+  "assembly_executed": false,
+  "native_execution": false
+}

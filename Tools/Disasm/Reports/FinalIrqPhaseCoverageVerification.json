@@ -1,0 +1,2903 @@
+{
+  "passed": true,
+  "irq_window_tstates": 36,
+  "phase_profiles": [
+    {
+      "period": 70908,
+      "first_irq_phases": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ],
+      "phase_at_second_entry": 20921,
+      "delays": 101,
+      "additional_interrupts_by_stack": {
+        "cpu_stack": 1,
+        "attribute_stack": 2,
+        "source_stack": 18,
+        "screen_stack": 10
+      },
+      "additional_interrupts": [
+        {
+          "delay": 0,
+          "interrupted_instruction": 24823,
+          "resume": 24824,
+          "sp": 24574,
+          "page": 1,
+          "alternate_a": 144,
+          "alternate_f": 155,
+          "phase": 2
+        },
+        {
+          "delay": 71,
+          "interrupted_instruction": 37151,
+          "resume": 37152,
+          "sp": 22836,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6,
+          "attribute_frame_hex": "42a02091"
+        },
+        {
+          "delay": 72,
+          "interrupted_instruction": 37123,
+          "resume": 37125,
+          "sp": 53054,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 12
+        },
+        {
+          "delay": 73,
+          "interrupted_instruction": 37096,
+          "resume": 37097,
+          "sp": 53036,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 74,
+          "interrupted_instruction": 37069,
+          "resume": 37070,
+          "sp": 52794,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 75,
+          "interrupted_instruction": 37042,
+          "resume": 37043,
+          "sp": 52776,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 76,
+          "interrupted_instruction": 37014,
+          "resume": 37015,
+          "sp": 52534,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 77,
+          "interrupted_instruction": 36987,
+          "resume": 36988,
+          "sp": 52516,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 78,
+          "interrupted_instruction": 36960,
+          "resume": 36961,
+          "sp": 52274,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 79,
+          "interrupted_instruction": 36931,
+          "resume": 36934,
+          "sp": 52256,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 80,
+          "interrupted_instruction": 36904,
+          "resume": 36905,
+          "sp": 19232,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 81,
+          "interrupted_instruction": 36877,
+          "resume": 36878,
+          "sp": 18994,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 82,
+          "interrupted_instruction": 36850,
+          "resume": 36851,
+          "sp": 18980,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 83,
+          "interrupted_instruction": 36823,
+          "resume": 36824,
+          "sp": 18742,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 84,
+          "interrupted_instruction": 36796,
+          "resume": 36797,
+          "sp": 18726,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 85,
+          "interrupted_instruction": 36769,
+          "resume": 36770,
+          "sp": 18488,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 86,
+          "interrupted_instruction": 36742,
+          "resume": 36743,
+          "sp": 18474,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 87,
+          "interrupted_instruction": 36716,
+          "resume": 36717,
+          "sp": 22796,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8,
+          "attribute_frame_hex": "42a06d8f"
+        },
+        {
+          "delay": 88,
+          "interrupted_instruction": 36690,
+          "resume": 36691,
+          "sp": 20254,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 89,
+          "interrupted_instruction": 36661,
+          "resume": 36664,
+          "sp": 20240,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 90,
+          "interrupted_instruction": 36634,
+          "resume": 36635,
+          "sp": 52768,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 91,
+          "interrupted_instruction": 36606,
+          "resume": 36608,
+          "sp": 52750,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 92,
+          "interrupted_instruction": 36580,
+          "resume": 36582,
+          "sp": 52510,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 10
+        },
+        {
+          "delay": 93,
+          "interrupted_instruction": 36553,
+          "resume": 36554,
+          "sp": 52492,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 94,
+          "interrupted_instruction": 36526,
+          "resume": 36527,
+          "sp": 52250,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 95,
+          "interrupted_instruction": 36499,
+          "resume": 36500,
+          "sp": 52232,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 96,
+          "interrupted_instruction": 36471,
+          "resume": 36472,
+          "sp": 51990,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 97,
+          "interrupted_instruction": 36444,
+          "resume": 36445,
+          "sp": 51972,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 98,
+          "interrupted_instruction": 36417,
+          "resume": 36418,
+          "sp": 51730,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 99,
+          "interrupted_instruction": 36388,
+          "resume": 36391,
+          "sp": 51712,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 100,
+          "interrupted_instruction": 36361,
+          "resume": 36362,
+          "sp": 18688,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        }
+      ]
+    },
+    {
+      "period": 70908,
+      "first_irq_phases": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21,
+        25,
+        29,
+        33
+      ],
+      "phase_at_second_entry": 20922,
+      "delays": 101,
+      "additional_interrupts_by_stack": {
+        "cpu_stack": 1,
+        "attribute_stack": 2,
+        "source_stack": 18,
+        "screen_stack": 10
+      },
+      "additional_interrupts": [
+        {
+          "delay": 0,
+          "interrupted_instruction": 24823,
+          "resume": 24824,
+          "sp": 24574,
+          "page": 1,
+          "alternate_a": 144,
+          "alternate_f": 155,
+          "phase": 3
+        },
+        {
+          "delay": 71,
+          "interrupted_instruction": 37151,
+          "resume": 37152,
+          "sp": 22836,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7,
+          "attribute_frame_hex": "42a02091"
+        },
+        {
+          "delay": 72,
+          "interrupted_instruction": 37123,
+          "resume": 37125,
+          "sp": 53054,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 13
+        },
+        {
+          "delay": 73,
+          "interrupted_instruction": 37096,
+          "resume": 37097,
+          "sp": 53036,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 74,
+          "interrupted_instruction": 37069,
+          "resume": 37070,
+          "sp": 52794,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 75,
+          "interrupted_instruction": 37042,
+          "resume": 37043,
+          "sp": 52776,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 76,
+          "interrupted_instruction": 37014,
+          "resume": 37015,
+          "sp": 52534,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 77,
+          "interrupted_instruction": 36987,
+          "resume": 36988,
+          "sp": 52516,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 78,
+          "interrupted_instruction": 36960,
+          "resume": 36961,
+          "sp": 52274,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 79,
+          "interrupted_instruction": 36931,
+          "resume": 36934,
+          "sp": 52256,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 80,
+          "interrupted_instruction": 36904,
+          "resume": 36905,
+          "sp": 19232,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 81,
+          "interrupted_instruction": 36877,
+          "resume": 36878,
+          "sp": 18994,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 82,
+          "interrupted_instruction": 36850,
+          "resume": 36851,
+          "sp": 18980,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 83,
+          "interrupted_instruction": 36823,
+          "resume": 36824,
+          "sp": 18742,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 84,
+          "interrupted_instruction": 36796,
+          "resume": 36797,
+          "sp": 18726,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 85,
+          "interrupted_instruction": 36769,
+          "resume": 36770,
+          "sp": 18488,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 86,
+          "interrupted_instruction": 36742,
+          "resume": 36743,
+          "sp": 18474,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 87,
+          "interrupted_instruction": 36716,
+          "resume": 36717,
+          "sp": 22796,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9,
+          "attribute_frame_hex": "42a06d8f"
+        },
+        {
+          "delay": 88,
+          "interrupted_instruction": 36690,
+          "resume": 36691,
+          "sp": 20254,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 89,
+          "interrupted_instruction": 36661,
+          "resume": 36664,
+          "sp": 20240,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 90,
+          "interrupted_instruction": 36634,
+          "resume": 36635,
+          "sp": 52768,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 91,
+          "interrupted_instruction": 36606,
+          "resume": 36608,
+          "sp": 52750,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 92,
+          "interrupted_instruction": 36580,
+          "resume": 36582,
+          "sp": 52510,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 11
+        },
+        {
+          "delay": 93,
+          "interrupted_instruction": 36553,
+          "resume": 36554,
+          "sp": 52492,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 94,
+          "interrupted_instruction": 36526,
+          "resume": 36527,
+          "sp": 52250,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 95,
+          "interrupted_instruction": 36499,
+          "resume": 36500,
+          "sp": 52232,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 96,
+          "interrupted_instruction": 36471,
+          "resume": 36472,
+          "sp": 51990,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 97,
+          "interrupted_instruction": 36444,
+          "resume": 36445,
+          "sp": 51972,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 98,
+          "interrupted_instruction": 36417,
+          "resume": 36418,
+          "sp": 51730,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 99,
+          "interrupted_instruction": 36388,
+          "resume": 36391,
+          "sp": 51712,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 100,
+          "interrupted_instruction": 36361,
+          "resume": 36362,
+          "sp": 18688,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        }
+      ]
+    },
+    {
+      "period": 70908,
+      "first_irq_phases": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26,
+        30,
+        34
+      ],
+      "phase_at_second_entry": 20923,
+      "delays": 101,
+      "additional_interrupts_by_stack": {
+        "cpu_stack": 1,
+        "attribute_stack": 2,
+        "source_stack": 18,
+        "screen_stack": 10
+      },
+      "additional_interrupts": [
+        {
+          "delay": 0,
+          "interrupted_instruction": 24822,
+          "resume": 24823,
+          "sp": 24574,
+          "page": 1,
+          "alternate_a": 144,
+          "alternate_f": 155,
+          "phase": 0
+        },
+        {
+          "delay": 71,
+          "interrupted_instruction": 37151,
+          "resume": 37152,
+          "sp": 22836,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8,
+          "attribute_frame_hex": "42a02091"
+        },
+        {
+          "delay": 72,
+          "interrupted_instruction": 37122,
+          "resume": 37123,
+          "sp": 53052,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 73,
+          "interrupted_instruction": 37095,
+          "resume": 37096,
+          "sp": 53034,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 74,
+          "interrupted_instruction": 37068,
+          "resume": 37069,
+          "sp": 52792,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 75,
+          "interrupted_instruction": 37041,
+          "resume": 37042,
+          "sp": 52774,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 76,
+          "interrupted_instruction": 37014,
+          "resume": 37015,
+          "sp": 52534,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 77,
+          "interrupted_instruction": 36987,
+          "resume": 36988,
+          "sp": 52516,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 78,
+          "interrupted_instruction": 36960,
+          "resume": 36961,
+          "sp": 52274,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 79,
+          "interrupted_instruction": 36931,
+          "resume": 36934,
+          "sp": 52256,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 80,
+          "interrupted_instruction": 36904,
+          "resume": 36905,
+          "sp": 19232,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 81,
+          "interrupted_instruction": 36877,
+          "resume": 36878,
+          "sp": 18994,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 82,
+          "interrupted_instruction": 36850,
+          "resume": 36851,
+          "sp": 18980,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 83,
+          "interrupted_instruction": 36823,
+          "resume": 36824,
+          "sp": 18742,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 84,
+          "interrupted_instruction": 36796,
+          "resume": 36797,
+          "sp": 18726,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 85,
+          "interrupted_instruction": 36769,
+          "resume": 36770,
+          "sp": 18488,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 86,
+          "interrupted_instruction": 36742,
+          "resume": 36743,
+          "sp": 18474,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 87,
+          "interrupted_instruction": 36716,
+          "resume": 36717,
+          "sp": 22796,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 10,
+          "attribute_frame_hex": "42a06d8f"
+        },
+        {
+          "delay": 88,
+          "interrupted_instruction": 36690,
+          "resume": 36691,
+          "sp": 20254,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 89,
+          "interrupted_instruction": 36661,
+          "resume": 36664,
+          "sp": 20240,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 90,
+          "interrupted_instruction": 36634,
+          "resume": 36635,
+          "sp": 52768,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 91,
+          "interrupted_instruction": 36606,
+          "resume": 36608,
+          "sp": 52750,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 92,
+          "interrupted_instruction": 36580,
+          "resume": 36582,
+          "sp": 52510,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 12
+        },
+        {
+          "delay": 93,
+          "interrupted_instruction": 36553,
+          "resume": 36554,
+          "sp": 52492,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 94,
+          "interrupted_instruction": 36526,
+          "resume": 36527,
+          "sp": 52250,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 95,
+          "interrupted_instruction": 36499,
+          "resume": 36500,
+          "sp": 52232,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 96,
+          "interrupted_instruction": 36471,
+          "resume": 36472,
+          "sp": 51990,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 97,
+          "interrupted_instruction": 36444,
+          "resume": 36445,
+          "sp": 51972,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 98,
+          "interrupted_instruction": 36417,
+          "resume": 36418,
+          "sp": 51730,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 99,
+          "interrupted_instruction": 36388,
+          "resume": 36391,
+          "sp": 51712,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 100,
+          "interrupted_instruction": 36361,
+          "resume": 36362,
+          "sp": 18688,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        }
+      ]
+    },
+    {
+      "period": 70908,
+      "first_irq_phases": [
+        3,
+        7,
+        11,
+        15,
+        19,
+        23,
+        27,
+        31,
+        35
+      ],
+      "phase_at_second_entry": 20924,
+      "delays": 101,
+      "additional_interrupts_by_stack": {
+        "cpu_stack": 1,
+        "attribute_stack": 2,
+        "source_stack": 18,
+        "screen_stack": 10
+      },
+      "additional_interrupts": [
+        {
+          "delay": 0,
+          "interrupted_instruction": 24822,
+          "resume": 24823,
+          "sp": 24574,
+          "page": 1,
+          "alternate_a": 144,
+          "alternate_f": 155,
+          "phase": 1
+        },
+        {
+          "delay": 71,
+          "interrupted_instruction": 37151,
+          "resume": 37152,
+          "sp": 22836,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9,
+          "attribute_frame_hex": "42a02091"
+        },
+        {
+          "delay": 72,
+          "interrupted_instruction": 37122,
+          "resume": 37123,
+          "sp": 53052,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 73,
+          "interrupted_instruction": 37095,
+          "resume": 37096,
+          "sp": 53034,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 74,
+          "interrupted_instruction": 37068,
+          "resume": 37069,
+          "sp": 52792,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 75,
+          "interrupted_instruction": 37041,
+          "resume": 37042,
+          "sp": 52774,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 76,
+          "interrupted_instruction": 37014,
+          "resume": 37015,
+          "sp": 52534,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 77,
+          "interrupted_instruction": 36987,
+          "resume": 36988,
+          "sp": 52516,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 78,
+          "interrupted_instruction": 36960,
+          "resume": 36961,
+          "sp": 52274,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 79,
+          "interrupted_instruction": 36931,
+          "resume": 36934,
+          "sp": 52256,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 80,
+          "interrupted_instruction": 36904,
+          "resume": 36905,
+          "sp": 19232,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 81,
+          "interrupted_instruction": 36877,
+          "resume": 36878,
+          "sp": 18994,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 82,
+          "interrupted_instruction": 36850,
+          "resume": 36851,
+          "sp": 18980,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 83,
+          "interrupted_instruction": 36822,
+          "resume": 36823,
+          "sp": 18742,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 84,
+          "interrupted_instruction": 36796,
+          "resume": 36797,
+          "sp": 18726,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 10
+        },
+        {
+          "delay": 85,
+          "interrupted_instruction": 36769,
+          "resume": 36770,
+          "sp": 18488,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 86,
+          "interrupted_instruction": 36742,
+          "resume": 36743,
+          "sp": 18474,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 87,
+          "interrupted_instruction": 36715,
+          "resume": 36716,
+          "sp": 22798,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0,
+          "attribute_frame_hex": "42a06c8f"
+        },
+        {
+          "delay": 88,
+          "interrupted_instruction": 36690,
+          "resume": 36691,
+          "sp": 20254,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 89,
+          "interrupted_instruction": 36661,
+          "resume": 36664,
+          "sp": 20240,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 90,
+          "interrupted_instruction": 36634,
+          "resume": 36635,
+          "sp": 52768,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 91,
+          "interrupted_instruction": 36606,
+          "resume": 36608,
+          "sp": 52750,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 92,
+          "interrupted_instruction": 36580,
+          "resume": 36582,
+          "sp": 52510,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 13
+        },
+        {
+          "delay": 93,
+          "interrupted_instruction": 36553,
+          "resume": 36554,
+          "sp": 52492,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 94,
+          "interrupted_instruction": 36526,
+          "resume": 36527,
+          "sp": 52250,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 95,
+          "interrupted_instruction": 36499,
+          "resume": 36500,
+          "sp": 52232,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 96,
+          "interrupted_instruction": 36471,
+          "resume": 36472,
+          "sp": 51990,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 97,
+          "interrupted_instruction": 36444,
+          "resume": 36445,
+          "sp": 51972,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 98,
+          "interrupted_instruction": 36417,
+          "resume": 36418,
+          "sp": 51730,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 99,
+          "interrupted_instruction": 36388,
+          "resume": 36391,
+          "sp": 51712,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 100,
+          "interrupted_instruction": 36361,
+          "resume": 36362,
+          "sp": 18688,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "period": 69888,
+      "first_irq_phases": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32
+      ],
+      "phase_at_second_entry": 20921,
+      "delays": 101,
+      "additional_interrupts_by_stack": {
+        "cpu_stack": 1,
+        "attribute_stack": 2,
+        "screen_stack": 14,
+        "source_stack": 19
+      },
+      "additional_interrupts": [
+        {
+          "delay": 0,
+          "interrupted_instruction": 24835,
+          "resume": 24836,
+          "sp": 24574,
+          "page": 1,
+          "alternate_a": 144,
+          "alternate_f": 155,
+          "phase": 0
+        },
+        {
+          "delay": 66,
+          "interrupted_instruction": 37155,
+          "resume": 37156,
+          "sp": 22828,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0,
+          "attribute_frame_hex": "42a02491"
+        },
+        {
+          "delay": 67,
+          "interrupted_instruction": 37130,
+          "resume": 37132,
+          "sp": 20284,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 68,
+          "interrupted_instruction": 37103,
+          "resume": 37104,
+          "sp": 20270,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 69,
+          "interrupted_instruction": 37074,
+          "resume": 37077,
+          "sp": 20032,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 70,
+          "interrupted_instruction": 37047,
+          "resume": 37048,
+          "sp": 52784,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 71,
+          "interrupted_instruction": 37019,
+          "resume": 37021,
+          "sp": 52542,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 72,
+          "interrupted_instruction": 36993,
+          "resume": 36995,
+          "sp": 52526,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 12
+        },
+        {
+          "delay": 73,
+          "interrupted_instruction": 36966,
+          "resume": 36967,
+          "sp": 52284,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 74,
+          "interrupted_instruction": 36939,
+          "resume": 36940,
+          "sp": 52266,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 75,
+          "interrupted_instruction": 36912,
+          "resume": 36913,
+          "sp": 52024,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 76,
+          "interrupted_instruction": 36884,
+          "resume": 36885,
+          "sp": 52006,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 77,
+          "interrupted_instruction": 36857,
+          "resume": 36858,
+          "sp": 51764,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 78,
+          "interrupted_instruction": 36830,
+          "resume": 36831,
+          "sp": 51746,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 79,
+          "interrupted_instruction": 36801,
+          "resume": 36804,
+          "sp": 51504,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 80,
+          "interrupted_instruction": 36774,
+          "resume": 36775,
+          "sp": 18480,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 81,
+          "interrupted_instruction": 36747,
+          "resume": 36748,
+          "sp": 18466,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 82,
+          "interrupted_instruction": 36720,
+          "resume": 36721,
+          "sp": 22788,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2,
+          "attribute_frame_hex": "42a0718f"
+        },
+        {
+          "delay": 83,
+          "interrupted_instruction": 36696,
+          "resume": 36697,
+          "sp": 20246,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 84,
+          "interrupted_instruction": 36669,
+          "resume": 36670,
+          "sp": 20230,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 85,
+          "interrupted_instruction": 36642,
+          "resume": 36643,
+          "sp": 19992,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 86,
+          "interrupted_instruction": 36615,
+          "resume": 36616,
+          "sp": 19978,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 87,
+          "interrupted_instruction": 36587,
+          "resume": 36589,
+          "sp": 19740,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 88,
+          "interrupted_instruction": 36560,
+          "resume": 36561,
+          "sp": 19726,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 89,
+          "interrupted_instruction": 36531,
+          "resume": 36534,
+          "sp": 19488,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 90,
+          "interrupted_instruction": 36504,
+          "resume": 36505,
+          "sp": 52240,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 91,
+          "interrupted_instruction": 36476,
+          "resume": 36478,
+          "sp": 51998,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 92,
+          "interrupted_instruction": 36450,
+          "resume": 36452,
+          "sp": 51982,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 10
+        },
+        {
+          "delay": 93,
+          "interrupted_instruction": 36423,
+          "resume": 36424,
+          "sp": 51740,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 94,
+          "interrupted_instruction": 36396,
+          "resume": 36397,
+          "sp": 51722,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 95,
+          "interrupted_instruction": 36369,
+          "resume": 36370,
+          "sp": 51480,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 96,
+          "interrupted_instruction": 36341,
+          "resume": 36342,
+          "sp": 51462,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 97,
+          "interrupted_instruction": 36314,
+          "resume": 36315,
+          "sp": 51220,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 98,
+          "interrupted_instruction": 36287,
+          "resume": 36288,
+          "sp": 51202,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 99,
+          "interrupted_instruction": 36262,
+          "resume": 36263,
+          "sp": 18416,
+          "page": 1,
+          "alternate_a": 0,
+          "alternate_f": 0,
+          "phase": 2
+        },
+        {
+          "delay": 100,
+          "interrupted_instruction": 36234,
+          "resume": 36235,
+          "sp": 18400,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        }
+      ]
+    },
+    {
+      "period": 69888,
+      "first_irq_phases": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21,
+        25,
+        29,
+        33
+      ],
+      "phase_at_second_entry": 20922,
+      "delays": 101,
+      "additional_interrupts_by_stack": {
+        "cpu_stack": 1,
+        "attribute_stack": 2,
+        "screen_stack": 14,
+        "source_stack": 19
+      },
+      "additional_interrupts": [
+        {
+          "delay": 0,
+          "interrupted_instruction": 24835,
+          "resume": 24836,
+          "sp": 24574,
+          "page": 1,
+          "alternate_a": 144,
+          "alternate_f": 155,
+          "phase": 1
+        },
+        {
+          "delay": 66,
+          "interrupted_instruction": 37155,
+          "resume": 37156,
+          "sp": 22828,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1,
+          "attribute_frame_hex": "42a02491"
+        },
+        {
+          "delay": 67,
+          "interrupted_instruction": 37130,
+          "resume": 37132,
+          "sp": 20284,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 68,
+          "interrupted_instruction": 37103,
+          "resume": 37104,
+          "sp": 20270,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 69,
+          "interrupted_instruction": 37074,
+          "resume": 37077,
+          "sp": 20032,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 70,
+          "interrupted_instruction": 37047,
+          "resume": 37048,
+          "sp": 52784,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 71,
+          "interrupted_instruction": 37019,
+          "resume": 37021,
+          "sp": 52542,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 72,
+          "interrupted_instruction": 36993,
+          "resume": 36995,
+          "sp": 52526,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 13
+        },
+        {
+          "delay": 73,
+          "interrupted_instruction": 36966,
+          "resume": 36967,
+          "sp": 52284,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 74,
+          "interrupted_instruction": 36939,
+          "resume": 36940,
+          "sp": 52266,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 75,
+          "interrupted_instruction": 36912,
+          "resume": 36913,
+          "sp": 52024,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 76,
+          "interrupted_instruction": 36884,
+          "resume": 36885,
+          "sp": 52006,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 77,
+          "interrupted_instruction": 36857,
+          "resume": 36858,
+          "sp": 51764,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 78,
+          "interrupted_instruction": 36830,
+          "resume": 36831,
+          "sp": 51746,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 79,
+          "interrupted_instruction": 36801,
+          "resume": 36804,
+          "sp": 51504,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 80,
+          "interrupted_instruction": 36774,
+          "resume": 36775,
+          "sp": 18480,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 81,
+          "interrupted_instruction": 36747,
+          "resume": 36748,
+          "sp": 18466,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 82,
+          "interrupted_instruction": 36720,
+          "resume": 36721,
+          "sp": 22788,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3,
+          "attribute_frame_hex": "42a0718f"
+        },
+        {
+          "delay": 83,
+          "interrupted_instruction": 36695,
+          "resume": 36696,
+          "sp": 20246,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 84,
+          "interrupted_instruction": 36669,
+          "resume": 36670,
+          "sp": 20230,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 10
+        },
+        {
+          "delay": 85,
+          "interrupted_instruction": 36642,
+          "resume": 36643,
+          "sp": 19992,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 86,
+          "interrupted_instruction": 36615,
+          "resume": 36616,
+          "sp": 19978,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 87,
+          "interrupted_instruction": 36587,
+          "resume": 36589,
+          "sp": 19740,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 88,
+          "interrupted_instruction": 36560,
+          "resume": 36561,
+          "sp": 19726,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 89,
+          "interrupted_instruction": 36531,
+          "resume": 36534,
+          "sp": 19488,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 90,
+          "interrupted_instruction": 36504,
+          "resume": 36505,
+          "sp": 52240,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 91,
+          "interrupted_instruction": 36476,
+          "resume": 36478,
+          "sp": 51998,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 92,
+          "interrupted_instruction": 36450,
+          "resume": 36452,
+          "sp": 51982,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 11
+        },
+        {
+          "delay": 93,
+          "interrupted_instruction": 36423,
+          "resume": 36424,
+          "sp": 51740,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 94,
+          "interrupted_instruction": 36396,
+          "resume": 36397,
+          "sp": 51722,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 95,
+          "interrupted_instruction": 36369,
+          "resume": 36370,
+          "sp": 51480,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 96,
+          "interrupted_instruction": 36341,
+          "resume": 36342,
+          "sp": 51462,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 97,
+          "interrupted_instruction": 36314,
+          "resume": 36315,
+          "sp": 51220,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 98,
+          "interrupted_instruction": 36287,
+          "resume": 36288,
+          "sp": 51202,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 99,
+          "interrupted_instruction": 36262,
+          "resume": 36263,
+          "sp": 18416,
+          "page": 1,
+          "alternate_a": 0,
+          "alternate_f": 0,
+          "phase": 3
+        },
+        {
+          "delay": 100,
+          "interrupted_instruction": 36234,
+          "resume": 36235,
+          "sp": 18400,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "period": 69888,
+      "first_irq_phases": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26,
+        30,
+        34
+      ],
+      "phase_at_second_entry": 20923,
+      "delays": 101,
+      "additional_interrupts_by_stack": {
+        "cpu_stack": 1,
+        "attribute_stack": 2,
+        "screen_stack": 14,
+        "source_stack": 19
+      },
+      "additional_interrupts": [
+        {
+          "delay": 0,
+          "interrupted_instruction": 24835,
+          "resume": 24836,
+          "sp": 24574,
+          "page": 1,
+          "alternate_a": 144,
+          "alternate_f": 155,
+          "phase": 2
+        },
+        {
+          "delay": 66,
+          "interrupted_instruction": 37155,
+          "resume": 37156,
+          "sp": 22828,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2,
+          "attribute_frame_hex": "42a02491"
+        },
+        {
+          "delay": 67,
+          "interrupted_instruction": 37130,
+          "resume": 37132,
+          "sp": 20284,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 10
+        },
+        {
+          "delay": 68,
+          "interrupted_instruction": 37103,
+          "resume": 37104,
+          "sp": 20270,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 69,
+          "interrupted_instruction": 37074,
+          "resume": 37077,
+          "sp": 20032,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 70,
+          "interrupted_instruction": 37047,
+          "resume": 37048,
+          "sp": 52784,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 71,
+          "interrupted_instruction": 37019,
+          "resume": 37021,
+          "sp": 52542,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 72,
+          "interrupted_instruction": 36992,
+          "resume": 36993,
+          "sp": 52524,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 73,
+          "interrupted_instruction": 36965,
+          "resume": 36966,
+          "sp": 52282,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 74,
+          "interrupted_instruction": 36938,
+          "resume": 36939,
+          "sp": 52264,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 75,
+          "interrupted_instruction": 36911,
+          "resume": 36912,
+          "sp": 52022,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 76,
+          "interrupted_instruction": 36884,
+          "resume": 36885,
+          "sp": 52006,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 77,
+          "interrupted_instruction": 36857,
+          "resume": 36858,
+          "sp": 51764,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 78,
+          "interrupted_instruction": 36830,
+          "resume": 36831,
+          "sp": 51746,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 79,
+          "interrupted_instruction": 36801,
+          "resume": 36804,
+          "sp": 51504,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 80,
+          "interrupted_instruction": 36774,
+          "resume": 36775,
+          "sp": 18480,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 81,
+          "interrupted_instruction": 36747,
+          "resume": 36748,
+          "sp": 18466,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 82,
+          "interrupted_instruction": 36720,
+          "resume": 36721,
+          "sp": 22788,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4,
+          "attribute_frame_hex": "42a0718f"
+        },
+        {
+          "delay": 83,
+          "interrupted_instruction": 36695,
+          "resume": 36696,
+          "sp": 20246,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 84,
+          "interrupted_instruction": 36668,
+          "resume": 36669,
+          "sp": 20232,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 85,
+          "interrupted_instruction": 36642,
+          "resume": 36643,
+          "sp": 19992,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 10
+        },
+        {
+          "delay": 86,
+          "interrupted_instruction": 36615,
+          "resume": 36616,
+          "sp": 19978,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 87,
+          "interrupted_instruction": 36587,
+          "resume": 36589,
+          "sp": 19740,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 88,
+          "interrupted_instruction": 36560,
+          "resume": 36561,
+          "sp": 19726,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 89,
+          "interrupted_instruction": 36531,
+          "resume": 36534,
+          "sp": 19488,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 90,
+          "interrupted_instruction": 36504,
+          "resume": 36505,
+          "sp": 52240,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 91,
+          "interrupted_instruction": 36476,
+          "resume": 36478,
+          "sp": 51998,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 92,
+          "interrupted_instruction": 36450,
+          "resume": 36452,
+          "sp": 51982,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 12
+        },
+        {
+          "delay": 93,
+          "interrupted_instruction": 36423,
+          "resume": 36424,
+          "sp": 51740,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 94,
+          "interrupted_instruction": 36396,
+          "resume": 36397,
+          "sp": 51722,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 95,
+          "interrupted_instruction": 36369,
+          "resume": 36370,
+          "sp": 51480,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 8
+        },
+        {
+          "delay": 96,
+          "interrupted_instruction": 36341,
+          "resume": 36342,
+          "sp": 51462,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 97,
+          "interrupted_instruction": 36314,
+          "resume": 36315,
+          "sp": 51220,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 98,
+          "interrupted_instruction": 36287,
+          "resume": 36288,
+          "sp": 51202,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 99,
+          "interrupted_instruction": 36261,
+          "resume": 36262,
+          "sp": 18416,
+          "page": 1,
+          "alternate_a": 0,
+          "alternate_f": 0,
+          "phase": 0
+        },
+        {
+          "delay": 100,
+          "interrupted_instruction": 36234,
+          "resume": 36235,
+          "sp": 18400,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        }
+      ]
+    },
+    {
+      "period": 69888,
+      "first_irq_phases": [
+        3,
+        7,
+        11,
+        15,
+        19,
+        23,
+        27,
+        31,
+        35
+      ],
+      "phase_at_second_entry": 20924,
+      "delays": 101,
+      "additional_interrupts_by_stack": {
+        "cpu_stack": 1,
+        "attribute_stack": 2,
+        "screen_stack": 14,
+        "source_stack": 19
+      },
+      "additional_interrupts": [
+        {
+          "delay": 0,
+          "interrupted_instruction": 24835,
+          "resume": 24836,
+          "sp": 24574,
+          "page": 1,
+          "alternate_a": 144,
+          "alternate_f": 155,
+          "phase": 3
+        },
+        {
+          "delay": 66,
+          "interrupted_instruction": 37155,
+          "resume": 37156,
+          "sp": 22828,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3,
+          "attribute_frame_hex": "42a02491"
+        },
+        {
+          "delay": 67,
+          "interrupted_instruction": 37130,
+          "resume": 37132,
+          "sp": 20284,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 11
+        },
+        {
+          "delay": 68,
+          "interrupted_instruction": 37103,
+          "resume": 37104,
+          "sp": 20270,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 69,
+          "interrupted_instruction": 37074,
+          "resume": 37077,
+          "sp": 20032,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 70,
+          "interrupted_instruction": 37047,
+          "resume": 37048,
+          "sp": 52784,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 71,
+          "interrupted_instruction": 37019,
+          "resume": 37021,
+          "sp": 52542,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 72,
+          "interrupted_instruction": 36992,
+          "resume": 36993,
+          "sp": 52524,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 73,
+          "interrupted_instruction": 36965,
+          "resume": 36966,
+          "sp": 52282,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 74,
+          "interrupted_instruction": 36938,
+          "resume": 36939,
+          "sp": 52264,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 75,
+          "interrupted_instruction": 36911,
+          "resume": 36912,
+          "sp": 52022,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 76,
+          "interrupted_instruction": 36884,
+          "resume": 36885,
+          "sp": 52006,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 77,
+          "interrupted_instruction": 36857,
+          "resume": 36858,
+          "sp": 51764,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 78,
+          "interrupted_instruction": 36830,
+          "resume": 36831,
+          "sp": 51746,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 79,
+          "interrupted_instruction": 36801,
+          "resume": 36804,
+          "sp": 51504,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 80,
+          "interrupted_instruction": 36774,
+          "resume": 36775,
+          "sp": 18480,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        },
+        {
+          "delay": 81,
+          "interrupted_instruction": 36747,
+          "resume": 36748,
+          "sp": 18466,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 6
+        },
+        {
+          "delay": 82,
+          "interrupted_instruction": 36720,
+          "resume": 36721,
+          "sp": 22788,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5,
+          "attribute_frame_hex": "42a0718f"
+        },
+        {
+          "delay": 83,
+          "interrupted_instruction": 36695,
+          "resume": 36696,
+          "sp": 20246,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 2
+        },
+        {
+          "delay": 84,
+          "interrupted_instruction": 36668,
+          "resume": 36669,
+          "sp": 20232,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 1
+        },
+        {
+          "delay": 85,
+          "interrupted_instruction": 36641,
+          "resume": 36642,
+          "sp": 19994,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 0
+        },
+        {
+          "delay": 86,
+          "interrupted_instruction": 36615,
+          "resume": 36616,
+          "sp": 19978,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 10
+        },
+        {
+          "delay": 87,
+          "interrupted_instruction": 36587,
+          "resume": 36589,
+          "sp": 19740,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 88,
+          "interrupted_instruction": 36560,
+          "resume": 36561,
+          "sp": 19726,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 4
+        },
+        {
+          "delay": 89,
+          "interrupted_instruction": 36531,
+          "resume": 36534,
+          "sp": 19488,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 90,
+          "interrupted_instruction": 36504,
+          "resume": 36505,
+          "sp": 52240,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 91,
+          "interrupted_instruction": 36476,
+          "resume": 36478,
+          "sp": 51998,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 3
+        },
+        {
+          "delay": 92,
+          "interrupted_instruction": 36450,
+          "resume": 36452,
+          "sp": 51982,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 13
+        },
+        {
+          "delay": 93,
+          "interrupted_instruction": 36423,
+          "resume": 36424,
+          "sp": 51740,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 94,
+          "interrupted_instruction": 36396,
+          "resume": 36397,
+          "sp": 51722,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 95,
+          "interrupted_instruction": 36369,
+          "resume": 36370,
+          "sp": 51480,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 9
+        },
+        {
+          "delay": 96,
+          "interrupted_instruction": 36341,
+          "resume": 36342,
+          "sp": 51462,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 97,
+          "interrupted_instruction": 36314,
+          "resume": 36315,
+          "sp": 51220,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 98,
+          "interrupted_instruction": 36287,
+          "resume": 36288,
+          "sp": 51202,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 5
+        },
+        {
+          "delay": 99,
+          "interrupted_instruction": 36261,
+          "resume": 36262,
+          "sp": 18416,
+          "page": 1,
+          "alternate_a": 0,
+          "alternate_f": 0,
+          "phase": 1
+        },
+        {
+          "delay": 100,
+          "interrupted_instruction": 36234,
+          "resume": 36235,
+          "sp": 18400,
+          "page": 1,
+          "alternate_a": 160,
+          "alternate_f": 66,
+          "phase": 7
+        }
+      ]
+    }
+  ],
+  "first_phase_runs": 72,
+  "second_phase_runs": 808,
+  "full_phase_delay_combinations": 7272,
+  "earlier_irq_gap_accesses": 0,
+  "template_gap_accesses": 0,
+  "byte_after_bitmaps_accesses": 0,
+  "final_attribute_bytes_verified": 768,
+  "native_execution": false,
+  "assembly_executed": false
+}

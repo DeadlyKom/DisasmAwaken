@@ -12,6 +12,7 @@ from CheckVisibleMapPoints import visible_points
 from CheckMapLine import points as line_points
 from CheckInsetFrame import bitmap_address
 from CheckInitialZeroTailAccesses import WatchedCPU
+from ClassifyMapArchivedAlignment import FORMAT as MAP_ALIGNMENT_FORMAT
 
 
 def key(x,y):return bytes([x>>8,y>>8,x&255,y&255])
@@ -33,9 +34,11 @@ class RangeMemory(bytearray):
  def __init__(self):
   super().__init__(65536)
   self.source_map=(ROOT/'Tools/Disasm/Reports/SourceMap.json').read_bytes()
-  self.ranges=[row for row in json.loads(self.source_map) if row['slot']==7 and row['kind']=='unclassified']
+  self.ranges=[row for row in json.loads(self.source_map)
+               if row['slot']==7 and row.get('format')==MAP_ALIGNMENT_FORMAT]
   self.watched={0xC000+offset:row['path'] for row in self.ranges
                 for offset in range(row['offset'],row['offset']+row['length'])}
+  assert len(self.ranges)==3 and len(self.watched)==154
   self.accesses=defaultdict(Counter)
 
  def observe(self,mode,address):

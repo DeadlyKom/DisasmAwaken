@@ -11,13 +11,18 @@
                 ;   TradePanelState.HoverRows содержит байтовый запрос строк, младший HoverArea задаёт отступ, исходно 35 пикселей
                 ;   ScriptSelection.CargoRow содержит прежнюю строку либо FF и доступен для записи
                 ; Out:
+                ;   HL, DE, BC и AF принадлежат UpdateRowHover
+                ;   HL', DE', BC' сохраняются, AF' рабочий на восстановлении указателя, IX и IY сохраняются
                 ;   перед UpdateRowHover HL=DrawTradePanel.Entry, DE прочитано из изменяемого HoverArea, A прежняя CargoRow
                 ;   D является числом строк и проходит исходное умножение на восемь и ограничение ClampRowHeight, а не прямой пиксельной высотой
                 ;   при Z=1 дочернего входа CargoRow сохраняется, при Z=0 получает весь A, в том числе нулевую строку либо результат позднего отказа
-                ;   HL, DE, BC и AF принадлежат UpdateRowHover, HL', DE', BC', IX, IY сохраняются, AF' рабочий на восстановлении указателя
                 ;   сам HoverRows не меняется, I, IFF и IM не меняются, SP обычного возврата равен входному SP+2
                 ; Corrupt:
-                ;   HL, DE, BC, AF, AF', XOR-полосы и указатель по UpdateRowHover
+                ;   HL, DE, BC, AF, AF', R
+                ;   bitmap полосы, MapHighlightState.WidthSkip банка 1, StationState.CurrentPage, управление 7FFD и временные слова CPU-стека
+                ;   PointerState.UpdateBlocked, PointerState.RestoredFlag, PointerState.SpriteBase, PointerState.BackgroundAddr и PointerState.VisibleRows
+                ;   InterfaceState.HoverItem, InterfaceState.HoverCallback и строки PointerBackground
+                ;   ScriptSelection.CargoRow при возвращённом Z=0
                 ; Note:
                 ;   HoverRows является старшим байтом непосредственного LD DE и записывается DrawTradePanel из A' счётчика строк
                 ;   начальное D=30 не является постоянным пределом после рисования, ноль отключает область попадания

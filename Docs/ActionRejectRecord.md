@@ -1,6 +1,6 @@
 # Отказ обновления записи
 
-[RejectRecordUpdate](../Source/Action/RejectRecordUpdate.asm) занимает исходные семь байтов E658..E65E ACTION банка 0. Это часть (0) жёстко упорядоченной пары, после CALL без дополнительного машинного перехода начинается часть (1), [ReleaseClass12Records](../Source/Action/ReleaseClass12Records.asm).
+[RejectRecordUpdate](../Source/Action/RejectRecordUpdate.asm) занимает исходные семь байтов E658..E65E ACTION банка 0. Это часть (0) жёстко упорядоченной пары, после CALL без дополнительного машинного перехода начинается часть (1), [ReleaseStationPartsOrRestoreOffsets](../Source/Action/ReleaseStationPartsOrRestoreOffsets.asm).
 
 Входной SP может указывать на компоненты FActionRecord, поэтому первая инструкция восстанавливает его из существующего операнда ActionOffsetState.SavedCpuSP по E605. Только затем вызывается [MarkRecordForReuse](../Source/Action/MarkRecordForReuse.asm). Эта последовательность не записывает адрес возврата CALL поверх компонент. Действительный CPU SP должен содержать внешний возврат и допускать два временных байта под ним.
 

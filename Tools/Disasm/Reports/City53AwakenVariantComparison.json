@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "method": "whole_allocated_embedded_payload_and_reconstructed_SCL_comparison",
+  "city_source_url": "https://zxpress.ru/files/CITY53.ZIP",
+  "city_archive_sha256": "8e392dbff49f386acdcdc0ebf664fe3f59a86e1ae5d80d95199c28409c9c924a",
+  "city_scl_sha256": "e051e30297971da78e9f12f15ba7fa59742f36f70df874318a66e877eddb6a04",
+  "city_scl_checksum_verified": true,
+  "city_outer_file_count": 6,
+  "author_scl_checksum_verified": true,
+  "author_scl_sha256": "40611e87a5096060482bf29e65d7f78eb39b3fde0ffd52fa9ee4e13e54b1d0c5",
+  "reconstructed_scl_bytes": 195127,
+  "reconstructed_SCL_identical": true,
+  "all_allocated_embedded_file_bytes": 195072,
+  "files": [
+    {
+      "name": "AWAKEN  B",
+      "descriptor_hex": "4157414b454e20204221012101ff",
+      "embedded_header": 70316,
+      "embedded_payload": 70338,
+      "source_payload": 51,
+      "allocated_bytes": 65280,
+      "catalog_length_word": 289,
+      "payload_sha256": "2a99636572a4e1d90391296cf0aaead0dcd688ca8e63946a133ea76611b85858",
+      "differing_bytes": 0,
+      "container_prefix_after_descriptor_hex": "00ffdde522490000"
+    },
+    {
+      "name": "Demo    R",
+      "descriptor_hex": "44656d6f20202020520067bf1cff",
+      "embedded_header": 135618,
+      "embedded_payload": 135640,
+      "source_payload": 65331,
+      "allocated_bytes": 65280,
+      "catalog_length_word": 7359,
+      "payload_sha256": "cdcba037baa7c34949ef00dfca0658f623a9afc622e62ea7a897b314baf4bd12",
+      "differing_bytes": 0,
+      "container_prefix_after_descriptor_hex": "00ffe9307d080000"
+    },
+    {
+      "name": "Version T",
+      "descriptor_hex": "56657273696f6e205400806c22fc",
+      "embedded_header": 200920,
+      "embedded_payload": 200942,
+      "source_payload": 130611,
+      "allocated_bytes": 64512,
+      "catalog_length_word": 8812,
+      "payload_sha256": "1dc14200a266fa254babf18dd05231d590735c3565931fe7078b80dc271ce464",
+      "differing_bytes": 0,
+      "container_prefix_after_descriptor_hex": "00fc772052740000"
+    }
+  ],
+  "embedded_prefix_size": 22,
+  "prefix_fields_semantics_proved": false,
+  "current_Awakenv02_module_recovered": false,
+  "applicability_to_current_game_proved": false,
+  "all_other_city_data_semantically_scanned": false,
+  "duplicate_files_extracted": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

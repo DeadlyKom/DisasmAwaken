@@ -9,6 +9,32 @@ from ReferenceActionClampVectorWords import logical_flags
 from ReferenceControlsPointRespawn import refresh
 
 
+def reference(initial, record, ix):
+    # Только собственный префикс и реальное освобождение, общий F0F8 компонуется отдельно.
+    wanted = list(initial)
+    timer, value = record[17], record[16]
+    carry = initial[1] & 1
+    new_timer = (timer - 1) & 255
+    operations = [(ix + 17, new_timer)]
+    if new_timer == 0:
+        wanted[1] = dec_flags(timer, carry)
+        wanted[24], wanted[12] = 0x3FFF, initial[12] + 2
+        m1, path = 10, 'expired_reuse'
+        operations.extend(((ix + 1, 128), (ix, 0), (ix + 24, 255)))
+    elif value == 0:
+        wanted[0:2] = [0, 0x54]
+        wanted[24] = 0xF0F8
+        m1, path = 7, 'zero_unchanged'
+    else:
+        result = value >> 1
+        wanted[0:2] = [result, logical_flags(result) | (value & 1)]
+        wanted[24] = 0xF0F8
+        m1, path = 12, 'halve'
+        operations.append((ix + 16, result))
+    wanted[15] = refresh(initial[15], m1)
+    return wanted, operations, path
+
+
 def main():
     flat=flat_action();banks=[bytearray([0xA0+i]*0x4000) for i in range(8)]
     banks[5],banks[2],banks[0]=bytearray(flat[0x4000:0x8000]),bytearray(flat[0x8000:0xC000]),bytearray(flat[0xC000:])
@@ -24,16 +50,8 @@ def main():
                 initial=get_registers({'PC':0xF66A,'SP':stack,'AF':0xA5FE|carry,'HL':0x1357,'DE':0x2468,'BC':0x369C,
                     '^AF':0xDEF0,'^HL':0x1234,'^DE':0x5678,'^BC':0x9ABC,'IX':ix,'IY':0x5C3A},None,False)
                 initial[14],initial[15],initial[26],initial[27]=cases&255,(cases*17)&255,cases&1,cases%3
-                wanted=list(initial);new_timer=(timer-1)&255;operations=[(ix+17,new_timer)]
-                if new_timer==0:
-                    wanted[1]=dec_flags(timer,carry);wanted[24],wanted[12]=0x3FFF,stack+2;m1=10
-                    operations.extend(((ix+1,128),(ix,0),(ix+24,255)));path='expired_reuse'
-                elif value==0:
-                    wanted[0:2]=[0,0x54];wanted[24]=0xF0F8;m1=7;path='zero_unchanged'
-                else:
-                    result=value>>1;wanted[0:2]=[result,logical_flags(result)|(value&1)]
-                    wanted[24]=0xF0F8;m1=12;operations.append((ix+16,result));path='halve'
-                wanted[15]=refresh(initial[15],m1);expected=[bytearray(bank) for bank in memory.banks];writes=[]
+                wanted,operations,path=reference(initial,{17:timer,16:value},ix)
+                expected=[bytearray(bank) for bank in memory.banks];writes=[]
                 for address,byte in operations:
                     bank=5 if address<0x8000 else 2 if address<0xC000 else 0
                     expected[bank][address&0x3FFF]=byte;writes.append((bank,address&0x3FFF,byte))

@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "total_cases": 1792,
+  "total_cases": 1800,
   "coefficients": 256,
   "all_angles_per_axis": true,
   "mixed_random_profiles": 1024,
@@ -13,5 +13,21 @@
   },
   "other_final_registers_independently_proved": false,
   "assembly_executed": false,
-  "native_execution": false
+  "native_execution": false,
+  "original_rotation_sha256": "dd677e89f4ab7d794472084e94e796a383ec72d409da357d71a7e85265ac021d",
+  "RAM_except_four_CPU_stack_bytes_compared": true,
+  "exact_nonstack_write_counts_checked": true,
+  "maximal_CPU_stack_depth": 4,
+  "zero_angles_M1": [
+    48
+  ],
+  "measured_M1_range": [
+    48,
+    5913
+  ],
+  "R_checked_against_executed_opcode_M1": true,
+  "I_IM_IFF_preserved": true,
+  "zero_angles_nonzero_IY_and_alternate_context_preserved": true,
+  "independent_M1_formula_for_all_nonzero_paths_proved": false,
+  "IRQ_executed": false
 }

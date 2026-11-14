@@ -40,6 +40,7 @@
   "real_ports_verified": true,
   "maximum_extra_stack_bytes": 18,
   "common_offset_tail_executed": false,
+  "full_M1_count_compared_not_only_R_modulo_128": true,
   "common_tail_boundary": 61688,
   "near_path_external_ret_executed": true,
   "all_input_records_product_exhausted": false,

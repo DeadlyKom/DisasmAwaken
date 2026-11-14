@@ -9,15 +9,28 @@ from Analyze import payload
 from CheckPreviewCoordinateMultiply import Memory
 from CheckWorldSignature import logical_flags
 from PreviewVertexClassOracle import classify
+from ReferenceControlsPointRespawn import refresh
 
 
 def main():
  raw=payload(6);m=Memory([0]*65536);m[0xC000:0xC000+len(raw)]=raw;m[0x7FFE:0x8000]=[255,63];s=Simulator(m)
  initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5D,'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
- cases=0;outcomes=collections.Counter();codes=set();wrap_cases=0
+ cases=0;outcomes=collections.Counter();codes=set();wrap_cases=0;m1_bounds={}
  def check(buffer,next_offset,limit_first,limit_second):
   nonlocal cases,wrap_cases
-  expected=classify(buffer,next_offset,limit_first,limit_second);m.recording=False;m[0xC600:0xC700]=buffer;m[0xD90D]=next_offset;m[0xDF7F]=limit_first;m[0xDF64]=limit_second;s.registers[:]=initial;m.recording=True;m.writes=[];s.run(start=0xDF46,stop=0x3FFF);r=s.registers
+  expected=classify(buffer,next_offset,limit_first,limit_second);m.recording=False;m[0xC600:0xC700]=buffer;m[0xD90D]=next_offset;m[0xDF7F]=limit_first;m[0xDF64]=limit_second
+  initial[14],initial[15],initial[26],initial[27]=cases&255,(cases*73)&255,cases&1,cases%3
+  s.registers[:]=initial;m.recording=True;m.writes=[];r=s.registers;r[24]=0xDF46;measured_m1=0
+  for _ in range(16000):
+   if r[24]==0x3FFF:break
+   old_r=r[15];s.run();increment=(r[15]-old_r)&127
+   assert increment in (1,2)
+   measured_m1+=increment
+  else:raise AssertionError('классификатор не вернулся')
+  assert measured_m1==expected['m1'] and r[15]==refresh(initial[15],expected['m1']),(next_offset,limit_first,limit_second,measured_m1,expected['m1'])
+  assert all(r[i]==initial[i] for i in (14,26,27))
+  kind='completed' if expected['accepted'] else 'marker_80'
+  lo,hi=m1_bounds.get(kind,(measured_m1,measured_m1));m1_bounds[kind]=(min(lo,measured_m1),max(hi,measured_m1))
   assert bytes(m[0xC600:0xC700])==expected['buffer'],(next_offset,limit_first,limit_second,expected)
   answer=expected['accumulator'];flags=logical_flags(answer)
   assert (r[A],r[F],r[H]*256+r[L],r[B],r[C],r[D],r[E],r[SP])==(answer,flags,0x1357,expected['length'],expected['mask'],0x24,0x7A,0x8000)
@@ -44,7 +57,7 @@ def main():
  for _ in range(2048):check(bytes(rng.randrange(256) for i in range(256)),4+5*rng.randrange(1,51),rng.randrange(256),rng.randrange(256))
  # Проверка всех нештатных счётчиков и пустого входа, чтение и запись остаются в странице C6 с оборачиванием L.
  for next_offset in range(256):check(bytes(256),next_offset,123,87)
- report=dict(passed=True,cases=cases,outcomes=dict(outcomes),codes=sorted(codes),all_coordinate_words_on_both_axes=True,all_byte_thresholds_and_coordinates=True,all_modular_counters_checked=True,empty_offset_04_cases=wrap_cases,exact_main_alternate_and_index_registers=True,exact_partial_writes_and_cpu_stack=True,independent_coordinate_and_modular_buffer_model=True,irq_executed=False,native_execution=False,assembly_executed=False,face_dispatch_not_executed=True)
+ report=dict(passed=True,cases=cases,outcomes=dict(outcomes),codes=sorted(codes),all_coordinate_words_on_both_axes=True,all_byte_thresholds_and_coordinates=True,all_modular_counters_checked=True,empty_offset_04_cases=wrap_cases,exact_main_alternate_and_index_registers=True,exact_partial_writes_and_cpu_stack=True,independent_coordinate_and_modular_buffer_model=True,irq_executed=False,native_execution=False,assembly_executed=False,face_dispatch_not_executed=True,direct_full_M1_and_R_checked=True,I_IM_IFF_preservation_checked=True,observed_M1_bounds=m1_bounds,complete_joint_input_product_exhausted=False)
  (ROOT/'Tools/Disasm/Reports/PreviewVertexClassVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 
 

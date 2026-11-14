@@ -1,0 +1,50 @@
+{
+  "length_writes": [
+    {
+      "phase": "fixture",
+      "pc": null,
+      "value": 0,
+      "pc_bytes": null,
+      "selected_rom_sha256": null
+    },
+    {
+      "phase": "RUN",
+      "pc": 820,
+      "value": 9,
+      "pc_bytes": "32065daf",
+      "selected_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13"
+    }
+  ],
+  "checkpoints": [
+    {
+      "phase": "BASIC_USR",
+      "pc": 23873,
+      "length": 9
+    },
+    {
+      "phase": "intro_entry",
+      "pc": 25856,
+      "length": 9
+    },
+    {
+      "phase": "relocated_loader",
+      "pc": 23867,
+      "length": 9
+    },
+    {
+      "phase": "before_search",
+      "pc": 15635,
+      "length": 9
+    },
+    {
+      "phase": "after_catalogue",
+      "pc": 23943,
+      "length": 9
+    },
+    {
+      "phase": "station_entry",
+      "pc": 25344,
+      "length": 9
+    }
+  ]
+}

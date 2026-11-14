@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "method": "author_class_comment_model_packet_and_current_boost_call",
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "author_definition": "awk1.trd:EQUS.a",
+  "original_definition_hex": "545f5452415348068505660682233134fe8c93918e9020848b9f20948e9091808680",
+  "class_code": 20,
+  "class_code_hex": "14",
+  "author_name": "T_TRASH",
+  "author_comment": "МУСОР ДЛЯ ФОРСАЖА",
+  "author_model_source": "awk1.trd:OBJECTS2.a",
+  "model_label": "TRASH",
+  "model_address": 55482,
+  "matched_model_bytes": 24,
+  "full_object3d_file_match_bytes": 10580,
+  "current_model_offset": 192,
+  "model_pointer_address": 40640,
+  "current_instruction_witnesses": [
+    {
+      "address": 25050,
+      "file_offset": 1047,
+      "hex": "FD3606C0",
+      "operation": "LD (IY+#06),#C0"
+    },
+    {
+      "address": 25054,
+      "file_offset": 1051,
+      "hex": "FD361214",
+      "operation": "LD (IY+#12),#14"
+    },
+    {
+      "address": 30009,
+      "file_offset": 6006,
+      "hex": "DC7D61",
+      "operation": "CALL C,#617D"
+    }
+  ],
+  "current_AdvanceBoost_caller_proved": true,
+  "author_boost_debris_role_and_current_use_linked": true,
+  "native_visual_appearance_proved": false,
+  "full_class_behavior_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

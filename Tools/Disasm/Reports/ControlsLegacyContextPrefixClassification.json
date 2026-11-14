@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 13,
+  "resources": 1,
+  "station_prefix_offsets": [
+    [
+      0,
+      8
+    ],
+    [
+      9,
+      14
+    ]
+  ],
+  "missing_station_variant_offset": 8,
+  "actual_runtime_consumer_proved": false,
+  "adjacent_record_layout_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

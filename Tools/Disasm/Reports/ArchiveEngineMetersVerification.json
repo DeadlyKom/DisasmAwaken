@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "screen_row_cases": 6144,
+  "physical_bitmap_bytes": 600,
+  "bitmap_addresses": [
+    19791,
+    19941,
+    20091,
+    20241
+  ],
+  "bytes_read_during_initialization": 300,
+  "continuous_updates": 121,
+  "comparison_cases": 29282,
+  "assembly_executed": false,
+  "native_execution": false
+}

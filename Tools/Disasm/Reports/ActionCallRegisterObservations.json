@@ -1,0 +1,3834 @@
+{
+  "passed": true,
+  "model_profiles": 791,
+  "families": [
+    {
+      "model": "CheckActionNonemptyRenderFrame",
+      "profiles": 231,
+      "report": "Tools/Disasm/Reports/ActionCallRegisterFramesVerification.json"
+    },
+    {
+      "model": "CheckActionWideProjectionLoop",
+      "profiles": 560,
+      "report": "Tools/Disasm/Reports/ActionCallRegisterWideVectorsVerification.json"
+    }
+  ],
+  "functions_observed": 48,
+  "completed_calls": 43118,
+  "frames_discarded_by_nonlocal_returns": 214,
+  "discarded_frames": [
+    {
+      "region": "Controls",
+      "entry": 53450,
+      "path": "Source/Controls/EncodeProjectionRatio.asm",
+      "call_pc": 53055,
+      "completed_outer_region": "Controls",
+      "completed_outer_entry": 53003,
+      "outer_return_instruction": 53589,
+      "count": 154
+    },
+    {
+      "region": "Controls",
+      "entry": 53450,
+      "path": "Source/Controls/EncodeProjectionRatio.asm",
+      "call_pc": 53089,
+      "completed_outer_region": "Controls",
+      "completed_outer_entry": 53003,
+      "outer_return_instruction": 53589,
+      "count": 60
+    }
+  ],
+  "open_frames_at_final_boundary": 0,
+  "functions_with_extra_whole_call_changes": 2,
+  "functions_requiring_scope_review": 0,
+  "functions": [
+    {
+      "region": "Action",
+      "entry": 27014,
+      "path": "Source/Action/CompareContextWordPairs.asm",
+      "observed_returns": 480,
+      "observed_byte_changes": {
+        "F": 480,
+        "D": 480,
+        "E": 480,
+        "H": 240,
+        "L": 240
+      },
+      "first_change_examples": {
+        "F": {
+          "call_pc": 27431,
+          "return_instruction": 27024,
+          "before": 0,
+          "after": 187
+        },
+        "D": {
+          "call_pc": 27431,
+          "return_instruction": 27024,
+          "before": 0,
+          "after": 117
+        },
+        "E": {
+          "call_pc": 27431,
+          "return_instruction": 27024,
+          "before": 0,
+          "after": 50
+        },
+        "H": {
+          "call_pc": 27431,
+          "return_instruction": 27024,
+          "before": 0,
+          "after": 255
+        },
+        "L": {
+          "call_pc": 27431,
+          "return_instruction": 27024,
+          "before": 0,
+          "after": 255
+        }
+      },
+      "corrupt_text": "HL, DE, F, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 27177,
+      "path": "Source/Action/CheckThreeUpperWordsNear.asm",
+      "observed_returns": 1680,
+      "observed_byte_changes": {
+        "A": 1660,
+        "F": 1659,
+        "H": 1457,
+        "L": 1678
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 27452,
+          "return_instruction": 27195,
+          "before": 255,
+          "after": 4
+        },
+        "F": {
+          "call_pc": 27452,
+          "return_instruction": 27195,
+          "before": 169,
+          "after": 0
+        },
+        "H": {
+          "call_pc": 27452,
+          "return_instruction": 27195,
+          "before": 255,
+          "after": 4
+        },
+        "L": {
+          "call_pc": 27452,
+          "return_instruction": 27195,
+          "before": 255,
+          "after": 74
+        }
+      },
+      "corrupt_text": "HL, AF, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 27414,
+      "path": "Source/Action/ProjectWideVectors.asm",
+      "observed_returns": 231,
+      "observed_byte_changes": {
+        "A": 231,
+        "F": 231
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 57544,
+          "return_instruction": 27429,
+          "before": 1,
+          "after": 0
+        },
+        "F": {
+          "call_pc": 57544,
+          "return_instruction": 27429,
+          "before": 66,
+          "after": 68
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, HL', DE', BC', AF', IX, R, рабочие компоненты, выходы преобразования, состояние рисователя, 7FFD при отрисовке и временный CPU-стек",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 27647,
+      "path": "Source/Action/CopyAndTransformComponents.asm",
+      "observed_returns": 1120,
+      "observed_byte_changes": {
+        "A": 1046,
+        "F": 1071,
+        "C": 1028,
+        "D": 1000,
+        "E": 1116,
+        "H": 984,
+        "L": 1113,
+        "IYH": 1120,
+        "IYL": 1120,
+        "A'": 983,
+        "F'": 787,
+        "B": 389
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 55,
+          "after": 20
+        },
+        "F": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 187,
+          "after": 93
+        },
+        "C": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 255,
+          "after": 0
+        },
+        "D": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 0,
+          "after": 55
+        },
+        "E": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 12,
+          "after": 45
+        },
+        "H": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 0,
+          "after": 13
+        },
+        "L": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 55,
+          "after": 230
+        },
+        "IYH": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 155,
+          "after": 108
+        },
+        "IYL": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 39,
+          "after": 64
+        },
+        "A'": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 0,
+          "after": 22
+        },
+        "F'": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 0,
+          "after": 16
+        },
+        "B": {
+          "call_pc": 27461,
+          "return_instruction": 27773,
+          "before": 1,
+          "after": 0
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, AF', IY, R, девять рабочих байтов и изменения TransformWorkComponents, два байта CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 27673,
+      "path": "Source/Action/TransformWorkComponents.asm",
+      "observed_returns": 560,
+      "observed_byte_changes": {
+        "A": 557,
+        "F": 556,
+        "C": 516,
+        "D": 503,
+        "E": 558,
+        "H": 558,
+        "L": 558,
+        "IYH": 560,
+        "IYL": 560,
+        "F'": 465,
+        "A'": 471
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 27641,
+          "return_instruction": 27773,
+          "before": 201,
+          "after": 43
+        },
+        "F": {
+          "call_pc": 27641,
+          "return_instruction": 27773,
+          "before": 137,
+          "after": 84
+        },
+        "C": {
+          "call_pc": 27641,
+          "return_instruction": 27773,
+          "before": 255,
+          "after": 0
+        },
+        "D": {
+          "call_pc": 27641,
+          "return_instruction": 27773,
+          "before": 0,
+          "after": 43
+        },
+        "E": {
+          "call_pc": 27641,
+          "return_instruction": 27773,
+          "before": 12,
+          "after": 233
+        },
+        "H": {
+          "call_pc": 27641,
+          "return_instruction": 27773,
+          "before": 43,
+          "after": 0
+        },
+        "L": {
+          "call_pc": 27641,
+          "return_instruction": 27773,
+          "before": 233,
+          "after": 0
+        },
+        "IYH": {
+          "call_pc": 27641,
+          "return_instruction": 27773,
+          "before": 155,
+          "after": 108
+        },
+        "IYL": {
+          "call_pc": 27641,
+          "return_instruction": 27773,
+          "before": 39,
+          "after": 64
+        },
+        "F'": {
+          "call_pc": 27641,
+          "return_instruction": 27773,
+          "before": 0,
+          "after": 64
+        },
+        "A'": {
+          "call_pc": 27641,
+          "return_instruction": 27773,
+          "before": 0,
+          "after": 2
+        }
+      },
+      "corrupt_text": "HL, DE, C, AF, AF', IY, R, входные операнды, SavedCpuSP, SavedIX, три Low, до трёх Output и шесть байтов Middle/High при полном расчёте",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 27774,
+      "path": "Source/Action/DrawBankedProjectedBody.asm",
+      "observed_returns": 1120,
+      "observed_byte_changes": {
+        "A": 1099,
+        "F": 1071,
+        "B": 599,
+        "C": 401,
+        "D": 1110,
+        "E": 1117,
+        "H": 630,
+        "L": 627,
+        "C'": 791,
+        "B'": 600,
+        "A'": 285,
+        "F'": 290,
+        "IXH": 77,
+        "IXL": 77,
+        "E'": 54,
+        "IYH": 23,
+        "IYL": 23,
+        "L'": 4
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 20,
+          "after": 16
+        },
+        "F": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 93,
+          "after": 84
+        },
+        "B": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 1,
+          "after": 222
+        },
+        "C": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 0,
+          "after": 192
+        },
+        "D": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 55,
+          "after": 20
+        },
+        "E": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 45,
+          "after": 3
+        },
+        "H": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 13,
+          "after": 146
+        },
+        "L": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 230,
+          "after": 26
+        },
+        "C'": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 0,
+          "after": 1
+        },
+        "B'": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 0,
+          "after": 1
+        },
+        "A'": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 0,
+          "after": 8
+        },
+        "F'": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 64,
+          "after": 2
+        },
+        "IXH": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 0,
+          "after": 255
+        },
+        "IXL": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 0,
+          "after": 170
+        },
+        "E'": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 0,
+          "after": 225
+        },
+        "IYH": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 108,
+          "after": 255
+        },
+        "IYL": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 64,
+          "after": 85
+        },
+        "L'": {
+          "call_pc": 27464,
+          "return_instruction": 27790,
+          "before": 0,
+          "after": 16
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, R, записи проекции, Pattern, CEF9, рабочая запись круга, растр, маски, изменяемые операнды, 7FFD и до двадцати временных байтов CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 49152,
+      "path": "Source/Action/ClipPolygon.asm",
+      "observed_returns": 161,
+      "observed_byte_changes": {
+        "A": 161,
+        "F": 161,
+        "B": 161,
+        "D": 161,
+        "E": 161,
+        "L": 161,
+        "IXL": 161,
+        "A'": 147,
+        "F'": 161
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 56331,
+          "return_instruction": 49274,
+          "before": 1,
+          "after": 8
+        },
+        "F": {
+          "call_pc": 56331,
+          "return_instruction": 49274,
+          "before": 16,
+          "after": 2
+        },
+        "B": {
+          "call_pc": 56331,
+          "return_instruction": 49274,
+          "before": 3,
+          "after": 0
+        },
+        "D": {
+          "call_pc": 56331,
+          "return_instruction": 49274,
+          "before": 159,
+          "after": 54
+        },
+        "E": {
+          "call_pc": 56331,
+          "return_instruction": 49274,
+          "before": 55,
+          "after": 239
+        },
+        "L": {
+          "call_pc": 56331,
+          "return_instruction": 49274,
+          "before": 52,
+          "after": 55
+        },
+        "IXL": {
+          "call_pc": 56331,
+          "return_instruction": 49274,
+          "before": 3,
+          "after": 0
+        },
+        "A'": {
+          "call_pc": 56331,
+          "return_instruction": 49274,
+          "before": 75,
+          "after": 255
+        },
+        "F'": {
+          "call_pc": 56331,
+          "return_instruction": 49274,
+          "before": 74,
+          "after": 66
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, AF', IX по достигнутым помощникам, R, обе рабочие точки, произведения, размер, отметки углов, выходные пары и временные слова CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 50388,
+      "path": "Source/Action/ComputeRightClipProduct.asm",
+      "observed_returns": 322,
+      "observed_byte_changes": {
+        "A": 322,
+        "F": 322,
+        "B": 322,
+        "C": 322,
+        "D": 322,
+        "E": 322,
+        "H": 322,
+        "L": 322
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 50660,
+          "return_instruction": 50418,
+          "before": 1,
+          "after": 0
+        },
+        "F": {
+          "call_pc": 50660,
+          "return_instruction": 50418,
+          "before": 144,
+          "after": 68
+        },
+        "B": {
+          "call_pc": 50660,
+          "return_instruction": 50418,
+          "before": 2,
+          "after": 0
+        },
+        "C": {
+          "call_pc": 50660,
+          "return_instruction": 50418,
+          "before": 241,
+          "after": 54
+        },
+        "D": {
+          "call_pc": 50660,
+          "return_instruction": 50418,
+          "before": 192,
+          "after": 0
+        },
+        "E": {
+          "call_pc": 50660,
+          "return_instruction": 50418,
+          "before": 113,
+          "after": 14
+        },
+        "H": {
+          "call_pc": 50660,
+          "return_instruction": 50418,
+          "before": 197,
+          "after": 0
+        },
+        "L": {
+          "call_pc": 50660,
+          "return_instruction": 50418,
+          "before": 228,
+          "after": 0
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, IX по ядру умножения, R, выходной слот и четыре байта CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 50660,
+      "path": "Source/Action/ClipInsideToRight.asm",
+      "observed_returns": 161,
+      "observed_byte_changes": {
+        "A": 161,
+        "F": 161,
+        "B": 161,
+        "C": 161,
+        "D": 161,
+        "E": 161,
+        "H": 161,
+        "L": 161,
+        "IXL": 149,
+        "A'": 145,
+        "F'": 161
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 49379,
+          "return_instruction": 50752,
+          "before": 16,
+          "after": 6
+        },
+        "F": {
+          "call_pc": 49379,
+          "return_instruction": 50752,
+          "before": 144,
+          "after": 0
+        },
+        "B": {
+          "call_pc": 49379,
+          "return_instruction": 50752,
+          "before": 1,
+          "after": 255
+        },
+        "C": {
+          "call_pc": 49379,
+          "return_instruction": 50752,
+          "before": 241,
+          "after": 236
+        },
+        "D": {
+          "call_pc": 49379,
+          "return_instruction": 50752,
+          "before": 192,
+          "after": 53
+        },
+        "E": {
+          "call_pc": 49379,
+          "return_instruction": 50752,
+          "before": 113,
+          "after": 54
+        },
+        "H": {
+          "call_pc": 49379,
+          "return_instruction": 50752,
+          "before": 192,
+          "after": 144
+        },
+        "L": {
+          "call_pc": 49379,
+          "return_instruction": 50752,
+          "before": 227,
+          "after": 6
+        },
+        "IXL": {
+          "call_pc": 49379,
+          "return_instruction": 50752,
+          "before": 255,
+          "after": 0
+        },
+        "A'": {
+          "call_pc": 49379,
+          "return_instruction": 50752,
+          "before": 2,
+          "after": 255
+        },
+        "F'": {
+          "call_pc": 49379,
+          "return_instruction": 50752,
+          "before": 146,
+          "after": 66
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, AF', IX по достигнутым помощникам, R, младшие отметки углов, достигнутые произведения, выходные точки, размер и временные слова CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 50932,
+      "path": "Source/Action/MultiplySigned16.asm",
+      "observed_returns": 10298,
+      "observed_byte_changes": {
+        "A": 6664,
+        "F": 6002,
+        "E": 8918,
+        "L": 8854,
+        "C": 4559,
+        "H": 4831,
+        "D": 5479,
+        "B": 77
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 57333,
+          "return_instruction": 51153,
+          "before": 50,
+          "after": 0
+        },
+        "F": {
+          "call_pc": 57333,
+          "return_instruction": 51153,
+          "before": 2,
+          "after": 68
+        },
+        "E": {
+          "call_pc": 57333,
+          "return_instruction": 51153,
+          "before": 6,
+          "after": 60
+        },
+        "L": {
+          "call_pc": 57333,
+          "return_instruction": 51153,
+          "before": 10,
+          "after": 0
+        },
+        "C": {
+          "call_pc": 57339,
+          "return_instruction": 51167,
+          "before": 127,
+          "after": 0
+        },
+        "H": {
+          "call_pc": 57339,
+          "return_instruction": 51167,
+          "before": 0,
+          "after": 255
+        },
+        "D": {
+          "call_pc": 57333,
+          "return_instruction": 51153,
+          "before": 255,
+          "after": 0
+        },
+        "B": {
+          "call_pc": 57339,
+          "return_instruction": 51167,
+          "before": 1,
+          "after": 0
+        }
+      },
+      "corrupt_text": "HL, DE, BC по ядру и знаку, AF, IX только в полном ядре, R и два байта CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 51340,
+      "path": "Source/Action/DivideSigned32To16.asm",
+      "observed_returns": 322,
+      "observed_byte_changes": {
+        "F": 322,
+        "L": 214,
+        "IXL": 300,
+        "A'": 273,
+        "F'": 322,
+        "A": 161,
+        "B": 209,
+        "C": 209,
+        "D": 161,
+        "E": 161,
+        "H": 161
+      },
+      "first_change_examples": {
+        "F": {
+          "call_pc": 50684,
+          "return_instruction": 51520,
+          "before": 2,
+          "after": 146
+        },
+        "L": {
+          "call_pc": 50684,
+          "return_instruction": 51520,
+          "before": 0,
+          "after": 2
+        },
+        "IXL": {
+          "call_pc": 50684,
+          "return_instruction": 51520,
+          "before": 3,
+          "after": 255
+        },
+        "A'": {
+          "call_pc": 50684,
+          "return_instruction": 51520,
+          "before": 14,
+          "after": 2
+        },
+        "F'": {
+          "call_pc": 50684,
+          "return_instruction": 51520,
+          "before": 68,
+          "after": 146
+        },
+        "A": {
+          "call_pc": 50684,
+          "return_instruction": 51514,
+          "before": 0,
+          "after": 255
+        },
+        "B": {
+          "call_pc": 50684,
+          "return_instruction": 51514,
+          "before": 0,
+          "after": 255
+        },
+        "C": {
+          "call_pc": 50684,
+          "return_instruction": 51514,
+          "before": 54,
+          "after": 236
+        },
+        "D": {
+          "call_pc": 50684,
+          "return_instruction": 51514,
+          "before": 255,
+          "after": 0
+        },
+        "E": {
+          "call_pc": 50684,
+          "return_instruction": 51514,
+          "before": 236,
+          "after": 20
+        },
+        "H": {
+          "call_pc": 50684,
+          "return_instruction": 51514,
+          "before": 0,
+          "after": 255
+        }
+      },
+      "corrupt_text": "HL, DE на отрицательном d, BC на отрицательном входе, AF, AF', IX только IXL",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 51611,
+      "path": "Source/Action/BuildRenderCoefficients.asm",
+      "observed_returns": 359,
+      "observed_byte_changes": {
+        "A": 359,
+        "F": 359,
+        "B": 359,
+        "H": 359,
+        "L": 260,
+        "C": 112,
+        "D": 112,
+        "E": 112,
+        "IXH": 109,
+        "IXL": 112,
+        "IYH": 112,
+        "IYL": 112
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 58587,
+          "return_instruction": 51662,
+          "before": 4,
+          "after": 127
+        },
+        "F": {
+          "call_pc": 58587,
+          "return_instruction": 51662,
+          "before": 66,
+          "after": 68
+        },
+        "B": {
+          "call_pc": 58587,
+          "return_instruction": 51662,
+          "before": 191,
+          "after": 0
+        },
+        "H": {
+          "call_pc": 58587,
+          "return_instruction": 51662,
+          "before": 0,
+          "after": 153
+        },
+        "L": {
+          "call_pc": 58587,
+          "return_instruction": 51662,
+          "before": 32,
+          "after": 0
+        },
+        "C": {
+          "call_pc": 58587,
+          "return_instruction": 52002,
+          "before": 253,
+          "after": 127
+        },
+        "D": {
+          "call_pc": 58587,
+          "return_instruction": 52002,
+          "before": 0,
+          "after": 34
+        },
+        "E": {
+          "call_pc": 58587,
+          "return_instruction": 52002,
+          "before": 0,
+          "after": 2
+        },
+        "IXH": {
+          "call_pc": 58587,
+          "return_instruction": 52002,
+          "before": 0,
+          "after": 127
+        },
+        "IXL": {
+          "call_pc": 58587,
+          "return_instruction": 52002,
+          "before": 8,
+          "after": 22
+        },
+        "IYH": {
+          "call_pc": 58587,
+          "return_instruction": 52002,
+          "before": 225,
+          "after": 123
+        },
+        "IYL": {
+          "call_pc": 58587,
+          "return_instruction": 52002,
+          "before": 76,
+          "after": 126
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, IX и IY по общему пути, HL, B и AF по короткому пути, девять операндов коэффициентов и R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 52003,
+      "path": "Source/Action/ComposeRenderMatrix.asm",
+      "observed_returns": 359,
+      "observed_byte_changes": {
+        "F": 359,
+        "H": 247,
+        "IYH": 359,
+        "IYL": 359,
+        "A": 112,
+        "B": 112,
+        "C": 112,
+        "D": 112,
+        "E": 112,
+        "L": 112,
+        "IXH": 112
+      },
+      "first_change_examples": {
+        "F": {
+          "call_pc": 58590,
+          "return_instruction": 52870,
+          "before": 68,
+          "after": 84
+        },
+        "H": {
+          "call_pc": 58590,
+          "return_instruction": 52870,
+          "before": 153,
+          "after": 152
+        },
+        "IYH": {
+          "call_pc": 58590,
+          "return_instruction": 52870,
+          "before": 225,
+          "after": 155
+        },
+        "IYL": {
+          "call_pc": 58590,
+          "return_instruction": 52870,
+          "before": 76,
+          "after": 141
+        },
+        "A": {
+          "call_pc": 58590,
+          "return_instruction": 52741,
+          "before": 127,
+          "after": 5
+        },
+        "B": {
+          "call_pc": 58590,
+          "return_instruction": 52741,
+          "before": 3,
+          "after": 222
+        },
+        "C": {
+          "call_pc": 58590,
+          "return_instruction": 52741,
+          "before": 127,
+          "after": 123
+        },
+        "D": {
+          "call_pc": 58590,
+          "return_instruction": 52741,
+          "before": 34,
+          "after": 3
+        },
+        "E": {
+          "call_pc": 58590,
+          "return_instruction": 52741,
+          "before": 2,
+          "after": 30
+        },
+        "L": {
+          "call_pc": 58590,
+          "return_instruction": 52741,
+          "before": 17,
+          "after": 65
+        },
+        "IXH": {
+          "call_pc": 58590,
+          "return_instruction": 52741,
+          "before": 127,
+          "after": 2
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, IXH и IY в зависимости от ветви, девять выходных операндов и R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 54545,
+      "path": "Source/Action/PreparePolygonFill.asm",
+      "observed_returns": 2235,
+      "observed_byte_changes": {
+        "A": 2235,
+        "F": 2200,
+        "B": 2222,
+        "C": 2218,
+        "D": 2166,
+        "E": 2209,
+        "IXH": 1864,
+        "IXL": 2016,
+        "IYH": 1857,
+        "IYL": 1989,
+        "A'": 2222,
+        "F'": 2235,
+        "B'": 2184,
+        "C'": 2040,
+        "D'": 2184,
+        "E'": 2129,
+        "H'": 1916,
+        "L'": 1825
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 0,
+          "after": 54
+        },
+        "F": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 66,
+          "after": 98
+        },
+        "B": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 142,
+          "after": 134
+        },
+        "C": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 52,
+          "after": 177
+        },
+        "D": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 144,
+          "after": 54
+        },
+        "E": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 6,
+          "after": 255
+        },
+        "IXH": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 110,
+          "after": 206
+        },
+        "IXL": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 110,
+          "after": 194
+        },
+        "IYH": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 108,
+          "after": 209
+        },
+        "IYL": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 108,
+          "after": 82
+        },
+        "A'": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 54,
+          "after": 221
+        },
+        "F'": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 0,
+          "after": 140
+        },
+        "B'": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 0,
+          "after": 31
+        },
+        "C'": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 47,
+          "after": 224
+        },
+        "D'": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 0,
+          "after": 32
+        },
+        "E'": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 60,
+          "after": 64
+        },
+        "H'": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 0,
+          "after": 3
+        },
+        "L'": {
+          "call_pc": 56668,
+          "return_instruction": 53863,
+          "before": 0,
+          "after": 3
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, AF', IX, IY, R, два байта CPU-стека и 11 именованных операндов, HL восстанавливается при раннем RET",
+      "changed_bytes_not_explicitly_listed": [
+        "B'",
+        "C'",
+        "D'",
+        "E'",
+        "H'",
+        "L'"
+      ],
+      "reviewed_local_contract_boundary": {
+        "continuation": 53801,
+        "symbol": "Action.PolygonFillRows.CheckRow",
+        "document": "Docs/ActionPolygonPreparation.md",
+        "source_qualification": "контракт непустого случая относится к границе JP D229, а не к конечному RET всего заполнителя"
+      },
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 54729,
+      "path": "Source/Action/TransformObjectVertices.asm",
+      "observed_returns": 359,
+      "observed_byte_changes": {
+        "A": 359,
+        "B": 357,
+        "C": 359,
+        "D": 317,
+        "H": 359,
+        "L": 359,
+        "IXH": 355,
+        "IXL": 355,
+        "IYH": 357,
+        "IYL": 357,
+        "A'": 344,
+        "F'": 357,
+        "B'": 339,
+        "C'": 357,
+        "D'": 341,
+        "E'": 357,
+        "H'": 357,
+        "L'": 350,
+        "F": 112,
+        "E": 301
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 127,
+          "after": 0
+        },
+        "B": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 0,
+          "after": 192
+        },
+        "C": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 253,
+          "after": 2
+        },
+        "D": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 0,
+          "after": 55
+        },
+        "H": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 152,
+          "after": 159
+        },
+        "L": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 0,
+          "after": 51
+        },
+        "IXH": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 0,
+          "after": 110
+        },
+        "IXL": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 8,
+          "after": 110
+        },
+        "IYH": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 155,
+          "after": 108
+        },
+        "IYL": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 141,
+          "after": 108
+        },
+        "A'": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 0,
+          "after": 248
+        },
+        "F'": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 128,
+          "after": 41
+        },
+        "B'": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 0,
+          "after": 255
+        },
+        "C'": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 64,
+          "after": 248
+        },
+        "D'": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 161,
+          "after": 15
+        },
+        "E'": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 91,
+          "after": 4
+        },
+        "H'": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 161,
+          "after": 142
+        },
+        "L'": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 64,
+          "after": 79
+        },
+        "F": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 0,
+          "after": 84
+        },
+        "E": {
+          "call_pc": 58593,
+          "return_instruction": 54760,
+          "before": 30,
+          "after": 9
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, R, Buffer по длине потока, рабочие точки, операнды дочерних процедур и шесть байтов CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 54777,
+      "path": "Source/Action/PrepareRenderVertexProducts.asm",
+      "observed_returns": 1719,
+      "observed_byte_changes": {
+        "A": 1719,
+        "F": 1719,
+        "B": 1713,
+        "C": 1473,
+        "D": 1692,
+        "E": 1669,
+        "H": 1719,
+        "L": 1718,
+        "IXH": 1700,
+        "IXL": 1697,
+        "IYH": 1694,
+        "IYL": 1707,
+        "A'": 1525,
+        "F'": 1305,
+        "B'": 411,
+        "C'": 1531,
+        "D'": 1223,
+        "E'": 1703,
+        "H'": 357,
+        "L'": 1719
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 15,
+          "after": 24
+        },
+        "F": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 28,
+          "after": 76
+        },
+        "B": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 53,
+          "after": 15
+        },
+        "C": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 35,
+          "after": 2
+        },
+        "D": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 87,
+          "after": 52
+        },
+        "E": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 129,
+          "after": 34
+        },
+        "H": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 159,
+          "after": 142
+        },
+        "L": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 34,
+          "after": 24
+        },
+        "IXH": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 0,
+          "after": 88
+        },
+        "IXL": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 15,
+          "after": 88
+        },
+        "IYH": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 155,
+          "after": 86
+        },
+        "IYL": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 141,
+          "after": 86
+        },
+        "A'": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 0,
+          "after": 249
+        },
+        "F'": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 128,
+          "after": 169
+        },
+        "B'": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 0,
+          "after": 255
+        },
+        "C'": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 64,
+          "after": 249
+        },
+        "D'": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 161,
+          "after": 16
+        },
+        "E'": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 91,
+          "after": 144
+        },
+        "H'": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 161,
+          "after": 142
+        },
+        "L'": {
+          "call_pc": 54770,
+          "return_instruction": 55199,
+          "before": 64,
+          "after": 24
+        }
+      },
+      "corrupt_text": "HL, E, AF, R и девять существующих байтов операндов генератора до продолжения, дальнейшие изменения задаёт ProjectRenderVertexGroup",
+      "changed_bytes_not_explicitly_listed": [
+        "B",
+        "C",
+        "D",
+        "IXH",
+        "IXL",
+        "IYH",
+        "IYL",
+        "A'",
+        "F'",
+        "B'",
+        "C'",
+        "D'",
+        "E'",
+        "H'",
+        "L'"
+      ],
+      "reviewed_local_contract_boundary": {
+        "continuation": 54932,
+        "symbol": "Action.ProjectRenderVertexGroup.Entry",
+        "document": "Docs/ActionVertexProducts.md",
+        "source_qualification": "результаты этого договора относятся к границе D694, а не к возврату полного вызова"
+      },
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 56253,
+      "path": "Source/Action/RenderClippedRecords.asm",
+      "observed_returns": 58,
+      "observed_byte_changes": {
+        "A": 58,
+        "F": 58,
+        "B": 56,
+        "C": 56,
+        "D": 49,
+        "E": 56,
+        "L": 56,
+        "IXH": 56,
+        "IXL": 56,
+        "IYH": 56,
+        "IYL": 56,
+        "A'": 56,
+        "F'": 56,
+        "B'": 56,
+        "C'": 56,
+        "D'": 50,
+        "E'": 56,
+        "H'": 56,
+        "L'": 56
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 1,
+          "after": 0
+        },
+        "F": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 16,
+          "after": 84
+        },
+        "B": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 241,
+          "after": 0
+        },
+        "C": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 0,
+          "after": 5
+        },
+        "D": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 55,
+          "after": 0
+        },
+        "E": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 0,
+          "after": 50
+        },
+        "L": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 51,
+          "after": 128
+        },
+        "IXH": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 110,
+          "after": 221
+        },
+        "IXL": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 110,
+          "after": 230
+        },
+        "IYH": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 108,
+          "after": 221
+        },
+        "IYL": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 108,
+          "after": 246
+        },
+        "A'": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 75,
+          "after": 17
+        },
+        "F'": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 74,
+          "after": 4
+        },
+        "B'": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 255,
+          "after": 0
+        },
+        "C'": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 132,
+          "after": 0
+        },
+        "D'": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 15,
+          "after": 255
+        },
+        "E'": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 4,
+          "after": 196
+        },
+        "H'": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 142,
+          "after": 255
+        },
+        "L'": {
+          "call_pc": 58618,
+          "return_instruction": 56255,
+          "before": 79,
+          "after": 255
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, R, FaceGate, рабочие точки и коды, пиксели, операнды детей и существующие CPU/временные стековые слова",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 56611,
+      "path": "Source/Action/RenderInsideRecords.asm",
+      "observed_returns": 301,
+      "observed_byte_changes": {
+        "B": 301,
+        "C": 301,
+        "D": 272,
+        "E": 299,
+        "L": 301,
+        "IXH": 301,
+        "IXL": 297,
+        "IYH": 300,
+        "IYL": 301,
+        "A'": 301,
+        "F'": 301,
+        "B'": 287,
+        "C'": 295,
+        "D'": 280,
+        "E'": 299,
+        "H'": 301,
+        "L'": 301,
+        "H": 3
+      },
+      "first_change_examples": {
+        "B": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 240,
+          "after": 0
+        },
+        "C": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 0,
+          "after": 5
+        },
+        "D": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 55,
+          "after": 0
+        },
+        "E": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 0,
+          "after": 50
+        },
+        "L": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 51,
+          "after": 128
+        },
+        "IXH": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 110,
+          "after": 206
+        },
+        "IXL": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 110,
+          "after": 198
+        },
+        "IYH": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 108,
+          "after": 206
+        },
+        "IYL": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 108,
+          "after": 214
+        },
+        "A'": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 75,
+          "after": 17
+        },
+        "F'": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 74,
+          "after": 4
+        },
+        "B'": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 255,
+          "after": 0
+        },
+        "C'": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 248,
+          "after": 0
+        },
+        "D'": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 15,
+          "after": 255
+        },
+        "E'": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 4,
+          "after": 196
+        },
+        "H'": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 142,
+          "after": 255
+        },
+        "L'": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 79,
+          "after": 255
+        },
+        "H": {
+          "call_pc": 58612,
+          "return_instruction": 56613,
+          "before": 159,
+          "after": 160
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, R, FaceGate, пиксели, рабочие точки и буферы, операнды детей и существующие CPU/временные стековые слова",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 56785,
+      "path": "Source/Action/CombineListedVertexCodes.asm",
+      "observed_returns": 282,
+      "observed_byte_changes": {
+        "A": 282,
+        "F": 282,
+        "C": 282,
+        "D": 282,
+        "E": 282,
+        "IXL": 265
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 56272,
+          "return_instruction": 56810,
+          "before": 0,
+          "after": 241
+        },
+        "F": {
+          "call_pc": 56272,
+          "return_instruction": 56810,
+          "before": 68,
+          "after": 160
+        },
+        "C": {
+          "call_pc": 56272,
+          "return_instruction": 56810,
+          "before": 0,
+          "after": 241
+        },
+        "D": {
+          "call_pc": 56272,
+          "return_instruction": 56810,
+          "before": 255,
+          "after": 159
+        },
+        "E": {
+          "call_pc": 56272,
+          "return_instruction": 56810,
+          "before": 127,
+          "after": 55
+        },
+        "IXL": {
+          "call_pc": 56272,
+          "return_instruction": 56810,
+          "before": 110,
+          "after": 3
+        }
+      },
+      "corrupt_text": "DE, C, AF, IXL, R и два байта CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 56816,
+      "path": "Source/Action/DrawLinearLine.asm",
+      "observed_returns": 227,
+      "observed_byte_changes": {
+        "A": 212,
+        "B": 213,
+        "C": 213,
+        "D": 227,
+        "E": 227,
+        "H": 227,
+        "L": 227,
+        "A'": 172,
+        "F'": 150,
+        "F": 182
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 56775,
+          "return_instruction": 57071,
+          "before": 47,
+          "after": 37
+        },
+        "B": {
+          "call_pc": 56775,
+          "return_instruction": 57071,
+          "before": 1,
+          "after": 0
+        },
+        "C": {
+          "call_pc": 56775,
+          "return_instruction": 57071,
+          "before": 0,
+          "after": 32
+        },
+        "D": {
+          "call_pc": 56775,
+          "return_instruction": 57071,
+          "before": 142,
+          "after": 2
+        },
+        "E": {
+          "call_pc": 56775,
+          "return_instruction": 57071,
+          "before": 82,
+          "after": 0
+        },
+        "H": {
+          "call_pc": 56775,
+          "return_instruction": 57071,
+          "before": 49,
+          "after": 134
+        },
+        "L": {
+          "call_pc": 56775,
+          "return_instruction": 57071,
+          "before": 114,
+          "after": 46
+        },
+        "A'": {
+          "call_pc": 56775,
+          "return_instruction": 57071,
+          "before": 90,
+          "after": 1
+        },
+        "F'": {
+          "call_pc": 56775,
+          "return_instruction": 57071,
+          "before": 74,
+          "after": 2
+        },
+        "F": {
+          "call_pc": 56775,
+          "return_instruction": 56826,
+          "before": 0,
+          "after": 66
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, AF', R, пиксельные байты с точными дополнительными сохранениями, SavedSP и два opcode выбранного ядра",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 57075,
+      "path": "Source/Action/ClassifyProjectedVertices.asm",
+      "observed_returns": 359,
+      "observed_byte_changes": {
+        "A": 359,
+        "F": 359,
+        "B": 357,
+        "C": 196,
+        "A'": 357,
+        "F'": 359
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 58596,
+          "return_instruction": 57139,
+          "before": 0,
+          "after": 240
+        },
+        "F": {
+          "call_pc": 58596,
+          "return_instruction": 57139,
+          "before": 84,
+          "after": 164
+        },
+        "B": {
+          "call_pc": 58596,
+          "return_instruction": 57139,
+          "before": 192,
+          "after": 75
+        },
+        "C": {
+          "call_pc": 58596,
+          "return_instruction": 57139,
+          "before": 2,
+          "after": 0
+        },
+        "A'": {
+          "call_pc": 58596,
+          "return_instruction": 57139,
+          "before": 248,
+          "after": 75
+        },
+        "F'": {
+          "call_pc": 58596,
+          "return_instruction": 57139,
+          "before": 41,
+          "after": 74
+        }
+      },
+      "corrupt_text": "BC, AF, AF', R, достигнутые ClipCode и два байта CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 57270,
+      "path": "Source/Action/CheckFaceOrientation.asm",
+      "observed_returns": 4988,
+      "observed_byte_changes": {
+        "A": 4988,
+        "F": 4988,
+        "D": 3421,
+        "E": 4830,
+        "B'": 2449,
+        "C'": 4047,
+        "D'": 3748,
+        "E'": 4797,
+        "H'": 3411,
+        "L'": 3432
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 56620,
+          "return_instruction": 57352,
+          "before": 3,
+          "after": 255
+        },
+        "F": {
+          "call_pc": 56620,
+          "return_instruction": 57352,
+          "before": 20,
+          "after": 170
+        },
+        "D": {
+          "call_pc": 56620,
+          "return_instruction": 57352,
+          "before": 55,
+          "after": 255
+        },
+        "E": {
+          "call_pc": 56620,
+          "return_instruction": 57352,
+          "before": 0,
+          "after": 132
+        },
+        "B'": {
+          "call_pc": 56620,
+          "return_instruction": 57352,
+          "before": 255,
+          "after": 0
+        },
+        "C'": {
+          "call_pc": 56620,
+          "return_instruction": 57352,
+          "before": 248,
+          "after": 47
+        },
+        "D'": {
+          "call_pc": 56620,
+          "return_instruction": 57352,
+          "before": 15,
+          "after": 0
+        },
+        "E'": {
+          "call_pc": 56620,
+          "return_instruction": 57352,
+          "before": 4,
+          "after": 60
+        },
+        "H'": {
+          "call_pc": 56620,
+          "return_instruction": 57352,
+          "before": 142,
+          "after": 0
+        },
+        "L'": {
+          "call_pc": 56620,
+          "return_instruction": 57352,
+          "before": 79,
+          "after": 0
+        }
+      },
+      "corrupt_text": "DE, AF, HL', DE', BC', IX по ядрам умножения, R, SavedSP и двенадцать байтов CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Action",
+      "entry": 60584,
+      "path": "Source/Action/UpdateAyEffects.asm",
+      "observed_returns": 359,
+      "observed_byte_changes": {
+        "A": 359,
+        "F": 359,
+        "B": 359,
+        "C": 359,
+        "L": 266,
+        "H": 168
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 58584,
+          "return_instruction": 60814,
+          "before": 0,
+          "after": 4
+        },
+        "F": {
+          "call_pc": 58584,
+          "return_instruction": 60814,
+          "before": 0,
+          "after": 66
+        },
+        "B": {
+          "call_pc": 58584,
+          "return_instruction": 60814,
+          "before": 15,
+          "after": 191
+        },
+        "C": {
+          "call_pc": 58584,
+          "return_instruction": 60814,
+          "before": 224,
+          "after": 253
+        },
+        "L": {
+          "call_pc": 58584,
+          "return_instruction": 60814,
+          "before": 0,
+          "after": 32
+        },
+        "H": {
+          "call_pc": 58584,
+          "return_instruction": 60814,
+          "before": 1,
+          "after": 0
+        }
+      },
+      "corrupt_text": "HL, BC, AF, R, два операнда Cursor при активных потоках, выбранный AY-регистр и регистры 0..3, 5..10 по пути",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 52900,
+      "path": "Source/Controls/FillEvenSpan.asm",
+      "observed_returns": 86,
+      "observed_byte_changes": {
+        "A": 57,
+        "F": 86,
+        "L": 86
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 54899,
+          "return_instruction": 52984,
+          "before": 1,
+          "after": 0
+        },
+        "F": {
+          "call_pc": 54899,
+          "return_instruction": 52984,
+          "before": 0,
+          "after": 84
+        },
+        "L": {
+          "call_pc": 54899,
+          "return_instruction": 52984,
+          "before": 237,
+          "after": 240
+        }
+      },
+      "corrupt_text": "HL, AF, операнд TailOffset, назначение, два байта CPU-стека, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 52986,
+      "path": "Source/Controls/ProjectAndDrawBody.asm",
+      "observed_returns": 1120,
+      "observed_byte_changes": {
+        "A": 1120,
+        "F": 1071,
+        "B": 599,
+        "C": 401,
+        "D": 510,
+        "E": 630,
+        "H": 630,
+        "L": 627,
+        "C'": 791,
+        "B'": 600,
+        "A'": 285,
+        "F'": 290,
+        "IXH": 77,
+        "IXL": 77,
+        "E'": 54,
+        "IYH": 23,
+        "IYL": 23,
+        "L'": 4
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 27782,
+          "return_instruction": 52998,
+          "before": 17,
+          "after": 0
+        },
+        "F": {
+          "call_pc": 27782,
+          "return_instruction": 52998,
+          "before": 93,
+          "after": 84
+        },
+        "B": {
+          "call_pc": 27782,
+          "return_instruction": 52998,
+          "before": 1,
+          "after": 222
+        },
+        "C": {
+          "call_pc": 27782,
+          "return_instruction": 52998,
+          "before": 0,
+          "after": 192
+        },
+        "D": {
+          "call_pc": 27782,
+          "return_instruction": 52998,
+          "before": 255,
+          "after": 20
+        },
+        "E": {
+          "call_pc": 27782,
+          "return_instruction": 52998,
+          "before": 170,
+          "after": 3
+        },
+        "H": {
+          "call_pc": 27782,
+          "return_instruction": 52998,
+          "before": 13,
+          "after": 146
+        },
+        "L": {
+          "call_pc": 27782,
+          "return_instruction": 52998,
+          "before": 230,
+          "after": 26
+        },
+        "C'": {
+          "call_pc": 27782,
+          "return_instruction": 52998,
+          "before": 0,
+          "after": 1
+        },
+        "B'": {
+          "call_pc": 27782,
+          "return_instruction": 52998,
+          "before": 0,
+          "after": 1
+        },
+        "A'": {
+          "call_pc": 27782,
+          "return_instruction": 53002,
+          "before": 0,
+          "after": 8
+        },
+        "F'": {
+          "call_pc": 27782,
+          "return_instruction": 53002,
+          "before": 64,
+          "after": 2
+        },
+        "IXH": {
+          "call_pc": 27782,
+          "return_instruction": 53002,
+          "before": 0,
+          "after": 255
+        },
+        "IXL": {
+          "call_pc": 27782,
+          "return_instruction": 53002,
+          "before": 0,
+          "after": 170
+        },
+        "E'": {
+          "call_pc": 27782,
+          "return_instruction": 53002,
+          "before": 0,
+          "after": 225
+        },
+        "IYH": {
+          "call_pc": 27782,
+          "return_instruction": 53002,
+          "before": 108,
+          "after": 255
+        },
+        "IYL": {
+          "call_pc": 27782,
+          "return_instruction": 53002,
+          "before": 64,
+          "after": 85
+        },
+        "L'": {
+          "call_pc": 27782,
+          "return_instruction": 53002,
+          "before": 0,
+          "after": 16
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, R, записи проекции, Pattern, CEF9, рабочая запись круга, растр, маски, изменяемые операнды и до восемнадцати временных байтов CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 53003,
+      "path": "Source/Controls/BuildBodyProjection.asm",
+      "observed_returns": 1120,
+      "observed_byte_changes": {
+        "A": 416,
+        "F": 416,
+        "B": 599,
+        "C": 277,
+        "D": 630,
+        "E": 630,
+        "H": 630,
+        "L": 504,
+        "C'": 861,
+        "B'": 670
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 55647,
+          "return_instruction": 53442,
+          "before": 0,
+          "after": 1
+        },
+        "F": {
+          "call_pc": 55647,
+          "return_instruction": 53442,
+          "before": 68,
+          "after": 8
+        },
+        "B": {
+          "call_pc": 55647,
+          "return_instruction": 53442,
+          "before": 1,
+          "after": 222
+        },
+        "C": {
+          "call_pc": 55647,
+          "return_instruction": 53442,
+          "before": 0,
+          "after": 192
+        },
+        "D": {
+          "call_pc": 55647,
+          "return_instruction": 53442,
+          "before": 255,
+          "after": 11
+        },
+        "E": {
+          "call_pc": 55647,
+          "return_instruction": 53442,
+          "before": 170,
+          "after": 0
+        },
+        "H": {
+          "call_pc": 55647,
+          "return_instruction": 53442,
+          "before": 13,
+          "after": 146
+        },
+        "L": {
+          "call_pc": 55647,
+          "return_instruction": 53442,
+          "before": 230,
+          "after": 26
+        },
+        "C'": {
+          "call_pc": 55647,
+          "return_instruction": 53442,
+          "before": 0,
+          "after": 1
+        },
+        "B'": {
+          "call_pc": 55647,
+          "return_instruction": 53589,
+          "before": 0,
+          "after": 1
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, BC', R, проекция, знак выбранной глубины и шесть временных байтов стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 53450,
+      "path": "Source/Controls/EncodeProjectionRatio.asm",
+      "observed_returns": 892,
+      "observed_byte_changes": {
+        "A": 645,
+        "F": 892,
+        "B": 652,
+        "D": 651,
+        "E": 646,
+        "H": 647,
+        "L": 648,
+        "C'": 892,
+        "B'": 701
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 53055,
+          "return_instruction": 53619,
+          "before": 20,
+          "after": 4
+        },
+        "F": {
+          "call_pc": 53055,
+          "return_instruction": 53619,
+          "before": 20,
+          "after": 128
+        },
+        "B": {
+          "call_pc": 53055,
+          "return_instruction": 53619,
+          "before": 0,
+          "after": 239
+        },
+        "D": {
+          "call_pc": 53055,
+          "return_instruction": 53619,
+          "before": 13,
+          "after": 196
+        },
+        "E": {
+          "call_pc": 53055,
+          "return_instruction": 53619,
+          "before": 230,
+          "after": 0
+        },
+        "H": {
+          "call_pc": 53055,
+          "return_instruction": 53619,
+          "before": 20,
+          "after": 183
+        },
+        "L": {
+          "call_pc": 53055,
+          "return_instruction": 53619,
+          "before": 207,
+          "after": 24
+        },
+        "C'": {
+          "call_pc": 53055,
+          "return_instruction": 53619,
+          "before": 3,
+          "after": 2
+        },
+        "B'": {
+          "call_pc": 53055,
+          "return_instruction": 53626,
+          "before": 0,
+          "after": 4
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, BC', R и четыре временных байта стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 53607,
+      "path": "Source/Controls/DivideWordByByte.asm",
+      "observed_returns": 296,
+      "observed_byte_changes": {
+        "A": 295,
+        "F": 296,
+        "D": 292,
+        "E": 152
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 53164,
+          "return_instruction": 53626,
+          "before": 10,
+          "after": 118
+        },
+        "F": {
+          "call_pc": 53164,
+          "return_instruction": 53626,
+          "before": 140,
+          "after": 8
+        },
+        "D": {
+          "call_pc": 53164,
+          "return_instruction": 53626,
+          "before": 13,
+          "after": 11
+        },
+        "E": {
+          "call_pc": 53164,
+          "return_instruction": 53626,
+          "before": 128,
+          "after": 0
+        }
+      },
+      "corrupt_text": "DE, AF, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 53645,
+      "path": "Source/Controls/DrawRightClippedHalfDown.asm",
+      "observed_returns": 120,
+      "observed_byte_changes": {},
+      "first_change_examples": {},
+      "corrupt_text": "HL, DE, BC, HL', DE', BC', F', IXL, R, растр, Direction, SavedSP, условно записываемые смещения ядер и шесть временных байтов CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 53666,
+      "path": "Source/Controls/DrawRightClippedHalfUp.asm",
+      "observed_returns": 120,
+      "observed_byte_changes": {
+        "B'": 120
+      },
+      "first_change_examples": {
+        "B'": {
+          "call_pc": 54125,
+          "return_instruction": 55373,
+          "before": 13,
+          "after": 255
+        }
+      },
+      "corrupt_text": "HL, DE, BC, HL', DE', BC', F', IXL, R, растр, Direction, SavedSP, условно записываемые смещения ядер и шесть временных байтов CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 53748,
+      "path": "Source/Controls/DrawCircleHalfUp.asm",
+      "observed_returns": 4,
+      "observed_byte_changes": {
+        "B": 3,
+        "D": 4,
+        "E": 4,
+        "H": 4,
+        "L": 4,
+        "B'": 4,
+        "C'": 4,
+        "E'": 4,
+        "L'": 4,
+        "C": 2,
+        "IXL": 2
+      },
+      "first_change_examples": {
+        "B": {
+          "call_pc": 54039,
+          "return_instruction": 54966,
+          "before": 128,
+          "after": 192
+        },
+        "D": {
+          "call_pc": 54039,
+          "return_instruction": 54966,
+          "before": 12,
+          "after": 143
+        },
+        "E": {
+          "call_pc": 54039,
+          "return_instruction": 54966,
+          "before": 237,
+          "after": 110
+        },
+        "H": {
+          "call_pc": 54039,
+          "return_instruction": 54966,
+          "before": 137,
+          "after": 136
+        },
+        "L": {
+          "call_pc": 54039,
+          "return_instruction": 54966,
+          "before": 240,
+          "after": 110
+        },
+        "B'": {
+          "call_pc": 54039,
+          "return_instruction": 54966,
+          "before": 12,
+          "after": 255
+        },
+        "C'": {
+          "call_pc": 54039,
+          "return_instruction": 54966,
+          "before": 244,
+          "after": 252
+        },
+        "E'": {
+          "call_pc": 54039,
+          "return_instruction": 54966,
+          "before": 0,
+          "after": 12
+        },
+        "L'": {
+          "call_pc": 54039,
+          "return_instruction": 54966,
+          "before": 0,
+          "after": 16
+        },
+        "C": {
+          "call_pc": 54039,
+          "return_instruction": 54966,
+          "before": 31,
+          "after": 7
+        },
+        "IXL": {
+          "call_pc": 54039,
+          "return_instruction": 54966,
+          "before": 170,
+          "after": 85
+        }
+      },
+      "corrupt_text": "HL, DE, BC, HL', DE', BC', IXL, R, растр, Direction, SavedSP, четыре условно записываемых смещения кода, шесть временных байтов CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 53768,
+      "path": "Source/Controls/FillInteriorRowsUp.asm",
+      "observed_returns": 120,
+      "observed_byte_changes": {
+        "F": 120,
+        "C": 120,
+        "H": 120,
+        "L": 120,
+        "IXL": 120
+      },
+      "first_change_examples": {
+        "F": {
+          "call_pc": 54108,
+          "return_instruction": 54792,
+          "before": 69,
+          "after": 84
+        },
+        "C": {
+          "call_pc": 54108,
+          "return_instruction": 54792,
+          "before": 0,
+          "after": 48
+        },
+        "H": {
+          "call_pc": 54108,
+          "return_instruction": 54792,
+          "before": 160,
+          "after": 127
+        },
+        "L": {
+          "call_pc": 54108,
+          "return_instruction": 54792,
+          "before": 0,
+          "after": 255
+        },
+        "IXL": {
+          "call_pc": 54108,
+          "return_instruction": 54792,
+          "before": 170,
+          "after": 85
+        }
+      },
+      "corrupt_text": "HL, BC, AF, IXL, RowStep, BoundaryLimit, BoundaryBranch, шесть байтов CPU-стека, внутренние столбцы строк, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 53777,
+      "path": "Source/Controls/FillInteriorRowsDown.asm",
+      "observed_returns": 120,
+      "observed_byte_changes": {
+        "F": 120,
+        "C": 120,
+        "H": 120,
+        "L": 120
+      },
+      "first_change_examples": {
+        "F": {
+          "call_pc": 54135,
+          "return_instruction": 54792,
+          "before": 24,
+          "after": 84
+        },
+        "C": {
+          "call_pc": 54135,
+          "return_instruction": 54792,
+          "before": 255,
+          "after": 48
+        },
+        "H": {
+          "call_pc": 54135,
+          "return_instruction": 54792,
+          "before": 127,
+          "after": 140
+        },
+        "L": {
+          "call_pc": 54135,
+          "return_instruction": 54792,
+          "before": 255,
+          "after": 31
+        }
+      },
+      "corrupt_text": "HL, BC, AF, IXL, RowStep, BoundaryLimit, BoundaryBranch, шесть байтов CPU-стека, внутренние столбцы строк, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 53786,
+      "path": "Source/Controls/DrawProjectedBody.asm",
+      "observed_returns": 291,
+      "observed_byte_changes": {
+        "A": 291,
+        "F": 291,
+        "B": 159,
+        "D": 279,
+        "E": 239,
+        "H": 263,
+        "L": 263,
+        "A'": 285,
+        "F'": 290,
+        "C": 227,
+        "IXH": 77,
+        "IXL": 77,
+        "B'": 124,
+        "C'": 124,
+        "E'": 54,
+        "IYH": 23,
+        "IYL": 23,
+        "L'": 4
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 27,
+          "after": 0
+        },
+        "F": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 28,
+          "after": 155
+        },
+        "B": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 152,
+          "after": 12
+        },
+        "D": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 19,
+          "after": 0
+        },
+        "E": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 3,
+          "after": 8
+        },
+        "H": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 140,
+          "after": 227
+        },
+        "L": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 229,
+          "after": 237
+        },
+        "A'": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 0,
+          "after": 8
+        },
+        "F'": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 64,
+          "after": 2
+        },
+        "C": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 248,
+          "after": 212
+        },
+        "IXH": {
+          "call_pc": 52999,
+          "return_instruction": 53813,
+          "before": 0,
+          "after": 255
+        },
+        "IXL": {
+          "call_pc": 52999,
+          "return_instruction": 53813,
+          "before": 0,
+          "after": 170
+        },
+        "B'": {
+          "call_pc": 52999,
+          "return_instruction": 53813,
+          "before": 13,
+          "after": 255
+        },
+        "C'": {
+          "call_pc": 52999,
+          "return_instruction": 53813,
+          "before": 1,
+          "after": 136
+        },
+        "E'": {
+          "call_pc": 52999,
+          "return_instruction": 53813,
+          "before": 0,
+          "after": 225
+        },
+        "IYH": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 108,
+          "after": 255
+        },
+        "IYL": {
+          "call_pc": 52999,
+          "return_instruction": 53791,
+          "before": 64,
+          "after": 85
+        },
+        "L'": {
+          "call_pc": 52999,
+          "return_instruction": 53813,
+          "before": 0,
+          "after": 16
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, R, растр, маски, рабочая запись круга, изменяемые операнды и до шестнадцати временных байтов CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 53814,
+      "path": "Source/Controls/DrawLargeCircle.asm",
+      "observed_returns": 149,
+      "observed_byte_changes": {
+        "A": 149,
+        "F": 149,
+        "B": 29,
+        "C": 149,
+        "D": 149,
+        "E": 148,
+        "IXH": 77,
+        "IXL": 77,
+        "A'": 149,
+        "F'": 147,
+        "H": 133,
+        "L": 133,
+        "B'": 124,
+        "C'": 124,
+        "E'": 54,
+        "L'": 4
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 53810,
+          "return_instruction": 53939,
+          "before": 0,
+          "after": 208
+        },
+        "F": {
+          "call_pc": 53810,
+          "return_instruction": 53939,
+          "before": 68,
+          "after": 131
+        },
+        "B": {
+          "call_pc": 53810,
+          "return_instruction": 53939,
+          "before": 239,
+          "after": 85
+        },
+        "C": {
+          "call_pc": 53810,
+          "return_instruction": 53939,
+          "before": 192,
+          "after": 58
+        },
+        "D": {
+          "call_pc": 53810,
+          "return_instruction": 53939,
+          "before": 14,
+          "after": 10
+        },
+        "E": {
+          "call_pc": 53810,
+          "return_instruction": 53939,
+          "before": 3,
+          "after": 13
+        },
+        "IXH": {
+          "call_pc": 53810,
+          "return_instruction": 53939,
+          "before": 0,
+          "after": 255
+        },
+        "IXL": {
+          "call_pc": 53810,
+          "return_instruction": 53939,
+          "before": 0,
+          "after": 170
+        },
+        "A'": {
+          "call_pc": 53810,
+          "return_instruction": 53939,
+          "before": 175,
+          "after": 85
+        },
+        "F'": {
+          "call_pc": 53810,
+          "return_instruction": 53939,
+          "before": 188,
+          "after": 25
+        },
+        "H": {
+          "call_pc": 53810,
+          "return_instruction": 54155,
+          "before": 160,
+          "after": 140
+        },
+        "L": {
+          "call_pc": 53810,
+          "return_instruction": 54155,
+          "before": 0,
+          "after": 31
+        },
+        "B'": {
+          "call_pc": 53810,
+          "return_instruction": 54155,
+          "before": 13,
+          "after": 255
+        },
+        "C'": {
+          "call_pc": 53810,
+          "return_instruction": 54155,
+          "before": 1,
+          "after": 136
+        },
+        "E'": {
+          "call_pc": 53810,
+          "return_instruction": 54155,
+          "before": 0,
+          "after": 225
+        },
+        "L'": {
+          "call_pc": 53810,
+          "return_instruction": 54966,
+          "before": 0,
+          "after": 16
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, HL', DE', BC', AF', IX, R, рабочая запись, растр, изменяемые операнды и четырнадцать временных байтов CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 54027,
+      "path": "Source/Controls/ReadByteSquare.asm",
+      "observed_returns": 1231,
+      "observed_byte_changes": {
+        "F": 980,
+        "D": 1229,
+        "E": 868
+      },
+      "first_change_examples": {
+        "F": {
+          "call_pc": 54798,
+          "return_instruction": 54035,
+          "before": 40,
+          "after": 128
+        },
+        "D": {
+          "call_pc": 54798,
+          "return_instruction": 54035,
+          "before": 255,
+          "after": 254
+        },
+        "E": {
+          "call_pc": 54798,
+          "return_instruction": 54035,
+          "before": 13,
+          "after": 1
+        }
+      },
+      "corrupt_text": "DE, F, два байта CPU-стека, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 54048,
+      "path": "Source/Controls/BuildCircleSpan.asm",
+      "observed_returns": 6,
+      "observed_byte_changes": {
+        "A": 3,
+        "F": 3,
+        "B": 6,
+        "C": 4,
+        "E": 6,
+        "H": 6,
+        "L": 6,
+        "C'": 6,
+        "D": 3,
+        "E'": 3
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 54036,
+          "return_instruction": 54635,
+          "before": 24,
+          "after": 128
+        },
+        "F": {
+          "call_pc": 54036,
+          "return_instruction": 54635,
+          "before": 171,
+          "after": 66
+        },
+        "B": {
+          "call_pc": 54036,
+          "return_instruction": 54635,
+          "before": 12,
+          "after": 128
+        },
+        "C": {
+          "call_pc": 54036,
+          "return_instruction": 54635,
+          "before": 31,
+          "after": 255
+        },
+        "E": {
+          "call_pc": 54036,
+          "return_instruction": 54635,
+          "before": 12,
+          "after": 237
+        },
+        "H": {
+          "call_pc": 54036,
+          "return_instruction": 54635,
+          "before": 146,
+          "after": 137
+        },
+        "L": {
+          "call_pc": 54036,
+          "return_instruction": 54635,
+          "before": 225,
+          "after": 240
+        },
+        "C'": {
+          "call_pc": 54036,
+          "return_instruction": 54635,
+          "before": 1,
+          "after": 244
+        },
+        "D": {
+          "call_pc": 54042,
+          "return_instruction": 54635,
+          "before": 143,
+          "after": 12
+        },
+        "E'": {
+          "call_pc": 54042,
+          "return_instruction": 54635,
+          "before": 12,
+          "after": 0
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, E', C', SavedB, два байта CPU-стека, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 54549,
+      "path": "Source/Controls/BuildLeftSpanMask.asm",
+      "observed_returns": 7,
+      "observed_byte_changes": {
+        "A": 7,
+        "F": 7,
+        "B": 7,
+        "C": 7,
+        "E": 7,
+        "H": 7,
+        "L": 7
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 54066,
+          "return_instruction": 54587,
+          "before": 104,
+          "after": 128
+        },
+        "F": {
+          "call_pc": 54066,
+          "return_instruction": 54587,
+          "before": 58,
+          "after": 83
+        },
+        "B": {
+          "call_pc": 54066,
+          "return_instruction": 54587,
+          "before": 116,
+          "after": 128
+        },
+        "C": {
+          "call_pc": 54066,
+          "return_instruction": 54587,
+          "before": 79,
+          "after": 13
+        },
+        "E": {
+          "call_pc": 54066,
+          "return_instruction": 54587,
+          "before": 12,
+          "after": 237
+        },
+        "H": {
+          "call_pc": 54066,
+          "return_instruction": 54587,
+          "before": 146,
+          "after": 137
+        },
+        "L": {
+          "call_pc": 54066,
+          "return_instruction": 54587,
+          "before": 225,
+          "after": 237
+        }
+      },
+      "corrupt_text": "HL, DE в части E, BC, AF, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 54588,
+      "path": "Source/Controls/BuildRightSpanMask.asm",
+      "observed_returns": 1,
+      "observed_byte_changes": {
+        "A": 1,
+        "F": 1,
+        "C": 1,
+        "L": 1
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 54460,
+          "return_instruction": 54635,
+          "before": 223,
+          "after": 255
+        },
+        "F": {
+          "call_pc": 54460,
+          "return_instruction": 54635,
+          "before": 136,
+          "after": 66
+        },
+        "C": {
+          "call_pc": 54460,
+          "return_instruction": 54635,
+          "before": 95,
+          "after": 1
+        },
+        "L": {
+          "call_pc": 54460,
+          "return_instruction": 54635,
+          "before": 36,
+          "after": 251
+        }
+      },
+      "corrupt_text": "HL, BC в части C, AF, SavedB, два байта CPU-стека, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 54636,
+      "path": "Source/Controls/LoadCircleClipState.asm",
+      "observed_returns": 240,
+      "observed_byte_changes": {
+        "A": 240,
+        "F": 240,
+        "B": 240,
+        "C": 240,
+        "C'": 120,
+        "E'": 50
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 54111,
+          "return_instruction": 54650,
+          "before": 48,
+          "after": 225
+        },
+        "F": {
+          "call_pc": 54111,
+          "return_instruction": 54650,
+          "before": 84,
+          "after": 138
+        },
+        "B": {
+          "call_pc": 54111,
+          "return_instruction": 54650,
+          "before": 225,
+          "after": 0
+        },
+        "C": {
+          "call_pc": 54111,
+          "return_instruction": 54650,
+          "before": 48,
+          "after": 0
+        },
+        "C'": {
+          "call_pc": 54111,
+          "return_instruction": 54650,
+          "before": 1,
+          "after": 136
+        },
+        "E'": {
+          "call_pc": 54111,
+          "return_instruction": 54650,
+          "before": 0,
+          "after": 225
+        }
+      },
+      "corrupt_text": "BC, AF, E', C', R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 54651,
+      "path": "Source/Controls/PrepareInteriorSpan.asm",
+      "observed_returns": 240,
+      "observed_byte_changes": {
+        "F": 240,
+        "C": 240,
+        "E": 240,
+        "A": 120
+      },
+      "first_change_examples": {
+        "F": {
+          "call_pc": 54114,
+          "return_instruction": 54665,
+          "before": 138,
+          "after": 164
+        },
+        "C": {
+          "call_pc": 54114,
+          "return_instruction": 54665,
+          "before": 0,
+          "after": 255
+        },
+        "E": {
+          "call_pc": 54114,
+          "return_instruction": 54665,
+          "before": 13,
+          "after": 225
+        },
+        "A": {
+          "call_pc": 54141,
+          "return_instruction": 54665,
+          "before": 225,
+          "after": 1
+        }
+      },
+      "corrupt_text": "E, BC, AF, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 54793,
+      "path": "Source/Controls/SqrtSquareDiff.asm",
+      "observed_returns": 121,
+      "observed_byte_changes": {
+        "A": 121,
+        "F": 121
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 54098,
+          "return_instruction": 54834,
+          "before": 120,
+          "after": 225
+        },
+        "F": {
+          "call_pc": 54098,
+          "return_instruction": 54834,
+          "before": 40,
+          "after": 69
+        }
+      },
+      "corrupt_text": "AF, SquareDiff, 12 байтов CPU-стека, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 55589,
+      "path": "Source/Controls/AdvanceRasterUp.asm",
+      "observed_returns": 64,
+      "observed_byte_changes": {
+        "A": 64,
+        "F": 64,
+        "E": 64,
+        "L": 64,
+        "IXL": 64,
+        "H": 7
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 54904,
+          "return_instruction": 55603,
+          "before": 0,
+          "after": 208
+        },
+        "F": {
+          "call_pc": 54904,
+          "return_instruction": 55603,
+          "before": 84,
+          "after": 130
+        },
+        "E": {
+          "call_pc": 54904,
+          "return_instruction": 55603,
+          "before": 237,
+          "after": 205
+        },
+        "L": {
+          "call_pc": 54904,
+          "return_instruction": 55603,
+          "before": 240,
+          "after": 208
+        },
+        "IXL": {
+          "call_pc": 54904,
+          "return_instruction": 55603,
+          "before": 170,
+          "after": 85
+        },
+        "H": {
+          "call_pc": 54904,
+          "return_instruction": 55608,
+          "before": 137,
+          "after": 136
+        }
+      },
+      "corrupt_text": "HL, E, AF, IXL, SP при внешнем возврате, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 55616,
+      "path": "Source/Controls/AdvanceRasterDown.asm",
+      "observed_returns": 30,
+      "observed_byte_changes": {
+        "A": 30,
+        "F": 30,
+        "E": 30,
+        "H": 5,
+        "L": 30,
+        "IXL": 30
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 54910,
+          "return_instruction": 55635,
+          "before": 1,
+          "after": 140
+        },
+        "F": {
+          "call_pc": 54910,
+          "return_instruction": 55635,
+          "before": 16,
+          "after": 10
+        },
+        "E": {
+          "call_pc": 54910,
+          "return_instruction": 55635,
+          "before": 237,
+          "after": 13
+        },
+        "H": {
+          "call_pc": 54910,
+          "return_instruction": 55635,
+          "before": 137,
+          "after": 138
+        },
+        "L": {
+          "call_pc": 54910,
+          "return_instruction": 55635,
+          "before": 240,
+          "after": 16
+        },
+        "IXL": {
+          "call_pc": 54910,
+          "return_instruction": 55635,
+          "before": 170,
+          "after": 85
+        }
+      },
+      "corrupt_text": "HL, E, AF, IXL, SP при внешнем возврате, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 55647,
+      "path": "Source/Controls/ProjectAndCheckComponents.asm",
+      "observed_returns": 1120,
+      "observed_byte_changes": {
+        "B": 599,
+        "C": 277,
+        "D": 630,
+        "E": 630,
+        "H": 630,
+        "L": 504,
+        "C'": 861,
+        "F": 995,
+        "B'": 670,
+        "A": 291
+      },
+      "first_change_examples": {
+        "B": {
+          "call_pc": 52994,
+          "return_instruction": 55677,
+          "before": 1,
+          "after": 222
+        },
+        "C": {
+          "call_pc": 52994,
+          "return_instruction": 55677,
+          "before": 0,
+          "after": 192
+        },
+        "D": {
+          "call_pc": 52994,
+          "return_instruction": 55677,
+          "before": 255,
+          "after": 20
+        },
+        "E": {
+          "call_pc": 52994,
+          "return_instruction": 55677,
+          "before": 170,
+          "after": 3
+        },
+        "H": {
+          "call_pc": 52994,
+          "return_instruction": 55677,
+          "before": 13,
+          "after": 146
+        },
+        "L": {
+          "call_pc": 52994,
+          "return_instruction": 55677,
+          "before": 230,
+          "after": 26
+        },
+        "C'": {
+          "call_pc": 52994,
+          "return_instruction": 55677,
+          "before": 0,
+          "after": 1
+        },
+        "F": {
+          "call_pc": 52994,
+          "return_instruction": 55651,
+          "before": 68,
+          "after": 84
+        },
+        "B'": {
+          "call_pc": 52994,
+          "return_instruction": 55651,
+          "before": 0,
+          "after": 1
+        },
+        "A": {
+          "call_pc": 52994,
+          "return_instruction": 55677,
+          "before": 0,
+          "after": 27
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, BC', R, записи BuildBodyProjection и восемь временных байтов CPU-стека",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 55728,
+      "path": "Source/Controls/BuildSmallBodyMasks.asm",
+      "observed_returns": 130,
+      "observed_byte_changes": {
+        "A": 130,
+        "F": 130,
+        "B": 130,
+        "D": 130,
+        "E": 91,
+        "H": 130,
+        "L": 129,
+        "A'": 130,
+        "F'": 130
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 55792,
+          "return_instruction": 55773,
+          "before": 8,
+          "after": 240
+        },
+        "F": {
+          "call_pc": 55792,
+          "return_instruction": 55773,
+          "before": 2,
+          "after": 180
+        },
+        "B": {
+          "call_pc": 55792,
+          "return_instruction": 55773,
+          "before": 152,
+          "after": 0
+        },
+        "D": {
+          "call_pc": 55792,
+          "return_instruction": 55773,
+          "before": 19,
+          "after": 0
+        },
+        "E": {
+          "call_pc": 55792,
+          "return_instruction": 55773,
+          "before": 3,
+          "after": 8
+        },
+        "H": {
+          "call_pc": 55792,
+          "return_instruction": 55773,
+          "before": 140,
+          "after": 217
+        },
+        "L": {
+          "call_pc": 55792,
+          "return_instruction": 55773,
+          "before": 229,
+          "after": 143
+        },
+        "A'": {
+          "call_pc": 55792,
+          "return_instruction": 55773,
+          "before": 175,
+          "after": 8
+        },
+        "F'": {
+          "call_pc": 55792,
+          "return_instruction": 55773,
+          "before": 28,
+          "after": 2
+        }
+      },
+      "corrupt_text": "HL, DE, B, AF, AF', t+радиус байтов Row00..Row0B, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 55774,
+      "path": "Source/Controls/DrawSmallBody.asm",
+      "observed_returns": 291,
+      "observed_byte_changes": {
+        "A": 291,
+        "F": 291,
+        "B": 130,
+        "D": 130,
+        "E": 91,
+        "H": 130,
+        "L": 130,
+        "A'": 285,
+        "F'": 290,
+        "C": 78,
+        "IYH": 23,
+        "IYL": 23
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 53786,
+          "return_instruction": 55832,
+          "before": 27,
+          "after": 0
+        },
+        "F": {
+          "call_pc": 53786,
+          "return_instruction": 55832,
+          "before": 28,
+          "after": 68
+        },
+        "B": {
+          "call_pc": 53786,
+          "return_instruction": 55832,
+          "before": 152,
+          "after": 12
+        },
+        "D": {
+          "call_pc": 53786,
+          "return_instruction": 55832,
+          "before": 19,
+          "after": 0
+        },
+        "E": {
+          "call_pc": 53786,
+          "return_instruction": 55832,
+          "before": 3,
+          "after": 8
+        },
+        "H": {
+          "call_pc": 53786,
+          "return_instruction": 55832,
+          "before": 140,
+          "after": 227
+        },
+        "L": {
+          "call_pc": 53786,
+          "return_instruction": 55832,
+          "before": 229,
+          "after": 237
+        },
+        "A'": {
+          "call_pc": 53786,
+          "return_instruction": 55832,
+          "before": 0,
+          "after": 8
+        },
+        "F'": {
+          "call_pc": 53786,
+          "return_instruction": 55832,
+          "before": 64,
+          "after": 2
+        },
+        "C": {
+          "call_pc": 53786,
+          "return_instruction": 55832,
+          "before": 248,
+          "after": 212
+        },
+        "IYH": {
+          "call_pc": 53786,
+          "return_instruction": 55992,
+          "before": 108,
+          "after": 255
+        },
+        "IYL": {
+          "call_pc": 53786,
+          "return_instruction": 55992,
+          "before": 64,
+          "after": 85
+        }
+      },
+      "corrupt_text": "HL, DE, BC, AF, AF', IY, строки масок, LeftMask, пиксели растра, шесть байтов CPU-стека, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    },
+    {
+      "region": "Controls",
+      "entry": 55993,
+      "path": "Source/Controls/CompareComponents.asm",
+      "observed_returns": 1056,
+      "observed_byte_changes": {
+        "A": 509,
+        "F": 734,
+        "D": 674,
+        "E": 416,
+        "IYL": 1056
+      },
+      "first_change_examples": {
+        "A": {
+          "call_pc": 55664,
+          "return_instruction": 56029,
+          "before": 1,
+          "after": 0
+        },
+        "F": {
+          "call_pc": 55664,
+          "return_instruction": 56029,
+          "before": 16,
+          "after": 68
+        },
+        "D": {
+          "call_pc": 55664,
+          "return_instruction": 56029,
+          "before": 11,
+          "after": 20
+        },
+        "E": {
+          "call_pc": 55664,
+          "return_instruction": 56029,
+          "before": 0,
+          "after": 3
+        },
+        "IYL": {
+          "call_pc": 55664,
+          "return_instruction": 56029,
+          "before": 27,
+          "after": 30
+        }
+      },
+      "corrupt_text": "DE, AF, IY, R",
+      "changed_bytes_not_explicitly_listed": [],
+      "reviewed_local_contract_boundary": null,
+      "requires_manual_contract_scope_review": false
+    }
+  ],
+  "original_reports_unchanged": true,
+  "nonlocal_projection_return": {
+    "discard_sequence": 53586,
+    "original_bytes": "E1 F1 AF C9",
+    "inner_entry": 53450,
+    "outer_entry": 53003,
+    "return_instruction": 53589,
+    "calls_by_site": {
+      "CF3F": 154,
+      "CF61": 60
+    }
+  },
+  "fragment_contracts_not_automatically_treated_as_whole_call_contracts": true,
+  "missing_explicit_byte_is_not_automatic_contract_error": true,
+  "complete_register_contracts_proved": false,
+  "irq_executed": false,
+  "computed_jumps_and_tail_entries_not_separate_CALL_observations": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

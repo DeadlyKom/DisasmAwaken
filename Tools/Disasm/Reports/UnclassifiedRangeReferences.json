@@ -1,39 +1,29 @@
 {
   "passed": true,
-  "method": "physical_range_integrity_and_same_registered_region_literal_candidates",
-  "source_map_sha256": "4542b7bab7a8485a672ee3a4d2e1cddb2afd69cceae8d348c36c1a7a85413ed7",
-  "ranges": 107,
-  "unclassified_bytes": 15519,
+  "method": "physical_range_integrity_and_registered_region_and_fixed_window_literal_candidates",
+  "source_map_sha256": "9a37fbccac5150d5a83e593c8490d82336f525ba6f2ebd0b5885b3c1d4fce455",
+  "ranges": 75,
+  "unclassified_bytes": 10449,
   "entries": [
     {
       "slot": 4,
-      "offset": 38024,
-      "length": 2936,
-      "path": "Source/Resources/04_STATIONF/Unclassified9488_A000.bin",
-      "sha256": "2cd23f08b33b3a8c762462a6b22090ad67861052f04a6912b27772ff38606695",
+      "offset": 38110,
+      "length": 2850,
+      "path": "Source/Resources/04_STATIONF/Unclassified94DE_A000.bin",
+      "sha256": "12d7defbd58807134cb2e31923b59e598ed8ea7db415cd21e8a9d17c3faa9bff",
       "kind": "unclassified",
       "origin": null,
       "runtime_contexts": [
         {
           "region": "Station",
-          "file_offset": 38024,
-          "length": 2936,
-          "start_address": 62600,
+          "file_offset": 38110,
+          "length": 2850,
+          "start_address": 62686,
           "end_exclusive": 65536,
           "bank_context_not_added_by_this_check": true
         }
       ],
       "candidate_literal_references": [
-        {
-          "address": 25455,
-          "slot": 4,
-          "offset": 1563,
-          "operation": "LD (#F4C4),A",
-          "function_path": "Source/Station/TogglePreviewFaceFill.asm",
-          "region": "Station",
-          "literal": 62660,
-          "candidate_target_offset": 38084
-        },
         {
           "address": 25475,
           "slot": 4,
@@ -42,7 +32,8 @@
           "function_path": "Source/Station/TogglePreviewFaceFill.asm",
           "region": "Station",
           "literal": 62788,
-          "candidate_target_offset": 38212
+          "candidate_target_offset": 38212,
+          "use_context": "d3d_bank4"
         },
         {
           "address": 25478,
@@ -52,7 +43,8 @@
           "function_path": "Source/Station/TogglePreviewFaceFill.asm",
           "region": "Station",
           "literal": 62792,
-          "candidate_target_offset": 38216
+          "candidate_target_offset": 38216,
+          "use_context": "d3d_bank4"
         },
         {
           "address": 26049,
@@ -62,7 +54,8 @@
           "function_path": "Source/Station/PollMouse.asm",
           "region": "Station",
           "literal": 64223,
-          "candidate_target_offset": 39647
+          "candidate_target_offset": 39647,
+          "use_context": "io_port"
         },
         {
           "address": 26079,
@@ -72,7 +65,8 @@
           "function_path": "Source/Station/ReadMouseMotion.asm",
           "region": "Station",
           "literal": 64479,
-          "candidate_target_offset": 39903
+          "candidate_target_offset": 39903,
+          "use_context": "io_port"
         },
         {
           "address": 43863,
@@ -82,7 +76,8 @@
           "function_path": "Source/Station/DrawItem32.asm",
           "region": "Station",
           "literal": 65000,
-          "candidate_target_offset": 40424
+          "candidate_target_offset": 40424,
+          "use_context": "numeric_value"
         },
         {
           "address": 26723,
@@ -92,7 +87,8 @@
           "function_path": "Source/Station/HandleModelPreviewClick.asm",
           "region": "Station",
           "literal": 65504,
-          "candidate_target_offset": 40928
+          "candidate_target_offset": 40928,
+          "use_context": "numeric_value"
         },
         {
           "address": 40382,
@@ -102,7 +98,8 @@
           "function_path": "Source/Station/DispatchInterfaceEvent.asm",
           "region": "Station",
           "literal": 65520,
-          "candidate_target_offset": 40944
+          "candidate_target_offset": 40944,
+          "use_context": "numeric_value"
         },
         {
           "address": 40496,
@@ -112,7 +109,8 @@
           "function_path": "Source/Station/RemoveOtherPopups.asm",
           "region": "Station",
           "literal": 65520,
-          "candidate_target_offset": 40944
+          "candidate_target_offset": 40944,
+          "use_context": "numeric_value"
         },
         {
           "address": 31812,
@@ -122,7 +120,8 @@
           "function_path": "Source/Station/RemoveFoundSecondaryPoint.asm",
           "region": "Station",
           "literal": 65531,
-          "candidate_target_offset": 40955
+          "candidate_target_offset": 40955,
+          "use_context": "numeric_value"
         },
         {
           "address": 25707,
@@ -132,7 +131,8 @@
           "function_path": "Source/Station/DrawPointer.asm",
           "region": "Station",
           "literal": 65532,
-          "candidate_target_offset": 40956
+          "candidate_target_offset": 40956,
+          "use_context": "numeric_value"
         },
         {
           "address": 39726,
@@ -142,7 +142,8 @@
           "function_path": "Source/Station/Interrupt.asm",
           "region": "Station",
           "literal": 65533,
-          "candidate_target_offset": 40957
+          "candidate_target_offset": 40957,
+          "use_context": "io_port"
         },
         {
           "address": 39784,
@@ -152,7 +153,8 @@
           "function_path": "Source/Station/Interrupt.asm",
           "region": "Station",
           "literal": 65533,
-          "candidate_target_offset": 40957
+          "candidate_target_offset": 40957,
+          "use_context": "io_port"
         },
         {
           "address": 49695,
@@ -162,267 +164,17 @@
           "function_path": "Source/Station/FillSpanPattern.asm",
           "region": "Station",
           "literal": 65535,
-          "candidate_target_offset": 40959
-        }
-      ],
-      "candidate_reference_count": 14,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 16423,
-      "length": 217,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified4027_4100.bin",
-      "origin": null,
-      "sha256": "087fe55d46b5fac5e233bc72e9f0392365dac5ff09cee4278caca86691771625",
-      "runtime_contexts": [
-        {
-          "region": "Action",
-          "file_offset": 16423,
-          "length": 217,
-          "start_address": 40999,
-          "end_exclusive": 41216,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [
-        {
-          "address": 58989,
-          "slot": 17,
-          "offset": 34413,
-          "operation": "LD IY,#A0C0",
-          "function_path": "Source/Action/ReleaseClass12Records.asm",
-          "region": "Action",
-          "literal": 41152,
-          "candidate_target_offset": 16576
-        },
-        {
-          "address": 59117,
-          "slot": 17,
-          "offset": 34541,
-          "operation": "LD IY,#A0C0",
-          "function_path": "Source/Action/FindFilteredRecordOr26.asm",
-          "region": "Action",
-          "literal": 41152,
-          "candidate_target_offset": 16576
-        },
-        {
-          "address": 59149,
-          "slot": 17,
-          "offset": 34573,
-          "operation": "LD IY,#A0C0",
-          "function_path": "Source/Action/FindRecordExcept6And7.asm",
-          "region": "Action",
-          "literal": 41152,
-          "candidate_target_offset": 16576
-        },
-        {
-          "address": 59177,
-          "slot": 17,
-          "offset": 34601,
-          "operation": "LD IY,#A0C0",
-          "function_path": "Source/Action/FindRecordClass6Or7.asm",
-          "region": "Action",
-          "literal": 41152,
-          "candidate_target_offset": 16576
-        },
-        {
-          "address": 59205,
-          "slot": 17,
-          "offset": 34629,
-          "operation": "LD IY,#A0C0",
-          "function_path": "Source/Action/FindRecordClass5Or14.asm",
-          "region": "Action",
-          "literal": 41152,
-          "candidate_target_offset": 16576
-        },
-        {
-          "address": 59789,
-          "slot": 17,
-          "offset": 35213,
-          "operation": "LD IY,#A0C0",
-          "function_path": "Source/Action/FindRecordByCode.asm",
-          "region": "Action",
-          "literal": 41152,
-          "candidate_target_offset": 16576
-        },
-        {
-          "address": 59809,
-          "slot": 17,
-          "offset": 35233,
-          "operation": "LD IY,#A0C0",
-          "function_path": "Source/Action/FindReusableRecord.asm",
-          "region": "Action",
-          "literal": 41152,
-          "candidate_target_offset": 16576
-        },
-        {
-          "address": 63273,
-          "slot": 17,
-          "offset": 38697,
-          "operation": "LD IX,#A0C0",
-          "function_path": "Source/Action/UpdateObjects.asm",
-          "region": "Action",
-          "literal": 41152,
-          "candidate_target_offset": 16576
-        },
-        {
-          "address": 25297,
-          "slot": 17,
-          "offset": 1294,
-          "operation": "LD HL,#A0C1",
-          "function_path": "Source/Action/CountClass3LinksUpToTwo.asm",
-          "region": "Action",
-          "literal": 41153,
-          "candidate_target_offset": 16577
-        },
-        {
-          "address": 29254,
-          "slot": 17,
-          "offset": 5251,
-          "operation": "LD HL,#A0C1",
-          "function_path": "Source/Action/ActivateAntimissileSystem.asm",
-          "region": "Action",
-          "literal": 41153,
-          "candidate_target_offset": 16577
-        },
-        {
-          "address": 29870,
-          "slot": 17,
-          "offset": 5867,
-          "operation": "LD HL,#A0C1",
-          "function_path": "Source/Action/RequestBoost.asm",
-          "region": "Action",
-          "literal": 41153,
-          "candidate_target_offset": 16577
-        },
-        {
-          "address": 60023,
-          "slot": 17,
-          "offset": 35447,
-          "operation": "LD HL,#A0C1",
-          "function_path": "Source/Action/AllocateLargeEffect.asm",
-          "region": "Action",
-          "literal": 41153,
-          "candidate_target_offset": 16577
-        },
-        {
-          "address": 62633,
-          "slot": 17,
-          "offset": 38057,
-          "operation": "LD HL,#A0C1",
-          "function_path": "Source/Action/SweepClass17AndPrepareSpawn.asm",
-          "region": "Action",
-          "literal": 41153,
-          "candidate_target_offset": 16577
+          "candidate_target_offset": 40959,
+          "use_context": "numeric_value"
         }
       ],
       "candidate_reference_count": 13,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 39014,
-      "length": 1912,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified9866_9FDE.bin",
-      "origin": null,
-      "sha256": "ece032a357c722fa7c6668d9c340622242ffd32e52ee96cb3179f6c24b07e550",
-      "runtime_contexts": [
-        {
-          "region": "Action",
-          "file_offset": 39014,
-          "length": 1912,
-          "start_address": 63590,
-          "end_exclusive": 65502,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [
-        {
-          "address": 28190,
-          "slot": 17,
-          "offset": 4187,
-          "operation": "CALL #FA3A",
-          "function_path": "Source/Action/ResumeVisualEffect.asm",
-          "region": "Action",
-          "literal": 64058,
-          "candidate_target_offset": 39482
-        },
-        {
-          "address": 54560,
-          "slot": 17,
-          "offset": 29984,
-          "operation": "LD DE,#FF00",
-          "function_path": "Source/Action/PreparePolygonFill.asm",
-          "region": "Action",
-          "literal": 65280,
-          "candidate_target_offset": 40704
-        },
-        {
-          "address": 27774,
-          "slot": 17,
-          "offset": 3771,
-          "operation": "LD DE,#FFAA",
-          "function_path": "Source/Action/DrawBankedProjectedBody.asm",
-          "region": "Action",
-          "literal": 65450,
-          "candidate_target_offset": 40874
-        },
-        {
-          "address": 59314,
-          "slot": 17,
-          "offset": 34738,
-          "operation": "LD HL,#FFB0",
-          "function_path": "Source/Action/LoadLinkedRecordVectors.asm",
-          "region": "Action",
-          "literal": 65456,
-          "candidate_target_offset": 40880
-        },
-        {
-          "address": 29516,
-          "slot": 17,
-          "offset": 5513,
-          "operation": "LD BC,#FFCE",
-          "function_path": "Source/Action/RequestAimOrCollectTarget.asm",
-          "region": "Action",
-          "literal": 65486,
-          "candidate_target_offset": 40910
-        },
-        {
-          "address": 29546,
-          "slot": 17,
-          "offset": 5543,
-          "operation": "LD BC,#FFCE",
-          "function_path": "Source/Action/RequestAimOrCollectTarget.asm",
-          "region": "Action",
-          "literal": 65486,
-          "candidate_target_offset": 40910
-        },
-        {
-          "address": 29576,
-          "slot": 17,
-          "offset": 5573,
-          "operation": "LD BC,#FFCE",
-          "function_path": "Source/Action/RequestAimOrCollectTarget.asm",
-          "region": "Action",
-          "literal": 65486,
-          "candidate_target_offset": 40910
-        },
-        {
-          "address": 26472,
-          "slot": 17,
-          "offset": 2469,
-          "operation": "LD BC,#FFD0",
-          "function_path": "Source/Action/TransitionBodyMode.asm",
-          "region": "Action",
-          "literal": 65488,
-          "candidate_target_offset": 40912
-        }
-      ],
-      "candidate_reference_count": 8,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 123614,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 17,
@@ -451,7 +203,8 @@
           "function_path": "Source/Action/PreparePolygonFill.asm",
           "region": "Action",
           "literal": 65504,
-          "candidate_target_offset": 40928
+          "candidate_target_offset": 40928,
+          "use_context": "stack_top_before_push"
         },
         {
           "address": 60118,
@@ -461,7 +214,8 @@
           "function_path": "Source/Action/AllocateLargeEffect.asm",
           "region": "Action",
           "literal": 65515,
-          "candidate_target_offset": 40939
+          "candidate_target_offset": 40939,
+          "use_context": "numeric_value"
         },
         {
           "address": 60591,
@@ -471,7 +225,8 @@
           "function_path": "Source/Action/UpdateAyEffects.asm",
           "region": "Action",
           "literal": 65533,
-          "candidate_target_offset": 40957
+          "candidate_target_offset": 40957,
+          "use_context": "io_port"
         },
         {
           "address": 60668,
@@ -481,7 +236,8 @@
           "function_path": "Source/Action/UpdateAyEffects.asm",
           "region": "Action",
           "literal": 65533,
-          "candidate_target_offset": 40957
+          "candidate_target_offset": 40957,
+          "use_context": "io_port"
         },
         {
           "address": 29361,
@@ -491,7 +247,8 @@
           "function_path": "Source/Action/ActivateAntimissileSystem.asm",
           "region": "Action",
           "literal": 65535,
-          "candidate_target_offset": 40959
+          "candidate_target_offset": 40959,
+          "use_context": "numeric_value"
         },
         {
           "address": 45345,
@@ -501,7 +258,8 @@
           "function_path": "Source/Action/SqrtWordCached.asm",
           "region": "Action",
           "literal": 65535,
-          "candidate_target_offset": 40959
+          "candidate_target_offset": 40959,
+          "use_context": "numeric_value"
         },
         {
           "address": 53521,
@@ -511,7 +269,8 @@
           "function_path": "Source/Action/ClearWorkBuffer.asm",
           "region": "Action",
           "literal": 65535,
-          "candidate_target_offset": 40959
+          "candidate_target_offset": 40959,
+          "use_context": "numeric_value"
         },
         {
           "address": 59320,
@@ -521,1364 +280,189 @@
           "function_path": "Source/Action/LoadLinkedRecordVectors.asm",
           "region": "Action",
           "literal": 65535,
-          "candidate_target_offset": 40959
+          "candidate_target_offset": 40959,
+          "use_context": "numeric_value"
         }
       ],
       "candidate_reference_count": 8,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 277216,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 17,
-      "offset": 16394,
-      "length": 18,
+      "offset": 40831,
+      "length": 95,
+      "path": "Source/Resources/17_ACTION/Unclassified9F7F_9FDE.bin",
+      "sha256": "8542681424ecba28d65569c3be0d3962837fdf9d6cb770620108a86cf9e8d75f",
       "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified400A_401C.bin",
       "origin": null,
-      "sha256": "60daa3a5f7dbfa200f8c82840ecf5b42640b70f3b7218a4c6bbd67db542e75a4",
       "runtime_contexts": [
         {
           "region": "Action",
-          "file_offset": 16394,
-          "length": 18,
-          "start_address": 40970,
-          "end_exclusive": 40988,
+          "file_offset": 40831,
+          "length": 95,
+          "start_address": 65407,
+          "end_exclusive": 65502,
           "bank_context_not_added_by_this_check": true
         }
       ],
       "candidate_literal_references": [
         {
-          "address": 25797,
+          "address": 27774,
           "slot": 17,
-          "offset": 1794,
-          "operation": "LD HL,#A01B",
-          "function_path": "Source/Action/SpawnClass19AndUpdateList.asm",
-          "region": "Action",
-          "literal": 40987,
-          "candidate_target_offset": 16411
-        },
-        {
-          "address": 59847,
-          "slot": 17,
-          "offset": 35271,
-          "operation": "LD HL,#A01B",
-          "function_path": "Source/Action/FindNearestListedRecord.asm",
-          "region": "Action",
-          "literal": 40987,
-          "candidate_target_offset": 16411
-        },
-        {
-          "address": 59932,
-          "slot": 17,
-          "offset": 35356,
-          "operation": "LD HL,#A01B",
-          "function_path": "Source/Action/CheckCandidateListReady.asm",
-          "region": "Action",
-          "literal": 40987,
-          "candidate_target_offset": 16411
-        }
-      ],
-      "candidate_reference_count": 3,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 28387,
-      "length": 29,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified6EE3_6F00.bin",
-      "origin": null,
-      "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6",
-      "runtime_contexts": [
-        {
-          "region": "Action",
-          "file_offset": 28387,
-          "length": 29,
-          "start_address": 52963,
-          "end_exclusive": 52992,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [
-        {
-          "address": 27405,
-          "slot": 17,
-          "offset": 3402,
-          "operation": "CALL #CEFA",
-          "function_path": "Source/Action/PublishTransformedBody.asm",
-          "region": "Action",
-          "literal": 52986,
-          "candidate_target_offset": 28410
-        },
-        {
-          "address": 27782,
-          "slot": 17,
-          "offset": 3779,
-          "operation": "CALL #CEFA",
+          "offset": 3771,
+          "operation": "LD DE,#FFAA",
           "function_path": "Source/Action/DrawBankedProjectedBody.asm",
           "region": "Action",
-          "literal": 52986,
-          "candidate_target_offset": 28410
-        }
-      ],
-      "candidate_reference_count": 2,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 29076,
-      "length": 44,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified028_BeforePolygonRows.bin",
-      "origin": null,
-      "sha256": "85759b3811ff7dc47b03792ac85317be51431a3f9e01dcafce317ed736a391b0",
-      "runtime_contexts": [
+          "literal": 65450,
+          "candidate_target_offset": 40874,
+          "use_context": "numeric_value"
+        },
         {
-          "region": "Action",
-          "file_offset": 29076,
-          "length": 44,
-          "start_address": 53652,
-          "end_exclusive": 53696,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [
-        {
-          "address": 43438,
+          "address": 59314,
           "slot": 17,
-          "offset": 18862,
-          "operation": "LD (#D1BA),A",
-          "function_path": "Source/Action/UpdateFrame.asm",
+          "offset": 34738,
+          "operation": "LD HL,#FFB0",
+          "function_path": "Source/Action/LoadLinkedRecordVectors.asm",
           "region": "Action",
-          "literal": 53690,
-          "candidate_target_offset": 29114
-        }
-      ],
-      "candidate_reference_count": 1,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 36,
-      "offset": 7125,
-      "length": 1609,
-      "kind": "unclassified",
-      "path": "Source/Resources/36_BANK3/Unclassified1BD5_221E.bin",
-      "origin": null,
-      "sha256": "e0c2736e5160fb3f1284c4c16562183b3030a344de808d27fc3f4aa2451facd5",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 34,
-      "offset": 7798,
-      "length": 1380,
-      "kind": "unclassified",
-      "path": "Source/Resources/34_BANK1/Unclassified1E76_23DA.bin",
-      "origin": null,
-      "sha256": "fc0b2fb82dfe0f3cacb3f0e4b40a5858c45694a7d844cdb27b7f3d974a21186a",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 35,
-      "offset": 7898,
-      "length": 1364,
-      "kind": "unclassified",
-      "path": "Source/Resources/35_BANK2/Unclassified1EDA_242E.bin",
-      "origin": null,
-      "sha256": "456986bfd4ef32cb4f7bedfcb8c6859fa1574f7ec98404a8d0fd61290cedc43a",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 20,
-      "offset": 8640,
-      "length": 832,
-      "kind": "unclassified",
-      "path": "Source/Resources/20_VOXAL0/AfterSmallFrames.bin",
-      "origin": null,
-      "sha256": "e0084b66cb4a03e2aba6cc7342eead6a91610ad915d66f9ae2c734f99b772ac7",
-      "runtime_contexts": [
+          "literal": 65456,
+          "candidate_target_offset": 40880,
+          "use_context": "numeric_value"
+        },
         {
-          "region": "Voxel",
-          "file_offset": 8640,
-          "length": 832,
-          "start_address": 57792,
-          "end_exclusive": 58624,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 37,
-      "offset": 8098,
-      "length": 636,
-      "kind": "unclassified",
-      "path": "Source/Resources/37_BANK4/Unclassified1FA2_221E.bin",
-      "origin": null,
-      "sha256": "1d66dd8cf9fa24eb753443eae68c05035ae9f6569bc9e6fd2a50f541c22c26c1",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 37,
-      "offset": 7095,
-      "length": 603,
-      "kind": "unclassified",
-      "path": "Source/Resources/37_BANK4/Unclassified1BB7_1E12.bin",
-      "origin": null,
-      "sha256": "b7085f96c664fa7199a859b94ff8db3562c0d432bd5d348b74780c6db00b73a6",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 38,
-      "offset": 8198,
-      "length": 536,
-      "kind": "unclassified",
-      "path": "Source/Resources/38_BANK5/Unclassified2006_221E.bin",
-      "origin": null,
-      "sha256": "7d73a488b95b99a42237504643b79aa49c55a9aad3cd97e58518f093d3e095df",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 33,
-      "offset": 7395,
-      "length": 349,
-      "kind": "unclassified",
-      "path": "Source/Resources/33_BANK0/Unclassified1CE3_1E40.bin",
-      "origin": null,
-      "sha256": "e06cb61da0a878f074c18e237b4fcbc1c8f228e3df5aa0ceb10562fe65a49e5e",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 35,
-      "offset": 7431,
-      "length": 267,
-      "kind": "unclassified",
-      "path": "Source/Resources/35_BANK2/Unclassified1D07_1E12.bin",
-      "origin": null,
-      "sha256": "06c7a6605136350bf5e295bf7822e0be0fd77c0719eb5906c80328d615e629d3",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 3844,
-      "length": 252,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/AfterDrawState.bin",
-      "origin": null,
-      "sha256": "913c6e2c32d99e4baff62cf421a494730cb043924f2c6bf46406573b59c641bd",
-      "runtime_contexts": [
+          "address": 29516,
+          "slot": 17,
+          "offset": 5513,
+          "operation": "LD BC,#FFCE",
+          "function_path": "Source/Action/RequestAimOrCollectTarget.asm",
+          "region": "Action",
+          "literal": 65486,
+          "candidate_target_offset": 40910,
+          "use_context": "numeric_value"
+        },
         {
-          "region": "D3D",
-          "file_offset": 3844,
-          "length": 252,
-          "start_address": 52996,
-          "end_exclusive": 53248,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 4140,
-      "length": 212,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/BeforeFillPatterns.bin",
-      "origin": null,
-      "sha256": "f59194106e93b4b8bfc8b4347ce1f7992e383eef8e1526fce5ee65ba3ed35096",
-      "runtime_contexts": [
+          "address": 29546,
+          "slot": 17,
+          "offset": 5543,
+          "operation": "LD BC,#FFCE",
+          "function_path": "Source/Action/RequestAimOrCollectTarget.asm",
+          "region": "Action",
+          "literal": 65486,
+          "candidate_target_offset": 40910,
+          "use_context": "numeric_value"
+        },
         {
-          "region": "D3D",
-          "file_offset": 4140,
-          "length": 212,
-          "start_address": 53292,
-          "end_exclusive": 53504,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 34,
-      "offset": 7497,
-      "length": 201,
-      "kind": "unclassified",
-      "path": "Source/Resources/34_BANK1/Unclassified1D49_1E12.bin",
-      "origin": null,
-      "sha256": "d20c4f628f11fd8763e4075e6d24cf27251a6331853dc063b470ea7a599d1170",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 22,
-      "offset": 1350,
-      "length": 186,
-      "kind": "unclassified",
-      "path": "Source/Resources/22_CONTROL0/Unclassified0546_0600.bin",
-      "origin": null,
-      "sha256": "b57cceac5243ea773def6e4a96db5bd89d900f7a41429431c2719f43d523c83f",
-      "runtime_contexts": [
+          "address": 29576,
+          "slot": 17,
+          "offset": 5573,
+          "operation": "LD BC,#FFCE",
+          "function_path": "Source/Action/RequestAimOrCollectTarget.asm",
+          "region": "Action",
+          "literal": 65486,
+          "candidate_target_offset": 40910,
+          "use_context": "numeric_value"
+        },
         {
-          "region": "Controls",
-          "file_offset": 1350,
-          "length": 186,
-          "start_address": 50502,
-          "end_exclusive": 50688,
-          "bank_context_not_added_by_this_check": true
+          "address": 26472,
+          "slot": 17,
+          "offset": 2469,
+          "operation": "LD BC,#FFD0",
+          "function_path": "Source/Action/TransitionBodyMode.asm",
+          "region": "Action",
+          "literal": 65488,
+          "candidate_target_offset": 40912,
+          "use_context": "numeric_value"
         }
       ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 38,
-      "offset": 7521,
-      "length": 177,
-      "kind": "unclassified",
-      "path": "Source/Resources/38_BANK5/Unclassified1D61_1E12.bin",
-      "origin": null,
-      "sha256": "83d8605eacc9021a83e1ade70cdf5871bafcbfb89986bc53356ee6b73c69c775",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 4368,
-      "length": 176,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/AfterFillPatterns.bin",
-      "origin": null,
-      "sha256": "86d2cf5b090f43ee54d8f7c1dcf746a853951191457ff6dac96269a9d24860b9",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 4368,
-          "length": 176,
-          "start_address": 53520,
-          "end_exclusive": 53696,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 4,
-      "offset": 14178,
-      "length": 160,
-      "kind": "unclassified",
-      "path": "Source/Resources/04_STATIONF/Unclassified3762_3802.bin",
-      "origin": null,
-      "sha256": "b393978842a0fa3d3e1470196f098f473f9678e72463cb65ec4ab5581856c2e4",
-      "runtime_contexts": [
-        {
-          "region": "Station",
-          "file_offset": 14178,
-          "length": 160,
-          "start_address": 38754,
-          "end_exclusive": 38914,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 20,
-      "offset": 10597,
-      "length": 155,
-      "kind": "unclassified",
-      "path": "Source/Resources/20_VOXAL0/Unclassified2965_2A00.bin",
-      "origin": null,
-      "sha256": "30a7553f9e01eac79a41037ec6d680c06c0bbaf4ee7ee1d7ff9ae5e71d7966f6",
-      "runtime_contexts": [
-        {
-          "region": "Voxel",
-          "file_offset": 10597,
-          "length": 155,
-          "start_address": 59749,
-          "end_exclusive": 59904,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 3,
-      "offset": 123,
-      "length": 133,
-      "path": "Source/Resources/03_AWAKEN/UnknownAfterBasicAutostart.bin",
-      "kind": "unclassified",
-      "origin": null,
-      "sha256": "c922c6ef80955ef76e47198199b58cc378361455e00014d0c39aee5ae599d7e6",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 23,
-      "offset": 315,
-      "length": 130,
-      "kind": "unclassified",
-      "path": "Source/Resources/23_CONTROL/Unclassified013B_01BD.bin",
-      "origin": null,
-      "sha256": "683240644a985bb185e19009527d5f450149ce7e9fb9cfb96494d448b9b9eebf",
-      "runtime_contexts": [
-        {
-          "region": "Controls",
-          "file_offset": 315,
-          "length": 130,
-          "start_address": 56345,
-          "end_exclusive": 56475,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 636,
-      "length": 96,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/BeforeClipProducts.bin",
-      "origin": null,
-      "sha256": "2ea9ab9198d1638007400cd2c3bef1cc745b864b76011a0e1bc52180ac6452d4",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 636,
-          "length": 96,
-          "start_address": 49788,
-          "end_exclusive": 49884,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 7,
-      "offset": 7600,
-      "length": 80,
-      "kind": "unclassified",
-      "path": "Source/Resources/07_KARTA/Unclassified1DB0_1E00.bin",
-      "origin": null,
-      "sha256": "5b6fb58e61fa475939767d68a446f97f1bff02c0e5935a3ea8bb51e6515783d8",
-      "runtime_contexts": [
-        {
-          "region": "Map",
-          "file_offset": 7600,
-          "length": 80,
-          "start_address": 56752,
-          "end_exclusive": 56832,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "candidate_reference_count": 6,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 277119,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 17,
-      "offset": 15805,
-      "length": 67,
-      "path": "Source/Resources/17_ACTION/Unclassified3DBD_3E00.bin",
-      "sha256": "1be2b3990b410ca4fb38d1f79019c4018cd8820b69618646c81d22dfcbddc802",
-      "kind": "unclassified",
-      "origin": null,
-      "runtime_contexts": [
-        {
-          "region": "Action",
-          "file_offset": 15805,
-          "length": 67,
-          "start_address": 40381,
-          "end_exclusive": 40448,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 7,
-      "offset": 10430,
-      "length": 66,
-      "kind": "unclassified",
-      "path": "Source/Resources/07_KARTA/Unclassified010.bin",
-      "origin": null,
-      "sha256": "efbb03b7a7f6fd3c29391d4d0281e1830a85caadd831c3f04716faca4107a42e",
-      "runtime_contexts": [
-        {
-          "region": "Map",
-          "file_offset": 10430,
-          "length": 66,
-          "start_address": 59582,
-          "end_exclusive": 59648,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 3586,
-      "length": 62,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/Unclassified0E02_0E40.bin",
-      "origin": null,
-      "sha256": "1ebb2bdc5ce08e6e90b3ede72a8ef315e3e1bced3a3c458f69b6d7eeff9e4f3a",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 3586,
-          "length": 62,
-          "start_address": 52738,
-          "end_exclusive": 52800,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 11976,
+      "offset": 39464,
       "length": 56,
-      "path": "Source/Resources/17_ACTION/Unclassified2EC8_2F00.bin",
+      "path": "Source/Resources/17_ACTION/Unclassified9A28_9A60.bin",
       "sha256": "d4817aa5497628e7c77e6b606107042bbba3130888c5f47a375e6179be789fbb",
       "kind": "unclassified",
       "origin": null,
       "runtime_contexts": [
         {
           "region": "Action",
-          "file_offset": 11976,
+          "file_offset": 39464,
           "length": 56,
-          "start_address": 36552,
-          "end_exclusive": 36608,
+          "start_address": 64040,
+          "end_exclusive": 64096,
           "bank_context_not_added_by_this_check": true
         }
       ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 3530,
-      "length": 54,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/Unclassified0DCA_0E00.bin",
-      "origin": null,
-      "sha256": "ea659cdc838619b3767c057fdf8e6d99fde2680c5d8517eb06761c0878d40c40",
-      "runtime_contexts": [
+      "candidate_literal_references": [
         {
-          "region": "D3D",
-          "file_offset": 3530,
-          "length": 54,
-          "start_address": 52682,
-          "end_exclusive": 52736,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 3,
-      "offset": 11371,
-      "length": 44,
-      "kind": "unclassified",
-      "path": "Source/Resources/03_AWAKEN/Unclassified2C6B_2C97.bin",
-      "origin": null,
-      "sha256": "25300e5153d0694fd17f0e9e47a675939e9b0cbcb7e3f3f5e7522fa6d99bb4db",
-      "runtime_contexts": [
-        {
-          "region": "IntroUnpack",
-          "file_offset": 11371,
-          "length": 44,
-          "start_address": 29803,
-          "end_exclusive": 29847,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 19,
-      "offset": 4500,
-      "length": 44,
-      "kind": "unclassified",
-      "path": "Source/Resources/19_3DPART/Physical1194.bin",
-      "origin": null,
-      "sha256": "85759b3811ff7dc47b03792ac85317be51431a3f9e01dcafce317ed736a391b0",
-      "runtime_contexts": [
-        {
-          "region": "ThreeD",
-          "file_offset": 4500,
-          "length": 44,
-          "start_address": 53652,
-          "end_exclusive": 53696,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 4,
-      "offset": 14907,
-      "length": 29,
-      "kind": "unclassified",
-      "path": "Source/Resources/04_STATIONF/Unclassified3A3B_3A58.bin",
-      "origin": null,
-      "sha256": "c4528a184ca35981db96b47983447aad7d5f741e200ed2fd2d9178bf76a89ba5",
-      "runtime_contexts": [
-        {
-          "region": "Station",
-          "file_offset": 14907,
-          "length": 29,
-          "start_address": 39483,
-          "end_exclusive": 39512,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 19,
-      "offset": 3811,
-      "length": 29,
-      "kind": "unclassified",
-      "path": "Source/Resources/19_3DPART/Unclassified0EE3_0F00.bin",
-      "origin": null,
-      "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6",
-      "runtime_contexts": [
-        {
-          "region": "ThreeD",
-          "file_offset": 3811,
-          "length": 29,
-          "start_address": 52963,
-          "end_exclusive": 52992,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 29,
-      "offset": 378,
-      "length": 28,
-      "kind": "unclassified",
-      "path": "Source/Resources/29_FINALF/Unclassified000.bin",
-      "origin": null,
-      "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8",
-      "runtime_contexts": [
-        {
-          "region": "Final",
-          "file_offset": 378,
-          "length": 28,
-          "start_address": 24954,
-          "end_exclusive": 24982,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 3,
-      "offset": 11500,
-      "length": 20,
-      "kind": "unclassified",
-      "path": "Source/Resources/03_AWAKEN/Unclassified2CEC_2D00.bin",
-      "origin": null,
-      "sha256": "5400a7ed81e0d8278dc41da5cb9c4a0b0000b03d96df7384d51e71f028f1eb2e",
-      "runtime_contexts": [
-        {
-          "region": "IntroUnpack",
-          "file_offset": 11500,
-          "length": 20,
-          "start_address": 29932,
-          "end_exclusive": 29952,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 22,
-      "offset": 6556,
-      "length": 20,
-      "kind": "unclassified",
-      "path": "Source/Resources/22_CONTROL0/Unclassified011_AfterMasks.bin",
-      "origin": null,
-      "sha256": "de47c9b27eb8d300dbb5f2c353e632c393262cf06340c4fa7f1b40c4cbd36f90",
-      "runtime_contexts": [
-        {
-          "region": "Controls",
-          "file_offset": 6556,
-          "length": 20,
-          "start_address": 55708,
-          "end_exclusive": 55728,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 7557,
-      "length": 16,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/UnknownAfterSpawnModelChoices.bin",
-      "origin": null,
-      "sha256": "cfb41024dee9b7ad380afb5eae4b9ae9c77c4ea09285523a7170881608644bfc",
-      "runtime_contexts": [
-        {
+          "address": 28190,
+          "slot": 17,
+          "offset": 4187,
+          "operation": "CALL #FA3A",
+          "function_path": "Source/Action/ResumeVisualEffect.asm",
           "region": "Action",
-          "file_offset": 7557,
-          "length": 16,
-          "start_address": 31560,
-          "end_exclusive": 31576,
-          "bank_context_not_added_by_this_check": true
+          "literal": 64058,
+          "candidate_target_offset": 39482,
+          "use_context": "voxel_bank3"
         }
       ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 5,
-      "offset": 2689,
-      "length": 14,
-      "kind": "unclassified",
-      "path": "Source/Resources/05_LANG/BeforeMarketScript.bin",
-      "origin": null,
-      "sha256": "e7ecebbc590bc88b3761fa6cd03d749f87463dabb67021a5c6768c25ec68b3f2",
-      "runtime_contexts": [
-        {
-          "region": "Text",
-          "file_offset": 2689,
-          "length": 14,
-          "start_address": 51841,
-          "end_exclusive": 51855,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 545,
-      "length": 10,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/BeforeContourSizeAfterAngles.bin",
-      "origin": null,
-      "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 545,
-          "length": 10,
-          "start_address": 49697,
-          "end_exclusive": 49707,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 561,
-      "length": 10,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/AfterClipFirst.bin",
-      "origin": null,
-      "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 561,
-          "length": 10,
-          "start_address": 49713,
-          "end_exclusive": 49723,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 577,
-      "length": 10,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/AfterClipSecond.bin",
-      "origin": null,
-      "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 577,
-          "length": 10,
-          "start_address": 49729,
-          "end_exclusive": 49739,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 593,
-      "length": 10,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/BeforeLineCoordinates.bin",
-      "origin": null,
-      "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 593,
-          "length": 10,
-          "start_address": 49745,
-          "end_exclusive": 49755,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 609,
-      "length": 10,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/BetweenLineWords.bin",
-      "origin": null,
-      "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 609,
-          "length": 10,
-          "start_address": 49761,
-          "end_exclusive": 49771,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 625,
-      "length": 10,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/BeforeFaceGateState.bin",
-      "origin": null,
-      "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 625,
-          "length": 10,
-          "start_address": 49777,
-          "end_exclusive": 49787,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 736,
-      "length": 10,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/BetweenClipTopBottom.bin",
-      "origin": null,
-      "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 736,
-          "length": 10,
-          "start_address": 49888,
-          "end_exclusive": 49898,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 752,
-      "length": 10,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/BetweenClipLeftWords.bin",
-      "origin": null,
-      "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 752,
-          "length": 10,
-          "start_address": 49904,
-          "end_exclusive": 49914,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "candidate_reference_count": 1,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 275752,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 17,
-      "offset": 15283,
-      "length": 10,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified3BB3_3BBD.bin",
-      "origin": null,
-      "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
-      "runtime_contexts": [
-        {
-          "region": "Action",
-          "file_offset": 15283,
-          "length": 10,
-          "start_address": 39859,
-          "end_exclusive": 39869,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 515,
-      "length": 9,
-      "kind": "unclassified",
-      "path": "Source/Resources/06_D3D/BetweenSceneSeedMatrix.bin",
-      "origin": null,
-      "sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 515,
-          "length": 9,
-          "start_address": 49667,
-          "end_exclusive": 49676,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 15256,
-      "length": 9,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified3B98_3BA1.bin",
-      "origin": null,
-      "sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
-      "runtime_contexts": [
-        {
-          "region": "Action",
-          "file_offset": 15256,
-          "length": 9,
-          "start_address": 39832,
-          "end_exclusive": 39841,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 7,
-      "offset": 5144,
-      "length": 8,
-      "kind": "unclassified",
-      "path": "Source/Resources/07_KARTA/BeforeMapLineMasks.bin",
-      "origin": null,
-      "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
-      "runtime_contexts": [
-        {
-          "region": "Map",
-          "file_offset": 5144,
-          "length": 8,
-          "start_address": 54296,
-          "end_exclusive": 54304,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 32777,
-      "length": 7,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified028_BeforeLineMasks.bin",
-      "origin": null,
-      "sha256": "837885c8f8091aeaeb9ec3c3f85a6ff470a415e610b8ba3e49f9b33c9cf9d619",
-      "runtime_contexts": [
-        {
-          "region": "Action",
-          "file_offset": 32777,
-          "length": 7,
-          "start_address": 57353,
-          "end_exclusive": 57360,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 19,
-      "offset": 8201,
-      "length": 7,
-      "kind": "unclassified",
-      "path": "Source/Resources/19_3DPART/Physical2009.bin",
-      "origin": null,
-      "sha256": "837885c8f8091aeaeb9ec3c3f85a6ff470a415e610b8ba3e49f9b33c9cf9d619",
-      "runtime_contexts": [
-        {
-          "region": "ThreeD",
-          "file_offset": 8201,
-          "length": 7,
-          "start_address": 57353,
-          "end_exclusive": 57360,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 4,
-      "offset": 14528,
-      "length": 6,
-      "kind": "unclassified",
-      "path": "Source/Resources/04_STATIONF/Unclassified38C0_38C6.bin",
-      "origin": null,
-      "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1",
-      "runtime_contexts": [
-        {
-          "region": "Station",
-          "file_offset": 14528,
-          "length": 6,
-          "start_address": 39104,
-          "end_exclusive": 39110,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 11,
-      "offset": 133,
-      "length": 6,
-      "kind": "unclassified",
-      "path": "Source/Resources/11_SAVE1/Unclassified0085_008B.bin",
-      "origin": null,
-      "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 12,
-      "offset": 133,
-      "length": 6,
-      "kind": "unclassified",
-      "path": "Source/Resources/12_SAVE2/Unclassified0085_008B.bin",
-      "origin": null,
-      "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 13,
-      "offset": 133,
-      "length": 6,
-      "kind": "unclassified",
-      "path": "Source/Resources/13_SAVE3/Unclassified0085_008B.bin",
-      "origin": null,
-      "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 14,
-      "offset": 133,
-      "length": 6,
-      "kind": "unclassified",
-      "path": "Source/Resources/14_SAVE4/Unclassified0085_008B.bin",
-      "origin": null,
-      "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 15,
-      "offset": 133,
-      "length": 6,
-      "kind": "unclassified",
-      "path": "Source/Resources/15_SAVE5/Unclassified0085_008B.bin",
-      "origin": null,
-      "sha256": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 16,
-      "offset": 133,
-      "length": 6,
-      "kind": "unclassified",
-      "path": "Source/Resources/16_SAVE0/Unclassified0085_008B.bin",
-      "origin": null,
-      "sha256": "186128bf8a4d60eb4b51102ae2a2cb6a0b80011977582480395a454454bec7e1",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 6,
-      "offset": 2044,
-      "length": 4,
-      "path": "Source/Resources/06_D3D/Unclassified07FC_0800.bin",
-      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-      "kind": "unclassified",
-      "origin": null,
-      "runtime_contexts": [
-        {
-          "region": "D3D",
-          "file_offset": 2044,
-          "length": 4,
-          "start_address": 51196,
-          "end_exclusive": 51200,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 12284,
-      "length": 4,
-      "path": "Source/Resources/17_ACTION/Unclassified2FFC_3000.bin",
-      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "offset": 40667,
+      "length": 38,
+      "path": "Source/Resources/17_ACTION/Unclassified9EDB_9F01.bin",
+      "sha256": "762b023699a0e48aa95763f0cf7c0467f1d6e9880308c78ebbc1c423de7072d3",
       "kind": "unclassified",
       "origin": null,
       "runtime_contexts": [
         {
           "region": "Action",
-          "file_offset": 12284,
-          "length": 4,
-          "start_address": 36860,
-          "end_exclusive": 36864,
+          "file_offset": 40667,
+          "length": 38,
+          "start_address": 65243,
+          "end_exclusive": 65281,
           "bank_context_not_added_by_this_check": true
         }
       ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 22,
-      "offset": 6491,
-      "length": 4,
-      "kind": "unclassified",
-      "path": "Source/Resources/22_CONTROL0/Unclassified010.bin",
-      "origin": null,
-      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-      "runtime_contexts": [
+      "candidate_literal_references": [
         {
-          "region": "Controls",
-          "file_offset": 6491,
-          "length": 4,
-          "start_address": 55643,
-          "end_exclusive": 55647,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 24,
-      "offset": 6326,
-      "length": 4,
-      "kind": "unclassified",
-      "path": "Source/Resources/24_OBJECT3D/Gap18B6.bin",
-      "origin": null,
-      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
-      "runtime_contexts": [],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 4,
-      "offset": 13559,
-      "length": 3,
-      "kind": "unclassified",
-      "path": "Source/Resources/04_STATIONF/Unclassified34F7_34FA.bin",
-      "origin": null,
-      "sha256": "fb50dc0717ff266cf9baf82b1ce7a1c2ef6d9247859680b11a19fb7077f5f222",
-      "runtime_contexts": [
-        {
-          "region": "Station",
-          "file_offset": 13559,
-          "length": 3,
-          "start_address": 38135,
-          "end_exclusive": 38138,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 18321,
-      "length": 3,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified4791_4794.bin",
-      "origin": null,
-      "sha256": "2c8d07cd986f58eb210bd800133d6645c7340c59865377c8ea431cebca0b3113",
-      "runtime_contexts": [
-        {
+          "address": 54560,
+          "slot": 17,
+          "offset": 29984,
+          "operation": "LD DE,#FF00",
+          "function_path": "Source/Action/PreparePolygonFill.asm",
           "region": "Action",
-          "file_offset": 18321,
-          "length": 3,
-          "start_address": 42897,
-          "end_exclusive": 42900,
-          "bank_context_not_added_by_this_check": true
+          "literal": 65280,
+          "candidate_target_offset": 40704,
+          "use_context": "numeric_value"
         }
       ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 22,
-      "offset": 5377,
-      "length": 3,
-      "kind": "unclassified",
-      "path": "Source/Resources/22_CONTROL0/Unclassified006.bin",
-      "origin": null,
-      "sha256": "c4e2b157cb5fc3b570351d406a84594ac40d34e95d01bd3267471e58369b85d7",
-      "runtime_contexts": [
-        {
-          "region": "Controls",
-          "file_offset": 5377,
-          "length": 3,
-          "start_address": 54529,
-          "end_exclusive": 54532,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "candidate_reference_count": 1,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276955,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 4,
@@ -1898,31 +482,1079 @@
           "bank_context_not_added_by_this_check": true
         }
       ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "candidate_literal_references": [
+        {
+          "address": 50191,
+          "slot": 7,
+          "offset": 1039,
+          "operation": "LD IX,#9905",
+          "function_path": "Source/Map/ReadStoredMapVariant.asm",
+          "region": "Map",
+          "literal": 39173,
+          "candidate_target_offset": 14597,
+          "use_context": "stored_map_points_before_first"
+        }
+      ],
+      "candidate_reference_count": 1,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 100100,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": false,
+      "nonzero_byte_count": 2,
+      "nonzero_file_bytes": [
+        {
+          "file_offset": 14596,
+          "value": 80
+        },
+        {
+          "file_offset": 14597,
+          "value": 255
+        }
+      ]
     },
     {
-      "slot": 4,
-      "offset": 19074,
-      "length": 2,
+      "slot": 36,
+      "offset": 7125,
+      "length": 1609,
       "kind": "unclassified",
-      "path": "Source/Resources/04_STATIONF/EventGap4A82.bin",
+      "path": "Source/Resources/36_BANK3/Unclassified1BD5_221E.bin",
       "origin": null,
-      "sha256": "2b83fca8dcc615080d0630d4b7eb699c924b6911b1ade02d557f0dabcf70e9ed",
+      "sha256": "e0c2736e5160fb3f1284c4c16562183b3030a344de808d27fc3f4aa2451facd5",
+      "runtime_contexts": [],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 446933,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 34,
+      "offset": 7798,
+      "length": 1380,
+      "kind": "unclassified",
+      "path": "Source/Resources/34_BANK1/Unclassified1E76_23DA.bin",
+      "origin": null,
+      "sha256": "fc0b2fb82dfe0f3cacb3f0e4b40a5858c45694a7d844cdb27b7f3d974a21186a",
+      "runtime_contexts": [],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 414838,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 35,
+      "offset": 7898,
+      "length": 1364,
+      "kind": "unclassified",
+      "path": "Source/Resources/35_BANK2/Unclassified1EDA_242E.bin",
+      "origin": null,
+      "sha256": "456986bfd4ef32cb4f7bedfcb8c6859fa1574f7ec98404a8d0fd61290cedc43a",
+      "runtime_contexts": [],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 431322,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 39521,
+      "length": 672,
+      "path": "Source/Resources/17_ACTION/Unclassified9A61_9D01.bin",
+      "sha256": "f792b7f860bb94e55760c0daa727d58d13ba96276a2b52f29a645c8e08e73ec1",
+      "kind": "unclassified",
+      "origin": null,
       "runtime_contexts": [
         {
-          "region": "Station",
-          "file_offset": 19074,
-          "length": 2,
-          "start_address": 43650,
-          "end_exclusive": 43652,
+          "region": "Action",
+          "file_offset": 39521,
+          "length": 672,
+          "start_address": 64097,
+          "end_exclusive": 64769,
           "bank_context_not_added_by_this_check": true
         }
       ],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 275809,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 37,
+      "offset": 8098,
+      "length": 636,
+      "kind": "unclassified",
+      "path": "Source/Resources/37_BANK4/Unclassified1FA2_221E.bin",
+      "origin": null,
+      "sha256": "1d66dd8cf9fa24eb753443eae68c05035ae9f6569bc9e6fd2a50f541c22c26c1",
+      "runtime_contexts": [],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 464290,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 38,
+      "offset": 8198,
+      "length": 536,
+      "kind": "unclassified",
+      "path": "Source/Resources/38_BANK5/Unclassified2006_221E.bin",
+      "origin": null,
+      "sha256": "7d73a488b95b99a42237504643b79aa49c55a9aad3cd97e58518f093d3e095df",
+      "runtime_contexts": [],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 480774,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 39014,
+      "length": 443,
+      "path": "Source/Resources/17_ACTION/Unclassified9866_9A21.bin",
+      "sha256": "2ba380ec3ae7aff244ac225a0328c408f1e7e7ccb4b27a474a48f95740d9e178",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 39014,
+          "length": 443,
+          "start_address": 63590,
+          "end_exclusive": 64033,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 275302,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 33,
+      "offset": 7671,
+      "length": 73,
+      "kind": "unclassified",
+      "path": "Source/Resources/33_BANK0/Unclassified1DF7_1E40.bin",
+      "origin": null,
+      "sha256": "9c56f48ae9bafd205262034bfcc2232b2c63348cb723d681ec39f13409f990cc",
+      "runtime_contexts": [],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 398327,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40415,
+      "length": 69,
+      "path": "Source/Resources/17_ACTION/Unclassified9DDF_9E24.bin",
+      "sha256": "cd05c2283f62b7c74911008df6a66101d51ed5cb23e6b4b5c84af4bc60db0f3a",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40415,
+          "length": 69,
+          "start_address": 64991,
+          "end_exclusive": 65060,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276703,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40774,
+      "length": 56,
+      "path": "Source/Resources/17_ACTION/Unclassified9F46_9F7E.bin",
+      "sha256": "d4817aa5497628e7c77e6b606107042bbba3130888c5f47a375e6179be789fbb",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40774,
+          "length": 56,
+          "start_address": 65350,
+          "end_exclusive": 65406,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 277062,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40491,
+      "length": 52,
+      "path": "Source/Resources/17_ACTION/Unclassified9E2B_9E5F.bin",
+      "sha256": "7955cb2de90dd9efc6df9fdbf5f5d10c114f4135a9a6b52db1003be749e32f7a",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40491,
+          "length": 52,
+          "start_address": 65067,
+          "end_exclusive": 65119,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276779,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40724,
+      "length": 43,
+      "path": "Source/Resources/17_ACTION/Unclassified9F14_9F3F.bin",
+      "sha256": "859732b97382a08583d6a67f5842486505e50bee754bd9b57ac3abf81b9714f2",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40724,
+          "length": 43,
+          "start_address": 65300,
+          "end_exclusive": 65343,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 277012,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 3,
+      "offset": 11371,
+      "length": 41,
+      "kind": "unclassified",
+      "path": "Source/Resources/03_AWAKEN/Unclassified2C6B_2C94.bin",
+      "origin": null,
+      "sha256": "6cff65cc85504b608fb276f905e35a3e9cd7d181dcb28ed44a28a17a4c7b8754",
+      "runtime_contexts": [
+        {
+          "region": "IntroUnpack",
+          "file_offset": 11371,
+          "length": 41,
+          "start_address": 29803,
+          "end_exclusive": 29844,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 85355,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": false,
+      "nonzero_byte_count": 11,
+      "nonzero_file_bytes": [
+        {
+          "file_offset": 11371,
+          "value": 128
+        },
+        {
+          "file_offset": 11400,
+          "value": 239
+        },
+        {
+          "file_offset": 11401,
+          "value": 187
+        },
+        {
+          "file_offset": 11402,
+          "value": 187
+        },
+        {
+          "file_offset": 11403,
+          "value": 176
+        },
+        {
+          "file_offset": 11406,
+          "value": 255
+        },
+        {
+          "file_offset": 11407,
+          "value": 193
+        },
+        {
+          "file_offset": 11408,
+          "value": 255
+        },
+        {
+          "file_offset": 11409,
+          "value": 135
+        },
+        {
+          "file_offset": 11410,
+          "value": 254
+        },
+        {
+          "file_offset": 11411,
+          "value": 255
+        }
+      ]
+    },
+    {
+      "slot": 17,
+      "offset": 40213,
+      "length": 40,
+      "path": "Source/Resources/17_ACTION/Unclassified9D15_9D3D.bin",
+      "sha256": "2c34ce1df23b838c5abf2a7f6437cca3d3067ed509ff25f11df6b11b582b51eb",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40213,
+          "length": 40,
+          "start_address": 64789,
+          "end_exclusive": 64829,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276501,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40380,
+      "length": 34,
+      "path": "Source/Resources/17_ACTION/Unclassified9DBC_9DDE.bin",
+      "sha256": "eb142b0cae0baa72a767ebc0823d1be94e14c5bfc52d8e417fc4302fceb6240c",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40380,
+          "length": 34,
+          "start_address": 64956,
+          "end_exclusive": 64990,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276668,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40607,
+      "length": 31,
+      "path": "Source/Resources/17_ACTION/Unclassified9E9F_9EBE.bin",
+      "sha256": "fd08be957bda07dc529ad8100df732f9ce12ae3e42bcda6acabe12c02dfd6989",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40607,
+          "length": 31,
+          "start_address": 65183,
+          "end_exclusive": 65214,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276895,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40323,
+      "length": 25,
+      "path": "Source/Resources/17_ACTION/Unclassified9D83_9D9C.bin",
+      "sha256": "61126de1b795b976f3ac878f48e88fa77a87d7308ba57c7642b9e1068403a496",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40323,
+          "length": 25,
+          "start_address": 64899,
+          "end_exclusive": 64924,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276611,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40550,
+      "length": 25,
+      "path": "Source/Resources/17_ACTION/Unclassified9E66_9E7F.bin",
+      "sha256": "61126de1b795b976f3ac878f48e88fa77a87d7308ba57c7642b9e1068403a496",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40550,
+          "length": 25,
+          "start_address": 65126,
+          "end_exclusive": 65151,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276838,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40292,
+      "length": 24,
+      "path": "Source/Resources/17_ACTION/Unclassified9D64_9D7C.bin",
+      "sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40292,
+          "length": 24,
+          "start_address": 64868,
+          "end_exclusive": 64892,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276580,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40582,
+      "length": 24,
+      "path": "Source/Resources/17_ACTION/Unclassified9E86_9E9E.bin",
+      "sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40582,
+          "length": 24,
+          "start_address": 65158,
+          "end_exclusive": 65182,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276870,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 29,
+      "offset": 378,
+      "length": 24,
+      "kind": "unclassified",
+      "path": "Source/Resources/29_FINALF/Unclassified017A_0192.bin",
+      "origin": null,
+      "sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0",
+      "runtime_contexts": [
+        {
+          "region": "Final",
+          "file_offset": 378,
+          "length": 24,
+          "start_address": 24954,
+          "end_exclusive": 24978,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 339322,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40639,
+      "length": 21,
+      "path": "Source/Resources/17_ACTION/Unclassified9EBF_9ED4.bin",
+      "sha256": "c90232586b801f9558a76f2f963eccd831d9fe6775e4c8f1446b2331aa2132f2",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40639,
+          "length": 21,
+          "start_address": 65215,
+          "end_exclusive": 65236,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276927,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40270,
+      "length": 15,
+      "path": "Source/Resources/17_ACTION/Unclassified9D4E_9D5D.bin",
+      "sha256": "5322fecfc92a5e3248a297a3df3eddfb9bd9049504272e4f572b87fa36d4b3bd",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40270,
+          "length": 15,
+          "start_address": 64846,
+          "end_exclusive": 64861,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276558,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40364,
+      "length": 15,
+      "path": "Source/Resources/17_ACTION/Unclassified9DAC_9DBB.bin",
+      "sha256": "5322fecfc92a5e3248a297a3df3eddfb9bd9049504272e4f572b87fa36d4b3bd",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40364,
+          "length": 15,
+          "start_address": 64940,
+          "end_exclusive": 64955,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276652,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40712,
+      "length": 11,
+      "path": "Source/Resources/17_ACTION/Unclassified9F08_9F13.bin",
+      "sha256": "71b6c1d53832f789a7f2435a7c629245fa3761ad8487775ebf4957330213a706",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40712,
+          "length": 11,
+          "start_address": 65288,
+          "end_exclusive": 65299,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 277000,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40260,
+      "length": 9,
+      "path": "Source/Resources/17_ACTION/Unclassified9D44_9D4D.bin",
+      "sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40260,
+          "length": 9,
+          "start_address": 64836,
+          "end_exclusive": 64845,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276548,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 39458,
+      "length": 5,
+      "path": "Source/Resources/17_ACTION/Unclassified9A22_9A27.bin",
+      "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 39458,
+          "length": 5,
+          "start_address": 64034,
+          "end_exclusive": 64039,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 275746,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40207,
+      "length": 5,
+      "path": "Source/Resources/17_ACTION/Unclassified9D0F_9D14.bin",
+      "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40207,
+          "length": 5,
+          "start_address": 64783,
+          "end_exclusive": 64788,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276495,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40286,
+      "length": 5,
+      "path": "Source/Resources/17_ACTION/Unclassified9D5E_9D63.bin",
+      "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40286,
+          "length": 5,
+          "start_address": 64862,
+          "end_exclusive": 64867,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276574,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40317,
+      "length": 5,
+      "path": "Source/Resources/17_ACTION/Unclassified9D7D_9D82.bin",
+      "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40317,
+          "length": 5,
+          "start_address": 64893,
+          "end_exclusive": 64898,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276605,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40352,
+      "length": 5,
+      "path": "Source/Resources/17_ACTION/Unclassified9DA0_9DA5.bin",
+      "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40352,
+          "length": 5,
+          "start_address": 64928,
+          "end_exclusive": 64933,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276640,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40358,
+      "length": 5,
+      "path": "Source/Resources/17_ACTION/Unclassified9DA6_9DAB.bin",
+      "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40358,
+          "length": 5,
+          "start_address": 64934,
+          "end_exclusive": 64939,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276646,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40485,
+      "length": 5,
+      "path": "Source/Resources/17_ACTION/Unclassified9E25_9E2A.bin",
+      "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40485,
+          "length": 5,
+          "start_address": 65061,
+          "end_exclusive": 65066,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276773,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40576,
+      "length": 5,
+      "path": "Source/Resources/17_ACTION/Unclassified9E80_9E85.bin",
+      "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40576,
+          "length": 5,
+          "start_address": 65152,
+          "end_exclusive": 65157,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276864,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40661,
+      "length": 5,
+      "path": "Source/Resources/17_ACTION/Unclassified9ED5_9EDA.bin",
+      "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40661,
+          "length": 5,
+          "start_address": 65237,
+          "end_exclusive": 65242,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276949,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40706,
+      "length": 5,
+      "path": "Source/Resources/17_ACTION/Unclassified9F02_9F07.bin",
+      "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40706,
+          "length": 5,
+          "start_address": 65282,
+          "end_exclusive": 65287,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276994,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40769,
+      "length": 4,
+      "path": "Source/Resources/17_ACTION/Unclassified9F41_9F45.bin",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40769,
+          "length": 4,
+          "start_address": 65345,
+          "end_exclusive": 65349,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 277057,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40203,
+      "length": 3,
+      "path": "Source/Resources/17_ACTION/Unclassified9D0B_9D0E.bin",
+      "sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40203,
+          "length": 3,
+          "start_address": 64779,
+          "end_exclusive": 64782,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276491,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40544,
+      "length": 3,
+      "path": "Source/Resources/17_ACTION/Unclassified9E60_9E63.bin",
+      "sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40544,
+          "length": 3,
+          "start_address": 65120,
+          "end_exclusive": 65123,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276832,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 11,
@@ -1935,7 +1567,21 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 233417,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": false,
+      "nonzero_byte_count": 2,
+      "nonzero_file_bytes": [
+        {
+          "file_offset": 201,
+          "value": 80
+        },
+        {
+          "file_offset": 202,
+          "value": 255
+        }
+      ]
     },
     {
       "slot": 12,
@@ -1948,7 +1594,21 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 233929,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": false,
+      "nonzero_byte_count": 2,
+      "nonzero_file_bytes": [
+        {
+          "file_offset": 201,
+          "value": 80
+        },
+        {
+          "file_offset": 202,
+          "value": 255
+        }
+      ]
     },
     {
       "slot": 13,
@@ -1961,7 +1621,21 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 234441,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": false,
+      "nonzero_byte_count": 2,
+      "nonzero_file_bytes": [
+        {
+          "file_offset": 201,
+          "value": 80
+        },
+        {
+          "file_offset": 202,
+          "value": 255
+        }
+      ]
     },
     {
       "slot": 14,
@@ -1974,7 +1648,21 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 234953,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": false,
+      "nonzero_byte_count": 2,
+      "nonzero_file_bytes": [
+        {
+          "file_offset": 201,
+          "value": 80
+        },
+        {
+          "file_offset": 202,
+          "value": 255
+        }
+      ]
     },
     {
       "slot": 15,
@@ -1987,7 +1675,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 235465,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 16,
@@ -2000,95 +1693,183 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 235977,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": false,
+      "nonzero_byte_count": 2,
+      "nonzero_file_bytes": [
+        {
+          "file_offset": 201,
+          "value": 80
+        },
+        {
+          "file_offset": 202,
+          "value": 255
+        }
+      ]
     },
     {
       "slot": 17,
-      "offset": 15307,
+      "offset": 40194,
       "length": 2,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified3BCB_3BCD.bin",
-      "origin": null,
+      "path": "Source/Resources/17_ACTION/Unclassified9D02_9D04.bin",
       "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+      "kind": "unclassified",
+      "origin": null,
       "runtime_contexts": [
         {
           "region": "Action",
-          "file_offset": 15307,
+          "file_offset": 40194,
           "length": 2,
-          "start_address": 39883,
-          "end_exclusive": 39885,
+          "start_address": 64770,
+          "end_exclusive": 64772,
           "bank_context_not_added_by_this_check": true
         }
       ],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276482,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 17,
-      "offset": 15312,
+      "offset": 40197,
       "length": 2,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified3BD0_3BD2.bin",
-      "origin": null,
-      "sha256": "ab74ddaca1f4bbf9630190a2414b9a2f85409367cec70562e7b7a5cdb8c07387",
-      "runtime_contexts": [
-        {
-          "region": "Action",
-          "file_offset": 15312,
-          "length": 2,
-          "start_address": 39888,
-          "end_exclusive": 39890,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 18317,
-      "length": 2,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified478D_478F.bin",
-      "origin": null,
+      "path": "Source/Resources/17_ACTION/Unclassified9D05_9D07.bin",
       "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+      "kind": "unclassified",
+      "origin": null,
       "runtime_contexts": [
         {
           "region": "Action",
-          "file_offset": 18317,
+          "file_offset": 40197,
           "length": 2,
-          "start_address": 42893,
-          "end_exclusive": 42895,
+          "start_address": 64773,
+          "end_exclusive": 64775,
           "bank_context_not_added_by_this_check": true
         }
       ],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276485,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
-      "slot": 22,
-      "offset": 3765,
+      "slot": 17,
+      "offset": 40200,
       "length": 2,
+      "path": "Source/Resources/17_ACTION/Unclassified9D08_9D0A.bin",
+      "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
       "kind": "unclassified",
-      "path": "Source/Resources/22_CONTROL0/Unclassified002_Prefix.bin",
       "origin": null,
-      "sha256": "65da4e192c92112906479883f0b4740c6434367e3d4a1da77a21dece77ab34f1",
       "runtime_contexts": [
         {
-          "region": "Controls",
-          "file_offset": 3765,
+          "region": "Action",
+          "file_offset": 40200,
           "length": 2,
-          "start_address": 52917,
-          "end_exclusive": 52919,
+          "start_address": 64776,
+          "end_exclusive": 64778,
           "bank_context_not_added_by_this_check": true
         }
       ],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276488,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40254,
+      "length": 2,
+      "path": "Source/Resources/17_ACTION/Unclassified9D3E_9D40.bin",
+      "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40254,
+          "length": 2,
+          "start_address": 64830,
+          "end_exclusive": 64832,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276542,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40257,
+      "length": 2,
+      "path": "Source/Resources/17_ACTION/Unclassified9D41_9D43.bin",
+      "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40257,
+          "length": 2,
+          "start_address": 64833,
+          "end_exclusive": 64835,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276545,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
+    },
+    {
+      "slot": 17,
+      "offset": 40349,
+      "length": 2,
+      "path": "Source/Resources/17_ACTION/Unclassified9D9D_9D9F.bin",
+      "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+      "kind": "unclassified",
+      "origin": null,
+      "runtime_contexts": [
+        {
+          "region": "Action",
+          "file_offset": 40349,
+          "length": 2,
+          "start_address": 64925,
+          "end_exclusive": 64927,
+          "bank_context_not_added_by_this_check": true
+        }
+      ],
+      "candidate_literal_references": [],
+      "candidate_reference_count": 0,
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276637,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 29,
@@ -2110,7 +1891,12 @@
       ],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 339579,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 29,
@@ -2132,95 +1918,12 @@
       ],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 3,
-      "offset": 691,
-      "length": 1,
-      "kind": "unclassified",
-      "path": "Source/Resources/03_AWAKEN/Unclassified02B3_02B4.bin",
-      "origin": null,
-      "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
-      "runtime_contexts": [
-        {
-          "region": "Intro",
-          "file_offset": 691,
-          "length": 1,
-          "start_address": 26035,
-          "end_exclusive": 26036,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 3,
-      "offset": 694,
-      "length": 1,
-      "kind": "unclassified",
-      "path": "Source/Resources/03_AWAKEN/Unclassified02B6_02B7.bin",
-      "origin": null,
-      "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
-      "runtime_contexts": [
-        {
-          "region": "Intro",
-          "file_offset": 694,
-          "length": 1,
-          "start_address": 26038,
-          "end_exclusive": 26039,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 3,
-      "offset": 930,
-      "length": 1,
-      "kind": "unclassified",
-      "path": "Source/Resources/03_AWAKEN/UnknownAfterLookupParameters.bin",
-      "origin": null,
-      "sha256": "ba5ec51d07a4ac0e951608704431d59a02b21a4e951acc10505a8dc407c501ee",
-      "runtime_contexts": [
-        {
-          "region": "Intro",
-          "file_offset": 930,
-          "length": 1,
-          "start_address": 26274,
-          "end_exclusive": 26275,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 4,
-      "offset": 13652,
-      "length": 1,
-      "kind": "unclassified",
-      "path": "Source/Resources/04_STATIONF/BeforeMarketRows.bin",
-      "origin": null,
-      "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
-      "runtime_contexts": [
-        {
-          "region": "Station",
-          "file_offset": 13652,
-          "length": 1,
-          "start_address": 38228,
-          "end_exclusive": 38229,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 339604,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 4,
@@ -2242,7 +1945,12 @@
       ],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 100103,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 4,
@@ -2264,7 +1972,12 @@
       ],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 100105,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 11,
@@ -2277,7 +1990,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 233420,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 11,
@@ -2290,7 +2008,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 233422,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 12,
@@ -2303,7 +2026,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 233932,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 12,
@@ -2316,7 +2044,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 233934,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 13,
@@ -2329,7 +2062,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 234444,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 13,
@@ -2342,7 +2080,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 234446,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 14,
@@ -2355,7 +2098,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 234956,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 14,
@@ -2368,7 +2116,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 234958,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 15,
@@ -2381,7 +2134,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 235468,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 15,
@@ -2394,7 +2152,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 235470,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 16,
@@ -2407,7 +2170,12 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 235980,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 16,
@@ -2420,95 +2188,39 @@
       "runtime_contexts": [],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 235982,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 17,
-      "offset": 3002,
+      "offset": 40548,
       "length": 1,
+      "path": "Source/Resources/17_ACTION/Unclassified9E64_9E65.bin",
+      "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
       "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified0BBA_0BBB.bin",
       "origin": null,
-      "sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
       "runtime_contexts": [
         {
           "region": "Action",
-          "file_offset": 3002,
+          "file_offset": 40548,
           "length": 1,
-          "start_address": 27005,
-          "end_exclusive": 27006,
+          "start_address": 65124,
+          "end_exclusive": 65125,
           "bank_context_not_added_by_this_check": true
         }
       ],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 15497,
-      "length": 1,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified3C89_3C8A.bin",
-      "origin": null,
-      "sha256": "18ac3e7343f016890c510e93f935261169d9e3f565436429830faf0934f4f8e4",
-      "runtime_contexts": [
-        {
-          "region": "Action",
-          "file_offset": 15497,
-          "length": 1,
-          "start_address": 40073,
-          "end_exclusive": 40074,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 34207,
-      "length": 1,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/Unclassified032.bin",
-      "origin": null,
-      "sha256": "ba5ec51d07a4ac0e951608704431d59a02b21a4e951acc10505a8dc407c501ee",
-      "runtime_contexts": [
-        {
-          "region": "Action",
-          "file_offset": 34207,
-          "length": 1,
-          "start_address": 58783,
-          "end_exclusive": 58784,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
-    },
-    {
-      "slot": 17,
-      "offset": 36732,
-      "length": 1,
-      "kind": "unclassified",
-      "path": "Source/Resources/17_ACTION/AfterObjectStateHandlers_BeforeActionObjectOffsetRise.bin",
-      "origin": null,
-      "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a",
-      "runtime_contexts": [
-        {
-          "region": "Action",
-          "file_offset": 36732,
-          "length": 1,
-          "start_address": 61308,
-          "end_exclusive": 61309,
-          "bank_context_not_added_by_this_check": true
-        }
-      ],
-      "candidate_literal_references": [],
-      "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 276836,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": true,
+      "nonzero_byte_count": 0,
+      "nonzero_file_bytes": []
     },
     {
       "slot": 29,
@@ -2530,13 +2242,46 @@
       ],
       "candidate_literal_references": [],
       "candidate_reference_count": 0,
-      "semantic_purpose_proved": false
+      "semantic_purpose_proved": false,
+      "original_disk_offset": 358057,
+      "original_disk_bytes_matched": true,
+      "all_bytes_zero": false,
+      "nonzero_byte_count": 1,
+      "nonzero_file_bytes": [
+        {
+          "file_offset": 19113,
+          "value": 163
+        }
+      ]
     }
   ],
   "literal_matches_are_not_memory_access_proof": true,
   "cross_bank_reference_graph_complete": false,
+  "fixed_window_companions_checked": true,
   "absence_of_candidates_does_not_prove_unused": true,
   "source_map_changed": false,
   "assembly_executed": false,
-  "native_execution": false
+  "native_execution": false,
+  "byte_contents": {
+    "all_zero_ranges": 67,
+    "all_zero_range_bytes": 10395,
+    "ranges_containing_nonzero_bytes": 8,
+    "mixed_or_nonzero_range_bytes": 54,
+    "nonzero_bytes": 24,
+    "zero_bytes_in_nonzero_ranges": 30,
+    "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+    "original_disk_bytes_matched": true,
+    "zero_fill_does_not_prove_unused": true,
+    "semantic_classification_changed": false
+  },
+  "object_table_alignment_classified": true,
+  "literal_use_contexts": {
+    "d3d_bank4": 2,
+    "io_port": 6,
+    "numeric_value": 19,
+    "stack_top_before_push": 1,
+    "voxel_bank3": 1,
+    "stored_map_points_before_first": 1
+  },
+  "unresolved_literal_candidates": 0
 }

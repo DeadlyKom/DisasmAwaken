@@ -17,11 +17,19 @@ def render(source):
  lines+=['                assert $ == #99A3','                endmodule'];texts[KEYS]='\n'.join(lines)+'\n'
  data=source[0x39A3:0x39AE];assert len(data)==11 and source[0x39AE]&128
  lines=['                module MapAuxiliaryCodes',
-  '; Документация [общие коды и смежная граница](../../../Docs/AuxiliaryMapPoints.md)',
+  '                ; Документация [общие коды и смежная граница](../../../Docs/AuxiliaryMapPoints.md)',
   '                assert $ == #99A3',
   '                ; ActiveCode и CompletionCode совпадают с ячейками состояния миссии',
   '                ; Unknown02..Unknown10 сохранены, карта читает их как числовые управляющие коды',
-  'State:'.ljust(16)+'FMapMarkerCodes { '+', '.join('#'+format(v,'02X') for v in data)+' }',
+  'State:'.ljust(16)+'FMapMarkerCodes {']
+ for index,(field,value) in enumerate(zip(CODE_FIELDS,data)):
+  meaning=('состояние миссии и первый код карты' if index==0 else
+           'код повторной награды и второй код карты' if index==1 else
+           'код за десятью физическими ключами, глобальное назначение не установлено' if index==10 else
+           'код для Key'+format(index,'02d')+', глобальное назначение не установлено')
+  initializer='                    #'+format(value,'02X')+(',' if index<10 else '')
+  lines.append(initializer.ljust(80)+'; '+field+', '+meaning)
+ lines += ['                }',
   '                ; следующий байт принадлежит InterfaceChoices и служит отрицательной границей исходного снимка',
   '                assert $ == #99AE','                endmodule'];texts[CODES]='\n'.join(lines)+'\n';symbols['MapAuxiliaryCodes.State']=0x99A3
  for index,field in enumerate(CODE_FIELDS):symbols['MapAuxiliaryCodes.State.'+field]=0x99A3+index

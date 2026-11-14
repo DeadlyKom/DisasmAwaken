@@ -1,14 +1,49 @@
 {
   "passed": true,
-  "cases": 98304,
-  "tied_candidate_comparisons": 4853,
+  "cases": 111680,
+  "tied_candidate_comparisons": 4901,
   "all_count_bytes": true,
   "all_origin_words": true,
   "method": "original_C5E8_C653_SumSquares8_exact_minimum_variant_registers_flags_and_source_points",
   "count_zero_or_above_six_processes_six": true,
   "word_carries_in_target_preserved": true,
   "first_equal_candidate_kept": true,
-  "input_pointer_tables_synthetic": true,
+  "synthetic_input_cases": 98304,
+  "physical_cursor_cases": 13376,
+  "physical_cursor_profiles": 418,
+  "each_original_cursor_position_including_End_checked": true,
+  "all_64_End_combinations_checked": true,
+  "marker_candidate_reads": 4356,
+  "marker_selected_cases": 1092,
+  "physical_End_pairs": [
+    [
+      128,
+      16
+    ],
+    [
+      128,
+      13
+    ],
+    [
+      128,
+      10
+    ],
+    [
+      128,
+      19
+    ],
+    [
+      128,
+      22
+    ],
+    [
+      128,
+      0
+    ]
+  ],
+  "physical_path_bytes_not_modified": true,
+  "UI_reachability_of_all_marker_profiles_proved": false,
+  "input_pointer_tables_synthetic_for_initial_cases": true,
   "calls_stubbed": false,
   "irq_executed": false,
   "native_execution": false,

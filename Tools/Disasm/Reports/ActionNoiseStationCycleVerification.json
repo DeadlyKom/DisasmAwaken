@@ -1,0 +1,594 @@
+{
+  "passed": true,
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "profile": {
+    "basic_run": {
+      "logical_basic_bytes": 119,
+      "copied_bytes_before_buffer_release": 124,
+      "copied_byte_after_autostart": 117,
+      "detached_line_suffix": {
+        "token": 202,
+        "token_text": "LINE",
+        "decimal_digits": "20",
+        "original_command_established": false
+      },
+      "first_sector_tail": {
+        "file_offsets": [
+          124,
+          256
+        ],
+        "buffer_addresses": [
+          23969,
+          24101
+        ],
+        "reads_before_autostart": 0,
+        "writes_before_autostart": 132,
+        "original_reads_until_usr": 0,
+        "overwritten_before_usr": 132
+      },
+      "directory_and_service_reads": [
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "first_sector": [
+        18,
+        2
+      ],
+      "sector_read_destination": 23845,
+      "autostart_line": 20,
+      "actual_basic_usr_entry": 23873,
+      "next_intro_sector_word": 4610,
+      "catalogue_header_supplied": false,
+      "editor_command_parsing_executed": true,
+      "input_line_supplied_as_basic_tokens": true
+    },
+    "usr_entry": 23873,
+    "intro_keyboard_polls": 3,
+    "intro_sectors": 44,
+    "intro_tail_displacement": {
+      "source": 36864,
+      "destination": 29952,
+      "value": 0,
+      "both_jr_targets": 29953
+    },
+    "intro_stack_storage": {
+      "address": 26035,
+      "after_load": "00000000",
+      "after_intro": "00ff5f00",
+      "after_station_load": "98cd33c3"
+    },
+    "station_catalogue_reads": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "station_sectors": 192,
+    "station_boot_reached": 25344,
+    "initial_station_tail": {
+      "slot": 4,
+      "start": 62684,
+      "end_exclusive": 65536,
+      "bytes_overwritten": 2852
+    },
+    "startup_station_tail": {
+      "bank": 0,
+      "start": 62686,
+      "end_exclusive": 65536,
+      "accesses": []
+    },
+    "idle_station_tail": {
+      "bank": 0,
+      "start": 62686,
+      "end_exclusive": 65536,
+      "accesses": []
+    },
+    "main_loop_entry": 39513,
+    "frame_entry": 39553,
+    "completed_station_frames": 7,
+    "final_page": 16,
+    "station_bank_file_sequences_checked": 5,
+    "trdos_calls_substituted": false,
+    "flight_transition": {
+      "action_frames_before_damage": 1,
+      "noise_irq_frames": 100,
+      "noise_tstates": 14180013,
+      "minimum_irq_sp": 49124,
+      "frames_increments": [],
+      "action_tail_accesses": [
+        {
+          "mode": "read",
+          "pc": 14448,
+          "address": 64769,
+          "count": 1
+        },
+        {
+          "mode": "read",
+          "pc": 14448,
+          "address": 64782,
+          "count": 2
+        }
+      ],
+      "tail_key_decode": [],
+      "relay_entry": 16384,
+      "relay_bytes": 256,
+      "dos_dispatch": 15635,
+      "station_sectors_loaded": 160,
+      "read_ahead_sectors": 1,
+      "station_entry": 25344,
+      "station_context_from_disk_bytes": 512,
+      "prepared_flight_credits": 4660,
+      "credits_on_station_entry": 2000,
+      "loaded_tail": {
+        "slot": 4,
+        "start": 62684,
+        "end_exclusive": 65536,
+        "bytes_overwritten": 2852
+      },
+      "restarted_station_tail": {
+        "bank": 0,
+        "start": 62686,
+        "end_exclusive": 65536,
+        "accesses": []
+      },
+      "station_frame_entry": 39553,
+      "missing_station": {
+        "renamed_catalogue_slot": 4,
+        "dos_status": 1,
+        "catalogue_reads": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "data_sectors": 0,
+        "return_pc": 25344,
+        "action_bytes_preserved": true,
+        "action_bytes_at_return": "7eddbe0d6920da04"
+      },
+      "dos_keyboard_hook": {
+        "bytes_before_dos": "f1c9",
+        "bytes_after_dos": "f1c9",
+        "access_runs": [
+          {
+            "mode": "read",
+            "address": 23746,
+            "pc": 23746,
+            "count": 337
+          },
+          {
+            "mode": "read",
+            "address": 23747,
+            "pc": 23747,
+            "count": 337
+          }
+        ]
+      },
+      "threshold_and_flight_credits_prepared": true,
+      "direct_departure_entry_prepared": true
+    },
+    "legacy_stack_returns": {
+      "taken_returns": 26863,
+      "counts": [
+        {
+          "phase": "flight_transition",
+          "opcode": 192,
+          "count": 412
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 200,
+          "count": 2306
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 201,
+          "count": 12534
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 208,
+          "count": 656
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 216,
+          "count": 431
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 248,
+          "count": 769
+        },
+        {
+          "phase": "intro",
+          "opcode": 192,
+          "count": 12
+        },
+        {
+          "phase": "intro",
+          "opcode": 200,
+          "count": 756
+        },
+        {
+          "phase": "intro",
+          "opcode": 201,
+          "count": 2725
+        },
+        {
+          "phase": "intro",
+          "opcode": 208,
+          "count": 226
+        },
+        {
+          "phase": "intro",
+          "opcode": 216,
+          "count": 246
+        },
+        {
+          "phase": "intro",
+          "opcode": 248,
+          "count": 242
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 192,
+          "count": 23
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 200,
+          "count": 90
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 201,
+          "count": 1214
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 216,
+          "count": 13
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 192,
+          "count": 61
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 200,
+          "count": 604
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 201,
+          "count": 2973
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 208,
+          "count": 109
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 216,
+          "count": 240
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 248,
+          "count": 221
+        }
+      ],
+      "matching_numeric_targets": [],
+      "returns_with_control_prefix": 0,
+      "starts_after_basic": true,
+      "all_possible_paths_proved": false
+    }
+  },
+  "aliased_hook_profile": {
+    "basic_run": {
+      "logical_basic_bytes": 119,
+      "copied_bytes_before_buffer_release": 124,
+      "copied_byte_after_autostart": 117,
+      "detached_line_suffix": {
+        "token": 202,
+        "token_text": "LINE",
+        "decimal_digits": "20",
+        "original_command_established": false
+      },
+      "first_sector_tail": {
+        "file_offsets": [
+          124,
+          256
+        ],
+        "buffer_addresses": [
+          23969,
+          24101
+        ],
+        "reads_before_autostart": 0,
+        "writes_before_autostart": 132,
+        "original_reads_until_usr": 0,
+        "overwritten_before_usr": 132
+      },
+      "directory_and_service_reads": [
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "first_sector": [
+        18,
+        2
+      ],
+      "sector_read_destination": 23845,
+      "autostart_line": 20,
+      "actual_basic_usr_entry": 23873,
+      "next_intro_sector_word": 4610,
+      "catalogue_header_supplied": false,
+      "editor_command_parsing_executed": true,
+      "input_line_supplied_as_basic_tokens": true
+    },
+    "usr_entry": 23873,
+    "intro_keyboard_polls": 3,
+    "intro_sectors": 44,
+    "intro_tail_displacement": {
+      "source": 36864,
+      "destination": 29952,
+      "value": 0,
+      "both_jr_targets": 29953
+    },
+    "intro_stack_storage": {
+      "address": 26035,
+      "after_load": "00000000",
+      "after_intro": "00ff5f00",
+      "after_station_load": "98cd33c3"
+    },
+    "station_catalogue_reads": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "station_sectors": 192,
+    "station_boot_reached": 25344,
+    "initial_station_tail": {
+      "slot": 4,
+      "start": 62684,
+      "end_exclusive": 65536,
+      "bytes_overwritten": 2852
+    },
+    "startup_station_tail": {
+      "bank": 0,
+      "start": 62686,
+      "end_exclusive": 65536,
+      "accesses": []
+    },
+    "idle_station_tail": {
+      "bank": 0,
+      "start": 62686,
+      "end_exclusive": 65536,
+      "accesses": []
+    },
+    "main_loop_entry": 39513,
+    "frame_entry": 39553,
+    "completed_station_frames": 7,
+    "final_page": 16,
+    "station_bank_file_sequences_checked": 5,
+    "trdos_calls_substituted": false,
+    "flight_transition": {
+      "prepared_alias_seed": 59,
+      "frames_increments": [
+        {
+          "frame": 2,
+          "address": 23746,
+          "old": 241,
+          "bank0": false,
+          "new": 242
+        }
+      ],
+      "tail_key_decode": [
+        {
+          "frame": 100,
+          "iy": 64891,
+          "accesses": [
+            [
+              "read",
+              64898,
+              764
+            ],
+            [
+              "read",
+              64892,
+              767
+            ],
+            [
+              "read",
+              64892,
+              779
+            ],
+            [
+              "write",
+              64892,
+              779
+            ]
+          ]
+        }
+      ],
+      "hook_bytes_at_execution": "f2c952",
+      "hook_flags": 172,
+      "hook_sp": 24543,
+      "hook_next_pc": 23749,
+      "hook_stack_word": "051f",
+      "hook_accesses": [
+        [
+          "read",
+          23746,
+          23746
+        ]
+      ],
+      "catalogue_reads_before_hook": [],
+      "stopped_after_changed_instruction": true,
+      "station_reload_completion_checked": false
+    },
+    "legacy_stack_returns": {
+      "taken_returns": 18366,
+      "counts": [
+        {
+          "phase": "flight_transition",
+          "opcode": 192,
+          "count": 352
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 200,
+          "count": 1142
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 201,
+          "count": 5844
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 208,
+          "count": 477
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 216,
+          "count": 413
+        },
+        {
+          "phase": "flight_transition",
+          "opcode": 248,
+          "count": 383
+        },
+        {
+          "phase": "intro",
+          "opcode": 192,
+          "count": 12
+        },
+        {
+          "phase": "intro",
+          "opcode": 200,
+          "count": 756
+        },
+        {
+          "phase": "intro",
+          "opcode": 201,
+          "count": 2725
+        },
+        {
+          "phase": "intro",
+          "opcode": 208,
+          "count": 226
+        },
+        {
+          "phase": "intro",
+          "opcode": 216,
+          "count": 246
+        },
+        {
+          "phase": "intro",
+          "opcode": 248,
+          "count": 242
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 192,
+          "count": 23
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 200,
+          "count": 90
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 201,
+          "count": 1214
+        },
+        {
+          "phase": "station_frames",
+          "opcode": 216,
+          "count": 13
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 192,
+          "count": 61
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 200,
+          "count": 604
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 201,
+          "count": 2973
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 208,
+          "count": 109
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 216,
+          "count": 240
+        },
+        {
+          "phase": "station_startup",
+          "opcode": 248,
+          "count": 221
+        }
+      ],
+      "matching_numeric_targets": [],
+      "returns_with_control_prefix": 0,
+      "starts_after_basic": true,
+      "all_possible_paths_proved": false
+    }
+  },
+  "original_rom_irq_and_disk_code_executed": true,
+  "modeled_fdc": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

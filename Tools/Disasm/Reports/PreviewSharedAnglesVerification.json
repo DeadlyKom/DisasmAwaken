@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "source": "awk6.trd:DATA3D.a,CLPXR1.a",
+  "authored_definitions": {
+    "Eye_a": 49664,
+    "Eye_b": 49665,
+    "Eye_g": 49666,
+    "Eyea": 49694,
+    "Eyeb": 49695,
+    "Eyeg": 49696
+  },
+  "matched_copy_bytes": 12,
+  "original_copy_hex": "2a00c2221ec23a02c23220c2",
+  "cases": 1024,
+  "profiles": {
+    "empty": 512,
+    "object": 512
+  },
+  "each_first_and_third_seed_byte_exhausted": true,
+  "exact_initial_three_byte_writes": true,
+  "object_angles_replace_initial_angles": true,
+  "empty_list_preserves_initial_angles": true,
+  "seed_storage_unchanged": true,
+  "rendering_pass_executed": false,
+  "global_camera_behavior_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

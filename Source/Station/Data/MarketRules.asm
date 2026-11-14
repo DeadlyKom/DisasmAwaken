@@ -31,5 +31,6 @@ Rule26:         FMarketRule { #AA, #03 }                                        
 Rule27:         FMarketRule { #E6, #03 }                                        ; BasePrice, StockRule, для этой строки читается только BasePrice
 Rule28:         FMarketRule { #F0, #00 }                                        ; BasePrice, StockRule, для этой строки читается только BasePrice
 Rule29:         FMarketRule { #FA, #00 }                                        ; BasePrice, StockRule, для этой строки читается только BasePrice
-                assert $ == #9554
+TrailingZero:   db #00                                                          ; отдельный байт после правил, генератор рынка не читает
+                assert $ == #9555
                 endmodule

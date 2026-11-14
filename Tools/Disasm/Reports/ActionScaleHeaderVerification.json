@@ -27,8 +27,17 @@
     4,
     5
   ],
+  "original_header_bound_mantissa_use": {
+    "original_even_indices": 128,
+    "distinct_physical_headers": 95,
+    "original_mantissas_rejected_component": 128,
+    "increased_mantissas_admitted_dispatch": 128,
+    "banked_read_scaling_and_dispatch_gate_executed": true,
+    "dispatch_inhibit_set_in_fixture": true
+  },
   "exact_registers_flags_refresh_sp": true,
   "every_ram_byte_and_write_checked": true,
+  "closed_AF_table_checked_for_all_1536_valid_headers": true,
   "execution_boundary": "E1B9..E1D1, no continuation executed",
   "maximum_additional_stack_bytes": 0,
   "invalid_exponents_executed": false,

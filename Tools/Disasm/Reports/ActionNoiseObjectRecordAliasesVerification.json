@@ -1,0 +1,155 @@
+{
+  "passed": true,
+  "profiles": [
+    {
+      "rom": "48.rom",
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "first_copy_seed": 149,
+      "previous_frame_iy": 42795,
+      "no_aliases_for_seed_bit7_clear": true,
+      "second_copy_seed": 236,
+      "second_frame_refresh_not_reassigned": true,
+      "accesses": [
+        {
+          "mode": "read",
+          "pc": 69,
+          "address": 42859,
+          "value": 0,
+          "physical_bank": 2
+        },
+        {
+          "mode": "write",
+          "pc": 69,
+          "address": 42859,
+          "value": 1,
+          "physical_bank": 2
+        },
+        {
+          "mode": "read",
+          "pc": 764,
+          "address": 42802,
+          "value": 0,
+          "physical_bank": 2
+        },
+        {
+          "mode": "read",
+          "pc": 767,
+          "address": 42796,
+          "value": 0,
+          "physical_bank": 2
+        },
+        {
+          "mode": "read",
+          "pc": 779,
+          "address": 42796,
+          "value": 0,
+          "physical_bank": 2
+        },
+        {
+          "mode": "write",
+          "pc": 779,
+          "address": 42796,
+          "value": 32,
+          "physical_bank": 2
+        }
+      ],
+      "frame_increment": {
+        "address": 42859,
+        "old": 0,
+        "bank0": false,
+        "new": 1
+      }
+    },
+    {
+      "rom": "128-1.rom",
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "first_copy_seed": 149,
+      "previous_frame_iy": 42795,
+      "no_aliases_for_seed_bit7_clear": true,
+      "second_copy_seed": 245,
+      "second_frame_refresh_not_reassigned": true,
+      "accesses": [
+        {
+          "mode": "read",
+          "pc": 69,
+          "address": 42859,
+          "value": 0,
+          "physical_bank": 2
+        },
+        {
+          "mode": "write",
+          "pc": 69,
+          "address": 42859,
+          "value": 1,
+          "physical_bank": 2
+        },
+        {
+          "mode": "read",
+          "pc": 14448,
+          "address": 42796,
+          "value": 0,
+          "physical_bank": 2
+        },
+        {
+          "mode": "read",
+          "pc": 764,
+          "address": 42802,
+          "value": 0,
+          "physical_bank": 2
+        },
+        {
+          "mode": "read",
+          "pc": 767,
+          "address": 42796,
+          "value": 0,
+          "physical_bank": 2
+        },
+        {
+          "mode": "read",
+          "pc": 779,
+          "address": 42796,
+          "value": 0,
+          "physical_bank": 2
+        },
+        {
+          "mode": "write",
+          "pc": 779,
+          "address": 42796,
+          "value": 32,
+          "physical_bank": 2
+        }
+      ],
+      "frame_increment": {
+        "address": 42859,
+        "old": 0,
+        "bank0": false,
+        "new": 1
+      }
+    }
+  ],
+  "physical_fields": [
+    {
+      "address": 42796,
+      "instance": "ActionObjectRecords.Record18",
+      "field": "Unknown2C"
+    },
+    {
+      "address": 42802,
+      "instance": "ActionObjectRecords.Record18",
+      "field": "Unknown32"
+    },
+    {
+      "address": 42859,
+      "instance": "ActionObjectRecords.EndMarker",
+      "field": "Unknown2B"
+    }
+  ],
+  "actual_rom_irq_and_viewport_copy_executed": true,
+  "refresh_bit7_and_frames_wrap_prepared": true,
+  "key_A_prepared_at_second_irq": true,
+  "source_record_tail_purpose_proved": false,
+  "native_refresh_bit7_reachability_proved": false,
+  "action_initialization_trdos_substituted": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

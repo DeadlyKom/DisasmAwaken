@@ -5,10 +5,10 @@
                 ; Обработка управления и расчёт трёх смещений из знакового слова
                 ; исходная запись 17, перенесённое ядро 6000..7F8E, смещения #10A9..#10E8
                 ; In:
-                ;   SignedWord, коэффициенты C20..C22 и состояние управления доступны, банк 0 выбран, пары направления согласованы как 0000 либо ED44
+                ;   SpeedWord, коэффициенты C20..C22 и состояние управления доступны, банк 0 выбран, пары направления согласованы как 0000 либо ED44
                 ;   входные порты и обработчики удовлетворяют договору ScanActionKeys, стек находится в общей RAM
                 ; Out:
-                ;   при MotionOpcode=3A после двух первых вызовов Component0..2 получают произведения SignedWord на эффективные коэффициенты C20..C22
+                ;   при MotionOpcode=3A после двух первых вызовов Component0..2 получают произведения SpeedWord на эффективные коэффициенты C20..C22
                 ;   для пар 0000 коэффициент не меняется, для ED44 берётся его восьмибитное отрицание, исходное 80 остаётся 80
                 ;   при MotionOpcode=3A IX содержит StoreThird, SP восстанавливается, окончательный RET снимает внешний возврат
                 ;   при MotionOpcode=C9 после двух первых вызовов следует RET без пересчёта Component0..2, IX и регистры остаются от вызываемых процедур
@@ -28,7 +28,7 @@ ScaleMotion:    LD A, (@ActionPatchedVectorCoeffs.C20)
                 ; Пара изменяемого кода, 0000 даёт две NOP, ED44 даёт NEG загруженного коэффициента.
 NegateFirst:    NOP
                 NOP
-                LD DE, (@ActionPanelGaugesState.SignedWord)
+                LD DE, (@ActionPanelGaugesState.SpeedWord)
                 LD IX, @Action.UpdateMotionFromControls.StoreFirst
                 JP @Action.MultiplySignedScaled.Entry
 
@@ -38,7 +38,7 @@ StoreFirst:     LD (@ActionScaledVectorState.Component0), HL
                 ; Пара изменяемого кода, 0000 даёт две NOP, ED44 даёт NEG загруженного коэффициента.
 NegateSecond:   NOP
                 NOP
-                LD DE, (@ActionPanelGaugesState.SignedWord)
+                LD DE, (@ActionPanelGaugesState.SpeedWord)
                 LD IX, @Action.UpdateMotionFromControls.StoreSecond
                 JP @Action.MultiplySignedScaled.Entry
 
@@ -48,7 +48,7 @@ StoreSecond:    LD (@ActionScaledVectorState.Component1), HL
                 ; Пара изменяемого кода, 0000 даёт две NOP, ED44 даёт NEG загруженного коэффициента.
 NegateThird:    NOP
                 NOP
-                LD DE, (@ActionPanelGaugesState.SignedWord)
+                LD DE, (@ActionPanelGaugesState.SpeedWord)
                 LD IX, @Action.UpdateMotionFromControls.StoreThird
                 JP @Action.MultiplySignedScaled.Entry
 

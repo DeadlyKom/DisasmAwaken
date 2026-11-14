@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "archived_declaration": "awk1.trd:SETHJRET.a:NDATA",
+  "revised_header_file_offsets": [
+    328,
+    336
+  ],
+  "revised_header_hex": "06ff0000d0070032",
+  "current_template_location": [
+    56345,
+    56475
+  ],
+  "current_game_field_semantics_proved": false,
+  "assembly_executed": false,
+  "native_execution": false,
+  "archived_copy_entry": 57890,
+  "archived_copy_destination": 39869,
+  "archived_copy_bytes": 512,
+  "authored_data_bytes": 215,
+  "bytes_copied_after_authored_data": 297,
+  "copy_instructions_in_destination": true
+}

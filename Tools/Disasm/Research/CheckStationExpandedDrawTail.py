@@ -41,7 +41,7 @@ def draw_list(memory):
     base = word(memory, 0x9CA6)
     assert base == 0xF3DE
     items = []
-    for address in range(base, base + 2 * 46, 2):
+    for address in range(base, base + 2 * 47, 2):
         handler = word(memory, address)
         if handler >> 8 == 1:
             return items

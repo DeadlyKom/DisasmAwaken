@@ -55,7 +55,7 @@ Entry:          LD A, (IX + @FActionRecord.ViewPosition.X.High)
                 JR C, @Action.CheckAndToggleLinkedOverlay.CheckDepthSigns       ; переход, если прочитанный R меньше LinkRLimit, сохранить прежнюю обратную связь
 
                 ; Обновление бита обратной связи и LinkedIndex выбранной IY индексом текущего IX.
-                SET 0, (IY + @FActionRecord.LinkFlags)
+                SET @ActionLinkFlagsConst.BackLinkBit, (IY + @FActionRecord.LinkFlags)
                 PUSH HL
                 PUSH IX
                 POP HL

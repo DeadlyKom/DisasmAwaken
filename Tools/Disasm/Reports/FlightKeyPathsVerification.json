@@ -453,6 +453,281 @@
   ],
   "irq_scheduled_by_flight_model": true,
   "trdos_stub": true,
+  "station_settings_rows": [
+    {
+      "station_row": 1,
+      "text": "\u0412\u0432\u0435\u0440\u0445",
+      "station_address": 39370,
+      "action_address": 40268,
+      "row_select": 253,
+      "mask": 2,
+      "target": 30547
+    },
+    {
+      "station_row": 2,
+      "text": "\u0412\u043d\u0438\u0437",
+      "station_address": 39372,
+      "action_address": 40270,
+      "row_select": 254,
+      "mask": 4,
+      "target": 30582
+    },
+    {
+      "station_row": 3,
+      "text": "\u0412\u043b\u0435\u0432\u043e",
+      "station_address": 39374,
+      "action_address": 40272,
+      "row_select": 191,
+      "mask": 4,
+      "target": 30477
+    },
+    {
+      "station_row": 4,
+      "text": "\u0412\u043f\u0440\u0430\u0432\u043e",
+      "station_address": 39376,
+      "action_address": 40274,
+      "row_select": 191,
+      "mask": 2,
+      "target": 30512
+    },
+    {
+      "station_row": 5,
+      "text": "\u0412\u043b\u0435\u0432\u043e \u043a\u0440\u0435\u043d",
+      "station_address": 39378,
+      "action_address": 40276,
+      "row_select": 127,
+      "mask": 8,
+      "target": 30407
+    },
+    {
+      "station_row": 6,
+      "text": "\u0412\u043f\u0440\u0430\u0432\u043e \u043a\u0440\u0435\u043d",
+      "station_address": 39380,
+      "action_address": 40278,
+      "row_select": 127,
+      "mask": 4,
+      "target": 30442
+    },
+    {
+      "station_row": 7,
+      "text": "\u041b\u0430\u0437\u0435\u0440",
+      "station_address": 39382,
+      "action_address": 40280,
+      "row_select": 253,
+      "mask": 1,
+      "target": 29463
+    },
+    {
+      "station_row": 8,
+      "text": "\u041d\u0430\u0431\u043e\u0440 \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u0438",
+      "station_address": 39384,
+      "action_address": 40282,
+      "row_select": 127,
+      "mask": 1,
+      "target": 30336
+    },
+    {
+      "station_row": 9,
+      "text": "\u0421\u0431\u0440\u043e\u0441 \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u0438",
+      "station_address": 39386,
+      "action_address": 40284,
+      "row_select": 127,
+      "mask": 2,
+      "target": 30371
+    },
+    {
+      "station_row": 10,
+      "text": "\u0411\u043e\u0440\u0442\u043e\u0432\u043e\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440",
+      "station_address": 39388,
+      "action_address": 40286,
+      "row_select": 223,
+      "mask": 1,
+      "target": 44203
+    },
+    {
+      "station_row": 11,
+      "text": "\u041d\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u0440\u0430\u043a\u0435\u0442\u044b",
+      "station_address": 39390,
+      "action_address": 40288,
+      "row_select": 191,
+      "mask": 16,
+      "target": 29410
+    },
+    {
+      "station_row": 12,
+      "text": "\u0417\u0430\u0431\u044b\u0442\u044c \u043d\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u044f",
+      "station_address": 39392,
+      "action_address": 40290,
+      "row_select": 254,
+      "mask": 8,
+      "target": 29374
+    },
+    {
+      "station_row": 13,
+      "text": "\u041f\u0443\u0441\u043a \u0440\u0430\u043a\u0435\u0442\u044b 1",
+      "station_address": 39394,
+      "action_address": 40292,
+      "row_select": 247,
+      "mask": 1,
+      "target": 28748
+    },
+    {
+      "station_row": 14,
+      "text": "\u041f\u0443\u0441\u043a \u0440\u0430\u043a\u0435\u0442\u044b 2",
+      "station_address": 39396,
+      "action_address": 40294,
+      "row_select": 247,
+      "mask": 2,
+      "target": 28789
+    },
+    {
+      "station_row": 15,
+      "text": "\u041f\u0443\u0441\u043a \u0440\u0430\u043a\u0435\u0442\u044b 3",
+      "station_address": 39398,
+      "action_address": 40296,
+      "row_select": 247,
+      "mask": 4,
+      "target": 28808
+    },
+    {
+      "station_row": 16,
+      "text": "\u0424\u043e\u0440\u0441\u0430\u0436",
+      "station_address": 39400,
+      "action_address": 40298,
+      "row_select": 191,
+      "mask": 8,
+      "target": 29859
+    },
+    {
+      "station_row": 17,
+      "text": "\u0421\u0438\u0441\u0442\u0435\u043c\u0430 \u0441\u0432\u043e\u0431\u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u0435\u0442\u0430",
+      "station_address": 39402,
+      "action_address": 40300,
+      "row_select": 253,
+      "mask": 8,
+      "target": 30028
+    },
+    {
+      "station_row": 18,
+      "text": "\u0421\u0438\u0441\u0442\u0435\u043c\u0430 \u043d\u0430\u0432\u0435\u0434\u0435\u043d\u0438\u044f",
+      "station_address": 39404,
+      "action_address": 40302,
+      "row_select": 254,
+      "mask": 2,
+      "target": 29824
+    },
+    {
+      "station_row": 19,
+      "text": "\u0421\u0438\u0441\u0442\u0435\u043c\u0430 \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u0430",
+      "station_address": 39406,
+      "action_address": 40304,
+      "row_select": 251,
+      "mask": 8,
+      "target": 30214
+    },
+    {
+      "station_row": 20,
+      "text": "\u0421\u0438\u043b\u043e\u0432\u043e\u0439 \u043b\u0443\u0447\u044c",
+      "station_address": 39408,
+      "action_address": 40306,
+      "row_select": 127,
+      "mask": 16,
+      "target": 29753
+    },
+    {
+      "station_row": 21,
+      "text": "\u041f\u0440\u043e\u0442\u0438\u0432\u043e\u0440\u0430\u043a\u0435\u0442\u043d\u0430\u044f \u0441\u0438\u0441\u0442\u0435\u043c\u0430",
+      "station_address": 39410,
+      "action_address": 40308,
+      "row_select": 251,
+      "mask": 1,
+      "target": 29230
+    },
+    {
+      "station_row": 22,
+      "text": "\u0421\u0431\u0440\u043e\u0441 \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u0430",
+      "station_address": 39412,
+      "action_address": 40310,
+      "row_select": 251,
+      "mask": 2,
+      "target": 30100
+    },
+    {
+      "station_row": 23,
+      "text": "\u0421\u0431\u0440\u043e\u0441 \u043c\u0438\u043d\u044b",
+      "station_address": 39414,
+      "action_address": 40312,
+      "row_select": 251,
+      "mask": 4,
+      "target": 30159
+    },
+    {
+      "station_row": 24,
+      "text": "\u0413\u0438\u043f\u0435\u0440\u043f\u0435\u0440\u0435\u0445\u043e\u0434",
+      "station_address": 39416,
+      "action_address": 40314,
+      "row_select": 253,
+      "mask": 16,
+      "target": 28918
+    },
+    {
+      "station_row": 25,
+      "text": "\u0412\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435\u043e\u043d\u0430",
+      "station_address": 39418,
+      "action_address": 40316,
+      "row_select": 253,
+      "mask": 4,
+      "target": 28747
+    },
+    {
+      "station_row": 26,
+      "text": "\u041f\u0435\u0440\u0435\u0434\u043d\u0438\u0439 \u0438 \u0437\u0430\u0434\u043d\u0438\u0439 \u0432\u0438\u0434",
+      "station_address": 39420,
+      "action_address": 40318,
+      "row_select": 254,
+      "mask": 16,
+      "target": 30250
+    },
+    {
+      "station_row": 27,
+      "text": "\u0417\u0430\u0449\u0438\u0442\u0430 \u043e\u0442 \u043a\u043e\u0441\u043c.\u0438\u0437\u043b\u0443\u0447\u0435\u043d\u0438\u0439",
+      "station_address": 39422,
+      "action_address": 40320,
+      "row_select": 253,
+      "mask": 2,
+      "target": 49353
+    }
+  ],
+  "temporary_module_watch": {
+    "bank": 1,
+    "font": [
+      50688,
+      51312
+    ],
+    "viewport_code": [
+      51312,
+      51712
+    ],
+    "template": [
+      56030,
+      56157
+    ],
+    "candidate_fixed_pc_range": [
+      23968,
+      24283
+    ],
+    "both_frame_entries_match_disk": true,
+    "bank_writes_between_frames": 0,
+    "temporary_pc_entries_in_profiles": 0
+  },
+  "disk_byte_and_runtime_operand": {
+    "ldir_copies_checked": 17,
+    "copied_byte_destination": 27005,
+    "runtime_operand_address": 27578,
+    "runtime_operand_value": 28,
+    "relocated_disk_byte": 123,
+    "runtime_operand_pc": 27577
+  },
   "continuous_key_hold_verified": false,
   "assembly_executed": false,
   "native_execution": false

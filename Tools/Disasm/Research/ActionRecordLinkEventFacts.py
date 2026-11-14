@@ -38,6 +38,7 @@ COMMENTS={
 
 def name_operands(region,function_address,operation):
     if region=='Action' and function_address==0x635B:
+        operation=operation.replace('SET 0,','SET @ActionLinkFlagsConst.BackLinkBit,')
         operation=operation.replace('(#635C)','(@ActionRecordLinkEventState.PendingRecord)')
         operation=operation.replace('(#ECA9)','(@ActionAyEffectState.CursorA)')
         operation=operation.replace('LD BC, #000C','LD BC, FActionRecord.LinkFlags')

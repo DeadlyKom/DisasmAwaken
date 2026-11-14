@@ -1,4 +1,5 @@
 """Договор генератора со свёрткой, первоначальные четыре входа и физические состояния."""
+from ActionRandomStreamLayout import DIRECT_USE_NOTES
 FUNCTIONS={0xEC08:('StepFoldedRandom','Обновление трёхбайтового состояния свёрткой переносов и возврат нового 16-битного слова через обратный EXX'),
     0xEB72:('NextRandomWord0','Следующее слово независимого потока 0 с физическим состоянием Stream0'),
     0xEB87:('NextRandomWord1','Следующее слово независимого потока 1 с физическим состоянием Stream1'),
@@ -39,7 +40,7 @@ for address,index in ((0xEB72,0),(0xEB87,1),(0xEBB8,2)):
         ['EXX перед выбором состояния обеспечивает обратное восстановление основных DE и BC общим ядром',
          'JP в StepFoldedRandom не создаёт нового возврата, итоговый RET снимает внешний адрес данного входа',
          'формула, точные флаги, три исходных состояния и все внешние входы проверены вместе с реальным общим ядром',
-         'игровая роль потока '+str(index)+' отдельно не установлена, распределение и период результата не доказаны'])
+         DIRECT_USE_NOTES[index]+', полный граф, распределение и период результата не доказаны'])
 COMMENTS={
     0xEC08:(['-----------------------------------------','Чтение физического состояния','Получение LowWord в BC и FoldByte в A, курсор третьего байта сохраняется до записи результата.'],None),
     0xEC11:(['Расчёт u=(LowWord-1) modulo 65536, нулевое слово оборачивается без изменения FoldByte.'],None),
@@ -62,6 +63,11 @@ for address,index in ((0xEB72,0),(0xEB87,1),(0xEBB8,2)):
 
 
 def name_operands(region,address,operation):
+    if region=='ActionBoot' and address==0x4306:
+        for value,index in ((0xEBDE,0),(0xEBDB,3),(0xEBFF,4),(0xEC02,1),(0xEC05,5),(0xEBE1,8),(0xEBE4,9),(0xEBE7,10),(0xEBEA,2)):
+            operation=operation.replace('(#'+format(value,'04X')+')','(@ActionRandomStreams.Stream'+str(index)+'.LowWord)')
+        operation=operation.replace('(#AA9A)','(@ActionOverlayModeState.Mode)').replace('(#A8BC)','(@ActionPanelGaugesState.ThirdValue)')
+
     if region=='Action' and address in FUNCTIONS:
         for value,index in ((0xEBDE,0),(0xEC02,1),(0xEBEA,2)):
             operation=operation.replace('LD HL, #'+format(value,'04X'),'LD HL, @ActionRandomStreams.Stream'+str(index))

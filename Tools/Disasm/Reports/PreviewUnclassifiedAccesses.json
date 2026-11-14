@@ -1,42 +1,12 @@
 {
   "passed": true,
-  "source_map_sha256": "e5e540c08c9362a35d99206ad7918489bcee0a313693025370f57b9e206fae91",
+  "source_map_sha256": "9a37fbccac5150d5a83e593c8490d82336f525ba6f2ebd0b5885b3c1d4fce455",
   "watched_ranges": 16,
-  "watched_bytes": 949,
+  "watched_bytes": 945,
   "draw_profiles": 33,
   "periodic_frames": 66,
   "irq_wakeups": 121,
-  "touched": [
-    {
-      "path": "Source/Resources/06_D3D/AfterPrimaryAngles.bin",
-      "first": [
-        {
-          "mode": "read",
-          "pc": 60596,
-          "address": 52736
-        },
-        {
-          "mode": "read",
-          "pc": 60596,
-          "address": 52737
-        }
-      ],
-      "accesses": [
-        {
-          "mode": "read",
-          "pc": 60596,
-          "address": 52736,
-          "count": 88
-        },
-        {
-          "mode": "read",
-          "pc": 60596,
-          "address": 52737,
-          "count": 88
-        }
-      ]
-    }
-  ],
+  "touched": [],
   "physical_page": 4,
   "real_station_preview_callbacks": true,
   "irq_only_at_explicit_halts": true,

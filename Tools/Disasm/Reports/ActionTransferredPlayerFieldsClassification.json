@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "typed_bytes": 4,
+  "physical_records": 2,
+  "physical_symbols": 5,
+  "files": 2,
+  "original_action_indices": [
+    0,
+    0
+  ],
+  "original_action_money": 65000,
+  "model_flight_profiles": 2,
+  "flight_consumers_proved": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false,
+  "author_prefix_bytes": 23
+}

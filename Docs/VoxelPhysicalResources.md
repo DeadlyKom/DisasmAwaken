@@ -22,8 +22,18 @@
 обозначают начало кадра, FNNRMM последующие строки. Размеры,
 границы и байты проверяются строгим парсером в
 [VoxelPhysicalData.py](../Tools/Disasm/Research/VoxelPhysicalData.py)
-и общей VerifySources. Следующие 832 байта E1C0..E4FF сохранены
-отдельно, их назначение пока не установлено.
+и общей VerifySources.
+
+Авторский `SPACE.a` включает в `VOXAL0.C` подряд `VOX.dat`,
+`EXPLOSIO.van`, `HIPERJMP.van` и код `GMATRX`.
+В `VOXEL.a` вход `NWTEL` выбирает адрес `VSPR2=#D800`,
+шаг `#00C0` и 13 кадров. Их данные занимают первые 2496 байтов
+из 3328 байтов `HIPERJMP.van`. Остальные 832 байта ресурса нулевые
+и лежат по `#E1C0..#E4FF` банка 3. В проверенных полных циклах
+обеих анимаций обращений к хвосту не было.
+[Хвост ресурса](../Source/Voxel/Resources/TeleportResourceTail.bin) ·
+[Авторский архив](https://opensourcezx.untergrund.net/a_games-awaken_src.html) ·
+[Сверка всех 11264 байтов VOXAL0](../Tools/Disasm/Reports/VoxelArchivedLayoutVerification.json)
 
 Потребитель и формула выборки описаны в
 [разборе растеризатора](VoxelSpriteClipBounds.md), продвижение

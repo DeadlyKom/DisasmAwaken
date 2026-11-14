@@ -78,6 +78,7 @@ def main():
                 assert value==before[bank][index],(vertices,mode,'outside changed write',hex(address),value,before[bank][index])
                 unchanged_outside+=1
         counts['flat' if low==high else 'filled']+=1
+        return dict(de=r[4]*256+r[5],bc=r[2]*256+r[3],ix=r[8]*256+r[9],iy=r[10]*256+r[11],alt_hl=r[22]*256+r[23])
     # Проверка размеров полос, треугольников и пяти оригинальных шаблонов.
     for height in range(1,17):
         for width in range(1,33):
@@ -101,8 +102,20 @@ def main():
         if len(vertices)<3:continue
         for rotation in (0,1,len(vertices)-1):
             check(vertices[rotation:]+vertices[:rotation],rng.randrange(5))
+    # Проверка зависимости E от предыдущей узкой строки при одинаковых последней строке и конечных указателях.
+    history_witnesses=[]
+    for mode in range(5):
+        first=check(((0,5),(3,9),(3,0)),mode)
+        second=check(((0,6),(3,9),(3,0)),mode)
+        assert first['de']==0x03E3 and second['de']==0x03F1,(mode,first,second)
+        for result in (first,second):
+            assert result['bc']==0x8041 and result['ix']==0x6000+2*mode and result['iy']==0x6130+2*mode
+            assert result['alt_hl']==0x0101
+        history_witnesses.append(dict(mode=mode,first=first,second=second))
     report=dict(passed=True,total_cases=counts.total(),profiles=dict(counts),original_patterns=patterns,mask_bytes_verified=320,
         linear_buffer_256_by_96=True,bitmap_exact=True,lower_scanline_excluded=True,
+        same_final_row_different_E_history_witnesses=history_witnesses,
+        history_E_compared_for_all_5_modes=True,
         restored_HL_and_SP_and_final_AF_checked=True,all_main_alternate_and_index_registers_proved=True,
         refresh_register_and_timing_proved=False,all_final_registers_proved=False,
         all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,outside_unchanged_write_attempts=unchanged_outside,

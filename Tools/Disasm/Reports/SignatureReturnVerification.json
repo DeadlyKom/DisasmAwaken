@@ -3,6 +3,17 @@
   "cases": 1920,
   "method": "original_signature_wrappers_returning_bank6",
   "physical_page_writes": true,
+  "exact_non_stack_write_sequence_checked": true,
+  "bounded_stack_write_addresses_checked": true,
+  "stack_write_address_interval": [
+    32754,
+    32766
+  ],
+  "original_return_word_preserved": true,
+  "final_working_key_checked": true,
+  "all_signature_words_and_variants_checked": false,
+  "full_R_proved": false,
+  "physical_paging_lock_emulation_proved": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

@@ -33,7 +33,7 @@
   ],
   "table_role_proved": true,
   "decoded_regions": 20,
-  "decoded_instructions": 50909,
+  "decoded_instructions": 50957,
   "explicit_references_to_cf08_cf0a": [],
   "raw_words_disk_offsets": {
     "CF08": [
@@ -59,6 +59,1665 @@
     198
   ],
   "target_exclusion_cases": 1024,
+  "object_dispatch_target_exclusion": [
+    {
+      "dispatcher": "DispatchRecordClass",
+      "jump": 25839,
+      "table": 25840,
+      "profiles": 256,
+      "distinct_targets": 67,
+      "page_cf_targets": 0
+    },
+    {
+      "dispatcher": "DispatchObjectState.CallHandler",
+      "jump": 63581,
+      "table": 61264,
+      "profiles": 256,
+      "distinct_targets": 108,
+      "page_cf_targets": 0
+    },
+    {
+      "dispatcher": "HandleLinkedTargetState.SelectSaved",
+      "jump": 61813,
+      "table": 61264,
+      "profiles": 256,
+      "distinct_targets": 108,
+      "page_cf_targets": 0
+    },
+    {
+      "dispatcher": "HandleLinkedPhaseState.SelectSaved",
+      "jump": 62150,
+      "table": 61264,
+      "profiles": 256,
+      "distinct_targets": 108,
+      "page_cf_targets": 0
+    }
+  ],
+  "registered_indirect_sources": {
+    "indirect_jump_sites": {
+      "Action": [
+        25839,
+        27903,
+        28493,
+        45043,
+        49264,
+        51602,
+        53650,
+        56222,
+        56231,
+        56242,
+        56252,
+        61813,
+        62150,
+        63581
+      ],
+      "ThreeD": [
+        49264,
+        51602,
+        53650,
+        56222,
+        56231,
+        56242,
+        56252
+      ]
+    },
+    "known_bank3_callback_sources": [
+      {
+        "branch": 31264,
+        "load": 31261,
+        "target": 60416
+      },
+      {
+        "branch": 31834,
+        "load": 31831,
+        "target": 60416
+      },
+      {
+        "branch": 59993,
+        "load": 59988,
+        "target": 60443
+      },
+      {
+        "branch": 63244,
+        "load": 63241,
+        "target": 60416
+      }
+    ],
+    "known_vector_sources": [
+      {
+        "branch": 27306,
+        "load": 27302,
+        "target": 27309
+      },
+      {
+        "branch": 27709,
+        "load": 27705,
+        "target": 27712
+      },
+      {
+        "branch": 27822,
+        "load": 27818,
+        "target": 27825
+      },
+      {
+        "branch": 28110,
+        "load": 28106,
+        "target": 28113
+      },
+      {
+        "branch": 44292,
+        "load": 44288,
+        "target": 44295
+      },
+      {
+        "branch": 57673,
+        "load": 57669,
+        "target": 57676
+      }
+    ],
+    "known_multiply_sources": [
+      {
+        "branch": 27924,
+        "load": 27920,
+        "target": 27927
+      },
+      {
+        "branch": 27938,
+        "load": 27934,
+        "target": 27941
+      },
+      {
+        "branch": 27951,
+        "load": 27947,
+        "target": 27954
+      },
+      {
+        "branch": 28287,
+        "load": 28283,
+        "target": 28290
+      },
+      {
+        "branch": 28306,
+        "load": 28302,
+        "target": 28309
+      },
+      {
+        "branch": 28325,
+        "load": 28321,
+        "target": 28328
+      },
+      {
+        "branch": 44881,
+        "load": 44877,
+        "target": 44884
+      },
+      {
+        "branch": 44895,
+        "load": 44891,
+        "target": 44898
+      },
+      {
+        "branch": 44914,
+        "load": 44910,
+        "target": 44917
+      },
+      {
+        "branch": 44936,
+        "load": 44932,
+        "target": 44939
+      },
+      {
+        "branch": 44951,
+        "load": 44947,
+        "target": 44954
+      },
+      {
+        "branch": 44971,
+        "load": 44967,
+        "target": 44974
+      },
+      {
+        "branch": 44993,
+        "load": 44989,
+        "target": 44996
+      },
+      {
+        "branch": 45008,
+        "load": 45004,
+        "target": 45011
+      },
+      {
+        "branch": 45028,
+        "load": 45024,
+        "target": 45031
+      }
+    ],
+    "known_vertex_sources_in_both_copies": [
+      {
+        "branch": 55062,
+        "load": 55059,
+        "target": 55065
+      },
+      {
+        "branch": 55084,
+        "load": 55081,
+        "target": 55188
+      },
+      {
+        "branch": 55094,
+        "load": 55091,
+        "target": 55097
+      },
+      {
+        "branch": 55107,
+        "load": 55104,
+        "target": 55110
+      },
+      {
+        "branch": 55120,
+        "load": 55117,
+        "target": 55123
+      },
+      {
+        "branch": 55133,
+        "load": 55130,
+        "target": 55136
+      },
+      {
+        "branch": 55146,
+        "load": 55143,
+        "target": 55149
+      },
+      {
+        "branch": 55159,
+        "load": 55156,
+        "target": 55162
+      },
+      {
+        "branch": 55172,
+        "load": 55169,
+        "target": 55175
+      },
+      {
+        "branch": 55185,
+        "load": 55182,
+        "target": 55188
+      }
+    ],
+    "original_keyboard_targets": [
+      30547,
+      30582,
+      30477,
+      30512,
+      30407,
+      30442,
+      29463,
+      30336,
+      30371,
+      44203,
+      29410,
+      29374,
+      28748,
+      28789,
+      28808,
+      29859,
+      30028,
+      29824,
+      30214,
+      29753,
+      29230,
+      30100,
+      30159,
+      28918,
+      28747,
+      30250,
+      49353
+    ],
+    "computed_rets_covered": false,
+    "direct_entries_bypassing_known_register_loads": [],
+    "outside_regions_or_modified_producers_covered": false
+  },
+  "temporary_module_target_exclusion": {
+    "regions": [
+      "ActionBoot",
+      "Action",
+      "ThreeD"
+    ],
+    "fixed_window": [
+      23968,
+      24412
+    ],
+    "banked_window": [
+      56030,
+      56474
+    ],
+    "original_indirect_targets": {
+      "clip": [
+        0,
+        1,
+        15,
+        255,
+        49274,
+        49275,
+        49290,
+        49301,
+        49316,
+        49327,
+        49342,
+        49353,
+        49368,
+        49379,
+        49385,
+        49391,
+        49409,
+        49433,
+        49451,
+        49458,
+        49476,
+        49482,
+        49488,
+        49506,
+        49524,
+        49531,
+        49549,
+        49573,
+        49579,
+        49597,
+        49615,
+        49622,
+        49628,
+        49649,
+        49676,
+        49704,
+        49711,
+        49742,
+        49753,
+        49759,
+        49780,
+        49805,
+        49833,
+        49854,
+        49865,
+        49872,
+        49903,
+        49928,
+        49934,
+        49940,
+        49958,
+        49976,
+        49982,
+        50009,
+        50030,
+        50037,
+        50065,
+        50076,
+        50097,
+        50128,
+        50134,
+        50159,
+        50166,
+        50194,
+        50225,
+        50232,
+        50253,
+        50278,
+        50289,
+        50419,
+        50493,
+        50568,
+        50660,
+        50899,
+        50922
+      ],
+      "DispatchRecordClass": [
+        18,
+        266,
+        522,
+        1790,
+        2104,
+        2614,
+        2679,
+        2870,
+        2935,
+        4618,
+        6850,
+        6851,
+        6861,
+        8205,
+        10701,
+        11213,
+        14045,
+        17869,
+        24557,
+        25892,
+        25893,
+        25910,
+        25929,
+        25946,
+        25958,
+        25983,
+        26004,
+        26029,
+        26054,
+        26078,
+        26126,
+        26138,
+        26155,
+        28926,
+        29389,
+        30685,
+        32477,
+        42079,
+        46460,
+        46500,
+        49254,
+        49333,
+        50022,
+        50112,
+        51302,
+        51431,
+        51467,
+        51711,
+        52481,
+        52582,
+        52681,
+        52696,
+        55551,
+        56577,
+        56578,
+        56580,
+        56688,
+        56768,
+        56776,
+        59149,
+        60274,
+        60864,
+        60873,
+        60907,
+        65046,
+        65119,
+        65291
+      ],
+      "DispatchObjectState.CallHandler": [
+        36,
+        54,
+        304,
+        310,
+        382,
+        510,
+        710,
+        970,
+        1406,
+        1911,
+        1918,
+        2302,
+        2614,
+        2679,
+        2864,
+        2942,
+        4414,
+        4550,
+        4734,
+        4822,
+        5118,
+        5942,
+        6007,
+        6014,
+        6198,
+        6347,
+        10368,
+        11494,
+        12271,
+        12303,
+        12815,
+        14045,
+        14896,
+        15364,
+        15639,
+        20079,
+        20271,
+        25823,
+        26066,
+        30685,
+        31087,
+        32238,
+        32477,
+        42957,
+        46851,
+        47151,
+        47480,
+        49687,
+        49950,
+        51711,
+        52512,
+        52582,
+        52705,
+        52720,
+        53780,
+        54791,
+        56578,
+        56583,
+        56597,
+        56598,
+        56612,
+        56637,
+        56647,
+        56777,
+        56816,
+        57586,
+        57632,
+        59038,
+        59945,
+        60137,
+        61309,
+        61338,
+        61365,
+        61373,
+        61399,
+        61417,
+        61449,
+        61501,
+        61514,
+        61564,
+        61569,
+        61630,
+        61688,
+        61752,
+        62089,
+        62135,
+        62294,
+        62369,
+        62408,
+        62448,
+        62620,
+        62750,
+        62847,
+        63082,
+        63103,
+        63147,
+        63165,
+        63212,
+        63682,
+        63683,
+        64768,
+        64896,
+        64997,
+        65008,
+        65011,
+        65060,
+        65145,
+        65150
+      ],
+      "HandleLinkedTargetState.SelectSaved": [
+        36,
+        54,
+        304,
+        310,
+        382,
+        510,
+        710,
+        970,
+        1406,
+        1911,
+        1918,
+        2302,
+        2614,
+        2679,
+        2864,
+        2942,
+        4414,
+        4550,
+        4734,
+        4822,
+        5118,
+        5942,
+        6007,
+        6014,
+        6198,
+        6347,
+        10368,
+        11494,
+        12271,
+        12303,
+        12815,
+        14045,
+        14896,
+        15364,
+        15639,
+        20079,
+        20271,
+        25823,
+        26066,
+        30685,
+        31087,
+        32238,
+        32477,
+        42957,
+        46851,
+        47151,
+        47480,
+        49687,
+        49950,
+        51711,
+        52512,
+        52582,
+        52705,
+        52720,
+        53780,
+        54791,
+        56578,
+        56583,
+        56597,
+        56598,
+        56612,
+        56637,
+        56647,
+        56777,
+        56816,
+        57586,
+        57632,
+        59038,
+        59945,
+        60137,
+        61309,
+        61338,
+        61365,
+        61373,
+        61399,
+        61417,
+        61449,
+        61501,
+        61514,
+        61564,
+        61569,
+        61630,
+        61688,
+        61752,
+        62089,
+        62135,
+        62294,
+        62369,
+        62408,
+        62448,
+        62620,
+        62750,
+        62847,
+        63082,
+        63103,
+        63147,
+        63165,
+        63212,
+        63682,
+        63683,
+        64768,
+        64896,
+        64997,
+        65008,
+        65011,
+        65060,
+        65145,
+        65150
+      ],
+      "HandleLinkedPhaseState.SelectSaved": [
+        36,
+        54,
+        304,
+        310,
+        382,
+        510,
+        710,
+        970,
+        1406,
+        1911,
+        1918,
+        2302,
+        2614,
+        2679,
+        2864,
+        2942,
+        4414,
+        4550,
+        4734,
+        4822,
+        5118,
+        5942,
+        6007,
+        6014,
+        6198,
+        6347,
+        10368,
+        11494,
+        12271,
+        12303,
+        12815,
+        14045,
+        14896,
+        15364,
+        15639,
+        20079,
+        20271,
+        25823,
+        26066,
+        30685,
+        31087,
+        32238,
+        32477,
+        42957,
+        46851,
+        47151,
+        47480,
+        49687,
+        49950,
+        51711,
+        52512,
+        52582,
+        52705,
+        52720,
+        53780,
+        54791,
+        56578,
+        56583,
+        56597,
+        56598,
+        56612,
+        56637,
+        56647,
+        56777,
+        56816,
+        57586,
+        57632,
+        59038,
+        59945,
+        60137,
+        61309,
+        61338,
+        61365,
+        61373,
+        61399,
+        61417,
+        61449,
+        61501,
+        61514,
+        61564,
+        61569,
+        61630,
+        61688,
+        61752,
+        62089,
+        62135,
+        62294,
+        62369,
+        62408,
+        62448,
+        62620,
+        62750,
+        62847,
+        63082,
+        63103,
+        63147,
+        63165,
+        63212,
+        63682,
+        63683,
+        64768,
+        64896,
+        64997,
+        65008,
+        65011,
+        65060,
+        65145,
+        65150
+      ],
+      "keyboard": [
+        28747,
+        28748,
+        28789,
+        28808,
+        28918,
+        29230,
+        29374,
+        29410,
+        29463,
+        29753,
+        29824,
+        29859,
+        30028,
+        30100,
+        30159,
+        30214,
+        30250,
+        30336,
+        30371,
+        30407,
+        30442,
+        30477,
+        30512,
+        30547,
+        30582,
+        44203,
+        49353
+      ],
+      "known_bank3_callback_sources": [
+        60416,
+        60443
+      ],
+      "known_vector_sources": [
+        27309,
+        27712,
+        27825,
+        28113,
+        44295,
+        57676
+      ],
+      "known_multiply_sources": [
+        27927,
+        27941,
+        27954,
+        28290,
+        28309,
+        28328,
+        44884,
+        44898,
+        44917,
+        44939,
+        44954,
+        44974,
+        44996,
+        45011,
+        45031
+      ],
+      "known_vertex_sources_in_both_copies": [
+        55065,
+        55097,
+        55110,
+        55123,
+        55136,
+        55149,
+        55162,
+        55175,
+        55188
+      ]
+    },
+    "fixed_window_direct_branches": [],
+    "banked_window_bank0_branches": [
+      {
+        "region": "Action",
+        "address": 55221,
+        "target": 56232,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55581,
+        "target": 56232,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55590,
+        "target": 56232,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55762,
+        "target": 56072,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55865,
+        "target": 56205,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55925,
+        "target": 56030,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55931,
+        "target": 56037,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55937,
+        "target": 56044,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55943,
+        "target": 56051,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55949,
+        "target": 56058,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55955,
+        "target": 56065,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55964,
+        "target": 56199,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55971,
+        "target": 56085,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55978,
+        "target": 56094,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55985,
+        "target": 56102,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55992,
+        "target": 56110,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 55999,
+        "target": 56118,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56006,
+        "target": 56126,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56013,
+        "target": 56134,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56020,
+        "target": 56142,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56027,
+        "target": 56150,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56034,
+        "target": 56157,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56041,
+        "target": 56164,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56048,
+        "target": 56171,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56055,
+        "target": 56178,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56062,
+        "target": 56185,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56069,
+        "target": 56192,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56078,
+        "target": 56243,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56087,
+        "target": 56243,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56096,
+        "target": 56099,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56104,
+        "target": 56107,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56112,
+        "target": 56115,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56120,
+        "target": 56123,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56128,
+        "target": 56131,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56136,
+        "target": 56139,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56144,
+        "target": 56147,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56152,
+        "target": 56155,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56159,
+        "target": 56162,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56166,
+        "target": 56169,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56173,
+        "target": 56176,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56180,
+        "target": 56183,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56187,
+        "target": 56190,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56194,
+        "target": 56197,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56201,
+        "target": 56204,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56210,
+        "target": 56223,
+        "source": "Source/Action/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56256,
+        "target": 56353,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56265,
+        "target": 56340,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56275,
+        "target": 56345,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56280,
+        "target": 56345,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56296,
+        "target": 56331,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56322,
+        "target": 56309,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56328,
+        "target": 56253,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56337,
+        "target": 56253,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56350,
+        "target": 56253,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56358,
+        "target": 56366,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56364,
+        "target": 56345,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56371,
+        "target": 56385,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56375,
+        "target": 56393,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56382,
+        "target": 56398,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56390,
+        "target": 56398,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56536,
+        "target": 56438,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 56538,
+        "target": 56253,
+        "source": "Source/Action/RenderClippedRecords.asm"
+      },
+      {
+        "region": "Action",
+        "address": 58618,
+        "target": 56253,
+        "source": "Source/Action/RenderQueuedObject.asm"
+      },
+      {
+        "region": "Action",
+        "address": 60264,
+        "target": 56253,
+        "source": "Source/Action/ToggleTargetOverlay.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55221,
+        "target": 56232,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55581,
+        "target": 56232,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55590,
+        "target": 56232,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55762,
+        "target": 56072,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55865,
+        "target": 56205,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55925,
+        "target": 56030,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55931,
+        "target": 56037,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55937,
+        "target": 56044,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55943,
+        "target": 56051,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55949,
+        "target": 56058,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55955,
+        "target": 56065,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55964,
+        "target": 56199,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55971,
+        "target": 56085,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55978,
+        "target": 56094,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55985,
+        "target": 56102,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55992,
+        "target": 56110,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 55999,
+        "target": 56118,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56006,
+        "target": 56126,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56013,
+        "target": 56134,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56020,
+        "target": 56142,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56027,
+        "target": 56150,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56034,
+        "target": 56157,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56041,
+        "target": 56164,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56048,
+        "target": 56171,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56055,
+        "target": 56178,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56062,
+        "target": 56185,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56069,
+        "target": 56192,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56078,
+        "target": 56243,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56087,
+        "target": 56243,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56096,
+        "target": 56099,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56104,
+        "target": 56107,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56112,
+        "target": 56115,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56120,
+        "target": 56123,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56128,
+        "target": 56131,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56136,
+        "target": 56139,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56144,
+        "target": 56147,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56152,
+        "target": 56155,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56159,
+        "target": 56162,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56166,
+        "target": 56169,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56173,
+        "target": 56176,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56180,
+        "target": 56183,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56187,
+        "target": 56190,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56194,
+        "target": 56197,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56201,
+        "target": 56204,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56210,
+        "target": 56223,
+        "source": "Source/ThreeD/ProjectRenderVertex.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56256,
+        "target": 56353,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56265,
+        "target": 56340,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56275,
+        "target": 56345,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56280,
+        "target": 56345,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56296,
+        "target": 56331,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56322,
+        "target": 56309,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56328,
+        "target": 56253,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56337,
+        "target": 56253,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56350,
+        "target": 56253,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56358,
+        "target": 56366,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56364,
+        "target": 56345,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56371,
+        "target": 56385,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56375,
+        "target": 56393,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56382,
+        "target": 56398,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56390,
+        "target": 56398,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56536,
+        "target": 56438,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      },
+      {
+        "region": "ThreeD",
+        "address": 56538,
+        "target": 56253,
+        "source": "Source/ThreeD/RenderClippedRecords.asm"
+      }
+    ],
+    "physical_control_bank": 1,
+    "separately_traced_render_returns": 26790,
+    "render_returns_to_same_cpu_addresses_in_bank0": [
+      {
+        "pc": 49274,
+        "bank": 0,
+        "stack_writer": 56331,
+        "stack_writer_bank": 0,
+        "stack_writer_opcode": 205,
+        "target": 56334,
+        "count": 161
+      },
+      {
+        "pc": 53863,
+        "bank": 0,
+        "stack_writer": 56325,
+        "stack_writer_bank": 0,
+        "stack_writer_opcode": 205,
+        "target": 56328,
+        "count": 104
+      },
+      {
+        "pc": 53863,
+        "bank": 0,
+        "stack_writer": 56334,
+        "stack_writer_bank": 0,
+        "stack_writer_opcode": 212,
+        "target": 56337,
+        "count": 148
+      },
+      {
+        "pc": 54544,
+        "bank": 0,
+        "stack_writer": 56334,
+        "stack_writer_bank": 0,
+        "stack_writer_opcode": 212,
+        "target": 56337,
+        "count": 13
+      },
+      {
+        "pc": 56810,
+        "bank": 0,
+        "stack_writer": 56272,
+        "stack_writer_bank": 0,
+        "stack_writer_opcode": 205,
+        "target": 56275,
+        "count": 282
+      },
+      {
+        "pc": 57352,
+        "bank": 0,
+        "stack_writer": 56262,
+        "stack_writer_bank": 0,
+        "stack_writer_opcode": 205,
+        "target": 56265,
+        "count": 656
+      }
+    ],
+    "all_returns_covered": false,
+    "unregistered_code_covered": false
+  },
   "complete_paths": [
     {
       "overlay": "Action",
@@ -387,7 +2046,7 @@
   ],
   "execution_entry_proved": false,
   "nonexecution_proved": false,
-  "unknown_status_preserved": true,
+  "physical_emission": "named_pointer_low_bytes",
   "source_bytes_changed": false,
   "assembly_executed": false,
   "native_execution": false

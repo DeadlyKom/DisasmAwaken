@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "slot": 44,
+  "original_disk_offset": 553728,
+  "logical_bytes": 28,
+  "structured_bytes": 13,
+  "sector_tail_bytes": 228,
+  "autostart_line": 0,
+  "physical_sha256": "db12e96a418d88c9f93a99b5a0bc6b49725b128d3765370e8123b9a00284e591",
+  "verified_disk_layout_bytes": 655360,
+  "assembly_executed": false
+}

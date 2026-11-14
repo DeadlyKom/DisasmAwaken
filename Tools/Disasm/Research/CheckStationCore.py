@@ -28,6 +28,10 @@ def main():
     manifest = json.loads((ROOT / "Tools/Disasm/Disk/Manifest.json").read_text(encoding="utf-8"))
     entry = next(e for e in manifest["entries"] if e["slot"] == 4)
     source = (ROOT / (entry["path"] + ".sectors.bin")).read_bytes()
+    disk = (ROOT / "Tools/Disasm/Disk/original.trd").read_bytes()
+    assert hashlib.sha256(disk).hexdigest() == manifest["sha256"]
+    assert len(source) == entry["allocated_length"]
+    assert disk[entry["offset"]:entry["offset"] + len(source)] == source
     memory = [0] * 65536
     memory[0x6000:0x6000 + len(source)] = source
     # Перенос соответствует исходному LDIR, физические смещения не равны рабочим адресам ядра.
@@ -46,7 +50,11 @@ def main():
         simulator.registers[A], simulator.registers[F] = value, old ^ value
         memory[0x6306] = old
         log.writes.clear()
+        # Проверка точного R, число M1 не зависит от значений передаваемых байтов.
+        refresh = (old + value) & 255
+        simulator.registers[15] = refresh
         simulator.run(start=0x6396, stop=0x3FFF)
+        assert simulator.registers[15] == (refresh & 0x80) | ((refresh + 13) & 0x7F)
         expected = (old & 0xF8) | value
         if (memory[0x6306], simulator.registers[A], simulator.registers[F], log.writes) != (
                 expected, expected, logic_flags(expected), [(0x7FFD, expected)]):
@@ -61,7 +69,11 @@ def main():
         simulator.registers[:] = initial
         simulator.registers[A], simulator.registers[F] = value, old
         log.writes.clear()
+        # Проверка точного R, число M1 не зависит от значений передаваемых байтов.
+        refresh = (old + value) & 255
+        simulator.registers[15] = refresh
         simulator.run(start=0x639F, stop=0x3FFF)
+        assert simulator.registers[15] == (refresh & 0x80) | ((refresh + 7) & 0x7F)
         if (memory[0x6306], simulator.registers[A], simulator.registers[F], log.writes) != (
                 value, value, old, [(0x7FFD, value)]):
             raise ValueError("Не совпал прямой OUT или сохранённый AF")
@@ -83,7 +95,11 @@ def main():
             memory[address] = value
         simulator.registers[:] = initial
         simulator.registers[F] = motion & 255
+        # Проверка точного R, число M1 не зависит от значений передаваемых байтов.
+        refresh = motion & 255
+        simulator.registers[15] = refresh
         simulator.run(start=0x63F1, stop=0x3FFF)
+        assert simulator.registers[15] == (refresh & 0x80) | ((refresh + 19) & 0x7F)
         expected = 0
         for value in pattern:
             expected |= value
@@ -96,6 +112,10 @@ def main():
     report = {"method": "relocated_original_z80_bytes_and_port_log", "passed": True,
               "merged_page_cases": merged, "direct_page_cases": direct, "parameter_cases": motion,
               "source_sha256": hashlib.sha256(source).hexdigest(),
+              "original_disk_sha256": hashlib.sha256(disk).hexdigest(),
+              "all_three_entries_R_checked": True, "R_bit7_preserved": True,
+              "M1_by_entry": {"SelectRamBank": 13, "SelectMemoryPage": 7, "TestMotionParameters": 19},
+              "complete_joint_AF_shadow_R_product": False,
               "physical_paging_or_lock_bit_simulated": False, "interrupts_simulated": False,
               "assembly_executed": False}
     (ROOT / "Tools/Disasm/Reports/StationCoreVerification.json").write_text(

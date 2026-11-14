@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "cases": 65536,
+  "entry": 56169,
+  "all_CursorY_and_alternate_F_pairs": true,
+  "exact_registers_and_single_cursor_write": true,
+  "full_tail_M1": 13,
+  "R_I_IM_IFF_checked": true,
+  "preceding_PrintAfterCR_executed": false,
+  "flat_view_of_selected_help_bank": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

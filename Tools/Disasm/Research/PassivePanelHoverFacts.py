@@ -25,3 +25,13 @@ def name_operands(region,address,operation):
  if region!='Station' or address not in FUNCTIONS:return operation
  for target,name in TARGETS.items():operation=operation.replace('#'+format(target,'04X'),'@'+name)
  return operation
+
+
+# Даже пустой RET изменяет R, хвостовой JP добавляет ещё один M1.
+for _index,_proxy,_noop,_name,_title in PANELS:
+    for _address,_m1 in ((_proxy,2),(_noop,1)):
+        _parts = [list(part) for part in CONTRACTS['Station',_address]]
+        _parts[0].append('IRQ и NMI не вмешиваются между входом и обычным возвратом, точный счёт R относится к этому условию')
+        _parts[2] = ['R, SP и PC по обычному возврату']
+        _parts[3].append('R увеличивает младшие семь битов на '+str(_m1)+' modulo 128, бит 7 сохраняется, IRQ в модели не исполняется')
+        CONTRACTS['Station',_address] = tuple(_parts)

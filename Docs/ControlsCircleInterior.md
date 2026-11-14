@@ -1,12 +1,15 @@
 # Большой контур без горизонтального отсечения
 
-Это исторический частичный разбор входа [UnknownD314](../Source/Controls/DrawInteriorCircle.asm).
+Это исторический частичный разбор входа [DrawInteriorCircle, ранее UnknownD314](../Source/Controls/DrawInteriorCircle.asm).
 Более полный договор внутреннего случая описан в [ControlsCircleInteriorFull](ControlsCircleInteriorFull.md).
 Он дважды вызывает [BuildCircleSpan](../Source/Controls/BuildCircleSpan.asm),
 между ними обрабатывает верхнюю половину, затем нижнюю через
-[UnknownD633](../Source/Controls/CircleRasterCore.asm).
-Общие ядра сохраняют Unknown, горизонтальные граничные случаи
-и все конечные регистры ранней проверкой этого документа не объявлялись доказанными.
+[CircleRasterCore, ранее UnknownD633](../Source/Controls/CircleRasterCore.asm).
+Горизонтальные граничные случаи и все конечные регистры ранней
+проверкой этого документа не объявлялись доказанными. Актуальные
+договоры общих ядер и их отдельные модели приведены в
+[ControlsCircleKernels](ControlsCircleKernels.md), исторические
+пределы описанной ниже модели сохраняются.
 
 ## Проверенная область
 

@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "method": "author_class_definition_icon_and_current_release_class_checks",
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "author_name": "T_STATION",
+  "class_code": 18,
+  "class_code_hex": "12",
+  "author_comment": "ЧАСТЬ СТАНЦИИ",
+  "original_definition_hex": "545f53544154494f4e068305660682233132fe978091929c209192808d968888",
+  "corresponding_icon_role": {
+    "class_code": 18,
+    "archived_label": "MSTATION",
+    "current_address": 59165,
+    "current_shape": "OpenRight",
+    "type_constants": [
+      "T_STATION"
+    ]
+  },
+  "archived_control_bytes_matched": 672,
+  "current_instruction_witnesses": [
+    {
+      "address": 58975,
+      "file_offset": 34399,
+      "hex": "DD7E12",
+      "operation": "LD A,(IX+#12)"
+    },
+    {
+      "address": 58978,
+      "file_offset": 34402,
+      "hex": "FE12",
+      "operation": "CP #12"
+    },
+    {
+      "address": 59000,
+      "file_offset": 34424,
+      "hex": "FD7E12",
+      "operation": "LD A,(IY+#12)"
+    },
+    {
+      "address": 59003,
+      "file_offset": 34427,
+      "hex": "FE12",
+      "operation": "CP #12"
+    }
+  ],
+  "station_part_class_role_linked": true,
+  "alternate_nonstation_restore_path_preserved": true,
+  "full_station_behavior_proved": false,
+  "native_visual_appearance_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

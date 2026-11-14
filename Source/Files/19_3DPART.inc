@@ -387,8 +387,9 @@
                 include "../ThreeD/ComposeRenderMatrix.asm"
                 ent
                 assert $ == #0EE3
-                ; Unknown, сохранённые физические байты вне доказанных процедур и типизированных записей
-                incbin "../Resources/19_3DPART/Unclassified0EE3_0F00.bin"
+                ; Выравнивание ADRXX00 перед младшей страницей L95
+                ; Документация [авторская разметка](../../Docs/ThreeDOverlayMirror.md)
+                incbin "../ThreeD/Resources/ClipDispatchAlignment.bin"
                 assert $ == #0F00
                 ; Документация [префикс таблицы и два рабочих байта](../../Docs/ClipDispatchPrefixData.md)
                 disp #CF00
@@ -396,7 +397,7 @@
                 ent
                 assert $ == #0F08
                 disp #CF08
-                include "../ThreeD/UnknownCF08.asm"
+                include "../ThreeD/Data/ClipTargetLowAlias.asm"
                 ent
                 assert $ == #0F0B
                 disp #CF0B
@@ -455,8 +456,8 @@
                 include "../ThreeD/MultiplySignedScaled.asm"
                 ent
                 assert $ == #1194
-                ; Unknown, сохранённые физические байты вне доказанных процедур и типизированных записей
-                incbin "../Resources/19_3DPART/Physical1194.bin"
+                ; Переход к смещению C0 внутри страницы перед записью пролёта
+                incbin "../ThreeD/Resources/PolygonRowsAlignment.bin"
                 assert $ == #11C0
                 disp #D1C0
                 include "../ThreeD/PolygonFillRows.asm"
@@ -550,8 +551,8 @@
                 include "../ThreeD/CheckFaceOrientation.asm"
                 ent
                 assert $ == #2009
-                ; Unknown, сохранённые физические байты вне доказанных процедур и типизированных записей
-                incbin "../Resources/19_3DPART/Physical2009.bin"
+                ; Заполнение до 16-байтовой границы масок MASKS
+                incbin "../ThreeD/Resources/LineMasksAlignment.bin"
                 assert $ == #2010
                 disp #E010
                 include "../ThreeD/Data/LineMasks.asm"

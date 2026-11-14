@@ -1,10 +1,10 @@
 {
   "passed": true,
-  "cases": 5632,
+  "cases": 5888,
   "projected_vertices": 22592,
   "all_256_masks_checked": true,
   "vertices_per_group": {
-    "0": 23,
+    "0": 279,
     "1": 176,
     "2": 607,
     "3": 1224,
@@ -28,6 +28,16 @@
   "real_cpu_sp_and_return_restored": true,
   "exact_write_boundaries_checked": true,
   "whole_physical_model_walk_not_executed": true,
+  "direct_final_flag_and_I_IM_IFF_conditions_checked": true,
+  "zero_mask_alternate_context_cases": 256,
+  "zero_mask_cpu_stack_positions": [
+    32766,
+    32770,
+    40958,
+    49150
+  ],
+  "R_proved": false,
+  "complete_joint_input_product_exhausted": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

@@ -1,11 +1,21 @@
 {
   "passed": true,
-  "records_checked": 1418,
-  "physical_target_ranges_checked": 404,
+  "records_checked": 1427,
+  "writer_source_ranges_checked": 1427,
+  "unique_writer_instructions_checked": 1420,
+  "physical_target_ranges_checked": 413,
   "target_paths_without_physical_context": 0,
   "all_records_have_physical_target_context": false,
   "errors": [],
   "assembly_executed": false,
   "native_execution": false,
-  "existing_but_wrong_target_path_probe_rejected": true
+  "existing_but_wrong_target_path_probe_rejected": true,
+  "existing_but_wrong_writer_path_probe_rejected": true,
+  "document_verification": {
+    "passed": true,
+    "document_rows": 1427,
+    "registry_records": 1427,
+    "order_operations_link_labels_and_writer_paths_checked": true
+  },
+  "wrong_document_writer_link_probe_rejected": true
 }

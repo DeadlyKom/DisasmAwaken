@@ -1,4 +1,7 @@
-"""Оригинальный EA01, числовая модель, точные флаги и проверка совпадения перенесённого алгоритма Map."""
+"""Оригинальный EA01, числовая модель, точные флаги и проверка совпадения перенесённого алгоритма Map.
+
+Документация: ../../../Docs/PreviewClipDivision.md#полный-m1-и-r-по-частному-и-знакам
+"""
 from pathlib import Path
 import json,random,sys
 ROOT=Path(__file__).resolve().parents[3]
@@ -9,6 +12,7 @@ from Analyze import payload
 from InspectZ80 import decoder
 from CheckPreviewCoordinateMultiply import Memory
 from CheckSignedDivision import expected
+from PackedRefreshTrace import PackedRefreshTrace
 
 
 def main():
@@ -23,12 +27,28 @@ def main():
    assert a.bytes[0]==b.bytes[0] and int.from_bytes(b.bytes[1:],'little')-int.from_bytes(a.bytes[1:],'little')==0xD06;shifted+=1
   else:assert a.bytes==b.bytes
  initial=get_registers({'SP':0x7FFE,'BC':0x36C9,'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE},None,False);cases=wide=0
+ refresh=PackedRefreshTrace([dict(address=i.address,hex=bytes(i.bytes).hex()) for i in right],0)
+ refresh_seeds=set();m1_bounds=[999,0];m1_total=0
  def check(number,divisor,selector):
-  nonlocal cases
+  nonlocal cases,m1_total
   raw_number=number&0xFFFFFFFF;carry=selector&1;alt_carry=(selector>>1)&1;s.registers[:]=initial;r=s.registers
   r[6]=raw_number>>24;r[7]=(raw_number>>16)&255;r[0]=(raw_number>>8)&255;r[1]=(128 if divisor<0 else 0)|carry
   r[16]=raw_number&255;r[17]=0x5C|alt_carry;r[4]=(divisor>>8)&255;r[5]=divisor&255;r[8]=(selector>>2)&255
-  ix_high=r[8];m.recording=True;m.writes=[];s.run(start=0xEA01,stop=0x3FFF)
+  ix_high=r[8];r[14]=cases&255;r[15]=(cases*73)&255;r[26]=cases&1;r[27]=cases%3
+  system=(r[14],r[26],r[27]);refresh_seeds.add(r[15]);refresh.initial_r=r[15]
+  refresh.m1=refresh.steps=0;refresh.prefix_counts.clear();m.recording=True;m.writes=[];r[24]=0xEA01
+  for _ in range(256):
+   if r[24]==0x3FFF:break
+   refresh.before(m,r[24],r[15]);s.run();refresh.after(r[15])
+  else:raise AssertionError(('division instruction limit',number,divisor))
+  refresh.finish(r[15])
+  # Расчёт M1 по математическому частному и знакам, не по ветвлениям симулятора.
+  unsigned=number if number>=0 else -number-1;quotient=unsigned//abs(divisor)
+  signs=int(number<0)+int(divisor<0)
+  m1=130+10*int(divisor<0)+12*int(number<0)-2*int(signs==1)-quotient.bit_count()
+  assert refresh.m1==m1,(number,divisor,refresh.m1,m1)
+  assert (r[14],r[26],r[27])==system
+  m1_bounds[0]=min(m1_bounds[0],m1);m1_bounds[1]=max(m1_bounds[1],m1);m1_total+=m1
   result,flags,alt_flags,bc,denominator,ix=expected(number,divisor,carry,alt_carry,0x36C9)
   assert tuple(r[:8])==(result>>8,flags,bc>>8,bc&255,denominator>>8,denominator&255,result>>8,result&255),(number,divisor,r[:8],result,flags)
   assert (r[16],r[17],r[8],r[9])==(result&255,alt_flags,ix_high,ix&255)
@@ -42,6 +62,10 @@ def main():
   for _ in range(1024):
    value=rng.randrange(abs(divisor)*65536);check(value,divisor,value);check(-value-1,divisor,value);wide+=2
  report=dict(passed=True,cases=cases,wide_input_cases=wide,original_map_and_d3d_instruction_bytes_equal_after_internal_jp_relocation=True,relocated_absolute_jumps=shifted,actual_d3d_execution=True,independent_numeric_quotient_and_flag_formula=True,negative_numerator_and_quotient_use_ones_complement=True,denominator_sign_is_input_s=True,exact_main_alternate_and_index_context=True,all_ix_high_bytes_preserved=True,no_memory_writes=True,zero_divisor_tested=False,quotient_overflow_tested=False,irq_executed=False,native_execution=False,assembly_executed=False)
+ assert refresh_seeds==set(range(256))
+ report.update(independent_M1_formula='130+10*(d<0)+12*(N<0)-2*(negative_count==1)-popcount(q)',
+  full_M1_and_each_R_step_checked=True,R_initial_values=256,R_bit7_and_I_IM_IFF_preserved=True,
+  M1_bounds=m1_bounds,total_M1=m1_total,R_full_joint_input_product=False)
  (ROOT/'Tools/Disasm/Reports/PreviewClipDivisionVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 
 

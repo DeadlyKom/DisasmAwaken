@@ -18,6 +18,18 @@ AySelect        equ #FFFD                                                       
 AyWrite         equ #BFFD                                                       ; запись регистра AY
                 endmodule
 
+                module ActionPanelEventConst
+CostBit         equ #00                                                         ; бит переменной стоимости по установленной защите
+BlinkBit        equ #01                                                         ; бит мигания атрибута и звукового запроса
+FixedCostBit    equ #02                                                         ; бит списания 40 единиц, устанавливается при подборе помеченной записи
+CostMask        equ #01                                                         ; маска переменной стоимости
+BlinkMask       equ #02                                                         ; маска мигания
+FixedCostMask   equ #04                                                         ; маска фиксированной стоимости
+                assert CostMask == (1 << CostBit)
+                assert BlinkMask == (1 << BlinkBit)
+                assert FixedCostMask == (1 << FixedCostBit)
+                endmodule
+
                 module ScriptConst
 ReaderCount     equ #24                                                         ; число физических записей чтения, включая повтор y
 WriterCount     equ #07                                                         ; число записей выбора писателя присваивания
@@ -335,6 +347,8 @@ ThresholdCount  equ #06                                                         
 
                 module MissionOfferConst
 RewardScale     equ #0014                                                       ; коэффициент 20 в произведении расстояния и тоннажа
+RewardOverflow  equ #FDE8                                                       ; сумма 65000 при переполнении сложения денег и награды
+CancelPenalty   equ #03E8                                                       ; штраф 1000 при расторжении принятого контракта
                 endmodule
 
                 module SystemNameConst
@@ -472,7 +486,7 @@ AlienSignal     equ #01                                                         
                 module DecodedPanelConst
 SystemFirst     equ #4B37                                                       ; FirstWord ключа системы Дзета-43/78-Д
 SystemSecond    equ #4E25                                                       ; SecondWord ключа системы Дзета-43/78-Д
-FinalCode       equ #FE                                                         ; точный числовой код допуска финального перехода
+ArtifactOwned   equ #FE                                                         ; один X артефакт в инверсной кодировке, точный допуск финала
                 endmodule
 
                 module FinalExitCopy
@@ -483,6 +497,7 @@ Bytes           equ #0200                                                       
 
                 module FinalDisplayChainConst
 GeneratedEntry  equ #8000                                                       ; вход цепочки после записи команд поверх скопированного bitmap
+IrqStackTop     equ #6196                                                       ; верх временного стека, первый байт построителя остаётся за стеком
                 endmodule
 
                 module MarketColumnConst
@@ -763,7 +778,7 @@ InkLimit        equ #38                                                         
 BitLimit        equ #32                                                         ; исключающая граница цифры 2 для Bright
 PendingGlyph    equ #5F                                                         ; подчёркивание перед ожиданием редактируемой клавиши
 EnvLastRow      equ #0C                                                         ; последний исходный индекс установок среды
-GameLastRow     equ #1A                                                         ; последний исходный индекс установок игры, хвост шаблона сохранён
+GameLastRow     equ #1A                                                         ; предел ScrollWindowRows для установок игры
 ToggleCount     equ #04                                                         ; первые четыре индекса среды переключают Y и N
 ColorStart      equ #0A                                                         ; первый цветовой индекс среды, Ink
 BrightIndex     equ #0C                                                         ; индекс Bright, код также применяет его проверку к большим индексам
@@ -1038,9 +1053,10 @@ BaseHigh        equ #A1                                                         
 ActionSound     equ #EDA8                                                       ; поток канала A в ACTION банка 0
 LostText        equ #F248                                                       ; сообщение о потерянной цели, Controls банка 1
 InitialComp2    equ #0190                                                       ; третье входное слово, единицы ещё неизвестны
-FallbackParam   equ #000A                                                       ; Unknown13 при поле Fallback
-PreferredParam  equ #0032                                                       ; Unknown13 при поле Preferred
+FallbackParam   equ #000A                                                       ; EffectReserve при поле Fallback
+PreferredParam  equ #0032                                                       ; EffectReserve при поле Preferred
 MissileClass    equ #0011                                                       ; ClassCode создаваемой записи
+PlayerIndex     equ #001A                                                       ; индекс стрелявшего игрока, A100+64*1A=A780, авторский PLAYER
                 endmodule
 
 
@@ -1061,7 +1077,7 @@ HeightBase      equ #42                                                         
                 ; Проверенные коды и пределы локальных входов E506 и E51F
                 module ActionCloseRecordConst
 IgnoredClass    equ #14                                                         ; второй класс без обработки в корневом входе
-TransferClass   equ #12                                                         ; корневой класс передачи следующему режиму
+TransferClass   equ #12                                                         ; авторский T_STATION, часть станции и класс передачи следующему режиму
 ComponentBit    equ #04                                                         ; номер проверяемого бита ReuseByte дополнительного входа
 HighLimit       equ #04                                                         ; верхний исключённый предел преобразованного старшего байта
                 endmodule
@@ -1097,6 +1113,7 @@ Unit            equ #7F                                                         
                 ; Исходные параметры копирования OBJECT3D
                 module ActionObjectCopyConst
 PointerPage     equ #9E                                                         ; страница исходных little-endian указателей
+NearDepthEnd    equ #1F                                                         ; исключающий порог старшего байта глубины для второго указателя пары
 DataPage        equ #14                                                         ; полная конфигурация 7FFD для OBJECT3D банка 4
 LengthMask      equ #0F                                                         ; число следующих байтов переменной записи, нуль задаёт конец
                 endmodule
@@ -1259,6 +1276,8 @@ GroupSeed       equ #FE                                                         
 ExtendedCode    equ #F9                                                         ; код расширения длины, нулевое расширение завершает поток
 LongOffsetLimit equ #FD                                                         ; порог старшего байта смещения для поправки длины
 AttributesHigh  equ #58                                                         ; граница логических пикселей и линейных атрибутов
+SourceClearFrom equ #8F93                                                       ; первый обнуляемый байт исходного окна после переноса экрана
+SourceClearRest equ #306C                                                       ; байты после первого до верхней границы #C000
                 endmodule
 
 
@@ -1396,7 +1415,7 @@ RecordCode      equ #02                                                         
                 module ActionPreferredRecordConst
 RLimit          equ #E6                                                         ; граница чтения R для дополнительного выбора
 WordLimit       equ #28                                                         ; верхняя исключённая граница нового L
-GateLimit       equ #50                                                         ; нижняя включённая граница UnknownGate
+GateLimit       equ #50                                                         ; нижняя включённая граница StatusCode
 Class3          equ #03                                                         ; класс, запрещающий обновление
 RecordCode      equ #0B                                                         ; код StateCode целевой записи класса 18
                 endmodule
@@ -1470,7 +1489,7 @@ NotFoundLow     equ #7F                                                         
 
                 ; Исходные значения сброса управления и накопителей клавиатурных каналов
                 module ActionControlDecayConst
-ResetWord       equ #0088                                                       ; значение LimitWord и SignedWord на падающем фронте
+ResetWord       equ #0088                                                       ; значение LimitWord и SpeedWord на падающем фронте
 RequestOn       equ #01                                                         ; запрос перерисовки шкалы
 XYReset         equ #C8                                                         ; исходный байт сброса двух накопителей X либо Y
 TurnReset       equ #FA                                                         ; исходный байт сброса накопителей поворота
@@ -1676,15 +1695,15 @@ FixedLast       equ #FFFF                                                       
                 ; Исходные параметры создаваемой записи класса 9
                 module ActionChildSpawnConst
 LowLimit        equ #0A                                                         ; исключающий верхний порог нового младшего байта потока 11
-RequiredClass   equ #08                                                         ; полный класс родителя, записываемый в Unknown21 ребёнка
+RequiredClass   equ #08                                                         ; полный класс родителя, записываемый в ProximityClass ребёнка
 ModelWithBit7   equ #88                                                         ; ModelOffset при установленном бите 7 R
 ModelNoBit7     equ #8C                                                         ; ModelOffset при сброшенном бите 7 R
-TargetLife      equ #5A                                                         ; исходный байт 0F ребёнка, полная игровая роль зависит от состояния
+ScaleLimit      equ #5A                                                         ; исключающий порог инкремента OffsetScaleLow, 90
 Phase1Mask      equ #0F                                                         ; четыре младших разряда R для OffsetPhase1
 Phase2Mask      equ #07                                                         ; три младших разряда R для OffsetPhase2
-TimerByte11     equ #28                                                         ; исходный счётчик байта 11, 40
+InitialParam11  equ #28                                                         ; начальный байт 11, в State02 порог 40, роль зависит от состояния
 SavedState      equ #0D                                                         ; состояние проверки выбранной записи после восстановления
-ChildClass      equ #09                                                         ; полный класс создаваемых записей
+ChildClass      equ #09                                                         ; микро корабль T_MIKR из авторского EQUS, класс создаваемых записей
 ControlByte13   equ #32                                                         ; исходное управляющее значение байта 13, 50
 InitialByte10   equ #01                                                         ; исходное управляющее значение байта 10
 TargetStep      equ #02                                                         ; шаг двух фазовых кодов относительно выбранной цели
@@ -1696,9 +1715,9 @@ TargetStep      equ #02                                                         
 PhaseMask       equ #0F                                                         ; общая фаза по модулю 16 вызовов
 ParentState     equ #09                                                         ; состояние родителя при недоступной связи либо окончании счётчика
 ModelBase       equ #10                                                         ; байтовая база четырёх моделей, код области умножается на четыре
-TargetLife      equ #96                                                         ; исходный управляющий байт 0F ребёнка, 150
+ScaleLimit      equ #96                                                         ; исключающий порог инкремента OffsetScaleLow, 150
 InitialPhase0   equ #40                                                         ; начальный циклический индекс первой фазы
-TimerByte11     equ #46                                                         ; управляющий счётчик байта 11, 70
+LinkedThreshold equ #46                                                         ; порог младшего байта потока 0 в State02, 70
 InitialState    equ #02                                                         ; начальное состояние ребёнка
 SavedState      equ #0C                                                         ; сохранённое состояние ребёнка
 ChildClass      equ #03                                                         ; полный класс создаваемой записи
@@ -1754,7 +1773,7 @@ ControlMask     equ #70                                                         
 ComponentDelta  equ #00C8                                                       ; положительное смещение 200 каждой компоненты ребёнка
 ModelOffset     equ #98                                                         ; исходное байтовое смещение таблицы моделей
 InitialState    equ #04                                                         ; StepFastRecordPhases, фазы вычисления копируются в 0D..0F
-RateSubtract    equ #1E                                                         ; 30, вычитаемая часть родительского Unknown10
+RateSubtract    equ #1E                                                         ; 30, вычитаемая часть родительского OffsetScaleLow
 RateLimit       equ #46                                                         ; исключающий верхний порог 70
 RateMaximum     equ #45                                                         ; максимальное записываемое значение 69
 ChildClass      equ #13                                                         ; полный класс 19 десятично
@@ -1779,7 +1798,7 @@ NextState       equ #0C                                                         
                 module ActionLinkedPhaseConst
 OwnState        equ #05                                                         ; собственный индекс, исключённый из повторного косвенного вызова
 ListRMin        equ #7E                                                         ; нижняя граница R для нового поиска связи
-ParameterLimit  equ #23                                                         ; верхняя исключённая граница Unknown13 случайных действий
+ParameterLimit  equ #23                                                         ; верхняя исключённая граница EffectReserve случайных действий
 EffectRMin      equ #64                                                         ; нижняя граница R для State06
 SpawnRMin       equ #28                                                         ; нижняя включённая граница R попытки класса 19
 Class2          equ #02                                                         ; полный числовой класс 2, игровой вид не переименовывается
@@ -1793,12 +1812,18 @@ NoLink          equ #FF                                                         
                 endmodule
 
 
+                ; Общие индексы подтверждённых признаков LinkFlags
+                module ActionLinkFlagsConst
+BackLinkBit     equ #00                                                         ; бит 0, запрос обратной связи и обработки LinkedIndex
+AntimissileBit  equ #03                                                         ; бит 3, выбор порога с учётом противоракетных систем
+                endmodule
+
+
                 ; Исходные индексы битов и сообщения State08
                 module ActionArrivalConst
-LinkedBit       equ #01                                                         ; бит 1 LinkFlags, обратная связь установлена до проверки активности
-ReachedBit      equ #02                                                         ; бит 2 LinkFlags, пройдена ближняя область
+RocketAttackBit equ #01                                                         ; бит 1 LinkFlags, ракетная атака цели, устанавливается до проверки активности
+RocketHitBit    equ #02                                                         ; бит 2 LinkFlags, ракетное поражение цели в ближней области State08
 MissingText     equ #F248                                                       ; адрес текста Controls банка 1, не адрес кода ACTION
-ReachedText     equ #F293                                                       ; адрес текста Controls банка 1
 StateOffset     equ #0A                                                         ; смещение StateCode внутри обычной записи, младший байт базы кратен 40
                 endmodule
 
@@ -1825,11 +1850,11 @@ Phase0          equ #0C                                                         
 Phase1          equ #1D                                                         ; исходный код второй фазы
 Phase2          equ #37                                                         ; исходный код третьей фазы
 State           equ #04                                                         ; исходный обработчик движения
-Class           equ #14                                                         ; полный класс, 20 десятично
-Parameter       equ #FA                                                         ; исходное Unknown13, единицы не установлены
+Class           equ #14                                                         ; авторский T_TRASH, мусор для форсажа, 20 десятично
+Parameter       equ #FA                                                         ; исходное EffectReserve, единицы не установлены
 InitialStep     equ #02                                                         ; исходный TargetCodeStep
-Unknown10Value  equ #02                                                         ; исходное значение поля Unknown10
-TargetValue     equ #02                                                         ; исходное значение TargetIndex без создания связи
+ScaleLowValue   equ #02                                                         ; исходное значение поля OffsetScaleLow
+TargetValue     equ #02                                                         ; исходное значение Phase2OrTarget без создания связи
                 endmodule
 
 
@@ -1886,15 +1911,15 @@ AccountingMask  equ #C0                                                         
 ByteEndLimit    equ #C9                                                         ; первая запрещённая сумма байта, 201
 Sound           equ #EE1B                                                       ; исходный поток AY после принятого сбора
 HighToState     equ #09                                                         ; разность StateCode и High первой компоненты
-StateToValue    equ #06                                                         ; разность Unknown10 и StateCode
-ClassToKind     equ #11                                                         ; разность Unknown23 и ClassCode
-KindToAmount    equ #EE                                                         ; разность Unknown11 и Unknown23 по модулю 256
+StateToValue    equ #06                                                         ; разность OffsetScaleLow и StateCode
+ClassToKind     equ #11                                                         ; разность PickupKind и ClassCode
+KindToAmount    equ #EE                                                         ; разность Unknown11 и PickupKind по модулю 256
 HighToReuse     equ #17                                                         ; разность ReuseByte и High первой компоненты
                 assert NegativeStep == #10000 - PullStep
                 assert HighToState == FActionRecord.StateCode - FActionRecord.Components.Component0.High
-                assert StateToValue == FActionRecord.Unknown10 - FActionRecord.StateCode
-                assert ClassToKind == FActionRecord.Unknown23 - FActionRecord.ClassCode
-                assert KindToAmount == #100 + FActionRecord.Unknown11 - FActionRecord.Unknown23
+                assert StateToValue == FActionRecord.OffsetScaleLow - FActionRecord.StateCode
+                assert ClassToKind == FActionRecord.PickupKind - FActionRecord.ClassCode
+                assert KindToAmount == #100 + FActionRecord.Unknown11 - FActionRecord.PickupKind
                 assert HighToReuse == FActionRecord.ReuseByte - FActionRecord.Components.Component0.High
                 endmodule
 

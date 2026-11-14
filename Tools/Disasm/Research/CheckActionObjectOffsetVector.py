@@ -28,8 +28,11 @@ def cost(start, end):
     return sum(2 if instruction.bytes[0] in (0xCB, 0xED, 0xDD, 0xFD) else 1 for instruction in instructions)
 
 
-def multiply(registers, coefficient, value):
+def multiply(registers, coefficient, value, leading_bit5_falls_through=False):
     factor = abs(signed(coefficient, 8)) & 127
+    if leading_bit5_falls_through and 32 <= factor < 64:
+        # Нулевое смещение JR C по D14A пропускает накопление ведущего бита 5.
+        factor &= 31
     magnitude = abs(signed(value, 16))
     product = factor * magnitude
     sign = coefficient ^ (value >> 8)
@@ -46,14 +49,14 @@ def multiply(registers, coefficient, value):
     return result, m1
 
 
-def table_reference(memory, initial, offsets):
+def table_reference(memory, initial, offsets, phase_steps=(64, 64, 64), second_mix=None, third_mix=None):
     r = list(initial)
     table = memory[0x9800:0x9900]
     waves = memory[0x9900:0x9A00]
     x0, y0, z0 = offsets
-    b, c = waves[x0], waves[(x0 + 64) & 255]
-    ixl, iyl = waves[y0], waves[(y0 + 64) & 255]
-    d, e = waves[z0], waves[(z0 + 64) & 255]
+    b, c = waves[x0], waves[(x0 + phase_steps[0]) & 255]
+    ixl, iyl = waves[y0], waves[(y0 + phase_steps[1]) & 255]
+    d, e = waves[z0], waves[(z0 + phase_steps[2]) & 255]
 
     def half(value):
         return signed(value, 8) // 2
@@ -78,11 +81,26 @@ def table_reference(memory, initial, offsets):
         return value, flags, m1, overflow
 
     first = difference(ixl, e)[0]
-    cross0 = difference(iyl, b)[0]
-    difference0 = difference(difference(ixl, c)[0], d)[0]
+    cross0, cross_minus, _ = difference(iyl, b)
+    if second_mix is None:
+        inner = difference(ixl, c)[0]
+    else:
+        assert second_mix == 'rlc_c_use_e'
+        # Обратная связь по B08B/B08C заменяет SRA A и LD L,C на RLC C и LD L,E.
+        # A остаётся равным IXL, E содержит табличное вычитаемое предыдущего вклада.
+        c = ((c << 1) | (c >> 7)) & 255
+        minus = (ixl - half(cross_minus)) & 255
+        inner = (table[(minus + c) & 255] - table[minus]) & 255
+    difference0 = difference(inner, d)[0]
     second, _, extra0, overflow0 = finish((difference0 - cross0) & 255, sub8_flags(difference0, cross0))
     cross1 = difference(iyl, c)[0]
-    difference1, e, low = difference(difference(ixl, b)[0], d)
+    if third_mix is None:
+        inner_third = difference(ixl, b)[0]
+    else:
+        assert third_mix == 'omit_plus_index'
+        # NOP вместо LD L,A по B0CB оставляет индекс вычитаемого для повторного чтения.
+        inner_third = 0
+    difference1, e, low = difference(inner_third, d)
     third, flags, extra1, overflow1 = finish((difference1 + cross1) & 255, add_flags(difference1, cross1))
     r[:10] = [third, flags, b, c, d, e, 0x98, low, cross1, ixl]
     r[11] = iyl

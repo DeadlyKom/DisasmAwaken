@@ -1,0 +1,156 @@
+{
+  "passed": true,
+  "profiles": [
+    {
+      "rom": "48.rom",
+      "profiles": [
+        {
+          "rom_frame_increments": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "test_byte": 0,
+          "test_accesses": [],
+          "key_value": 230
+        },
+        {
+          "rom_frame_increments": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "test_byte": 0,
+          "test_accesses": [
+            [
+              "read",
+              858,
+              64939,
+              0
+            ]
+          ],
+          "key_value": 97
+        },
+        {
+          "rom_frame_increments": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "test_byte": 8,
+          "test_accesses": [
+            [
+              "read",
+              858,
+              64939,
+              8
+            ]
+          ],
+          "key_value": 65
+        }
+      ],
+      "all_256_noise_seeds_enumerated": true,
+      "max_effective_indexed_address": 65406,
+      "effective_offsets": [
+        1,
+        7,
+        48,
+        64
+      ]
+    },
+    {
+      "rom": "128-1.rom",
+      "profiles": [
+        {
+          "rom_frame_increments": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "test_byte": 0,
+          "test_accesses": [],
+          "key_value": 230
+        },
+        {
+          "rom_frame_increments": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "test_byte": 0,
+          "test_accesses": [
+            [
+              "read",
+              858,
+              64939,
+              0
+            ]
+          ],
+          "key_value": 97
+        },
+        {
+          "rom_frame_increments": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "test_byte": 8,
+          "test_accesses": [
+            [
+              "read",
+              858,
+              64939,
+              8
+            ]
+          ],
+          "key_value": 65
+        }
+      ],
+      "all_256_noise_seeds_enumerated": true,
+      "max_effective_indexed_address": 65406,
+      "effective_offsets": [
+        1,
+        7,
+        48,
+        64
+      ]
+    }
+  ],
+  "target": 64939,
+  "read_pc": 858,
+  "flag": 64892,
+  "bank": 0,
+  "refresh_and_frames_prepared": true,
+  "flag_value_from_original_rom": true,
+  "action_initialization_trdos_substituted": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

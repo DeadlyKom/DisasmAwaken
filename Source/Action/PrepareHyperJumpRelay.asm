@@ -7,13 +7,13 @@
                 ; In:
                 ;   HL, DE, BC и AF числовых аргументов не задают, пятибайтовый контекст уже скопирован RequestHyperJump
                 ;   Controls банка 1 содержит QueueTextItem, ConsumeTextQueue и шрифт, текстовое окно предварительно инициализировано
-                ;   Recognition.Value=FF выбирает длинную задержку, любой другой код короткую, paging разблокирован и исходно выбран банк 0
+                ;   FuelAdditive.Value=FF выбирает длинную задержку, любой другой код короткую, paging разблокирован и исходно выбран банк 0
                 ;   исходные 99 байтов 71CB..722D доступны для чтения, 4200..4262 и атрибуты 5800..5AFF доступны для записи
                 ;   обычный стек и стек прокрутки соответствуют договору ConsumeTextQueue, IRQ в проверке отсутствуют
                 ; Out:
                 ;   сообщение F37F передаётся через QueueTextItemBank1 с сохранением DE, затем выбирается банк 1
                 ;   ConsumeTextQueue вызывается ровно 256 раз с сохранением BC каждого вызова, текст, очередь и прокрутка меняются по его договору
-                ;   Recognition.Value, отличный от FF, даёт 64 внешних ожидания, FF даёт 128, каждое содержит 255 на 255 исходных DJNZ
+                ;   FuelAdditive.Value, отличный от FF, даёт 64 внешних ожидания, FF даёт 128, каждое содержит 255 на 255 исходных DJNZ
                 ;   OUT 7FFD получает 1F, выбран банк 7, теневой экран и ROM 1, paging не блокируется
                 ;   768 байтов базовых атрибутов 5800..5AFF обнуляются перекрывающимся LDIR
                 ;   99 исходных байтов 71CB..722D переносятся в 4200..4262 и выполняется JP 4200
@@ -45,16 +45,16 @@ ConsumeLoop:    PUSH BC
                 POP BC
                 DJNZ @Action.PrepareHyperJumpRelay.ConsumeLoop
 
-                ; Проверка Recognition.Value, только полный код FF удваивает число внешних ожиданий.
-                LD A, (@ActionShipEquipment.Recognition.Value)
+                ; Проверка FuelAdditive.Value, только полный код FF удваивает число внешних ожиданий.
+                LD A, (@ActionShipEquipment.FuelAdditive.Value)
                 INC A
-                JP Z, @Action.PrepareHyperJumpRelay.LongDelay                   ; переход, если Recognition.Value равен FF, выбрать 128 внешних ожиданий
+                JP Z, @Action.PrepareHyperJumpRelay.LongDelay                   ; переход, если FuelAdditive.Value равен FF, выбрать 128 внешних ожиданий
 
-                ; Выбор 64 внешних ожиданий для остальных значений Recognition.Value.
+                ; Выбор 64 внешних ожиданий для остальных значений FuelAdditive.Value.
                 LD A, #40
                 JP @Action.PrepareHyperJumpRelay.DelayOuter
 
-                ; Выбор 128 внешних ожиданий при Recognition.Value=FF.
+                ; Выбор 128 внешних ожиданий при FuelAdditive.Value=FF.
 LongDelay:      LD A, #80
                 ; Сохранение внешнего счётчика на время двух вложенных исходных байтовых ожиданий.
 DelayOuter:     PUSH AF

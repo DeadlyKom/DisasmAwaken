@@ -6,6 +6,18 @@
   "special_8000_result": 8388608,
   "direct_bank_4_caller_found": false,
   "game_entry_proved": false,
+  "exact_integer_square_except_8000_checked": true,
+  "I_IM_IFF_preserved_checked": true,
+  "entry_prefix_R_plus_2_checked": true,
+  "full_multiplier_R_proved": true,
+  "full_M1_bounds": [
+    48,
+    174
+  ],
+  "total_M1": 8765478,
+  "each_R_step_and_bit7_checked": true,
+  "independent_whole_multiply_M1_oracle": false,
+  "complete_initial_context_product_exhausted": false,
   "assembly_executed": false,
   "native_execution": false
 }

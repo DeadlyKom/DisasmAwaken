@@ -1,0 +1,169 @@
+{
+  "passed": true,
+  "control_flow_sha256": "284cf26f8481221dec118021dabf8fa0292cfcac9f9a95365f375b811fe574a3",
+  "indexed_object_accesses": [
+    {
+      "pc": 24868,
+      "operation": "LD (IY+#11),A",
+      "path": "Source/Action/CreateLinkedMissileRecord.asm",
+      "role": "входной параметр уведомления ребёнка в состоянии 08"
+    },
+    {
+      "pc": 25766,
+      "operation": "LD (IY+#11),A",
+      "path": "Source/Action/CreateCargoAndUpdateList.asm",
+      "role": "количество пополнения для подбираемой записи класса 13"
+    },
+    {
+      "pc": 30991,
+      "operation": "LD (IY+#11),A",
+      "path": "Source/Action/SpawnAlternate.asm",
+      "role": "нулевой параметр шаблонной записи класса 12"
+    },
+    {
+      "pc": 31329,
+      "operation": "LD (IX+#11),A",
+      "path": "Source/Action/SpawnAlternate.asm",
+      "role": "полный параметр SpawnField11 из текущего набора"
+    },
+    {
+      "pc": 32229,
+      "operation": "LD (IX+#11),A",
+      "path": "Source/Action/FinishSpawnRecord.asm",
+      "role": "полный параметр SpawnField11 из изменяемого операнда"
+    },
+    {
+      "pc": 32341,
+      "operation": "LD (IX+#11),#6E",
+      "path": "Source/Action/FinishSpawnRecord.asm",
+      "role": "запись 6E после несовместимых проверок класса 06 и 07"
+    },
+    {
+      "pc": 59626,
+      "operation": "LD (IY+#11),#28",
+      "path": "Source/Action/SpawnLinkedClass9Records.asm",
+      "role": "начальный байт 28 для дочерней записи класса 09, при State02 порог младшего байта потока 0"
+    },
+    {
+      "pc": 61970,
+      "operation": "CP (IX+#11)",
+      "path": "Source/Action/HandleLinkedTargetState.asm",
+      "role": "беззнаковый порог младшего байта случайного слова в состоянии 02"
+    },
+    {
+      "pc": 62436,
+      "operation": "CP (IX+#11)",
+      "path": "Source/Action/StepTimedLinkedOverlay.asm",
+      "role": "беззнаковый порог младшего байта случайного слова в состоянии 10"
+    },
+    {
+      "pc": 62558,
+      "operation": "LD (IY+#11),#46",
+      "path": "Source/Action/SpawnPeriodicClass3Record.asm",
+      "role": "начальный порог 46 младшего байта потока 0 для дочерней записи класса 03 в State02"
+    },
+    {
+      "pc": 62879,
+      "operation": "LD A,(IX+#11)",
+      "path": "Source/Action/ApproachTargetRecordAndResolve.asm",
+      "role": "разрешение уведомления при потерянной цели в состоянии 08"
+    },
+    {
+      "pc": 63024,
+      "operation": "LD A,(IX+#11)",
+      "path": "Source/Action/ApproachTargetRecordAndResolve.asm",
+      "role": "разрешение уведомления при достижении цели в состоянии 08"
+    },
+    {
+      "pc": 63082,
+      "operation": "DEC (IX+#11)",
+      "path": "Source/Action/StepTimedRecordDecay.asm",
+      "role": "уменьшаемый по модулю 256 таймер состояния 07"
+    },
+    {
+      "pc": 63268,
+      "operation": "LD (IX+#11),#12",
+      "path": "Source/Action/StartSmallRecordEffect.asm",
+      "role": "начальное время 12 после перевода в состояние 07"
+    }
+  ],
+  "excluded_visual_effect_access": 28148,
+  "indirect_pickup_reader": 29649,
+  "indexed_contexts_audited": true,
+  "archived_lzs_ownership": {
+    "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+    "source": "awk1.trd:EQUS.a",
+    "field_offset": 17,
+    "note_cp866_hex": "8f204c5a530682302090808a859280208f8590918e8d808680203c3e30208883908e8a80",
+    "player_initializer_value": 1,
+    "character_initializer_value": 0,
+    "shooter_note_cp866_hex": "8f2052414e44208a928e208f939192888b2090808a859293",
+    "target_note_cp866_hex": "8f204d535044208d80208a8e838e208d808f9080828b858d802090808a859280",
+    "player_shooter_index": 26,
+    "player_address": 42880,
+    "matched_archived_player_bytes": 21,
+    "current_original_operations": [
+      {
+        "address": 24791,
+        "operation": "LD A,#01",
+        "hex": "3e01"
+      },
+      {
+        "address": 24793,
+        "operation": "EX AF,AF'",
+        "hex": "08"
+      },
+      {
+        "address": 62060,
+        "operation": "EX AF,AF'",
+        "hex": "08"
+      },
+      {
+        "address": 62061,
+        "operation": "XOR A",
+        "hex": "af"
+      },
+      {
+        "address": 62062,
+        "operation": "EX AF,AF'",
+        "hex": "08"
+      },
+      {
+        "address": 62077,
+        "operation": "JP #60E8",
+        "hex": "c3e860"
+      },
+      {
+        "address": 24868,
+        "operation": "LD (IY+#11),A",
+        "hex": "fd7711"
+      },
+      {
+        "address": 24806,
+        "operation": "LD B,#1A",
+        "hex": "061a"
+      },
+      {
+        "address": 24861,
+        "operation": "LD (IY+#0D),B",
+        "hex": "fd700d"
+      },
+      {
+        "address": 24864,
+        "operation": "LD (IY+#0F),C",
+        "hex": "fd710f"
+      }
+    ],
+    "ownership_does_not_replace_other_state_and_class_roles": true
+  },
+  "original_function_models_used": [
+    "ActionTimedDecayStateVerification.json",
+    "ActionLinkedTargetStateVerification.json",
+    "ActionTimedLinkedStateVerification.json",
+    "ActionTractorCollectVerification.json",
+    "ActionSpawnedClass3ThresholdVerification.json",
+    "ActionChildInitialByte11Verification.json"
+  ],
+  "whole_program_indirect_accesses_excluded": false,
+  "assembly_executed": false
+}

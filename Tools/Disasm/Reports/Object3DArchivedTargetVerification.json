@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "original_object3d_sha256": "aa178af5ddd0e59cdbf77a84b9760a9a3e9858a4b3746df8e40199f16e893b42",
+  "archive_file_match_bytes": 10580,
+  "source": "awk1.trd:OBJECTS2.a",
+  "authored_label": "TARGET",
+  "packet_start": 55474,
+  "authored_bytes": 8,
+  "parsed_bytes": 4,
+  "tail_start": 55478,
+  "tail_bytes": 4,
+  "following_label": "TRASH",
+  "following_start": 55482,
+  "tail_game_reader_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

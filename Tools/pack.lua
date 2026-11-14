@@ -1,5 +1,5 @@
 -- Упаковка выполняется встроенным Lua SjASMPlus.
--- Активные файлы поступают из результата SAVETRD текущей сборки.
+-- Активные и разобранные архивные файлы поступают из результата SAVETRD.
 local disk_size = 655360
 local image_path = "Awakenv02.trd"
 local report_path = "Tools/Disasm/Reports/BuildVerification.json"
@@ -8,6 +8,7 @@ local report_length = 0
 local image
 local covered = {}
 local allocations = {}
+local archived_allocations = 0
 
 local function read_file(path)
     local file = assert(io.open(path, "rb"))
@@ -22,8 +23,8 @@ local function status(value, identical)
     local data = string.format(
         '{\n  "status": "%s",\n  "method": "sjasmplus_lua",\n' ..
         '  "checked_at_utc": "%s",\n  "byte_identical": %s,\n' ..
-        '  "disk_size": %d,\n  "active_allocations": %d\n}\n',
-        value, os.date("!%Y-%m-%dT%H:%M:%SZ"), identical, disk_size, #allocations)
+        '  "disk_size": %d,\n  "active_allocations": %d,\n  "archived_allocations": %d\n}\n',
+        value, os.date("!%Y-%m-%dT%H:%M:%SZ"), identical, disk_size, #allocations, archived_allocations)
     -- Удаление остатка более длинного предыдущего JSON пробельным заполнением.
     report_length = math.max(report_length, #data)
     assert(report:seek("set", 0))
@@ -62,6 +63,10 @@ function begin_image()
     local layout = dofile("Tools/Disasm/Disk/Layout.lua")
     for _, component in ipairs(layout) do
         local data = read_file(component.path)
+        if component.source_offset then
+            assert(#data == component.source_size, "изменилась длина сохранённого источника")
+            data = data:sub(component.source_offset + 1, component.source_offset + component.size)
+        end
         assert(#data == component.size, "изменилась длина сохранённого компонента")
         write_at(component.offset, data)
     end
@@ -87,7 +92,11 @@ function finish_image()
     begin_image()
     for _, block in ipairs(blocks) do
         write_at(block.unit.offset, block.data)
-        allocations[#allocations + 1] = block.unit.slot
+        if block.unit.archived then
+            archived_allocations = archived_allocations + 1
+        else
+            allocations[#allocations + 1] = block.unit.slot
+        end
     end
     -- Проверка полного покрытия и всех байтов, включая удалённые записи и хвосты.
     assert(image:flush())
@@ -95,6 +104,7 @@ function finish_image()
     assert(image:close())
     image = nil
     assert(#allocations == 41, "собраны не все активные файлы")
+    assert(archived_allocations == 4, "собраны не все архивные области")
     for position = 0, disk_size - 1 do
         assert(covered[position], "пропущен физический байт диска")
     end

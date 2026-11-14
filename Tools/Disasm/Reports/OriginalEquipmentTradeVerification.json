@@ -20,6 +20,8 @@
   "original_script_bytes_unchanged": true,
   "actual_interpreter_and_original_script": true,
   "independent_quantity_credits_conditions_and_messages": true,
+  "lang_prefix_reads": 0,
+  "lang_prefix_writes": 0,
   "inverse_at_checks_missing_ship": true,
   "real_bank_switching": true,
   "station_display_not_executed": true,

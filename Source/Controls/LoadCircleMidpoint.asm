@@ -10,9 +10,9 @@
                 ;   на CPU-стеке внешний возврат, IRQ не вмешиваются
                 ; Out:
                 ;   HL сохраняется, D=Radius, E=Flags, B=WorkX, C=WorkY
-                ;   A=(-Radius) AND FF, F соответствует NEG Radius
-                ;   C'=(-Radius) AND FF, E'=0, B' и D' сохраняются, начальные B' и D' здесь не обнуляются
-                ;   HL', DE', BC' сохраняются кроме C' и E', AF', IX, IY, I, IM и IFF сохраняются
+                ;   A=(-Radius) AND FF, F соответствует NEG Radius, Carry установлен при Radius!=0, Z при Radius=0, PV при Radius=#80
+                ;   HL' сохраняется, D' сохраняется, E'=0, B' сохраняется, C'=(-Radius) AND FF
+                ;   AF', IX, IY, I, IM и IFF сохраняются
                 ;   SP=входной SP+2, R получает 12 M1
                 ; Corrupt:
                 ;   DE, BC, AF, E', C', R

@@ -1,13 +1,14 @@
 {
   "passed": true,
-  "total_cases": 8704,
+  "total_cases": 12160,
   "profiles": {
     "all_indices_modes_R_edges": 4608,
-    "mixed_arguments": 4096
+    "mixed_arguments": 4096,
+    "near_signs_and_order": 3456
   },
   "paths": {
     "ordinary_geometry": 8170,
-    "enter_timed_state": 534
+    "enter_timed_state": 3990
   },
   "all_256_link_indices": true,
   "actual_selected_distance_and_banked_geometry_children_executed": true,
@@ -15,6 +16,19 @@
   "full_eight_bank_ram_and_write_multiplicity_compared": true,
   "real_ports": true,
   "maximum_additional_stack_bytes": 16,
+  "full_M1_count_compared_not_only_R_modulo_128": true,
+  "observed_M1_bounds_by_path": {
+    "geometry": [
+      443,
+      966
+    ],
+    "timed": [
+      94,
+      118
+    ]
+  },
+  "actual_timer_R_read_M1_compared": true,
+  "timer_R_reads": 3990,
   "FF_is_ordinary_index": true,
   "complete_input_product_exhausted": false,
   "assembly_executed": false,

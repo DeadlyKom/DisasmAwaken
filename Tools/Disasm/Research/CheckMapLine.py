@@ -7,6 +7,8 @@ from skoolkit.simulator import Simulator
 from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,SP
 from CheckRowHighlight import make_context
 from CheckInsetFrame import bitmap_address
+from PreviewEdgeRasterOracle import registers as edge_registers,m1_count
+from ReferenceControlsPointRespawn import refresh
 
 
 def points(first,second):
@@ -38,7 +40,7 @@ def main():
  for value in range(256):
   for row in (0,7,8,63,64,127,128,191):fixtures.extend((((0,row),(value,row)),((value,row),(0,row)),((value,0),(value,row)),((value,row),(value,0))))
  for delta in range(192):fixtures.extend((((0,0),(delta,delta)),((255,0),(255-delta,delta)),((0,delta),(delta,0)),((255,delta),(255-delta,0))))
- counts=collections.Counter();steps=0
+ counts=collections.Counter();steps=0;calls=0;m1_bounds={}
  for mode,opcode,jump,offset in (('clear',0xA1,0x30,0x28),('set',0xB1,0x38,0x20),('xor',0xA9,0x38,0x20)):
   for first,second in fixtures:
    expected=bytearray(baseline);pixel_points=points(first,second)
@@ -48,7 +50,23 @@ def main():
     elif mode=='set':expected[address]|=mask
     else:expected[address]^=mask
    memory[0x4000:0x5B00]=baseline;memory[0xDE2B:0xDE2F]=bytes([*first,*second]);memory[0xDE3C:0xDE3E]=bytes([opcode,jump]);memory[0xD306]=offset;sim.registers[:]=initial;r=sim.registers
-   before_code=bytes(memory[0xD2EE:0xD418]);sim.run(start=0xD2EE,stop=0x3FFF)
+   initial[14],initial[15],initial[26],initial[27]=calls&255,(calls*73)&255,0,calls%3
+   r[:]=initial;before_code=bytes(memory[0xD2EE:0xD418]);r[24]=0xD2EE;measured=0
+   # Проверка полного M1, включая все префиксы и RET, ожидаемая стоимость вычисляется по геометрии.
+   for _ in range(10000):
+    if r[24]==0x3FFF:break
+    previous_r=r[15];sim.run();increment=(r[15]-previous_r)&127
+    assert increment in (1,2)
+    measured+=increment
+   else:raise AssertionError('линия карты не вернулась')
+   first_rc,second_rc=(first[1],first[0]),(second[1],second[0])
+   cost=m1_count(first_rc,second_rc)
+   assert measured==cost and r[15]==refresh(initial[15],cost),(mode,first,second,measured,cost)
+   assert all(r[i]==initial[i] for i in (14,26,27))
+   context=edge_registers(first_rc,second_rc,{'clear':'and','set':'or','xor':'xor'}[mode],expected[:6144])
+   assert tuple(r[:2])==context['af'] and tuple(r[16:18])==context['alt_af'],(mode,first,second,r[:2],r[16:18],context)
+   kind='equal' if first==second else ('steep' if abs(second[1]-first[1])>abs(second[0]-first[0]) else 'shallow')
+   lo,hi=m1_bounds.get(kind,(cost,cost));m1_bounds[kind]=(min(lo,cost),max(hi,cost))
    assert memory[0x4000:0x5B00]==expected,(mode,first,second)
    assert memory[0xDE2B:0xDE2F]==bytes([*first,*second]) and r[SP]==0x8000 and r[8:12]==initial[8:12] and r[18:24]==initial[18:24]
    if first==second:
@@ -62,10 +80,12 @@ def main():
     assert memory[site]==opcode and memory[branch]==jump
     allowed={site-0xD2EE,branch-0xD2EE};assert all(a==b or i in allowed for i,(a,b) in enumerate(zip(before_code,memory[0xD2EE:0xD418])))
     counts[mode+('_right' if right else '_left')+('_x_major' if x_major else '_y_major')]+=1
-   steps+=len(pixel_points)
+   steps+=len(pixel_points);calls+=1
  report=dict(passed=True,cases=sum(counts.values()),pixel_operations=steps,paths=dict(counts),method='original_three_self_modified_line_modes_against_independent_pixel_Bresenham_full_screen_and_endpoint_registers',
   coordinate_domain=dict(x=[0,255],y=[0,191]),screen_origin=[0,0],table_builder_input_DE=0xF0F8,synthetic_alignment_fixture=True,last_endpoint_excluded=True,equal_points_draw_nothing=True,
   temporary_opcodes_match_actual_caller=True,code_writes_limited_to_selected_kernel=True,
+  exact_main_and_alternate_AF_checked=True,direct_full_M1_and_R_checked=True,
+  I_IM_IFF_preservation_checked=True,observed_M1_bounds=m1_bounds,complete_joint_input_product_exhausted=False,
   calls_stubbed=False,irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/MapLineVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 

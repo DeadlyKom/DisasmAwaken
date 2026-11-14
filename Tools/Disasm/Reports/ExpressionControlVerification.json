@@ -2,6 +2,118 @@
   "passed": true,
   "operator_cases": 1617,
   "nested_and_chain_cases": 25,
+  "nested_storage_profiles": [
+    {
+      "right_nested_groups": 0,
+      "result": 3,
+      "highest_written_address": 51820,
+      "assignment_bytes_written": 0,
+      "prefix_bytes_written": 0,
+      "additional_buffer_tail_bytes_read": 0,
+      "additional_buffer_tail_bytes_written": 0,
+      "script_bytes_overwritten": false
+    },
+    {
+      "right_nested_groups": 1,
+      "result": 4,
+      "highest_written_address": 51824,
+      "assignment_bytes_written": 0,
+      "prefix_bytes_written": 0,
+      "additional_buffer_tail_bytes_read": 0,
+      "additional_buffer_tail_bytes_written": 0,
+      "script_bytes_overwritten": false
+    },
+    {
+      "right_nested_groups": 2,
+      "result": 5,
+      "highest_written_address": 51828,
+      "assignment_bytes_written": 0,
+      "prefix_bytes_written": 0,
+      "additional_buffer_tail_bytes_read": 0,
+      "additional_buffer_tail_bytes_written": 0,
+      "script_bytes_overwritten": false
+    },
+    {
+      "right_nested_groups": 3,
+      "result": 6,
+      "highest_written_address": 51832,
+      "assignment_bytes_written": 0,
+      "prefix_bytes_written": 0,
+      "additional_buffer_tail_bytes_read": 0,
+      "additional_buffer_tail_bytes_written": 0,
+      "script_bytes_overwritten": false
+    },
+    {
+      "right_nested_groups": 4,
+      "result": 7,
+      "highest_written_address": 51836,
+      "assignment_bytes_written": 2,
+      "prefix_bytes_written": 0,
+      "additional_buffer_tail_bytes_read": 0,
+      "additional_buffer_tail_bytes_written": 0,
+      "script_bytes_overwritten": false
+    },
+    {
+      "right_nested_groups": 5,
+      "result": 8,
+      "highest_written_address": 51840,
+      "assignment_bytes_written": 6,
+      "prefix_bytes_written": 0,
+      "additional_buffer_tail_bytes_read": 0,
+      "additional_buffer_tail_bytes_written": 0,
+      "script_bytes_overwritten": false
+    },
+    {
+      "right_nested_groups": 6,
+      "result": 9,
+      "highest_written_address": 51844,
+      "assignment_bytes_written": 6,
+      "prefix_bytes_written": 4,
+      "additional_buffer_tail_bytes_read": 0,
+      "additional_buffer_tail_bytes_written": 0,
+      "script_bytes_overwritten": false
+    },
+    {
+      "right_nested_groups": 7,
+      "result": 10,
+      "highest_written_address": 51848,
+      "assignment_bytes_written": 6,
+      "prefix_bytes_written": 8,
+      "additional_buffer_tail_bytes_read": 4,
+      "additional_buffer_tail_bytes_written": 4,
+      "script_bytes_overwritten": false
+    },
+    {
+      "right_nested_groups": 8,
+      "result": 11,
+      "highest_written_address": 51852,
+      "assignment_bytes_written": 6,
+      "prefix_bytes_written": 12,
+      "additional_buffer_tail_bytes_read": 8,
+      "additional_buffer_tail_bytes_written": 8,
+      "script_bytes_overwritten": false
+    },
+    {
+      "right_nested_groups": 9,
+      "result": 12,
+      "highest_written_address": 51856,
+      "assignment_bytes_written": 6,
+      "prefix_bytes_written": 14,
+      "additional_buffer_tail_bytes_read": 10,
+      "additional_buffer_tail_bytes_written": 10,
+      "script_bytes_overwritten": true
+    },
+    {
+      "right_nested_groups": 10,
+      "result": 13,
+      "highest_written_address": 51860,
+      "assignment_bytes_written": 6,
+      "prefix_bytes_written": 14,
+      "additional_buffer_tail_bytes_read": 10,
+      "additional_buffer_tail_bytes_written": 10,
+      "script_bytes_overwritten": true
+    }
+  ],
   "method": "original_numeric_readers_dispatch_operators_expression_call_and_control",
   "all_eleven_operators": true,
   "evaluation_left_to_right": true,

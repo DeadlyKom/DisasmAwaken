@@ -62,7 +62,7 @@ from FinalExitFacts import COMMENTS as FINAL_EXIT_COMMENTS
 from D3DClipFacts import COMMENTS as D3D_COMMENTS
 from FinalFileKeyTable import render as render_final_key, PATH as FINAL_FILE_KEY
 from ExpressionStackTable import render as render_expression_stack, PATH as EXPRESSION_STACK
-from AssignmentScratchTable import render as render_assignment_scratch, PATH as ASSIGNMENT_SCRATCH
+from AssignmentScratchTable import render as render_assignment_scratch, PATH as ASSIGNMENT_SCRATCH, END as ASSIGNMENT_SCRATCH_END
 from MarketScriptTable import render as render_market_script, PATH as MARKET_SCRIPT, START as MARKET_SCRIPT_START
 from SettingsTables import render as render_settings, CHOICES as SETTINGS_CHOICES, COLORS as SETTINGS_COLORS, CONTROLS as SETTINGS_CONTROLS, TEXT as SETTINGS_TEXT
 from StationIrqTables import render as render_station_irq_data, COUNTER as IRQ_COUNTER, STACK as IRQ_STACK, CHAIN as WINDOW_CHAIN
@@ -272,14 +272,14 @@ def main():
              "состояние самомодификации и активной страницы учитывается отдельно"])
         notes = [*notes, *REGION_NOTES.get(name, {}).get(function["address"], [])]
         lines = [asm("module " + name), asm("module " + function["name"]),
-                 *documentation_links(name, function["address"]),
-                 "; -----------------------------------------", "; " + function["description"],
-                 f"; исходная запись {function['slot']}, файловые смещения #{begin:04X}..#{end-1:04X}",
-                 "; In:", *[";   "+s for s in inputs],
-                 "; Out:", *[";   "+s for s in outputs],
-                 "; Corrupt:", *[";   "+s for s in corrupt],
-                 "; Note:", *[";   "+s for s in notes],
-                 "; -----------------------------------------"]
+                 *[asm(link) for link in documentation_links(name, function["address"])],
+                 asm("; -----------------------------------------"), asm("; " + function["description"]),
+                 asm(f"; исходная запись {function['slot']}, файловые смещения #{begin:04X}..#{end-1:04X}"),
+                 asm("; In:"), *[asm(";   "+s) for s in inputs],
+                 asm("; Out:"), *[asm(";   "+s) for s in outputs],
+                 asm("; Corrupt:"), *[asm(";   "+s) for s in corrupt],
+                 asm("; Note:"), *[asm(";   "+s) for s in notes],
+                 asm("; -----------------------------------------")]
         for index, instruction in enumerate(function["instructions"]):
             operation = instruction["operation"]
             custom = REGION_COMMENTS.get(name, {}).get(instruction["address"])
@@ -333,20 +333,22 @@ def main():
 
     # Создание типизированной исходной таблицы интерфейса без изменения её физических байтов.
     fields = ["X","Y","Width","Height","Flags","TextIndex","EventHandler",
-              "SavedX","SavedY","SavedWidth","SavedHeight","DrawHandler","Unknown0E"]
+              "SavedX","SavedY","SavedWidth","SavedHeight","DrawHandler","Reserved"]
     item_lines = [asm("module InterfaceItems"), "; исходная таблица #F0FD, шаг FInterfaceItem равен #10"]
     for record in interface:
         # Регистрация фактического физического экземпляра для именованных обращений к его полям.
         symbols[f"InterfaceItems.Item{record['index']:02d}"] = 0xF0FD+16*record['index']
         item_lines.append(asm("FInterfaceItem {", label=f"Item{record['index']:02d}:"))
         for index, (field,value) in enumerate(zip(fields,record["values"])):
-            expression = "@"+names[("Station",value)] if field in ("EventHandler","DrawHandler") and ("Station",value) in names else f"#{value:04X}" if field in ("EventHandler","DrawHandler","Unknown0E") else f"#{value:02X}"
+            expression = "@"+names[("Station",value)] if field in ("EventHandler","DrawHandler") and ("Station",value) in names else f"#{value:04X}" if field in ("EventHandler","DrawHandler","Reserved") else f"#{value:02X}"
             item_lines.append(asm("    "+expression+("," if index<len(fields)-1 else ""), "FInterfaceItem."+field))
         item_lines.append(asm("}"))
     item_lines.extend([asm("DB #80", "ограничитель таблицы элементов", "End:"), asm("endmodule")])
     symbols["InterfaceItems.End"] = 0xF0FD+16*len(interface)
     write("Source/Station/Data/InterfaceItems.asm", "\n".join(item_lines))
-    list_lines = [asm("module InterfaceDrawList"), "; исходные указатели перерисовки с ограничителем #0101"]
+    list_lines = [asm("module InterfaceDrawList"),
+                  "                ; Список рисователей с ограничителем #0101, соответствует архивному Sur1 по формату",
+                  "                ; Документация [список и граница хвоста](../../../Docs/Rendering.md#список-рисователей)"]
     for offset in range(item_end, list_end-2, 2):
         value = int.from_bytes(data_by_slot[4][offset:offset+2],"little")
         expression = "@"+names[("Station",value)] if ("Station",value) in names else f"#{value:04X}"
@@ -626,6 +628,18 @@ def main():
     write(WIDE_VECTORS, text)
     symbols.update(bindings)
     special[17, 0x3B27] = (0x3B6F, WIDE_VECTORS, 0x9B27)
+    from ActionArchivedFields import BLOCKS as archived_field_blocks, LABELS as archived_field_labels
+    from ActionArchivedFields import verify_archived_fields
+    verify_archived_fields(ROOT, data_by_slot[17])
+    for start, end, path in archived_field_blocks:
+        write(path, (ROOT / path).read_text('utf-8'))
+        special[17, start] = (end, path, 0x6000 + start)
+    symbols.update(archived_field_labels)
+    from StationArchivedJobs import START as jobs_start, END as jobs_end, ORIGIN as jobs_origin, PATH as jobs_path
+    from StationArchivedJobs import layout_symbols as archived_job_symbols, render as render_archived_jobs
+    write(jobs_path, render_archived_jobs(data_by_slot[4][jobs_start:jobs_end]))
+    special[4, jobs_start] = (jobs_end, jobs_path, jobs_origin)
+    symbols.update(archived_job_symbols())
     # Двадцать шесть физических указателей класса до первого RET обработчиков.
     from ActionObjectStateHandlersData import TABLE as STATE_HANDLERS_TABLE, render as render_state_handlers
     text, bindings = render_state_handlers(data_by_slot[17])
@@ -676,6 +690,13 @@ def main():
         write(table[1],input_text);symbols.update(input_labels)
         special[17,table[2]]=(table[3],table[1],table[2]+0x6000)
 
+    from StationScriptFields import START as SCRIPT_FIELDS_START, END as SCRIPT_FIELDS_END
+    from StationScriptFields import ORIGIN as SCRIPT_FIELDS_ORIGIN, PATH as SCRIPT_FIELDS_PATH, render as render_script_fields
+    script_fields_text, script_fields_symbols = render_script_fields(data_by_slot[4])
+    write(SCRIPT_FIELDS_PATH, script_fields_text)
+    symbols.update(script_fields_symbols)
+    special[4, SCRIPT_FIELDS_START] = (SCRIPT_FIELDS_END, SCRIPT_FIELDS_PATH, SCRIPT_FIELDS_ORIGIN)
+
     # Физические ячейки результата проекции, предел исходных моделей не является ограничителем кода.
     from ActionProjectedPointsData import TABLE as PROJECTED_POINTS_TABLE, render as render_projected_points
     projected_text,projected_labels=render_projected_points(data_by_slot[17])
@@ -689,7 +710,7 @@ def main():
         write(table[1],input_text);symbols.update(input_labels)
         special[17,table[2]]=(table[3],table[1],table[2]+0x6000)
 
-    # Раздельные физические копии префикса таблицы отсечения, без переклассификации CF08.
+    # Раздельные физические копии префикса таблицы отсечения по CF00..CF07.
     from ClipDispatchPrefixData import TABLES as CLIP_PREFIX_TABLES, render as render_clip_prefix
     for slot,origin,table in CLIP_PREFIX_TABLES:
         prefix_text,prefix_labels=render_clip_prefix(data_by_slot[slot],origin,table)
@@ -709,6 +730,16 @@ def main():
         physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
         write(table[1],physical_text);symbols.update(physical_labels)
         special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Физические пары моделей и шаблоны создания в перенесённом ядре ACTION.
+    from SpawnPhysicalRows import TABLES as SPAWN_TABLES, render as render_spawn
+    for table in SPAWN_TABLES:
+        start, end, module, path = table
+        spawn_text, spawn_labels = render_spawn(table)
+        write(path, spawn_text)
+        symbols.update({module + '.' + label: address for label, address in spawn_labels.items()})
+        offset = start - 0x6000 + 0x23D
+        special[17, offset] = (offset + end - start, path, start)
 
     # Сохранение физических записей и их исходного расположения.
     from ActionQueueParameterPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
@@ -948,6 +979,41 @@ def main():
         write(table[1],physical_text);symbols.update(physical_labels)
         special[slot,table[2]]=(table[3],table[1],origin+table[2])
 
+    # Сохранение физических записей и их исходного расположения.
+    from ActionTransferredPlayerFields import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from FinalIrqStackData import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from StationNewsTransfer import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionArchivedPlayerPanel import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from IntroStackSampleBytes import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -1103,7 +1169,7 @@ def main():
     assignment_text, assignment_symbols = render_assignment_scratch(data_by_slot[5])
     write(ASSIGNMENT_SCRATCH, assignment_text)
     symbols.update(assignment_symbols)
-    special[5, 0xA7B] = (0xA81, ASSIGNMENT_SCRATCH, 0xCA7B)
+    special[5, 0xA7B] = (ASSIGNMENT_SCRATCH_END, ASSIGNMENT_SCRATCH, 0xCA7B)
     market_script_text, market_script_symbols, market_script_end = render_market_script(data_by_slot[5])
     write(MARKET_SCRIPT, market_script_text)
     symbols.update(market_script_symbols)
@@ -1184,10 +1250,15 @@ def main():
     # Выделение подтверждённого PT3 от исходного адреса #E700 до логического конца MUZ1.C.
     music_end = next(item["length"] for item in disk["entries"] if item["slot"] == 10)
     binary_resources = {(10, 0xC00): (music_end, "Source/Music/Resources/Antichrist.pt3", "PT3")}
+    binary_resources[3, 0x2CFF] = (0x2D00, "Source/Resources/03_AWAKEN/DetachedJumpOpcode.bin",
+                                    "INTRO_DETACHED_JR_OPCODE")
     from BankStagingTails import FORMAT as BANK_STAGING_FORMAT, RANGES as BANK_STAGING_RANGES
     from BankStagingTails import path_for as bank_staging_path, remaining_path as bank_staging_rest
     for slot, (begin, end) in BANK_STAGING_RANGES.items():
         binary_resources[slot, begin] = (end, bank_staging_path(slot), BANK_STAGING_FORMAT)
+    import BankArchiveTileCopies as bank_tile_copies
+    for slot, (begin, end, _) in bank_tile_copies.RANGES.items():
+        binary_resources[slot, begin] = (end, bank_tile_copies.path_for(slot), bank_tile_copies.FORMAT)
     if re.search(r"\bstruct\s+FMusicModuleHeader\b", (ROOT/"Includes/Structs/Include.inc").read_text('utf-8'), re.I):
         from MusicCompositionSource import descriptions as composition_descriptions, render as render_composition
         composition = data_by_slot[10][0xC00:music_end]
@@ -1238,13 +1309,13 @@ def main():
     for start,end,path,kind,_ in ACTION_INITIAL_STORAGE:
         binary_resources[17,start]=(end,path,kind)
 
-    from ActionModelPhysicalData import render as render_object_model
+    from ActionModelPhysicalData import render as render_object_model, model_path as object_model_path
     from CheckActionModelTail import read_packets as object_tail_packets
     model_report = json.loads((ROOT/'Tools/Disasm/Reports/ActionModelPacketsVerification.json').read_bytes())
     object_data = data_by_slot[24]
     for packet in model_report['packets'] + object_tail_packets(object_data,0x2469,0x2954):
         start,end=packet['offset'],packet['end']
-        path=f'Source/Action/Data/Model{start:04X}.asm'
+        path=object_model_path(start)
         model_text,model_labels=render_object_model(object_data,packet)
         write(path,model_text);symbols.update(model_labels)
         special[24,start]=(end,path,0xC000+start)
@@ -1276,7 +1347,14 @@ def main():
 
     from ClassifyActionContextStorage import RESOURCES as ACTION_CONTEXT_INITIAL_STORAGE
     for start,end,path,kind,_ in ACTION_CONTEXT_INITIAL_STORAGE:
-        if kind is not None:binary_resources[17,start]=(end,path,kind)
+        if kind not in (None, 'INITIAL_ACTION_CONTEXT_MIDDLE'):
+            binary_resources[17,start]=(end,path,kind)
+
+    import ActionContextMapRecords as context_map
+    context_text,context_labels,_ = context_map.render(data_by_slot[17],data_by_slot[4])
+    write(context_map.PATH,context_text)
+    symbols.update(context_labels)
+    special[17,context_map.START]=(context_map.END,context_map.PATH,context_map.ORIGIN+context_map.START)
 
     from ClassifyStationDrawListTail import RESOURCES as STATION_DRAW_LIST_SHIFT_TAIL
     for start,end,path,kind,_ in STATION_DRAW_LIST_SHIFT_TAIL:
@@ -1292,6 +1370,98 @@ def main():
 
     from ClassifyActionPolygonOrOperand import RESOURCES as ACTION_POLYGON_OR_OPERAND
     for start,end,path,kind,_ in ACTION_POLYGON_OR_OPERAND:
+        if kind is not None:binary_resources[17,start]=(end,path,kind)
+
+    from ClassifyStationCombinedDrawTail import RESOURCES as STATION_COMBINED_DRAW_TAIL
+    for start,end,path,kind,_ in STATION_COMBINED_DRAW_TAIL:
+        if kind is not None:binary_resources[4,start]=(end,path,kind)
+
+    from ClassifyControlsLegacyContextPrefix import RESOURCES as CONTROLS_LEGACY_CONTEXT_PREFIX
+    for start,end,path,kind,_ in CONTROLS_LEGACY_CONTEXT_PREFIX:
+        if kind is not None:binary_resources[23,start]=(end,path,kind)
+
+    from ClassifyStationRebuildShiftTail import RESOURCES as STATION_CONDITIONAL_REBUILD_SHIFT_TAIL
+    for start,end,path,kind,_ in STATION_CONDITIONAL_REBUILD_SHIFT_TAIL:
+        if kind is not None:binary_resources[4,start]=(end,path,kind)
+
+    from ClassifyActionNoiseIrqAliases import RESOURCES as ACTION_NOISE_IRQ_ALIASES
+    for start,end,path,kind,_ in ACTION_NOISE_IRQ_ALIASES:
+        if kind is not None:binary_resources[17,start]=(end,path,kind)
+
+    from ClassifyControlsArchivedResetTail import RESOURCES as CONTROLS_ARCHIVED_RESET_TAIL
+    for start,end,path,kind,_ in CONTROLS_ARCHIVED_RESET_TAIL:
+        if kind is not None:binary_resources[23,start]=(end,path,kind)
+
+    from ClassifyVoxelArchivedLayout import RESOURCES as VOXEL_ARCHIVED_LAYOUT
+    for start,end,path,kind,_ in VOXEL_ARCHIVED_LAYOUT:
+        if kind is not None:binary_resources[20,start]=(end,path,kind)
+
+    from ClassifyPreviewArchivedStorage import RESOURCES as PREVIEW_ARCHIVED_STORAGE
+    for start,end,path,kind,_ in PREVIEW_ARCHIVED_STORAGE:
+        if kind is not None:binary_resources[6,start]=(end,path,kind)
+
+    from ClassifyMapArchivedAlignment import RESOURCES as MAP_ARCHIVED_ALIGNMENT
+    for start,end,path,kind,_ in MAP_ARCHIVED_ALIGNMENT:
+        if kind is not None:binary_resources[7,start]=(end,path,kind)
+
+    from CheckObject3DArchivedTarget import RESOURCES as OBJECT3D_ARCHIVED_TARGET
+    for start,end,path,kind,_ in OBJECT3D_ARCHIVED_TARGET:
+        if kind is not None:binary_resources[24,start]=(end,path,kind)
+
+    from CheckControlsArchivedDotBuffer import RESOURCES as CONTROLS_ARCHIVED_DOT_BUFFER
+    for start,end,path,kind,_ in CONTROLS_ARCHIVED_DOT_BUFFER:
+        if kind is not None:binary_resources[22,start]=(end,path,kind)
+
+    from CheckActionArchivedLayout import RESOURCES as ACTION_ARCHIVED_LAYOUT
+    for start,end,path,kind,_ in ACTION_ARCHIVED_LAYOUT:
+        if kind is not None:binary_resources[17,start]=(end,path,kind)
+
+    from CheckActionArchivedLayout import RESOURCES as THREED_ARCHIVED_LAYOUT
+    for start,end,path,kind,_ in THREED_ARCHIVED_LAYOUT:
+        if kind is not None:binary_resources[19,start]=(end,path,kind)
+
+    from CheckActionArchivedWorkspace import RESOURCES as ACTION_ARCHIVED_WORKSPACE
+    for start,end,path,kind,_ in ACTION_ARCHIVED_WORKSPACE:
+        if kind is not None:binary_resources[17,start]=(end,path,kind)
+
+    from CheckLangArchivedBuffers import RESOURCES as LANG_ARCHIVED_BUFFERS
+    for start,end,path,kind,_ in LANG_ARCHIVED_BUFFERS:
+        if kind is not None:binary_resources[5,start]=(end,path,kind)
+
+    from CheckControlsArchivedStarWorkspace import RESOURCES as CONTROLS_ARCHIVED_STAR_WORKSPACE
+    for start,end,path,kind,_ in CONTROLS_ARCHIVED_STAR_WORKSPACE:
+        if kind is not None:binary_resources[22,start]=(end,path,kind)
+
+    from CheckControlsArchivedResetHeader import RESOURCES as CONTROLS_ARCHIVED_RESET_HEADER
+    for start,end,path,kind,_ in CONTROLS_ARCHIVED_RESET_HEADER:
+        if kind is not None:binary_resources[23,start]=(end,path,kind)
+
+    from ClassifyActionArchivedBodyContext import RESOURCES as ACTION_ARCHIVED_BODY_CONTEXT
+    for start,end,path,kind,_ in ACTION_ARCHIVED_BODY_CONTEXT:
+        if kind is not None:binary_resources[17,start]=(end,path,kind)
+
+    from ClassifyStationLegacyMissionReturns import RESOURCES as STATION_LEGACY_MISSION_RETURNS
+    for start,end,path,kind,_ in STATION_LEGACY_MISSION_RETURNS:
+        if kind is not None:binary_resources[4,start]=(end,path,kind)
+
+    from ClassifyStationPopupShiftTail import RESOURCES as STATION_POPUP_SHIFT_TAIL
+    for start,end,path,kind,_ in STATION_POPUP_SHIFT_TAIL:
+        if kind is not None:binary_resources[4,start]=(end,path,kind)
+
+    from ClassifyActionObjectTableAlignment import RESOURCES as ACTION_OBJECT_TABLE_ALIGNMENT
+    for start,end,path,kind,_ in ACTION_OBJECT_TABLE_ALIGNMENT:
+        if kind is not None:binary_resources[17,start]=(end,path,kind)
+
+    from ClassifyActionNoiseKeyDecode import RESOURCES as ACTION_NOISE_KEY_DECODE
+    for start,end,path,kind,_ in ACTION_NOISE_KEY_DECODE:
+        if kind is not None:binary_resources[17,start]=(end,path,kind)
+
+    from ClassifyActionNoiseKeyMode import RESOURCES as ACTION_NOISE_KEY_MODE
+    for start,end,path,kind,_ in ACTION_NOISE_KEY_MODE:
+        if kind is not None:binary_resources[17,start]=(end,path,kind)
+
+    from ClassifyActionNoiseLetterCase import RESOURCES as ACTION_NOISE_LETTER_CASE
+    for start,end,path,kind,_ in ACTION_NOISE_LETTER_CASE:
         if kind is not None:binary_resources[17,start]=(end,path,kind)
 
     # Тексты панелей банка станции, исходные управляющие коды и написание сохраняются.
@@ -1393,6 +1563,8 @@ def main():
                     binary_path=f'Source/Resources/{slot}_BANK{slot-33}/'+gap_name
                 if slot in BANK_STAGING_RANGES and begin == BANK_STAGING_RANGES[slot][1]:
                     binary_path = bank_staging_rest(slot, begin, offset)
+                if slot in bank_tile_copies.RANGES and begin == bank_tile_copies.RANGES[slot][1]:
+                    binary_path = bank_staging_rest(slot, begin, offset)
                 if slot==23 and begin==FLIGHT_TEXT_END:binary_path=FLIGHT_TEXT_TAIL_PATH
                 if slot==22 and begin==0x546:binary_path=TEXT_FONT_PREFIX_PATH
                 path = ROOT / binary_path
@@ -1413,9 +1585,9 @@ def main():
         units.append(dict(slot=slot, path=unit_path, offset=item["offset"], length=len(data)))
 
     # Создание сборочной точки по схеме SAVETRD и встроенного упаковщика из DisasmElite.
-    builder = ["; -----------------------------------------", "; сборка исходного Awakenv02.trd средствами SjASMPlus",
-               "; адреса DISP восстанавливают только размещение, заданное оригинальными загрузчиками",
-               "; -----------------------------------------", asm("DEVICE ZXSPECTRUM48"),
+    builder = [asm("; -----------------------------------------"), asm("; сборка исходного Awakenv02.trd средствами SjASMPlus"),
+               asm("; адреса DISP восстанавливают только размещение, заданное оригинальными загрузчиками"),
+               asm("; -----------------------------------------"), asm("DEVICE ZXSPECTRUM48"),
                asm('include "../Includes/Const/Include.inc"'),
                asm('include "../Includes/Structs/Include.inc"'),
                asm('include "../Includes/Variables/Include.inc"'),
@@ -2511,6 +2683,21 @@ REGION_COMMENTS.setdefault('Action',{}).update(ACTIONRANDOMCLASSGATEENTRY_COMMEN
 
 from IntroAttributeCountTailFacts import COMMENTS as INTROATTRIBUTECOUNTTAIL_COMMENTS
 REGION_COMMENTS.setdefault('IntroUnpack',{}).update(INTROATTRIBUTECOUNTTAIL_COMMENTS)
+
+from ActionRecordScaleExtraEntryFacts import COMMENTS as ACTION_RECORD_SCALE_EXTRA_ENTRY_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RECORD_SCALE_EXTRA_ENTRY_COMMENTS)
+
+from ControlsEvenSpanPrefixFacts import COMMENTS as CONTROLSEVENSPANPREFIX_COMMENTS
+REGION_COMMENTS.setdefault('Controls',{}).update(CONTROLSEVENSPANPREFIX_COMMENTS)
+
+from IntroDetachedUnpackGateFacts import COMMENTS as INTRODETACHEDUNPACKGATE_COMMENTS
+REGION_COMMENTS.setdefault('IntroUnpack',{}).update(INTRODETACHEDUNPACKGATE_COMMENTS)
+
+from IntroAttributeScanPrefixFacts import COMMENTS as INTROATTRIBUTESCANPREFIX_COMMENTS
+REGION_COMMENTS.setdefault('IntroUnpack',{}).update(INTROATTRIBUTESCANPREFIX_COMMENTS)
+
+from ActionObjectStateReturnOnlyFacts import COMMENTS as ACTION_OBJECT_STATE_RETURN_ONLY_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_OBJECT_STATE_RETURN_ONLY_COMMENTS)
 
 
 if __name__ == "__main__":

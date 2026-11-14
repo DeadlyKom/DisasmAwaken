@@ -1,0 +1,209 @@
+{
+  "passed": true,
+  "method": "static_instruction_and_manual_dependency_classification",
+  "source_control0_sha256": "0e9c04176dfd9adfa0e8eb45a4208c25bf37f4e488755d512cb5fe39a79f34f5",
+  "mode_address": 53644,
+  "separate_direction_address": 53643,
+  "direct_reads": [
+    {
+      "read": 53659,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 55347,
+      "flags_normalized_at": 55348,
+      "flags_operation": "AND #1F",
+      "note": ""
+    },
+    {
+      "read": 53679,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 55347,
+      "flags_normalized_at": 55348,
+      "flags_operation": "AND #1F",
+      "note": ""
+    },
+    {
+      "read": 53700,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 55099,
+      "flags_normalized_at": 55100,
+      "flags_operation": "AND #1F",
+      "note": ""
+    },
+    {
+      "read": 53720,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 55099,
+      "flags_normalized_at": 55100,
+      "flags_operation": "AND #1F",
+      "note": ""
+    },
+    {
+      "read": 53741,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 54835,
+      "flags_normalized_at": 54836,
+      "flags_operation": "SUB L",
+      "note": ""
+    },
+    {
+      "read": 53761,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 54835,
+      "flags_normalized_at": 54836,
+      "flags_operation": "SUB L",
+      "note": ""
+    },
+    {
+      "read": 53769,
+      "category": "logical_flags_saved_in_row_frame",
+      "row_entry": 54666,
+      "save_af_at": 54690
+    },
+    {
+      "read": 53778,
+      "category": "logical_flags_saved_in_row_frame",
+      "row_entry": 54677,
+      "save_af_at": 54690
+    },
+    {
+      "read": 54333,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 54337,
+      "flags_normalized_at": 54338,
+      "flags_operation": "AND #1F",
+      "note": ""
+    },
+    {
+      "read": 54387,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 54393,
+      "flags_normalized_at": 54396,
+      "flags_operation": "BIT 1,A",
+      "note": ""
+    },
+    {
+      "read": 54489,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 54493,
+      "flags_normalized_at": 54494,
+      "flags_operation": "OR #1F",
+      "note": ""
+    },
+    {
+      "read": 54521,
+      "category": "logical_flags_returned",
+      "return_at": 54528
+    },
+    {
+      "read": 54570,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 54574,
+      "flags_normalized_at": 54577,
+      "flags_operation": "INC A",
+      "note": "INC сохраняет Carry, но AND A перед ним уже делает Carry=0"
+    },
+    {
+      "read": 54619,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 54623,
+      "flags_normalized_at": 54626,
+      "flags_operation": "SLL C",
+      "note": ""
+    },
+    {
+      "read": 54651,
+      "category": "dependency_replaced_in_known_path",
+      "a_replaced_at": 54655,
+      "flags_normalized_at": 54656,
+      "flags_operation": "AND #E0",
+      "note": ""
+    }
+  ],
+  "direct_writers": [
+    {
+      "address": 53793,
+      "value": 0
+    },
+    {
+      "address": 53807,
+      "value": 1
+    }
+  ],
+  "archived_provenance": {
+    "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+    "source": "awk1.trd:STARHSUN.a",
+    "compiled": "awk1.trd:CONTROL0.C",
+    "archived_identifier": "SEDETECT",
+    "archived_mode_address": 54977,
+    "current_mode_address": 53644,
+    "archived_code_start": 54978,
+    "current_code_start": 53645,
+    "code_bytes": 2129,
+    "decoded_instruction_bytes": 2075,
+    "other_compared_bytes": 54,
+    "identical_instructions": 1025,
+    "changed_terminal_word_operands": 222,
+    "operand_delta": 1333,
+    "delta_equals_removed_effect_bytes": true,
+    "normalized_block_sha256": "0200151d55c7f49b891b665994ba1c5a730bfe5618257c20b7939e07f6bceff2",
+    "archived_named_reads": 15,
+    "archived_named_writes": 2,
+    "identifier_expansion_or_graphical_intent_proved": false
+  },
+  "returned_flag_paths": {
+    "method": "contiguous_instruction_sequences_checked_against_original_CONTROL0",
+    "full_width_calls": [
+      {
+        "call": 54108,
+        "target": 53768,
+        "following_call": 54111
+      },
+      {
+        "call": 54135,
+        "target": 53777,
+        "following_call": 54138
+      },
+      {
+        "call": 54190,
+        "target": 53777,
+        "following_call": 54193
+      },
+      {
+        "call": 54213,
+        "target": 53768,
+        "following_call": 54216
+      }
+    ],
+    "full_width_flags_replaced_at": 54642,
+    "full_width_return_frame_restore": 54789,
+    "left_setup_call_sites": [
+      54264,
+      54270
+    ],
+    "left_half_saved_af_sites": [
+      53686,
+      53707
+    ],
+    "left_half_internal_flags_replaced_at": 55100,
+    "left_half_saved_flags_remain_part_of_return_contract": true,
+    "callers_beyond_circle_dispatch_proved": false,
+    "whole_raster_mode_independence_proved": false
+  },
+  "known_action_return_paths": {
+    "method": "known_current_ACTION_continuations_checked_against_original_bytes",
+    "banked_body_return": 27467,
+    "flags_replaced_except_carry_at": 27471,
+    "mode_AND_carry_is_zero_for_all_256_values": true,
+    "transformed_body_return": 57544,
+    "following_entry": 27414,
+    "all_incoming_flags_replaced_at": 27428,
+    "arbitrary_indirect_callers_excluded": false,
+    "primary_mask_real_caller_proved": false
+  },
+  "full_interprocedural_dataflow_proved": false,
+  "indirect_accesses_excluded": false,
+  "unusedness_proved": false,
+  "original_graphics_intent_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

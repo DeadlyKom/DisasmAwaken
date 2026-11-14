@@ -10,14 +10,19 @@
                 ;   PanelHoverState.IndexRow содержит прежний номер либо FF, его операнд доступен для записи
                 ;   действуют договоры UpdateRowHover, XorItemRow, XorPointerRow, SuspendPointer и ResumePointer
                 ; Out:
-                ;   перед UpdateRowHover установлены HL=DrawHelpContents.Entry, DE с младшим отступом 0B и старшим HelpPanelState.VisibleTitles, A прежний номер
-                ;   D равен текущему HelpPanelState.VisibleTitles, исходно 30, E=11 пикселей, фактическую байтовую высоту рассчитывает ClampRowHeight
+                ;   HL, DE, BC и AF принадлежат UpdateRowHover
+                ;   HL', DE', BC' сохраняются, AF' рабочий только на обновлении указателя, IX и IY сохраняются
+                ;   перед UpdateRowHover HL=DrawHelpContents.Entry, E=11, D=HelpPanelState.VisibleTitles, A прежний номер
+                ;   D содержит текущее байтовое число заголовков, исходно 30, высоту ограничивает ClampRowHeight
                 ;   при Z=1 возвращённого UpdateRowHover сохранённый номер не меняется, выходные регистры принадлежат соответствующей ветви отказа или совпадения
                 ;   при Z=0 весь возвращённый A записан в PanelHoverState.IndexRow, даже если A=0 либо повторная проверка вернула высоту
-                ;   HL, DE, BC и AF принадлежат UpdateRowHover, HL', DE', BC', IX, IY сохраняются, AF' рабочий только на обновлении указателя
                 ;   при соблюдении договоров SP обычного возврата равен входному SP+2, I, IFF и IM не меняются
                 ; Corrupt:
-                ;   HL, DE, BC, AF, AF' на изменении полосы и указателя
+                ;   HL, DE, BC, AF, AF', R
+                ;   bitmap полосы, MapHighlightState.WidthSkip банка 1, StationState.CurrentPage, управление 7FFD и временные слова CPU-стека
+                ;   PointerState.UpdateBlocked, PointerState.RestoredFlag, PointerState.SpriteBase, PointerState.BackgroundAddr и PointerState.VisibleRows
+                ;   InterfaceState.HoverItem, InterfaceState.HoverCallback и строки PointerBackground
+                ;   PanelHoverState.IndexRow при возвращённом Z=0
                 ; Note:
                 ;   обновление допускается лишь для точного адреса рисователя в последнем слове списка
                 ;   Z показывает отсутствие обновления, он не равнозначен нулю A

@@ -63,6 +63,16 @@ def main():
                     "StationState.Items":0xF0FD,"StationState.DrawList":0xF3DE})
     symbols = {key.upper():value for key,value in symbols.items()}
     symbols.update(structure_symbols())
+    from ActionArchivedFields import FIELDS as archived_fields, LABELS as archived_labels, verify_archived_fields
+    verify_archived_fields(ROOT, sources[17])
+    for structure, fields in archived_fields.items():
+        assert symbols[structure.upper()] == 9
+        assert all(symbols[f'{structure}.{name}'.upper()] == offset for name, offset in fields.items())
+    assert all(symbols[name.upper()] == address for name, address in archived_labels.items())
+    from StationArchivedJobs import START as jobs_start, END as jobs_end, PATH as jobs_path
+    from StationArchivedJobs import layout_symbols as archived_job_symbols, parse as parse_archived_jobs
+    assert parse_archived_jobs((ROOT / jobs_path).read_text('utf-8')) == sources[4][jobs_start:jobs_end]
+    assert all(symbols[name.upper()] == value for name, value in archived_job_symbols().items())
     # Чтение адресных привязок из исходника, без выделения памяти и ассемблирования.
     for include in ("Includes/Variables/Include.inc", "Includes/Const/Include.inc"):
         current_module = None
@@ -111,6 +121,21 @@ def main():
         operation = re.sub(r"(?<![#A-Z0-9_])\b[0-9]+\b(?![A-Z0-9_])",
                            lambda m: "#" + format(int(m[0]), "X"), operation)
         return re.sub(r"\s+", "", operation)
+
+    from StationScriptFields import START as SCRIPT_FIELDS_START, END as SCRIPT_FIELDS_END
+    from StationScriptFields import ORIGIN as SCRIPT_FIELDS_ORIGIN, PATH as SCRIPT_FIELDS_PATH
+    from StationScriptFields import parse as parse_script_fields, render as render_script_fields
+    _, script_fields_symbols = render_script_fields(sources[4])
+    script_fields = parse_script_fields((ROOT / SCRIPT_FIELDS_PATH).read_text('utf-8'))
+    assert script_fields == sources[4][SCRIPT_FIELDS_START:SCRIPT_FIELDS_END]
+    assert all(symbols.get(label.upper()) == address for label, address in script_fields_symbols.items())
+    assert all(symbols[kind] == 1 for kind in ('FSCRIPTMODEBYTE', 'FSCRIPTGROUPSTART', 'FSCRIPTRECORDSTART'))
+    assert (symbols['FSCRIPTRESOURCESELECTION'], symbols['FSCRIPTRESOURCESELECTION.GROUPCOUNT'],
+            symbols['FSCRIPTRESOURCESELECTION.RECORDCOUNT']) == (2, 0, 1)
+    script_fields_row = next(row for row in source_map if row['path'] == SCRIPT_FIELDS_PATH)
+    assert (script_fields_row['slot'], script_fields_row['offset'], script_fields_row['length'],
+            script_fields_row['origin'], script_fields_row['kind']) == (
+                4, SCRIPT_FIELDS_START, len(script_fields), SCRIPT_FIELDS_ORIGIN, 'typed_data')
 
     # Проверка физических текстовых потоков станции без подстановки перевода в образ.
     from StationPanelTextResources import RESOURCES as PANEL_TEXTS, path as panel_path, records as panel_records
@@ -173,7 +198,7 @@ def main():
     assert symbols['FLINERASTERPOINT.SECOND']==0 and symbols['FLINERASTERPOINT.FIRST']==1
     assert symbols['FLINERASTERMODE.PIXELOPCODE']==0 and symbols['FLINERASTERMODE.BRANCHOPCODE']==1
 
-    # Проверка двух физических префиксов CF00, CF08 остаётся отдельным спорным диапазоном.
+    # Проверка двух физических префиксов CF00..CF07.
     from ClipDispatchPrefixData import TABLES as CLIP_PREFIX_TABLES, parse as parse_clip_prefix
     for slot,origin,table in CLIP_PREFIX_TABLES:
         raw,labels=parse_clip_prefix((ROOT/table[1]).read_text('utf-8'),origin,table)
@@ -379,7 +404,8 @@ def main():
     for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
 
     # Проверка физической роли выделенных суффиксов, чтение игрой не исключается.
-    from AllocatedSectorSuffixResources import RANGES as ALLOCATED_SUFFIX_RANGES
+    from AllocatedSectorSuffixResources import RANGES as ALLOCATED_SUFFIX_RANGES, check_mirrors as check_suffix_mirrors
+    sector_suffix_mirror_bytes = check_suffix_mirrors(sources)
     for slot,start,end,path,declared in ALLOCATED_SUFFIX_RANGES:
         assert slot!=3 and start>=declared
         assert (ROOT/path).read_bytes()==sources[slot][start:end]
@@ -762,6 +788,87 @@ def main():
         assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
     for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
 
+    import ActionContextMapRecords as context_map
+    if any(row['path'] == context_map.PATH for row in source_map):
+        context_text, context_labels, _ = context_map.render(sources[17], sources[4])
+        assert (ROOT/context_map.PATH).read_text('utf-8') == context_text
+        assert all(symbols[name.upper()] == address for name,address in context_labels.items())
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionTransferredPlayerFields import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from FinalIrqStackData import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from StationNewsTransfer import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionArchivedPlayerPanel import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from IntroStackSampleBytes import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
     code_count = 0
     coverage = {e["slot"]:bytearray(e["allocated_length"]) for e in manifest["entries"] if not e["deleted"]}
     for item in source_map:
@@ -1040,6 +1147,13 @@ def main():
         assert raw == sources[17][EFFECTS_START:EFFECTS_END]
         assert all(symbols.get(key.upper()) == value for key, value in labels.items())
         assert symbols['FVISUALEFFECT'] == 18
+        frame_offsets = {
+            'FRAMEPOINTER': 0x08, 'FIRSTFRAME': 0x0A,
+            'FRAMECOUNT': 0x0C, 'FRAMERELOAD': 0x0D, 'FRAMESTRIDE': 0x0E,
+            'FRAMEWIDTH': 0x10, 'FRAMEHEIGHT': 0x11,
+        }
+        assert all(symbols[f'FVISUALEFFECT.{field}'] == offset
+                   for field, offset in frame_offsets.items())
         visual_effect_records = 8
 
     # Проверка трёх физических страниц корня, включая особый старший диапазон и исходные исключения.
@@ -1417,7 +1531,7 @@ def main():
         assert all(symbols.get(k.upper())==v for k,v in labels.items())
         rows=[p for p in source_map if p['path']==path]
         assert len(rows)==1 and (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(start,end-start,start+0x6000)
-    assert symbols['FOVERLAYLINE']==4 and symbols['FCLASSSPAWNBYTE']==1
+    assert symbols['FOVERLAYLINE']==4 and symbols['FMISSILEREPEATDELAY']==1
 
     # Проверка двух физических точек, их вложенных координат и кода, а не только адресных EQU.
     from ActionClipPointsData import POINTS as CLIP_POINTS, parse as parse_clip_point
@@ -1434,14 +1548,19 @@ def main():
     verify_three_d_overlay_data(ROOT,sources,source_map,symbols)
 
     # Проверка физических заголовков, групп и примитивов всех потоков OBJECT3D.
-    from ActionModelPhysicalData import parse as parse_action_model
+    from ActionModelPhysicalData import parse as parse_action_model, verify_bound_mantissa
     models=[item for item in source_map if item['slot']==24 and item['kind']=='typed_data']
     assert len(models)==102 and sum(item['length'] for item in models)==10576
+    empty_models = []
     for item in models:
         raw,labels=parse_action_model((ROOT/item['path']).read_text('utf-8'))
         assert raw==sources[24][item['offset']:item['offset']+item['length']]
         assert all(symbols.get(name.upper())==address for name,address in labels.items())
+        if not verify_bound_mantissa(raw):
+            empty_models.append(item['offset'])
+    assert empty_models == [0x18B2]
     assert symbols['FACTIONMODELHEADER']==2 and symbols['FACTIONMODELGROUP']==4
+    assert symbols['FACTIONMODELHEADER.BOUNDMANTISSA']==0 and symbols['FACTIONMODELHEADER.SCALEEXPONENT']==1
     assert symbols['FACTIONMODELGROUP.MASK']==0 and symbols['FACTIONMODELGROUP.COMPONENT2']==3
 
     # Проверка физических строк палитры и двух анимаций VOXAL.
@@ -1476,10 +1595,11 @@ def main():
     else:
         tail = [row for row in source_map if row['slot'] == 3 and 0x2C6B <= row['offset'] < 0x2D00]
         assert [(row['offset'], row['length'], row['kind']) for row in tail] == [
-            (0x2C6B, 44, 'unclassified'), (0x2C97, 54, 'code'),
+            (0x2C6B, 41, 'unclassified'), (0x2C94, 3, 'code'), (0x2C97, 54, 'code'),
             (0x2CCD, 11, 'code'), (0x2CD8, 12, 'code'),
-            (0x2CE4, 8, 'code'), (0x2CEC, 20, 'unclassified'),
+            (0x2CE4, 8, 'code'), (0x2CEC, 19, 'code'), (0x2CFF, 1, 'binary_resource'),
         ]
+        assert (ROOT/tail[-1]['path']).read_bytes() == sources[3][0x2CFF:0x2D00] == b'\x28'
 
     # Проверка двух физических экранов выбора, без предположения об их загрузке.
     from PublishChooseScreens import parse_attributes as parse_choose_attributes
@@ -1552,6 +1672,10 @@ def main():
         offset=start-0x6000+0x23D
         assert raw==sources[17][offset:offset+end-start]
         assert all(symbols[(module+'.'+label).upper()]==start+relative for label,relative in labels.items())
+        rows = [row for row in source_map if row['path'] == path]
+        assert len(rows) == 1
+        assert (rows[0]['slot'], rows[0]['offset'], rows[0]['length'], rows[0]['origin'], rows[0]['kind']) == (
+            17, offset, end - start, start, 'typed_data')
     for kind,fields in SPAWN_TYPES.items():
         offset=0
         for field,size in fields:
@@ -1578,6 +1702,24 @@ def main():
         module=re.search(r'module (\w+)',text)[1]
         assert all(symbols[(module+'.'+label).upper()]==address for label,address in labels.items())
     assert symbols['FBASICLINEHEADER']==4 and symbols['FBASICSMALLINTEGER']==5
+
+    # Проверка отдельного числового представления в первом секторе за логическим BASIC.
+    from BasicProgramData import (
+        DETACHED_LINE_START, DETACHED_LINE_END, DETACHED_LINE_PATH, detached_line_suffix,
+        DETACHED_NUMBER_START, DETACHED_NUMBER_END, DETACHED_NUMBER_PATH, detached_sector_number,
+    )
+    for start, end, path, decode in (
+        (DETACHED_LINE_START, DETACHED_LINE_END, DETACHED_LINE_PATH, detached_line_suffix),
+        (DETACHED_NUMBER_START, DETACHED_NUMBER_END, DETACHED_NUMBER_PATH, detached_sector_number),
+    ):
+        detached = [item for item in source_map if item['path'] == path]
+        assert len(detached) == 1 and detached[0]['kind'] == 'typed_data' and detached[0]['origin'] is None
+        assert (detached[0]['slot'], detached[0]['offset'], detached[0]['length']) == (3, start, end - start)
+        text = (ROOT / path).read_text('utf-8')
+        raw, labels = parse_basic_program(text, start)
+        assert raw == decode(sources[3])
+        module = re.search(r'module (\w+)', text)[1].upper()
+        assert all(symbols[module + '.' + label.upper()] == address for label, address in labels.items())
 
     # Проверка физических параметров вступления и каждой исходной записи, включая два состояния фаз.
     from IntroPhysicalParameters import BLOCKS as intro_parameter_blocks, TYPES as intro_parameter_types
@@ -2063,11 +2205,16 @@ def main():
                                 ("Source/Station/Data/ControlOptions.asm",0x39C8,43)):
         if not any(item["path"] == path for item in source_map):continue
         text = "\n".join(line.split(";",1)[0] for line in (ROOT / path).read_text(encoding="utf-8").splitlines())
-        entries = re.findall(r"FSettingWord\s*\{([^}]+)\}",text)
+        entries = re.findall(r"(FSettingWord|FScriptResourceSelection)\s*\{([^}]+)\}",text)
+        expected_types = ['FSettingWord'] * count
+        if path.endswith('/ControlOptions.asm'):
+            expected_types[-1] = 'FScriptResourceSelection'
+        assert [kind for kind, _ in entries] == expected_types
         raw = bytearray()
-        for record in entries:
+        for kind, record in entries:
             values = [number(v) for v in record.split(",")]
-            if len(values) != 2:raise ValueError("Не совпало число полей FSettingWord")
+            if len(values) != 2 or symbols[kind.upper()] != 2:
+                raise ValueError("Не совпала раскладка настроек " + kind)
             raw.extend(values)
         if len(entries) != count or symbols["FSETTINGWORD"] != 2 or raw != sources[4][offset:offset+2*count]:
             raise ValueError("Физические настройки отличаются от оригинала "+path)
@@ -2134,8 +2281,8 @@ def main():
     # Проверка физических категорий и тридцати двухбайтовых правил и строк рынка.
     market_records = {}
     for path, structure, start, end in (
-        ("Source/Station/Data/MarketCategories.asm", None, 0x34DC, 0x34F7),
-        ("Source/Station/Data/MarketRules.asm", "FMarketRule", 0x3518, 0x3554),
+        ("Source/Station/Data/MarketCategories.asm", None, 0x34DC, 0x34FA),
+        ("Source/Station/Data/MarketRules.asm", "FMarketRule", 0x3518, 0x3555),
         ("Source/Station/Data/MarketRows.asm", "FMarketRow", 0x3555, 0x3592)):
         if not any(item["path"] == path for item in source_map):
             continue
@@ -2160,7 +2307,7 @@ def main():
             raise ValueError("Не найдено 30 физических записей " + structure)
         market_records[structure or "CategoryBytes"] = count if structure else len(raw)
 
-    # Проверка физического шестибайтового рабочего экземпляра присваивания.
+    # Проверка физической записи присваивания и двух слов вложенного RHS.
     assignment_records = 0
     path = "Source/Text/Data/AssignmentScratch.asm"
     if any(item["path"] == path for item in source_map):
@@ -2172,7 +2319,14 @@ def main():
         if len(values) != 3:
             raise ValueError("Неверное число полей FAssignmentExpression")
         raw = b"".join(value.to_bytes(2, "little") for value in values)
-        if raw != sources[5][0xA7B:0xA81]:
+        nested = re.findall(r"FAssignmentNestedTail\s*\{([^}]+)\}", text)
+        if len(nested) != 1:
+            raise ValueError("Не найден физический FAssignmentNestedTail")
+        nested_values = [number(value) for value in nested[0].split(",")]
+        if len(nested_values) != 2:
+            raise ValueError("Неверное число полей FAssignmentNestedTail")
+        raw += b"".join(value.to_bytes(2, "little") for value in nested_values)
+        if raw != sources[5][0xA7B:0xA85]:
             raise ValueError("Изменились исходные байты рабочего экземпляра присваивания")
         assignment_records = 1
 
@@ -2624,6 +2778,8 @@ def main():
     report['action_ay_stream_records'] = ay_stream_records
     report['object_data_pointer_records'] = len(OBJECT_POINTER_TABLE[-1])
     report['action_object_records'] = object_records
+    report['station_script_fields_bytes'] = len(script_fields)
+    report['sector_suffix_mirror_bytes'] = sector_suffix_mirror_bytes
     report['glyph_input_records'] = glyph_input_records
     report['parameter_rule_records'] = parameter_rule_records
     report['candidate_list_records'] = len(CANDIDATE_LIST_TABLE[-1])

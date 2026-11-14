@@ -1,0 +1,214 @@
+{
+  "passed": true,
+  "original_z80_runs": 4180,
+  "geometry_pattern_groups": 352,
+  "modes_in_broad_geometry_groups": [
+    0,
+    1,
+    128,
+    255
+  ],
+  "all_256_modes_per_selected_destination": true,
+  "all_mode_groups": 11,
+  "all_mode_profiles": [
+    {
+      "target": 16383,
+      "x": 0,
+      "y": 1,
+      "radius": 109,
+      "bits": 1,
+      "pattern": 0,
+      "stack": 36872,
+      "background": 0
+    },
+    {
+      "target": 54036,
+      "x": 0,
+      "y": 1,
+      "radius": 109,
+      "bits": 13,
+      "pattern": 0,
+      "stack": 36872,
+      "background": 0
+    },
+    {
+      "target": 54080,
+      "x": 120,
+      "y": 30,
+      "radius": 254,
+      "bits": 14,
+      "pattern": 0,
+      "stack": 36872,
+      "background": 0
+    },
+    {
+      "target": 54090,
+      "x": 0,
+      "y": 2,
+      "radius": 218,
+      "bits": 14,
+      "pattern": 0,
+      "stack": 36872,
+      "background": 0
+    },
+    {
+      "target": 54156,
+      "x": 120,
+      "y": 84,
+      "radius": 252,
+      "bits": 12,
+      "pattern": 0,
+      "stack": 36872,
+      "background": 0
+    },
+    {
+      "target": 54166,
+      "x": 0,
+      "y": 7,
+      "radius": 251,
+      "bits": 7,
+      "pattern": 0,
+      "stack": 36872,
+      "background": 0
+    },
+    {
+      "target": 54234,
+      "x": 0,
+      "y": 2,
+      "radius": 218,
+      "bits": 10,
+      "pattern": 0,
+      "stack": 36872,
+      "background": 0
+    },
+    {
+      "target": 54244,
+      "x": 1,
+      "y": 38,
+      "radius": 119,
+      "bits": 15,
+      "pattern": 0,
+      "stack": 36872,
+      "background": 0
+    },
+    {
+      "target": 54276,
+      "x": 120,
+      "y": 57,
+      "radius": 9,
+      "bits": 12,
+      "pattern": 0,
+      "stack": 36872,
+      "background": 0
+    },
+    {
+      "target": 54286,
+      "x": 4,
+      "y": 9,
+      "radius": 249,
+      "bits": 5,
+      "pattern": 0,
+      "stack": 36872,
+      "background": 0
+    },
+    {
+      "target": 54405,
+      "x": 0,
+      "y": 57,
+      "radius": 9,
+      "bits": 12,
+      "pattern": 0,
+      "stack": 36872,
+      "background": 0
+    }
+  ],
+  "groups_by_destination": {
+    "3FFF": 32,
+    "D314": 32,
+    "D340": 32,
+    "D34A": 32,
+    "D38C": 32,
+    "D396": 32,
+    "D3DA": 32,
+    "D3E4": 32,
+    "D404": 32,
+    "D40E": 32,
+    "D485": 32
+  },
+  "geometries_per_destination": 8,
+  "patterns": [
+    0,
+    65535,
+    21930,
+    4660
+  ],
+  "compared_raster_bytes_per_run": 3072,
+  "final_pixels_and_ordered_pixel_writes_equal_within_groups": true,
+  "differing_register_array_indices": {
+    "1": 348
+  },
+  "differing_final_F_comparisons_by_destination": {
+    "D3DA": 300,
+    "D3E4": 48
+  },
+  "source_control0_sha256": "0e9c04176dfd9adfa0e8eb45a4208c25bf37f4e488755d512cb5fe39a79f34f5",
+  "compared_rasters_sha256": "9ec24c82564fe17e3dd1461dd521ae6ec905fdc047b0b23f43a5dfe1bd91dd0e",
+  "no_raster_or_trdos_stubs": true,
+  "irq_executed": false,
+  "full_input_product_exhausted": false,
+  "all_ram_equal_claimed": false,
+  "all_physical_banks_compared": true,
+  "exact_ordered_write_sites_and_addresses_compared": true,
+  "differing_write_values_only_AND_mode_F_at_verified_PUSH_AF": true,
+  "differing_write_sites": {
+    "D5A2": 2088,
+    "D1B6": 348,
+    "D1CB": 348
+  },
+  "differing_final_stack_addresses": {
+    "2:1002": 600,
+    "2:3FF8": 72,
+    "2:1006": 312,
+    "2:3FFC": 36
+  },
+  "compared_paired_write_events": 7056024,
+  "compared_paired_instruction_events": 21863496,
+  "compared_paired_read_events": 29017860,
+  "exact_instruction_sequences_equal_within_groups": true,
+  "exact_ordered_read_sites_and_addresses_equal_within_groups": true,
+  "differing_read_values_only_Mode_and_POP_AF_flags": true,
+  "differing_read_sites": {
+    "D52A:Mode": 2088,
+    "D55B:Mode": 2088,
+    "D201:Mode": 648,
+    "D1ED:Mode": 396,
+    "D209:Mode": 1056,
+    "D606:SavedF": 2088,
+    "D57B:Mode": 2088,
+    "D1D8:Mode": 1572,
+    "D212:Mode": 1032,
+    "D1C4:Mode": 1044,
+    "D1AF:Mode": 744,
+    "D19B:Mode": 768,
+    "D4F9:Mode": 696,
+    "D959:SavedF": 336,
+    "D93E:SavedF": 336,
+    "D7C0:SavedF": 24,
+    "D4D9:Mode": 696,
+    "D473:Mode": 348,
+    "D43D:Mode": 348
+  },
+  "flag_restore_tails_checked": {
+    "D606": "f1d1c9",
+    "D7C0": "f1c9",
+    "D93E": "f1c9",
+    "D959": "f1c9"
+  },
+  "changed_saved_F_reads_followed_only_by_POP_DE_or_RET": true,
+  "full_traces_saved_to_disk": false,
+  "all_registers_except_F_equal_including_R_and_T": true,
+  "mode_graphical_intent_proved": false,
+  "external_return_flag_consumers_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

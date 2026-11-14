@@ -47,6 +47,8 @@ def main():
     assert set(outcomes) == {'0', '1', '2', '4', '5', '6', '7', '8', 'rejected'}
     report = dict(passed=True, total_cases=outcomes.total(), outcomes=dict(outcomes),
                   all_random_high_and_folded_maximum_values=True, unreachable_class_three=True,
+                  threshold_scope='original_operands_before_BuildParameterTables',
+                  generated_thresholds_tested=False,
                   stopped_before_model_selection=True, assembly_executed=False)
     payload = json.dumps(report, indent=2) + '\n'
     (ROOT / 'Tools/Disasm/Reports/ActionSpawnClassSelectionVerification.json').write_text(payload, encoding='utf-8')

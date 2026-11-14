@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "complete_flight_frames": 64,
+  "instruction_counts_by_region": {
+    "ActionBoot": 260,
+    "Action": 12039,
+    "ThreeD": 4319,
+    "Voxel": 3451,
+    "Controls": 5630
+  },
+  "physical_records": 26,
+  "bytes_per_record": 64,
+  "first_tail_field_offset": 39,
+  "disk_tails_all_zero": true,
+  "observed_record_accesses": {
+    "write": 2432,
+    "read": 20603
+  },
+  "tail_accesses_in_profile": 0,
+  "indirect_accesses_in_other_paths_excluded": false,
+  "trdos_substituted": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

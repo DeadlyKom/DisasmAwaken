@@ -1,0 +1,2514 @@
+{
+  "passed": true,
+  "method": "continuous_64_frame_idle_control_from_original_ACTION_bootstrap",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "continuous_complete_frames": 64,
+  "physical_key_row": 253,
+  "physical_key_mask": 2,
+  "key_enabled_at_first_scan_and_never_released": false,
+  "frame_and_keyboard_state_not_reset_between_frames": true,
+  "scans": [
+    {
+      "frame": 1,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 0,
+        "positive_counter": 0,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 0,
+        "positive_counter": 0,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 2,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 3,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 4,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 5,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 6,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 7,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 8,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 9,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 10,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 11,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 12,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 13,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 14,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 15,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 16,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 17,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 18,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 19,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 20,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 21,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 22,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 23,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 24,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 25,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 26,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 27,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 28,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 29,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 30,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 31,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 32,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 33,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 34,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 35,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 36,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 37,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 38,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 39,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 40,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 41,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 42,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 43,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 44,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 45,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 46,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 47,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 48,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 49,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 50,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 51,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 52,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 53,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 54,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 55,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 56,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 57,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 58,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 59,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 60,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 61,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 62,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 63,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    },
+    {
+      "frame": 64,
+      "scan_SP": 49144,
+      "before": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "handlers": [],
+      "returns": 0,
+      "clip_paths": [],
+      "divisors": [],
+      "clip_IFF_values": [],
+      "after": {
+        "first_point": "0000000000",
+        "second_point": "0000000000",
+        "corner_block": 0,
+        "seen": 0,
+        "output_size": 0,
+        "Y_value": 0,
+        "negative_counter": 200,
+        "positive_counter": 200,
+        "Y_latch": 0
+      },
+      "reads": 27
+    }
+  ],
+  "expected_handler_targets": [],
+  "total_scanner_reads": 1728,
+  "total_handlers": 0,
+  "output_cursor_wrap_frames": [],
+  "other_active_keyboard_reads": [],
+  "clip_dispatches": {},
+  "clip_targets": [],
+  "alias_entries": [],
+  "post_startup_temporary_entries": [],
+  "post_startup_control_source_writes": [],
+  "accepted_interrupts": [],
+  "flight_cycle": {
+    "passed": true,
+    "total_cases": 1,
+    "method": "bounded_skoolkit_with_trdos_stub",
+    "startup_page_checkpoints": [
+      {
+        "pc": 43059,
+        "page": 30
+      },
+      {
+        "pc": 43070,
+        "page": 30
+      },
+      {
+        "pc": 43075,
+        "page": 16
+      },
+      {
+        "pc": 43083,
+        "page": 17
+      },
+      {
+        "pc": 43086,
+        "page": 16
+      },
+      {
+        "pc": 43089,
+        "page": 16
+      },
+      {
+        "pc": 43096,
+        "page": 16
+      }
+    ],
+    "complete_frame_returns": 64,
+    "frame_entries": 65,
+    "frame_call_sites": [
+      {
+        "pc": 43111,
+        "page": 16
+      },
+      {
+        "pc": 43114,
+        "page": 16
+      },
+      {
+        "pc": 43119,
+        "page": 16
+      },
+      {
+        "pc": 43122,
+        "page": 17
+      },
+      {
+        "pc": 43125,
+        "page": 17
+      },
+      {
+        "pc": 43130,
+        "page": 17
+      },
+      {
+        "pc": 43133,
+        "page": 16
+      },
+      {
+        "pc": 43136,
+        "page": 16
+      },
+      {
+        "pc": 43208,
+        "page": 16
+      },
+      {
+        "pc": 43215,
+        "page": 16
+      },
+      {
+        "pc": 43218,
+        "page": 16
+      },
+      {
+        "pc": 43221,
+        "page": 16
+      },
+      {
+        "pc": 43224,
+        "page": 16
+      },
+      {
+        "pc": 43229,
+        "page": 16
+      },
+      {
+        "pc": 43232,
+        "page": 17
+      },
+      {
+        "pc": 43237,
+        "page": 17
+      },
+      {
+        "pc": 43240,
+        "page": 16
+      },
+      {
+        "pc": 43390,
+        "page": 16
+      },
+      {
+        "pc": 43395,
+        "page": 16
+      },
+      {
+        "pc": 43655,
+        "page": 20
+      },
+      {
+        "pc": 43658,
+        "page": 16
+      },
+      {
+        "pc": 43679,
+        "page": 16
+      },
+      {
+        "pc": 43683,
+        "page": 17
+      },
+      {
+        "pc": 43686,
+        "page": 17
+      },
+      {
+        "pc": 43689,
+        "page": 17
+      },
+      {
+        "pc": 43692,
+        "page": 17
+      },
+      {
+        "pc": 43695,
+        "page": 17
+      },
+      {
+        "pc": 43698,
+        "page": 17
+      },
+      {
+        "pc": 43701,
+        "page": 17
+      },
+      {
+        "pc": 43704,
+        "page": 17
+      },
+      {
+        "pc": 43707,
+        "page": 17
+      },
+      {
+        "pc": 43712,
+        "page": 17
+      }
+    ],
+    "loop_entry_sp": 49150,
+    "child_frame_return_address": 43100,
+    "legacy_control0_parameters": {
+      "track": 75,
+      "sector": 5,
+      "sector_count": 27,
+      "old_opcode": 0,
+      "old_count_opcode": 0
+    },
+    "legacy_runtime_execution_visits": 0,
+    "panel_bytes_compared": 6912,
+    "boot_table_bytes_compared": 1792,
+    "loads": [
+      {
+        "slot": 25,
+        "address": 49152,
+        "length": 1536,
+        "bank": 6
+      },
+      {
+        "slot": 20,
+        "address": 49152,
+        "length": 11264,
+        "bank": 3
+      },
+      {
+        "slot": 21,
+        "address": 60416,
+        "length": 3840,
+        "bank": 3
+      },
+      {
+        "slot": 22,
+        "address": 49152,
+        "length": 6912,
+        "bank": 1
+      },
+      {
+        "slot": 23,
+        "address": 56030,
+        "length": 6656,
+        "bank": 1
+      },
+      {
+        "slot": 24,
+        "address": 49152,
+        "length": 10752,
+        "bank": 4
+      }
+    ],
+    "real_boot_verified": false,
+    "assembly_executed": false
+  },
+  "render_nodes": [],
+  "model_name_registry_sha256": "7512944935256af8158ec40e047b498a10da9422076ca90392252341497513ee",
+  "initial_record0": "00800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "slot0_identity_changes": [
+    {
+      "frame": 8,
+      "pc": 30956,
+      "address": 41222,
+      "before": 0,
+      "after": 244
+    },
+    {
+      "frame": 8,
+      "pc": 30972,
+      "address": 41226,
+      "before": 0,
+      "after": 9
+    },
+    {
+      "frame": 8,
+      "pc": 30997,
+      "address": 41234,
+      "before": 0,
+      "after": 18
+    }
+  ],
+  "state_before_frame65_first_instruction": {
+    "first_point": "0000000000",
+    "second_point": "0000000000",
+    "corner_block": 0,
+    "seen": 0,
+    "output_size": 0,
+    "Y_value": 0,
+    "negative_counter": 200,
+    "positive_counter": 200,
+    "Y_latch": 0
+  },
+  "spawn_schedule_random0_calls": [
+    {
+      "frame": 8,
+      "call_SP": 49146,
+      "previous_word": 13335,
+      "returned_HL": 3511,
+      "stream0_word": 3511,
+      "stream0_fold": 53,
+      "threshold": 227,
+      "branch_to_distance": true,
+      "distance_entry_HL": 3511,
+      "distance_entry_SP": 49146,
+      "stored_word": 3511,
+      "stored_by_original_794B": true
+    },
+    {
+      "frame": 16,
+      "call_SP": 49146,
+      "previous_word": 3511,
+      "returned_HL": 52405,
+      "stream0_word": 52405,
+      "stream0_fold": 55,
+      "threshold": 227,
+      "branch_to_distance": true,
+      "distance_entry_HL": 52405,
+      "distance_entry_SP": 49146,
+      "stored_word": 52405,
+      "stored_by_original_794B": true
+    },
+    {
+      "frame": 24,
+      "call_SP": 49146,
+      "previous_word": 52405,
+      "returned_HL": 48021,
+      "stream0_word": 48021,
+      "stream0_fold": 61,
+      "threshold": 231,
+      "branch_to_distance": true,
+      "distance_entry_HL": 48021,
+      "distance_entry_SP": 49146,
+      "stored_word": 48021,
+      "stored_by_original_794B": true
+    },
+    {
+      "frame": 32,
+      "call_SP": 49146,
+      "previous_word": 48021,
+      "returned_HL": 45017,
+      "stream0_word": 45017,
+      "stream0_fold": 68,
+      "threshold": 231,
+      "branch_to_distance": true,
+      "distance_entry_HL": 45017,
+      "distance_entry_SP": 49146,
+      "stored_word": 45017,
+      "stored_by_original_794B": true
+    },
+    {
+      "frame": 40,
+      "call_SP": 49146,
+      "previous_word": 45017,
+      "returned_HL": 14625,
+      "stream0_word": 14625,
+      "stream0_fold": 75,
+      "threshold": 231,
+      "branch_to_distance": true,
+      "distance_entry_HL": 14625,
+      "distance_entry_SP": 49146,
+      "stored_word": 14625,
+      "stored_by_original_794B": true
+    },
+    {
+      "frame": 48,
+      "call_SP": 49146,
+      "previous_word": 14625,
+      "returned_HL": 27929,
+      "stream0_word": 27929,
+      "stream0_fold": 79,
+      "threshold": 231,
+      "branch_to_distance": true,
+      "distance_entry_HL": 27929,
+      "distance_entry_SP": 49146,
+      "stored_word": 27929,
+      "stored_by_original_794B": true
+    },
+    {
+      "frame": 56,
+      "call_SP": 49146,
+      "previous_word": 27929,
+      "returned_HL": 41263,
+      "stream0_word": 41263,
+      "stream0_fold": 84,
+      "threshold": 231,
+      "branch_to_distance": true,
+      "distance_entry_HL": 41263,
+      "distance_entry_SP": 49146,
+      "stored_word": 41263,
+      "stored_by_original_794B": true
+    },
+    {
+      "frame": 64,
+      "call_SP": 49146,
+      "previous_word": 41263,
+      "returned_HL": 57553,
+      "stream0_word": 57553,
+      "stream0_fold": 87,
+      "threshold": 231,
+      "branch_to_distance": true,
+      "distance_entry_HL": 57553,
+      "distance_entry_SP": 49146,
+      "stored_word": 57553,
+      "stored_by_original_794B": true
+    }
+  ],
+  "spawn_alternate_entries": [
+    {
+      "frame": 8,
+      "template_mode": 0,
+      "third_gate": 0,
+      "SP": 49146,
+      "return_address": 43114,
+      "saved_word": 3511
+    },
+    {
+      "frame": 16,
+      "template_mode": 1,
+      "third_gate": 1,
+      "SP": 49146,
+      "return_address": 43114,
+      "saved_word": 52405
+    },
+    {
+      "frame": 24,
+      "template_mode": 1,
+      "third_gate": 1,
+      "SP": 49146,
+      "return_address": 43114,
+      "saved_word": 48021
+    },
+    {
+      "frame": 32,
+      "template_mode": 1,
+      "third_gate": 1,
+      "SP": 49146,
+      "return_address": 43114,
+      "saved_word": 45017
+    },
+    {
+      "frame": 40,
+      "template_mode": 1,
+      "third_gate": 1,
+      "SP": 49146,
+      "return_address": 43114,
+      "saved_word": 14625
+    },
+    {
+      "frame": 48,
+      "template_mode": 1,
+      "third_gate": 1,
+      "SP": 49146,
+      "return_address": 43114,
+      "saved_word": 27929
+    },
+    {
+      "frame": 56,
+      "template_mode": 1,
+      "third_gate": 1,
+      "SP": 49146,
+      "return_address": 43114,
+      "saved_word": 41263
+    },
+    {
+      "frame": 64,
+      "template_mode": 1,
+      "third_gate": 1,
+      "SP": 49146,
+      "return_address": 43114,
+      "saved_word": 57553
+    }
+  ],
+  "original_handlers_and_clipping_code_not_stubbed": true,
+  "TR_DOS_calls_stubbed": true,
+  "IRQ_scheduled_by_existing_flight_model": true,
+  "all_game_states_or_keys_proved": false,
+  "original_author_intent_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

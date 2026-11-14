@@ -1,0 +1,191 @@
+{
+  "passed": true,
+  "initial_indices": [
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    0,
+    45
+  ],
+  "groups": {
+    "OpenMapPanelGroup": [
+      21,
+      18,
+      19,
+      12,
+      13,
+      14,
+      15,
+      17,
+      16,
+      11,
+      20
+    ],
+    "OpenHelpPanels": [
+      23,
+      22
+    ],
+    "OpenEquipmentPanels": [
+      39,
+      36,
+      37,
+      38
+    ],
+    "OpenShipPanels": [
+      30,
+      29,
+      28,
+      25,
+      27,
+      26
+    ],
+    "OpenContractPanels": [
+      31,
+      33,
+      32
+    ],
+    "OpenGameOptions": [
+      42
+    ],
+    "OpenEnvOptions": [
+      41
+    ],
+    "OpenRestoreDialog": [
+      44
+    ]
+  },
+  "tested_group_sets": 256,
+  "first_opens": 1024,
+  "repeated_opens": 1024,
+  "close_all_cases": 256,
+  "maximum_list_length": 39,
+  "maximum_read_address": 62635,
+  "maximum_write_address": 62633,
+  "popup_sequence": {
+    "steps": [
+      {
+        "entry": "DrawItem01",
+        "entries": 39,
+        "added": [],
+        "removed": [],
+        "last_read": 0,
+        "last_write": 0
+      },
+      {
+        "entry": "OpenGalaxyNewsPanel",
+        "entries": 40,
+        "added": [
+          24
+        ],
+        "removed": [],
+        "last_read": 0,
+        "last_write": 0
+      },
+      {
+        "entry": "OpenTradePanels",
+        "entries": 42,
+        "added": [
+          35,
+          34
+        ],
+        "removed": [],
+        "last_read": 0,
+        "last_write": 0
+      },
+      {
+        "entry": "DispatchInterfaceEvent",
+        "entries": 43,
+        "added": [
+          40
+        ],
+        "removed": [],
+        "last_read": 0,
+        "last_write": 0
+      },
+      {
+        "entry": "QueueTextRow",
+        "entries": 44,
+        "added": [
+          10
+        ],
+        "removed": [],
+        "last_read": 0,
+        "last_write": 0
+      },
+      {
+        "entry": "DispatchInterfaceEvent",
+        "entries": 42,
+        "added": [],
+        "removed": [
+          44,
+          10
+        ],
+        "last_read": 62643,
+        "last_write": 62641
+      },
+      {
+        "entry": "DispatchInterfaceEvent",
+        "entries": 42,
+        "added": [
+          43
+        ],
+        "removed": [
+          40
+        ],
+        "last_read": 62641,
+        "last_write": 62639
+      },
+      {
+        "entry": "DispatchInterfaceEvent",
+        "entries": 43,
+        "added": [
+          40
+        ],
+        "removed": [],
+        "last_read": 0,
+        "last_write": 0
+      },
+      {
+        "entry": "QueueTextRow",
+        "entries": 44,
+        "added": [
+          10
+        ],
+        "removed": [],
+        "last_read": 0,
+        "last_write": 0
+      },
+      {
+        "entry": "DispatchInterfaceEvent",
+        "entries": 41,
+        "added": [],
+        "removed": [
+          43,
+          40,
+          10
+        ],
+        "last_read": 62641,
+        "last_write": 62639
+      }
+    ],
+    "maximum_entries": 44,
+    "maximum_read_address": 62643,
+    "maximum_write_address": 62641,
+    "first_selected_event_suppressed": true,
+    "prepared_owner_cells": true,
+    "prepared_event_enabled_after_cleanup": true,
+    "prepared_save_hover_row": true
+  },
+  "original_entry_points": true,
+  "one_concrete_order_per_group_set": true,
+  "group_openers_execute_draw_callbacks": false,
+  "counter_renderer_executed": true,
+  "disk_reads_substituted_during_boot": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

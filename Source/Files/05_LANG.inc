@@ -144,11 +144,11 @@
                 ent
                 assert $ == #0241
                 disp #C241
-                include "../Text/ReadFieldLowerj.asm"
+                include "../Text/PushUsedTonnage.asm"
                 ent
                 assert $ == #024C
                 disp #C24C
-                include "../Text/ReadFieldUpperJ.asm"
+                include "../Text/PushTonnageCapacity.asm"
                 ent
                 assert $ == #0252
                 disp #C252
@@ -332,19 +332,19 @@
                 ent
                 assert $ == #0558
                 disp #C558
-                include "../Text/IsByteMissingFromFour.asm"
+                include "../Text/IsShipTypeMissingFromRow.asm"
                 ent
                 assert $ == #0577
                 disp #C577
-                include "../Text/GetHighBitCode.asm"
+                include "../Text/ReadShipEquipmentLimit.asm"
                 ent
                 assert $ == #058A
                 disp #C58A
-                include "../Text/Property070.asm"
+                include "../Text/ReadSecondaryEquipmentPrice.asm"
                 ent
                 assert $ == #0590
                 disp #C590
-                include "../Text/Property071.asm"
+                include "../Text/ReadSecondaryEquipmentWeight.asm"
                 ent
                 assert $ == #0596
                 disp #C596
@@ -356,11 +356,11 @@
                 ent
                 assert $ == #05B2
                 disp #C5B2
-                include "../Text/Property072.asm"
+                include "../Text/IsSkimmerTypeMissingFromRow.asm"
                 ent
                 assert $ == #05BB
                 disp #C5BB
-                include "../Text/Property073.asm"
+                include "../Text/ReadSkimmerEquipmentLimit.asm"
                 ent
                 assert $ == #05C1
                 disp #C5C1
@@ -388,15 +388,15 @@
                 ent
                 assert $ == #0609
                 disp #C609
-                include "../Text/Property080.asm"
+                include "../Text/ReadShipSaleField.asm"
                 ent
                 assert $ == #060F
                 disp #C60F
-                include "../Text/Property086.asm"
+                include "../Text/ReadSkimmerPriceField.asm"
                 ent
                 assert $ == #0615
                 disp #C615
-                include "../Text/Property087.asm"
+                include "../Text/ReadSkimmerLoadAddend.asm"
                 ent
                 assert $ == #061B
                 disp #C61B
@@ -519,16 +519,16 @@
                 disp #CA7B
                 include "../Text/Data/AssignmentScratch.asm"
                 ent
-                assert $ == #0A81
-                ; Unknown, четырнадцать исходных байтов между рабочей записью и сценарием
-                incbin "../Resources/05_LANG/BeforeMarketScript.bin"
+                assert $ == #0A85
+                ; Последние десять байтов дополнительного буфера ARGD перед сценарием
+                ; Документация [границы ARGD](../../Docs/ExpressionStack.md)
+                incbin "../Text/Resources/AssignmentBufferTail.bin"
                 assert $ == #0A8F
                 disp #CA8F
                 include "../Text/Data/MarketScript.asm"
                 ent
                 assert $ == #0F18
-                ; исходный хвост после первого NUL, дополнительные потребители пока не установлены
-                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Физическая копия диапазона #0D18..#0DFF исходного торгового сценария
                 ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
                 incbin "../Resources/05_LANG/AfterMarketScript.bin"
                 assert $ == #1000

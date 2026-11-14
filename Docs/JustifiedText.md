@@ -95,3 +95,15 @@ Height>248 и остатке Y modulo 8 меньше Height-248 возможен
 Пиксельные ядра проверены отдельно в [GlyphRendering](GlyphRendering.md).
 Прерывания отключены, нативный запуск здесь не выполнялся.
 Отчёт [JustifiedTextVerification.json](../Tools/Disasm/Reports/JustifiedTextVerification.json).
+
+## Составной Corrupt выравнивателя
+
+PrintJustified и JustifyAfterLF изменяют HL, DE, BC, AF и R.
+Печататель меняет TextWindow.CursorX, а перенос строки может
+обновить CursorY. Собственный кэш ширины записывается в операнд
+JustifyState.PrintWidth. Через глиф возможны изменения bitmap и
+GlyphState.DispatchTarget, временные слова сохранения и возвратов
+остаются в RAM CPU-стека. Эти эффекты перечислены в исходниках
+отдельно от сохранённых альтернативных и индексных регистров.
+При раннем выходе по малой высоте перечисленные записи могут
+не выполняться, их наличие не обещается для каждого пути.

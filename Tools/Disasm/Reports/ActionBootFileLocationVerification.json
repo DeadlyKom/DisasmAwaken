@@ -1,0 +1,405 @@
+{
+  "passed": true,
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "basic_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "original_bootstrap_instructions_and_keys_matched": true,
+  "whole_selected_directory_record_matched": true,
+  "prepared_system_variables": true,
+  "prepared_5D06": 9,
+  "prepared_5D0C": 255,
+  "real_TRDOS_search_0A_and_read_directory_08": true,
+  "controller_and_ROM_paging_modelled": true,
+  "file_data_sectors_read": false,
+  "IRQ_executed": false,
+  "disk_errors_or_missing_files_proved": false,
+  "natural_caller_entry_proved": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "profiles": [
+    {
+      "slot": 21,
+      "key_address": 17104,
+      "key_hex": "564f58414c20202043",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 5,
+      "physical_sector": 6,
+      "logical_track": 74,
+      "sector_count": 15,
+      "final_AF": 3840,
+      "final_HL": 18950,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 21,
+      "key_address": 17104,
+      "key_hex": "564f58414c20202043",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 5,
+      "physical_sector": 6,
+      "logical_track": 74,
+      "sector_count": 15,
+      "final_AF": 3840,
+      "final_HL": 18950,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 20,
+      "key_address": 17113,
+      "key_hex": "564f58414c30202043",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 9,
+      "physical_sector": 10,
+      "logical_track": 71,
+      "sector_count": 44,
+      "final_AF": 11272,
+      "final_HL": 18186,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 20,
+      "key_address": 17113,
+      "key_hex": "564f58414c30202043",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 9,
+      "physical_sector": 10,
+      "logical_track": 71,
+      "sector_count": 44,
+      "final_AF": 11272,
+      "final_HL": 18186,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 23,
+      "key_address": 17122,
+      "key_hex": "434f4e54524f4c2043",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 15,
+      "physical_sector": 16,
+      "logical_track": 76,
+      "sector_count": 26,
+      "final_AF": 6672,
+      "final_HL": 19472,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 23,
+      "key_address": 17122,
+      "key_hex": "434f4e54524f4c2043",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 15,
+      "physical_sector": 16,
+      "logical_track": 76,
+      "sector_count": 26,
+      "final_AF": 6672,
+      "final_HL": 19472,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 22,
+      "key_address": 17131,
+      "key_hex": "434f4e54524f4c3043",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 4,
+      "physical_sector": 5,
+      "logical_track": 75,
+      "sector_count": 27,
+      "final_AF": 6912,
+      "final_HL": 19205,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 22,
+      "key_address": 17131,
+      "key_hex": "434f4e54524f4c3043",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 4,
+      "physical_sector": 5,
+      "logical_track": 75,
+      "sector_count": 27,
+      "final_AF": 6912,
+      "final_HL": 19205,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 25,
+      "key_address": 17140,
+      "key_hex": "50414e454c20202043",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 3,
+      "physical_sector": 4,
+      "logical_track": 81,
+      "sector_count": 6,
+      "final_AF": 1536,
+      "final_HL": 20740,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 25,
+      "key_address": 17140,
+      "key_hex": "50414e454c20202043",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 3,
+      "physical_sector": 4,
+      "logical_track": 81,
+      "sector_count": 6,
+      "final_AF": 1536,
+      "final_HL": 20740,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 24,
+      "key_address": 17149,
+      "key_hex": "4f424a454354334443",
+      "initial_cylinder": 0,
+      "catalogue_sector_zero_based": 9,
+      "physical_sector": 10,
+      "logical_track": 78,
+      "sector_count": 42,
+      "final_AF": 10760,
+      "final_HL": 19978,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    },
+    {
+      "slot": 24,
+      "key_address": 17149,
+      "key_hex": "4f424a454354334443",
+      "initial_cylinder": 9,
+      "catalogue_sector_zero_based": 9,
+      "physical_sector": 10,
+      "logical_track": 78,
+      "sector_count": 42,
+      "final_AF": 10760,
+      "final_HL": 19978,
+      "final_SP": 32768,
+      "catalogue_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "observed_rom_sites": {
+        "3D2F": 12,
+        "3FE5": 768
+      },
+      "keyboard_checks": 6
+    }
+  ]
+}

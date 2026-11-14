@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "method": "original_direct_cargo_and_market_entry_all_word_indices",
+  "cases": {
+    "cargo": 65536,
+    "market": 65536
+  },
+  "total_cases": 131072,
+  "exact_registers_except_T_checked": true,
+  "no_own_CPU_RAM_writes": true,
+  "CPU_write_watch_positive_control": true,
+  "physical_disk_and_sector_hashes_checked": true,
+  "M1_cargo": 6,
+  "M1_market": 8,
+  "full_reader_or_suffix_executed": false,
+  "target_memory_is_synthetic_with_original_LANG": true,
+  "logical_row_bounds_enforced": false,
+  "full_index_AF_R_cartesian_product_checked": false,
+  "arbitrary_stack_addresses_checked": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

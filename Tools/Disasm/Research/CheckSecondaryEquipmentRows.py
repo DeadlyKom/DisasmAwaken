@@ -1,15 +1,87 @@
 """Настоящий второй подготовитель таблиц и общий печататель строк оснащения."""
 import json
+import re
 
 from CheckEquipmentRows import Fixture, ROOT, SP, make_context, put, reference
 from CheckEquipmentListAction import prepare
 from ProbeShipPreviewCallbacks import PC, payload
+from skoolkit.simutils import A, H, L
 
 
 BASES = (0x98F6, 0x95D4, 0x9632, 0x9484, 0xF066)
 
 
+def check_interface_references():
+    station = payload(4)
+    targets = {0x735F, 0x7386, 0x73D7, 0x73DE, 0x7403}
+    # Обе физические точки входа каждой записи FInterfaceItem.
+    records = [station[0x90FD + 16 * i:0x910D + 16 * i] for i in range(46)]
+    callbacks = [(int.from_bytes(row[6:8], 'little'), int.from_bytes(row[12:14], 'little')) for row in records]
+    assert not any(targets.intersection(pair) for pair in callbacks)
+    assert callbacks[6] == (0x7DBB, 0x7DE1) and callbacks[38] == (0x7172, 0x7227)
+    captions = station[0x8399:].split(b'\n', 10)
+    assert records[38][5] == 6 and captions[7].decode('cp866') == 'Оснащение корабля'
+    assert captions[8].decode('cp866') == 'Оснащение скиммера'
+    flows = json.loads((ROOT / 'Tools/Disasm/Reports/ControlFlow.json').read_bytes())
+    references = [(region['name'], insn['address'], insn['operation']) for region in flows for insn in region['instructions']
+                  if any(int(word, 16) in targets for word in re.findall(r'#([0-9A-F]{4})\b', insn['operation']))]
+    assert references == [('Station', 0x73AA, 'CALL #73D7'), ('Station', 0x73D0, 'CALL #73DE'),
+                          ('Station', 0x73D7, 'LD DE,#73DE'), ('Station', 0x73FB, 'CALL #7403')]
+    return dict(interface_records=len(records), installed_secondary_entries=0, decoded_literal_references=references)
+
+
+def check_original_frame_quantity_reads(base):
+    station = payload(4)
+    fixture = Fixture(base)
+    memory, registers = fixture.memory, fixture.sim.registers
+    assert bytes(memory[0xF0FD:0xF10D]) == station[0x90FD:0x910D]
+    assert bytes(memory[0xF066:0xF100]) == station[0x9066:0x9100]
+    frame = None
+
+    def capture_frame(_, pc):
+        nonlocal frame
+        if pc == 0x73FB:
+            frame = ([bytes(bank) for bank in memory.banks], registers.copy())
+
+    fixture.run(0x73DE, capture_frame)
+    assert frame is not None and fixture.wakes == 1
+    profiles = []
+    for slot in (4, *range(11, 17)):
+        block = station[0x383B:0x3A3B] if slot == 4 else payload(slot)
+        for top in range(14):
+            for bank, saved in zip(memory.banks, frame[0], strict=True):
+                bank[:] = saved
+            registers[:] = frame[1]
+            put(memory, 0x983B, block)
+            registers[H], registers[L] = 0, top
+            reads, decoded = [], []
+
+            def observe(_, pc):
+                if pc == 0x729D:
+                    address = registers[H] * 256 + registers[L]
+                    reads.append((address, memory[address]))
+                elif pc == 0x72A7:
+                    decoded.append(registers[A])
+
+            fixture.run(0x73FB, observe)
+            assert (memory[0xAEB3], memory[0xAEAB], memory[0x73D9]) == (252, 245, 21)
+            first = 0x98F6 + top
+            expected = list(enumerate(block[first - 0x983B:first - 0x983B + 21], first))
+            assert reads == expected
+            assert decoded == [value ^ 255 if value & 128 else value for _, value in expected]
+            assert bytes(memory[0x983B:0x9A3B]) == block and fixture.wakes == 1
+            aliases = [(address, value, quantity) for (address, value), quantity in zip(reads, decoded, strict=True)
+                       if address in (0x9904, 0x9905, 0x9907, 0x9909)]
+            assert len(aliases) == 4
+            profiles.append(dict(slot=slot, top_row=top, first_quantity=first,
+                                 last_quantity=reads[-1][0], quantity_reads=len(reads), aliases=aliases))
+    return dict(frame_entry=0x73DE, render_rows_entry=0x73FB, quantity_read_pc=0x729D, decoded_quantity_pc=0x72A7,
+                original_item=0, width=252, height=245, names_replaced=False, irqs_in_row_profiles=0,
+                runtime_caller_proved=False, cases=profiles)
+
+
 def main():
+    interface = check_interface_references()
     _, _, base = make_context()
     cases = frame_count = original_text_cases = 0
     for top in (0, 1, *range(2, 14), 0x0100, 0x0101, 0xFFFF):
@@ -154,10 +226,14 @@ def main():
         paths['render_rows'] += 1
 
     extra_cases = sum(paths.values()) - paths['draw']
-    report = dict(passed=True, total_cases=cases + extra_cases, row_cases=cases, original_text_cases=original_text_cases,
+    original_frame = check_original_frame_quantity_reads(base)
+    report = dict(passed=True, total_cases=cases + extra_cases + len(original_frame['cases']),
+                  row_cases=cases, original_text_cases=original_text_cases,
                   frames_checked=frame_count, original_common_code_executed=True,
                   bitmap_and_both_register_banks_agree=True,
                   physical_secondary_bases=list(BASES), normal_game_caller_proved=False,
+                  interface_reference_audit=interface,
+                  original_frame_quantity_reads=original_frame,
                   panel_paths=paths, total_panel_cases=extra_cases,
                   assembly_executed=False, native_execution=False)
     (ROOT / 'Tools/Disasm/Reports/SecondaryEquipmentRowsVerification.json').write_text(

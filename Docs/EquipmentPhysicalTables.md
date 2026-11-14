@@ -36,7 +36,7 @@
 поток активности с шагом один, а по 98F6 поток порогов с шагом два. Поэтому
 проверка читает оба поля первых семи пар 9632. У прямой проверки порядок
 ролей иной. [Печататель второго набора](SecondaryEquipmentRows.md) использует
-слова Property070 для колонки цены, а байты Property071 для веса.
+слова ReadSecondaryEquipmentPrice для колонки цены, а байты ReadSecondaryEquipmentWeight для веса.
 
 [Типы кораблей](../Source/Station/Data/EquipmentShipTypeSets.asm) занимают
 33 записи с 9400, [типы скимеров](../Source/Station/Data/EquipmentSkimmerTypeSets.asm)

@@ -5,6 +5,7 @@ import json, sys
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / 'Tools/Disasm/Research'))
 from CheckMusic import Simulator, get_registers, PC, SP
+from ReferenceControlsPointRespawn import refresh
 
 
 def main():
@@ -13,6 +14,7 @@ def main():
     memory[0xDB00:0xDB00 + len(raw)] = raw
     simulator = Simulator(memory)
     cases = 0
+    costs = set()
     samples = [(v, (v * 257) ^ 0x5AA5, (v * 127 + 1) & 65535,
                 (v * 31) & 65535) for v in range(256)]
     samples += [(v, 0x1234, 0x5678, step) for v in (0, 1, 255)
@@ -44,14 +46,24 @@ def main():
                 'AF': 0x9800 | value, 'IX': 0x369C, 'IY': 0x5C3A, '^HL': 0x1234,
                 '^DE': 0x5678, '^BC': 0x9ABC, '^AF': 0xDEF0,
                 'SP': 0xBFFE, 'PC': 0xDE1F}, None, False)
+            initial[14], initial[15], initial[26], initial[27] = value, (value*73+bits)&255, 0, bits%3
             before = memory.copy()
             simulator.registers[:] = initial
+            measured = 0
             for _ in range(90):
                 if simulator.registers[PC] == 0xDE90:
                     break
+                previous_r = simulator.registers[15]
                 simulator.run()
+                increment = (simulator.registers[15]-previous_r)&127
+                assert increment == 1
+                measured += increment
             else:
                 raise AssertionError('channel_a_row_continuation')
+            # Расчёт по трём независимым включённым блокам, сброс и CPL не меняют число выборок.
+            cost = 14+15*bool(bits&1)+6*bool(bits&2)+11*bool(bits&4)
+            assert measured == cost and simulator.registers[15] == refresh(initial[15],cost),(value,bits,measured,cost)
+            costs.add(cost)
             expected = before.copy()
             expected[0xDE1F] = 0xC3
             expected[0xE02D] = volume
@@ -90,13 +102,19 @@ def main():
         initial = get_registers({'HL': 0x1357, 'DE': 0xABCD, 'BC': 0x2468,
             'AF': 0x9800 | flags, 'IX': 0x369C, 'IY': 0x5C3A, '^HL': 0x1234,
             '^DE': 0x5678, '^BC': 0x9ABC, '^AF': 0xDEF0, 'SP': 0xBFFE, 'PC': 0xDE1F}, None, False)
+        initial[14], initial[15], initial[26], initial[27] = flags, flags, 0, flags%3
         before = memory.copy()
         simulator.registers[:] = initial
         simulator.run()
         registers = simulator.registers
         assert registers[PC] == 0xDFE3 and memory == before
+        assert registers[15] == refresh(initial[15],1)
         assert all(registers[i] == initial[i] for i in (*range(12), SP, 14, *range(16, 24), 26, 27))
     report = dict(passed=True, row_cases=cases, direct_jump_cases=256,
+        direct_full_M1_R_checked=True,I_IM_IFF_preservation_checked=True,
+        prepare_M1_formula="14+15*n+6*o+11*s",
+        M1_indicators="n/o/s=1 for block command 06, else 0 for 18",
+        observed_prepare_M1_values=sorted(costs),direct_JP_M1=1,
         all_gate_enable_reset_combinations=True, all_memory_compared=True,
         main_and_alternate_registers_checked=True, entry_ld_bc_and_exx_checked=True,
         control_gates_not_self_cleared=True, stop_addresses=[0xDE90, 0xDFE3],

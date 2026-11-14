@@ -59,9 +59,10 @@
   "native_loading_of_separate_3DPART_not_executed": true,
   "assembly_executed": false,
   "original_header_split_boundaries_replaced_by_proved_primary_layout": true,
-  "current_fragments": 122,
+  "current_fragments": 121,
   "current_described": 121,
-  "current_unknown": 1,
+  "current_unknown": 0,
   "rechecked_after_publication": true,
-  "current_source_instructions_and_data_verified": true
+  "current_source_instructions_and_data_verified": true,
+  "cf08_emitted_as_pointer_low_bytes": true
 }

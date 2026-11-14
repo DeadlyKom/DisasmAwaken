@@ -1,16 +1,16 @@
 {
   "passed": true,
-  "source_map_sha256": "89697dc8b4d93ad66107f50a1d7fe67d6a74149f40b712e0ff205cf8fab16964",
+  "source_map_sha256": "9a37fbccac5150d5a83e593c8490d82336f525ba6f2ebd0b5885b3c1d4fce455",
   "profiles": {
     "station": {
       "frame_entries": 8,
-      "watched_addresses": 3192,
+      "watched_addresses": 2854,
       "first": [],
       "accesses": []
     },
     "flight": {
       "frame_entries": 65,
-      "watched_addresses": 2612,
+      "watched_addresses": 1903,
       "first": [],
       "accesses": []
     }

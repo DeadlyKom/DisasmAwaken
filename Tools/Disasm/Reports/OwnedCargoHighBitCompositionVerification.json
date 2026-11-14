@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "profiles": [
+    {
+      "pickup": {
+        "old": 0,
+        "amount": 1,
+        "result": 1,
+        "current": 1,
+        "limit": 200,
+        "kind": 0,
+        "original_rule_byte": 0
+      },
+      "sell_all_twice": [
+        {
+          "cargo": 0,
+          "stock": 11,
+          "credits": 5
+        },
+        {
+          "cargo": 0,
+          "stock": 11,
+          "credits": 5
+        }
+      ]
+    },
+    {
+      "pickup": {
+        "old": 127,
+        "amount": 1,
+        "result": 128,
+        "current": 128,
+        "limit": 200,
+        "kind": 0,
+        "original_rule_byte": 0
+      },
+      "sell_all_twice": [
+        {
+          "cargo": 128,
+          "stock": 10,
+          "credits": 640
+        },
+        {
+          "cargo": 128,
+          "stock": 10,
+          "credits": 1280
+        }
+      ]
+    }
+  ],
+  "original_collection_and_lang_instructions": true,
+  "original_trade_script_unchanged": true,
+  "inter_module_cargo_byte_passed_to_fixture": true,
+  "docking_and_saved_context_transfer_executed": false,
+  "lang_sector_tail_loaded_as_fixture": true,
+  "complete_native_reachability_proved": false,
+  "intended_high_bit_purpose_proved": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

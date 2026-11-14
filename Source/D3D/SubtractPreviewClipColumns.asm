@@ -6,13 +6,14 @@
                 ; исходная запись 6, банк 4, файловые смещения #2830..#283A
                 ; In:
                 ;   HL и DE не являются входами, BC сохраняется, AF - A сохраняется, входной Carry сбрасывается
-                ;   PreviewClipFirst.Value.SecondAxis и PreviewClipSecond.Value.SecondAxis содержат два 16-битных слова
+                ;   PreviewClipFirst.Value.SecondAxis и PreviewClipSecond.Value.SecondAxis содержат два 16-битных слова, IRQ не вмешиваются
                 ; Out:
                 ;   HL=(второй SecondAxis-первый SecondAxis) AND FFFF, DE содержит первый SecondAxis
                 ;   BC сохранён, AF - A сохранён, F принадлежит SBC HL, DE с нулевым входным Carry
                 ;   HL', DE', BC', AF', IX, IY, I, IFF и IM сохранены, SP после RET равен входному+2, записей в память нет
+                ;   младшие семь битов R увеличены на семь по модулю 128, bit7 сохранён
                 ; Corrupt:
-                ;   HL, DE, AF - только F
+                ;   HL, DE, AF - только F, R
                 ; Note:
                 ;   это обёрнутая словная разность колонок, S не корректируется через P/V для математического знакового сравнения
                 ; -----------------------------------------

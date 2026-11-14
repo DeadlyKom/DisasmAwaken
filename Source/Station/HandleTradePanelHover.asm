@@ -10,7 +10,11 @@
                 ; Out:
                 ;   хвостовой JP передаёт исходный возврат UpdateTradeRowHover, все выходы по его договору
                 ; Corrupt:
-                ;   HL, DE, BC, AF, AF' на обновлении по UpdateTradeRowHover
+                ;   HL, DE, BC, AF, AF', R
+                ;   bitmap полосы, MapHighlightState.WidthSkip банка 1, StationState.CurrentPage, управление 7FFD и временные слова CPU-стека
+                ;   PointerState.UpdateBlocked, PointerState.RestoredFlag, PointerState.SpriteBase, PointerState.BackgroundAddr и PointerState.VisibleRows
+                ;   InterfaceState.HoverItem, InterfaceState.HoverCallback и строки PointerBackground
+                ;   ScriptSelection.CargoRow при возвращённом Z=0
                 ; Note:
                 ;   это Event вход наведения, Event+3 начинается в HandleTradePanelClick, нового CALL этот вход не создаёт
                 ; -----------------------------------------

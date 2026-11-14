@@ -9,6 +9,7 @@ from CheckIntroScrolledFrame import advance
 from CheckIntroScrolledInitialization import IntroPorts
 from CheckMusic import PC, SP, Simulator, get_registers
 from CheckScreenUpdate import put
+from CheckMusicGateTicks import xor_flags
 
 
 def main():
@@ -40,7 +41,7 @@ def main():
         sim = Simulator(memory)
         trace = IntroPorts(sim)
         sim.set_tracer(trace)
-        initial = get_registers({'PC': 0x6C9C, 'SP': stack, 'IY': 0x5C3A}, None, False)
+        initial = get_registers({'PC': 0x6C9C, 'SP': stack, 'IY': 0x5C3A, '^AF':0xA55A}, None, False)
         initial[25], initial[26], initial[27] = time, 1, 1
         sim.registers[:] = initial
         sim.run(0x6C9C, 0x3FFF, interrupts=True)
@@ -74,9 +75,15 @@ def main():
         for row, col in product(range(8), repeat=2):
             assert memory[0x8989 + row * 256 + col] == ((matrix[col] & 240) | (matrix[row] & 15))
         assert trace.writes == [(0x7FFD, 20), (0x7FFD, 17)]
+        selected = 0x61C0 if phase else 0x60C0
+        last_word = memory[selected + 62] + 256 * memory[selected + 63]
+        assert sim.registers[:12] == [phase, xor_flags(phase), 0x69, 0x9B, 0x61, 0,
+                                      last_word >> 8, last_word & 255, 0, 0, 0x5C, flat[0x69A2] & 15]
+        assert sim.registers[16:24] == [0xA5, 0x5A, 0, 0, 0x91, 0x91, 0x69, 0x29]
         cases += 1
     result = dict(passed=True, total_cases=cases, generated_chains=3, exact_pointer_bytes=4096,
-                  phase_updates_per_case=40, actual_rom_executed=True, assembly_executed=False)
+                  phase_updates_per_case=40, actual_rom_executed=True, assembly_executed=False,
+                  output_registers_compared=True, nonzero_alternate_AF_preserved=True)
     (ROOT / 'Tools/Disasm/Reports/IntroLookupInitializationVerification.json').write_text(
         json.dumps(result, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(result, indent=2))

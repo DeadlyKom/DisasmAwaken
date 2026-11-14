@@ -34,25 +34,25 @@
       {
         "slot": 10,
         "address": 56064,
-        "length": 7209,
+        "length": 7424,
         "bank": 3
       },
       {
         "slot": 8,
         "address": 56064,
-        "length": 5921,
+        "length": 6144,
         "bank": 7
       },
       {
         "slot": 6,
         "address": 49152,
-        "length": 15978,
+        "length": 16128,
         "bank": 4
       },
       {
         "slot": 5,
         "address": 49152,
-        "length": 3864,
+        "length": 4096,
         "bank": 6
       },
       {
@@ -74,7 +74,7 @@
       {
         "slot": 25,
         "address": 49152,
-        "length": 1463,
+        "length": 1536,
         "bank": 6
       },
       {
@@ -86,25 +86,25 @@
       {
         "slot": 21,
         "address": 60416,
-        "length": 3784,
+        "length": 3840,
         "bank": 3
       },
       {
         "slot": 22,
         "address": 49152,
-        "length": 6878,
+        "length": 6912,
         "bank": 1
       },
       {
         "slot": 23,
         "address": 56030,
-        "length": 6474,
+        "length": 6656,
         "bank": 1
       },
       {
         "slot": 24,
         "address": 49152,
-        "length": 10580,
+        "length": 10752,
         "bank": 4
       }
     ],
@@ -113,6 +113,8 @@
     "key_mask": 8,
     "key_index": 18,
     "handler": 30214,
+    "map_context_bytes": 193,
+    "map_context_preserved_after_64_frames": true,
     "return_requested": true,
     "return_file": {
       "slot": 4,
@@ -122,6 +124,7 @@
       "return_address": 16927
     },
     "incoming_context_bytes": 481,
+    "map_context_restored_on_station_entry": true,
     "untouched_station_tail_bytes": 31,
     "station_restart_loads": [
       {
@@ -133,25 +136,25 @@
       {
         "slot": 10,
         "address": 56064,
-        "length": 7209,
+        "length": 7424,
         "bank": 3
       },
       {
         "slot": 8,
         "address": 56064,
-        "length": 5921,
+        "length": 6144,
         "bank": 7
       },
       {
         "slot": 6,
         "address": 49152,
-        "length": 15978,
+        "length": 16128,
         "bank": 4
       },
       {
         "slot": 5,
         "address": 49152,
-        "length": 3864,
+        "length": 4096,
         "bank": 6
       },
       {

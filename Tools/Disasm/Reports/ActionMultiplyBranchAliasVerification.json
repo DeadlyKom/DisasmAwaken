@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "total_cases": 786432,
+  "cases_by_kind": {
+    "all_words_for_six_coefficients": 393216,
+    "all_coefficients_and_high_bytes": 393216
+  },
+  "method": "effective_factor_after_zero_JR_displacement_against_modified_original_instructions",
+  "changed_address": 53579,
+  "original_byte": 24,
+  "changed_byte": 0,
+  "effective_factor_rule": "f&31 when 32<=f<64, otherwise f",
+  "changed_game_source": false,
+  "all_words_for_coefficients": [
+    32,
+    48,
+    63,
+    193,
+    208,
+    224
+  ],
+  "all_coefficients_and_coordinate_high_bytes": true,
+  "coefficient_80_original_zero_result_preserved": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_checked": true,
+  "no_memory_writes": true,
+  "sp_unchanged": true,
+  "jp_ix_continuation": true,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

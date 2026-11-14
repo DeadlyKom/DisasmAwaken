@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "total_cases": 16560,
+  "entries": {
+    "C477": 4140,
+    "C496": 4140,
+    "C4B5": 4140,
+    "C4D4": 4140
+  },
+  "multiply_exception_hits": 8,
+  "original_children_executed": true,
+  "exact_registers_flags_including_R": true,
+  "full_M1_count_compared": true,
+  "exact_T_claimed": false,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "stack_extra_bytes": 4,
+  "all_joint_inputs_exhausted": false,
+  "refresh_and_timing_independently_checked": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

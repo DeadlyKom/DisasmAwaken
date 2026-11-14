@@ -10,16 +10,16 @@
                 ;   для кадра уже настроены окно и D3D предыдущим DrawShipPreview, действуют договоры FillWindowBody и экранного обновления
                 ;   Selector читается из собственного изменяемого операнда, HALT требует подходящего IRQ, аппаратная блокировка банка снята
                 ; Out:
+                ;   HL, DE и BC кадра принадлежат RenderPreviewFrame, A=10, F=0C после выбора страницы 18 перед EndScreenUpdate
                 ;   при PendingRedraw!=0 действует выходной договор RefreshShipPanels без дополнительного слова CPU-возврата
                 ;   при другом последнем обработчике HL=(LastDraw-DrawShipPreview) AND FFFF, DE=DrawShipPreview, BC сохранён
                 ;   A быстрого отказа равен старшему байту LastDraw, F от SBC HL,DE с предварительно сброшенным Carry
                 ;   при таком отказе HL', DE', BC', AF', IX, IY, I и IFF сохранены, память кроме служебного CALL не меняется
                 ;   кадр сохраняет снимок в банке 7, заполняет тело окна и рисует RenderPreviewFrame с исходным Selector
-                ;   HL, DE и BC кадра принадлежат RenderPreviewFrame, A=10, F=0C после выбора страницы 18 перед EndScreenUpdate
-                ;   HL', DE', BC', IX, IY кадра сохраняются после RenderPreviewFrame, AF' также зависит от ResumePointer
+                ;   HL', DE', BC' кадра сохраняются после RenderPreviewFrame, AF' также зависит от ResumePointer, IX и IY сохраняются после RenderPreviewFrame
                 ;   рабочий выход даёт CurrentPage=10, UpdateBlocked=0, IFF=1, SP входному+2, периодический callback здесь не меняется
                 ; Corrupt:
-                ;   HL, DE, AF при несовпадении, остальные регистры и память по RefreshShipPanels либо полному кадру
+                ;   HL, DE, AF, R и два байта служебного CALL при несовпадении, остальные регистры и память по RefreshShipPanels либо полному кадру
                 ; Note:
                 ;   сравнивается адрес последнего рисователя, а не индекс его элемента и не текущее состояние opcode C9 этого адреса
                 ;   BeginScreenUpdate и EndScreenUpdate окружают FillWindowBody, HALT, выбор банка 4 и весь D3D

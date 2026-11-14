@@ -5,6 +5,102 @@
   "packed_stream_bytes": 1440,
   "stream_unused_last_bits": 3,
   "original_allocation_tail_bytes": 149,
+  "source_clear_after_transfer_profiles": [
+    {
+      "seed": 0,
+      "start": 36755,
+      "end_exclusive": 49152,
+      "first_store": 25945,
+      "overlapping_copy": 25947,
+      "original_prefix_bytes_preserved": 40,
+      "transferred_tail_bytes_preserved": 149,
+      "whole_ram_compared": true
+    },
+    {
+      "seed": 128,
+      "start": 36755,
+      "end_exclusive": 49152,
+      "first_store": 25945,
+      "overlapping_copy": 25947,
+      "original_prefix_bytes_preserved": 40,
+      "transferred_tail_bytes_preserved": 149,
+      "whole_ram_compared": true
+    },
+    {
+      "seed": 127,
+      "start": 36755,
+      "end_exclusive": 49152,
+      "first_store": 25945,
+      "overlapping_copy": 25947,
+      "original_prefix_bytes_preserved": 40,
+      "transferred_tail_bytes_preserved": 149,
+      "whole_ram_compared": true
+    }
+  ],
+  "detached_prefix_start": 29932,
+  "detached_prefix_bytes": 20,
+  "detached_prefix_call_enters_unpacker_interior": 28220,
+  "detached_prefix_jp_target_before_generation": 26862,
+  "detached_prefix_displacement_profiles": [
+    {
+      "ram_9000": 0,
+      "runtime_7500": 0,
+      "taken_branch_target": 29953
+    },
+    {
+      "ram_9000": 128,
+      "runtime_7500": 128,
+      "taken_branch_target": 29825
+    },
+    {
+      "ram_9000": 127,
+      "runtime_7500": 127,
+      "taken_branch_target": 30080
+    }
+  ],
+  "detached_call_with_prepared_unpack_registers": [
+    {
+      "byte_at_5b07": 0,
+      "returned_a": 255,
+      "returned_f": 168,
+      "byte_at_5aff": 7,
+      "jr_displacement": 127,
+      "next_pc": 29953
+    },
+    {
+      "byte_at_5b07": 67,
+      "returned_a": 255,
+      "returned_f": 168,
+      "byte_at_5aff": 7,
+      "jr_displacement": 127,
+      "next_pc": 30080
+    }
+  ],
+  "detached_attribute_jump": {
+    "terminator_af_cases": 512,
+    "first_jump_taken_on_return": false,
+    "generated_and_ungenerated_paths": [
+      {
+        "generated_writer": false,
+        "second_jump_target": 26862,
+        "returned_hl": 23295,
+        "written_words": 0,
+        "stack_words_consumed": 0,
+        "restored_stack_operand": 12593
+      },
+      {
+        "generated_writer": true,
+        "second_jump_target": 26862,
+        "returned_hl": 23295,
+        "written_words": 15,
+        "stack_words_consumed": 14,
+        "restored_stack_operand": 49150
+      }
+    ],
+    "original_game_caller_proved": false
+  },
+  "detached_relative_target_cases": 768,
+  "detached_prefix_full_contract_proved": false,
   "initial_screen_sha256": "b52aa545ab365ec59832d681d593cdf861087bbcb7613162452f8ec323f45312",
   "decoded_screen_sha256": "3bb10a9f778e0da7f2529d5572ec5c0146f275746a6ac001670eb377ad01d58b",
   "both_actual_loader_copies_executed": true,

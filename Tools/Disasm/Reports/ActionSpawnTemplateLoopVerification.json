@@ -2,6 +2,12 @@
   "passed": true,
   "total_cases": 256,
   "all_original_template_pointers": true,
+  "template_mode_lifecycle": {
+    "real_template_entry": 30809,
+    "empty_and_available_list_profiles": 2,
+    "both_flags_set_before_allocation": true,
+    "real_release_clears_both": true
+  },
   "injected_overflow_per_axis": true,
   "whole_records_compared": true,
   "assembly_executed": false

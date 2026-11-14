@@ -4,6 +4,7 @@ import json
 from CheckIntro import ROOT,original_memory,execute
 from CheckActionParameterActivation import RecordedBanks
 from CheckMusic import Simulator,get_registers,PC,SP
+from ReferenceControlsPointRespawn import refresh
 
 
 def main():
@@ -38,7 +39,7 @@ def main():
             'DE':0x2468,'BC':0x8000+column,'IX':0xAB00+rows,'IY':0x5C3A,
             '^HL':0xFEDC,'^DE':0xBA98,'^BC':0x7654,'^AF':0x3210,
             'SP':stack,'PC':0x6BE3},None,False)
-        initial[14],initial[26],initial[27]=flags,flags&1,flags%3
+        initial[14],initial[15],initial[26],initial[27]=flags,flags,flags&1,flags%3
         expected=[bytearray(b) for b in memory.banks];writes=[]
 
         def put(address,value):
@@ -65,9 +66,19 @@ def main():
         wanted[0:8]=[value,0x42|(flags&1),destination>>8,destination&255,high,mapped,0x93,low]
         wanted[9]=0;wanted[SP],wanted[PC]=stack+2,0x3FFF
         simulator.registers[:]=initial;memory.writes=[];memory.recording=True
-        simulator.run(start=0x6BE3,stop=0x3FFF);memory.recording=False
-        # Проверка всех регистров кроме R, временный SP восстановлен без записей в CPU-стек.
-        compared=(*range(15),*range(16,25),26,27)
+        # Расчёт полного M1, 384 выборки цепочки, четыре выборки продолжения и повторный JP между строками.
+        cost=389*rows+6;wanted[15]=refresh(flags,cost);measured=0
+        for _ in range(20000):
+            if simulator.registers[PC]==0x3FFF:break
+            previous_r=simulator.registers[15];simulator.run()
+            increment=(simulator.registers[15]-previous_r)&127
+            assert increment in (1,2)
+            measured+=increment
+        else:raise AssertionError('выборщик текстуры не вернулся')
+        memory.recording=False
+        assert measured==cost,(rows,column,measured,cost)
+        # Проверка всех регистров кроме T, временный SP восстановлен без записей в CPU-стек.
+        compared=(*range(25),26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared),(rows,column,pattern,
             [(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
         assert all(a==b for a,b in zip(expected,memory.banks)),(rows,column,pattern,'RAM')
@@ -78,7 +89,8 @@ def main():
         actual_generator_chain_verified=True,generated_code_bytes=386,
         actual_continuation_executed=True,all_initial_flags_values=True,
         all_C_values_for_unaligned_cases=True,discarded_C_carries_observed=crossed,
-        cpu_stack_locations=3,cpu_stack_written=False,all_registers_except_R=True,
+        cpu_stack_locations=3,cpu_stack_written=False,all_registers_except_T=True,direct_full_M1_and_R_checked=True,
+        full_M1_formula="389*N+6",observed_M1_bounds=[395,14788],
         all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
         independent_numeric_oracle=True,arbitrary_aliases_proved=False,
         zero_row_count_256_rows_proved=False,assembly_executed=False,

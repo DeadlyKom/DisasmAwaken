@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "source": "awk1.trd:BRAINPRO.a:JTYPE",
+  "caption_cp866_hex": [
+    "9197859297888a208f8e82928e908d8e838e208f93918a802090808a859220848b9f",
+    "8a8086848e838e208f8590918e8d808680"
+  ],
+  "class_notes": [
+    "ПИРАТ",
+    "МИРНЫЙ",
+    "ВОЕННЫЙ",
+    "ПОЛИЦИЯ",
+    "ЛЕГИОНЕР",
+    "ПИРАТ2",
+    "УФО",
+    "УФО2",
+    "ОТШЕЛЬНИК"
+  ],
+  "values": [
+    20,
+    0,
+    18,
+    30,
+    0,
+    30,
+    35,
+    10,
+    40
+  ],
+  "matched_bytes": 9,
+  "current_address": 62080,
+  "archived_sp_file_offset": 37513,
+  "archived_sp_address": 62089,
+  "rco_record_offset": 20,
+  "current_field": "FActionRecord.MissileRepeatDelay",
+  "current_reload_operations": [
+    {
+      "address": 62020,
+      "operation": "LD HL,#F280",
+      "hex": "2180f2"
+    },
+    {
+      "address": 62023,
+      "operation": "ADD HL,BC",
+      "hex": "09"
+    },
+    {
+      "address": 62024,
+      "operation": "LD A,(HL)",
+      "hex": "7e"
+    },
+    {
+      "address": 62025,
+      "operation": "LD (IX+#14),A",
+      "hex": "dd7714"
+    }
+  ],
+  "reload_occurs_after_failed_allocation_too": true,
+  "counter_unit": "eligible_counter_updates_in_state02",
+  "constant_frame_or_seconds_duration_proved": false,
+  "all_other_state_meanings_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -6,6 +6,7 @@ from CheckSignedMultiply import sbc16_flags
 from PreviewEdgeRasterOracle import arithmetic
 from CheckInsetFrame import bitmap_address
 from skoolkit.simutils import PC,SP,I,IFF,IM
+from ReferenceControlsPointRespawn import refresh
 
 
 def main():
@@ -14,7 +15,8 @@ def main():
  f=Fixture(base);m=f.memory;s=f.sim;r=s.registers;initial=f.initial;before=[bytes(b) for b in m.banks]
  for pending in range(1,256):
   for active in range(1,256):
-   m[0x68EB]=pending;m[0x9E78]=active;r[:]=initial;s.run(start=0x68EA,stop=0x3FFF)
+   m[0x68EB]=pending;m[0x9E78]=active;r[:]=initial;r[14]=pending;r[15]=pending^active;r[27]=active%3;context=r.copy();s.run(start=0x68EA,stop=0x3FFF)
+   assert r[15]==refresh(context[15],6) and all(r[i]==context[i] for i in (I,IFF,IM))
    assert (r[0],r[1],r[SP])==(active,logical_flags(active),0x8000)
    assert r[2:12]==initial[2:12] and r[16:24]==initial[16:24] and m[0x68EB]==pending and not f.trace.writes
    counts['busy_deferred_returns']+=1
@@ -22,7 +24,8 @@ def main():
  m[0x68EB]=m[0x9E78]=0
  for last in range(65536):
   if last>>8==1 or last==0x6877:continue
-  put(m,0xF3DE,last.to_bytes(2,'little')+bytes((1,1)));r[:]=initial;s.run(start=0x68EA,stop=0x3FFF)
+  put(m,0xF3DE,last.to_bytes(2,'little')+bytes((1,1)));r[:]=initial;r[14]=last>>8;r[15]=last&255;r[27]=last%3;context=r.copy();s.run(start=0x68EA,stop=0x3FFF)
+  assert r[15]==refresh(context[15],28) and all(r[i]==context[i] for i in (I,IFF,IM))
   value=(last-0x6877)&65535;flags=sbc16_flags(last,0x6877,0)
   assert tuple(r[:8])==(last>>8,flags,initial[2],initial[3],0x68,0x77,value>>8,value&255)
   assert r[8:12]==initial[8:12] and r[16:24]==initial[16:24] and r[SP]==0x8000 and not f.trace.writes
@@ -46,7 +49,8 @@ def main():
  # Проверка временного RET выключенной панели без чтения индекса, все регистры и память сохраняются.
  f=Fixture(base);m=f.memory;m[0x6877]=0xC9;before_disabled=[bytes(b) for b in m.banks]
  for flags in range(256):
-  f.sim.registers[:]=f.initial;r=f.sim.registers;r[1]=flags;f.sim.run(start=0x6877,stop=0x3FFF)
+  f.sim.registers[:]=f.initial;r=f.sim.registers;r[1]=flags;r[14]=flags;r[15]=flags;r[27]=flags%3;context=r.copy();f.sim.run(start=0x6877,stop=0x3FFF)
+  assert r[15]==refresh(context[15],1) and all(r[i]==context[i] for i in (I,IFF,IM))
   assert r[:12]==[f.initial[0],flags,*f.initial[2:12]] and r[16:24]==f.initial[16:24] and r[SP]==0x8000
   assert [bytes(b) for b in m.banks]==before_disabled;counts['disabled_preview_returns']+=1
  entries=json.loads((ROOT/'Tools/Disasm/Reports/Functions.json').read_text('utf-8'))
@@ -120,7 +124,9 @@ def main():
     counts['deferred_refreshes']+=1;counts['deferred_'+preview]+=1;counts['irq_wakeups']+=result['wakes']
  report=dict(passed=True,cases_by_path=dict(counts),all_11_original_models=True,selectors=[0,1,2,255],both_screen_pages=True,both_caption_flags=True,both_fill_modes=True,
   all_allowed_last_handler_words_except_real_preview=True,all_nonzero_pending_and_active_byte_pairs=True,
-  disabled_ret_preserves_all_context=True,same_item_key_alias_not_accepted_as_exact_preview_pointer=True,
+  disabled_ret_preserves_ordinary_context_and_changes_r_once=True,
+  busy_deferred_full_m1=6,last_handler_mismatch_one_entry_full_m1=28,
+  fast_paths_i_im_iff_preserved=True,fast_paths_iff_fixture=1,same_item_key_alias_not_accepted_as_exact_preview_pointer=True,
   real_banks_and_all_graphics_helpers=True,real_boot_im2_vector_and_original_isr=True,irq_registers_stack_bank_and_screen_restored=True,
   irq_only_at_halt_boundaries=True,pointer_update_blocked_during_irq=True,music_disabled=True,independent_whole_preview_bitmap_oracle=False,independent_window_fill_bitmap_checked=True,
   exact_preview_hl_limits_from_textwindow_height_and_width=True,final_main_context_checked_by_composition=True,

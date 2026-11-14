@@ -79,7 +79,7 @@ COMMENTS={
     0xE603:(['Обновление принятой Component2, все три результата теперь находятся в записи.'],None),
     0xE604:(['-----------------------------------------','CPU-стек и разрешение предупреждения','Восстановление действительного CPU SP из непосредственного операнда SavedCpuSP до первого настоящего CALL.'],None),
     0xE607:(['Проверка полного неизвестного байта состояния, ноль отключает поиск записи класса 12.'],None),
-    0xE60B:([],'переход, если UnknownByte1 равен нулю, завершить через восстановитель смещений'),
+    0xE60B:([],'переход, если ThirdGate равен нулю, завершить через восстановитель смещений'),
     0xE60E:(['Поиск первой активной записи TransferClass, это полный код 12, не маска битов.'],None),
     0xE613:([],'переход, если поиск класса 12 достиг маркера конца, завершить без предупреждения'),
     0xE616:(['-----------------------------------------','Близкая область относительно записи класса 12','Расчёт нормализованного старшего байта Component2, отрицательные значения преобразуются как FF-H.'],None),
@@ -108,7 +108,7 @@ def name_operands(region,address,operation):
     if (region,address)!=('Action',0xE5A0):return operation
     for delta,field in ((5,'Components.Component2.High'),(3,'Components.Component1.High'),(1,'Components.Component0.High')):
         operation=operation.replace('(IY+#'+format(delta,'02X')+')','(IY+FActionRecord.'+field+')')
-    for before,after in (('(#9B82)','(@ActionParameterActivationState.UnknownByte1)'),
+    for before,after in (('(#9B82)','(@ActionGlyphIndicatorState.Control.ThirdGate)'),
         ('(#E644)','(@ActionRecordUpdateState.WarningLatch)'),('LD A, #7D','LD A, @ActionRecordUpdateConst.LimitBias'),
         ('CP #80','CP @ActionReuseConst.ReusableHigh'),('LD D, #12','LD D, @ActionCloseRecordConst.TransferClass'),
         ('CP #08','CP @ActionRecordUpdateConst.NearLimit'),('LD A, #80','LD A, @ActionRecordUpdateConst.WarningArmed'),

@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 2,
+  "resources": 2,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "body_branch": {
+    "input_pairs": 65536,
+    "old_conditional_return": 26955,
+    "old_load_a_e": 26956,
+    "old_field_writer": 26957,
+    "old_banked_build_entry": 26960,
+    "new_unconditional_return": 27004,
+    "new_residual_byte": 27005,
+    "new_banked_build_entry": 27006
+  },
+  "context": {
+    "exact_layout_bytes": 75,
+    "archived_speed_address": 40068,
+    "current_speed_pair_address": 40072,
+    "archived_distance_address": 40070,
+    "current_cost_address": 40074,
+    "old_high_byte_return": 28736,
+    "profiles": 1024
+  },
+  "current_game_consumers_proved": false,
+  "native_execution": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

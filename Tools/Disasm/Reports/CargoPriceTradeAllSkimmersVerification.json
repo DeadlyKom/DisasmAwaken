@@ -1,0 +1,146 @@
+{
+  "passed": true,
+  "counts": {
+    "skimmer_255": 2160,
+    "cases": 10800,
+    "event_9": 3600,
+    "continued": 7227,
+    "stopped": 3573,
+    "skimmer_0": 2160,
+    "skimmer_1": 2160,
+    "skimmer_2": 2160,
+    "skimmer_3": 2160,
+    "event_10": 3600,
+    "event_11": 3600
+  },
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "original_physical_files_checked": [
+    4,
+    5,
+    7
+  ],
+  "CPU_read_write_probes": 30,
+  "watched_price_addresses": [
+    38995,
+    38997,
+    38999,
+    39001,
+    39003,
+    39005,
+    39007,
+    39009,
+    39011,
+    39013,
+    39015,
+    39017,
+    39019,
+    39021,
+    39023,
+    39025,
+    39027,
+    39029,
+    39031,
+    39033,
+    39035,
+    39037,
+    39039,
+    39041,
+    39043,
+    39045,
+    39047,
+    39049,
+    39051,
+    39053
+  ],
+  "patterns": [
+    "zero",
+    "FF",
+    "73*row+19 modulo 256"
+  ],
+  "events": [
+    9,
+    10,
+    11
+  ],
+  "profiles": [
+    [
+      10,
+      3,
+      5,
+      1000,
+      255
+    ],
+    [
+      0,
+      0,
+      5,
+      1000,
+      255
+    ],
+    [
+      128,
+      3,
+      5,
+      1000,
+      255
+    ],
+    [
+      10,
+      3,
+      255,
+      0,
+      255
+    ],
+    [
+      10,
+      3,
+      5,
+      1000,
+      0
+    ],
+    [
+      10,
+      120,
+      5,
+      1000,
+      255
+    ],
+    [
+      10,
+      128,
+      5,
+      65000,
+      255
+    ],
+    [
+      10,
+      3,
+      255,
+      65535,
+      255
+    ]
+  ],
+  "original_interpreter_and_trade_script_executed": true,
+  "price_CPU_reads": 0,
+  "price_CPU_writes": 0,
+  "all_30_prices_preserved": true,
+  "exact_registers_messages_and_OUT_equal_between_price_patterns": true,
+  "stock_quantity_credits_and_messages_match_arithmetic_reference": true,
+  "skimmer_index_prepared_FF": false,
+  "full_LANG_sector_tail_loaded_as_fixture": true,
+  "all_RAM_or_all_input_combinations_compared": false,
+  "native_reachability_proved": false,
+  "global_price_consumers_or_writers_excluded": false,
+  "station_display_executed": false,
+  "IRQ_executed": false,
+  "assembly_executed": false,
+  "native_execution": false,
+  "skimmer_indices": [
+    255,
+    0,
+    1,
+    2,
+    3
+  ],
+  "all_four_physical_skimmer_record_indices_tested": true
+}

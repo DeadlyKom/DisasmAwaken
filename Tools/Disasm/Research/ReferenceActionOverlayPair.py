@@ -34,5 +34,7 @@ class OverlayPairMachine(Machine):
         self.r[24]=0xDBBD if low else 0xDD23
         renderer=PacketRenderer(self.banks,self.r,ops,24,12);renderer.render(clipped=bool(low))
         self.r=renderer.r;self.banks=renderer.banks;self.writes.extend(renderer.writes)
+        self.renderer_R_proved=renderer.refresh_proved
+        if not renderer.refresh_proved:self.r_uncertain=True
         self.rendered=True;self.path.append('clipped_line' if low else 'inside_line')
         return self

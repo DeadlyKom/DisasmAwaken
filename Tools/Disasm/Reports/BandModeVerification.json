@@ -16,7 +16,23 @@
     "C13E",
     "C144"
   ],
-  "irq_enabled": false,
+  "full_m1_by_entry": {
+    "CCAA": [
+      19,
+      20
+    ],
+    "CCAF": [
+      18,
+      19
+    ],
+    "CCD4": [
+      15
+    ]
+  },
+  "exact_refresh_and_all_12_cpu_writes": true,
+  "i_im_iff_preserved": true,
+  "both_iff_values_without_irq": true,
+  "irq_executed": false,
   "native_execution_verified": false,
   "assembly_executed": false
 }

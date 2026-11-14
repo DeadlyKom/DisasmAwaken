@@ -1,5 +1,29 @@
 """Ручная разметка подтверждённых механизмов, не участвует в сборке."""
 
+# Принятая классификация использования хранится отдельно от доказательства достижимости.
+FUNCTION_USAGE = {
+    ('Controls', 0xDADE): {
+        'status': 'unused_in_current_version',
+        'basis': 'user_classification',
+        'reason': 'штатный вызов не найден, по указанию пользователя блок помечен как неиспользуемый',
+        'global_unreachability_proved': False,
+        'contract_scope': 'direct_entry_prefix_and_hypothetical_relocated_algorithm',
+        'direct_entry_prefix_end': 0xDAEB,
+        'direct_entry_prefix_bytes': 13,
+        'relocated_execution_proof_is_fixture': True,
+        'current_full_module_native_execution_proved': False,
+        'current_temporary_payload_interface_proved': False,
+    },
+    ('Station', 0x63AA): {
+        'status': 'current_caller_unestablished',
+        'basis': 'original_reference_search_with_open_indirect_paths',
+        'reason': 'штатный вызывающий путь и происхождение HLWord не установлены, его перенос в выходной HL определён',
+        'global_unreachability_proved': False,
+        'stack_word_origin_proved': False,
+        'stack_word_output_role_proved': True,
+    },
+}
+
 # Имя файла и описание задаются по исходному коду, неизвестное не переименовывается в гипотезу.
 FUNCTIONS = {
     "Map": {
@@ -39,7 +63,7 @@ FUNCTIONS = {
         0x6BF6: ("AdvanceTexturePhases", "Обновление трёх фаз и четвёртого смещения по таблице #6400 в операндах текстурного обработчика"),
         0x6C21: ("AdvanceTextureScale", "Начальное нарастание масштаба и последующий циклический выбор из таблицы #6C62"),
         0x6C53: ("SelectTexturePointerRow", "Выбор строки #F000 + 16*A для генерируемого переноса #A800"),
-        0x6C9C: ("InitializeLookupEffect", "Создание трёх развёрнутых обработчиков, фазовых таблиц и таблицы указателей эффекта"),
+        0x6C9C: ("InitializeLookupEffect", "Создание трёх развёрнутых обработчиков, фазовых таблиц и строк значений выборки"),
         0x6D6A: ("BuildPhaseTable", "Запись 256 выборок исходной таблицы со сдвигом вправо на два бита и шагом C по индексу"),
         0x6500: ("InitializeIntro", "Перенос завершающего загрузчика, вывод экрана и создание таблиц вступления"),
         0x65B7: ("LoadStation", "Переносимая завершающая стадия, поиск STATIONF.C и чтение #C0 секторов"),
@@ -223,7 +247,7 @@ FUNCTIONS = {
         0xEC7F: ("ClipSprite", "Отсечение прямоугольника по горизонтали 64 и вертикали 24 с расчётом краевых смещений"),
     },
     "Controls": {
-        0xDADE: ("RunTemporaryModule", "Сохранение памяти по банкам, распаковка временного модуля и восстановление полётного кода"),
+        0xDADE: ("RunTemporaryModule", "Неиспользуемый блок сохранения памяти, распаковки временного модуля и восстановления полётного кода"),
     },
     "Final": {
         0x6123: ("ReadSpeedKeys", "Изменение счётчика задержки клавишами Q и A с границами 0..100"),
@@ -1921,3 +1945,18 @@ FUNCTIONS['IntroUnpack'].update(INTROATTRIBUTECOUNTTAIL_FUNCTIONS)
 
 from PreviewSquareEntryFacts import FUNCTIONS as PREVIEW_SQUARE_ENTRY_FUNCTIONS
 FUNCTIONS['D3D'].update(PREVIEW_SQUARE_ENTRY_FUNCTIONS)
+
+from ActionRecordScaleExtraEntryFacts import FUNCTIONS as ACTION_RECORD_SCALE_EXTRA_ENTRY_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_RECORD_SCALE_EXTRA_ENTRY_FUNCTIONS)
+
+from ControlsEvenSpanPrefixFacts import FUNCTIONS as CONTROLSEVENSPANPREFIX_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLSEVENSPANPREFIX_FUNCTIONS)
+
+from IntroDetachedUnpackGateFacts import FUNCTIONS as INTRODETACHEDUNPACKGATE_FUNCTIONS
+FUNCTIONS['IntroUnpack'].update(INTRODETACHEDUNPACKGATE_FUNCTIONS)
+
+from IntroAttributeScanPrefixFacts import FUNCTIONS as INTROATTRIBUTESCANPREFIX_FUNCTIONS
+FUNCTIONS['IntroUnpack'].update(INTROATTRIBUTESCANPREFIX_FUNCTIONS)
+
+from ActionObjectStateReturnOnlyFacts import FUNCTIONS as ACTION_OBJECT_STATE_RETURN_ONLY_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_OBJECT_STATE_RETURN_ONLY_FUNCTIONS)

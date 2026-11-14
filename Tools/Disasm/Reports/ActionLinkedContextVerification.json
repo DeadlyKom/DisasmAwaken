@@ -1,20 +1,23 @@
 {
   "passed": true,
-  "total_cases": 197120,
+  "total_cases": 197632,
   "profiles": {
     "all_component_words": 196608,
-    "all_link_bytes": 512
+    "all_link_bytes": 512,
+    "special_pointer_high_bytes": 512
   },
   "paths": {
-    "prepared": 197090,
-    "ordinary_index": 197118,
-    "unavailable": 30,
-    "special_ff": 2
+    "prepared": 197600,
+    "ordinary_index": 197374,
+    "unavailable": 32,
+    "special_ff": 258
   },
   "all_three_component_word_domains": true,
   "all_256_link_bytes": true,
   "special_ff_maps_A780": true,
   "real_index_conversion_executed": true,
+  "all_256_A780_high_bytes_for_ff_and_1A": true,
+  "special_ff_unavailable_ret_executed": true,
   "exact_registers_flags_r_sp": true,
   "full_eight_bank_ram_and_write_multiplicity_compared": true,
   "maximum_additional_stack_bytes": 2,

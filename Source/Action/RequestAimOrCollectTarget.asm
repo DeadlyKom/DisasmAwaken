@@ -8,28 +8,28 @@
                 ;   HL, DE, BC и AF входных числовых аргументов не задают, результат сохранения зависит от выбранной ветви
                 ;   Mode по 7318 выбирает действие, ноль передаёт управление RequestPairedAimLines с его отдельным договором
                 ;   при ненулевом Mode Target0 задаёт полный байт кода, 80..FF дают отказ по знаку, для остальных адрес записи должен быть доступен
-                ;   компоненты, поля StateCode, ClassCode, Unknown10, Unknown11, ReuseByte и Unknown23 доступны, запись и SavedSP доступны для изменения
-                ;   банк 0 выбран, поля Current, Limit и байты от Row00 доступны, чтение правила по виду не проверяет границы таблицы
+                ;   компоненты, поля StateCode, ClassCode, OffsetScaleLow, Unknown11, ReuseByte и PickupKind доступны, запись и SavedSP доступны для изменения
+                ;   банк 0 выбран, поля Used, Capacity и байты от Row00 доступны, чтение правила по виду не проверяет границы таблицы
                 ;   действуют QueueTextItemBank1 и договор прицельного ребёнка, обычная рамка допускает восемнадцать дополнительных байтов
                 ;   обычный стек не пересекается с записью и изменяемым кодом, IRQ и повторный вход исключены, обработчик сам DI не выполняет
                 ; Out:
                 ;   при Mode=0 действует RequestPairedAimLines, хвостовой JP не создаёт дополнительного возврата
                 ;   при ненулевом Mode и отрицательном Target0 HL, DE и BC сохраняются, A равен Target0, F соответствует OR A, RAM и paging сохраняются
                 ;   при High первой компоненты=80 или StateCode не 04 Target0 получает FF, A=FF, F сохраняет соответствующий CP, HL указывает проверенное поле
-                ;   при принятой записи Unknown10 получает 0, три компоненты подтягиваются к диапазону -256..255 с шагом 50, SavedSP получает входной SP-2
+                ;   при принятой записи OffsetScaleLow получает 0, три компоненты подтягиваются к диапазону -256..255 с шагом 50, SavedSP получает входной SP-2
                 ;   если близки не все оси, HL указывает запись, D сохраняется, E равно числу близких осей, BC равен последнему шагу 0000 либо FFCE, A=E и F от CP E,3
                 ;   когда близки все оси, Target0 получает FF до проверок вместимости, полный алгоритм вида, количества и отказов приведён в документации
-                ;   при успехе байт Row00+вид и Current обновлены, первая компонента получает 8000, при бите 4 ReuseByte устанавливается бит 2 PanelEvents.Flags
-                ;   после успеха HL=EE1B, DE указывает выбранный байт груза, B содержит новый либо сохранённый Current, C содержит количество
+                ;   при успехе байт Row00+вид и Used обновлены, первая компонента получает 8000, при бите 4 ReuseByte устанавливается бит 2 PanelEvents.Flags
+                ;   после успеха HL=EE1B, DE указывает выбранный байт груза, B содержит новый либо сохранённый Used, C содержит количество
                 ;   A содержит младший адрес ReuseByte, F соответствует BIT 4 этого поля, CursorA получает EE1B и в очередь передаётся F36D
                 ;   при ненулевом Mode HL', DE', BC', AF', IX, IY, I, IM и IFF сохраняются, внешнее завершение даёт SP=входной SP+2
                 ;   SP временно указывает прямо на три компоненты, обычный SP восстанавливается до последующих проверок и очереди
                 ;   после сообщения итоговая страница 10, прочие пути сохраняют paging, отказ очереди не отменяет сбор
                 ; Corrupt:
-                ;   HL, DE, BC, AF, AF' на прицельном пути, R, временный SP, SavedSP, координаты и поля записи, Target0, байт груза, Current, флаг события, CursorA, очередь, paging и временный CPU-стек по пути
+                ;   HL, DE, BC, AF, AF' на прицельном пути, R, временный SP, SavedSP, координаты и поля записи, Target0, байт груза, Used, флаг события, CursorA, очередь, paging и временный CPU-стек по пути
                 ; Note:
                 ;   не исправлены оборачивание сумм, снятие Target0 до отказа, байтовая индексация пар груза и чтение двух правил из байтов следующей инструкции
-                ;   для класса 13 количество и вид читаются из Unknown11 и Unknown23, для класса 10 выбран вид 0F, иначе 1B, количество 1..8 получено из R
+                ;   для класса 13 количество и вид читаются из Unknown11 и PickupKind, для класса 10 выбран вид 0F, иначе 1B, количество 1..8 получено из R
                 ;   264679 сценариев исполняют обработчик до внешнего RET, четыре прицельных сценария действительно рисуют обе линии
                 ;   сверены регистры кроме полного итогового R и тактов, RAM и кратность записей вне восемнадцати обычных временных байтов стека
                 ;   M1 до чтения R учтены отдельно, аппаратные IRQ и нативная игра не выполнялись
@@ -65,13 +65,13 @@ DropTarget:     LD A, @ActionTractorCollectConst.NoTarget
                 LD (@ActionMissileTargets.Value.Target0), A
                 RET
 
-                ; Обнуление Unknown10 до обработки трёх компонент.
+                ; Обнуление OffsetScaleLow до обработки трёх компонент.
 PullTarget:     LD A, L
                 ADD A, @ActionTractorCollectConst.StateToValue
                 LD L, A
                 LD (HL), #00
-                ; Восстановление базы записи от адреса Unknown10 и сохранение обычного SP после PUSH базы.
-                SUB @FActionRecord.Unknown10
+                ; Восстановление базы записи от адреса OffsetScaleLow и сохранение обычного SP после PUSH базы.
+                SUB @FActionRecord.OffsetScaleLow
                 LD L, A
                 PUSH HL
                 LD (@ActionTractorCollectState.SavedSP), SP
@@ -193,7 +193,7 @@ RandomAmount:   LD A, R
                 INC A
                 JR @Action.RequestAimOrCollectTarget.ApplyRule
 
-                ; Чтение полного Unknown23 как вида и Unknown11 как количества, ограничения диапазона нет.
+                ; Чтение полного PickupKind как вида и Unknown11 как количества, ограничения диапазона нет.
 ReadPayload:    LD A, L
                 ADD A, @ActionTractorCollectConst.ClassToKind
                 LD L, A
@@ -206,22 +206,22 @@ ApplyRule:      LD D, #00
                 LD HL, @ActionTractorCargoRules.Kind00.Control
                 ADD HL, DE
                 LD C, A
-                ; Чтение Current и поля учёта из двух старших битов правила.
-                LD A, (@ActionByteLimitCounter.Value.Current)
+                ; Чтение Used и поля учёта из двух старших битов правила.
+                LD A, (@ActionFlightTonnage.Value.Used)
                 LD B, A
                 LD A, (HL)
                 POP HL
                 AND @ActionTractorCollectConst.AccountingMask
-                JR NZ, @Action.RequestAimOrCollectTarget.CheckByte              ; переход, если поле учёта C0 ненулевое, сохранить Current без проверки его кандидата
+                JR NZ, @Action.RequestAimOrCollectTarget.CheckByte              ; переход, если поле учёта C0 ненулевое, сохранить Used без проверки его кандидата
 
-                ; Расчёт кандидата Current по модулю 256, перенос суммы не используется для отказа.
+                ; Расчёт кандидата Used по модулю 256, перенос суммы не используется для отказа.
                 LD A, B
                 ADD A, C
                 LD B, A
-                ; Проверка беззнакового Limit против обёрнутого кандидата.
-                LD A, (@ActionByteLimitCounter.Value.Limit)
+                ; Проверка беззнакового Capacity против обёрнутого кандидата.
+                LD A, (@ActionFlightTonnage.Value.Capacity)
                 CP B
-                RET C                                                           ; выход, если Limit меньше кандидата, Target0 уже снят, объект остаётся активным
+                RET C                                                           ; выход, если Capacity меньше кандидата, Target0 уже снят, объект остаётся активным
 
                 ; Расчёт байтового адреса Row00+вид, размер двухбайтовой записи здесь не учитывается.
 CheckByte:      PUSH HL
@@ -233,12 +233,12 @@ CheckByte:      PUSH HL
                 LD A, (DE)
                 ADD A, C
                 CP @ActionTractorCollectConst.ByteEndLimit
-                RET NC                                                          ; выход, если обёрнутый новый байт не меньше 201, ничего не записывать в груз и Current
+                RET NC                                                          ; выход, если обёрнутый новый байт не меньше 201, ничего не записывать в груз и Used
 
-                ; Обновление выбранного байта и Current только после обеих проверок.
+                ; Обновление выбранного байта и Used только после обеих проверок.
                 LD (DE), A
                 LD A, B
-                LD (@ActionByteLimitCounter.Value.Current), A
+                LD (@ActionFlightTonnage.Value.Used), A
                 ; Отметка собранной записи недоступным словом 8000 в первой компоненте.
                 LD (HL), #00
                 INC L
@@ -252,7 +252,7 @@ CheckByte:      PUSH HL
 
                 ; Установка бита 2 существующего поля событий при помеченной записи.
                 LD HL, @ActionPanelEvents.Value.Flags
-                SET 2, (HL)
+                SET @ActionPanelEventConst.FixedCostBit, (HL)
                 ; Выбор звукового потока и сообщения о подборе после необратимого изменения состояния.
 QueuePickup:    LD HL, @ActionTractorCollectConst.Sound
                 LD (@ActionAyEffectState.CursorA), HL

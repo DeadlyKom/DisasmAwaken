@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "source_disk": "awk1.trd",
+  "overlay_alignments": [
+    [
+      3811,
+      3840
+    ],
+    [
+      4500,
+      4544
+    ],
+    [
+      8201,
+      8208
+    ]
+  ],
+  "clip_table_alias": {
+    "source": "CLIPMATR.a",
+    "low_label": "L95",
+    "entries": [
+      {
+        "index": 8,
+        "author_label": "C_XY_DXiY",
+        "target": 50419,
+        "low_address": 53000,
+        "high_address": 53256
+      },
+      {
+        "index": 9,
+        "author_label": "X937",
+        "target": 49327,
+        "low_address": 53001,
+        "high_address": 53257
+      },
+      {
+        "index": 10,
+        "author_label": "X951",
+        "target": 49353,
+        "low_address": 53002,
+        "high_address": 53258
+      }
+    ],
+    "compared_table_bytes": 512,
+    "dispatchers": [
+      {
+        "address": 49254,
+        "jump": 49264,
+        "sp_point_page_changes": [
+          49242,
+          49249
+        ]
+      },
+      {
+        "address": 51590,
+        "jump": 51602,
+        "sp_point_page_changes": [
+          51585
+        ]
+      }
+    ],
+    "runtime_entry_ruled_out": false
+  },
+  "object_storage": {
+    "archive_address_delta": 256,
+    "exact_tail_bytes": 2605,
+    "object_stream": [
+      40732,
+      40988
+    ],
+    "candidate_codes": [
+      40988,
+      40999
+    ],
+    "alignment": [
+      40999,
+      41216
+    ],
+    "first_record": 41216
+  },
+  "assembly_executed": false,
+  "native_execution": false
+}

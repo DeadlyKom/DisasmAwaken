@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "method": "original_eject_mine_then_selected_original_collection",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "original_logical_files_checked": [
+    17,
+    22,
+    23
+  ],
+  "original_common_code_relocation_checked": true,
+  "CPU_write_watch_positive_probe_passed": true,
+  "counts": {
+    "refused": 432,
+    "empty_queue": 432,
+    "cases": 864,
+    "full_queue": 432,
+    "accepted": 432
+  },
+  "collector_paths": {
+    "class19_payload": 864,
+    "capacity_refusal_target_already_cleared": 288,
+    "marked_record_sets_event2": 432,
+    "collected_message_dropped": 216,
+    "collected_message_accepted": 216,
+    "byte_limit_refusal_target_already_cleared": 144
+  },
+  "original_kind0_rule": 0,
+  "child_fields_not_overwritten_between_calls": true,
+  "queue_not_reset_between_calls": true,
+  "mine_stock_remains_spent_after_collection": true,
+  "accepted_pickup_increments_inventory_byte_9BD4": true,
+  "accepted_pickup_sets_ActionPanelEvents_Flags_bit2": true,
+  "created_record_marked_free_only_after_accepted_pickup": true,
+  "target_cleared_even_on_capacity_or_byte_limit_refusal": true,
+  "collector_registers_except_R_T_and_RAM_and_write_multiplicity_checked": true,
+  "collector_18_byte_temporary_stack_values_excluded": true,
+  "eject_phase_checks_critical_postconditions_and_ports_only": true,
+  "target_selection_is_fixture": true,
+  "parent_coordinates_chosen_for_near_child": true,
+  "full_native_mine_or_flight_behavior_proved": false,
+  "IRQ_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

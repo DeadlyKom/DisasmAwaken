@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "graphics": {
+    "pixel_cases": 49152,
+    "row_cases": 18432,
+    "clear_writes": 6913,
+    "clear_last_address": 56064
+  },
+  "keyboard_and_blink": {
+    "irq_blink_frames": 17,
+    "blink_period_frames": 8,
+    "previous_key_profiles": 4,
+    "following_key_profiles": 4,
+    "confirm_key_profiles": 3
+  },
+  "assembly_executed": false,
+  "native_execution": false
+}

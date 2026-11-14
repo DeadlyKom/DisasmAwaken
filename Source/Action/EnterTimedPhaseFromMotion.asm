@@ -5,18 +5,18 @@
                 ; Восстановление рамки движения и установка временного состояния 11 со случайным таймером
                 ; исходная запись 17, адреса 62B5..62CE
                 ; In:
-                ;   HL, DE, BC и AF числовых аргументов не задают, IX указывает FActionRecord с StateCode, Unknown19 и PhaseMoveTimer
+                ;   HL, DE, BC и AF числовых аргументов не задают, IX указывает FActionRecord с StateCode, TimedResumeCode и PhaseMoveTimer
                 ;   на CPU-стеке последовательно лежат сохранённые BC, DE, HL и внешний адрес возврата, вход не является обычным CALL без этой рамки
                 ;   перенесённый код банка 5 и поля записи доступны, IRQ не вмешиваются
                 ; Out:
                 ;   HL и DE восстановлены из рамки, BC после восстановления заменён полным словом 8080
-                ;   Unknown19 получает прежний полный StateCode, StateCode получает 11
+                ;   TimedResumeCode получает прежний полный StateCode, StateCode получает 11
                 ;   PhaseMoveTimer равен (прочитанный R AND 0F)+5, диапазон от 5 до 20 вызовов
                 ;   A равен новому таймеру, F соответствует ADD младшей тетрады и 5
                 ;   HL', DE', BC', AF', IX, IY, I/IM/IFF и paging сохраняются
                 ;   SP после внешнего RET равен входному SP+8, шесть байтов рамки не записываются и не очищаются, R добавляет 17 M1
                 ; Corrupt:
-                ;   HL, DE, BC, AF, R, Unknown19, PhaseMoveTimer, StateCode, SP после снятия рамки и внешнего RET
+                ;   HL, DE, BC, AF, R, TimedResumeCode, PhaseMoveTimer, StateCode, SP после снятия рамки и внешнего RET
                 ; Note:
                 ;   LD A,R читает R после девяти M1 данного входа, старший бит R не участвует в таймере
                 ;   65536 сценариев покрыли все пары начального R и прежнего StateCode, сохранённые слова менялись по перестановкам полного словарного диапазона
@@ -27,9 +27,9 @@
 Entry:          POP BC
                 POP DE
                 POP HL
-                ; Сохранение прежнего полного состояния для последующего восстановления через Unknown19.
+                ; Сохранение прежнего полного состояния для последующего восстановления через TimedResumeCode.
                 LD A, (IX + @FActionRecord.StateCode)
-                LD (IX + @FActionRecord.Unknown19), A
+                LD (IX + @FActionRecord.TimedResumeCode), A
                 ; Расчёт длительности от 5 до 20 по младшей тетраде аппаратного R.
                 LD A, R
                 AND #0F

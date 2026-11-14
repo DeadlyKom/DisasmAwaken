@@ -5,7 +5,7 @@ STATE_MODULE='ActionLinkedOverlayState'
 STATE_FIELDS=(('LinkRLimit',0xE823,'операнд CP n, обратная связь обновляется при прочитанном R не меньше порога'),)
 CONTRACTS={('Action',0xE804):(
     ['HL, DE, BC и AF числовых аргументов не задают, альтернативные пары учитываются ранними отказами',
-     'IX указывает FActionRecord с доступными словами 1A, 1C, 1E и LinkedIndex',
+     'IX указывает FActionRecord с доступными ViewPosition и LinkedIndex',
      'RecordPointer подготовлен через PrepareLinkedRecordContext либо явно указывает допустимую запись, особый LinkedIndex=1A его игнорирует',
      'действуют договоры LoadLinkedRecordVectors, RecordAddressToIndex и ToggleTargetOverlay, LinkRLimit доступен',
      'ACTION банка 0, таблицы проекции, экран и CPU-стек детей доступны, IRQ и повторный вход исключены'],
@@ -58,6 +58,7 @@ def name_operands(region,function_address,operation):
         operation=operation.replace('CALL #'+format(address,'04X'),'CALL @Action.'+name+'.Entry')
     for index,address in enumerate((0xD9B6,0xD7C4,0xD7A2)):
         operation=operation.replace('(#'+format(address,'04X')+')','(@ActionPatchedVectorState.Output'+str(index)+')')
+    operation = operation.replace('SET 0,', 'SET @ActionLinkFlagsConst.BackLinkBit,')
     return operation.replace('CP #80','CP @ActionReuseConst.ReusableHigh')
 
 # Сохранение договора самостоятельного внутреннего входа при отдельном экспорте кандидата.

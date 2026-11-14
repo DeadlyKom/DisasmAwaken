@@ -55,7 +55,7 @@ def main():
     pending[path]=text.replace('                endif',facts.structure()+'\n                endif').encode('utf-8')
     # Связывание трёх реальных потребителей с физической первой записью вместо одного адресного EQU.
     for relative in ('Source/Action/CheckCandidateListReady.asm','Source/Action/FindNearestListedRecord.asm',
-                     'Source/Action/SpawnClass19AndUpdateList.asm','Tools/Disasm/Research/ActionCandidateGateFacts.py',
+                     'Source/Action/CreateCargoAndUpdateList.asm','Tools/Disasm/Research/ActionCandidateGateFacts.py',
                      'Tools/Disasm/Research/ActionNearestCandidateFacts.py','Tools/Disasm/Research/ActionClass19SpawnFacts.py'):
         path=ROOT/relative;text=path.read_text('utf-8');old_name='@ActionCandidateListState.BeforeFirst'
         assert old_name in text

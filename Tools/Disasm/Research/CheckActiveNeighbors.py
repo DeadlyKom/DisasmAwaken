@@ -1,11 +1,12 @@
 """Исходный поиск активных соседей с байтовым удвоением индекса таблицы границ."""
 from pathlib import Path
-import json,sys,random
+import hashlib,json,sys,random
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/'Tools/Disasm/Research/vendor/skoolkit-10.1'),str(ROOT/'Tools/Disasm/Research')]
 from skoolkit.simulator import Simulator
 from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,SP
 from CheckWorldSignature import logical_flags
+from CheckGeometryReturnEntries import Memory
 
 
 def reference(memory,index,bounds,values):
@@ -19,9 +20,32 @@ def reference(memory,index,bounds,values):
  return 0,0x42,selected+right,0,0
 
 
+def refresh_cost(memory,index,bounds,values):
+ # Расчёт M1 по числу просмотренных соседей и выполненных CPL.
+ selected=values+index;pair=(bounds+((2*index)&255))&65535
+ left=(-memory[pair])&255;right=memory[(pair+1)&65535]
+ scanned=inverted=0
+ for distance in range(1,left+1):
+  raw=memory[selected-distance];scanned+=1;inverted+=int(raw>=128)
+  if raw not in (0,255):return 20+8*scanned+inverted
+ for distance in range(1,right+1):
+  raw=memory[selected+distance];scanned+=1;inverted+=int(raw>=128)
+  if raw not in (0,255):break
+ return 25+8*scanned+inverted
+
+
 def main():
  manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_text('utf-8'));e=next(e for e in manifest['entries'] if e['slot']==5)
- source=(ROOT/(e['path']+'.sectors.bin')).read_bytes();memory=bytearray(65536);memory[0xC000:0xC000+len(source)]=source;sim=Simulator(memory)
+ source=(ROOT/(e['path']+'.sectors.bin')).read_bytes()
+ # Проверка исходной секторной области и наблюдателя CPU.
+ disk=(ROOT/'Tools/Disasm/Disk/original.trd').read_bytes()
+ assert hashlib.sha256(disk).hexdigest()==manifest['sha256']
+ assert source==disk[e['offset']:e['offset']+e['allocated_length']]
+ assert hashlib.sha256(source).hexdigest()==e['sectors_sha256']
+ probe=Memory(65536);probe[0x4000:0x4003]=bytes.fromhex('320070')
+ cpu=Simulator(probe);cpu.registers[24]=0x4000;probe.recording=True;cpu.run()
+ assert probe.writes==[(0x7000,0)]
+ memory=Memory(65536);memory[0xC000:0xC000+len(source)]=source;sim=Simulator(memory)
  initial=get_registers({'SP':0x7FFA,'BC':0x36C9,'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
  rng=random.Random(0xC520);cases=0
  for entry,bounds,values in ((0xC51A,0x964E,0x988E),(0xC5A9,0x9690,0x98F6),(0xC520,0xA000,0xA500)):
@@ -31,7 +55,13 @@ def main():
    pair=bounds+((2*index)&255);memory[pair]=leftcode;memory[pair+1]=right
    expected=reference(memory,index,bounds,values);sim.registers[:]=initial;r=sim.registers
    if entry==0xC520:r[B],r[C]=bounds>>8,bounds&255;r[D],r[E]=values>>8,values&255
-   memory[0x7FFA:0x7FFE]=bytes((index,(case*19)&255,255,63));sim.run(start=entry,stop=0x3FFF)
+   memory[0x7FFA:0x7FFE]=bytes((index,(case*19)&255,255,63));refresh=case&255;r[15]=refresh
+   cost=refresh_cost(memory,index,bounds,values)+(2 if entry==0xC51A else 3 if entry==0xC5A9 else 0)
+   memory.writes.clear();memory.recording=True;sim.run(start=entry,stop=0x3FFF);memory.recording=False
+   selected=values+index
+   assert memory.writes==[(0x7FFA,selected&255),(0x7FFB,selected>>8)]
+   assert memory[0x7FFC:0x7FFE]==bytes([255,63])
+   assert r[15]==((refresh&128)|((refresh+cost)&127)),(entry,case,cost,r[15])
    value,flags,hl,c,result=expected
    assert (r[A],r[F],r[H]*256+r[L],r[C],r[D],r[E])==(value,flags,hl,c,0,result),(entry,case,expected,list(r))
    assert r[B]==bounds>>8 and r[SP]==0x7FFE and r[8:12]==initial[8:12] and r[16:24]==initial[16:24]
@@ -40,11 +70,18 @@ def main():
  for index in (0,1,255):
   sim.registers[:]=initial;r=sim.registers;r[B]=255;r[C]=255;r[D]=0xA5;r[E]=0
   pair=(0xFFFF+((2*index)&255))&65535;memory[pair]=0;memory[(pair+1)&65535]=0
-  memory[0x7FFA:0x7FFE]=bytes((index,0,255,63));sim.run(start=0xC520,stop=0x3FFF)
+  memory[0x7FFA:0x7FFE]=bytes((index,0,255,63));r[15]=index
+  memory.writes.clear();memory.recording=True;sim.run(start=0xC520,stop=0x3FFF);memory.recording=False
+  assert memory.writes==[(0x7FFA,index),(0x7FFB,0xA5)]
+  assert r[15]==((index&128)|((index+25)&127))
+  assert memory[0x7FFC:0x7FFE]==bytes([255,63])
   assert (r[A],r[F],r[D],r[E],r[H]*256+r[L],r[C],r[SP])==(0,0x42|int(index!=0),0,0,0xA500+index,0,0x7FFE)
   cases+=1
  report=dict(passed=True,cases=cases,method='original_backward_and_forward_active_neighbor_scans',
   all_index_bytes=True,all_left_bound_bytes=True,all_right_bound_bytes=True,double_index_wrap_tested=True,
+  exact_R_and_CPU_write_sequence_checked=True,consumed_index_word_reused_for_selected_address=True,
+  original_return_word_preserved=True,physical_disk_and_sector_hashes_checked=True,
+  CPU_write_watch_positive_control=True,full_index_bounds_values_R_cartesian_product_checked=False,
   irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/ActiveNeighborsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))

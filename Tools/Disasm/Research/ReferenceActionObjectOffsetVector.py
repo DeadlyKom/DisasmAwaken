@@ -3,15 +3,15 @@ from CheckActionObjectOffsetVector import table_reference,multiply,cost,COEFFICI
 from ReferenceControlsPointRespawn import refresh
 
 
-def evaluate(memory,initial,offsets,return_address):
+def evaluate(memory,initial,offsets,return_address,phase_steps=(64,64,64),second_mix=None,third_mix=None,leading_bit5_falls_through=False):
     value=initial[4]*256+initial[5];stack=initial[12];ix=initial[8]*256+initial[9]
-    registers,coefficients,m1,overflow=table_reference(memory,initial,offsets)
+    registers,coefficients,m1,overflow=table_reference(memory,initial,offsets,phase_steps,second_mix,third_mix)
     writes=list(zip(COEFFICIENT_OPERANDS,coefficients))
     # Создание числового эталона всех остаточных слов CPU-стека, включая повторные PUSH DE.
     for address,word in ((stack-2,ix),(stack-4,value),(stack-6,0x6D0C),(stack-4,value),(stack-4,value)):
         writes.extend(((address,word&255),(address+1,word>>8)))
     for address,coefficient in zip(RESULT_WORDS,coefficients):
-        result,local_m1=multiply(registers,coefficient,value);m1+=local_m1
+        result,local_m1=multiply(registers,coefficient,value,leading_bit5_falls_through);m1+=local_m1
         writes.extend(((address,result&255),(address+1,result>>8)))
     registers[8:10]=initial[8:10];m1+=cost(0x6D06,0x6D38)
     registers[12],registers[15],registers[24]=stack+2,refresh(initial[15],m1),return_address

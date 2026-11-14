@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "method": "original_threshold_suffix_dispatch_and_real_field_handlers",
+  "cases": 10400,
+  "cases_by_suffix": {
+    "c": 2600,
+    "v": 2600,
+    "s": 2600,
+    "k": 2600
+  },
+  "expression_wrappers_executed": false,
+  "all_low_index_bytes": true,
+  "all_suffixes_checked": true,
+  "selector_overlap_cases": 5,
+  "full_output_flags_and_remaining_B_checked": true,
+  "exact_non_stack_write_sequence_checked": true,
+  "physical_disk_and_sector_hashes_checked": true,
+  "CPU_write_watch_positive_control": true,
+  "original_return_word_preserved": true,
+  "full_R_proved": false,
+  "all_input_values_registers_addresses_and_invalid_suffixes_checked": false,
+  "flat_RAM_model_without_banking": true,
+  "stack_bus_cycle_order_verified": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,5 +1,6 @@
 """Все разности слова, три базы, точные регистры, флаги и R процедуры 6311."""
 import json
+from hashlib import sha256
 from CheckIntro import ROOT
 from CheckActionParameterActivation import flat_action
 from CheckMusic import Simulator, get_registers, PC, SP
@@ -10,7 +11,40 @@ class ReadOnlyFixture(list):
         raise AssertionError(('процедура неожиданно пишет память',index,value))
 
 
+def inspect_callers():
+    """Статическая связь State08, отдельно от исполнения модельной фикстуры."""
+    paths = (
+        'Source/Action/ApproachTargetRecordAndResolve.asm',
+        'Source/Action/CreateLinkedMissileRecord.asm',
+        'Source/Action/DispatchObjectState.asm',
+        'Source/Action/Data/ObjectStateHandlers.asm',
+    )
+    source = [(ROOT / path).read_text(encoding='utf-8') for path in paths]
+    # Проверка трёх прямых вызовов, комментарии не считаются инструкциями.
+    instructions = [line.split(';', 1)[0].strip() for line in source[0].splitlines()]
+    assert instructions.count('CALL @Action.ApproachWordAndAccumulate.Entry') == 3
+    # Проверка состояния и класса, записываемых создателем связанной ракеты.
+    creator = [line.split(';', 1)[0].strip() for line in source[1].splitlines()]
+    assert 'LD (IY + @FActionRecord.StateCode), #08' in creator
+    assert 'LD (IY + @FActionRecord.ClassCode), #11' in creator
+    # Проверка сохранения состояния класса 11 на входе Entry диспетчера.
+    dispatch = source[2].split('Entry:', 1)[1].split('StoreRemainder:', 1)[0]
+    assert dispatch.index('CP #12') < dispatch.index('CP #10')
+    assert 'JP Z, @Action.SetClass18ObjectState.Entry' in dispatch
+    assert 'JR NC, @Action.DispatchObjectState.CallHandler' in dispatch
+    # Проверка физической записи обработчика State08 в таблице.
+    state = source[3].split('State08:', 1)[1].split('}', 1)[0]
+    assert '@Action.ApproachTargetRecordAndResolve.Entry' in state
+    return dict(method='static_source_relationship_not_native_execution',
+                direct_helper_calls=3, created_state=8, created_class=17,
+                class_17_preserves_state_at_dispatch_entry=True,
+                source_sha256={path: sha256((ROOT / path).read_bytes()).hexdigest()
+                               for path in paths},
+                native_creation_to_dispatch_execution_proved=False)
+
+
 def main():
+    callers=inspect_callers()
     flat=flat_action()
     flat[0xBFFE:0xC000]=[255,63]
     memory=ReadOnlyFixture(flat)
@@ -58,7 +92,7 @@ def main():
     result=dict(passed=True,total_cases=cases,cases_by_path=counts,
         all_65536_differences_for_each_base=True,bases=[0,0x7FFF,0xFFFF],
         exact_registers_flags_r_sp_and_all_ram=True,any_memory_write_rejected=True,
-        all_input_words_product_exhausted=False,runtime_caller_found=False,
+        all_input_words_product_exhausted=False,source_caller_relationship=callers,
         assembly_executed=False,irq_executed=False,native_execution=False)
     (ROOT/'Tools/Disasm/Reports/ActionApproachWordVerification.json').write_text(
         json.dumps(result,indent=2)+'\n',encoding='utf-8')

@@ -40,7 +40,7 @@ COMMENTS = {
 def name_operands(region, address, operation):
     if region != 'Action' or address != 0x7DD4:
         return operation
-    fields = {'0B': 'LinkedIndex', '0C': 'LinkFlags', '0F': 'TargetIndex', '12': 'ClassCode', '18': 'ReuseByte'}
+    fields = {'0B': 'LinkedIndex', '0C': 'LinkFlags', '0F': 'Phase2OrTarget', '12': 'ClassCode', '18': 'ReuseByte'}
     for offset in ('06', '07', '08', '09', '0A', '0D', '0E', '10', '11', '13',
                    '14', '15', '16', '17', '20', '21', '22', '24', '25'):
         fields[offset] = KNOWN.get(int(offset, 16), ('Unknown' + offset,))[0]

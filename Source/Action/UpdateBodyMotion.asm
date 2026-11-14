@@ -2,6 +2,7 @@
                 module UpdateBodyMotion
                 ; Физические поля [локальный контекст](../../Docs/ActionLocalContextPhysicalData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionWideMotionPrefix.md)
+                ; Документация [сравнение завершающей ветви с SP.C](../../Docs/ActionArchivedBodyContext.md)
                 ; -----------------------------------------
                 ; Фазовое обновление рабочего вектора, запросов панели и широких целей
                 ; исходная запись 17, перенесённое ядро 6000..7F8E, смещения #09BD..#0BB9
@@ -141,16 +142,16 @@ SaveGauge:      LD (#6682), A
                 JP NC, @Action.UpdateBodyMotion.MoveWideVectors                 ; переход, если прежний младший бит фазы пополнения равен нулю
 
                 ; Выбор байта и проверка кандидата счётчика относительно лимита.
-                CALL @Action.SelectPreferredByte.Entry
+                CALL @Action.SelectFuelStock.Entry
                 INC A
                 LD C, A
-                LD DE, (@ActionByteLimitCounter.Value.Current)
+                LD DE, (@ActionFlightTonnage.Value.Used)
                 INC E
                 LD A, D
                 CP E
                 JR C, @Action.UpdateBodyMotion.RequestGauge                     ; переход, если кандидат счётчика превышает лимит
 
-                LD (@ActionByteLimitCounter.Value.Current), DE
+                LD (@ActionFlightTonnage.Value.Used), DE
                 LD (HL), C
 RequestGauge:   LD A, #01
                 LD (#665C), A

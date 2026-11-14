@@ -36,7 +36,7 @@
 | FMusicRowCounter | #01 | [три физических счётчика строк](MusicPlayerData.md) |
 | FMusicVolumeRow | #10 | [15 физических строк громкости, нулевая строка наложена на AY](MusicPlayerData.md) |
 | FMusicNotePeriod | #02 | [96 физических слов периодов](MusicPlayerData.md) |
-| FMusicModuleHeader | #69 | [физический заголовок композиции, включая Unknown63](MusicComposition.md) |
+| FMusicModuleHeader | #69 | [физический заголовок композиции, включая ToneTableIndex](MusicComposition.md) |
 | FMusicRelativePointer | #02 | [48 физических относительных адресов](MusicComposition.md) |
 | FMusicPositionByte | #01 | [28 позиций и отдельный маркер FF](MusicComposition.md) |
 | FMusicPatternPointers | #06 | [19 физических троек указателей A/B/C](MusicComposition.md) |
@@ -199,11 +199,11 @@ XOR-масками, а не флагами состояния. Потребит�
 
 [ParameterCoefficients](../Source/Controls/Data/ParameterCoefficients.asm) содержит 15 физических `FParameterCoefficient` по три байта, Base по смещению 0, SlopeCode по смещению 1, ShiftMask по смещению 2. Исходные 45 байтов DF64..DF90 и перекрытие шаблонного чтения H=4 сохранены. Алгоритм описан в [ControlsParameterTables](ControlsParameterTables.md).
 
-[ThreeRowGlyphs](../Source/Controls/Data/ThreeRowGlyphs.asm) содержит 32 физических `FThreeRowGlyphPhase` размером шесть байтов, три строки по паре Left,Right. Исходные 192 байта четырёх знаков и восьми фаз сохранены, следующие 32 байта оформлены отдельной таблицей RasterReturns, полный рисователь ещё не разобран. Потребитель и границы координат описаны в [ControlsThreeRowGlyph](ControlsThreeRowGlyph.md).
+[ThreeRowGlyphs](../Source/Controls/Data/ThreeRowGlyphs.asm) содержит 32 физических `FThreeRowGlyphPhase` размером шесть байтов, три строки по паре Left,Right. Исходные 192 байта четырёх знаков и восьми фаз сохранены, следующие 32 байта оформлены отдельной таблицей RasterReturns с входами фаз фона радара. Потребитель и границы координат описаны в [ControlsThreeRowGlyph](ControlsThreeRowGlyph.md).
 
-[GlyphIndicatorState](../Source/Action/Data/GlyphIndicatorState.asm) содержит четыре физические записи по три байта. FGlyphIndicatorControl хранит FirstMode, ThirdGate, Unknown83, два FGlyphIndicatorXY хранят X,Y,SignSource, FGlyphIndicatorYX третьего входа хранит Y перед X. Исходные 12 байтов 9B81..9B8C сохранены, Unknown83 и полный игровой смысл векторов остаются неустановленными. Локальный алгоритм и режимы описаны в [ControlsGlyphIndicators](ControlsGlyphIndicators.md).
+[GlyphIndicatorState](../Source/Action/Data/GlyphIndicatorState.asm) содержит четыре физические записи по три байта. FGlyphIndicatorControl хранит FirstMode, ThirdGate и TemplateMode. Два FGlyphIndicatorXY хранят X, Y и SignSource. FGlyphIndicatorYX третьего входа хранит Y перед X. Исходные 12 байтов 9B81..9B8C сохранены. Рисование знаков и отдельные ветви шаблонной группы описаны по фактическим читателям. [Знаки](ControlsGlyphIndicators.md) · [Шаблонная группа](ActionSpawnSchedule.md#состояние-шаблонной-группы)
 
-[RasterReturns](../Source/Controls/Data/RasterReturns.asm) содержит 16 физических `FReturnDispatchEntry` по два байта, поле Target хранит адрес кодового хвоста банка 1. Исходные 32 байта E271..E290 сохранены, диспетчер E2BB проверен 65536 сценариями до первого RET. Полные обработчики и внешний E291 остаются Unknown, границы описаны в [ControlsRasterReturns](ControlsRasterReturns.md).
+[RasterReturns](../Source/Controls/Data/RasterReturns.asm) содержит 16 физических `FReturnDispatchEntry` по два байта, поле Target хранит адрес кодового хвоста банка 1. Исходные 32 байта E271..E290 сохранены, диспетчер E2BB проверен 65536 сценариями до первого RET. Цели именованы DrawPhase00..DrawPhase15 внутри DrawRadar, фон и объектный проход разобраны отдельно. Границы моделей описаны в [ControlsRasterReturns](ControlsRasterReturns.md) и [ControlsRasterBackground](ControlsRasterBackground.md).
 
 Пятнадцать физических `FFoldedRandomState` по три байта занимают EBDB..EC07, всего 45 исходных байтов. LowWord по смещениям 0..1 и FoldByte по смещению 2 являются числовым состоянием. Все экземпляры, исходные значения, входы и ограничения приведены в [ActionFoldedRandom](ActionFoldedRandom.md).
 

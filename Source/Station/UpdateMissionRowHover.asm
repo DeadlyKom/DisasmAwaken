@@ -16,8 +16,12 @@
 ;   для обычного попадания двухстрочной области новый A равен 0 либо 1, F=0 даже при A=0
 ;   HL', DE', BC', IX, IY, I и IFF сохранены по договору дочернего входа, AF' рабочий при перерисовке указателя
 ;   SP обычного возврата равен входному SP+2, повторный CALL обработчика не создаётся
-; Corrupt:
-;   HL, DE, BC, AF, AF' на перерисовке
+                ; Corrupt:
+                ;   HL, DE, BC, AF, AF', R
+                ;   bitmap полосы, MapHighlightState.WidthSkip банка 1, StationState.CurrentPage, управление 7FFD и временные слова CPU-стека
+                ;   PointerState.UpdateBlocked, PointerState.RestoredFlag, PointerState.SpriteBase, PointerState.BackgroundAddr и PointerState.VisibleRows
+                ;   InterfaceState.HoverItem, InterfaceState.HoverCallback и строки PointerBackground
+                ;   MissionHoverState.Row при возвращённом Z=0
 ; Note:
 ;   D=2 задаёт запрос двух строк, он масштабируется и ограничивается ClampRowHeight, E=3 задаёт пиксельный верхний отступ
 ;   обновление допускается только если DrawItem31 является последним обработчиком списка

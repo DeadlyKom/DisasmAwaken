@@ -68,3 +68,13 @@ def name_operands(region,address,operation):
    operation=operation.replace('LD HL, #'+format(raw,'04X'),'LD HL, @'+name)
   return operation.replace('(#6302)','(@MapViewState.OriginHigh)').replace('LD BC, #8237','LD BC, @MapSectorConst.InitialMix').replace('XOR #0A','XOR @MapSectorConst.HighXor')
  return operation
+
+
+# Точные M1 и временные кадры исходного генератора с обменом EXX.
+for _sector_refresh_address,_sector_refresh_note,_sector_refresh_input,_sector_refresh_corrupt in ((50250, 'R меняется за 11332 M1, младшие семь битов увеличены на 68 по модулю 128, бит 7 сохраняется', 'двенадцать временных байтов CPU-стека доступны и не перекрывают таблицы и исполняемый код', "AF, HL', R, четыре страницы MapSectorTables и двенадцать временных байтов CPU-стека"), (50292, 'R меняется за 2827 M1, младшие семь битов увеличены на 11 по модулю 128, бит 7 сохраняется', 'KARTA выбран, IRQ не вмешиваются, четыре временных байта CPU-стека доступны и не перекрывают выходную страницу и код', "HL, DE, BC, AF, HL', DE', BC', R, выходная страница и четыре временных байта CPU-стека")):
+    _sector_refresh_contract = CONTRACTS['Map',_sector_refresh_address]
+    _sector_refresh_contract[0][:] = [line.replace('стек вне этих таблиц, прерывания сохраняют оба общих набора и страницу во время EXX','стек вне этих таблиц, IRQ не вмешиваются во время EXX и построения') for line in _sector_refresh_contract[0]]
+    _sector_refresh_contract[0].append(_sector_refresh_input)
+    _sector_refresh_contract[1][:] = [line.replace('I и IFF сохранены','I, IM и IFF сохранены') for line in _sector_refresh_contract[1]]
+    _sector_refresh_contract[2][:] = [_sector_refresh_corrupt]
+    _sector_refresh_contract[3].insert(0,_sector_refresh_note)

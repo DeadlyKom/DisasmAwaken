@@ -22,7 +22,7 @@ for address,(field,left,right) in DETAILS.items():
    'для TopProduct исходный BC умножения равен MinY, для BottomProduct MaxY, для LeftProduct и RightProduct равен Y2',
    "все альтернативные регистры, IY, I и IFF сохранены, SP обычного возврата равен входному SP+2",
    'исходные точки, ClipCodes и три других произведения не меняются'],
-  ['HL, DE, BC, AF, IX по MultiplySigned16'],
+  ['HL, DE, BC, AF, IX, R'],
   ['настройка и проверенные фазы описаны в [MapRuntimeProfiles](../../Docs/MapRuntimeProfiles.md)',
    'обе разности оборачиваются до 16 бит перед знаковым умножением, широкий знаковый промежуточный результат вычитания не сохраняется',
    'порядок HL и DE существенен, второе DE=8000 и abs(HL)>=256 наследует особенность полного ядра',

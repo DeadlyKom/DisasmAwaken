@@ -35,10 +35,13 @@ CONTRACTS={
     'MineMx1.Value является полным восьмибитовым счётчиком, ноль даёт отказ, FF означает 255 и также уменьшается',
     'при нулевом запасе HL=EE1B, DE и BC сохранены, AF=0054, IX/IY и альтернативные регистры сохраняются, передано F412',
     'при ненулевом запасе он уменьшается на один до создания, SpawnPrepared получает HL=EE80, A=1, IX=A780',
-    'созданный объект получает Unknown11=1, Unknown23=0 и пометку ReuseByte=10, производный код списка равен 36, передано F402'],
+    'созданный объект получает Unknown11=1, PickupKind=0 и пометку ReuseByte=10, производный код списка равен 36, передано F402'],
     COMMON_CORRUPT,
-    ['сообщение F402 говорит о мине, название запаса совпадает с исходным авторским полем MineMx1',
-     'при отказе поиска мина уже списана, при отказе очереди созданная мина не удаляется',
+    ['на достигнутом участке событий UpdateFrame бит 2 запрашивает списание 40 из уровня защиты SHILD, при нехватке текущего уровня выполняется переход ShowNoiseBeforeReload',
+     'при успешном подборе созданной помеченной записи без промежуточного изменения её полей RequestAimOrCollectTarget добавляет единицу виду 0 и устанавливает бит 2 ActionPanelEvents.Value.Flags',
+     'при успешном создании общий вход задаёт ClassCode=13 и ModelOffset=98 модели CRG1, собственный хвост команды их не заменяет',
+     'сообщение F402 говорит о мине, название запаса совпадает с исходным авторским полем MineMx1',
+     'при отказе поиска мина уже списана, при отказе очереди созданная запись класса 13 не удаляется',
      'все 256 полных значений запаса проверены с четырьмя вариантами поиска и шестью вариантами списка'])}
 COMMENTS={
  0x7594:(['Проверка задержки перед поиском выбрасываемого байта груза.'],None),
@@ -75,7 +78,7 @@ def name_operands(region,function_address,operation):
         'LD B, #1E':'LD B, @ActionEjectConst.ScanBytes',
         'LD DE, #642C':'LD DE, @ActionEjectConst.CargoIndexBias',
         'LD IX, #A780':'LD IX, @ActionLinkedContextConst.SpecialRecord',
-        'CALL #6441':'CALL @Action.SpawnClass19AndUpdateList.SpawnPrepared',
+        'CALL #6441':'CALL @Action.CreateCargoAndUpdateList.SpawnPrepared',
         'CALL #6040':'CALL @Action.QueueTextItemBank1.Entry'}
     for address,name in LOCAL.items():
         if function_address<=address<ENDS[function_address]:replacements['#'+format(address,'04X')]='@Action.'+FUNCTIONS[function_address][0]+'.'+name

@@ -1,0 +1,320 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "source": "awk1.trd:PANEL.a",
+  "matched_bytes": 672,
+  "matched_pointer_bytes": 40,
+  "pixel_mask_bytes": 8,
+  "clear_mask_bytes": 48,
+  "glyph_bytes": 576,
+  "archived_repeat_six_traders_expanded": true,
+  "roles": [
+    {
+      "class_code": 0,
+      "archived_label": "MPIRAT",
+      "current_address": 59549,
+      "current_shape": "Cross",
+      "type_constants": [
+        "T_PIRAT"
+      ]
+    },
+    {
+      "class_code": 1,
+      "archived_label": "MTRADER",
+      "current_address": 59213,
+      "current_shape": "Solid",
+      "type_constants": [
+        "T_TRADER"
+      ]
+    },
+    {
+      "class_code": 2,
+      "archived_label": "MARMY",
+      "current_address": 59261,
+      "current_shape": "LowerLeft",
+      "type_constants": [
+        "T_MILITARY"
+      ]
+    },
+    {
+      "class_code": 3,
+      "archived_label": "MPOLICE",
+      "current_address": 59597,
+      "current_shape": "Plus",
+      "type_constants": [
+        "T_POLICE"
+      ]
+    },
+    {
+      "class_code": 4,
+      "archived_label": "MHUNTER",
+      "current_address": 59405,
+      "current_shape": "Hollow",
+      "type_constants": [
+        "T_LEGIONER"
+      ]
+    },
+    {
+      "class_code": 5,
+      "archived_label": "MPIRAT",
+      "current_address": 59549,
+      "current_shape": "Cross",
+      "type_constants": [
+        "T_PIRAT2"
+      ]
+    },
+    {
+      "class_code": 6,
+      "archived_label": "MUFO",
+      "current_address": 59453,
+      "current_shape": "VerticalBars",
+      "type_constants": [
+        "T_UFO"
+      ]
+    },
+    {
+      "class_code": 7,
+      "archived_label": "MUFO",
+      "current_address": 59453,
+      "current_shape": "VerticalBars",
+      "type_constants": [
+        "T_UFO2"
+      ]
+    },
+    {
+      "class_code": 8,
+      "archived_label": "MOTSHEL",
+      "current_address": 59357,
+      "current_shape": "RightBar",
+      "type_constants": [
+        "T_HERMIT"
+      ]
+    },
+    {
+      "class_code": 9,
+      "archived_label": "MMIKR",
+      "current_address": 59309,
+      "current_shape": "HorzBars",
+      "type_constants": [
+        "T_MIKR"
+      ]
+    },
+    {
+      "class_code": 10,
+      "archived_label": "MTRADER",
+      "current_address": 59213,
+      "current_shape": "Solid",
+      "type_constants": []
+    },
+    {
+      "class_code": 11,
+      "archived_label": "MTRADER",
+      "current_address": 59213,
+      "current_shape": "Solid",
+      "type_constants": []
+    },
+    {
+      "class_code": 12,
+      "archived_label": "MTRADER",
+      "current_address": 59213,
+      "current_shape": "Solid",
+      "type_constants": []
+    },
+    {
+      "class_code": 13,
+      "archived_label": "MTRADER",
+      "current_address": 59213,
+      "current_shape": "Solid",
+      "type_constants": []
+    },
+    {
+      "class_code": 14,
+      "archived_label": "MTRADER",
+      "current_address": 59213,
+      "current_shape": "Solid",
+      "type_constants": []
+    },
+    {
+      "class_code": 15,
+      "archived_label": "MTRADER",
+      "current_address": 59213,
+      "current_shape": "Solid",
+      "type_constants": []
+    },
+    {
+      "class_code": 16,
+      "archived_label": "MUNKNOWN",
+      "current_address": 59501,
+      "current_shape": "Slash",
+      "type_constants": [
+        "T_CHIP"
+      ]
+    },
+    {
+      "class_code": 17,
+      "archived_label": "MROKET",
+      "current_address": 59117,
+      "current_shape": "BottomT",
+      "type_constants": [
+        "T_ROKET"
+      ]
+    },
+    {
+      "class_code": 18,
+      "archived_label": "MSTATION",
+      "current_address": 59165,
+      "current_shape": "OpenRight",
+      "type_constants": [
+        "T_STATION"
+      ]
+    },
+    {
+      "class_code": 19,
+      "archived_label": "MCARGO",
+      "current_address": 59069,
+      "current_shape": "BarI",
+      "type_constants": [
+        "T_CARGO"
+      ]
+    }
+  ],
+  "clear_phase_declared_bytes": 6,
+  "clear_phase_zero_tail_bytes": 4,
+  "zero_tail_global_unusedness_proved": false,
+  "type_definitions": {
+    "T_PIRAT": {
+      "value": 0,
+      "comment": "ПИРАТ",
+      "raw_hex": "545f5049524154068505660682233030fe8f88908092"
+    },
+    "T_TRADER": {
+      "value": 1,
+      "comment": "ТОРГОВЕЦ",
+      "raw_hex": "545f545241444552068405660682233031fe928e90838e828596"
+    },
+    "T_MILITARY": {
+      "value": 2,
+      "comment": "ВОЕННЫЙ",
+      "raw_hex": "545f4d494c4954415259068205660682233032fe828e858d8d9b89"
+    },
+    "T_POLICE": {
+      "value": 3,
+      "comment": "ПОИЦИЯ",
+      "raw_hex": "545f504f4c494345068405660682233033fe8f8e8896889f"
+    },
+    "T_LEGIONER": {
+      "value": 4,
+      "comment": "ОХОТНИК",
+      "raw_hex": "545f4c4547494f4e4552068205660682233034fe8e958e928d888a"
+    },
+    "T_PIRAT2": {
+      "value": 5,
+      "comment": "ПИРАТ НЕ ОПАСНЫЙ",
+      "raw_hex": "545f504952415432068405660682233035fe8f88908092208d85208e8f80918d9b89"
+    },
+    "T_UFO": {
+      "value": 6,
+      "comment": "УФО",
+      "raw_hex": "545f55464f068705660682233036fe93948e"
+    },
+    "T_UFO2": {
+      "value": 7,
+      "comment": "УФО2",
+      "raw_hex": "545f55464f32068605660682233037fe93948e32"
+    },
+    "T_HERMIT": {
+      "value": 8,
+      "comment": "ОТШЕЛЬНИК",
+      "raw_hex": "545f4845524d4954068405660682233038fe8e9298858b9c8d888a"
+    },
+    "T_MIKR": {
+      "value": 9,
+      "comment": "МИКРО КОРАБЛЬ",
+      "raw_hex": "545f4d494b52068605660682233039fe8c888a908e208a8e9080818b9c"
+    },
+    "T_CHIP": {
+      "value": 16,
+      "comment": "ОСКОЛОК",
+      "raw_hex": "545f43484950068605660682233130fe8e918a8e8b8e8a"
+    },
+    "T_ROKET": {
+      "value": 17,
+      "comment": "РАКЕТА",
+      "raw_hex": "545f524f4b4554068505660682233131fe90808a859280"
+    },
+    "T_STATION": {
+      "value": 18,
+      "comment": "ЧАСТЬ СТАНЦИИ",
+      "raw_hex": "545f53544154494f4e068305660682233132fe978091929c209192808d968888"
+    },
+    "T_CARGO": {
+      "value": 19,
+      "comment": "ГРУЗ",
+      "raw_hex": "545f434152474f068505660682233133fe83909387"
+    },
+    "T_TRASH": {
+      "value": 20,
+      "comment": "МУСОР ДЛЯ ФОРСАЖА",
+      "raw_hex": "545f5452415348068505660682233134fe8c93918e9020848b9f20948e9091808680"
+    },
+    "T_TARGET": {
+      "value": 22,
+      "comment": "ЦЕЛЬ НЕВИДИМА",
+      "raw_hex": "545f544152474554068405660682233136fe96858b9c208d85828884888c80"
+    }
+  },
+  "micro_ship_class_code": 9,
+  "chip_class_code": 16,
+  "current_micro_ship_class_writer": 59642,
+  "current_micro_ship_write_hex": "fd361209",
+  "archived_record_offsets": {
+    "SUBJ": 11,
+    "ACTN": 12,
+    "RAND": 13,
+    "MSPD": 15,
+    "RSPD": 16,
+    "LZS": 17,
+    "TYPE": 18
+  },
+  "archived_actn_notes_hex": [
+    "fe424954533a",
+    "fe302d415441434b20594f552c312d524f4b455420415441434b2c322d524f4b4554204b494c4c454420594f55",
+    "fe332d45438b8820819b8b4f204b2028322920037a99057a8f504f5450414b455448419f200378884354454d41"
+  ],
+  "current_rocket_class_and_flag_writers": [
+    {
+      "address": 24871,
+      "operation": "LD (IY+#12),#11",
+      "hex": "fd361211"
+    },
+    {
+      "address": 24891,
+      "operation": "SET 1,(HL)",
+      "hex": "cbce"
+    },
+    {
+      "address": 62853,
+      "operation": "SET 1,(IY+#0C)",
+      "hex": "fdcb0cce"
+    },
+    {
+      "address": 63020,
+      "operation": "SET 2,(IY+#0C)",
+      "hex": "fdcb0cd6"
+    }
+  ],
+  "trader_icon_only_alias_codes": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "unresolved_archived_names": [],
+  "shared_icon_does_not_prove_equal_gameplay_classes": true,
+  "full_class_behavior_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

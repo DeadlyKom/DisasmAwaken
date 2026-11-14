@@ -54,7 +54,7 @@ def name_operands(region, address, operation):
     if region != 'Action' or address != 0xF7C6:
         return operation
     for offset, name in (('0A', 'StateCode'), ('0B', 'LinkedIndex'), ('0C', 'LinkFlags'),
-                         ('12', 'ClassCode'), ('13', 'Unknown13')):
+                         ('12', 'ClassCode'), ('13', 'EffectReserve')):
         operation = operation.replace('IX+#' + offset, 'IX + @FActionRecord.' + name)
     return (operation.replace('LD DE, #EF50', 'LD DE, @ActionObjectStateHandlers.State00.Handler')
             .replace('LD DE, #F85E', 'LD DE, @Action.DispatchObjectState.ResumeUpdate'))

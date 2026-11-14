@@ -66,7 +66,7 @@ def main():
         lines.append(line)
     lines+=['                endmodule','                endmodule'];pending[ROOT/code_path]=format_function('\n'.join(lines)+'\n').encode('utf-8')
     path=ROOT/'Includes/Variables/Include.inc';text=path.read_text('utf-8');assert 'module ActionMissileCreateState' not in text
-    block='\n                ; Существующий непосредственный байт инициализации Unknown13\n                module ActionMissileCreateState\n'
+    block='\n                ; Существующий непосредственный байт инициализации EffectReserve\n                module ActionMissileCreateState\n'
     block+='InitParameter   equ #612E'.ljust(80)+'; четвёртый байт LD (IY+d),n, память не выделяется\n                endmodule\n'
     block+='\n                ; Исходный операнд AY-потребителя ACTION банка 0\n                module ActionAyEffectState\n'
     block+='CursorA         equ #ECA9'.ljust(80)+'; операнд LD HL,nn по ECA8, поток канала A, не Controls банка 1\n                endmodule\n\n'
@@ -74,8 +74,9 @@ def main():
     path=ROOT/'Includes/Const/Include.inc';text=path.read_text('utf-8');assert 'module ActionMissileCreateConst' not in text
     block='\n                ; Подтверждённые значения создания записи ракеты\n                module ActionMissileCreateConst\n'
     for label,value,note in (('ActionSound',0xEDA8,'поток канала A в ACTION банка 0'),('LostText',0xF248,'сообщение о потерянной цели, Controls банка 1'),
-        ('InitialComp2',400,'третье входное слово, единицы ещё неизвестны'),('FallbackParam',10,'Unknown13 при поле Fallback'),
-        ('PreferredParam',50,'Unknown13 при поле Preferred'),('MissileClass',0x11,'ClassCode создаваемой записи')):
+        ('InitialComp2',400,'третье входное слово, единицы ещё неизвестны'),('FallbackParam',10,'EffectReserve при поле Fallback'),
+        ('PreferredParam',50,'EffectReserve при поле Preferred'),('MissileClass',0x11,'ClassCode создаваемой записи'),
+        ('PlayerIndex',0x1A,'индекс стрелявшего игрока, A100+64*1A=A780, авторский PLAYER')):
         block+=label.ljust(16)+('equ #'+format(value,'04X')).ljust(64)+'; '+note+'\n'
     block+='                endmodule\n\n';pending[path]=text.replace('                endif',block+'                endif').encode('utf-8')
     path=ROOT/'Source/Files/17_ACTION.inc';text=path.read_text('utf-8');needle='                incbin "../Resources/17_ACTION/'+old_path.name+'"';assert text.count(needle)==1
@@ -97,7 +98,7 @@ def main():
     section='## '+name+'\n\n[Action.'+name+'](../../'+code_path+')\n\n'+description+'.\n\n[Три пути, поля, флаги и модели](../ActionMissileCreation.md).\n\n'
     pending[path]=text.replace(needle,section+needle).encode('utf-8')
     path=ROOT/'Docs/ModifiedCode.md';text=path.read_text('utf-8');heading='## Параметр записи и звук в 60AE';assert heading not in text
-    text+='\n'+heading+'\n\n[CreateMissileForTarget](../Source/Action/CreateMissileForTarget.asm) записывает слово потока канала A, 60BB→ECA9 в банке 0, и байт параметра, 60E8→612E. Последний является непосредственным байтом LD (IY+Unknown13),n. [Три пути и банковый контекст](ActionMissileCreation.md) описаны отдельно.\n';pending[path]=text.encode('utf-8')
+    text+='\n'+heading+'\n\n[CreateMissileForTarget](../Source/Action/CreateMissileForTarget.asm) записывает слово потока канала A, 60BB→ECA9 в банке 0, и байт параметра, 60E8→612E. Последний является непосредственным байтом LD (IY+EffectReserve),n. [Три пути и банковый контекст](ActionMissileCreation.md) описаны отдельно.\n';pending[path]=text.encode('utf-8')
     candidate=ROOT/'Tools/Disasm/Research/Candidates/ActionMissileCreation';history=ROOT/'Tools/Disasm/Research/History/BeforeActionMissileCreation';assert not candidate.exists() and not history.exists()
     plan=[(p,p.read_bytes() if p.exists() else None,after) for p,after in pending.items()]
     # Создание кандидата и проверка отсутствия новых пользовательских изменений перед публикацией.

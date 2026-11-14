@@ -3,7 +3,8 @@ import collections,json
 from ProbeShipPreviewCallbacks import ROOT,make_context,payload,put
 from CheckScreenUpdate import PortTrace
 from CheckWeightedLoad import reference as load_reference
-from skoolkit.pagingtracer import SliceableMemory
+from CheckExpressionControl import LangWorkspaceMemory, PREFIX_START
+from MarketScriptTable import SECTIONS
 from skoolkit.simulator import Simulator
 from skoolkit.simutils import get_registers,A,PC,SP
 
@@ -13,10 +14,11 @@ def main():
  for bank,slot in ((4,6),(6,5)):
   raw=payload(slot);base[bank][:len(raw)]=list(raw)
  script=bytes(base[6][0xA8F:0xF18]);counts=collections.Counter();messages=collections.Counter()
+ unmatched=set()
  initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5D,'IX':0x2468,'IY':0x5C3A,
   '^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
  def execute(event,index,owned,credits,capacity=255,cargo=0,blocked=False):
-  page=0x16 if sum(counts.values())&1 else 0x1E;m=SliceableMemory(banks=[b.copy() for b in base],out7ffd=page)
+  page=0x16 if (sum(counts.values())+len(unmatched))&1 else 0x1E;m=LangWorkspaceMemory(banks=[b.copy() for b in base],out7ffd=page)
   s=Simulator(m);trace=PortTrace(s);s.set_tracer(trace);m[0x6306]=page;m[0x983A]=event
   m.banks[4][0x2146]=index;m.banks[4][0x2148]=0;m[0x9849]=owned;m[0x984A]=255;m[0x9851]=capacity
   put(m,0x9852,bytes(60));put(m,0x988E,bytes(52));put(m,0x98F6,bytes(14));m[0x9852]=cargo
@@ -53,7 +55,13 @@ def main():
   assert m[0x9850]==load_reference(bytearray(m[0:65536]),0xC0DB)[0]
   assert bytes(m.banks[6][0xA8F:0xF18])==script and s.registers[SP]==0x8000 and m.o7ffd==m[0x6306]==page
   assert m[0x6E91]==(observed[-1] if observed else 0xA7)
-  counts[str(event)]+=1;messages.update(observed)
+  assert all(address<PREFIX_START for address in m.reads | m.writes)
+  if event not in SECTIONS:
+   before[0x9850]=weight
+   assert bytes(m[0x983B:0x9A3B])==before[0x983B:0x9A3B]
+   unmatched.add(event)
+  if event in (1,2,3,4):counts[str(event)]+=1
+  messages.update(observed)
  # Проверка всех семи исходных кораблей, текущего выбора, денежных границ и отказов.
  for event in (1,2,3,4):
   for index in range(7):
@@ -62,8 +70,13 @@ def main():
  for index in range(7):
   for cargo in (0,1,16,127):
    for blocked in (False,True):execute(1,index,255,65535,cargo=cargo,blocked=blocked)
+ for event in sorted(set(range(256))-set(SECTIONS)-unmatched):
+  execute(event,0,0,3210,cargo=17)
+ assert unmatched==set(range(256))-set(SECTIONS)
  report=dict(passed=True,per_event=dict(counts),queued_messages=dict(messages),original_script_bytes_unchanged=True,
   actual_interpreter_and_original_script=True,independent_ship_price_capacity_and_selection_oracle=True,
+  unmatched_event_codes=len(unmatched),unmatched_context_changes_only_used_tonnage=True,
+  lang_prefix_reads=0,lang_prefix_writes=0,
   events_3_and_4_have_no_matching_block=True,real_bank_switching=True,station_display_not_executed=True,
   irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/OriginalShipTradeVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')

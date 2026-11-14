@@ -6,18 +6,18 @@
                 ; исходная запись 17, адреса F67F..F68D
                 ; In:
                 ;   HL, DE, BC и AF числовых аргументов не задают, IX указывает доступную FActionRecord
-                ;   Unknown10 задаёт исходный управляющий байт, действуют договоры ResetIdleRecordBases, PrepareObjectOffsetTransform и ApplyObjectOffsetVector
+                ;   OffsetScaleLow задаёт исходный управляющий байт, действуют договоры ResetIdleRecordBases, PrepareObjectOffsetTransform и ApplyObjectOffsetVector
                 ;   код ACTION и фазовые таблицы общей RAM доступны, восемь дополнительных байтов CPU-стека доступны, IRQ и повторный вход исключены
                 ; Out:
-                ;   при исходном Unknown10=0 исполняется нулевой хвост ResetIdleRecordBases, HL=0, AF=0054, Base0..2=0, прочие поля записи сохраняются
-                ;   при ненулевом Unknown10 сначала записывается wrap8(Unknown10−2), значение 1 превращается в FF
-                ;   если Component0.High=80, подготовитель сразу возвращается, AF=8042, Unknown10 сохраняет результат двойного DEC, остальные регистры и базы сохранены
-                ;   иначе PrepareObjectOffsetTransform условно увеличивает уже уменьшенный Unknown10 по своему порогу TargetIndex и готовит DE из старого значения и Unknown24
+                ;   при исходном OffsetScaleLow=0 исполняется нулевой хвост ResetIdleRecordBases, HL=0, AF=0054, Base0..2=0, прочие поля записи сохраняются
+                ;   при ненулевом OffsetScaleLow сначала записывается wrap8(OffsetScaleLow−2), значение 1 превращается в FF
+                ;   если Component0.High=80, подготовитель сразу возвращается, AF=8042, OffsetScaleLow сохраняет результат двойного DEC, остальные регистры и базы сохранены
+                ;   иначе PrepareObjectOffsetTransform условно увеличивает уже уменьшенный OffsetScaleLow по своему порогу Phase2OrTarget и готовит DE из старого значения и OffsetScaleHigh
                 ;   ApplyObjectOffsetVector вычисляет Base0..2 тремя MultiplySignedScaled, HL, DE, BC, AF, AF' и IYL определяются последним произведением и фазовыми таблицами
                 ;   HL', DE', BC', IX, IYH, I/IM/IFF и paging сохраняются на всех путях, SP после внешнего RET увеличен на два
                 ;   R добавляет 9 M1 на нулевом пути, 14 при недоступной записи либо 10 плюс стоимости подготовителя и вычислителя на полном активном пути
                 ; Corrupt:
-                ;   HL, DE, BC, AF, AF', IYL, R, Unknown10 и условно Unknown24, фазовые операнды, три коэффициента, Base0..2 и до восьми байтов CPU-стека, SP внешним RET
+                ;   HL, DE, BC, AF, AF', IYL, R, OffsetScaleLow и условно OffsetScaleHigh, фазовые операнды, три коэффициента, Base0..2 и до восьми байтов CPU-стека, SP внешним RET
                 ; Note:
                 ;   это исходная цель State00, недостижимые последовательным исполнением байты F68E..F690 сохранены отдельным фрагментом
                 ;   196608 сценариев содержат 131072 родительских входа и 65536 проверок нулевого хвоста, активный вычислитель и три умножителя исполняются реально
@@ -25,15 +25,15 @@
                 ;   полное произведение всех полей записи, аппаратные IRQ, точные T, сборка и нативный запуск не проверялись
                 ; -----------------------------------------
                 ; Проверка исходного управляющего байта, нулевое значение выбирает отдельный хвост сброса общих баз.
-Entry:          LD A, (IX + @FActionRecord.Unknown10)
+Entry:          LD A, (IX + @FActionRecord.OffsetScaleLow)
                 AND A
-                JR Z, @Action.ResetIdleRecordBases.Entry                        ; переход, если Unknown10 равен нулю, обнулить Base0..2 и выполнить внешний RET
+                JR Z, @Action.ResetIdleRecordBases.Entry                        ; переход, если OffsetScaleLow равен нулю, обнулить Base0..2 и выполнить внешний RET
 
                 ; Расчёт управляющего байта двумя DEC, исходная единица оборачивается в FF.
                 DEC A
                 DEC A
                 ; Обновление управляющего байта перед настоящим вызовом подготовителя и вычислителя смещений.
-                LD (IX + @FActionRecord.Unknown10), A
+                LD (IX + @FActionRecord.OffsetScaleLow), A
                 ; Расчёт смещений с возвратом через F68D, недоступная запись возвращается без вычислителя.
                 CALL @Action.PrepareObjectOffsetTransform.Entry
                 RET

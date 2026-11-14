@@ -1,7 +1,7 @@
-; -----------------------------------------
-; сборка исходного Awakenv02.trd средствами SjASMPlus
-; адреса DISP восстанавливают только размещение, заданное оригинальными загрузчиками
-; -----------------------------------------
+                ; -----------------------------------------
+                ; сборка исходного Awakenv02.trd средствами SjASMPlus
+                ; адреса DISP восстанавливают только размещение, заданное оригинальными загрузчиками
+                ; -----------------------------------------
                 DEVICE ZXSPECTRUM48
                 include "../Includes/Const/Include.inc"
                 include "../Includes/Structs/Include.inc"
@@ -257,6 +257,35 @@
                 include "../Source/Files/43_BD3.inc"
                 assert $ == #3000
                 SAVETRD "Awakenv02.trd", "S43.C", 0, 12288
+
+                ; сборка исходного сектора отключённой записи BASIC
+                ORG 0
+                include "../Source/Files/44_BASIC.inc"
+                assert $ == #0100
+                SAVETRD "Awakenv02.trd", "S44.C", 0, 256
+
+                ; сборка исходных секторов отключённой записи RUN
+                include "../Includes/Const/ArchiveRun.inc"
+                ORG 0
+                include "../Source/Files/45_RUN.inc"
+                assert $ == #3D00
+                SAVETRD "Awakenv02.trd", "S45.C", 0, 15616
+
+                ; сборка исходных секторов отключённой записи ENGINE
+                include "../Includes/Const/ArchiveEngine.inc"
+                include "../Includes/Variables/ArchiveEngine.inc"
+                ORG 0
+                include "../Source/Files/46_ENGINE.inc"
+                assert $ == #1100
+                SAVETRD "Awakenv02.trd", "S46.C", 0, 4352
+
+                ; сборка исходных секторов отключённой записи START
+                include "../Includes/Const/ArchiveStart.inc"
+                include "../Source/ArchiveStart/LayerRow.inc"
+                ORG 0
+                include "../Source/Files/47_START.inc"
+                assert $ == #8100
+                SAVETRD "Awakenv02.trd", "S47.C", 0, 33024
 
                 IF _ERRORS = 0
                 LUA PASS3

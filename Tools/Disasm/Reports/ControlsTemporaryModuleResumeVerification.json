@@ -33,7 +33,30 @@
       ],
       "indexed_write_address": 65534,
       "indexed_write_value": 16,
-      "stopped_before_RST38": true
+      "rom_entry": 56,
+      "rom_entry_sp": 6182,
+      "rst_return_address": 32770,
+      "rst_return_word_stored": false,
+      "rom_continuation": {
+        "rom_returns": [
+          [
+            14485,
+            6162,
+            1568
+          ],
+          [
+            11265,
+            6164,
+            52711
+          ]
+        ],
+        "first_bank0_entry": 52711,
+        "changed_opcode_address": 52712,
+        "opcode_writer": 1581,
+        "changed_opcode": 255,
+        "repeated_rom_entry": 56,
+        "repeated_rom_sp": 6164
+      }
     },
     {
       "initial_bitmap": 0,
@@ -66,7 +89,30 @@
       ],
       "indexed_write_address": 65534,
       "indexed_write_value": 16,
-      "stopped_before_RST38": true
+      "rom_entry": 56,
+      "rom_entry_sp": 6182,
+      "rst_return_address": 32770,
+      "rst_return_word_stored": false,
+      "rom_continuation": {
+        "rom_returns": [
+          [
+            14485,
+            6162,
+            1568
+          ],
+          [
+            11265,
+            6164,
+            52711
+          ]
+        ],
+        "first_bank0_entry": 52711,
+        "changed_opcode_address": 52712,
+        "opcode_writer": 1581,
+        "changed_opcode": 255,
+        "repeated_rom_entry": 56,
+        "repeated_rom_sp": 6164
+      }
     },
     {
       "initial_bitmap": 0,
@@ -99,7 +145,30 @@
       ],
       "indexed_write_address": 65534,
       "indexed_write_value": 16,
-      "stopped_before_RST38": true
+      "rom_entry": 56,
+      "rom_entry_sp": 6182,
+      "rst_return_address": 32770,
+      "rst_return_word_stored": false,
+      "rom_continuation": {
+        "rom_returns": [
+          [
+            14485,
+            6162,
+            1568
+          ],
+          [
+            11265,
+            6164,
+            52711
+          ]
+        ],
+        "first_bank0_entry": 52711,
+        "changed_opcode_address": 52712,
+        "opcode_writer": 1581,
+        "changed_opcode": 255,
+        "repeated_rom_entry": 56,
+        "repeated_rom_sp": 6164
+      }
     },
     {
       "initial_bitmap": 85,
@@ -132,7 +201,30 @@
       ],
       "indexed_write_address": 65534,
       "indexed_write_value": 16,
-      "stopped_before_RST38": true
+      "rom_entry": 56,
+      "rom_entry_sp": 6182,
+      "rst_return_address": 32770,
+      "rst_return_word_stored": false,
+      "rom_continuation": {
+        "rom_returns": [
+          [
+            14485,
+            6162,
+            1568
+          ],
+          [
+            11265,
+            6164,
+            52711
+          ]
+        ],
+        "first_bank0_entry": 52711,
+        "changed_opcode_address": 52712,
+        "opcode_writer": 1581,
+        "changed_opcode": 255,
+        "repeated_rom_entry": 56,
+        "repeated_rom_sp": 6164
+      }
     },
     {
       "initial_bitmap": 85,
@@ -165,7 +257,30 @@
       ],
       "indexed_write_address": 65534,
       "indexed_write_value": 16,
-      "stopped_before_RST38": true
+      "rom_entry": 56,
+      "rom_entry_sp": 6182,
+      "rst_return_address": 32770,
+      "rst_return_word_stored": false,
+      "rom_continuation": {
+        "rom_returns": [
+          [
+            14485,
+            6162,
+            1568
+          ],
+          [
+            11265,
+            6164,
+            52711
+          ]
+        ],
+        "first_bank0_entry": 52711,
+        "changed_opcode_address": 52712,
+        "opcode_writer": 1581,
+        "changed_opcode": 255,
+        "repeated_rom_entry": 56,
+        "repeated_rom_sp": 6164
+      }
     },
     {
       "initial_bitmap": 85,
@@ -198,7 +313,30 @@
       ],
       "indexed_write_address": 65534,
       "indexed_write_value": 16,
-      "stopped_before_RST38": true
+      "rom_entry": 56,
+      "rom_entry_sp": 6182,
+      "rst_return_address": 32770,
+      "rst_return_word_stored": false,
+      "rom_continuation": {
+        "rom_returns": [
+          [
+            14485,
+            6162,
+            1568
+          ],
+          [
+            11265,
+            6164,
+            52711
+          ]
+        ],
+        "first_bank0_entry": 52711,
+        "changed_opcode_address": 52712,
+        "opcode_writer": 1581,
+        "changed_opcode": 255,
+        "repeated_rom_entry": 56,
+        "repeated_rom_sp": 6164
+      }
     },
     {
       "initial_bitmap": 165,
@@ -231,7 +369,30 @@
       ],
       "indexed_write_address": 65534,
       "indexed_write_value": 16,
-      "stopped_before_RST38": true
+      "rom_entry": 56,
+      "rom_entry_sp": 6182,
+      "rst_return_address": 32770,
+      "rst_return_word_stored": false,
+      "rom_continuation": {
+        "rom_returns": [
+          [
+            14485,
+            6162,
+            1568
+          ],
+          [
+            11265,
+            6164,
+            52711
+          ]
+        ],
+        "first_bank0_entry": 52711,
+        "changed_opcode_address": 52712,
+        "opcode_writer": 1581,
+        "changed_opcode": 255,
+        "repeated_rom_entry": 56,
+        "repeated_rom_sp": 6164
+      }
     },
     {
       "initial_bitmap": 165,
@@ -264,7 +425,30 @@
       ],
       "indexed_write_address": 65534,
       "indexed_write_value": 16,
-      "stopped_before_RST38": true
+      "rom_entry": 56,
+      "rom_entry_sp": 6182,
+      "rst_return_address": 32770,
+      "rst_return_word_stored": false,
+      "rom_continuation": {
+        "rom_returns": [
+          [
+            14485,
+            6162,
+            1568
+          ],
+          [
+            11265,
+            6164,
+            52711
+          ]
+        ],
+        "first_bank0_entry": 52711,
+        "changed_opcode_address": 52712,
+        "opcode_writer": 1581,
+        "changed_opcode": 255,
+        "repeated_rom_entry": 56,
+        "repeated_rom_sp": 6164
+      }
     },
     {
       "initial_bitmap": 165,
@@ -297,7 +481,30 @@
       ],
       "indexed_write_address": 65534,
       "indexed_write_value": 16,
-      "stopped_before_RST38": true
+      "rom_entry": 56,
+      "rom_entry_sp": 6182,
+      "rst_return_address": 32770,
+      "rst_return_word_stored": false,
+      "rom_continuation": {
+        "rom_returns": [
+          [
+            14485,
+            6162,
+            1568
+          ],
+          [
+            11265,
+            6164,
+            52711
+          ]
+        ],
+        "first_bank0_entry": 52711,
+        "changed_opcode_address": 52712,
+        "opcode_writer": 1581,
+        "changed_opcode": 255,
+        "repeated_rom_entry": 56,
+        "repeated_rom_sp": 6164
+      }
     }
   ],
   "address_consistent_fixed_fixture": 23968,
@@ -310,7 +517,10 @@
   "observed_new_SP": 6184,
   "cleared_8000_byte_changes_indexed_displacement_from_26_to_FF": true,
   "next_8001_byte_is_RST38": true,
-  "stopped_before_ROM_execution": true,
+  "rst_executed_to_rom_entry": true,
+  "original_128k_basic_rom_executed": true,
+  "port_input_profile": "default_ff",
+  "stopped_at_second_rom_entry": true,
   "legitimate_game_entry_relocation_and_temporary_payload_proved": false,
   "changing_backup_core_by_temporary_payload_not_excluded": true,
   "complete_register_RAM_write_multiplicity_R_T_proof": false,

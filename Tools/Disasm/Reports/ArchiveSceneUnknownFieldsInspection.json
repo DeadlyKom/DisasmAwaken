@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "original_engine_sha256": "9c9f6a90d91a5ea52d5a47b2b6b63af63967f1baf252ccb84494c3ab03a9a09d",
+  "original_disk_offset": 569600,
+  "original_physical_bytes_matched": true,
+  "registered_instructions": 1325,
+  "structured_source_bytes": 653,
+  "source_rows_address": 19025,
+  "source_rows_original": 203,
+  "unknown_byte_address": 19030,
+  "unknown_byte_original": 0,
+  "direct_byte_and_word_accesses": [],
+  "indirect_indexed_mutable_or_generated_accesses_excluded": false,
+  "global_unusedness_proved": false,
+  "assembly_executed": false
+}

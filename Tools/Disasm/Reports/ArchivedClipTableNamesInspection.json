@@ -1,0 +1,1535 @@
+{
+  "passed": true,
+  "method": "recognized_text_and_structured_STORM_symbol_search",
+  "queried_names": [
+    "L95"
+  ],
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "text_source_entries": 129,
+  "structured_source_entries": 31,
+  "total_source_entries": 160,
+  "text_source_identities": [
+    {
+      "member": "awk1.trd",
+      "slot": 20,
+      "name": "CNVVOXVDa",
+      "bytes": 507,
+      "sha256": "f4898a38f460b2a909e81c8151fbea40c2d0bc5aed219271d6b2f9544e7d1822"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 21,
+      "name": "vOXEL   a",
+      "bytes": 11678,
+      "sha256": "f851ed34143e371648a67db66a24785ba8f2ed8818a6ca1f3d0d7615eab2ec00"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 22,
+      "name": "LOADI2  a",
+      "bytes": 1557,
+      "sha256": "6b29b61c48190201ac4acb5aeba5526a8315adedc3c57f2ee2a298433d870835"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 23,
+      "name": "TUNEL   a",
+      "bytes": 16066,
+      "sha256": "30879d0619532a02398ac1cc4a46e53b41b3a534a2de657994152f3eb4ea951b"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 25,
+      "name": "RETASM  a",
+      "bytes": 48,
+      "sha256": "7c89c8bf0eeb674ca7f0e438bc5514f5bb981df75d31ae72de25cdac5970698d"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 26,
+      "name": "SPACE   a",
+      "bytes": 1977,
+      "sha256": "06ef12e2008f860fc542634575b14cf1d736815aef823fb3d050162e2f81fa81"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 27,
+      "name": "OBJECTS a",
+      "bytes": 30142,
+      "sha256": "667bc1d503fac87521bb09d163aafbee126783871db0f9eec5f9f543d8cd34ff"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 29,
+      "name": "OBJECTSSa",
+      "bytes": 19548,
+      "sha256": "741bed69f058b401a453b8f357eee3c0f392a5bfeb6ce510187baeb9905be581"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 30,
+      "name": "OBJECTS2a",
+      "bytes": 5648,
+      "sha256": "eeca2d861a13d87e54316838105dbb7433aed605a9b463c52043ee45cbe283d9"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 32,
+      "name": "OBJGENERa",
+      "bytes": 13445,
+      "sha256": "aa6ac99c21cbca0e089c579da7b9080b7919e182c94dfb61a31ed806dd787d7f"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 33,
+      "name": "EQUS    a",
+      "bytes": 6589,
+      "sha256": "75acd09d7dc328ebfad00acea4d40b89f85f04814e03d08cd2803d02577c2d3b"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 34,
+      "name": "DOOM    a",
+      "bytes": 15727,
+      "sha256": "5802701f1ece89b9d14a430cdb80ab3f213f4028a1b6a7956bac958d891037ec"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 35,
+      "name": "INITV   a",
+      "bytes": 1764,
+      "sha256": "5ec918e5f5b0dbdef7f8953f5c86a2dd4d3f93ccf456bf609b2049d121349502"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 36,
+      "name": "MACRO   a",
+      "bytes": 4490,
+      "sha256": "927cda98fb53a00fa87d65b43b4b0c2272b7510639b94068316a872712e49cc1"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 37,
+      "name": "VOXEL   a",
+      "bytes": 12434,
+      "sha256": "22ffdaa5b676eea6da6a41cd7784b9429a5ece25edefef7be7603f108e5f7d78"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 38,
+      "name": "COMPUTE a",
+      "bytes": 7204,
+      "sha256": "d67313cc9121759915c4ccb24377d78498cbe07cd9c7748d29724c1d6695006f"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 39,
+      "name": "STARHSUNa",
+      "bytes": 26232,
+      "sha256": "c003c2695c8093c4a3d10303c333f56b15e8e7e44c791cd0a34a99742d45732b"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 40,
+      "name": "PANEL   a",
+      "bytes": 22990,
+      "sha256": "ada46f41902caacfb4e257f824d1511cbacbc992632d7683e166eb8f24773649"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 41,
+      "name": "HIPER   a",
+      "bytes": 11632,
+      "sha256": "96fbb8335411fa5b6a921ba964fee636a01d56df2bf5a575daccdde6ae727dc3"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 42,
+      "name": "BRAINDOPa",
+      "bytes": 17575,
+      "sha256": "e0a65a84aaa205cee0dfdedc1d18df85f3cf8542b2d75be98aa4876f19e63aa0"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 43,
+      "name": "SETHJRETa",
+      "bytes": 10827,
+      "sha256": "f440eee9560694624f515f2543f8ac1338b5df650582405b759abba1c1d03ba4"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 44,
+      "name": "SETCONTRa",
+      "bytes": 14729,
+      "sha256": "35040cf406447f496aaa8d6a663aeabf3d26cd9320f830d8ebc31129bf1af35e"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 45,
+      "name": "3D-I    a",
+      "bytes": 9448,
+      "sha256": "f2deec43ef73bba2000fa0c044c26a5951898059e35a28db7a025b8806a1981f"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 46,
+      "name": "BRAINPROa",
+      "bytes": 17149,
+      "sha256": "ad80358114b536ec34788268f9eaa74fc8d3e0dbd7cabb61139ee4954c49ecef"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 47,
+      "name": "BODY    a",
+      "bytes": 14817,
+      "sha256": "c1c5da808b640b6f8e6c832239167543328b2fdba72e9483cdc3ffcd17ce40cc"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 48,
+      "name": "GMATRX  a",
+      "bytes": 4614,
+      "sha256": "5a91a3d8671ba0f600647933256d259d8c44264215c351ab885cb033314fae90"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 49,
+      "name": "3DTABS  a",
+      "bytes": 11713,
+      "sha256": "c27de69ee1534f602284b67c27efe937c3d44e8bf94ca898d8300bc6a9e4d6fd"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 50,
+      "name": "SLOWPRO a",
+      "bytes": 23659,
+      "sha256": "2774e2a56618a523fadd57d6edca3db69e30b77a1521dd5eefcd7432edd933b5"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 51,
+      "name": "CLIPMATRa",
+      "bytes": 19731,
+      "sha256": "8eb55885c01f4d05225daa3898ce019ee388c97bc98dd969a44cf835b471ffa4"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 52,
+      "name": "3D-II   a",
+      "bytes": 19615,
+      "sha256": "87716948bf7794841071063a61ccb00a210807c41dadde3d9a852311ea3d7751"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 63,
+      "name": "LABELS  a",
+      "bytes": 6999,
+      "sha256": "be18556bbf497e3068fcc0c924a1493e7e0de3739bb90a8d4fe07ba4edcf7cf6"
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 9,
+      "name": "METHOD  a",
+      "bytes": 240,
+      "sha256": "8e7f755a7b66c00f11555783945be2076c35725ae50bfed45413b3080f217717"
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 10,
+      "name": "BODY_   a",
+      "bytes": 2970,
+      "sha256": "4e60deb76177bfce6cf201a9e0f3bd5180a73979c59400f616ec0d8ef3f2eb2f"
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 11,
+      "name": "CLIPMAT_a",
+      "bytes": 20474,
+      "sha256": "923f5b307fb303549c9ce4ac5c12416ddfbf0c8edd992692179dfa9f0e2e944c"
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 12,
+      "name": "MACRO_  a",
+      "bytes": 3160,
+      "sha256": "efa9cb9fe17a6e1e7b40effa4178c5f8a6f747f00ff2b811c61c8d923de1480d"
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 13,
+      "name": "OBJECTS_a",
+      "bytes": 2117,
+      "sha256": "17ede48dd88a78c5fe492e664b88c5526177e5afd9b16ab83b0e53020b48bfe2"
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 14,
+      "name": "EQUS_   a",
+      "bytes": 6195,
+      "sha256": "d2e2afc1c4ef09be12457f462ff25b5eee2c14dd23cb3ec1791775a4e0601eae"
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 15,
+      "name": "OBJ>OBJ+a",
+      "bytes": 1040,
+      "sha256": "878dabd88853e9c788b5a8b9124c91f830563cbe6546294f70bf978733c50703"
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 16,
+      "name": "3D-II_  a",
+      "bytes": 22931,
+      "sha256": "ca762a87ac075d5de3b7bcf43d529135acd94d03f64c063ebb2971061fb7389a"
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 17,
+      "name": "3D-I_   a",
+      "bytes": 5563,
+      "sha256": "8dcf8c2177a587702063c1672c0dc6ac4abd767a7ed26785ac3ba5d954c40520"
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 18,
+      "name": "3DTABS_ a",
+      "bytes": 1753,
+      "sha256": "da8b6601ddb83954e341a35636276d81755305165e9d5b078a7665625c105324"
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 20,
+      "name": "INIT_   a",
+      "bytes": 3555,
+      "sha256": "3971dbd75fd724d09255b4d185982158ac024377393b02dcc3586dc92b7a4525"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 9,
+      "name": "METHOD  a",
+      "bytes": 240,
+      "sha256": "8e7f755a7b66c00f11555783945be2076c35725ae50bfed45413b3080f217717"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 10,
+      "name": "BODY_   a",
+      "bytes": 2970,
+      "sha256": "4e60deb76177bfce6cf201a9e0f3bd5180a73979c59400f616ec0d8ef3f2eb2f"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 11,
+      "name": "CLIPMAT_a",
+      "bytes": 20474,
+      "sha256": "923f5b307fb303549c9ce4ac5c12416ddfbf0c8edd992692179dfa9f0e2e944c"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 12,
+      "name": "MACRO_  a",
+      "bytes": 3160,
+      "sha256": "efa9cb9fe17a6e1e7b40effa4178c5f8a6f747f00ff2b811c61c8d923de1480d"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 13,
+      "name": "OBJECTS_a",
+      "bytes": 2117,
+      "sha256": "17ede48dd88a78c5fe492e664b88c5526177e5afd9b16ab83b0e53020b48bfe2"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 14,
+      "name": "EQUS_   a",
+      "bytes": 6195,
+      "sha256": "d2e2afc1c4ef09be12457f462ff25b5eee2c14dd23cb3ec1791775a4e0601eae"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 15,
+      "name": "OBJ>OBJ+a",
+      "bytes": 1040,
+      "sha256": "878dabd88853e9c788b5a8b9124c91f830563cbe6546294f70bf978733c50703"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 16,
+      "name": "3D-II_  a",
+      "bytes": 22931,
+      "sha256": "ca762a87ac075d5de3b7bcf43d529135acd94d03f64c063ebb2971061fb7389a"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 17,
+      "name": "3D-I_   a",
+      "bytes": 5563,
+      "sha256": "8dcf8c2177a587702063c1672c0dc6ac4abd767a7ed26785ac3ba5d954c40520"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 18,
+      "name": "3DTABS_ a",
+      "bytes": 1753,
+      "sha256": "da8b6601ddb83954e341a35636276d81755305165e9d5b078a7665625c105324"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 20,
+      "name": "INIT_   a",
+      "bytes": 3555,
+      "sha256": "3971dbd75fd724d09255b4d185982158ac024377393b02dcc3586dc92b7a4525"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 32,
+      "name": "EQUS    C",
+      "bytes": 2731,
+      "sha256": "a1d78397c2e2da944d945d4955578512f9e72fa80ba401dd93a32c8748935407"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 33,
+      "name": "DATAM   C",
+      "bytes": 5327,
+      "sha256": "ac26fe8afbaf776f8182eed1234f408edc3355a3347503f3b0e5a70603b1dd10"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 34,
+      "name": "S3D     C",
+      "bytes": 12834,
+      "sha256": "4ebad3763d98f6412a7ba834ca0f72cf478157ad74bf03f8f8c60b2470bf3c1e"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 35,
+      "name": "VSPRITE C",
+      "bytes": 28721,
+      "sha256": "50b634228e814573b32b33d47946d7bbef75542832e95ba7d4dd06ad5054e828"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 36,
+      "name": "VOXL    C",
+      "bytes": 13620,
+      "sha256": "49177c552339133c2231d9fa743b1e35bb6771d909857e71afc2023e88c72556"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 37,
+      "name": "XCLP    C",
+      "bytes": 20889,
+      "sha256": "c399a9dfa9e92e7d9bb8b754af6e3da75a6f8928e4b852ba124c4ff8e4dd85e8"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 38,
+      "name": "XR1     C",
+      "bytes": 10591,
+      "sha256": "d372e2382c0e8e4459bcb16debc3825ceadaab389347e0d8ea7824c9a9f0932a"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 39,
+      "name": "OBJX    C",
+      "bytes": 4057,
+      "sha256": "425471010b6bce8076b0c38c6ca657bbfbd67cdba5029ac3c7f93362ed127900"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 40,
+      "name": "BLOK1   C",
+      "bytes": 4509,
+      "sha256": "0bf4f624e33ef0c9a8c6d7f3c11231fcbef84699e92b02b22b527065ceb3a8ad"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 41,
+      "name": "LOADER  C",
+      "bytes": 438,
+      "sha256": "d41b5a255b715f9ec5ae0df0114f3cbb1e16de603c7568e10cddbed7d123182e"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 42,
+      "name": "CNVVOXSPC",
+      "bytes": 303,
+      "sha256": "a48e17bdcfa6add07ee4f9c690748c3d108f235b300bd936e13cfe8e269520df"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 43,
+      "name": "CNVVOXTBC",
+      "bytes": 479,
+      "sha256": "8a855124b709ffe83682ab3c1733e24c354ac7a56f1d23e1a2e6099f0dfa508c"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 44,
+      "name": "CNVVOXS3C",
+      "bytes": 443,
+      "sha256": "4aea23a844d949168d0a7267d1132b7c528b342c4e823e0e9c7cc74aa3802f8e"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 45,
+      "name": "INVTAB3DC",
+      "bytes": 349,
+      "sha256": "02f38916e786e275a92867f8e0666fb448a4935777d689d1d18435c07cfc1333"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 46,
+      "name": "LAND2   C",
+      "bytes": 17225,
+      "sha256": "1cf587ed29fce71e088def9e3b08a302e92d667e3379332774bede6d41132a69"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 47,
+      "name": "LAND    C",
+      "bytes": 15557,
+      "sha256": "0ec6278d2f84a8731a76a08ae68b4b1949da3b823e8020d3b49c5c2cc1270d54"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 48,
+      "name": "INVTAB3Da",
+      "bytes": 239,
+      "sha256": "9829d9c93c277099c8f50f079c33a6803a37004532b8aa9916cf8c0d2d6198f5"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 49,
+      "name": "CNVVOXS3a",
+      "bytes": 295,
+      "sha256": "71cb1eb4e0a6fc53e098e4669bc887b5cf66b075b376b4863ee38e920b84bd2b"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 50,
+      "name": "CNVVOXTBa",
+      "bytes": 320,
+      "sha256": "a31014b50defbaadd1c527585b46668666a41709230581a825cdba80f9984304"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 51,
+      "name": "CNVVOXSPa",
+      "bytes": 211,
+      "sha256": "0ee09a38721ac008871f24933e550a50ba029b2cf791a958877e4562de6122eb"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 52,
+      "name": "LOADER  a",
+      "bytes": 286,
+      "sha256": "b39bde92d696467c55f3ee65d45c0c07b5efd5c2e459491db78e73286040c291"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 53,
+      "name": "BLOK1   a",
+      "bytes": 2767,
+      "sha256": "9e4c01fefa9549da7cac76c4daa1b4fca7d7c209792472ab7a123fa651c33589"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 54,
+      "name": "OBJX    a",
+      "bytes": 3056,
+      "sha256": "5f9222c7296ec6ba1c17967a81bf1ce1517f23bed58b11929b4317eb013bff09"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 55,
+      "name": "XR1     a",
+      "bytes": 7092,
+      "sha256": "827477e5486fbc6926adb82108399babe7a9932fd73489b3d0c81a2d6d9dd370"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 56,
+      "name": "XCLP    a",
+      "bytes": 13097,
+      "sha256": "4b4f358eab7cf83507d8443c48bb747e869f57c3cc35f93f7df759b1a5604b99"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 57,
+      "name": "VOXL    a",
+      "bytes": 8418,
+      "sha256": "ab3547bcbd9a99c82be0a2e2d30429004d580c992fab7efd2db8ed284a34ab71"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 58,
+      "name": "VSPRITE a",
+      "bytes": 19847,
+      "sha256": "193f2c56876f0eba8afbc10fde9e07cdc95725d29dd89df511e88b9eab9a9341"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 59,
+      "name": "S3D     a",
+      "bytes": 8523,
+      "sha256": "f424e604f28ed50c4c37a227055291540050420d28cb22f89cc4b5be54f90c24"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 60,
+      "name": "DATAM   a",
+      "bytes": 4649,
+      "sha256": "35b24feb72295ac1746e161e64a756c029b61f5379c1a4c32086885f26eaccec"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 61,
+      "name": "LAND    a",
+      "bytes": 24341,
+      "sha256": "b660f8d77c7471da641b499d3a00f8ffe6c16ad9e04a8965be25282d43ab7f2f"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 62,
+      "name": "MACRO   a",
+      "bytes": 4543,
+      "sha256": "f0b6fd33458c2275ed23b07b02d807e6080b238ce8b2e1cec55557e239da8d1b"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 63,
+      "name": "EQUS    a",
+      "bytes": 2638,
+      "sha256": "2099612ce24066b20f95813b21f669e721cffc5ec578db4ae13f2edddbfab72a"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 64,
+      "name": "XR2     C",
+      "bytes": 26798,
+      "sha256": "d1c3650530d1e4ad699bc16a58dc6ef330bca0360c6d760ef0055c4d8386830d"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 65,
+      "name": "XR22    C",
+      "bytes": 4788,
+      "sha256": "f6d22a440219415599f3d2e0494966b3133323b4a9b1b16d10be3c232e1aac7e"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 66,
+      "name": "XR2     a",
+      "bytes": 20530,
+      "sha256": "db9a9fe338e5df2b25f88013975d8445937608fb4cb1f98d29db1486c8810b9a"
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 8,
+      "name": "SOUND=  X",
+      "bytes": 484,
+      "sha256": "1212a23bd8192fff0793159d316c75fdfd24003828d66b4cd9d241e2fb0277b9"
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 9,
+      "name": "SHOW    X",
+      "bytes": 713,
+      "sha256": "afd758b0559daf966862c68da2b068add6b0e3ec1ddb790161d1402a50c043e1"
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 10,
+      "name": "SOUND;  X",
+      "bytes": 438,
+      "sha256": "783dd5541d73cf8debd48d58e59c00a1c340eff230a5c484d258e323fcfd884b"
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 11,
+      "name": "CONV----X",
+      "bytes": 325,
+      "sha256": "76a12c8aeda42280544319ebc561f2d57899af129092c370f07d9d48d29e2679"
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 22,
+      "name": "SOUND=1 X",
+      "bytes": 451,
+      "sha256": "de7b1c5b2c4779f4b1e2ac52ff81bb5dd51c60f8a448187816840acc6743666e"
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 23,
+      "name": "SOUND=1+X",
+      "bytes": 613,
+      "sha256": "ca58709fa303b9bf2ad91162d8bef91fa95e66f215222ebe0fc481efd2aebc2c"
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 24,
+      "name": "SOUND=2+X",
+      "bytes": 688,
+      "sha256": "5203adae67b579b4e908667bae15da975af2671c11c1309306a005738d3aed30"
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 27,
+      "name": "FILTER  X",
+      "bytes": 913,
+      "sha256": "ce61c2b42cc9ad55423bfe4a5ff800b963aec5564f5458ac2765a0b4821a5cba"
+    },
+    {
+      "member": "awk5.trd",
+      "slot": 29,
+      "name": "SOUND=3+X",
+      "bytes": 939,
+      "sha256": "371f39f9490dac97b35dd1aa7505db5f3d70b4364cedfbeb3dc2c4ea5fcc0ab5"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 22,
+      "name": "help    t",
+      "bytes": 3758,
+      "sha256": "9b572d0492fafc3ab2f20bc1af910854112a1969e69c9e3350f8a6935a347490"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 23,
+      "name": "OBJX    a",
+      "bytes": 6738,
+      "sha256": "8dbdbff8d9fa4814f6e1e3aa775363df07e83cd3772c41bd93f7b6f6b349e8d6"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 25,
+      "name": "PEREKOD a",
+      "bytes": 676,
+      "sha256": "c31551a7cea11e298ccdd33ef26d3487437cdcfe37e2b825623891185ec05c65"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 26,
+      "name": "CLPXR1  a",
+      "bytes": 21375,
+      "sha256": "80be80ab5d3a79dd1037b64466d982b27c168013b3a4dafc1ae84905ae227672"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 27,
+      "name": "DRAWLIN a",
+      "bytes": 22167,
+      "sha256": "d645c1da99c5c8e350c68697ee25bbbecb20b71201eb02ee10d92650e1f101ae"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 28,
+      "name": "XR2     a",
+      "bytes": 21351,
+      "sha256": "31c54a7cfc5e4f96780686e73822075208ee207222aa32a6256ceeeefcefb3d9"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 29,
+      "name": "HELP    a",
+      "bytes": 1130,
+      "sha256": "4bad0fd83108da09d2d8eb67a541fc861ca05f9ac007f0e598d4bb6f37d18fdc"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 30,
+      "name": "CIRCMATHa",
+      "bytes": 16719,
+      "sha256": "ada4dbf109da603d7e364a78b0abe75e5ce13c35c5c658f7714696d738503c2b"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 32,
+      "name": "ship    t",
+      "bytes": 1683,
+      "sha256": "c1466a6b62bdc86ec7eb4de05d83498a509a9d47642d61c3f02b87ef8a87856e"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 33,
+      "name": "skim    t",
+      "bytes": 686,
+      "sha256": "377d909fd092b94327c3e00f56a336d90a896e22d4d18e6409beb28a26f20c5b"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 34,
+      "name": "BODY3D  a",
+      "bytes": 2847,
+      "sha256": "c88c8c25ea14299cac8485d316b719f36c7d9238d85a8de7b3aeb739a64f73b0"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 35,
+      "name": "MACRO   a",
+      "bytes": 2890,
+      "sha256": "f0d0f396b0bed0cadeedb9a25eda2ee1e6e9b0bb13a1eb6ff936238ac36d864f"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 36,
+      "name": "BLOCK2  a",
+      "bytes": 7056,
+      "sha256": "abb127ad0c421155ef9f9d416fb151786ac723de156096087ca39fb16f5a5da4"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 37,
+      "name": "KARTA   a",
+      "bytes": 27626,
+      "sha256": "5abfb95cdb15b15e42914c60fb7f2dc3ebb2b4de7880fadeb0781a76b29e49d7"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 40,
+      "name": "DATA3D  a",
+      "bytes": 4327,
+      "sha256": "8087ab12cbf7fcaa5b298fcfb9e25047e2f4aa15d493c5c5d6141a896657abbe"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 41,
+      "name": "SCR>TOKNa",
+      "bytes": 587,
+      "sha256": "011a3933020d7f5cda5006830b142ea97e9a66e0d6006be65df7c7dd867a5aea"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 43,
+      "name": "LOADER  a",
+      "bytes": 1759,
+      "sha256": "4ead21c3791e93b5a8d3c84c2c3f94600818643a3ad732862a4622a5cbe5222b"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 44,
+      "name": "BODY    a",
+      "bytes": 10670,
+      "sha256": "a98a010936094c30a677ace425562c6bac51c4e9ed9ffd1076719c696d015912"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 45,
+      "name": "OBR2    a",
+      "bytes": 8665,
+      "sha256": "5c582b5473986ccc6918e5863882cad2cb2baf10f49a7085c61ad44500682c69"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 46,
+      "name": "BODYOCURa",
+      "bytes": 11721,
+      "sha256": "3a17ab69c75e89d03ba3abf7fe05f51a0e0bfb72a19e47bffa428714c40f3a48"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 47,
+      "name": "DOPPROC a",
+      "bytes": 15456,
+      "sha256": "c0e6c924afb3e34d4fea58f8285a0c4c62a1abe1f7966543426abcc15aacb364"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 48,
+      "name": "LANG    a",
+      "bytes": 27635,
+      "sha256": "5ef72266af912cac2c8764c771ff55b0d736d061ab860c953ffdd6d8783fedb1"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 49,
+      "name": "DOS     a",
+      "bytes": 680,
+      "sha256": "730b22e2f7b55c097932b296556feeb606195a232805805a7ca39cf06e7849d1"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 50,
+      "name": "C_SCENARt",
+      "bytes": 1500,
+      "sha256": "1d8387118c1f539afc7ef633949550093a11ba3268629d378816d59d84078506"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 51,
+      "name": "PNT     a",
+      "bytes": 12016,
+      "sha256": "bc5a7a7ca14dd1955edc5f9b5ecad6750f37a70c416b4a4b53fd2e50e3e6cfe9"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 52,
+      "name": "OBR     a",
+      "bytes": 26537,
+      "sha256": "fae0bf2a20cb9557916a5956ffeb23d152cad5c45bf53bc2a488c85a5ae516a8"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 53,
+      "name": "OBJECT  a",
+      "bytes": 6023,
+      "sha256": "18080d1d06ba52061082bcb6e13112a8d39b2d01b8a94671a76a57beb36ac25c"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 54,
+      "name": "EQUS    a",
+      "bytes": 1576,
+      "sha256": "eff491ccf2176e7d02cfa55a6f57433d7c3e2540f101e6426613e81257d614f9"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 55,
+      "name": "OBJ     a",
+      "bytes": 24248,
+      "sha256": "1417901868547f90e81d97a5ab50e86fcf1d270fc470d6ed69c1d70cbe15e48c"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 56,
+      "name": "DATA_M  a",
+      "bytes": 18856,
+      "sha256": "3fa64e86ce68bf92757fff2e2384a3c681e9537ccb105c20f0a39cc4dc9fe3bf"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 57,
+      "name": "DATAT   a",
+      "bytes": 16493,
+      "sha256": "cfc29c6c832e8cf56052ba5da91940179f8b2b8a00fd0da46fc06a7f16a0503f"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 58,
+      "name": "TREE    t",
+      "bytes": 494,
+      "sha256": "14e12ff588d10f3358df84f18775a615bde7c38fd3f47968b6a86f5545b80064"
+    }
+  ],
+  "text_mentions": [
+    {
+      "member": "awk1.trd",
+      "slot": 51,
+      "source": "CLIPMATRa",
+      "line": 86,
+      "identifier": "L95",
+      "raw_line_hex": "068c05200683037b2c4c39352e68",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "068c052b0683057c",
+        "068c05200683037c2c057e",
+        "068c05200683037b2c4c39352e68",
+        "068c05200683037a2c057d",
+        "068c052f0682057b"
+      ]
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 51,
+      "source": "CLIPMATRa",
+      "line": 958,
+      "identifier": "L95",
+      "raw_line_hex": "068c05200683037b2c4c39352e68",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "068c052b0683057c",
+        "068c05200683037c2c057e",
+        "068c05200683037b2c4c39352e68",
+        "068c05200683037a2c057d",
+        "068c052f0682057b"
+      ]
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 51,
+      "source": "CLIPMATRa",
+      "line": 1381,
+      "identifier": "L95",
+      "raw_line_hex": "4c39353a",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "",
+        "068c41445258583030",
+        "4c39353a",
+        "068c0567068353544f525f59315f58312e62",
+        "068c05670683435f58595f615844592e62"
+      ]
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 63,
+      "source": "LABELS  a",
+      "line": 170,
+      "identifier": "L95",
+      "raw_line_hex": "4c3935068c04663532393932",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "4d554c4c068b04663530393332",
+        "4b4f524e068b04663439313532",
+        "4c3935068c04663532393932",
+        "4e4558544c31068904663630343136",
+        "4c3937068c0466313539"
+      ]
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 11,
+      "source": "CLIPMAT_a",
+      "line": 86,
+      "identifier": "L95",
+      "raw_line_hex": "068c05200683037b2c4c39352e68",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "068c052b0683057c",
+        "068c05200683037c2c057e",
+        "068c05200683037b2c4c39352e68",
+        "068c05200683037a2c057d",
+        "068c052f0682057b"
+      ]
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 11,
+      "source": "CLIPMAT_a",
+      "line": 1013,
+      "identifier": "L95",
+      "raw_line_hex": "068c05200683037b2c4c39352e68",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "068c052b0683057c",
+        "068c05200683037c2c057e",
+        "068c05200683037b2c4c39352e68",
+        "068c05200683037a2c057d",
+        "068c052f0682057b"
+      ]
+    },
+    {
+      "member": "awk3.trd",
+      "slot": 11,
+      "source": "CLIPMAT_a",
+      "line": 1436,
+      "identifier": "L95",
+      "raw_line_hex": "4c39353a",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "",
+        "068c41445258583030",
+        "4c39353a",
+        "068c0567068353544f525f59315f58312e62",
+        "068c05670683435f58595f615844592e62"
+      ]
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 11,
+      "source": "CLIPMAT_a",
+      "line": 86,
+      "identifier": "L95",
+      "raw_line_hex": "068c05200683037b2c4c39352e68",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "068c052b0683057c",
+        "068c05200683037c2c057e",
+        "068c05200683037b2c4c39352e68",
+        "068c05200683037a2c057d",
+        "068c052f0682057b"
+      ]
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 11,
+      "source": "CLIPMAT_a",
+      "line": 1013,
+      "identifier": "L95",
+      "raw_line_hex": "068c05200683037b2c4c39352e68",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "068c052b0683057c",
+        "068c05200683037c2c057e",
+        "068c05200683037b2c4c39352e68",
+        "068c05200683037a2c057d",
+        "068c052f0682057b"
+      ]
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 11,
+      "source": "CLIPMAT_a",
+      "line": 1436,
+      "identifier": "L95",
+      "raw_line_hex": "4c39353a",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "",
+        "068c41445258583030",
+        "4c39353a",
+        "068c0567068353544f525f59315f58312e62",
+        "068c05670683435f58595f615844592e62"
+      ]
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 34,
+      "source": "S3D     C",
+      "line": 53,
+      "identifier": "L95",
+      "raw_line_hex": "4c3935",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "",
+        "20202020202020204f524720245e",
+        "4c3935",
+        "20202020202020204442204c636562315d",
+        "20202020202020204442204c636466365d"
+      ]
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 37,
+      "source": "XCLP    C",
+      "line": 61,
+      "identifier": "L95",
+      "raw_line_hex": "20202020202020204c4420482c4c39355b",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "20202020202020204f52204c",
+        "20202020202020204c44204c2c41",
+        "20202020202020204c4420482c4c39355b",
+        "20202020202020204c4420452c28484c29",
+        "2020202020202020494e432048"
+      ]
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 37,
+      "source": "XCLP    C",
+      "line": 1172,
+      "identifier": "L95",
+      "raw_line_hex": "20202020202020204c4420482c4c39355b",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "20202020202020204f52204c",
+        "20202020202020204c44204c2c41",
+        "20202020202020204c4420482c4c39355b",
+        "20202020202020204c4420452c28484c29",
+        "2020202020202020494e432048"
+      ]
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 56,
+      "source": "XCLP    a",
+      "line": 60,
+      "identifier": "L95",
+      "raw_line_hex": "06880520037b2c4c39352e68",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "0688052b057c",
+        "06880520037c2c057e",
+        "06880520037b2c4c39352e68",
+        "06880520037a2c057d",
+        "0688052f057b"
+      ]
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 56,
+      "source": "XCLP    a",
+      "line": 1171,
+      "identifier": "L95",
+      "raw_line_hex": "06880520037b2c4c39352e68",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "0688052b057c",
+        "06880520037c2c057e",
+        "06880520037b2c4c39352e68",
+        "06880520037a2c057d",
+        "0688052f057b"
+      ]
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 59,
+      "source": "S3D     a",
+      "line": 53,
+      "identifier": "L95",
+      "raw_line_hex": "4c3935",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "",
+        "068c41445258583030",
+        "4c3935",
+        "068805674c636562312e62",
+        "068805674c636466362e62"
+      ]
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 26,
+      "source": "CLPXR1  a",
+      "line": 82,
+      "identifier": "L95",
+      "raw_line_hex": "068c05200683037b2c4c39352e68",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "068c052b0683057c",
+        "068c05200683037c2c057e",
+        "068c05200683037b2c4c39352e68",
+        "068c05200683037a2c057d",
+        "068c052f0682057b"
+      ]
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 26,
+      "source": "CLPXR1  a",
+      "line": 1046,
+      "identifier": "L95",
+      "raw_line_hex": "068c05200683037b2c4c39352e68",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "068c052b0683057c",
+        "068c05200683037c2c057e",
+        "068c05200683037b2c4c39352e68",
+        "068c05200683037a2c057d",
+        "068c052f0682057b"
+      ]
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 27,
+      "source": "DRAWLIN a",
+      "line": 623,
+      "identifier": "l95",
+      "raw_line_hex": "068c05200683037b2c6c39352e68",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "068c052b0683057c",
+        "068c05200683037c2c057e",
+        "068c05200683037b2c6c39352e68",
+        "068c05200683037a2c057d",
+        "068c052f0682057b"
+      ]
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 27,
+      "source": "DRAWLIN a",
+      "line": 1561,
+      "identifier": "l95",
+      "raw_line_hex": "6c3935",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "068c41445258583030",
+        "",
+        "6c3935",
+        "068c056706836c636562312e62",
+        "068c056706836c636466362e62"
+      ]
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 40,
+      "source": "DATA3D  a",
+      "line": 38,
+      "identifier": "L95",
+      "raw_line_hex": "4c3935",
+      "text_match_not_automatically_instruction": true,
+      "context_hex": [
+        "54425858320687056906832330333030",
+        "",
+        "4c3935",
+        "068c056706834c636562312e62",
+        "068c056706834c636466362e62"
+      ]
+    }
+  ],
+  "structured_storm_inspection": {
+    "passed": true,
+    "method": "structured_STORM_symbol_comment_and_literal_search",
+    "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+    "queried_names": [
+      "L95"
+    ],
+    "source_entries": 31,
+    "records": 18123,
+    "decoded_symbol_occurrences": 5027,
+    "comment_fragments": 1512,
+    "string_literal_fragments": 39,
+    "source_identities": [
+      {
+        "member": "awk2.trd",
+        "slot": 9,
+        "name": "CNVVOXSPC",
+        "bytes": 125,
+        "sha256": "57e7ab29288eaefd19c1d7fcf2d876089cb46d55f12e3d28b5c7270e6cb6dda1"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 12,
+        "name": "CNVVOXTBC",
+        "bytes": 115,
+        "sha256": "a9f401926bffbb68bcd07c5d8fd1777a2fab3fbd36f4866b3844b8b997850279"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 16,
+        "name": "VOXL    C",
+        "bytes": 3337,
+        "sha256": "d8b93838744e97ab6b37857bc79b6f2a634c025a559cdf3f76f425b7e2ad750a"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 18,
+        "name": "VOXP    C",
+        "bytes": 7428,
+        "sha256": "07413325be1a4d83bda26f9c223468eec9746fcedc2128e95d96dca650fdc86f"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 19,
+        "name": "VOXEL   C",
+        "bytes": 4798,
+        "sha256": "818fb391586ceb3c7713bd96a5e9a5936204a091c3a2a3fb15cb2d25f542bcc0"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 21,
+        "name": "BLK1    C",
+        "bytes": 4458,
+        "sha256": "3ef8ba2729f933db0b6816fc9cd255cbc758919c279cd6edb9bc4eb956d8e706"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 22,
+        "name": "BLK2    C",
+        "bytes": 5386,
+        "sha256": "ddc5766e16f86a1e5b9b4c17acc19cb7036c344f40dea2420c71d74463341207"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 23,
+        "name": "BLK3    C",
+        "bytes": 357,
+        "sha256": "e3798b91a3eb86f4468547e88f2c40d928faaf7a4809b922a99599aee9b41cf1"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 24,
+        "name": "BLK5    C",
+        "bytes": 416,
+        "sha256": "e95aa4ae72a70af0d4229246c1af189223632533d91579f28a7d5acfbea7c3d2"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 25,
+        "name": "BLK6    C",
+        "bytes": 3393,
+        "sha256": "4bbb116eca4e8cd6155e58e582eb1ea72ebe823b4d76d0826126bf47321249f4"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 26,
+        "name": "BLK7    C",
+        "bytes": 3902,
+        "sha256": "bde59fa0ce146859605b4a3c332dcb7627366247ca58ddf7154b524db2abd808"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 29,
+        "name": "XCLP    C",
+        "bytes": 6878,
+        "sha256": "1f359a35fd8aa03413cdc218a45da29e31a54d0fcd0a0b651ae504e223afbef3"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 32,
+        "name": "INVTAB3DC",
+        "bytes": 95,
+        "sha256": "59ff4a634a1d57bcef2e10ec3f2bd9f1ae96b05ce2af5c84bddbf2ca74690a7b"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 33,
+        "name": "xR2     C",
+        "bytes": 10029,
+        "sha256": "dca27c2532611d2562fc9594566c61709db4cdbdaee2eb8eae8456d399b87ab9"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 39,
+        "name": "CNVVOXS3C",
+        "bytes": 180,
+        "sha256": "d04b6216048bc23db1d5b961b01bf2da76623342691053ff2f103f9466c6de10"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 45,
+        "name": "NXT     C",
+        "bytes": 4272,
+        "sha256": "39ca5cfb8808f2c94ad9f531701fce85afc613407a939dbfbbcd395c129bd910"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 47,
+        "name": "SERV    C",
+        "bytes": 1417,
+        "sha256": "45639ea5933eb2775f75096c8a182a68aaf1a5ec4a9c5978287491dc0dd2e061"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 48,
+        "name": "DATAM   C",
+        "bytes": 4074,
+        "sha256": "f45a34cf3c9df53b68d30a88da503882ce41b0f320e215516a176e1a3e9302bb"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 49,
+        "name": "EQUS    C",
+        "bytes": 2214,
+        "sha256": "7f0afda6578673cccc953eaf6c1f2a298ec2d66baf580aa17b7c533e86b5558f"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 50,
+        "name": "OBJX    C",
+        "bytes": 1595,
+        "sha256": "9ea827d40f36e016fc9372d53d28d5cc649e57e8a6b61ae0ff87195ed91fc684"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 61,
+        "name": "VXXX    C",
+        "bytes": 5171,
+        "sha256": "deb0f6477375af9bfbd718a479a55f707a0599e8442b925a15580a4aad3f7468"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 62,
+        "name": "XR1     C",
+        "bytes": 4272,
+        "sha256": "39ca5cfb8808f2c94ad9f531701fce85afc613407a939dbfbbcd395c129bd910"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 64,
+        "name": "LAND    C",
+        "bytes": 11518,
+        "sha256": "e8d5def3b6e55cdfa50bba75e7efd5d9e8c936283b0b534966aa6790c9bdf63d"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 65,
+        "name": "LOADER  C",
+        "bytes": 162,
+        "sha256": "eae56ceea89fd9c5c75b1b94e190ee59807af851f29094a4b0bb90f34437ce0f"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 66,
+        "name": "VSPRITE C",
+        "bytes": 11466,
+        "sha256": "ff4d93857ebcc71bcc90056872aea681f5e67c1d63a0b97ed2a1fde8d3b79bf1"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 67,
+        "name": "S3D     C",
+        "bytes": 5269,
+        "sha256": "7ff9180c9f346b395cab7f26907a8cf369f9f0bf7bc5a657e942a257c6bccc51"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 68,
+        "name": "XR2     C",
+        "bytes": 10427,
+        "sha256": "31cf21ed762bb14397381d2f333876e93a6eb67b77ec63c3d1087897a4118ad7"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 69,
+        "name": "BLOK1   C",
+        "bytes": 1423,
+        "sha256": "72da49c98c38134d81f7b6924634ebfb5ed7e00fd3a3e8c4fb6c5e0611009e54"
+      },
+      {
+        "member": "awk5.trd",
+        "slot": 14,
+        "name": "LOAD+   C",
+        "bytes": 662,
+        "sha256": "45210bda98b215e36c5907ff6ea8bf11e92cf1da453959df99031549303e9ab4"
+      },
+      {
+        "member": "awk5.trd",
+        "slot": 15,
+        "name": "INVDISK C",
+        "bytes": 115,
+        "sha256": "8afad1145e98f77fa57c833fca3aace2f071603b896bf3e49ab956776d941b8d"
+      },
+      {
+        "member": "awk5.trd",
+        "slot": 16,
+        "name": "LOAD    C",
+        "bytes": 767,
+        "sha256": "c6b82becdcc30eedf8f8f21dd654c2721619324734321d0c765616a2b69ba61f"
+      }
+    ],
+    "mentions": [
+      {
+        "member": "awk2.trd",
+        "slot": 29,
+        "source": "XCLP    C",
+        "line": 61,
+        "file_offset": 305,
+        "original_record_hex": "3483cb0985f8",
+        "kind": "operand_symbol",
+        "byte_offset": 2,
+        "name": "L95"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 29,
+        "source": "XCLP    C",
+        "line": 1172,
+        "file_offset": 6813,
+        "original_record_hex": "3483cb0985f8",
+        "kind": "operand_symbol",
+        "byte_offset": 2,
+        "name": "L95"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 67,
+        "source": "S3D     C",
+        "line": 53,
+        "file_offset": 576,
+        "original_record_hex": "cb4985",
+        "kind": "definition",
+        "byte_offset": 0,
+        "name": "L95"
+      }
+    ],
+    "binary_source_not_treated_as_CR_text": true,
+    "numeric_or_aliased_accesses_excluded": false,
+    "computed_or_indirect_accesses_excluded": false,
+    "current_consumers_proved": false,
+    "semantic_field_names_established": false,
+    "assembly_executed": false,
+    "native_execution": false
+  },
+  "numeric_or_aliased_accesses_excluded": false,
+  "computed_or_indirect_accesses_excluded": false,
+  "same_identifier_does_not_prove_same_address_across_versions": true,
+  "current_consumers_proved": false,
+  "semantic_field_names_established": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

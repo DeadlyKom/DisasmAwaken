@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "total_cases": 65538,
+  "all_HL_words": 65536,
+  "modified_header_profiles": 2,
+  "original_header_values": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "extra_entry": 58783,
+  "continuation": 58784,
+  "original_game_path_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

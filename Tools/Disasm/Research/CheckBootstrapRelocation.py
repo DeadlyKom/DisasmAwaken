@@ -21,7 +21,9 @@ def main():
             base[bank][address&0x3FFF]=value
         source_data=raw[source-0x6000:source-0x6000+size]
         memory=RecordedBanks(banks=[bytearray(b) for b in base],out7ffd=16)
-        simulator=Simulator(memory);cases=0
+        simulator=Simulator(memory,config={'fast_ldir':False});cases=0
+        # Повтор LDIR даёт два M1, собственные инструкции вне пяти либо двух циклов посчитаны отдельно.
+        m1_cost=28+2*(0x1AFF+0x1800+0x180+0x17F+0x1FA) if region=='ActionBoot' else 9+2*(0x2FF+0x2B5)
         fixtures=[(16,flags,stack) for flags in range(256) for stack in (0x5FFE,0xBFFE,0x9AFE)]
         if region=='ActionBoot':fixtures=[(paging,paging*4+variant,0xBFFE if variant&1 else 0x5FFE)
             for paging in range(64) for variant in range(4)]
@@ -34,6 +36,7 @@ def main():
                 '^HL':0xFEDC,'^DE':0xBA98,'^BC':0x7654,'^AF':0x3210,
                 'SP':stack,'PC':entry},None,False)
             initial[14],initial[26],initial[27]=flags,flags&1,flags%3
+            initial[15]=(flags*37)&255
             expected=[bytearray(b) for b in memory.banks];writes=[]
 
             def put(address,value,bank=None):
@@ -69,12 +72,24 @@ def main():
             wanted[0:8]=[final_a,final_f,0,0,(destination+size)>>8,(destination+size)&255,
                 (source+size)>>8,(source+size)&255]
             wanted[PC]=destination
+            wanted[15]=(initial[15]&128)|((initial[15]+m1_cost)&127)
             simulator.registers[:]=initial
             ports=PortTrace(simulator);simulator.set_tracer(ports)
             memory.writes=[];memory.recording=True
-            simulator.run(start=entry,stop=destination);memory.recording=False
+            # Проверка полного M1 не сводится к совпадению конечного R по модулю 128.
+            measured_m1=0
+            for _ in range(20000):
+                if simulator.registers[PC]==destination:break
+                before=simulator.registers[15]
+                simulator.run()
+                increment=(simulator.registers[15]-before)&127
+                assert increment in (1,2),(region,simulator.registers[PC],increment)
+                measured_m1+=increment
+            else:raise AssertionError(('нет передачи управления',region,paging,flags))
+            memory.recording=False
+            assert measured_m1==m1_cost,(region,measured_m1,m1_cost)
             # Проверка регистров перед первым выполнением перемещённого кода и точных физических записей.
-            compared=(*range(15),*range(16,25),26,27)
+            compared=(*range(25),26,27)
             assert all(wanted[i]==simulator.registers[i] for i in compared),(region,paging,flags,
                 [(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
             assert ports.writes==ports_expected and memory.o7ffd==final_paging
@@ -83,11 +98,12 @@ def main():
             assert simulator.registers[SP]==stack
             cases+=1
         counts[region]=cases
-        profiles.append(dict(region=region,entry=entry,source=source,destination=destination,size=size))
+        profiles.append(dict(region=region,entry=entry,source=source,destination=destination,size=size,full_M1=m1_cost))
     report=dict(passed=True,total_cases=sum(counts.values()),cases_by_region=counts,profiles=profiles,
         all_initial_flags_values=True,all_A_values_for_station=True,
         all_six_bit_paging_values_for_action=True,locked_paging_for_action=True,
-        all_registers_except_R=True,all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+        all_registers_including_R=True,all_initial_R_values=True,full_M1_count_compared=True,
+        all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
         exact_ports=True,external_return_not_consumed=True,relocated_code_executed=False,
         assembly_executed=False,native_execution=False,irq_executed=False,timing_proved=False)
     (ROOT/'Tools/Disasm/Reports/BootstrapRelocationVerification.json').write_text(

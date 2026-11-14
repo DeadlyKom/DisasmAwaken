@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 50,
+  "resources": 2,
+  "combined_openers": 8,
+  "full_physical_handlers": 46,
+  "maximum_possible_extent_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

@@ -9,8 +9,8 @@
                 ;   HL, DE, BC и AF числовых аргументов не задают, IY сохраняется
                 ;   шесть изменяемых операндов Request задают запросы, любой ненулевой байт допускает соответствующую шкалу
                 ;   FirstValue, ThirdValue, FourthValue и FifthValue задают четыре прямых байтовых входа
-                ;   ActionPreferredByteState.Value задаёт пару выбора второй шкалы, SignedWord задаёт знаковое слово шестой
-                ;   действуют договоры DrawBankedGauge и SelectPreferredByte, банк 1 содержит CONTROL, 7FFD доступен для записи
+                ;   ActionPreferredByteState.Value задаёт пару выбора второй шкалы, SpeedWord задаёт знаковое слово шестой
+                ;   действуют договоры DrawBankedGauge и SelectFuelStock, банк 1 содержит CONTROL, 7FFD доступен для записи
                 ;   код, внешняя рамка и шесть дополнительных байтов CPU-стека находятся в общей RAM, IRQ не вмешиваются
                 ; Out:
                 ;   при отсутствии запросов HL, DE и BC сохраняются, AF=0054, альтернативный AF сохраняется
@@ -18,7 +18,7 @@
                 ;   если шестой запрос нулевой, AF=0054, иначе A=10 и F соответствует последнему DrawSixRowGauge
                 ;   HL', DE', BC', IX, IY, I, IM и IFF сохраняются, SP=входной SP+2
                 ;   FirstRequest, ThirdRequest, FourthRequest, FifthRequest и SixthRequest обнуляются при их ненулевом входе, SecondRequest сохраняется
-                ;   исходные значения и пара Preferred/Fallback не изменяются, значение шестой шкалы равно min(abs(signed16 SignedWord)/4, 46) с целой частью
+                ;   исходные значения и пара Preferred/Fallback не изменяются, значение шестой шкалы равно min(abs(signed16 SpeedWord)/4, 46) с целой частью
                 ;   при хотя бы одном запросе 7FFD последовательно получает 11 и 10 для каждой обновлённой шкалы, на выходе 10
                 ;   без запросов OUT отсутствуют и исходный 7FFD сохраняется, R учитывает весь выбранный маршрут и дочерние вызовы
                 ; Corrupt:
@@ -29,7 +29,7 @@
                 ;   первая, третья, четвёртая и пятая шкалы передают весь исходный байт, исходный рисователь не ограничивает эти аргументы диапазоном 0..48
                 ;   пять запросов являются изменяемыми операндами существующих инструкций, дополнительная RAM не выделяется
                 ;   проверка родительского маршрута композиционная, полный совместный перебор всех входных полей не выполнялся
-                ;   игровые имена FirstValue, ThirdValue и SignedWord пока не установлены, локальные роли заданы доказанными потребителями
+                ;   FirstValue является уровнем защиты SHILD, SpeedWord знаковой скоростью, игровой смысл ThirdValue и физическая единица скорости остаются открытыми
                 ; -----------------------------------------
                 ; -----------------------------------------
                 ; Первая шкала
@@ -53,7 +53,7 @@ SecondGauge:    LD A, #00
                 JR Z, @Action.UpdatePanelGauges.ThirdGauge                      ; переход, если SecondRequest равен нулю, вторая шкала не обновляется
 
                 ; Выбор приоритетного байта второй шкалы, Carry читателя всегда сброшен.
-                CALL @Action.SelectPreferredByte.Entry
+                CALL @Action.SelectFuelStock.Entry
                 ; Расчёт целой половины выбранного байта с нулевым входным Carry.
                 RRA
                 LD HL, @ActionPanelGaugesConst.SecondTarget
@@ -111,9 +111,9 @@ SixthGauge:     LD A, #00
                 XOR A
                 LD (@ActionPanelGaugesState.SixthRequest), A
                 ; Проверка знака исходного слова шестой шкалы.
-                LD HL, (@ActionPanelGaugesState.SignedWord)
+                LD HL, (@ActionPanelGaugesState.SpeedWord)
                 BIT 7, H
-                JR Z, @Action.UpdatePanelGauges.ScaleMagnitude                  ; переход, если SignedWord неотрицательно, преобразование к модулю не требуется
+                JR Z, @Action.UpdatePanelGauges.ScaleMagnitude                  ; переход, если SpeedWord неотрицательно, преобразование к модулю не требуется
 
                 ; Расчёт модуля отрицательного слова по модулю 65536, 8000 сохраняет величину 32768.
                 LD A, L

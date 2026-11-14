@@ -19,8 +19,11 @@
 ;   при изменении HL, DE и BC соответствуют последнему XorPointerRow, AF - A итоговый D, F=0 с Z=0
 ;   при изменении указатель восстановлен через ResumePointer, UpdateBlocked=0, AF' рабочий
 ;   HL', DE', BC', IX, IY, I и IFF сохранены, SP восстановлен
-; Corrupt:
-;   HL, DE, BC, AF, AF'
+                ; Corrupt:
+                ;   HL, DE, BC, AF, AF', R
+                ;   bitmap полосы, MapHighlightState.WidthSkip банка 1, StationState.CurrentPage, управление 7FFD и временные слова CPU-стека
+                ;   PointerState.UpdateBlocked, PointerState.RestoredFlag, PointerState.SpriteBase, PointerState.BackgroundAddr и PointerState.VisibleRows
+                ;   InterfaceState.HoverItem, InterfaceState.HoverCallback и строки PointerBackground
 ; Note:
 ;   входной D передаётся GetPointerRow непосредственно, умножения на восемь здесь нет
 ;   Z=1 означает отсутствие обновления, нулевой номер строки при обновлении возвращается с Z=0

@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "original_record_hex": "394b06000000000000000000e8030f01",
+  "record_bytes": 16,
+  "archives": [
+    {
+      "path": "Tools/Disasm/Research/References/AuthorArchives/ArchiveAwakenAuthor.zip",
+      "sha256": "9f58746be8a339575234f0823d41d0e2481eb75910d9439a10aff90eef4b87a6"
+    },
+    {
+      "path": "Tools/Disasm/Research/References/AuthorArchives/ArchiveAwakenSDC.zip",
+      "sha256": "64b2ee1805282a7f8f5bbcd5d71b0df3a1c5f46448f424ccaceaa79f403b961c"
+    },
+    {
+      "path": "Tools/Disasm/Research/References/AuthorArchives/ArchiveAwakenSources.zip",
+      "sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b"
+    },
+    {
+      "path": "Tools/Disasm/Research/References/AuthorArchives/ArchiveAwakenSpace.zip",
+      "sha256": "820b68e42a71ebcfb4a89f227bea5901466fb2d89354d0a8ffed1220864ddeda"
+    }
+  ],
+  "logical_files_checked": {
+    "trd_files": 358,
+    "scl_files": 37
+  },
+  "matches": [
+    {
+      "archive": "ArchiveAwakenSDC.zip",
+      "member": "AWAK_SDC.SCL",
+      "slot": 1,
+      "name": "STATIONFC",
+      "file_offset": 14512
+    },
+    {
+      "archive": "ArchiveAwakenSDC.zip",
+      "member": "AWAK_SDC.SCL",
+      "slot": 8,
+      "name": "SAVE1   s",
+      "file_offset": 117
+    },
+    {
+      "archive": "ArchiveAwakenSDC.zip",
+      "member": "AWAK_SDC.SCL",
+      "slot": 9,
+      "name": "SAVE2   s",
+      "file_offset": 117
+    },
+    {
+      "archive": "ArchiveAwakenSDC.zip",
+      "member": "AWAK_SDC.SCL",
+      "slot": 10,
+      "name": "SAVE3   s",
+      "file_offset": 117
+    },
+    {
+      "archive": "ArchiveAwakenSDC.zip",
+      "member": "AWAK_SDC.SCL",
+      "slot": 11,
+      "name": "SAVE4   s",
+      "file_offset": 117
+    },
+    {
+      "archive": "ArchiveAwakenSDC.zip",
+      "member": "AWAK_SDC.SCL",
+      "slot": 13,
+      "name": "SAVE0   s",
+      "file_offset": 117
+    }
+  ],
+  "compiled_or_plain_logical_files_only": true,
+  "compressed_or_runtime_generated_copies_excluded": false,
+  "absence_of_exact_record_is_not_absence_of_code": true,
+  "unknown_words_purpose_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -71,3 +71,16 @@ SP, вся область таблицы и хвост списка. Прове�
 исполняется исходными инструкциями. Отчёт
 [InterfaceListsVerification.json](../Tools/Disasm/Reports/InterfaceListsVerification.json).
 Следующий сырой участок #CBE0..#CC20 в этот разбор не включён.
+
+## Память восстановления геометрии и чтения списка
+
+RestoreItemBounds меняет R, EventEnabled, список через MoveItemToTail
+и четыре текущих поля выбранной записи из SavedX..SavedHeight.
+Временные слова FRestoreBoundsFrame и дочерних вызовов остаются
+в RAM стека. Регистрация владельцев и немедленное рисование не выполняются.
+
+RestoreAllBounds пишет только X, Y, Width и Height обработанных
+записей до X=80, меняет DE, AF, IX и R. Собственных стековых
+записей нет. GetLastDraw меняет HL, AF и R, RAM не записывает.
+TestDrawPointer сохраняет HL одним PUSH, поэтому два байта остаются
+под восстановленным SP даже при отсутствии искомого указателя.

@@ -1,12 +1,14 @@
                 module Action
                 module SpawnAlternate
+                ; Проверка [непрерывные кадры и слово потока 0](../../Docs/ActionContinuousKeyClip.md)
                 ; Изменяемые поля записи [общие параметры обоих создателей](../../Docs/ActionSpawnRecordFinish.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionSpawnSchedule.md)
                 ; -----------------------------------------
                 ; Создание записей по шаблону либо по альтернативной ветке планировщика
                 ; исходная запись 17, перенесённое ядро 6000..7F8E, смещения #1A96..#1D02
                 ; In:
-                ;   Entry читает признаки #9B82/#9B83, координаты и зерно из общего состояния
+                ;   Entry читает TemplateMode, в шаблонной ветке читает координаты и зерно из общего состояния
+                ;   TemplateMode и ThirdGate доступны для записи, сохранённое слово задано операндом CheckSavedWord+1
                 ;   CheckDistance принимает слово потока 0 в HL, SetCountdown принимает счётчик в A и младший байт сохранённого слова в E
                 ;   доступны список FActionRecord, оригинальные шаблоны, банки 0, 1, 3 и 4, порт 7FFD разблокирован
                 ; Out:
@@ -16,24 +18,41 @@
                 ; Corrupt:
                 ;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, R, рабочие записи, операнды кода, состояния потоков, 7FFD
                 ; Note:
+                ;   авторский STATTB задаёт блоки станции, IST1..IST15 выбирают St1..St15, байтовый IST16=00 выбирает KN01pol1 вместо St16
                 ;   при входе в шаблонный цикл EXX выполняется на каждой успешной аллокации, поиск перед обменом заменяет DE на #0040
                 ;   при переполнении помечается запись, первые две суммы успевают записаться, дальнейшие строки не обрабатываются
-                ;   модели сравнивают четыре раздельных участка, полный выход регистров после диспетчера, IRQ и нативный игровой запуск не проверены
+                ;   четыре исходных участка проверены отдельно, дополнительный режим исполняет BuildRandom до внешнего возврата через класс 0 либо 6
+                ;   в 1728 дополнительных сценариях фаза класса сверена по регистрам кроме T, всей RAM и кратности записей
+                ;   префикс сверяет запись, эффекты, потоки и OUT, все его регистры и вся RAM независимо не сопоставлялись
+                ;   в этих сценариях хвост созданной записи 27..3F не читается и сохраняется, его глобальное назначение остаётся открытым
+                ;   полный шаблонный Entry отдельно исполнен в 3072 сценариях всех 16 исходных шаблонов, включая отказ и пропуск FF
+                ;   при отказе TemplateMode и ThirdGate уже равны 1, операнд InitialReuse+3 сохраняет 16, при создании он обнуляется
+                ;   шаблонная серия сверяет весь пул, SP, IX, AF и успешные HL, DE, BC, остальные регистры и вся RAM независимо не сопоставлялись
+                ;   ветка Entry с сохранённым словом отдельно исполнена в 1728 сценариях создания и 1536 ранних отказах
+                ;   при отказах проверены все регистры кроме T, точный R, вся RAM и отсутствие записей и OUT
+                ;   при TemplateMode ненулевом ThirdGate сохраняется, после допуска счётчик получает FF, затем 5 плюс младшие два бита слова
+                ;   в серии Entry слово задано до входа, полные регистры и RAM принятого префикса независимо не сопоставлялись
+                ;   писатель CheckDistance отдельно доведён до создания и возврата в 5184 сценариях трёх профилей расстояния
+                ;   близкий профиль сохраняет Stream1, профили с третьей компонентой 112 и минус 112 исполняют генератор с равными байтами результата
+                ;   перед выбором модели и класса R прочитан через 50, 110 либо 117 M1 от CheckDistance для проверенных профилей
+                ;   происхождение входного HL из игрового потока 0, аппаратные IRQ и нативный игровой цикл этими составными сериями не доказаны
+                ;   в двух непрерывных профилях по 64 кадра модель с подменой TR-DOS проследила слово Stream0 из NextRandomWord0 через ScheduleSpawn в CheckDistance и CheckSavedWord+1
                 ; -----------------------------------------
-                ; Проверка #9B83 перед выбором шаблона.
-Entry:          LD A, (#9B83)
+                ; Проверка шаблонного режима перед выбором очередной группы.
+Entry:          LD A, (@ActionGlyphIndicatorState.Control.TemplateMode)
                 AND A
-                JP NZ, @Action.SpawnAlternate.CheckSavedWord                    ; переход, если #9B83 ненулевой, шаблон не читать
+                JP NZ, @Action.SpawnAlternate.CheckSavedWord                    ; переход, если TemplateMode ненулевой, шаблон не читать
 
                 LD BC, (#9B7E)
                 LD DE, (#9B7B)
                 LD HL, (#9B78)
                 LD A, #01
-                LD (#9B83), A
-                LD (#9B82), A
+                ; Включение режима до поиска первой доступной записи шаблонной группы.
+                LD (@ActionGlyphIndicatorState.Control.TemplateMode), A
+                LD (@ActionGlyphIndicatorState.Control.ThirdGate), A
                 EXX
                 LD A, #10
-                LD (#792E), A
+                LD (@Action.SpawnAlternate.InitialReuse + 3), A
                 LD HL, (#9BC1)
                 LD DE, (#9BC3)
                 LD A, (#9BC5)
@@ -106,20 +125,20 @@ CheckOverflow:  OR A
                 LD (IY + @FActionRecord.StateCode), #09
                 LD (IY + @FActionRecord.LinkedIndex), A
                 LD (IY + @FActionRecord.LinkFlags), A
-                LD (IY + @FActionRecord.Unknown0D), A
-                LD (IY + @FActionRecord.TargetIndex), A
-                LD (IY + @FActionRecord.Unknown10), A
+                LD (IY + @FActionRecord.Phase0OrLink), A
+                LD (IY + @FActionRecord.Phase2OrTarget), A
+                LD (IY + @FActionRecord.OffsetScaleLow), A
                 LD (IY + @FActionRecord.Unknown11), A
-                LD (IY + @FActionRecord.Unknown10), A
+                LD (IY + @FActionRecord.OffsetScaleLow), A
                 LD (IY + @FActionRecord.ClassCode), #12
-                LD (IY + @FActionRecord.Unknown13), #FF
-                LD (IY + @FActionRecord.Unknown14), #FF
+                LD (IY + @FActionRecord.EffectReserve), #FF
+                LD (IY + @FActionRecord.MissileRepeatDelay), #FF
                 LD (IY + @FActionRecord.LinkOverride), #FF
                 LD (IY + @FActionRecord.SavedStateCode), A
                 LD (IY + @FActionRecord.PhaseMoveTimer), A
-                LD (IY + @FActionRecord.ReuseByte), #10
-                LD (#792E), A
-                LD (IY + @FActionRecord.Unknown24), A
+InitialReuse:   LD (IY + @FActionRecord.ReuseByte), #10
+                LD (@Action.SpawnAlternate.InitialReuse + 3), A
+                LD (IY + @FActionRecord.OffsetScaleHigh), A
                 LD BC, FSpawnTemplateRow
                 ADD IX, BC
                 LD A, (IX + @FSpawnTemplateEnd.EndCode)
@@ -136,7 +155,7 @@ ReleaseRecord:  CALL @Action.MarkIYRecordForReuse.Entry
                 JR @Action.SpawnAlternate.RestorePairs
 
                 ; Сохранение слова потока 0 и проверка трёх знаковых расстояний.
-CheckDistance:  LD (#799C), HL
+CheckDistance:  LD (@Action.SpawnAlternate.CheckSavedWord + 1), HL
                 LD HL, (#9B79)
                 LD A, H
                 OR A
@@ -247,7 +266,7 @@ BuildRandom:    CALL @Action.FindReusableRecord.Entry
                 ADD A, #00
                 LD (IX + @FActionRecord.ModelOffset), A
                 LD L, A
-                LD (IX + @FActionRecord.TargetIndex), #64
+                LD (IX + @FActionRecord.Phase2OrTarget), #64
                 LD A, L
                 CALL @Action.ReadObjectHeaderWord.Entry
                 LD A, H
@@ -314,12 +333,12 @@ StoreOffset:    ADD A, H
                 CALL @Action.NextRandomWord2.Entry
                 LD (IX + @FActionRecord.ClassCode), #00
                 LD (IX + @FActionRecord.LinkFlags), #00
-                LD (IX + @FActionRecord.Unknown14), #00
+                LD (IX + @FActionRecord.MissileRepeatDelay), #00
                 LD (IX + @FActionRecord.LinkOverride), #FF
                 LD (IX + @FActionRecord.LinkedIndex), #FF
                 LD HL, (#EBDB)
-                LD (IX + @FActionRecord.Unknown0D), L
-                LD (IX + @FActionRecord.Unknown0E), H
+                LD (IX + @FActionRecord.Phase0OrLink), L
+                LD (IX + @FActionRecord.LocalPhase1), H
                 CALL @Action.NextRandomWord13.Entry
                 LD A, (@ActionApplyParametersState.SpawnValueMask)
                 OR L
@@ -332,13 +351,13 @@ StoreOffset:    ADD A, H
 
                 LD A, H
                 DEC A
-StoreLimit:     LD (IX + @FActionRecord.Unknown13), A
-                LD (IX + @FActionRecord.Unknown10), #20
+StoreLimit:     LD (IX + @FActionRecord.EffectReserve), A
+                LD (IX + @FActionRecord.OffsetScaleLow), #20
                 XOR A
-                LD (IX + @FActionRecord.Unknown24), A
+                LD (IX + @FActionRecord.OffsetScaleHigh), A
                 LD (IX + @FActionRecord.PhaseMoveTimer), A
-                LD (IX + @FActionRecord.Unknown20), #FF
-                LD (IX + @FActionRecord.Unknown21), #FF
+                LD (IX + @FActionRecord.ProximityIndex), #FF
+                LD (IX + @FActionRecord.ProximityClass), #FF
                 LD (#EBDD), A
                 CALL @Action.NextRandomWord3.Entry
                 LD A, (IX + @FActionRecord.StateCode)

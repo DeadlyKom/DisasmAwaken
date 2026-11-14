@@ -13,15 +13,15 @@
                 ;   HL=0000, DE и BC сохраняются, A=00, F=44
                 ;   HL', DE', BC', AF', IX, IY, I, IM и IFF сохраняются, SP=входной SP+2, R получает 62 M1
                 ;   в порт 7FFD записан Bank0Value=10, выбрано верхнее окно банка 0
-                ;   ApplyParameterSet выполнил 15 целевых записей, UnknownWord0 и UnknownWord1 обнулены в банке 0
-                ;   Control.Unknown83 и Control.ThirdGate обнулены в фиксированном банке 2, остальные байты кроме рамки стека сохраняются
+                ;   ApplyParameterSet выполнил 15 целевых записей, CursorA и CursorB обнулены в банке 0, оба потока AY отключены
+                ;   Control.TemplateMode и Control.ThirdGate обнулены в фиксированном банке 2, остальные байты кроме рамки стека сохраняются
                 ; Corrupt:
                 ;   HL, AF, 15 целевых байтов, два слова, два байта, четыре байта CPU-стека, управление 7FFD, R
                 ; Note:
                 ;   переключение страницы действительно предшествует записям в верхние адреса, прежний банк после возврата не восстанавливается
                 ;   параметры размещены в фиксированном окне банка 2 и доступны после выбора банка 0
                 ;   два CALL оставляют сначала адрес AC49, затем AC4C в той же паре CPU-стека, PUSH BC селектора использует следующую пару
-                ;   роль Control.ThirdGate доказана в UpdateGlyphIndicators, смысл двух слов и Control.Unknown83 ещё не установлен
+                ;   Control.TemplateMode сбрасывает вход в шаблонную ветвь, Control.ThirdGate снимает запрет знака и класса 8
                 ; -----------------------------------------
                 ; выбор управляющего байта Bank0Value перед применением верхних адресов набора
 Entry:          LD A, @ActionParameterActivationConst.Bank0Value
@@ -29,15 +29,14 @@ Entry:          LD A, @ActionParameterActivationConst.Bank0Value
                 CALL @Action.SelectMemoryPage.Entry
                 ; применение пятнадцатибайтового набора к адресам ACTION после выбора банка 0
                 CALL @Action.ApplyParameterSet.Entry
-                ; подготовка нулевого слова для обнуления двух существующих слов банка 0
+                ; подготовка нулевого курсора для отключения обоих потоков AY
                 LD HL, #0000
-                ; обновление UnknownWord0 и UnknownWord1, их игровой смысл ещё не установлен
-                LD (@ActionParameterActivationState.UnknownWord0), HL
-                LD (@ActionParameterActivationState.UnknownWord1), HL
+                LD (@ActionAyEffectState.CursorA), HL
+                LD (@ActionAyEffectsState.CursorB), HL
                 ; подготовка нулевого байта и выходных A=00, F=44
                 XOR A
-                ; обновление Control.Unknown83 и Control.ThirdGate в фиксированном банке 2
-                LD (@ActionGlyphIndicatorState.Control.Unknown83), A
+                ; обновление Control.TemplateMode и Control.ThirdGate в фиксированном банке 2
+                LD (@ActionGlyphIndicatorState.Control.TemplateMode), A
                 LD (@ActionGlyphIndicatorState.Control.ThirdGate), A
                 RET
 

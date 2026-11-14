@@ -49,6 +49,7 @@ def main():
                            'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,
                            '^BC':0x58BE,'^AF':0x69CF},None,False)
     observed={}
+    internal={pc:dict(visits=0,entry_IX=set(),saved_IX=set(),SP_delta=set()) for pc in (0x658E,0x65C9,0x65D3,0x65D8)}
     cases=0
     calibrated=0
 
@@ -66,6 +67,7 @@ def main():
         simulator.registers[:]=initial
         r=simulator.registers
         r[PC]=0x65A7
+        refresh=disabled&255;r[15]=refresh;local_entries=[]
         # Создание независимого результата по знаковым разностям и порядку первого нажатия.
         expected=[0]*7
         effective_buttons=buttons[-1] if buttons else 0
@@ -85,6 +87,12 @@ def main():
             pc=r[PC]
             if pc==0x3FFF:break
             assert 0x658E<=pc<0x6638,hex(pc)
+            # Наблюдение внутреннего IX и физического SavedIX до общего POP IX.
+            if pc in internal:
+                current_ix=r[8]*256+r[9];saved_ix=memory[r[SP]]+256*memory[r[SP]+1]
+                assert current_ix==0x6585 and saved_ix==0x2468
+                internal[pc]["visits"]+=1;internal[pc]["entry_IX"].add(current_ix);internal[pc]["saved_IX"].add(saved_ix)
+                local_entries.append((pc,r[SP]))
             instruction=dis.disassemble(pc,pc+1,'h')[0]
             raw=bytes(memory[pc:pc+len(instruction.bytes)])
             if raw==bytes(original[pc:pc+len(raw)]):observed[f'{pc:04X}']=raw.hex()
@@ -93,7 +101,11 @@ def main():
             simulator.run()
         else:raise AssertionError('Опрос не завершился')
         assert r[SP]==0x8000 and r[8:12]==initial[8:12] and r[16:24]==initial[16:24]
+        for entry_pc,entry_sp in local_entries:
+            internal[entry_pc]["SP_delta"].add(r[SP]-entry_sp)
+            assert r[SP]-entry_sp==4 and r[8]*256+r[9]==0x2468
         if disabled:
+            assert r[15]==(refresh&0x80)|((refresh+3)&0x7F)
             assert not ports.reads and memory[0x6585:0x658E]==[0xA5]*7+[43,212]
             assert memory[0x6307:0x6309]==[x,y]
             assert r[2:12]==initial[2:12] and r[A]==disabled and r[F]==and_flags(disabled)
@@ -123,8 +135,12 @@ def main():
     # Проверка любого ненулевого программного запрета без чтения портов и очистки состояния.
     for disabled in range(1,256):execute(255,255,0,0,[],disabled=disabled)
     assert sum(len(bytes.fromhex(v)) for v in observed.values())==0x6638-0x658E
+    assert all(row["visits"] and row["SP_delta"]=={4} for row in internal.values())
+    profiles=[dict(pc=pc,visits=row["visits"],entry_IX=sorted(row["entry_IX"]),saved_IX=sorted(row["saved_IX"]),SP_delta=sorted(row["SP_delta"])) for pc,row in internal.items()]
     report=dict(method='original_mouse_poll_with_explicit_port_bytes',passed=True,cases=cases,
                 source_sha256=hashlib.sha256(source).hexdigest(),axis_cases=131072,calibration_cases=calibrated,
+                internal_entry_observations=profiles,arbitrary_saved_IX_or_frame_address_product=False,
+                disabled_R_checked=True,disabled_M1=3,full_poll_R_proved=False,
                 original_visited=observed,irq_executed=False,hardware_mouse=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/MouseInputVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
     print(json.dumps({k:v for k,v in report.items() if k!='original_visited'},ensure_ascii=False,indent=2))

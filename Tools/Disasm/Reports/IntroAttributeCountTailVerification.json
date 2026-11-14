@@ -6,8 +6,195 @@
   "bytes": 54,
   "input_attributes": 255,
   "sample_destination": 33111,
+  "exact_R_for_conditional_original_placement": true,
+  "M1_formula": "2620+2*strict_maximum_replacements+entry_prefix_M1",
+  "I_IM_IFF_preserved_in_conditional_profiles": true,
   "actual_index_displacement": 0,
   "direct_game_entry_found": false,
+  "prefix": {
+    "entry": 29844,
+    "destination": 65281,
+    "cases": 256,
+    "exact_registers_at_scan_entry": true,
+    "direct_game_entry_found": false
+  },
+  "preceding_unknown_bytes": {
+    "unknown_start": 29803,
+    "unknown_end_exclusive": 29844,
+    "original_image_matches": {
+      "full_range": 1,
+      "final_12_bytes": 1
+    },
+    "rom_profiles": [
+      {
+        "rom": "48.rom",
+        "initial_number_counts": [
+          0,
+          1,
+          2,
+          8
+        ],
+        "calculator_steps_to_rst08": 8083,
+        "rom_error_address": 12718,
+        "rom_error_byte": 5,
+        "suffix_entries_at_7494": [
+          {
+            "entry": 29838,
+            "sp_delta": 2,
+            "steps": 223
+          },
+          {
+            "entry": 29839,
+            "sp_delta": 2,
+            "steps": 113
+          },
+          {
+            "entry": 29840,
+            "sp_delta": 0,
+            "steps": 112
+          },
+          {
+            "entry": 29843,
+            "sp_delta": 0,
+            "steps": 110
+          }
+        ]
+      },
+      {
+        "rom": "128-1.rom",
+        "initial_number_counts": [
+          0,
+          1,
+          2,
+          8
+        ],
+        "calculator_steps_to_rst08": 8083,
+        "rom_error_address": 12718,
+        "rom_error_byte": 5,
+        "suffix_entries_at_7494": [
+          {
+            "entry": 29838,
+            "sp_delta": 2,
+            "steps": 235
+          },
+          {
+            "entry": 29839,
+            "sp_delta": 2,
+            "steps": 119
+          },
+          {
+            "entry": 29840,
+            "sp_delta": 0,
+            "steps": 118
+          },
+          {
+            "entry": 29843,
+            "sp_delta": 0,
+            "steps": 116
+          }
+        ]
+      }
+    ],
+    "calculator_reads": [
+      {
+        "pc": 29832,
+        "address": 29832,
+        "value": 239
+      },
+      {
+        "pc": 13162,
+        "address": 29833,
+        "value": 187
+      },
+      {
+        "pc": 13162,
+        "address": 29834,
+        "value": 187
+      },
+      {
+        "pc": 13162,
+        "address": 29835,
+        "value": 176
+      },
+      {
+        "pc": 13162,
+        "address": 29836,
+        "value": 0
+      },
+      {
+        "pc": 13162,
+        "address": 29838,
+        "value": 255
+      },
+      {
+        "pc": 13162,
+        "address": 29839,
+        "value": 193
+      },
+      {
+        "pc": 13162,
+        "address": 29840,
+        "value": 255
+      },
+      {
+        "pc": 13162,
+        "address": 29841,
+        "value": 135
+      },
+      {
+        "pc": 13264,
+        "address": 29842,
+        "value": 254
+      },
+      {
+        "pc": 13271,
+        "address": 29842,
+        "value": 254
+      },
+      {
+        "pc": 13288,
+        "address": 29843,
+        "value": 255
+      },
+      {
+        "pc": 13288,
+        "address": 29844,
+        "value": 17
+      },
+      {
+        "pc": 13288,
+        "address": 29845,
+        "value": 1
+      },
+      {
+        "pc": 13288,
+        "address": 29846,
+        "value": 255
+      }
+    ],
+    "add_and_compare_entry_cases": 512,
+    "natural_execution_proved": false
+  },
+  "inferred_displacement_alias": {
+    "model_entry": 33083,
+    "displacement_offset": 28,
+    "cases": 24,
+    "counter_address": 36864,
+    "original_prefix_used": false,
+    "expected_histogram_and_first_maximum_proved": true,
+    "original_code_present_at_model_entry": false,
+    "relocation_or_original_use_proved": false
+  },
+  "inferred_prefix_and_displacement_alias": {
+    "model_entry": 33080,
+    "displacement_offset": 31,
+    "cases": 24,
+    "counter_address": 65280,
+    "original_prefix_used": true,
+    "expected_histogram_and_first_maximum_proved": true,
+    "original_code_present_at_model_entry": false,
+    "relocation_or_original_use_proved": false
+  },
   "original_relocation_executed": true,
   "assembly_executed": false,
   "native_execution": false

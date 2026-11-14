@@ -14,7 +14,7 @@ def main():
     m=RecordedBanks(banks=banks,out7ffd=16);s=Simulator(m);trace=PortTrace(s);s.set_tracer(trace)
     initial=get_registers({'SP':0xBFFE,'IX':0xA100,'IY':0x5C3A,'HL':0x1357,'DE':0x2468,'BC':0x369C,
         'AF':0xA55A,'^HL':0x1234,'^DE':0x5678,'^BC':0x9ABC,'^AF':0xDEF0},None,False)
-    parameters=bytes(flat[0x9BA4:0x9BB3]);counts=Counter();outcomes=Counter();flags_seen=set();links_seen=set()
+    parameters=bytes(flat[0x9BA4:0x9BB3]);counts=Counter();outcomes=Counter();flags_seen=set();links_seen=set();refresh_seeds=set();m1_paths=Counter()
     def check(profile,other_limit,link_limit,linked,flags,first,second,value):
         m.recording=False
         for i,byte in enumerate(parameters):m[0x9BA4+i]=byte
@@ -32,9 +32,22 @@ def main():
         else:limit=30 if first!=255 else 60 if second!=255 else 20
         result,expected_f=arithmetic(value,limit,True)
         s.registers[:]=initial;s.registers[PC]=0xF792;m.writes=[]
+        initial_r=(value^limit^flags^linked)&255;s.registers[15]=initial_r;refresh_seeds.add(initial_r)
+        # Расчёт M1 пяти путей до развилки, CALL эффекта добавляет одну выборку.
+        if linked!=26:prefix_m1=9
+        elif not flags&8:prefix_m1=13
+        elif first!=255:prefix_m1=17
+        elif second!=255:prefix_m1=21
+        else:prefix_m1=22
+        effect=value<limit;expected_m1=prefix_m1+int(effect);measured_m1=0
         for _ in range(32):
             if s.registers[PC] in (0xEA29,0xF7E6):break
+            # Проверка выборок каждого шага, DD CB d op даёт два M1, не три.
+            pc=s.registers[PC];cost=2 if m[pc] in (0xCB,0xDD,0xED,0xFD) else 1
+            before_r=s.registers[15]
             s.run()
+            assert s.registers[15]==(before_r&128)|((before_r+cost)&127)
+            measured_m1+=cost
         else:raise AssertionError(('instruction_limit',hex(s.registers[PC])))
         r=s.registers;effect=value<limit
         context=(profile,other_limit,link_limit,linked,flags,first,second,value,limit)
@@ -42,6 +55,9 @@ def main():
         assert tuple(r[:2])==(result,expected_f) and r[3]==limit and r[2]==initial[2],context
         assert r[4:12]==initial[4:12] and r[16:24]==initial[16:24]
         assert r[14]==initial[14] and r[26:28]==initial[26:28]
+        assert measured_m1==expected_m1,context
+        assert r[15]==(initial_r&128)|((initial_r+expected_m1)&127),context
+        m1_paths[str(prefix_m1)]+=1
         assert r[SP]==(0xBFFC if effect else 0xBFFE)
         if effect:
             assert bytes(m[0xBFFC:0xBFFE])==bytes([0xBF,0xF7]) and len(m.writes)==2
@@ -66,12 +82,16 @@ def main():
             for value in range(256):
                 check('equipment_override',other,base,26,((other+value*7)&255)|8,first,second,value)
     assert len(flags_seen)==len(links_seen)==256
+    assert refresh_seeds==set(range(256)) and set(m1_paths)=={'9','13','17','21','22'}
     result=dict(passed=True,total_cases=counts.total(),profiles=dict(counts),outcomes=dict(outcomes),
         all_limit_value_pairs_for_each_mutable_branch=True,all_link_and_flag_bytes_observed=True,
         actual_apply_parameter_set_executed=True,actual_consumer_gate_executed=True,
         field_00_operand=0xF79C,field_02_operand=0xF798,ps1_ps2_and_fallback_unchanged=[30,60,20],
         exact_sub_af_selected_c_registers_and_stack_checked=True,consumer_stack_write_addresses_and_values_checked=True,effect_body_executed=False,
-        all_joint_inputs_exhausted=False,refresh_and_timing_proved=False,irq_executed=False,
+        all_joint_inputs_exhausted=False,refresh_and_timing_proved=False,
+        consumer_refresh_proved=True,consumer_m1_paths=dict(m1_paths),consumer_R_initial_values=256,
+        consumer_R_bit7_preserved=True,effect_call_included_in_consumer_m1=True,
+        apply_parameter_set_refresh_proved=False,effect_body_refresh_proved=False,irq_executed=False,
         assembly_executed=False,native_execution=False)
     target=ROOT/'Tools/Disasm/Reports/ActionMutableEffectLimitsVerification.json'
     with tempfile.NamedTemporaryFile(dir=target.parent,prefix='effect-limits-',suffix='.tmp',delete=False) as output:

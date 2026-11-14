@@ -3,6 +3,14 @@
   "pattern_cases": 458752,
   "flat_pattern_cases": 131072,
   "clip_counter_cases": 65536,
+  "clip_counter_full_m1_values": [
+    6,
+    9
+  ],
+  "clip_counter_exact_refresh_checked": true,
+  "clip_counter_no_memory_writes": true,
+  "clip_counter_i_im_iff_preserved": true,
+  "clip_counter_iff_fixture": 0,
   "screen_address_cases": 131072,
   "original_outline_copy_identical": true,
   "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",

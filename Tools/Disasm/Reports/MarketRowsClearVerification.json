@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases": 65536,
+  "all_AF_values": true,
+  "all_initial_R_values": true,
+  "full_joint_register_cartesian": false,
+  "full_m1_per_call": 123,
+  "instructions_per_call": 64,
+  "LDIR_iterations_per_call": 59,
+  "every_instruction_and_R_step_checked": true,
+  "all_cpu_writes_checked": true,
+  "stack_bytes_written": 0,
+  "I_IM_IFF_preserved": true,
+  "fixed_disjoint_stack_fixture": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

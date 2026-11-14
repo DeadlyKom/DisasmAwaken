@@ -6,24 +6,24 @@
                 ; исходная запись 17, адреса F49C..F51D
                 ; In:
                 ;   HL, DE, BC и AF числовых аргументов не задают, IX указывает доступную текущую FActionRecord
-                ;   от A100 достижим маркер 8080, активные строки доступны по ClassCode, Unknown0D и TargetIndex
-                ;   вложенный индекс TargetIndex кандидата адресует читаемый ClassCode, действуют договоры RecordIndexToAddress и CountClass3LinksUpToTwo
+                ;   от A100 достижим маркер 8080, активные строки доступны по ClassCode, Phase0OrLink и Phase2OrTarget
+                ;   вложенный индекс Phase2OrTarget кандидата адресует читаемый ClassCode, действуют договоры RecordIndexToAddress и CountClass3LinksUpToTwo
                 ;   для кандидатов класса 11 с целью класса 12 действуют договоры PrepareLargeEffect и AllocateLargeEffect, проверяемая ветвь класса 17 не создаёт игровых дочерних записей
                 ;   OBJECT3D и VOXAL доступны в банках 4 и 3, 7FFD разблокирован, восемнадцать дополнительных байтов CPU-стека доступны, IRQ и повторный вход исключены
                 ; Out:
                 ;   SweepPhase вращается RRCA и сохраняется, только прежний бит 0 допускает обход, при его нуле сразу обнуляются Base0..2 и возвращается исходный контекст кроме HL, AF и R
-                ;   при обходе для каждой активной строки Unknown0D владельца IX получает Unknown0D этой строки до проверки её класса
-                ;   только полные ClassCode=11 и полный класс связанной по TargetIndex записи=12 допускают большой эффект, максимум три вызова эффекта за проход
+                ;   при обходе для каждой активной строки Phase0OrLink владельца IX получает Phase0OrLink этой строки до проверки её класса
+                ;   только полные ClassCode=11 и полный класс связанной по Phase2OrTarget записи=12 допускают большой эффект, максимум три вызова эффекта за проход
                 ;   кандидат становится временным IX, исходные IX, указатель сканирования, шаг и счётчик восстанавливаются после настоящего большого эффекта
-                ;   после обхода CountClass3LinksUpToTwo считает класс 3 с StateCode=2 и LinkedIndex=текущему Unknown0D владельца
+                ;   после обхода CountClass3LinksUpToTwo считает класс 3 с StateCode=2 и LinkedIndex=текущему Phase0OrLink владельца
                 ;   при двух совпадениях состояние владельца сохраняется, при нуле либо одном StateCode=0B, SavedStateCode получает 2 либо 3 по младшему биту прочитанного R
-                ;   только при текущем Unknown0D=1A вызывается AdjustMode с непосредственным C=20, это вход готовой поправки, таблица индексов не читается
+                ;   только при текущем Phase0OrLink=1A вызывается AdjustMode с непосредственным C=20, это вход готовой поправки, таблица индексов не читается
                 ;   все пути обнуляют Base0..2 через ResetRecordUpdateBases, HL=0, SP после полного внешнего RET увеличен на два
                 ;   после исполненного обхода DE=0040, BC и AF определяются насыщенным счётчиком, проверкой связи либо AdjustMode, IY последним большим эффектом либо исходным IY
                 ;   IX и I/IM/IFF сохраняются, при эффектах альтернативные пары и AF' определяются реальным большим эффектом и восстановлением счётчика, paging возвращён в 10
                 ;   R точно сверяется композиционной моделью всех достигнутых ветвей, накладные стоимости и границы приведены в документации
                 ; Corrupt:
-                ;   HL, DE, BC, AF, HL', DE', BC', AF', IY, R, SweepPhase, Unknown0D и условно StateCode/SavedStateCode владельца, выбранные записи и эффекты, Base0..2, режимная поправка, операнды и банки по договорам детей, до восемнадцати байтов CPU-стека, SP внешним RET
+                ;   HL, DE, BC, AF, HL', DE', BC', AF', IY, R, SweepPhase, Phase0OrLink и условно StateCode/SavedStateCode владельца, выбранные записи и эффекты, Base0..2, режимная поправка, операнды и банки по договорам детей, до восемнадцати байтов CPU-стека, SP внешним RET
                 ; Note:
                 ;   это исходная цель State0A, коды 11 и 12 шестнадцатеричные, соответственно 17 и 18 десятично
                 ;   SweepPhase общий для всех объектов, исходный 92 задаёт три допуска на восемь вызовов, это не восемь независимых флагов и не обязательные кадры
@@ -71,8 +71,8 @@ NextRecord:     ADD HL, DE
                 DEC L
                 DEC L
                 LD B, (HL)
-                ; Обновление Unknown0D владельца до фильтра класса, это присваивание происходит для каждой активной строки.
-                LD (IX + @FActionRecord.Unknown0D), B
+                ; Обновление Phase0OrLink владельца до фильтра класса, это присваивание происходит для каждой активной строки.
+                LD (IX + @FActionRecord.Phase0OrLink), B
                 INC L
                 INC L
                 LD B, (HL)
@@ -83,7 +83,7 @@ NextRecord:     ADD HL, DE
                 CP @ActionClass17SweepConst.CandidateClass
                 JR NZ, @Action.SweepClass17AndPrepareSpawn.NextRecord           ; переход, если полный ClassCode кандидата отличается от 11, проверить следующую строку
 
-                ; Проверка полного класса цели по TargetIndex кандидата, курсор сканирования сохраняется в альтернативных парах.
+                ; Проверка полного класса цели по Phase2OrTarget кандидата, курсор сканирования сохраняется в альтернативных парах.
                 LD A, B
                 EXX
                 CALL @Action.RecordIndexToAddress.Entry
@@ -129,10 +129,10 @@ CheckClass3:    CALL @Action.CountClass3LinksUpToTwo.Entry
                 ADD A, @ActionClass17SweepConst.SpawnBaseCount
                 LD (IX + @FActionRecord.SavedStateCode), A
                 ; Проверка специальной текущей связи перед непосредственной поправкой C=32 без табличного индекса.
-                LD A, (IX + @FActionRecord.Unknown0D)
+                LD A, (IX + @FActionRecord.Phase0OrLink)
                 CP @ActionClass17SweepConst.SpecialLink
                 LD C, @ActionClass17SweepConst.DirectDelta
-                CALL Z, @Action.ApplyIndexedDelta.AdjustMode                    ; вызов, если текущий Unknown0D равен 1A, применить готовую поправку C=32 через AdjustMode
+                CALL Z, @Action.ApplyIndexedDelta.AdjustMode                    ; вызов, если текущий Phase0OrLink равен 1A, применить готовую поправку C=32 через AdjustMode
                 ; Обязательное обнуление общих Base0..2 и полный внешний возврат.
                 JP @Action.ResetRecordUpdateBases.Entry
 

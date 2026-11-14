@@ -9,14 +9,15 @@ from skoolkit.pagingtracer import SliceableMemory
 from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,SP
 from CheckRowHighlight import make_context
 from CheckScreenUpdate import PortTrace,put
-from CheckWorldSignature import signature,logical_flags
+from CheckWorldSignature import signature,logical_flags,step_key
+from CheckBank4Index import WriteMemory
 
 
 def main():
  _,_,base=make_context();base=[bytearray(b) for b in base]
  manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_text('utf-8'));entry=next(e for e in manifest['entries'] if e['slot']==5)
  lang=(ROOT/(entry['path']+'.sectors.bin')).read_bytes();base[6][:len(lang)]=lang
- memory=SliceableMemory(banks=[b.copy() for b in base],out7ffd=0x16);sim=Simulator(memory)
+ memory=WriteMemory(banks=[b.copy() for b in base],out7ffd=0x16);sim=Simulator(memory)
  initial=get_registers({'SP':0x7FFE,'BC':0x365D,'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
  count=0
  for handler in (0xC924,0xC61B,0xC623,0xC62A,0xC632,0xC63A):
@@ -30,7 +31,23 @@ def main():
    if handler!=0xC924:
     r[SP]=0x7FFC;put(memory,0x7FFC,[choice,0x36])
    trace=PortTrace(sim);sim.set_tracer(trace)
-   sim.run(start=handler,stop=0x3FFF);expected=signature(*(other if choice==1 else current))
+   memory.cpu_writes.clear();memory.recording=True;sim.run(start=handler,stop=0x3FFF);memory.recording=False
+   selected=other if choice==1 else current
+   expected=signature(*selected)
+   # Расчёт всей последовательности нестековых записей выбранного ключа.
+   u,v,variant_value=selected
+   writes=[(0x6306,(old&0xF8)|0x11)]
+   def key_writes(u,v):
+    data=u.to_bytes(2,'little')+v.to_bytes(2,'little')
+    return [(0x631C+i,value) for i,value in enumerate(data)]
+   writes+=key_writes(u,v)
+   for iteration in range(variant_value+1):
+    u,v,_=step_key(u,v);writes+=key_writes(u,v)
+   writes.extend(((0x6306,(old&0xF8)|0x10),(0x6306,old)))
+   persistent=[(a,v) for a,v in memory.cpu_writes if not 0x7FF0<=a<0x7FFE]
+   assert persistent==writes,(handler,choice,old,selected,persistent,writes)
+   assert bytes(memory[0x7FFE:0x8000])==bytes([255,63])
+   if handler!=0xC924:assert bytes(memory[0x7FFC:0x7FFE])==(handler+4).to_bytes(2,'little')
    values=[expected[k] for k in ('major','size','region','minor','result','flags')]
    if handler!=0xC924:
     field={0xC61B:'major',0xC623:'minor',0xC62A:'size',0xC632:'result',0xC63A:'region'}[handler]
@@ -43,6 +60,10 @@ def main():
    assert r[8:12]==initial[8:12] and r[18:24]==initial[18:24] and (r[16],r[17])==(old,logical_flags(old))
    count+=1
  report=dict(passed=True,cases=count,method='original_LANG_key_choice_and_real_banked_wrappers',all_choice_bytes=True,field_handlers=5,
+  exact_non_stack_write_sequence_checked=True,bounded_stack_write_addresses_checked=True,
+  stack_write_address_interval=[0x7FF0,0x7FFE],original_return_word_preserved=True,
+  consumed_choice_word_reused_by_field_CALL=True,full_R_proved=False,
+  all_key_words_variants_and_stack_addresses_checked=False,
   irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/KeyChoiceVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))

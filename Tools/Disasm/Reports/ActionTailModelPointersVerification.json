@@ -6,13 +6,13 @@
   "physical_pointer_count": 14,
   "target_bank": 4,
   "targets": {
-    "ActionModels.M2469": 58473,
-    "ActionModels.M251F": 58655,
-    "ActionModels.M25C1": 58817,
-    "ActionModels.M266B": 58987,
-    "ActionModels.M27AB": 59307,
-    "ActionModels.M2707": 59143,
-    "ActionModels.M2859": 59481
+    "ActionModels.St16": 58473,
+    "ActionModels.StPirat": 58655,
+    "ActionModels.Prison": 58817,
+    "ActionModels.StU1": 58987,
+    "ActionModels.StU2": 59307,
+    "ActionModels.StScince": 59143,
+    "ActionModels.GipPl": 59481
   },
   "all_seven_targets_twice": true,
   "established_object_pointer_consumers_wrap_inside_9e_page": true,

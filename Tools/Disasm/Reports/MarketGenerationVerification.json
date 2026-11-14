@@ -16,7 +16,10 @@
   "signature_query_stubbed": false,
   "random_stream_stubbed": false,
   "banks_modeled": 8,
-  "mark_game_meaning_proved": false,
+  "mark_game_meaning_proved_by_this_model": false,
+  "market_sale_ban_proof_report": "OriginalTradeScriptVerification.json",
+  "i_im_iff_preserved": true,
+  "iff_fixture": 0,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

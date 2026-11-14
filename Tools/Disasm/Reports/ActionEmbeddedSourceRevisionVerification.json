@@ -1,0 +1,160 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "archive_file": "awk1.trd:3DTABS.a",
+  "archive_range": [
+    2159,
+    5865
+  ],
+  "action_range": [
+    20847,
+    24576
+  ],
+  "exact_reconstruction_bytes": 3729,
+  "revision": {
+    "archived_rows": 207,
+    "embedded_rows": 208,
+    "equipment_literal_changes": 20,
+    "skimmer_literal": [
+      255,
+      0
+    ],
+    "pirate_score_word_added": true,
+    "removed_empty_row_before_time": true,
+    "added_empty_row_before_order": true
+  },
+  "machine_data": {
+    "archived_player_prefix_bytes": 21,
+    "embedded_player_prefix_bytes": 23,
+    "score_address": 39886,
+    "equipment_bytes_per_version": 49,
+    "equipment_changes": [
+      {
+        "old_address": 39959,
+        "new_address": 39961,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39960,
+        "new_address": 39962,
+        "old": 254,
+        "new": 255
+      },
+      {
+        "old_address": 39961,
+        "new_address": 39963,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39964,
+        "new_address": 39966,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39966,
+        "new_address": 39968,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39969,
+        "new_address": 39971,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39975,
+        "new_address": 39977,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39976,
+        "new_address": 39978,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39978,
+        "new_address": 39980,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39980,
+        "new_address": 39982,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39981,
+        "new_address": 39983,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39984,
+        "new_address": 39986,
+        "old": 0,
+        "new": 200
+      },
+      {
+        "old_address": 39986,
+        "new_address": 39988,
+        "old": 0,
+        "new": 10
+      },
+      {
+        "old_address": 39989,
+        "new_address": 39991,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39991,
+        "new_address": 39993,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39993,
+        "new_address": 39995,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39994,
+        "new_address": 39996,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39995,
+        "new_address": 39997,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39996,
+        "new_address": 39998,
+        "old": 255,
+        "new": 254
+      },
+      {
+        "old_address": 39997,
+        "new_address": 39999,
+        "old": 255,
+        "new": 254
+      }
+    ],
+    "equal_news_and_order_bytes": 71
+  },
+  "data_is_tokenized_author_source": true,
+  "placement_cause_proved": false,
+  "live_consumer_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

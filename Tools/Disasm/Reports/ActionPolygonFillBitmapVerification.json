@@ -1,8 +1,8 @@
 {
   "passed": true,
-  "total_cases": 11562,
+  "total_cases": 11572,
   "profiles": {
-    "filled": 11082,
+    "filled": 11092,
     "flat": 480
   },
   "original_patterns": [
@@ -31,6 +31,94 @@
   "linear_buffer_256_by_96": true,
   "bitmap_exact": true,
   "lower_scanline_excluded": true,
+  "same_final_row_different_E_history_witnesses": [
+    {
+      "mode": 0,
+      "first": {
+        "de": 995,
+        "bc": 32833,
+        "ix": 24576,
+        "iy": 24880,
+        "alt_hl": 257
+      },
+      "second": {
+        "de": 1009,
+        "bc": 32833,
+        "ix": 24576,
+        "iy": 24880,
+        "alt_hl": 257
+      }
+    },
+    {
+      "mode": 1,
+      "first": {
+        "de": 995,
+        "bc": 32833,
+        "ix": 24578,
+        "iy": 24882,
+        "alt_hl": 257
+      },
+      "second": {
+        "de": 1009,
+        "bc": 32833,
+        "ix": 24578,
+        "iy": 24882,
+        "alt_hl": 257
+      }
+    },
+    {
+      "mode": 2,
+      "first": {
+        "de": 995,
+        "bc": 32833,
+        "ix": 24580,
+        "iy": 24884,
+        "alt_hl": 257
+      },
+      "second": {
+        "de": 1009,
+        "bc": 32833,
+        "ix": 24580,
+        "iy": 24884,
+        "alt_hl": 257
+      }
+    },
+    {
+      "mode": 3,
+      "first": {
+        "de": 995,
+        "bc": 32833,
+        "ix": 24582,
+        "iy": 24886,
+        "alt_hl": 257
+      },
+      "second": {
+        "de": 1009,
+        "bc": 32833,
+        "ix": 24582,
+        "iy": 24886,
+        "alt_hl": 257
+      }
+    },
+    {
+      "mode": 4,
+      "first": {
+        "de": 995,
+        "bc": 32833,
+        "ix": 24584,
+        "iy": 24888,
+        "alt_hl": 257
+      },
+      "second": {
+        "de": 1009,
+        "bc": 32833,
+        "ix": 24584,
+        "iy": 24888,
+        "alt_hl": 257
+      }
+    }
+  ],
+  "history_E_compared_for_all_5_modes": true,
   "restored_HL_and_SP_and_final_AF_checked": true,
   "all_main_alternate_and_index_registers_proved": true,
   "refresh_register_and_timing_proved": false,

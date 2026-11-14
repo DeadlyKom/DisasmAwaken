@@ -9,6 +9,8 @@ from skoolkit.simutils import get_registers,A,F,PC,SP
 from CheckRowHighlight import make_context,band_parameters
 from CheckScreenUpdate import PortTrace,put,pointer_image
 from CheckSelectionBand import xor_band
+from CheckPreviewCoordinateMultiply import Memory
+from ReferenceControlsPointRespawn import refresh
 
 
 def main():
@@ -37,12 +39,16 @@ def main():
                 assert r[8:12]==initial[8:12] and r[18:24]==initial[18:24] and r[SP]==0x8000
                 assert m[0x6306]==page and m.o7ffd==page;cases+=1
     # Проверка обоих состояний Carry и всех остальных входных F на маркере FF без дочерних вызовов.
-    m=bytearray(65536);m[0x4000:0x8000]=bytes(banks[5]);m[0x8000:0xC000]=bytes(banks[2]);m[0xC000:]=bytes(banks[0]);s=Simulator(m)
+    m=Memory([0]*65536);m[0x4000:0x8000]=bytes(banks[5]);m[0x8000:0xC000]=bytes(banks[2]);m[0xC000:]=bytes(banks[0]);s=Simulator(m)
     for flags in range(256):
-        m[0x7FFE:0x8000]=bytes([255,63]);s.registers[:]=initial;r=s.registers;r[A]=255;r[F]=flags;s.run(start=0xA26F,stop=0x3FFF)
+        m[0x7FFE:0x8000]=bytes([255,63]);s.registers[:]=initial;r=s.registers;r[A]=255;r[F]=flags
+        r[14]=flags^0xA5;r[15]=flags;r[26]=flags>>7;r[27]=flags%3;context=r.copy();m.writes=[];m.recording=True
+        s.run(start=0xA26F,stop=0x3FFF);m.recording=False
+        assert r[15]==refresh(context[15],2) and all(r[i]==context[i] for i in (14,26,27)) and not m.writes
         assert (r[A],r[F],r[SP])==(0,(flags&1)|0x50,0x8000)
         assert r[2:12]==initial[2:12] and r[16:24]==initial[16:24]
     report=dict(passed=True,whole_cases=cases,early_ff_cases=early,rendered_bands=drawn,rejected_bands=rejected,
+                ff_exact_refresh_m1=2,ff_i_im_iff_preserved=True,ff_both_iff_values_without_irq=True,ff_no_cpu_writes=True,
                 all_input_flags_for_ff=256,all_row_bytes=True,real_pointer_and_banked_xor=True,
                 bitmap_and_attributes_compared=True,row_not_limited_to_clamped_height=True,
                 irq_executed=False,native_execution=False,assembly_executed=False)

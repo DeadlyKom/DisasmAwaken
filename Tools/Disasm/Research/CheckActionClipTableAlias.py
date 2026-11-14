@@ -1,9 +1,15 @@
 """Доказанная табличная роль CF08 не доказывает невозможность исполнения этих байтов."""
 import json
+import re
+from collections import Counter
 from ClassifyControlsTextDisplay import ROOT
 from CheckActionParameterActivation import flat_action
 from CheckActionOverlappingKeyClipReturns import run_to
 from CheckMusic import PC, SP, Simulator
+
+
+FIXED_TEMPORARY_WINDOW = range(0x5DA0, 0x5F5D)
+BANKED_TEMPORARY_WINDOW = range(0xDADE, 0xDC9B)
 
 
 class ClipMemory(bytearray):
@@ -71,6 +77,7 @@ def check_dispatch_targets(flat):
     original_page = bytes(flat[0xD000:0xD100])
     assert 0xCF not in original_page
     cases = 0
+    selected = set()
     for use_overlay in (False, True):
         original = bytearray(flat)
         if use_overlay:
@@ -89,8 +96,158 @@ def check_dispatch_targets(flat):
                 assert simulator.registers[PC] == target
                 assert simulator.registers[SP] == 0xBFFE - depth
                 assert target >> 8 != 0xCF
+                selected.add(target)
                 cases += 1
-    return cases, sorted(set(original_page))
+    return cases, sorted(set(original_page)), selected
+
+
+def check_object_dispatch_targets(flat):
+    cases = []
+    targets = {}
+    entries = (
+        ('DispatchRecordClass', 0x64DF, 0x64EF, 0x64F0, 0x12, 0),
+        ('DispatchObjectState.CallHandler', 0xF843, 0xF85D, 0xEF50, 0x0A, 4),
+        ('HandleLinkedTargetState.SelectSaved', 0xF168, 0xF175, 0xEF50, None, 0),
+        ('HandleLinkedPhaseState.SelectSaved', 0xF2B9, 0xF2C6, 0xEF50, None, 0),
+    )
+    for name, entry, jump, table, field, stack_bytes in entries:
+        selected = set()
+        # Проверка полного байтового домена, включая чтения за физическим концом обеих таблиц.
+        for code in range(256):
+            memory = flat.copy()
+            if field is not None:
+                memory[0xA100 + field] = code
+            cpu = Simulator(memory, {'PC': entry, 'SP': 0xBFFE, 'IX': 0xA100, 'AF': code << 8})
+            run_to(cpu, jump, 20)
+            assert memory[jump] == 0xE9
+            cpu.run()
+            index = table + ((code << 1) & 255)
+            target = flat[index] | flat[index + 1] << 8
+            assert cpu.registers[PC] == target and cpu.registers[SP] == 0xBFFE - stack_bytes
+            assert target >> 8 != 0xCF, (name, code, target)
+            selected.add(target)
+        cases.append(dict(dispatcher=name, jump=jump, table=table, profiles=256,
+                          distinct_targets=len(selected), page_cf_targets=0))
+        targets[name] = selected
+    return cases, targets
+
+
+def check_indirect_sources(flow, flat):
+    regions = {region['name']: region['instructions'] for region in flow
+               if region['name'] in ('Action', 'ThreeD')}
+    perspective = {0xDB9E, 0xDBA7, 0xDBB2, 0xDBBC}
+    clip = {0xC070, 0xC992}
+    state = {0x64EF, 0xF175, 0xF2C6, 0xF85D}
+    expected = {'Action': perspective | clip | state | {0x6CFF, 0x6F4D, 0xAFF3, 0xD192},
+                'ThreeD': perspective | clip | {0xD192}}
+    for region, instructions in regions.items():
+        assert {item['address'] for item in instructions
+                if item['operation'] in ('JP (HL)', 'JP (IX)', 'JP (IY)')} == expected[region]
+
+    def immediate_producers(region, entry, register):
+        instructions = regions[region]
+        opcode = 'CALL' if entry == 0x6CEF else 'JP'
+        pattern = re.compile(rf'{opcode} (?:[A-Z]+,)?#{entry:04X}')
+        sites = []
+        for index, item in enumerate(instructions):
+            if not pattern.fullmatch(item['operation']):
+                continue
+            prior = instructions[index - 1]
+            if entry == 0x6CEF and prior['operation'] == 'PUSH IX':
+                assert prior['offset'] + 2 == item['offset']
+                prior = instructions[index - 2]
+                assert prior['offset'] + 5 == item['offset']
+            else:
+                assert prior['offset'] + len(bytes.fromhex(prior['hex'])) == item['offset']
+            assert prior['slot'] == item['slot']
+            match = re.fullmatch(rf'LD {register},#([0-9A-F]{{4}})', prior['operation'])
+            assert match, (region, item, prior)
+            target = int(match[1], 16)
+            assert target >> 8 != 0xCF
+            sites.append(dict(branch=item['address'], load=prior['address'], target=target))
+        return sites
+
+    callback = immediate_producers('Action', 0x6CEF, 'HL')
+    vector = immediate_producers('Action', 0xAF43, 'IY')
+    multiply = immediate_producers('Action', 0xD12C, 'IX')
+    vertex = immediate_producers('Action', 0xD7A0, 'HL')
+    assert [len(sites) for sites in (callback, vector, multiply, vertex)] == [4, 6, 15, 10]
+    assert {site['target'] for site in callback} == {0xEC00, 0xEC1B}
+    assert len({site['target'] for site in vector}) == 6
+    assert len({site['target'] for site in multiply}) == 15
+    assert vertex == immediate_producers('ThreeD', 0xD7A0, 'HL')
+    assert immediate_producers('ThreeD', 0xD12C, 'IX') == []
+    # Проверка прямых входов в найденные переходы в обход загрузки регистра.
+    direct = re.compile(r'(?:CALL|JP|JR|DJNZ) (?:[A-Z]+,)?#([0-9A-F]{4})')
+    for region, producers in (('Action', callback + vector + multiply + vertex), ('ThreeD', vertex)):
+        bypasses = {site['branch'] for site in producers}
+        assert not any(int(match[1], 16) in bypasses for item in regions[region]
+                       if (match := direct.fullmatch(item['operation'])))
+    # Проверка 26 записей и перекрывающегося 27-го шага исходного сканера.
+    keyboard = [flat[a] | flat[a + 1] << 8 for a in range(0x7017, 0x704D, 2)]
+    assert len(keyboard) == 27 and keyboard[-1] == 0xC0C9
+    assert all(target >> 8 != 0xCF for target in keyboard)
+    return dict(indirect_jump_sites={region: sorted(sites) for region, sites in expected.items()},
+                known_bank3_callback_sources=callback, known_vector_sources=vector,
+                known_multiply_sources=multiply, known_vertex_sources_in_both_copies=vertex,
+                original_keyboard_targets=keyboard, computed_rets_covered=False,
+                direct_entries_bypassing_known_register_loads=[],
+                outside_regions_or_modified_producers_covered=False)
+
+
+def check_temporary_module_targets(flow, functions, clip_targets, object_targets, indirect_sources, render):
+    indirect = dict(clip=clip_targets, **object_targets,
+                    keyboard=set(indirect_sources['original_keyboard_targets']))
+    for name, sites in indirect_sources.items():
+        if name.startswith('known_'):
+            indirect[name] = {site['target'] for site in sites}
+    for name, targets in indirect.items():
+        assert not targets.intersection(FIXED_TEMPORARY_WINDOW), name
+        assert not targets.intersection(BANKED_TEMPORARY_WINDOW), name
+
+    # Эти прямые совпадения относятся к коду ACTION и 3DPART в банке 0.
+    direct = re.compile(r'(?:CALL|JP|JR|DJNZ) (?:[A-Z]+,)?#([0-9A-F]{4})')
+    regions = ('ActionBoot', 'Action', 'ThreeD')
+    fixed_branches = []
+    banked_branches = []
+    for region in flow:
+        name = region['name']
+        if name not in regions:
+            continue
+        for item in region['instructions']:
+            match = direct.fullmatch(item['operation'])
+            if match is None:
+                continue
+            target = int(match[1], 16)
+            if target in FIXED_TEMPORARY_WINDOW:
+                fixed_branches.append((name, item['address'], target))
+            if target not in BANKED_TEMPORARY_WINDOW:
+                continue
+            assert name in ('Action', 'ThreeD') and item['address'] >= 0xC000
+            path, = [row['path'] for row in functions if row['region'] == name and row['slot'] == item['slot']
+                     and row['offset'] <= item['offset'] < row['end_offset']]
+            banked_branches.append(dict(region=name, address=item['address'], target=target, source=path))
+    counts = Counter(row['source'] for row in banked_branches)
+    assert not fixed_branches and counts == {
+        'Source/Action/ProjectRenderVertex.asm': 45, 'Source/ThreeD/ProjectRenderVertex.asm': 45,
+        'Source/Action/RenderClippedRecords.asm': 17, 'Source/ThreeD/RenderClippedRecords.asm': 17,
+        'Source/Action/RenderQueuedObject.asm': 1, 'Source/Action/ToggleTargetOverlay.asm': 1,
+    }
+    # Отдельная трасса проверяет адрес после RET и писателя обоих байтов стека.
+    assert render['passed'] and render['ret_targets_and_last_writers_of_both_stack_bytes_observed']
+    returns = render['ret_paths']
+    assert sum(row['count'] for row in returns) == render['taken_ret_count']
+    assert not any(row['target'] in FIXED_TEMPORARY_WINDOW for row in returns)
+    banked_returns = [row for row in returns if row['target'] in BANKED_TEMPORARY_WINDOW]
+    for row in banked_returns:
+        assert row['bank'] == row['stack_writer_bank'] == 0
+        assert row['stack_writer_opcode'] in (0xCD, 0xD4) and row['target'] == row['stack_writer'] + 3
+    return dict(regions=regions, fixed_window=[0x5DA0, 0x5F5C], banked_window=[0xDADE, 0xDC9A],
+                original_indirect_targets={name: sorted(targets) for name, targets in indirect.items()},
+                fixed_window_direct_branches=fixed_branches, banked_window_bank0_branches=banked_branches,
+                physical_control_bank=1, separately_traced_render_returns=render['taken_ret_count'],
+                render_returns_to_same_cpu_addresses_in_bank0=banked_returns, all_returns_covered=False,
+                unregistered_code_covered=False)
 
 
 def main():
@@ -120,7 +277,14 @@ def main():
     assert deleted['deleted'] and raw_words == {'CF08': [0x4167, 0x9A62], 'CF09': [0x259B], 'CF0A': [0xE35B]}
     assert all(deleted['offset'] + deleted['length'] <= offset < deleted['offset'] + deleted['allocated_length']
                for offsets in raw_words.values() for offset in offsets)
-    dispatch_cases, high_bytes = check_dispatch_targets(memory)
+    dispatch_cases, high_bytes, clip_targets = check_dispatch_targets(memory)
+    object_dispatch_cases, object_targets = check_object_dispatch_targets(memory)
+    indirect_sources = check_indirect_sources(flow, memory)
+    reports = ROOT / 'Tools/Disasm/Reports'
+    functions = json.loads((reports/'Functions.json').read_bytes())
+    render = json.loads((reports/'ActionNonemptyRenderFrameVerification.json').read_bytes())
+    temporary_module_targets = check_temporary_module_targets(flow, functions, clip_targets, object_targets,
+                                                             indirect_sources, render)
     complete_paths = check_complete_paths(memory)
     report = dict(passed=True, region='Action', bank=0, address=0xCF08, bytes=[0xF3, 0xAF, 0xC9],
                   valid_lookup_entries=selected, table_role_proved=True,
@@ -128,10 +292,13 @@ def main():
                   explicit_references_to_cf08_cf0a=references,
                   raw_words_disk_offsets=raw_words, all_raw_words_in_deleted_sector_tail=True,
                   original_high_table_bytes=high_bytes, target_exclusion_cases=dispatch_cases,
+                  object_dispatch_target_exclusion=object_dispatch_cases,
+                  registered_indirect_sources=indirect_sources,
+                  temporary_module_target_exclusion=temporary_module_targets,
                   complete_paths=complete_paths,
                   page_cf_unreachable_via_both_clip_dispatchers_with_original_high_table=True,
                   possible_instructions=['DI', 'XOR A', 'RET'], execution_entry_proved=False,
-                  nonexecution_proved=False, unknown_status_preserved=True,
+                  nonexecution_proved=False, physical_emission='named_pointer_low_bytes',
                   source_bytes_changed=False, assembly_executed=False, native_execution=False)
     (ROOT/'Tools/Disasm/Reports/ActionClipTableAliasVerification.json').write_bytes(
         (json.dumps(report, ensure_ascii=False, indent=2)+'\n').encode('utf-8'))

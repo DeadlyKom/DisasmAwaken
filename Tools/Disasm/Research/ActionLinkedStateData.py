@@ -5,8 +5,8 @@ TABLES=(
     ('ActionOverlayLineData','Source/Action/Data/OverlayLine.asm',0x8B6E,0x8B72,'FOverlayLine',
      (('Header',1,'B2, открытый XOR-сегмент из двух вершин'),('FirstIndex',1,'байтовое смещение первой FRenderProjectedPoint'),
       ('SecondIndex',1,'байтовое смещение второй FRenderProjectedPoint'),('Terminator',1,'полный нулевой конец потока')),('Line',)),
-    ('ActionClassSpawnValues','Source/Action/Data/ClassSpawnValues.asm',0x9280,0x9289,'FClassSpawnByte',
-     (('Value',1,'исходный байт Unknown14 после попытки создания, единицы во всех состояниях не установлены'),),tuple('Class'+str(i) for i in range(9))))
+    ('ActionClassSpawnValues','Source/Action/Data/ClassSpawnValues.asm',0x9280,0x9289,'FMissileRepeatDelay',
+     (('Counter',1,'начальное значение MissileRepeatDelay после попытки пуска, авторский счётчик RCO'),),tuple('Class'+str(i) for i in range(9))))
 
 
 def render(source,table):

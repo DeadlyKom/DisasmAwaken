@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "total_cases": 262,
+  "all_256_IXL_values": true,
+  "all_source_byte_values_in_each_of_256_pattern_profiles": true,
+  "additional_constant_boundary_cases": 6,
+  "original_code_sha256": "5eef5cf1811ba2bb28b4f62b4ff872fce7ce269f8c43d17f9a17838b67be607f",
+  "output_bytes": 16384,
+  "each_output_byte_written_once": true,
+  "CPU_stack_writes": 2,
+  "exact_registers_including_R_except_T": true,
+  "all_physical_banks_and_write_counts_compared": true,
+  "final_HL": 49344,
+  "final_DE": 49152,
+  "final_BC": 32765,
+  "final_A": 17,
+  "F_counts": {
+    "16": 159,
+    "17": 103
+  },
+  "M1_per_case": 54096,
+  "all_joint_4096_byte_source_inputs_exhausted": false,
+  "IRQ_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

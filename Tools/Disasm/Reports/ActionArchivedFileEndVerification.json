@@ -1,0 +1,309 @@
+{
+  "passed": true,
+  "archived_dispatch": {
+    "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+    "disk_member": "awk5.trd",
+    "slot": 68,
+    "archived_origin": 24576,
+    "archived_logical_end_exclusive": 63563,
+    "archived_sector_end_exclusive": 63744,
+    "archived_sector_suffix_bytes": 181,
+    "current_origin": 24576,
+    "current_dispatch_end_exclusive": 63590,
+    "current_logical_end_exclusive": 65536,
+    "current_loaded_zero_tail_bytes": 1946,
+    "compared_dispatch_prefix_bytes": 137,
+    "relocated_operands": [
+      38872,
+      38877,
+      38884,
+      38895,
+      38903,
+      38918,
+      38923,
+      38928,
+      38940,
+      38947,
+      38954
+    ],
+    "class18_target_old": 61566,
+    "class18_target_current": 61557,
+    "historical_loop_target": 63262,
+    "current_loop_target": 63285
+  },
+  "scl_physical_identity": {
+    "archive_sha256": "64b2ee1805282a7f8f5bbcd5d71b0df3a1c5f46448f424ccaceaa79f403b961c",
+    "scl_checksum_verified": true,
+    "files": [
+      {
+        "scl_index": 0,
+        "trd_slot": 3,
+        "scl_key": "_awaken_B",
+        "trd_key": " AWAKEN B",
+        "allocated_bytes": 11520,
+        "logical_bytes": 119,
+        "physical_sha256": "202672e6e050bc142cd4c3592efe18efb3740892e710fd3921f5050385886552"
+      },
+      {
+        "scl_index": 1,
+        "trd_slot": 4,
+        "scl_key": "STATIONFC",
+        "trd_key": "STATIONFC",
+        "allocated_bytes": 40960,
+        "logical_bytes": 40960,
+        "physical_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35"
+      },
+      {
+        "scl_index": 2,
+        "trd_slot": 5,
+        "scl_key": "LANG    C",
+        "trd_key": "LANG    C",
+        "allocated_bytes": 4096,
+        "logical_bytes": 3864,
+        "physical_sha256": "92f1f656d150b82844697329625d4fea9607f9a62181e8558091f6594e4a27b1"
+      },
+      {
+        "scl_index": 3,
+        "trd_slot": 6,
+        "scl_key": "D3D     C",
+        "trd_key": "D3D     C",
+        "allocated_bytes": 16128,
+        "logical_bytes": 15978,
+        "physical_sha256": "672578dc75c56674e98f8c104e792fd649b9e172d68ab3093a33d26f4124bfe5"
+      },
+      {
+        "scl_index": 4,
+        "trd_slot": 7,
+        "scl_key": "KARTA   C",
+        "trd_key": "KARTA   C",
+        "allocated_bytes": 11776,
+        "logical_bytes": 11776,
+        "physical_sha256": "bab32dcd0347fabd011a6db89f9290c790e8b9b55aeacad78443afa668583fa0"
+      },
+      {
+        "scl_index": 5,
+        "trd_slot": 8,
+        "scl_key": "HELP    C",
+        "trd_key": "HELP    C",
+        "allocated_bytes": 6144,
+        "logical_bytes": 5921,
+        "physical_sha256": "103b2ea321966fca4eb5dc53dba84072af6a9b0eef0566af7c4c7f5cd689c4d7"
+      },
+      {
+        "scl_index": 6,
+        "trd_slot": 9,
+        "scl_key": "stscr   C",
+        "trd_key": "stscr   C",
+        "allocated_bytes": 61184,
+        "logical_bytes": 3230,
+        "physical_sha256": "9ac775c101fca58ecccf6850f6e6044a1228871a48e644d1969698eb4c4d2d56"
+      },
+      {
+        "scl_index": 7,
+        "trd_slot": 10,
+        "scl_key": "MUZ1    C",
+        "trd_key": "MUZ1    C",
+        "allocated_bytes": 7424,
+        "logical_bytes": 7209,
+        "physical_sha256": "59eefb542a21b3bcaf9f68ab083186a1d08b7f223ff62877eef54805c0f5e6f8"
+      },
+      {
+        "scl_index": 8,
+        "trd_slot": 11,
+        "scl_key": "SAVE1   s",
+        "trd_key": "SAVE1   s",
+        "allocated_bytes": 512,
+        "logical_bytes": 512,
+        "physical_sha256": "6f91999c3cf574ca099d1cd805120cd3048320a5d3992b7f5c7e850101aaa189"
+      },
+      {
+        "scl_index": 9,
+        "trd_slot": 12,
+        "scl_key": "SAVE2   s",
+        "trd_key": "SAVE2   s",
+        "allocated_bytes": 512,
+        "logical_bytes": 512,
+        "physical_sha256": "39615841139ad50f01b0618453066ba27d8a287746718dea6139cfe0fca53d27"
+      },
+      {
+        "scl_index": 10,
+        "trd_slot": 13,
+        "scl_key": "SAVE3   s",
+        "trd_key": "SAVE3   s",
+        "allocated_bytes": 512,
+        "logical_bytes": 512,
+        "physical_sha256": "b5b9675c7d00b6a5d453bb4a09927f0bc8b20f58a324b9a5f75a56279460bf08"
+      },
+      {
+        "scl_index": 11,
+        "trd_slot": 14,
+        "scl_key": "SAVE4   s",
+        "trd_key": "SAVE4   s",
+        "allocated_bytes": 512,
+        "logical_bytes": 512,
+        "physical_sha256": "36bad78201c11dcd1340e881376f9c3f956ea7dde767532b4ed4f60c8de9ad12"
+      },
+      {
+        "scl_index": 12,
+        "trd_slot": 15,
+        "scl_key": "SAVE5   s",
+        "trd_key": "SAVE5   s",
+        "allocated_bytes": 512,
+        "logical_bytes": 512,
+        "physical_sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+      },
+      {
+        "scl_index": 13,
+        "trd_slot": 16,
+        "scl_key": "SAVE0   s",
+        "trd_key": "SAVE0   s",
+        "allocated_bytes": 512,
+        "logical_bytes": 512,
+        "physical_sha256": "cf3886691e1c91fc6e52a89366bc07965e71eca19a4c4deaf3acbc3c1837e610"
+      },
+      {
+        "scl_index": 14,
+        "trd_slot": 17,
+        "scl_key": "ACTION  C",
+        "trd_key": "ACTION  C",
+        "allocated_bytes": 40960,
+        "logical_bytes": 40960,
+        "physical_sha256": "63f2ac2717bb7f630b25ec3cb92671e5f78f2174f36d7370d1bae39baf3fc39a"
+      },
+      {
+        "scl_index": 15,
+        "trd_slot": 18,
+        "scl_key": "DATAS   C",
+        "trd_key": "DATAS   C",
+        "allocated_bytes": 7424,
+        "logical_bytes": 7213,
+        "physical_sha256": "8b39584c06dc84d7d98aa51793e45b56f72150c64c62bfed98b9334ea61ad4c0"
+      },
+      {
+        "scl_index": 16,
+        "trd_slot": 19,
+        "scl_key": "3DPART  C",
+        "trd_key": "3DPART  C",
+        "allocated_bytes": 8448,
+        "logical_bytes": 8224,
+        "physical_sha256": "35d9cf002a839522e7baade3a6b177789fe6fb490160735d4fd89c87127a5638"
+      },
+      {
+        "scl_index": 17,
+        "trd_slot": 20,
+        "scl_key": "VOXAL0  C",
+        "trd_key": "VOXAL0  C",
+        "allocated_bytes": 11264,
+        "logical_bytes": 11264,
+        "physical_sha256": "17c876d1b34cef75cc60df001765f97780cd23ca3734807f6e3738da5d808693"
+      },
+      {
+        "scl_index": 18,
+        "trd_slot": 21,
+        "scl_key": "VOXAL   C",
+        "trd_key": "VOXAL   C",
+        "allocated_bytes": 3840,
+        "logical_bytes": 3784,
+        "physical_sha256": "1503d4502b7706fc94af8614e43b2400d82550eefdc42c905843c4b07cc1c329"
+      },
+      {
+        "scl_index": 19,
+        "trd_slot": 22,
+        "scl_key": "CONTROL0C",
+        "trd_key": "CONTROL0C",
+        "allocated_bytes": 6912,
+        "logical_bytes": 6878,
+        "physical_sha256": "46a153ee2a94aeac594e40a0c4019cc4cd9d5e0d15d4f145c690f898981270b9"
+      },
+      {
+        "scl_index": 20,
+        "trd_slot": 23,
+        "scl_key": "CONTROL C",
+        "trd_key": "CONTROL C",
+        "allocated_bytes": 6656,
+        "logical_bytes": 6474,
+        "physical_sha256": "6df14cf0d00ac3852ecd3aa53bafe37e1ddb818051ae7aaaf1d2608ed9ea84b9"
+      },
+      {
+        "scl_index": 21,
+        "trd_slot": 24,
+        "scl_key": "OBJECT3DC",
+        "trd_key": "OBJECT3DC",
+        "allocated_bytes": 10752,
+        "logical_bytes": 10580,
+        "physical_sha256": "b9491868fcb680b6d6733f528bd70564d053697e32ca28b2f2e0c9c28402b827"
+      },
+      {
+        "scl_index": 22,
+        "trd_slot": 25,
+        "scl_key": "PANELN  C",
+        "trd_key": "PANEL   C",
+        "allocated_bytes": 1536,
+        "logical_bytes": 1463,
+        "physical_sha256": "979d13f06025cdd938b5fb9c707ae8c81f2a88ff7bba8f9495fc322be8256ddc"
+      },
+      {
+        "scl_index": 23,
+        "trd_slot": 26,
+        "scl_key": "PANELF  C",
+        "trd_key": "PANELF  C",
+        "allocated_bytes": 1536,
+        "logical_bytes": 1436,
+        "physical_sha256": "9f952673993a715ae8bb88e7353998d7857e97d62d87c83d3680d4dfbac8ce8d"
+      },
+      {
+        "scl_index": 24,
+        "trd_slot": 27,
+        "scl_key": "PANELMETC",
+        "trd_key": "PANELMETC",
+        "allocated_bytes": 1536,
+        "logical_bytes": 1423,
+        "physical_sha256": "f7aaccef233911b62dec24d35c5a2edf6b54bba3cee82432bf56604fbad7f9fd"
+      },
+      {
+        "scl_index": 25,
+        "trd_slot": 28,
+        "scl_key": "PANEL   C",
+        "trd_key": "PANELFF C",
+        "allocated_bytes": 1792,
+        "logical_bytes": 1543,
+        "physical_sha256": "b01c8de4ffbccfdd2c1d81f71e897deafc11f5c14ae639c48d1828b99fc3b211"
+      },
+      {
+        "scl_index": 26,
+        "trd_slot": 29,
+        "scl_key": "FINALF  C",
+        "trd_key": "FINALF  C",
+        "allocated_bytes": 19200,
+        "logical_bytes": 19114,
+        "physical_sha256": "46e61605cb73e23b178d168f40c9d85417bd3613ad279769e7e3779016286141"
+      },
+      {
+        "scl_index": 27,
+        "trd_slot": 30,
+        "scl_key": "scene1pos",
+        "trd_key": "scene1pos",
+        "allocated_bytes": 18688,
+        "logical_bytes": 18676,
+        "physical_sha256": "059af5067ceffbf683fa614911809394cee26fdd3f118728f6f3490a419c19b1"
+      }
+    ],
+    "panel_screens": {
+      "25": {
+        "packed_bytes": 1463,
+        "unpacked_bytes": 6912,
+        "unpacked_sha256": "baad62078fd18c517dc1b8ccdca49f1fb6cb909b99b9ba44a458b73d328dad54",
+        "byte_at_daeb": 4
+      },
+      "28": {
+        "packed_bytes": 1543,
+        "unpacked_bytes": 6912,
+        "unpacked_sha256": "1d33aa9dc91f442a8ef7bbddbb8fe2bf3430122ba4ba88f0dbda3c26a9610551",
+        "byte_at_daeb": 160
+      }
+    }
+  },
+  "original_disk_purpose_of_tail_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

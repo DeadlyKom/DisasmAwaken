@@ -93,7 +93,7 @@ def name_operands(region, address, operation):
         return operation
     operation = operation.replace('IY+#', 'IY + #')
     aliases = {
-        '9BD2': 'ActionByteLimitCounter.Value.Current',
+        '9BD2': 'ActionFlightTonnage.Value.Used',
         '6781': 'ActionBodyMotionState.PhaseWord', '9B81': 'ActionGlyphIndicatorState.Control.FirstMode',
         '68D5': 'ActionBodyMotionState.WideStepX', '68FD': 'ActionBodyMotionState.WideStepY',
         '6925': 'ActionBodyMotionState.WideStepDepth', '7B6B': 'ActionApplyParametersState.SpawnLowLimit',

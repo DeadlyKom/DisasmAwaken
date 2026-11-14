@@ -12,6 +12,38 @@
   "corner_gate_all_bytes_checked": true,
   "ordinary_calls_not_substituted_for_special_frame": true,
   "full_dispatch_semantics_proved": false,
+  "refresh_checked_cases": 1023672,
+  "all_initial_R_values_observed": true,
+  "initial_R_independent_full_input_product_proved": false,
+  "original_refresh_proof_code_sha256": "4d1fc72d1ca9d6c6713c6c177fd5d91887126e04a2bde1f9a7437fefa17dc36e",
+  "refresh_M1_by_entry": {
+    "DADC": 12,
+    "DAF0": 12,
+    "DB04": 12,
+    "DB18": 12,
+    "DB2C": 7,
+    "DB37": 7,
+    "DB42": 14,
+    "DB59": 9,
+    "DB4A": 10,
+    "DAB0": {
+      "blocked": 3,
+      "written": 15
+    },
+    "DABB": {
+      "blocked": 3,
+      "written": 15
+    },
+    "DAC6": {
+      "blocked": 3,
+      "written": 15
+    },
+    "DAD1": {
+      "blocked": 3,
+      "written": 15
+    }
+  },
+  "original_refresh_paths_have_no_LD_R_A_or_LD_A_R": true,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

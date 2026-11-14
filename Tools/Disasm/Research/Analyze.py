@@ -230,7 +230,7 @@ def analyze(name, extra_roots=(), observed=(), initial_bank=None):
     ranges = {"Text": ((0xC000, 0xC935),),
               "ThreeD": THREED_OVERLAY_CODE_RANGES,
               "Voxel": ((0xEE7A, 0xF931), (0xF9E9, 0xFAC8)),
-              "Action": ((0xC000, 0xCEE3), (0xCF08, 0xCF0B), (0xD10A, 0xD194))}
+              "Action": ((0xC000, 0xCEE3), (0xD10A, 0xD194))}
     linear = set()
     for start, end in ranges.get(name, ()):
         for instruction in dis.disassemble(start, end, "h"):

@@ -1,0 +1,275 @@
+{
+  "method": "static_named_direct_writer_and_caller_inventory",
+  "sources_sha256": {
+    "Source/Action/AcquireLinkAndApplyOffsets.asm": "0d131a0cc70c8ebb25da01d88200fce80b5057cf91a401bedfc576007fb51892",
+    "Source/Action/ApproachTargetRecordAndResolve.asm": "139f42e21d33cb6a0ec5f68621a1d9941b3123c6da138bb924933f5f800505f9",
+    "Source/Action/CheckAndToggleLinkedOverlay.asm": "c84323f9b29318ff2e5a23cede4a9b41de523c909be53c9b31a4586a8cb0e105",
+    "Source/Action/CheckLinkedTargetTransition.asm": "59540f2a3a8db0d4c5705c755d6e9d0b2d20491278e692363bb7351c5554b742",
+    "Source/Action/ConfigureClass0Link.asm": "2afa8ab86af772aea3ad9f047aabe8f69d121f197fc6c6fe324d59c8cf57e063",
+    "Source/Action/ConfigureClass2Link.asm": "883a2f43d57e508a1f4beed757a1e6b1fe4f9ad6de1fca876e40f61af44f3f14",
+    "Source/Action/ConfigureClass3Link.asm": "e6b58827866dc7395a4d876371ff75bb53e81c46f9a86c25d1cafa48fc2e65e0",
+    "Source/Action/ConfigureClass4Link.asm": "e95b4598e0434143fb90522e7a16d616d2c160f12cd535f0e64cd969a73e9d19",
+    "Source/Action/ConfigureClass7Link.asm": "e2b654250ea2987200695eb8b0b61cddaff5394e98eda6791aff6ede7b37b341",
+    "Source/Action/ConfigureClass9Link.asm": "d12aa407f4df7f37ccb68108587f30b4c78c467a3a53198926163a34aff66833",
+    "Source/Action/CopyRecordLinkOverride.asm": "38e0080a759bd3f6e607a46fda5981c9367869cdbb436f132bba09a5f62c9ec3",
+    "Source/Action/CreateCargoAndUpdateList.asm": "d80fb5a201fd25e4ac53decee2ea69717b5aeae0cd6e758d1cca96979eba06fd",
+    "Source/Action/CreateLinkedMissileRecord.asm": "15e129d206f7b037bc7f96e9049bf6950ba64ef9cef64b984b7eef4c0d038add",
+    "Source/Action/FinishSpawnRecord.asm": "998fdd3a04c8b80e6dee73387bac665807648dc1df97111bab13f5bd830b0897",
+    "Source/Action/HandleLinkedPhaseState.asm": "af8321b2078fe35870d6e158c4ff23f4d062145f4386588179e4690ff95b165c",
+    "Source/Action/HandleLinkedTargetState.asm": "2526dfdcefc9c5e885380972ba353b371c990dfb47b4faf2b5df676f87af7c30",
+    "Source/Action/SpawnAlternate.asm": "9783f1605d1c577b93608b6e1f0681dc391caaf2e95b195a18c769c111ea839e",
+    "Source/Action/SpawnLinkedClass9Records.asm": "90d9daf0d128ba8369140bf951e3b326813c61dfda72365a08db8835b1e8c634",
+    "Source/Action/SpawnPeriodicClass3Record.asm": "6add798d9eb276e2fc9e4e04d6aa8a7f9b78750e7b6a3906b576f32c9a970b77"
+  },
+  "direct_writers": [
+    {
+      "path": "Source/Action/AcquireLinkAndApplyOffsets.asm",
+      "line": 40,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/ApproachTargetRecordAndResolve.asm",
+      "line": 44,
+      "field": "LinkOverride",
+      "instruction": "LD (IY + @FActionRecord.LinkOverride), A"
+    },
+    {
+      "path": "Source/Action/ApproachTargetRecordAndResolve.asm",
+      "line": 46,
+      "field": "LinkedIndex",
+      "instruction": "LD (IY + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/CheckAndToggleLinkedOverlay.asm",
+      "line": 64,
+      "field": "LinkedIndex",
+      "instruction": "LD (IY + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/CheckLinkedTargetTransition.asm",
+      "line": 47,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/ConfigureClass0Link.asm",
+      "line": 43,
+      "field": "LinkedIndex",
+      "instruction": "SelectLink:     LD (IX + @FActionRecord.LinkedIndex), @ActionClass9Const.DefaultIndex"
+    },
+    {
+      "path": "Source/Action/ConfigureClass0Link.asm",
+      "line": 51,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/ConfigureClass2Link.asm",
+      "line": 50,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), @ActionClass9Const.DefaultIndex"
+    },
+    {
+      "path": "Source/Action/ConfigureClass2Link.asm",
+      "line": 62,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/ConfigureClass3Link.asm",
+      "line": 54,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), @ActionClass9Const.DefaultIndex"
+    },
+    {
+      "path": "Source/Action/ConfigureClass3Link.asm",
+      "line": 62,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/ConfigureClass3Link.asm",
+      "line": 84,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), @ActionRandomRecordConst.DefaultCode"
+    },
+    {
+      "path": "Source/Action/ConfigureClass4Link.asm",
+      "line": 47,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), @ActionClass9Const.DefaultIndex"
+    },
+    {
+      "path": "Source/Action/ConfigureClass4Link.asm",
+      "line": 55,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/ConfigureClass7Link.asm",
+      "line": 48,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), @ActionClass9Const.DefaultIndex"
+    },
+    {
+      "path": "Source/Action/ConfigureClass7Link.asm",
+      "line": 56,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/ConfigureClass9Link.asm",
+      "line": 42,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), @ActionClass9Const.DefaultIndex"
+    },
+    {
+      "path": "Source/Action/CopyRecordLinkOverride.asm",
+      "line": 35,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/CreateCargoAndUpdateList.asm",
+      "line": 121,
+      "field": "LinkedIndex",
+      "instruction": "LD (IY + @FActionRecord.LinkedIndex), #FF"
+    },
+    {
+      "path": "Source/Action/CreateLinkedMissileRecord.asm",
+      "line": 64,
+      "field": "LinkedIndex",
+      "instruction": "LD (IY + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/FinishSpawnRecord.asm",
+      "line": 38,
+      "field": "LinkOverride",
+      "instruction": "LD (IX + @FActionRecord.LinkOverride), #FF"
+    },
+    {
+      "path": "Source/Action/FinishSpawnRecord.asm",
+      "line": 39,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), #FF"
+    },
+    {
+      "path": "Source/Action/HandleLinkedPhaseState.asm",
+      "line": 52,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/HandleLinkedPhaseState.asm",
+      "line": 135,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), @ActionLinkedPhaseConst.NoLink"
+    },
+    {
+      "path": "Source/Action/HandleLinkedTargetState.asm",
+      "line": 57,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/HandleLinkedTargetState.asm",
+      "line": 145,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), #FF"
+    },
+    {
+      "path": "Source/Action/SpawnAlternate.asm",
+      "line": 126,
+      "field": "LinkedIndex",
+      "instruction": "LD (IY + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/SpawnAlternate.asm",
+      "line": 136,
+      "field": "LinkOverride",
+      "instruction": "LD (IY + @FActionRecord.LinkOverride), #FF"
+    },
+    {
+      "path": "Source/Action/SpawnAlternate.asm",
+      "line": 337,
+      "field": "LinkOverride",
+      "instruction": "LD (IX + @FActionRecord.LinkOverride), #FF"
+    },
+    {
+      "path": "Source/Action/SpawnAlternate.asm",
+      "line": 338,
+      "field": "LinkedIndex",
+      "instruction": "LD (IX + @FActionRecord.LinkedIndex), #FF"
+    },
+    {
+      "path": "Source/Action/SpawnLinkedClass9Records.asm",
+      "line": 116,
+      "field": "LinkedIndex",
+      "instruction": "LD (IY + @FActionRecord.LinkedIndex), A"
+    },
+    {
+      "path": "Source/Action/SpawnLinkedClass9Records.asm",
+      "line": 118,
+      "field": "LinkOverride",
+      "instruction": "LD (IY + @FActionRecord.LinkOverride), #FF"
+    },
+    {
+      "path": "Source/Action/SpawnPeriodicClass3Record.asm",
+      "line": 102,
+      "field": "LinkOverride",
+      "instruction": "LD (IY + @FActionRecord.LinkOverride), #FF"
+    },
+    {
+      "path": "Source/Action/SpawnPeriodicClass3Record.asm",
+      "line": 103,
+      "field": "LinkedIndex",
+      "instruction": "LD (IY + @FActionRecord.LinkedIndex), A"
+    }
+  ],
+  "direct_callers": [
+    {
+      "path": "Source/Action/HandleLinkedPhaseState.asm",
+      "line": 145,
+      "instruction": "JP Z, @Action.CreateMissileAndContinueOffsets.Entry"
+    },
+    {
+      "path": "Source/Action/HandleLinkedTargetState.asm",
+      "line": 159,
+      "instruction": "JP Z, @Action.CreateMissileAndContinueOffsets.Entry"
+    }
+  ],
+  "ordinary_target_addresses": {
+    "18": 42752,
+    "1A": 42880,
+    "3D": 45120,
+    "3E": 45184,
+    "FF": 57536
+  },
+  "context_FF_special_address": 42880,
+  "creator_FF_ordinary_address": 57536,
+  "override_non_FF_byte_copied_without_upper_bound": true,
+  "caller_guards": {
+    "State02": [
+      "context Component0.High not 80",
+      "vector-context Carry clear",
+      "MissileRepeatDelay originally 1"
+    ],
+    "State05": [
+      "context Component0.High not 80",
+      "MissileRepeatDelay originally 1"
+    ]
+  },
+  "State05_does_not_reload_vector_context_here": true,
+  "source_of_LinkOverride": [
+    "FF initializers",
+    "current Phase0OrLink in ApproachTargetRecordAndResolve"
+  ],
+  "all_reachable_indices_proved": false,
+  "index_61_or_62_native_reachability_proved": false,
+  "direct_named_writers_only": true,
+  "indirect_bulk_or_numeric_writes_exhausted": false,
+  "semantic_completion_proved": false,
+  "source_modified": false,
+  "assembly_executed": false
+}

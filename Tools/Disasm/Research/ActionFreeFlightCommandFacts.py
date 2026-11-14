@@ -12,7 +12,7 @@ MUTATIONS=((0x7553,0xA85F,1,0xA85E,'Source/Action/UpdateFrame.asm'),
 CONTRACTS={('Action',0x754C):(
     ['HL, DE и BC задают сохраняемый контекст, AF входного аргумента не задаёт',
      'CommandDelay допускает обработку только при нуле, FreeFlight.Value=FF означает отсутствие оборудования',
-     'LimitWord является изменяемым словом ограничителя IncreaseGaugeWord по 7693, это не само SignedWord',
+     'LimitWord является изменяемым словом ограничителя IncreaseGaugeWord по 7693, это не само SpeedWord',
      'банк 0 выбран, очередь Controls банка 1 удовлетворяет QueueTextItemBank1, paging разблокирован',
      'CPU-стек допускает восемнадцать дополнительных байтов, IRQ не вмешиваются'],
     ['при ненулевой задержке HL, DE и BC сохраняются, A равен задержке, F соответствует AND A, записи и OUT отсутствуют',

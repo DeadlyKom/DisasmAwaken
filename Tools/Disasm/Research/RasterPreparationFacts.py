@@ -101,3 +101,29 @@ def name_operands(region,address,operation):
  if region=='Map' and address in FUNCTIONS:
   return operation.replace('LD H, #EE','LD H, @MapMarkerConst.RowHighPage').replace('(#DFB8)','(@MapState.LeftMask)').replace('(#DFBA)','(@MapState.UpperRow)').replace('(#DFBC)','(@MapState.LowerRow)')
  return operation
+
+
+# Точные M1 двух координатных подготовителей с исходными вращениями.
+for _point_refresh_address,_point_refresh_note,_point_refresh_irq in ((58644, 'R меняется за 22+4*(X AND 7) M1, младшие семь битов оборачиваются, бит 7 сохраняется', 'IRQ не вмешиваются, обычный возврат доступен на CPU-стеке'), (58670, 'R меняется за 57-4*(X AND 7) M1, младшие семь битов оборачиваются, бит 7 сохраняется', 'IRQ не вмешиваются, CPU-стек допускает два временных байта PUSH AF без перекрытия кода и таблиц')):
+    _point_refresh_contract = CONTRACTS['Map',_point_refresh_address]
+    _point_refresh_contract[0].append(_point_refresh_irq)
+    _point_refresh_contract[1][:] = [line.replace('регистры, I и IFF сохранены','регистры, I, IM и IFF сохранены') for line in _point_refresh_contract[1]]
+    _point_refresh_contract[2][:] = [line+', R' for line in _point_refresh_contract[2]]
+    _point_refresh_contract[3].insert(0,_point_refresh_note)
+
+
+# R обычных ограниченных поисков, сохранённый AF не содержит R.
+for _seek_refresh_address in (0xE5E3,0xE621):
+    _seek_refresh_contract = CONTRACTS['Map',_seek_refresh_address]
+    _seek_refresh_contract[0].append('IRQ не вмешиваются, шесть временных байтов CPU-стека не перекрывают код, таблицы и поля границ')
+    _seek_refresh_contract[1][:] = [line.replace('регистры, I и IFF сохранены','регистры, I, IM и IFF сохранены') for line in _seek_refresh_contract[1]]
+    _seek_refresh_contract[2][:] = [line+', R' for line in _seek_refresh_contract[2]]
+    _seek_refresh_contract[3].insert(0,'R меняется по числу шагов и проверок восьмистрочных групп, восстановление AF и BC из кадра не восстанавливает R')
+
+
+# Семь исходных инструкций настройки масок без записей RAM.
+_span_refresh_contract = CONTRACTS['Map',0xE5D8]
+_span_refresh_contract[0].append('IRQ не вмешиваются, обычный возврат доступен на CPU-стеке')
+_span_refresh_contract[1][:] = [line.replace('I и IFF сохранены','I, IM и IFF сохранены') for line in _span_refresh_contract[1]]
+_span_refresh_contract[2][:] = [line+', R' for line in _span_refresh_contract[2]]
+_span_refresh_contract[3].insert(0,'R меняется за семь M1, младшие семь битов увеличены на 7 по модулю 128, бит 7 сохраняется, записей RAM нет')

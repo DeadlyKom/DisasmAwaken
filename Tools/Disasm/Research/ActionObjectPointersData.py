@@ -1,6 +1,7 @@
 """128 физических little-endian указателей 9E00, чётность игрового индекса этим не вводится."""
 import re
 from PreviewSceneTables import render as render_records, parse as parse_records
+from ActionModelPhysicalData import model_name, AUTHORED_PRIMARY_NAMES
 FIELDS = (('Target', 2, 'адрес потока OBJECT3D банка 4, это не адрес вызова'),)
 TABLE = ('ActionObjectPointers', 'Source/Action/Data/ObjectPointers.asm', 0x3E00, 0x3F00,
          'FObjectDataPointer', FIELDS, tuple('Offset' + format(index, '02X') for index in range(0, 256, 2)))
@@ -11,13 +12,16 @@ TAIL_TABLE = ('ActionTailModelPointers', 'Source/Action/Data/TailModelPointers.a
 
 
 def tail_targets():
-    return {f'ActionModels.M{offset:04X}': 0xC000 + offset for offset in TAIL_MODELS}
+    return {'ActionModels.' + model_name(offset): 0xC000 + offset for offset in TAIL_MODELS}
 
 
 def render_tail(source):
     text, labels = render_records(source, TAIL_TABLE, 0x6000)
     text = text.replace('[подготовка и обход объектов](../../../Docs/PreviewQueueBuild.md)',
                         '[дополнительные указатели OBJECT3D](../../../Docs/ActionModelTail.md)')
+    text = text.replace('                assert $ == #9F00',
+        '                ; Авторские пары в физическом порядке: IST16, IST_PIRAT, IPRISON, IST_U1, IST_U2, IST_SCINCE, IGIP_PL\n'
+        '                assert $ == #9F00')
     for label, address in tail_targets().items():
         literal = f'#{address:04X}'
         assert text.count(literal) == 2
@@ -38,19 +42,35 @@ def parse_tail(text, symbols):
 
 def render(source):
     text, labels = render_records(source, TABLE, 0x6000)
-    return text.replace('[подготовка и обход объектов](../../../Docs/PreviewQueueBuild.md)',
-                        '[указатели OBJECT3D](../../../Docs/ActionObjectPointers.md)'), labels
+    text = text.replace('[подготовка и обход объектов](../../../Docs/PreviewQueueBuild.md)',
+                        '[указатели OBJECT3D](../../../Docs/ActionObjectPointers.md)')
+    text = text.replace('                assert $ == #9E00',
+        '                ; Первая страница архивной таблицы L97, номера пар и цели сверены с LABELS.a\n'
+        '                assert $ == #9E00')
+    count = 0
+    for offset, name in AUTHORED_PRIMARY_NAMES.items():
+        pattern = fr'^ {{20}}#{0xC000 + offset:04X} *(;.*)$'
+        text, matches = re.subn(pattern,
+            lambda match: (' ' * 20 + '@ActionModels.' + name).ljust(80) + match[1], text, flags=re.M)
+        assert matches > 0
+        count += matches
+    assert count == 128
+    return text, labels
 
 
 def parse(text):
     clean = [line.partition(';')[0].strip() for line in text.splitlines() if line.partition(';')[0].strip()]
     assert clean.pop(0) == 'module ActionObjectPointers'
     assert clean.pop(0) == 'assert $ == #9E00'
+    targets = {'ActionModels.' + name: 0xC000 + offset for offset, name in AUTHORED_PRIMARY_NAMES.items()}
     for label in TABLE[-1]:
         assert clean.pop(0) == label + ':'.ljust(16 - len(label)) + 'FObjectDataPointer {'
-        assert re.fullmatch(r'#[0-9A-F]{4}', clean.pop(0))
+        reference = clean.pop(0)
+        assert reference.startswith('@') and reference[1:] in targets
         assert clean.pop(0) == '}'
     assert clean == ['assert $ == #9F00', 'endmodule']
+    text = re.sub(r'^ {20}@([\w.]+) *(;.*)$',
+        lambda match: (' ' * 20 + f'#{targets[match[1]]:04X}').ljust(80) + match[2], text, flags=re.M)
     return parse_records(text, TABLE, 0x6000)
 
 

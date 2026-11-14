@@ -13,9 +13,81 @@ import re
 
 from SourcePresentation import BOILERPLATE, continuity, operation
 from MapRuntimeProfiles import GUARDS as MAP_ORIGINAL_PROFILE_GUARDS
+from Knowledge import FUNCTION_USAGE
 
 
 ROOT = Path(__file__).resolve().parents[3]
+
+
+def has_code_documentation_link(text):
+    """Ссылка из исходника на документ проекта, включая необязательный якорь раздела."""
+    return bool(re.search(r"\]\(\.\./\.\./Docs/[^)#]+\.md(?:#[^)]*)?\)", text))
+
+
+def numeric_control_contexts(functions, flow, modified, findings):
+    """Физические инструкции и писатели числовых целей, замечания не исключаются из аудита."""
+    owners = {f['path']: f for f in functions}
+    rows = []
+    for finding in findings:
+        if finding['issue'] != 'numeric_control_target':
+            continue
+        owner = owners[finding['path']]
+        line = (ROOT / owner['path']).read_text('utf-8').splitlines()[finding['line'] - 1]
+        original = re.sub(r'\s', '', operation(line))
+        matches = [i for region in flow if region['name'] == owner['region']
+                   for i in region['instructions'] if i['slot'] == owner['slot']
+                   and owner['offset'] <= i['offset'] < owner['end_offset']
+                   and re.sub(r'\s', '', i['operation']) == original]
+        row = dict(path=owner['path'], line=finding['line'], region=owner['region'],
+                   slot=owner['slot'], matching_physical_instructions=len(matches))
+        if len(matches) != 1:
+            row['operand_status'] = 'ambiguous_instruction_mapping'
+            rows.append(row)
+            continue
+        instruction = matches[0]
+        writers = [m for m in modified
+                   if len(bytes.fromhex(instruction['hex'])) == 3
+                   and instruction['operation'].startswith(('JP ', 'CALL '))
+                   and m.get('target_region', m['region']) == owner['region']
+                   and m['target_instruction'] == instruction['address']
+                   and m['target'] == instruction['address'] + 1 and m['size'] == 2
+                   and m.get('target_slot', owner['slot']) == owner['slot']
+                   and m.get('target_path', owner['path']) == owner['path']]
+        row.update(address=instruction['address'], offset=instruction['offset'],
+                   original_hex=instruction['hex'], operation=instruction['operation'],
+                   operand_status='registered_modified_word' if writers else 'no_registered_operand_writer',
+                   registered_writers=[dict(region=m['region'], address=m['writer'], path=m['path']) for m in writers],
+                   writer_registration_is_not_runtime_target_proof=True)
+        rows.append(row)
+    return rows
+
+
+def unresolved_structure_annotations(paths):
+    """Явные неизвестные в объявлениях полей, без объявления остальных полей доказанными."""
+    rows = []
+    for path in sorted(paths):
+        current = None
+        for line_number, line in enumerate(path.read_text('utf-8').splitlines(), 1):
+            code, _, comment = line.partition(';')
+            declaration = re.fullmatch(r'\s*struct\s+(\w+)\s*', code, re.I)
+            if declaration:
+                current = declaration[1]
+                continue
+            if code.strip().lower() == 'ends':
+                current = None
+                continue
+            field = re.fullmatch(r'\s*(\w+)\s+\w+\b.*', code, re.I) if current else None
+            if not field:
+                continue
+            reasons = []
+            if field[1].lower().startswith('unknown'):
+                reasons.append('unknown_field_name')
+            if re.search(r'\bUnknown\b|неизвест|не\s+доказан|не\s+установлен', comment, re.I):
+                reasons.append('unresolved_comment')
+            if reasons:
+                rows.append(dict(path=path.relative_to(ROOT).as_posix(), line=line_number,
+                                 structure=current, field=field[1], comment=comment.strip(), reasons=reasons))
+    return rows
 
 
 def structure_fields(paths):
@@ -82,10 +154,25 @@ def audit():
     # Проверка фактического графа включений от единственной точки сборки.
     walk(ROOT / "Builder/Main.asm")
     findings = []
+    numeric_indices = []
     totals = Counter()
     unlinked = []
     unknown_contracts = []
+    refresh_contract_review = []
+    usage_classifications = []
+    # Проверка отдельных комментариев во всём подключённом тексте, включая данные и Includes.
+    for path in sorted(files):
+        for line_number, line in enumerate(path.read_text('utf-8').splitlines(), 1):
+            if line.lstrip().startswith(';') and line.index(';') != 16:
+                totals['standalone_comment_column'] += 1
+                findings.append(dict(path=path.relative_to(ROOT).as_posix(), line=line_number,
+                                     issue='standalone_comment_column'))
     for function in functions:
+        # Назначенная категория не стирает ограничений контракта и не доказывает недостижимость.
+        usage = FUNCTION_USAGE.get((function['region'], function['address']))
+        if usage is not None:
+            usage_classifications.append(dict(region=function['region'], address=function['address'],
+                path=function['path'], **usage))
         path = ROOT / function["path"]
         if path.resolve() not in files:
             unlinked.append(function["path"])
@@ -94,6 +181,13 @@ def audit():
         contract_block = re.search(r"^[ \t]*; In:[ \t]*\n(.*?)(?=^[ \t]*; Note:|^[ \t]*; -{3})", text, re.M | re.S)
         if contract_block and re.search(r"^[ \t]*;[ \t]+Unknown\b", contract_block[1], re.M):
             unknown_contracts.append(function["path"])
+        # Поиск отсутствующего явного R только в Corrupt основного опубликованного договора.
+        corrupt_block = re.search(r"^[ \t]*; Corrupt:[ \t]*\n(.*?)(?=^[ \t]*; Note:|^[ \t]*; -{3})",
+                                  text, re.M | re.S)
+        if corrupt_block and not re.search(r"(?<![A-Za-z0-9_])R(?![A-Za-z0-9_])", corrupt_block[1]):
+            refresh_contract_review.append(dict(path=function['path'], region=function['region'],
+                address=function['address'], reason='refresh_register_not_explicit_in_corrupt',
+                review_required=True, omission_proves_R_preserved=False))
         lines = text.splitlines()
         for index, line in enumerate(lines):
             op = operation(line)
@@ -107,8 +201,12 @@ def audit():
                 issues.append("label_body_alignment")
             if re.match(r"^Point[0-9A-F]+:", line):
                 issues.append("address_label")
-            if re.search(r"\(I[XY]\s*[+-]\s*#[0-9A-F]+\)", op):
+            if indexed := re.search(r"\((I[XY])\s*([+-])\s*#([0-9A-F]+)\)", op):
                 issues.append("numeric_index_operand")
+                # Сохранение фактического смещения без вывода о структуре или назначении указателя.
+                displacement = int(indexed[3], 16) * (-1 if indexed[2] == '-' else 1)
+                numeric_indices.append(dict(path=function['path'], line=index + 1,
+                                            register=indexed[1], displacement=displacement, operation=op))
             if re.search(r"\b(?:JP|JR|CALL)\s+(?:[A-Z]+,\s*)?#[0-9A-F]+", op):
                 issues.append("numeric_control_target")
             if re.search(r"; (?:переход|выход|вызов), если флаг (?:Z|Carry|Sign|P/V)", line):
@@ -129,7 +227,7 @@ def audit():
             marker = f"; JP @{target['region']}.{target['name']}.Entry, продолжение в "
             if marker not in text:
                 totals["missing_continuation"] += 1
-        if not re.search(r"\]\(\.\./\.\./Docs/[^)]+\.md\)", text):
+        if not has_code_documentation_link(text):
             totals["missing_code_documentation_link"] += 1
     missing_order = []
     for path in files:
@@ -206,8 +304,9 @@ def audit():
     # Проверка целевых путей изменяемого кода по текущей физической разметке, прежние имена файлов недопустимы.
     from CheckModifiedCodePaths import audit as audit_modified_paths
     reports = ROOT / "Tools/Disasm/Reports"
+    modified = json.loads((reports / "ModifiedCode.json").read_text(encoding="utf-8"))
     modified_paths = audit_modified_paths(
-        json.loads((reports / "ModifiedCode.json").read_text(encoding="utf-8")),
+        modified,
         json.loads((reports / "SourceMap.json").read_text(encoding="utf-8")))
     from CheckObjectStateCoverage import audit as audit_object_state_coverage
     object_states = audit_object_state_coverage()
@@ -215,6 +314,7 @@ def audit():
     class_handlers = audit_class_handler_coverage()
     from CheckActionKeyboardCoverage import audit as audit_action_keyboard_coverage
     keyboard = audit_action_keyboard_coverage()
+    unresolved_fields = unresolved_structure_annotations(files)
     return {
         "method": "static_source_audit_without_assembly",
         "modified_code_path_errors": modified_paths["errors"],
@@ -238,6 +338,21 @@ def audit():
         "global_reference_case_mismatches": case_mismatches, "source_files_outside_graph": unused_sources,
         "unknown_fragments": sum(f["semantic_status"] == "unknown" for f in functions),
         "unknown_contract_fragments": len(unknown_contracts), "unknown_contract_files": unknown_contracts,
+        "refresh_contract_review_count": len(refresh_contract_review),
+        "refresh_contract_review": refresh_contract_review,
+        "refresh_contract_review_is_not_automatic_corruption_proof": True,
+        "function_usage_classifications": usage_classifications,
+        "function_usage_with_unestablished_caller": [row['path'] for row in usage_classifications
+            if row['status'] == 'current_caller_unestablished'],
+        "unknown_contract_files_classified_unused": [row['path'] for row in usage_classifications
+            if row['status'] == 'unused_in_current_version' and row['path'] in unknown_contracts],
+        "unknown_contract_files_without_unused_classification": [path for path in unknown_contracts
+            if not any(row['path'] == path and row['status'] == 'unused_in_current_version'
+                       for row in usage_classifications)],
+        "usage_classification_proves_global_unreachability": False,
+        "usage_classifications_without_registered_function": [dict(region=key[0], address=key[1])
+            for key in FUNCTION_USAGE if not any(row['region'] == key[0] and row['address'] == key[1]
+                                                for row in usage_classifications)],
         "named_fragments_without_proved_contract": sum(
             f["semantic_status"] == "described" and f["path"] in unknown_contracts for f in functions),
         "original_profile_only_contracts": len(MAP_ORIGINAL_PROFILE_GUARDS),
@@ -246,6 +361,10 @@ def audit():
         "potential_continuations": len(following), "ordered_fragments": len(order),
         "python_scripts_parsed": len(python_files), "python_duplicate_literal_keys": duplicate_keys,
         "totals": dict(totals),
+        "numeric_control_contexts": numeric_control_contexts(functions, flow, modified, findings),
+        "numeric_index_operands": numeric_indices,
+        "structure_fields_with_unresolved_annotations": unresolved_fields,
+        "structure_unresolved_annotation_counts": dict(Counter(row['structure'] for row in unresolved_fields)),
         "findings": findings, "full_semantic_analysis_complete": False,
         "assembly_executed": False,
     }

@@ -58,8 +58,8 @@ Prepare:        DI
                 LD BC, #02FF
                 LD (HL), L
                 LDIR
-                ; Проверка кода FF, запрещающего прибавление к StationTransitionCounter.
-                LD A, (#98AA)
+                ; Проверка системы Ус-01, код FF пропускает прибавление к StationTransitionCounter.
+                LD A, (@EquipmentQuantityCodes.Item28)
                 INC A
                 JP Z, @Station.HandleItem08.ClearAttributes                     ; переход, если исходный байт 98AA равен FF, не увеличивать счётчик
 
@@ -78,15 +78,15 @@ ClearAttributes:LD HL, #5800
                 IM 1
                 LD A, #3F
                 LD I, A
-                ; перестановка двух байтов контекста перед сохранением его экранной копии
-                LD A, (#983D)
+                ; перестановка младших пар BCD в физический порядок FFlightBcdCounter перед вылетом
+                LD A, (@StationTimer.Counter.MidLow)
                 LD B, A
-                LD A, (#983E)
-                LD (#983D), A
+                LD A, (@StationTimer.Counter.Low)
+                LD (@StationTimer.Counter.MidLow), A
                 LD A, B
-                LD (#983E), A
+                LD (@StationTimer.Counter.Low), A
                 ; копирование 512 байтов контекста в начало фиксированного экрана
-                LD HL, #983B
+                LD HL, @StationTimer.Counter
                 LD DE, #4000
                 LD BC, #0200
                 LDIR

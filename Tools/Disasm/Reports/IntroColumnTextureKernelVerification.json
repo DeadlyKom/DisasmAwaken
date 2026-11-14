@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "total_cases": 268,
+  "original_kernel_sha256": "51bd5dcb7e01fe16b93926d1b50b0dad1a2214b9a2ffc729f4393150b4c90ee4",
+  "corner_impulses": [
+    {
+      "source_cell": [
+        0,
+        0
+      ],
+      "output_cells": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          63
+        ],
+        [
+          63,
+          0
+        ],
+        [
+          63,
+          63
+        ]
+      ],
+      "physical_changed_bytes": 16
+    },
+    {
+      "source_cell": [
+        0,
+        63
+      ],
+      "output_cells": [
+        [
+          0,
+          62
+        ],
+        [
+          0,
+          63
+        ],
+        [
+          63,
+          62
+        ],
+        [
+          63,
+          63
+        ]
+      ],
+      "physical_changed_bytes": 16
+    },
+    {
+      "source_cell": [
+        63,
+        0
+      ],
+      "output_cells": [
+        [
+          62,
+          0
+        ],
+        [
+          62,
+          63
+        ],
+        [
+          63,
+          0
+        ],
+        [
+          63,
+          63
+        ]
+      ],
+      "physical_changed_bytes": 16
+    },
+    {
+      "source_cell": [
+        63,
+        63
+      ],
+      "output_cells": [
+        [
+          62,
+          62
+        ],
+        [
+          62,
+          63
+        ],
+        [
+          63,
+          62
+        ],
+        [
+          63,
+          63
+        ]
+      ],
+      "physical_changed_bytes": 16
+    }
+  ],
+  "all_constant_input_bytes_checked": true,
+  "random_profiles": 8,
+  "full_65536_byte_memory_compared": true,
+  "exact_write_counts": true,
+  "expanded_texture_bytes": 16384,
+  "original_guard_row_bytes_written": 256,
+  "guard_read_addresses_inclusive": [
+    49152,
+    49216
+  ],
+  "guard_read_count_per_case": 128,
+  "guard_row_not_replaced_with_transformed_first_row": true,
+  "kernel_stack": 24574,
+  "kernel_temporary_stack_bytes": 2,
+  "later_attribute_matrix_writes_executed": false,
+  "texture_expander_executed": false,
+  "bank_1_at_C000_assumed": true,
+  "IRQ_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

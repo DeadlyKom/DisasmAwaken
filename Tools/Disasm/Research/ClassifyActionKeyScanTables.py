@@ -144,7 +144,7 @@ def main():
     text=re.sub(r'\| Action \| \d+ \| \d+ \|',f'| Action | {total} | {described} |',text)
     needle='| #74FB |';assert text.count(needle)==1
     pending[path]=text.replace(needle,'| #704B | [Action.IgnoreKey](../Source/Action/IgnoreKey.asm) | '+description+' |\n'+needle).encode('utf-8')
-    path=ROOT/'Docs/FunctionDetails/Action.md';text=path.read_text('utf-8');needle='## SelectPreferredByte\n';assert text.count(needle)==1
+    path=ROOT/'Docs/FunctionDetails/Action.md';text=path.read_text('utf-8');needle='## SelectFuelStock\n';assert text.count(needle)==1
     section='## IgnoreKey\n\n[Action.IgnoreKey](../../Source/Action/IgnoreKey.asm)\n\n'+description+'.\n\nВход `#704B`, запись 17, смещение `#1288`.\n\n[Вызов, возврат и перекрытие последнего указателя](../ActionKeyDispatchPrefix.md).\n\n'
     pending[path]=text.replace(needle,section+needle).encode('utf-8')
     candidate=ROOT/'Tools/Disasm/Research/Candidates/ActionKeyScanTables';history=ROOT/'Tools/Disasm/Research/History/BeforeActionKeyScanTables'

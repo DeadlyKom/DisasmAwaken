@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "layers": 3,
+  "screen_pages": [
+    5,
+    7
+  ],
+  "bitmap_writes": 20160,
+  "attribute_writes": 2520,
+  "source": "original.trd",
+  "interrupts": false,
+  "native_emulator": false
+}

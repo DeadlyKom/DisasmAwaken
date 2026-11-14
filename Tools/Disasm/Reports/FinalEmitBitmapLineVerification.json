@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "total_cases": 36864,
+  "original_template_copied_before_patch": true,
+  "independent_screen_geometry": true,
+  "all_192_by_192_row_pairs": true,
+  "exact_registers_except_r_t": true,
+  "exact_write_multiplicity": true,
+  "source_and_target_columns": [
+    0,
+    16
+  ],
+  "generated_template_executed": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

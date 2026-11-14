@@ -30,11 +30,11 @@
 
 [Алгоритм, контракты и проверка](../ActionRefreshPanel.md).
 
-## ReleaseClass14Records
+## ReleaseBoostDebrisRecords
 
-[Action.ReleaseClass14Records](../../Source/Action/ReleaseClass14Records.asm)
+[Action.ReleaseBoostDebrisRecords](../../Source/Action/ReleaseBoostDebrisRecords.asm)
 
-Пометка всех активных записей класса 14 через повторный поиск от начала массива.
+Освобождение всех активных записей мусора форсажа через повторный поиск.
 
 Вход `#6172`, запись 17, смещения `#03AF..#03B9`.
 
@@ -46,11 +46,11 @@
 
 [Алгоритм, контракты и проверка](../ActionClass14Reuse.md).
 
-## CreateRandomClass20Record
+## CreateBoostDebrisRecord
 
-[Action.CreateRandomClass20Record](../../Source/Action/CreateRandomClass20Record.asm)
+[Action.CreateBoostDebrisRecord](../../Source/Action/CreateBoostDebrisRecord.asm)
 
-Создание записи класса 20 из двух случайных компонент и транспонированного преобразования.
+Создание случайной записи мусора форсажа, авторский T_TRASH.
 
 [Алгоритм, точные регистры и модель](../ActionClass20Spawn.md).
 
@@ -150,11 +150,11 @@
 
 [Алгоритм, точные регистры и модель](../ActionPairedAimLines.md).
 
-## SpawnClass19AndUpdateList
+## CreateCargoAndUpdateList
 
-[Action.SpawnClass19AndUpdateList](../../Source/Action/SpawnClass19AndUpdateList.asm)
+[Action.CreateCargoAndUpdateList](../../Source/Action/CreateCargoAndUpdateList.asm)
 
-Создание записи класса 19 по двухбитовому счётчику и обновление списка кодом из сохранённого HL.
+Создание груза по двухбитовому счётчику и обновление списка кодом из сохранённого HL.
 
 [Алгоритм, точные регистры и модель](../ActionClass19Spawn.md).
 
@@ -912,11 +912,11 @@
 
 [Договоры и границы проверки](../ActionBoostCommand.md).
 
-## SelectPreferredByte
+## SelectFuelStock
 
-[Action.SelectPreferredByte](../../Source/Action/SelectPreferredByte.asm)
+[Action.SelectFuelStock](../../Source/Action/SelectFuelStock.asm)
 
-Выбор ненулевого предпочтительного байта либо запасного значения с возвратом адреса выбранного поля.
+Выбор топлива МРП при ненулевом запасе, иначе топлива ЛНП, с возвратом адреса поля.
 
 Вход `#74FB`, запись 17, смещения `#1738..#1740`.
 
@@ -2932,20 +2932,6 @@ Unknown, оставшийся фрагмент AE73..AF42 ещё не разоб
 
 [Алгоритм, контракты и независимая модель](../ActionRenderMatrix.md).
 
-## UnknownCF08
-
-[Action.UnknownCF08](../../Source/Action/UnknownCF08.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#CF08`, запись 17, смещения `#6F08..#6F0A`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
 ## ClearWorkBuffer
 
 [Action.ClearWorkBuffer](../../Source/Action/ClearWorkBuffer.asm)
@@ -3320,6 +3306,14 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и проверка](../ActionRecordScale.md).
 
+## DoubleRecordScale
+
+[Action.DoubleRecordScale](../../Source/Action/DoubleRecordScale.asm)
+
+Дополнительное удвоение масштаба перед обновлением компонент.
+
+[Алгоритм, точные регистры и модель](../ActionRecordScaleExtraEntry.md).
+
 ## UpdateRecordComponents
 
 [Action.UpdateRecordComponents](../../Source/Action/UpdateRecordComponents.asm)
@@ -3360,11 +3354,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и проверка](../ActionRejectRecord.md).
 
-## ReleaseClass12Records
+## ReleaseStationPartsOrRestoreOffsets
 
-[Action.ReleaseClass12Records](../../Source/Action/ReleaseClass12Records.asm)
+[Action.ReleaseStationPartsOrRestoreOffsets](../../Source/Action/ReleaseStationPartsOrRestoreOffsets.asm)
 
-Обнуление двух байтов состояния и пометка всех активных записей класса 12 либо хвост восстановления смещений.
+Освобождение частей станции либо восстановление рабочих смещений.
 
 [Алгоритм, точные регистры и модель](../ActionClassReuse.md).
 
@@ -3818,6 +3812,14 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ActionAyEffects.md).
 
+## ReturnFromObjectState
+
+[Action.ReturnFromObjectState](../../Source/Action/ReturnFromObjectState.asm)
+
+Пустой вход с немедленным возвратом.
+
+[Алгоритм, точные регистры и модель](../ActionObjectStateReturnOnly.md).
+
 ## AdvanceObjectOffsetRise
 
 [Action.AdvanceObjectOffsetRise](../../Source/Action/AdvanceObjectOffsetRise.asm)
@@ -3938,27 +3940,27 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, точные регистры и модель](../ActionLinkedTargetState.md).
 
-## CheckClass17SpawnWindow
+## CheckMissileSpawnWindow
 
-[Action.CheckClass17SpawnWindow](../../Source/Action/CheckClass17SpawnWindow.asm)
+[Action.CheckMissileSpawnWindow](../../Source/Action/CheckMissileSpawnWindow.asm)
 
-Проверка случайного окна создания класса 17 и загрузка байта допуска по полному классу.
+Проверка случайного окна создания ракеты и загрузка байта допуска по полному классу.
 
 [Алгоритм, точные регистры и модель](../ActionSpawnWindow.md).
 
-## SpawnLinkedClass17AndContinue
+## CreateMissileAndContinueOffsets
 
-[Action.SpawnLinkedClass17AndContinue](../../Source/Action/SpawnLinkedClass17AndContinue.asm)
+[Action.CreateMissileAndContinueOffsets](../../Source/Action/CreateMissileAndContinueOffsets.asm)
 
-Создание класса 17 по текущей связи и продолжение общего расчёта смещений.
+Создание ракеты по текущей связи и продолжение общего расчёта смещений.
 
 [Алгоритм, точные регистры и модель](../ActionSpawnContinue.md).
 
-## SpawnClass17FromCurrentLink
+## CreateMissileFromCurrentLink
 
-[Action.SpawnClass17FromCurrentLink](../../Source/Action/SpawnClass17FromCurrentLink.asm)
+[Action.CreateMissileFromCurrentLink](../../Source/Action/CreateMissileFromCurrentLink.asm)
 
-Подготовка компонент и индексов текущей записи для общего создателя класса 17.
+Подготовка компонент и индексов текущей записи для создания связанной ракеты.
 
 [Алгоритм, точные регистры и модель](../ActionSpawnCurrentLink.md).
 
@@ -4326,6 +4328,6 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и проверка](../ActionNoiseExit.md).
 
-## CreateClass17LinkedRecord
+## CreateLinkedMissileRecord
 
-[Общий создатель](../../Source/Action/CreateClass17LinkedRecord.asm). [Алгоритм и точный договор](../ActionClass17Spawn.md).
+[Общий создатель](../../Source/Action/CreateLinkedMissileRecord.asm). [Алгоритм и точный договор](../ActionClass17Spawn.md).

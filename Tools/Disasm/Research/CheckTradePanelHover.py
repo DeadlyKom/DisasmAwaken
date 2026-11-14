@@ -9,13 +9,14 @@ from skoolkit.simutils import get_registers,A,F,SP
 from CheckRowHighlight import make_context,band_parameters
 from CheckScreenUpdate import put,PortTrace,pointer_image
 from CheckSelectionBand import xor_band
+from ReferenceControlsPointRespawn import refresh
 
 
 def main():
     station,_,banks=make_context();initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5D,'IX':0xF31D,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
-    baseline=[(i*73+(i>>8)*19+17)&255 for i in range(8192)];cases=changed=0
+    baseline=[(i*73+(i>>8)*19+17)&255 for i in range(8192)];cases=changed=paired_cases=0
     def execute(rows,py,last,previous):
-        nonlocal cases,changed
+        nonlocal cases,changed,paired_cases
         m=SliceableMemory(banks=[b.copy() for b in banks],out7ffd=0x10);s=Simulator(m);trace=PortTrace(s);s.set_tracer(trace)
         put(m,0xF31D,[6,2,11,9,0x26]);put(m,0x9CA6,[0,0xE0]);put(m,0xE000,[0,0x5F,0x71,0x70,1,1] if last else [0x71,0x70,0,0x5F,1,1]);put(m,0x8500,bytes([0x80,255])*128);put(m,0x8600,bytes(768))
         put(m,0x6307,[50,py]);m[0x6306]=0x10;m[0x6548]=1;m[0x9B16]=0x5A;m[0x7063]=rows;m[0x7068]=previous
@@ -28,7 +29,20 @@ def main():
         if update:
             if previous!=255:invert(expected,previous)
             invert(expected,row);expected=pointer_image(expected,station,50,py)
-        put(m,0x4000,scene);put(m,0x7FFE,[255,63]);s.registers[:]=initial;s.run(start=0x6FEE,stop=0x3FFF);r=s.registers
+        put(m,0x4000,scene);put(m,0x7FFE,[255,63]);s.registers[:]=initial;r=s.registers
+        r[14]=rows^py;r[15]=(rows^py^previous)&255;r[27]=rows%3;context=r.copy()
+        paired=rows in (0,1,5,30,32,255) and py in (0,50,51,58,59,191) and last and previous==255
+        if paired:
+            direct=SliceableMemory(banks=[bank.copy() for bank in m.banks],out7ffd=0x10);cpu=Simulator(direct);cpu.registers[:]=context
+            direct_trace=PortTrace(cpu);cpu.set_tracer(direct_trace)
+        s.run(start=0x6FEE,stop=0x3FFF)
+        assert all(r[i]==context[i] for i in (14,26,27))
+        if paired:
+            cpu.run(start=0x7061,stop=0x3FFF);q=cpu.registers
+            assert q[:12]==r[:12] and q[16:24]==r[16:24] and q[SP]==r[SP] and all(q[i]==context[i] for i in (14,26,27))
+            assert r[15]==refresh(q[15],1) and direct_trace.writes==trace.writes
+            assert [bytes(bank) for bank in direct.banks]==[bytes(bank) for bank in m.banks]
+            paired_cases+=1
         assert m[0x4000:0x6000]==expected and m[0x7068]==(row if update else previous)
         assert bool(r[F]&0x40)==(not update) and r[SP]==0x8000 and r[8:12]==initial[8:12] and r[18:24]==initial[18:24]
         assert m[0x6306]==0x10 and m.o7ffd==0x10 and m[0x7063]==rows
@@ -42,7 +56,8 @@ def main():
     for rows in range(256):
         for py in (0,50,51,58,59,191):
             for last in (False,True):execute(rows,py,last,255)
-    report=dict(passed=True,cases=cases,changed_cases=changed,all_dynamic_row_count_bytes=True,entry_hover_jump_executed=True,
+    report=dict(passed=True,cases=cases,changed_cases=changed,all_dynamic_row_count_bytes=True,entry_hover_jump_executed=True,wrapper_helper_pair_cases=paired_cases,wrapper_extra_refresh_m1=1,
+                i_im_iff_preserved=True,iff_fixture=0,
                 bitmap_and_attributes_compared=True,real_row_hover_and_pointer=True,
                 irq_executed=False,native_execution=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/TradePanelHoverVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))

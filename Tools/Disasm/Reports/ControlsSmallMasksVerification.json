@@ -15,6 +15,9 @@
   "maximum_written_bytes": 12,
   "physical_seed_bytes": 18,
   "radius_0_1_outside_contract": true,
+  "invalid_cases_to_first_code_overwrite": 4,
+  "invalid_mask_tail_bytes_written": 20,
+  "first_overwritten_code_address": 55728,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

@@ -1,34 +1,34 @@
                 module ControlOptions
 ; Документация [настройки](../../../Docs/SettingsLabels.md)
                 assert $ == #99C8
-Unknown00:      FSettingWord { #81, #00 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown01:      FSettingWord { #FD, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown02:      FSettingWord { #FE, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown03:      FSettingWord { #BF, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown04:      FSettingWord { #BF, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown05:      FSettingWord { #7F, #08 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown06:      FSettingWord { #7F, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown07:      FSettingWord { #FD, #01 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown08:      FSettingWord { #7F, #01 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown09:      FSettingWord { #7F, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown10:      FSettingWord { #DF, #01 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown11:      FSettingWord { #BF, #10 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown12:      FSettingWord { #FE, #08 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown13:      FSettingWord { #F7, #01 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown14:      FSettingWord { #F7, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown15:      FSettingWord { #F7, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown16:      FSettingWord { #BF, #08 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown17:      FSettingWord { #FD, #08 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown18:      FSettingWord { #FE, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown19:      FSettingWord { #FB, #08 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown20:      FSettingWord { #7F, #10 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown21:      FSettingWord { #FB, #01 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown22:      FSettingWord { #FB, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown23:      FSettingWord { #FB, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown24:      FSettingWord { #FD, #10 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown25:      FSettingWord { #FD, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown26:      FSettingWord { #FE, #10 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown27:      FSettingWord { #FD, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+MouseOption:    FSettingWord { #81, #00 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+PitchUp:        FSettingWord { #FD, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+PitchDown:      FSettingWord { #FE, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+YawLeft:        FSettingWord { #BF, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+YawRight:       FSettingWord { #BF, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+RollLeft:       FSettingWord { #7F, #08 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+RollRight:      FSettingWord { #7F, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+LaserKey:       FSettingWord { #FD, #01 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+SpeedUp:        FSettingWord { #7F, #01 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+SpeedDown:      FSettingWord { #7F, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+ComputerKey:    FSettingWord { #DF, #01 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+MissileAim:     FSettingWord { #BF, #10 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+ClearTargets:   FSettingWord { #FE, #08 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+Missile1:       FSettingWord { #F7, #01 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+Missile2:       FSettingWord { #F7, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+Missile3:       FSettingWord { #F7, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+BoostKey:       FSettingWord { #BF, #08 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+FreeFlightKey:  FSettingWord { #FD, #08 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+GuidanceKey:    FSettingWord { #FE, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+ReturnKey:      FSettingWord { #FB, #08 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+TractorKey:     FSettingWord { #7F, #10 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+AntimissileKey: FSettingWord { #FB, #01 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+CargoEject:     FSettingWord { #FB, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+MineEject:      FSettingWord { #FB, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+HyperJumpKey:   FSettingWord { #FD, #10 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+NeonKey:        FSettingWord { #FD, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+ViewToggle:     FSettingWord { #FE, #10 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+RadiationKey:   FSettingWord { #FD, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
 Unknown28:      FSettingWord { #FE, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
 Unknown29:      FSettingWord { #BF, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
 Unknown30:      FSettingWord { #BF, #02 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
@@ -43,6 +43,6 @@ Unknown38:      FSettingWord { #BF, #08 }                                       
 Unknown39:      FSettingWord { #FB, #01 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
 Unknown40:      FSettingWord { #FD, #04 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
 Unknown41:      FSettingWord { #7F, #10 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
-Unknown42:      FSettingWord { #00, #00 }                                       ; ValueOrRow, KeyMask, порядок исходного массива
+ResourceSelect: FScriptResourceSelection { #00, #00 }                           ; GroupCount, RecordCount, исходный выбор ресурса LANG
                 assert $ == #9A1E
                 endmodule

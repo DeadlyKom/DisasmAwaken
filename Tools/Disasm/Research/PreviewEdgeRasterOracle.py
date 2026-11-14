@@ -66,3 +66,19 @@ def registers(first,second,mode,bitmap,origin=(0,0)):
   else:flags=column_context(end_pointer&255,direction,carry) if crossed else rotation
   main=(bitmap[end_pointer-0x4000],flags)
  return dict(af=main,alt_af=(half,alt_flags))
+
+
+def m1_count(first,second,origin=(0,0)):
+ # Совпавшие слова завершают проверку до подготовки маски и изменения кода.
+ if first==second:return 7
+ start,end=(second,first) if second[0]<first[0] else (first,second)
+ dy=end[0]-start[0];dx=abs(end[1]-start[1]);right=end[1]>start[1];major=max(dx,dy);minor=min(dx,dy);half=major//2
+ # Нормализация строк и выбор направления имеют разную стоимость префиксов NEG.
+ prefix=50+3*int(second[0]<first[0])+2*int(right)
+ # Границы байтов маски и восьмистрочных знакомест считаются по геометрии, не по PC.
+ crossings=abs(end[1]//8-start[1]//8)
+ row_extra=sum(4+3*int(y%64!=0) for y in range(start[0]+origin[0]+1,end[0]+origin[0]+1) if y%8==0)
+ if dy>dx:return prefix+12*major+4*minor+crossings+row_extra+1
+ # Последняя запись без переноса строки выполняется отдельно после DJNZ.
+ last_borrow=half+minor>=major
+ return prefix+1+9*major+7*minor+4*crossings+row_extra+1+int(not last_borrow)

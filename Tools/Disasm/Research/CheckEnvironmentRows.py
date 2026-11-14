@@ -5,6 +5,7 @@ from CheckTextStream import reference as stream
 from CheckKeyLabel import reference as key_label,glyph
 from CheckGlyphRenderer import compare_flags
 from skoolkit.simutils import SP
+from ReferenceControlsPointRespawn import refresh
 
 
 def inc_flags(previous,carry=0):
@@ -64,7 +65,9 @@ def main():
  for setup,column in ((0x6C00,66),(0x766C,110)):
   f=prepare();m=f.memory;s=f.sim
   for af in range(65536):
-   put(m,0x7FFE,(255,63));s.registers[:]=f.initial;r=s.registers;r[0],r[1]=af>>8,af&255;m[0xBD26]=r[0];m[0xBD73]=r[1];s.run(start=setup,stop=0x3FFF)
+   put(m,0x7FFE,(255,63));s.registers[:]=f.initial;r=s.registers;r[0],r[1]=af>>8,af&255;m[0xBD26]=r[0];m[0xBD73]=r[1]
+   r[14]=af>>8;r[15]=af&255;r[26]=(af>>8)&1;r[27]=af%3;context=r.copy();s.run(start=setup,stop=0x3FFF)
+   assert r[15]==refresh(context[15],5) and all(r[i]==context[i] for i in (14,26,27)) and not f.trace.writes
    assert r[:2]==[column,0x44] and r[2:12]==f.initial[2:12] and r[16:24]==f.initial[16:24] and m[0xBD26]==0 and m[0xBD73]==column and r[SP]==0x8000;counts['setup_all_af']+=1
  # Проверка рамки и полного результата счётчика, который затем ограничивает наведение.
  for controls in (False,True):
@@ -92,6 +95,7 @@ def main():
    assert m[row_count]==count and f.wakes==0 and bytes(m[0x4000:0x5B00])==bytes(screen);counts['internal_callback_no_frame']+=1
  report=dict(passed=True,cases_by_path=dict(counts),all_13_original_value_offsets=True,all_43_original_controls_offsets=True,all_255_nonzero_value_codes=True,
   high_top_byte_used_for_value_pointer_but_not_cr_selector=True,independent_entire_row_bitmap_and_registers=True,
+  setup_exact_refresh_m1=5,setup_i_im_iff_preserved=True,setup_both_iff_without_irq=True,setup_no_out=True,
   real_caption_im2=True,music_disabled=True,independent_caption_bitmap=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/EnvironmentRowsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 

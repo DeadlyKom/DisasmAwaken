@@ -1,645 +1,646 @@
                 module ActionObjectPointers
                 ; Документация [указатели OBJECT3D](../../../Docs/ActionObjectPointers.md)
+                ; Первая страница архивной таблицы L97, номера пар и цели сверены с LABELS.a
                 assert $ == #9E00
                 ; -----------------------------------------
                 ; исходная физическая запись Offset00
 Offset00:       FObjectDataPointer {
-                    #C000                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN01pol1                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset02
 Offset02:       FObjectDataPointer {
-                    #C040                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd1                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset04
 Offset04:       FObjectDataPointer {
-                    #C251                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN06pol2                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset06
 Offset06:       FObjectDataPointer {
-                    #C271                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd6                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset08
 Offset08:       FObjectDataPointer {
-                    #CCEB                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN29pol6                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset0A
 Offset0A:       FObjectDataPointer {
-                    #CD10                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd29                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset0C
 Offset0C:       FObjectDataPointer {
-                    #CBEC                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN27pol7                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset0E
 Offset0E:       FObjectDataPointer {
-                    #CC11                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd27                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset10
 Offset10:       FObjectDataPointer {
-                    #C9D7                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN21plS3                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset12
 Offset12:       FObjectDataPointer {
-                    #C9F7                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd21                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset14
 Offset14:       FObjectDataPointer {
-                    #CAEE                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN25plS4                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset16
 Offset16:       FObjectDataPointer {
-                    #CB13                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd25                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset18
 Offset18:       FObjectDataPointer {
-                    #CC7D                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN28plS5                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset1A
 Offset1A:       FObjectDataPointer {
-                    #CCA5                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd28                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset1C
 Offset1C:       FObjectDataPointer {
-                    #C0A5                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN02mlt1                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset1E
 Offset1E:       FObjectDataPointer {
-                    #C0CC                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd2                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset20
 Offset20:       FObjectDataPointer {
-                    #C454                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN09mlt2                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset22
 Offset22:       FObjectDataPointer {
-                    #C4B2                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd9                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset24
 Offset24:       FObjectDataPointer {
-                    #C845                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN17mlt3                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset26
 Offset26:       FObjectDataPointer {
-                    #C8A0                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd17                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset28
 Offset28:       FObjectDataPointer {
-                    #CB52                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN26mlt4                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset2A
 Offset2A:       FObjectDataPointer {
-                    #CB7A                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd26                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset2C
 Offset2C:       FObjectDataPointer {
-                    #D103                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN03grz1                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset2E
 Offset2E:       FObjectDataPointer {
-                    #D150                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd3                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset30
 Offset30:       FObjectDataPointer {
-                    #C3AE                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN08grz2                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset32
 Offset32:       FObjectDataPointer {
-                    #C3F1                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd8                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset34
 Offset34:       FObjectDataPointer {
-                    #C602                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN11grz3                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset36
 Offset36:       FObjectDataPointer {
-                    #C64F                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd11                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset38
 Offset38:       FObjectDataPointer {
-                    #CD8B                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN30grz4                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset3A
 Offset3A:       FObjectDataPointer {
-                    #CDC9                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd30                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset3C
 Offset3C:       FObjectDataPointer {
-                    #CE36                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN31grz5                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset3E
 Offset3E:       FObjectDataPointer {
-                    #CE82                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd31                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset40
 Offset40:       FObjectDataPointer {
-                    #C140                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN04trg1                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset42
 Offset42:       FObjectDataPointer {
-                    #C167                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd4                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset44
 Offset44:       FObjectDataPointer {
-                    #C1E2                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN05trg2                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset46
 Offset46:       FObjectDataPointer {
-                    #C202                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd5                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset48
 Offset48:       FObjectDataPointer {
-                    #C54F                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN10trg3                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset4A
 Offset4A:       FObjectDataPointer {
-                    #C56F                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd10                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset4C
 Offset4C:       FObjectDataPointer {
-                    #C78D                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN16trg4                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset4E
 Offset4E:       FObjectDataPointer {
-                    #C7C6                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd16                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset50
 Offset50:       FObjectDataPointer {
-                    #D683                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KOBRA                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset52
 Offset52:       FObjectDataPointer {
-                    #D6E0                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KOBRAD                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset54
 Offset54:       FObjectDataPointer {
-                    #D780                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KRYL                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset56
 Offset56:       FObjectDataPointer {
-                    #D7DF                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KRYLD                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset58
 Offset58:       FObjectDataPointer {
-                    #D1C0                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN13ufo2                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset5A
 Offset5A:       FObjectDataPointer {
-                    #D1F9                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd13                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset5C
 Offset5C:       FObjectDataPointer {
-                    #D254                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN14ufo3                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset5E
 Offset5E:       FObjectDataPointer {
-                    #D28A                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd14                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset60
 Offset60:       FObjectDataPointer {
-                    #D398                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN18UFo4                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset62
 Offset62:       FObjectDataPointer {
-                    #D3D5                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd18                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset64
 Offset64:       FObjectDataPointer {
-                    #D479                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN20ufo5                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset66
 Offset66:       FObjectDataPointer {
-                    #D4BE                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd20                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset68
 Offset68:       FObjectDataPointer {
-                    #D5E2                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN23ufo6                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset6A
 Offset6A:       FObjectDataPointer {
-                    #D622                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd23                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset6C
 Offset6C:       FObjectDataPointer {
-                    #D54A                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN24ufo7                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset6E
 Offset6E:       FObjectDataPointer {
-                    #D57E                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd24                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset70
 Offset70:       FObjectDataPointer {
-                    #DA1E                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.UFO1D                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset72
 Offset72:       FObjectDataPointer {
-                    #DA6B                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.UFO1                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset74
 Offset74:       FObjectDataPointer {
-                    #D308                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd12                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset76
 Offset76:       FObjectDataPointer {
-                    #D308                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd12                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset78
 Offset78:       FObjectDataPointer {
-                    #C2BE                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KN07krs1                                      ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset7A
 Offset7A:       FObjectDataPointer {
-                    #C329                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd7                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset7C
 Offset7C:       FObjectDataPointer {
-                    #C6EA                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd15                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset7E
 Offset7E:       FObjectDataPointer {
-                    #C6EA                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd15                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset80
 Offset80:       FObjectDataPointer {
-                    #C935                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd19                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset82
 Offset82:       FObjectDataPointer {
-                    #C935                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd19                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset84
 Offset84:       FObjectDataPointer {
-                    #CA40                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd22                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset86
 Offset86:       FObjectDataPointer {
-                    #CA40                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kd22                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset88
 Offset88:       FObjectDataPointer {
-                    #CEF5                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.micKN                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset8A
 Offset8A:       FObjectDataPointer {
-                    #CF11                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.micKd1                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset8C
 Offset8C:       FObjectDataPointer {
-                    #CEF5                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.micKN                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset8E
 Offset8E:       FObjectDataPointer {
-                    #CF61                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.micKd2                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset90
 Offset90:       FObjectDataPointer {
-                    #D864                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.ROKET                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset92
 Offset92:       FObjectDataPointer {
-                    #D864                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.ROKET                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset94
 Offset94:       FObjectDataPointer {
-                    #D089                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.UfoRD                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset96
 Offset96:       FObjectDataPointer {
-                    #D089                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.UfoRD                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset98
 Offset98:       FObjectDataPointer {
-                    #D8D2                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.CRG1                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset9A
 Offset9A:       FObjectDataPointer {
-                    #D8D2                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.CRG1                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset9C
 Offset9C:       FObjectDataPointer {
-                    #CFF5                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KontUFO                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Offset9E
 Offset9E:       FObjectDataPointer {
-                    #CFF5                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.KontUFO                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetA0
 OffsetA0:       FObjectDataPointer {
-                    #D0DB                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kib_K                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetA2
 OffsetA2:       FObjectDataPointer {
-                    #D0DB                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.Kib_K                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetA4
 OffsetA4:       FObjectDataPointer {
-                    #D047                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.ufo_K                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetA6
 OffsetA6:       FObjectDataPointer {
-                    #D047                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.ufo_K                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetA8
 OffsetA8:       FObjectDataPointer {
-                    #CFA2                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.REM_DR                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetAA
 OffsetAA:       FObjectDataPointer {
-                    #CFA2                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.REM_DR                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetAC
 OffsetAC:       FObjectDataPointer {
-                    #D930                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.ASTER1                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetAE
 OffsetAE:       FObjectDataPointer {
-                    #D930                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.ASTER1                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetB0
 OffsetB0:       FObjectDataPointer {
-                    #D9A8                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.ASTER2                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetB2
 OffsetB2:       FObjectDataPointer {
-                    #D9A8                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.ASTER2                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetB4
 OffsetB4:       FObjectDataPointer {
-                    #D9E8                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.ASTER3                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetB6
 OffsetB6:       FObjectDataPointer {
-                    #D9E8                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.ASTER3                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetB8
 OffsetB8:       FObjectDataPointer {
-                    #D84C                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.OSKOL                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetBA
 OffsetBA:       FObjectDataPointer {
-                    #D84C                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.OSKOL                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetBC
 OffsetBC:       FObjectDataPointer {
-                    #D8B2                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.TARGET                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetBE
 OffsetBE:       FObjectDataPointer {
-                    #D8B2                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.TARGET                                        ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetC0
 OffsetC0:       FObjectDataPointer {
-                    #D8BA                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.TRASH                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetC2
 OffsetC2:       FObjectDataPointer {
-                    #D8BA                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.TRASH                                         ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetC4
 OffsetC4:       FObjectDataPointer {
-                    #DAAA                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St1                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetC6
 OffsetC6:       FObjectDataPointer {
-                    #DAAA                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St1                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetC8
 OffsetC8:       FObjectDataPointer {
-                    #DB80                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St2                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetCA
 OffsetCA:       FObjectDataPointer {
-                    #DB80                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St2                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetCC
 OffsetCC:       FObjectDataPointer {
-                    #DC3A                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St3                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetCE
 OffsetCE:       FObjectDataPointer {
-                    #DC3A                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St3                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetD0
 OffsetD0:       FObjectDataPointer {
-                    #DCEC                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St4                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetD2
 OffsetD2:       FObjectDataPointer {
-                    #DCEC                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St4                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetD4
 OffsetD4:       FObjectDataPointer {
-                    #DD82                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St5                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetD6
 OffsetD6:       FObjectDataPointer {
-                    #DD82                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St5                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetD8
 OffsetD8:       FObjectDataPointer {
-                    #DE12                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St6                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetDA
 OffsetDA:       FObjectDataPointer {
-                    #DE12                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St6                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetDC
 OffsetDC:       FObjectDataPointer {
-                    #DEAC                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St7                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetDE
 OffsetDE:       FObjectDataPointer {
-                    #DEAC                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St7                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetE0
 OffsetE0:       FObjectDataPointer {
-                    #DF76                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St8                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetE2
 OffsetE2:       FObjectDataPointer {
-                    #DF76                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St8                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetE4
 OffsetE4:       FObjectDataPointer {
-                    #E044                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St9                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetE6
 OffsetE6:       FObjectDataPointer {
-                    #E044                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St9                                           ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetE8
 OffsetE8:       FObjectDataPointer {
-                    #E0B0                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St10                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetEA
 OffsetEA:       FObjectDataPointer {
-                    #E0B0                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St10                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetEC
 OffsetEC:       FObjectDataPointer {
-                    #E152                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St11                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetEE
 OffsetEE:       FObjectDataPointer {
-                    #E152                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St11                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetF0
 OffsetF0:       FObjectDataPointer {
-                    #E1CB                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St12                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetF2
 OffsetF2:       FObjectDataPointer {
-                    #E1CB                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St12                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetF4
 OffsetF4:       FObjectDataPointer {
-                    #E2B9                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St13                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetF6
 OffsetF6:       FObjectDataPointer {
-                    #E2B9                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St13                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetF8
 OffsetF8:       FObjectDataPointer {
-                    #E32D                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St14                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetFA
 OffsetFA:       FObjectDataPointer {
-                    #E32D                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St14                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetFC
 OffsetFC:       FObjectDataPointer {
-                    #E3D3                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St15                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись OffsetFE
 OffsetFE:       FObjectDataPointer {
-                    #E3D3                                                       ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
+                    @ActionModels.St15                                          ; Target, адрес потока OBJECT3D банка 4, это не адрес вызова
                 }
                 assert $ == #9F00
                 endmodule

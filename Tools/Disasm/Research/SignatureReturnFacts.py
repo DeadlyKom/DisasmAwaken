@@ -6,14 +6,19 @@ DOCUMENTS={('Station',a):('SignatureReturn','договор результата
 CONTRACTS={}
 for address,base in ((0xA480,0xA464),(0xA48B,0xA46E)):
  inputs,outputs,corrupt,notes=KEY_CONTRACTS['Station',base]
+ inputs=[s.replace('HL - FirstWord, DE - SecondWord, AF - A Variant=0..255, BC сохраняемый контекст','HL - FirstWord, DE - SecondWord, BC сохраняемый контекст, AF - A Variant=0..255') for s in inputs]
  CONTRACTS['Station',address]=(
   [*[s for s in inputs if 'возврат исполняется' not in s],'возврат должен находиться в фиксированной памяти либо в банке LANG 6'],
   ['HL, DE, BC и основной AF имеют результат соответствующего DescribeCurrentKey либо DescribeKeyBanked',
-   "HL', DE', BC', IX, IY, I и IFF сохранены, SP восстановлен",
+   "HL', DE', BC' сохранены",
    "AF' содержит страницу (входная CurrentPage AND #F8) OR #16 и флаги её OR",
+   'IX, IY, I и IFF сохранены, SP обычного возврата равен входному SP+2',
    'порт #7FFD и тень последовательно получают страницы с младшими битами 1, 0, 6 и принудительным ROM 1'],
-  ["HL, DE, AF, AF'"],
-  ['входные старшие биты страницы сохраняются, исходный номер RAM-банка не восстанавливается',
+  ["HL, DE, AF, AF', R, SignatureState.WorkKey, CurrentPage, порт #7FFD и временный CPU-стек"],
+  ['через банковое ядро четыре байта WorkKey инициализируются входными словами, затем обновляются Variant+1 раз',
+   'CurrentPage и порт #7FFD изменяются трижды, собственные CALL обёртки и вложенные сохранения пишут временный CPU-стек',
+   'исходное слово возврата сохраняется, POP не очищает временные записи RAM, R зависит от генерации характеристики',
+   'входные старшие биты страницы сохраняются, исходный номер RAM-банка не восстанавливается',
    'итоговый основной AF сохраняется через два EX AF вокруг третьего выбора страницы',
    'точные признаки и формулы результата описаны в WorldSignature.md, алгоритм ядра не меняется'])
 COMMENTS={}

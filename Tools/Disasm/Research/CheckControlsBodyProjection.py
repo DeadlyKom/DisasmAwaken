@@ -59,6 +59,28 @@ def main():
         compared=(*range(15),*range(16,25),26,27)
         assert all(expected.r[i]==simulator.registers[i] for i in compared),(total,mode,signs,values,expected.path,
             [(i,expected.r[i],simulator.registers[i]) for i in compared if expected.r[i]!=simulator.registers[i]])
+        # Проверка отказа по знаку до вызовов отношений, исходные пары и RAM должны сохраниться.
+        depth=2 if mode<2 else 0
+        if bool(signs&(1<<depth)) != (mode in (1,2)):
+            assert simulator.registers[0:2]==[0,0x44]
+            assert simulator.registers[2:8]==initial[2:8]
+            assert simulator.registers[18:20]==[0,3] and not memory.writes
+        elif simulator.registers[0]==1:
+            # Расчёт конечных битов направлений и N<=Q напрямую из исходных компонент.
+            horizontal=0 if mode<2 else 2
+            q=values[depth]
+            direction_x=int(bool(signs&(1<<horizontal)) == (mode not in (0,2)))
+            direction_y=0 if signs&2 else 2
+            flags=direction_x|direction_y|(4 if values[horizontal]<=q else 0)|(8 if values[1]<=q else 0)
+            assert simulator.registers[18:20]==[flags,1]
+            assert memory[0xD17F]==flags and not flags&0xF0
+            if q<=0xA000:
+                # Проверка ближнего радиуса, DE содержит глубину, а не результат деления.
+                assert simulator.registers[4:8]==[q>>8,q&255,(0xA000-q)>>8,(0xA000-q)&255]
+                assert memory[0xD180]==255
+                # Проверка двух успешных исходов с разным Z, статус задаётся A, а не сохранёнными F радиуса.
+                if q in (0,0xA000):
+                    assert simulator.registers[0:2]==[1,0xA2 if q==0 else 0x42]
         nonstack=[item for item in memory.writes if item[:2] not in allowed]
         assert Counter(nonstack)==Counter(expected.writes),(total,expected.path,'nonstack_writes',nonstack,expected.writes)
         for bank,offset in allowed:expected.banks[bank][offset]=memory.banks[bank][offset]
@@ -72,6 +94,8 @@ def main():
         exact_registers_except_R=True,all_nonstack_physical_RAM_and_write_multiplicity_proved=True,
         stack_writes_confined_to_six_bytes=True,max_observed_stack_byte_writes=max_stack_writes,
         stack_residue_values_and_R_proved=False,unreachable_far_rejection_explained_by_23_bit_depth=True,
+        direct_depth_sign_reject_and_final_flag_invariants=True,
+        direct_near_radius_depth_register_invariants=True,
         independent_integer_parent_oracle=True,full_component_product_exhausted=False,
         irq_executed=False,native_execution=False,assembly_executed=False,timing_proved=False)
     (ROOT/'Tools/Disasm/Reports/ControlsBodyProjectionVerification.json').write_text(

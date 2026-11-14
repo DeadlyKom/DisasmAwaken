@@ -61,7 +61,7 @@ DropByte:       LD (HL), #00
                 ADD HL, DE
                 ; Выбор особой родительской записи для подготовленного создателя класса 19.
                 LD IX, @ActionLinkedContextConst.SpecialRecord
-                CALL @Action.SpawnClass19AndUpdateList.SpawnPrepared
+                CALL @Action.CreateCargoAndUpdateList.SpawnPrepared
                 ; Передача сообщения о сбросе груза независимо от результата SpawnPrepared.
                 PUSH DE
                 LD DE, @ControlsFlightText.CargoEjected

@@ -57,7 +57,7 @@ def main():
             if counts.total()%16384==0:print(str(counts.total())+' State10 cases passed',flush=True)
     assert counts.total()==65536 and paths['timer_expired']==256 and paths['window_spawn_attempted'] and paths['timed_overlay_return']
     result=dict(passed=True,total_cases=counts.total(),profiles=dict(counts),paths=dict(paths),
-        all_256_timers_by_256_thresholds=True,zero_timer_wrap_preserved=True,expired_StateCode_from_Unknown19=True,
+        all_256_timers_by_256_thresholds=True,zero_timer_wrap_preserved=True,expired_state_restored_from_timed_resume_code=True,
         actual_context_random_creation_projection_clipping_and_raster_children_executed=True,
         exact_registers_except_R_on_renderer=True,exact_R_on_nonrenderer_cases=r_cases,
         full_eight_bank_ram_and_write_multiplicity_compared=True,maximum_observed_additional_stack_bytes=depth,

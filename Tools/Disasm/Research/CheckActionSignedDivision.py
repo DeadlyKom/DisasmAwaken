@@ -4,7 +4,8 @@ import json,random,re
 from ClassifyControlsTextDisplay import ROOT
 from CheckActionParameterActivation import RecordedBanks,flat_action
 from CheckMusic import Simulator,get_registers,PC,SP
-from CheckSignedDivision import expected
+from CheckSignedDivision import expected,refresh_cost
+from ReferenceControlsPointRespawn import refresh
 from Analyze import payload
 from InspectZ80 import decoder
 
@@ -22,7 +23,7 @@ def main():
     banks=[bytearray([0xA0+i]*0x4000) for i in range(8)]
     banks[5],banks[2],banks[0]=bytearray(flat[0x4000:0x8000]),bytearray(flat[0x8000:0xC000]),bytearray(flat[0xC000:])
     memory=RecordedBanks(banks=banks,out7ffd=16);memory[0xBFFE],memory[0xBFFF]=255,63
-    simulator=Simulator(memory);counts=Counter()
+    simulator=Simulator(memory);counts=Counter();costs=set();initial_r_values=set()
     def check(number,divisor,selector,profile):
         raw=number&0xFFFFFFFF;carry=selector&1;alt_carry=(selector>>1)&1
         initial=get_registers({'AF':((raw>>8)&255)*256+(128 if divisor<0 else 0)+carry,'HL':raw>>16,'DE':divisor&65535,
@@ -33,16 +34,25 @@ def main():
         wanted=list(initial);wanted[0:2]=[result>>8,flags];wanted[16:18]=[result&255,alt_flags]
         for pos,value in ((2,bc),(4,denominator),(6,result),(8,ix)):wanted[pos:pos+2]=[value>>8,value&255]
         wanted[SP],wanted[PC]=0xC000,0x3FFF
+        cost=refresh_cost(number,divisor);wanted[15]=refresh(initial[15],cost)
+        costs.add(cost);initial_r_values.add(initial[15])
         simulator.registers[:]=initial;memory.writes=[];memory.recording=True
+        measured_m1=0
         for _ in range(160):
             if simulator.registers[PC]==0x3FFF:break
+            previous_r=simulator.registers[15]
             simulator.run()
+            increment=(simulator.registers[15]-previous_r)&127
+            assert increment in (1,2),(number,divisor,'неожиданное изменение R',increment)
+            measured_m1+=increment
         else:raise AssertionError('возврат делителя')
+        assert measured_m1==cost,(number,divisor,'M1',measured_m1,cost)
         memory.recording=False
-        compared=(*range(13),14,*range(16,24),PC,26,27)
+        compared=(*range(24),PC,26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared),(number,divisor,selector,[(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
         assert not memory.writes
         counts[profile]+=1
+        if counts.total()%131072==0:print(str(counts.total())+' ACTION division cases passed',flush=True)
     # Проверка всех младших слов числителя при четырёх знаковых сочетаниях и граничных делителях.
     divisors=(1,2,9,255,256,32767,-1,-9,-255,-32768)
     for divisor in divisors:
@@ -54,11 +64,15 @@ def main():
         for _ in range(1024):
             value=rng.randrange(abs(divisor)*65536)
             check(value,divisor,value,'wide');check(-value-1,divisor,value,'wide')
+    assert counts.total()==1331200 and initial_r_values==set(range(256)) and min(costs)==114 and max(costs)==152
     report=dict(passed=True,total_cases=counts.total(),profiles=dict(counts),relocated_instructions_checked=len(left),
-        original_action_bytes_executed=True,exact_registers_and_flags_except_R=True,no_ram_writes=True,
+        original_action_bytes_executed=True,exact_registers_and_flags_including_R=True,no_ram_writes=True,
         negative_numerator_and_quotient_ones_complement_preserved=True,input_F_sign_selects_denominator_sign=True,
         zero_divisor_and_quotient_overflow_outside_contract=True,all_joint_inputs_exhausted=False,
-        refresh_and_timing_independently_checked=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        full_M1_count_compared_not_only_R_modulo_128=True,all_initial_R_values_observed=True,
+        observed_M1_values=sorted(costs),refresh_formula='130+12*negN+10*negD-2*(negN XOR negD)-popcount(q)',
+        refresh_unsigned_quotient_is_before_final_complement=True,timing_independently_checked=False,
+        assembly_executed=False,irq_executed=False,native_execution=False)
     (ROOT/'Tools/Disasm/Reports/ActionSignedDivisionVerification.json').write_bytes((json.dumps(report,indent=2)+'\n').encode('utf-8'))
     print(json.dumps(report,indent=2))
 

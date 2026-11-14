@@ -54,3 +54,12 @@ def name_operands(region,address,operation):
   operation=operation.replace('(#DFBA)','(@MapState.UpperRow)').replace('(#DFBC)','(@MapState.LowerRow)').replace('(#DFBF)','(@MapArcState.ReferenceX)')
   operation=operation.replace('LD H, #EE','LD H, @MapMarkerConst.RowHighPage')
  return operation
+
+
+# Точный R исходной процедуры, аппаратные IRQ не моделируются.
+_table_refresh_contract = CONTRACTS['Map',0xd0c3]
+_table_refresh_contract[0].append('IRQ не вмешиваются, адрес обычного возврата не перекрывает 69 назначений записей')
+_table_refresh_contract[1][:] = [line.replace('I и IFF сохранены','I, IM и IFF сохранены') for line in _table_refresh_contract[1]]
+_table_refresh_contract[2][:] = ['HL, DE, BC только C, AF, R, 69 байтов операндов и состояния окна']
+_table_refresh_contract[3].insert(0,'R меняется за 102 M1, младшие семь битов увеличены на 102 по модулю 128, бит 7 сохраняется')
+_table_refresh_contract[3].insert(1,'собственных записей CPU-стека нет, RET снимает обычный адрес возврата')

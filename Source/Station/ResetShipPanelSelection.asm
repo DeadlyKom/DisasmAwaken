@@ -46,11 +46,11 @@ Entry:          LD (@ShipPanelState.Selector), A
                 LD A, @FInterfaceItem.Flags
                 CALL @Station.GetItemField.Entry
                 RES @InterfaceFlags.FrameBit, (HL)
-                ; выбор банка 4 для сброса его первого компонента индекса
+                ; выбор банка D3D и сброс номера строки модели
                 LD A, #14
                 CALL @Station.SelectRamBank.Entry
                 XOR A
-                LD (#E146), A
+                LD (@D3DPreviewState.RowOperand), A
                 ; возврат в банк станционного кода с сохранением старших разрядов страницы
                 LD A, #10
                 CALL @Station.SelectRamBank.Entry

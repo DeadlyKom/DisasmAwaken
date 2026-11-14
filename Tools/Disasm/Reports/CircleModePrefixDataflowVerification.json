@@ -1,0 +1,1287 @@
+{
+  "passed": true,
+  "method": "restricted_symbolic_fresh_A_and_F_dependency_check",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "source_control0_sha256": "0e9c04176dfd9adfa0e8eb45a4208c25bf37f4e488755d512cb5fe39a79f34f5",
+  "prefixes_checked": 12,
+  "profiles": [
+    {
+      "read": 53659,
+      "normalized_at": 55348,
+      "instructions": [
+        {
+          "address": 53659,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 53662,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 53663,
+          "operation": "JP #D833",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 55347,
+          "operation": "LD A,E",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 55348,
+          "operation": "AND #1F",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    },
+    {
+      "read": 53679,
+      "normalized_at": 55348,
+      "instructions": [
+        {
+          "address": 53679,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 53682,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 53683,
+          "operation": "JP #D833",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 55347,
+          "operation": "LD A,E",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 55348,
+          "operation": "AND #1F",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    },
+    {
+      "read": 53700,
+      "normalized_at": 55100,
+      "instructions": [
+        {
+          "address": 53700,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 53703,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 53704,
+          "operation": "JP #D73B",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 55099,
+          "operation": "LD A,L",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 55100,
+          "operation": "AND #1F",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    },
+    {
+      "read": 53720,
+      "normalized_at": 55100,
+      "instructions": [
+        {
+          "address": 53720,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 53723,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 53724,
+          "operation": "JP #D73B",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 55099,
+          "operation": "LD A,L",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 55100,
+          "operation": "AND #1F",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    },
+    {
+      "read": 53741,
+      "normalized_at": 54836,
+      "instructions": [
+        {
+          "address": 53741,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 53744,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 53745,
+          "operation": "JP #D633",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54835,
+          "operation": "LD A,E",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54836,
+          "operation": "SUB L",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    },
+    {
+      "read": 53761,
+      "normalized_at": 54836,
+      "instructions": [
+        {
+          "address": 53761,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 53764,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 53765,
+          "operation": "JP #D633",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54835,
+          "operation": "LD A,E",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54836,
+          "operation": "SUB L",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    },
+    {
+      "read": 54333,
+      "normalized_at": 54338,
+      "instructions": [
+        {
+          "address": 54333,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 54336,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54337,
+          "operation": "LD A,E",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54338,
+          "operation": "AND #1F",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    },
+    {
+      "read": 54387,
+      "normalized_at": 54396,
+      "instructions": [
+        {
+          "address": 54387,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 54390,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54391,
+          "operation": "LD B,#00",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54393,
+          "operation": "LD A,(#D17F)",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54396,
+          "operation": "BIT 1,A",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    },
+    {
+      "read": 54489,
+      "normalized_at": 54494,
+      "instructions": [
+        {
+          "address": 54489,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 54492,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54493,
+          "operation": "LD A,E",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54494,
+          "operation": "OR #1F",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    },
+    {
+      "read": 54570,
+      "normalized_at": 54577,
+      "instructions": [
+        {
+          "address": 54570,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 54573,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54574,
+          "operation": "LD A,B",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54575,
+          "operation": "LD B,#FF",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54577,
+          "operation": "INC A",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    },
+    {
+      "read": 54619,
+      "normalized_at": 54626,
+      "instructions": [
+        {
+          "address": 54619,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 54622,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54623,
+          "operation": "LD A,C",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54624,
+          "operation": "LD C,#00",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54626,
+          "operation": "SLL C",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    },
+    {
+      "read": 54651,
+      "normalized_at": 54656,
+      "instructions": [
+        {
+          "address": 54651,
+          "operation": "LD A,(#D18C)",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 0
+        },
+        {
+          "address": 54654,
+          "operation": "AND A",
+          "A_depends_on_Mode": true,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54655,
+          "operation": "LD A,L",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 236
+        },
+        {
+          "address": 54656,
+          "operation": "AND #E0",
+          "A_depends_on_Mode": false,
+          "F_dependency_mask": 0
+        }
+      ]
+    }
+  ],
+  "other_registered_reads": [
+    53769,
+    53778,
+    54521
+  ],
+  "returned_or_saved_flag_routes": {
+    "row_wrappers": [
+      [
+        53768,
+        53769,
+        53772,
+        53773,
+        53774
+      ],
+      [
+        53777,
+        53778,
+        53781,
+        53782,
+        53783
+      ]
+    ],
+    "row_setup": [
+      54686,
+      54689,
+      54690,
+      54691,
+      54692,
+      54694,
+      54695,
+      54696,
+      54697,
+      54698,
+      54699,
+      54702,
+      54703,
+      54704,
+      54705,
+      54706
+    ],
+    "row_body_and_restore": [
+      54708,
+      54711,
+      54712,
+      54714,
+      54715,
+      54716,
+      54717,
+      54718,
+      54719,
+      54720,
+      54721,
+      54722,
+      54723,
+      54724,
+      54725,
+      54726,
+      54727,
+      54728,
+      54729,
+      54730,
+      54731,
+      54732,
+      54733,
+      54734,
+      54735,
+      54736,
+      54737,
+      54738,
+      54739,
+      54740,
+      54741,
+      54742,
+      54743,
+      54744,
+      54745,
+      54746,
+      54747,
+      54748,
+      54749,
+      54750,
+      54751,
+      54752,
+      54753,
+      54754,
+      54755,
+      54756,
+      54757,
+      54758,
+      54759,
+      54760,
+      54761,
+      54762,
+      54763,
+      54764,
+      54765,
+      54766,
+      54767,
+      54768,
+      54769,
+      54770,
+      54771,
+      54772,
+      54773,
+      54774,
+      54775,
+      54776,
+      54778,
+      54780,
+      54782,
+      54783,
+      54785,
+      54787,
+      54789,
+      54790,
+      54791,
+      54792
+    ],
+    "saved_AF_at": 54690,
+    "computation_F_dependency_killed_at": 54704,
+    "first_row_conditional_at": 54706,
+    "final_AF_restored_at": 54790,
+    "final_flags_are_AND_Mode": true,
+    "nonoverlapping_stack_and_raster_required": true,
+    "valid_rows_0_to_95_required": true,
+    "stack_frame_disjoint_from_code_required": true,
+    "physical_frame": {
+      "name": "FInteriorRowsFrame",
+      "bytes": 8,
+      "base_relative_to_entry_SP": -6,
+      "fields": [
+        {
+          "name": "SavedBC",
+          "offset": 0,
+          "bytes": 2
+        },
+        {
+          "name": "SavedAF",
+          "offset": 2,
+          "bytes": 2
+        },
+        {
+          "name": "SavedDE",
+          "offset": 4,
+          "bytes": 2
+        },
+        {
+          "name": "CallerReturn",
+          "offset": 6,
+          "bytes": 2
+        }
+      ]
+    },
+    "row_pixels_and_control_independent_of_Mode_under_preconditions": true,
+    "left_setup_return_sequence": [
+      54521,
+      54524,
+      54525,
+      54526,
+      54528
+    ],
+    "left_setup_A_independent_but_F_dependent": true,
+    "whole_circle_independence_proved": false
+  },
+  "explicit_memory_read_domains": {
+    "physical_code_ranges": [
+      {
+        "start": 53645,
+        "end_exclusive": 53786
+      },
+      {
+        "start": 53814,
+        "end_exclusive": 55643
+      },
+      {
+        "start": 52900,
+        "end_exclusive": 52985
+      }
+    ],
+    "all_bytes_covered_by_original_instructions": true,
+    "instruction_count": 1269,
+    "fixed_reads": [
+      {
+        "pc": 52980,
+        "address": 53643,
+        "bytes": 1,
+        "operation": "LD A,(#D18B)"
+      },
+      {
+        "pc": 53659,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 53679,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 53700,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 53720,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 53741,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 53761,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 53769,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 53778,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 53814,
+        "address": 53629,
+        "bytes": 2,
+        "operation": "LD BC,(#D17D)"
+      },
+      {
+        "pc": 53826,
+        "address": 53631,
+        "bytes": 2,
+        "operation": "LD DE,(#D17F)"
+      },
+      {
+        "pc": 54048,
+        "address": 53635,
+        "bytes": 2,
+        "operation": "LD BC,(#D183)"
+      },
+      {
+        "pc": 54052,
+        "address": 53631,
+        "bytes": 2,
+        "operation": "LD DE,(#D17F)"
+      },
+      {
+        "pc": 54069,
+        "address": 53635,
+        "bytes": 1,
+        "operation": "LD A,(#D183)"
+      },
+      {
+        "pc": 54073,
+        "address": 53636,
+        "bytes": 1,
+        "operation": "LD A,(#D184)"
+      },
+      {
+        "pc": 54105,
+        "address": 53635,
+        "bytes": 1,
+        "operation": "LD A,(#D183)"
+      },
+      {
+        "pc": 54117,
+        "address": 53631,
+        "bytes": 1,
+        "operation": "LD A,(#D17F)"
+      },
+      {
+        "pc": 54128,
+        "address": 53637,
+        "bytes": 1,
+        "operation": "LD A,(#D185)"
+      },
+      {
+        "pc": 54132,
+        "address": 53635,
+        "bytes": 1,
+        "operation": "LD A,(#D183)"
+      },
+      {
+        "pc": 54144,
+        "address": 53631,
+        "bytes": 1,
+        "operation": "LD A,(#D17F)"
+      },
+      {
+        "pc": 54170,
+        "address": 53631,
+        "bytes": 2,
+        "operation": "LD DE,(#D17F)"
+      },
+      {
+        "pc": 54199,
+        "address": 53631,
+        "bytes": 1,
+        "operation": "LD A,(#D17F)"
+      },
+      {
+        "pc": 54222,
+        "address": 53631,
+        "bytes": 1,
+        "operation": "LD A,(#D17F)"
+      },
+      {
+        "pc": 54290,
+        "address": 53631,
+        "bytes": 2,
+        "operation": "LD DE,(#D17F)"
+      },
+      {
+        "pc": 54304,
+        "address": 53637,
+        "bytes": 1,
+        "operation": "LD A,(#D185)"
+      },
+      {
+        "pc": 54315,
+        "address": 53637,
+        "bytes": 1,
+        "operation": "LD A,(#D185)"
+      },
+      {
+        "pc": 54333,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 54349,
+        "address": 53631,
+        "bytes": 1,
+        "operation": "LD A,(#D17F)"
+      },
+      {
+        "pc": 54361,
+        "address": 53637,
+        "bytes": 1,
+        "operation": "LD A,(#D185)"
+      },
+      {
+        "pc": 54387,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 54393,
+        "address": 53631,
+        "bytes": 1,
+        "operation": "LD A,(#D17F)"
+      },
+      {
+        "pc": 54405,
+        "address": 53631,
+        "bytes": 2,
+        "operation": "LD DE,(#D17F)"
+      },
+      {
+        "pc": 54419,
+        "address": 53637,
+        "bytes": 1,
+        "operation": "LD A,(#D185)"
+      },
+      {
+        "pc": 54437,
+        "address": 53637,
+        "bytes": 1,
+        "operation": "LD A,(#D185)"
+      },
+      {
+        "pc": 54441,
+        "address": 53636,
+        "bytes": 1,
+        "operation": "LD A,(#D184)"
+      },
+      {
+        "pc": 54448,
+        "address": 53635,
+        "bytes": 1,
+        "operation": "LD A,(#D183)"
+      },
+      {
+        "pc": 54452,
+        "address": 53637,
+        "bytes": 1,
+        "operation": "LD A,(#D185)"
+      },
+      {
+        "pc": 54456,
+        "address": 53636,
+        "bytes": 1,
+        "operation": "LD A,(#D184)"
+      },
+      {
+        "pc": 54463,
+        "address": 53631,
+        "bytes": 1,
+        "operation": "LD A,(#D17F)"
+      },
+      {
+        "pc": 54478,
+        "address": 53635,
+        "bytes": 1,
+        "operation": "LD A,(#D183)"
+      },
+      {
+        "pc": 54489,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 54503,
+        "address": 53635,
+        "bytes": 1,
+        "operation": "LD A,(#D183)"
+      },
+      {
+        "pc": 54521,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 54532,
+        "address": 53633,
+        "bytes": 2,
+        "operation": "LD BC,(#D181)"
+      },
+      {
+        "pc": 54536,
+        "address": 53631,
+        "bytes": 2,
+        "operation": "LD DE,(#D17F)"
+      },
+      {
+        "pc": 54570,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 54619,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 54631,
+        "address": 53642,
+        "bytes": 1,
+        "operation": "LD A,(#D18A)"
+      },
+      {
+        "pc": 54636,
+        "address": 53633,
+        "bytes": 2,
+        "operation": "LD BC,(#D181)"
+      },
+      {
+        "pc": 54645,
+        "address": 53637,
+        "bytes": 1,
+        "operation": "LD A,(#D185)"
+      },
+      {
+        "pc": 54651,
+        "address": 53644,
+        "bytes": 1,
+        "operation": "LD A,(#D18C)"
+      },
+      {
+        "pc": 54815,
+        "address": 53640,
+        "bytes": 2,
+        "operation": "LD HL,(#D188)"
+      },
+      {
+        "pc": 54839,
+        "address": 53643,
+        "bytes": 1,
+        "operation": "LD A,(#D18B)"
+      },
+      {
+        "pc": 54961,
+        "address": 53638,
+        "bytes": 2,
+        "operation": "LD SP,(#D186)"
+      },
+      {
+        "pc": 55079,
+        "address": 53643,
+        "bytes": 1,
+        "operation": "LD A,(#D18B)"
+      },
+      {
+        "pc": 55083,
+        "address": 53638,
+        "bytes": 2,
+        "operation": "LD SP,(#D186)"
+      },
+      {
+        "pc": 55106,
+        "address": 53643,
+        "bytes": 1,
+        "operation": "LD A,(#D18B)"
+      },
+      {
+        "pc": 55228,
+        "address": 53638,
+        "bytes": 2,
+        "operation": "LD SP,(#D186)"
+      },
+      {
+        "pc": 55327,
+        "address": 53643,
+        "bytes": 1,
+        "operation": "LD A,(#D18B)"
+      },
+      {
+        "pc": 55331,
+        "address": 53638,
+        "bytes": 2,
+        "operation": "LD SP,(#D186)"
+      },
+      {
+        "pc": 55354,
+        "address": 53643,
+        "bytes": 1,
+        "operation": "LD A,(#D18B)"
+      },
+      {
+        "pc": 55468,
+        "address": 53638,
+        "bytes": 2,
+        "operation": "LD SP,(#D186)"
+      },
+      {
+        "pc": 55569,
+        "address": 53643,
+        "bytes": 1,
+        "operation": "LD A,(#D18B)"
+      },
+      {
+        "pc": 55573,
+        "address": 53638,
+        "bytes": 2,
+        "operation": "LD SP,(#D186)"
+      },
+      {
+        "pc": 55610,
+        "address": 53638,
+        "bytes": 2,
+        "operation": "LD SP,(#D186)"
+      },
+      {
+        "pc": 55637,
+        "address": 53638,
+        "bytes": 2,
+        "operation": "LD SP,(#D186)"
+      }
+    ],
+    "indirect_square_reads": [
+      54031,
+      54033
+    ],
+    "square_domains": [
+      [
+        49920,
+        50176
+      ],
+      [
+        50176,
+        50432
+      ]
+    ],
+    "fixed_Mode_read_sites": [
+      53659,
+      53679,
+      53700,
+      53720,
+      53741,
+      53761,
+      53769,
+      53778,
+      54333,
+      54387,
+      54489,
+      54521,
+      54570,
+      54619,
+      54651
+    ],
+    "no_fixed_address_write_overlaps_Mode": true,
+    "indirect_raster_reads": [
+      54864,
+      54875,
+      54881,
+      55011,
+      55022,
+      55028,
+      55131,
+      55270,
+      55381,
+      55387,
+      55512,
+      55518
+    ],
+    "raster_domain_required": [
+      32768,
+      35840
+    ],
+    "raster_domain_is_child_contract_precondition": true,
+    "FillEvenSpan_tail_targets": [
+      {
+        "input_A": 1,
+        "target": 52975
+      },
+      {
+        "input_A": 2,
+        "target": 52971
+      },
+      {
+        "input_A": 3,
+        "target": 52967
+      },
+      {
+        "input_A": 4,
+        "target": 52963
+      },
+      {
+        "input_A": 5,
+        "target": 52959
+      },
+      {
+        "input_A": 6,
+        "target": 52955
+      },
+      {
+        "input_A": 7,
+        "target": 52951
+      },
+      {
+        "input_A": 8,
+        "target": 52947
+      },
+      {
+        "input_A": 9,
+        "target": 52943
+      },
+      {
+        "input_A": 10,
+        "target": 52939
+      },
+      {
+        "input_A": 11,
+        "target": 52935
+      },
+      {
+        "input_A": 12,
+        "target": 52931
+      },
+      {
+        "input_A": 13,
+        "target": 52927
+      },
+      {
+        "input_A": 14,
+        "target": 52923
+      },
+      {
+        "input_A": 15,
+        "target": 52919
+      }
+    ],
+    "FillEvenSpan_zero_length_inputs": [
+      0,
+      128
+    ],
+    "FillEvenSpan_zero_length_target": 52980,
+    "stack_reads_require_separate_frame_analysis": true,
+    "code_fetch_and_runtime_modifications_not_a_global_reachability_proof": true,
+    "whole_raster_independence_proved": false
+  },
+  "direct_flag_consumer_routes": {
+    "registered_direct_transfers_checked": 14,
+    "transfer_sites": [
+      {
+        "pc": 54108,
+        "operation": "CALL #D208"
+      },
+      {
+        "pc": 54122,
+        "operation": "CALL Z,#D1CB"
+      },
+      {
+        "pc": 54135,
+        "operation": "CALL #D211"
+      },
+      {
+        "pc": 54149,
+        "operation": "CALL Z,#D1B6"
+      },
+      {
+        "pc": 54190,
+        "operation": "CALL #D211"
+      },
+      {
+        "pc": 54204,
+        "operation": "CALL Z,#D1B6"
+      },
+      {
+        "pc": 54213,
+        "operation": "CALL #D208"
+      },
+      {
+        "pc": 54227,
+        "operation": "CALL Z,#D1CB"
+      },
+      {
+        "pc": 54264,
+        "operation": "CALL #D4E4"
+      },
+      {
+        "pc": 54267,
+        "operation": "CALL #D1B6"
+      },
+      {
+        "pc": 54270,
+        "operation": "CALL #D4E4"
+      },
+      {
+        "pc": 54273,
+        "operation": "JP #D1CB"
+      },
+      {
+        "pc": 54398,
+        "operation": "CALL NZ,#D1B6"
+      },
+      {
+        "pc": 54401,
+        "operation": "CALL Z,#D1CB"
+      }
+    ],
+    "four_fill_continuations": [
+      [
+        54108,
+        54111,
+        54114
+      ],
+      [
+        54135,
+        54138,
+        54141
+      ],
+      [
+        54190,
+        54193,
+        54196
+      ],
+      [
+        54213,
+        54216,
+        54219
+      ]
+    ],
+    "load_state_sequence": [
+      54636,
+      54640,
+      54642,
+      54643,
+      54644,
+      54645,
+      54648,
+      54649,
+      54650
+    ],
+    "load_state_replaces_all_F_at": 54642,
+    "mask_state_sequence": [
+      54651,
+      54654,
+      54655,
+      54656,
+      54658,
+      54660,
+      54661,
+      54663,
+      54665
+    ],
+    "four_geometry_bit0_pairs": [
+      [
+        54117,
+        54120,
+        54122,
+        54125
+      ],
+      [
+        54144,
+        54147,
+        54149,
+        54152
+      ],
+      [
+        54199,
+        54202,
+        54204,
+        54207
+      ],
+      [
+        54222,
+        54225,
+        54227,
+        54230
+      ]
+    ],
+    "geometry_bit1_pair": [
+      54387,
+      54390,
+      54391,
+      54393,
+      54396,
+      54398,
+      54401,
+      54404
+    ],
+    "left_Mode_AF_chain": [
+      54264,
+      54267,
+      54270,
+      54273
+    ],
+    "clipped_halves_restore_saved_input_AF_required": true,
+    "other_inputs_independent_of_Mode_and_valid_child_contracts_required": true,
+    "all_registered_direct_transfers_to_selected_targets_classified": true,
+    "indirect_transfers_and_external_return_consumers_excluded": false,
+    "global_Mode_unusedness_proved": false
+  },
+  "no_conditional_branch_or_memory_write_before_dependency_kill": true,
+  "all_prefix_opcodes_checked_against_original": true,
+  "independent_other_inputs_required": true,
+  "irq_interference_excluded_by_precondition": true,
+  "prior_saved_AF_dependency_excluded": false,
+  "indirect_Mode_reads_excluded": false,
+  "whole_raster_independence_proved": false,
+  "original_graphics_intent_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

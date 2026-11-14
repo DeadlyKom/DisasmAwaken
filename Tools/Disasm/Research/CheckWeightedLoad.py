@@ -1,11 +1,12 @@
 """Оригинальная сумма с выбранной строкой, двумя таблицами весов и необязательным полем."""
 from pathlib import Path
-import sys,json,random
+import hashlib,sys,json,random
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/'Tools/Disasm/Research/vendor/skoolkit-10.1'),str(ROOT/'Tools/Disasm/Research')]
 from skoolkit.simulator import Simulator
 from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,SP
 from CheckMatrixKey import add_flags
+from CheckGeometryReturnEntries import Memory
 
 
 def reference(mem,index):
@@ -28,14 +29,38 @@ def reference(mem,index):
  return (total+extra)&255,add_flags(extra,total),total,hl,de
 
 
+def own_writes(mem,index,push_address):
+ # Расчёт всех собственных записей, отдельно от итоговой арифметической суммы.
+ target=(0x9852+2*index)&65535
+ writes=[(0xC884,target&255),(0xC885,target>>8)]
+ for i in range(30):
+  pointer=0x94FA+i
+  writes.extend(((push_address,pointer&255),(push_address+1,pointer>>8)))
+ for operand,base,count in ((0xC8BF,0x988E,30),(0xC8E1,0x98F6,14)):
+  for i in range(count):
+   raw=mem[base+i];writes.append((operand,raw if raw<128 else raw^255))
+ return writes
+
+
 def main():
  manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_text('utf-8'))
  sources={e['slot']:(ROOT/(e['path']+'.sectors.bin')).read_bytes() for e in manifest['entries'] if e['slot'] in (4,5)}
  original=bytearray(65536);original[0x6000:]=sources[4];original[0xC000:0xC000+len(sources[5])]=sources[5]
- memory=original.copy();simulator=Simulator(memory);rng=random.Random(0xC86F)
+ # Проверка физических байтов обоих файлов и полного оригинального образа.
+ disk=(ROOT/'Tools/Disasm/Disk/original.trd').read_bytes()
+ assert hashlib.sha256(disk).hexdigest()==manifest['sha256']
+ for slot,data in sources.items():
+  e=next(e for e in manifest['entries'] if e['slot']==slot)
+  assert data==disk[e['offset']:e['offset']+e['allocated_length']]
+  assert hashlib.sha256(data).hexdigest()==e['sectors_sha256']
+ # Проверка наблюдателя реальной инструкцией записи CPU.
+ probe=Memory(65536);probe[0x4000:0x4003]=bytes.fromhex('320070')
+ cpu=Simulator(probe);cpu.registers[24]=0x4000;probe.recording=True;cpu.run()
+ assert probe.writes==[(0x7000,0)]
+ memory=Memory(65536);memory[:]=original;simulator=Simulator(memory);rng=random.Random(0xC86F)
  initial=get_registers({'SP':0x7FFE,'DE':0x247A,'BC':0x36C9,'IX':0xB000,'IY':0x5C3A,
   '^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
- cases=0
+ cases=wrapper_cases=0
  # Проверка всех байтов категорий и необязательного индекса, включая старшие биты вращения.
  for case in range(512):
   memory[:]=original
@@ -50,7 +75,10 @@ def main():
     for i in range(count):memory[base+2*i]=255
   memory[0x984A]=case&255;index=(case%33) if case<256 else (case*193)&65535
   expected=reference(memory,index);simulator.registers[:]=initial;r=simulator.registers;r[H],r[L]=index>>8,index&255
-  memory[0x7FFE:0x8000]=bytes([255,63]);simulator.run(start=0xC86F,stop=0x3FFF)
+  memory[0x7FFE:0x8000]=bytes([255,63]);expected_writes=own_writes(memory,index,0x7FFC)
+  memory.writes.clear();memory.recording=True;simulator.run(start=0xC86F,stop=0x3FFF);memory.recording=False
+  assert memory.writes==expected_writes
+  assert memory[0x7FFE:0x8000]==bytes([255,63])
   value,flags,total,hl,de=expected
   assert (r[A],r[F],r[C],r[H]*256+r[L],r[D]*256+r[E])==(value,flags,total,hl,de),(case,expected,list(r))
   assert r[B]==0 and r[SP]==0x8000 and r[8:12]==initial[8:12] and r[18:24]==initial[18:24]
@@ -58,8 +86,26 @@ def main():
   for operand,source in ((0xC8BF,0x98AB),(0xC8E1,0x9903)):
    byte=memory[source];assert memory[operand]==(byte if byte<128 else byte^255)
   cases+=1
+  # Проверка реальной суффиксной обёртки с обрезанием индекса и повторным использованием его слова.
+  expected=reference(memory,index&255)
+  expected_writes=[(0x7FFA,0xE5),(0x7FFB,0xC5)]+own_writes(memory,index&255,0x7FF8)
+  simulator.registers[:]=initial;r=simulator.registers;r[SP]=0x7FFA
+  memory[0x7FFA:0x7FFE]=index.to_bytes(2,'little')+bytes([255,63])
+  memory.writes.clear();memory.recording=True;simulator.run(start=0xC5DF,stop=0x3FFF);memory.recording=False
+  value,flags,total,hl,de=expected
+  assert (r[A],r[F],r[C],r[H]*256+r[L],r[D]*256+r[E],r[B],r[SP])==(value,flags,total,hl,value,0,0x7FFE)
+  assert r[8:12]==initial[8:12] and r[18:24]==initial[18:24]
+  assert memory.writes==expected_writes
+  assert memory[0x7FFC:0x7FFE]==bytes([255,63])
+  assert memory[0x7FFA:0x7FFC]==bytes([0xE5,0xC5])
+  wrapper_cases+=1
  report=dict(passed=True,method='original_three_table_weighted_sum_with_selected_row_and_rotated_option',cases=cases,
   all_category_bytes=True,all_option_bytes=True,weights_use_complement_not_absolute_value=True,
+  wrapper_cases=wrapper_cases,exact_CPU_write_sequence_checked=True,
+  direct_own_writes=106,wrapper_own_writes=108,wrapper_consumed_index_word_overwritten_by_CALL=True,
+  original_return_words_preserved=True,physical_disk_and_sector_hashes_checked=True,
+  CPU_write_watch_positive_control=True,full_R_proved=False,
+  full_table_index_register_cartesian_product_checked=False,
   native_execution=False,irq_executed=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/WeightedLoadVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))

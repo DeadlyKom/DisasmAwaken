@@ -42,6 +42,16 @@
       "written_bytes_outside_bitmap": 255
     }
   ],
+  "exact_refresh_from_executed_opcode_prefixes": true,
+  "full_m1_range": [
+    31,
+    14551
+  ],
+  "independent_loop_m1_formula": false,
+  "only_declared_memory_writes": true,
+  "push_af_two_bytes_including_early_returns": true,
+  "i_im_iff_preserved": true,
+  "iff_fixture": 0,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

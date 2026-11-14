@@ -31,6 +31,31 @@
       "output_bytes": 6912
     }
   ],
+  "original_control0_profiles": [
+    {
+      "retry_first": false,
+      "sectors_read": 27,
+      "disk_attempts": 27,
+      "raw_prefix": "ffefe9e4dfdc",
+      "first_copy_source": 40157,
+      "first_copy_destination": 42216,
+      "first_copy_value": 255,
+      "first_copy_bank": 2,
+      "initial_copy_count": 56542
+    },
+    {
+      "retry_first": true,
+      "sectors_read": 27,
+      "disk_attempts": 28,
+      "raw_prefix": "ffefe9e4dfdc",
+      "first_copy_source": 40157,
+      "first_copy_destination": 42216,
+      "first_copy_value": 255,
+      "first_copy_bank": 2,
+      "initial_copy_count": 56542
+    }
+  ],
+  "control0_stops_after_first_out_of_window_copy": true,
   "dos_rom": "trdos504t.rom",
   "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
   "basic_rom": "128-1.rom",

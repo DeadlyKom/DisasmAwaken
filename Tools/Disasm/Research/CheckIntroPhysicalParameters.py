@@ -2,6 +2,7 @@
 import json
 from CheckIntro import ROOT, original_memory, execute, word
 from IntroPhysicalParameters import BLOCKS, render, parse
+from hashlib import sha256
 
 
 def main():
@@ -16,9 +17,12 @@ def main():
         total += length
     # Проверка имени запроса, тип C расположен сразу после восьми символов имени.
     assert raw[0x315:0x31E] == b'STATIONFC'
-    # Проверка фактической границы 63 последовательностей, соседний байт не читается этим циклом.
+    # Проверка физической таблицы и фактической границы 63 чтений.
     assert raw[0x363:0x36A] == bytes((20, 28, 36, 43, 49, 54, 59))
-    assert raw[0x3A2] == 41
+    evidence = ROOT / 'Tools/Disasm/Reports/IntroArchivedLookupVerification.json'
+    lookup = json.loads(evidence.read_bytes())
+    assert lookup['passed'] and lookup['last_value'] == raw[0x3A2] == 41
+    assert lookup['table_sha256'] == sha256(raw[0x363:0x3A3]).hexdigest()
     # Проверка обеих исходных неподвижных фаз настоящей процедурой обновления.
     cases = 0
     for address in (0x662C, 0x6632):
@@ -45,7 +49,7 @@ def main():
     result = dict(passed=True, total_cases=cases, physical_typed_bytes=total,
                   original_blocks=len(BLOCKS), final_phases_unchanged=True,
                   attribute_matrices_independently_compared=True,
-                  last_lookup_neighbour_byte_classified=False,
+                  last_lookup_byte_matches_authored_table=True, lookup_parameters_read=63,
                   whole_initialization_executed=False, assembly_executed=False,
                   irq_executed=False, native_execution=False)
     (ROOT / 'Tools/Disasm/Reports/IntroPhysicalParametersVerification.json').write_text(

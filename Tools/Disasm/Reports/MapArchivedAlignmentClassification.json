@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 154,
+  "resources": 3,
+  "archive_proof": "MapArchivedAlignmentVerification.json",
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

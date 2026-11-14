@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "total_cases": 256,
+  "entry": 26176,
+  "original_code_sha256": "88e9afaea2f9eb102c152984e5e7430b3cb2b31510b9580266a906af932f4b96",
+  "all_byte_values_in_even_and_odd_positions": true,
+  "all_physical_banks_and_write_counts_compared": true,
+  "exact_registers_except_T": true,
+  "M1": 139661,
+  "F_counts": {
+    "41": 32,
+    "40": 32,
+    "8": 32,
+    "9": 32,
+    "0": 32,
+    "1": 32,
+    "33": 32,
+    "32": 32
+  },
+  "CPU_stack_writes": 2,
+  "BuildTextureLookup_executed": false,
+  "IRQ_executed": false,
+  "all_joint_source_inputs_exhausted": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

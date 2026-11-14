@@ -19,11 +19,17 @@
                 include "../Basic/Data/EntryLine.asm"
                 ent
                 assert $ == #0077
-                ; Секторные байты после логического BASIC не относятся к загружаемой программе.
+                ; После 119 байтов программы ROM переносит четыре байта автозапуска и ещё один байт сектора.
+                ; Документация [чтение первого сектора](../../Docs/BasicProgram.md#чтение-первого-сектора-командой-run)
                 include "../Basic/Data/Autostart.asm"
                 assert $ == #007B
-                ; Следующие 133 байта имеют неизвестное назначение и сохраняются без изменений.
-                incbin "../Resources/03_AWAKEN/UnknownAfterBasicAutostart.bin"
+                include "../Basic/Data/DetachedLineSuffix.asm"
+                assert $ == #0084
+                include "../Basic/Data/DetachedSectorNumber.asm"
+                assert $ == #0090
+                ; Физический хвост буфера, при RUN исходные байты вытесняются до входа USR
+                ; Документация [чтение первого сектора](../../Docs/BasicProgram.md#чтение-первого-сектора-командой-run)
+                incbin "../Resources/03_AWAKEN/FirstSectorBufferTail.bin"
                 assert $ == #0100
                 ; Эта страница читается вместе со вступлением по адресу 6400 отдельным дисковым вызовом.
                 disp #6400
@@ -34,18 +40,18 @@
                 include "../Intro/InitializeIntro.asm"
                 ent
                 assert $ == #02B3
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                ; Документация [таблицы и сохранённые промежутки](../../Docs/IntroStationTransition.md)
-                assert $ == #02B3
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/03_AWAKEN/Unclassified02B3_02B4.bin"
+                ; Документация [снимок стека и выборка](../../Docs/IntroStationTransition.md#снимок-стека-в-выборке-текстуры)
+                disp #65B3
+                include "../Intro/Data/StackSampleBefore.asm"
+                ent
                 assert $ == #02B4
                 disp #65B4
                 include "../Intro/Data/StackSnapshot.asm"
                 ent
                 assert $ == #02B6
-                ; Unknown, соседние байты не объявляются свободными
-                incbin "../Resources/03_AWAKEN/Unclassified02B6_02B7.bin"
+                disp #65B6
+                include "../Intro/Data/StackSampleAfter.asm"
+                ent
                 assert $ == #02B7
                 disp #65B7
                 include "../Intro/LoadStation.asm"
@@ -70,8 +76,6 @@
                 disp #6663
                 include "../Intro/Data/AlternatingLookup.asm"
                 ent
-                ; Назначение соседнего байта 66A2 ещё не установлено.
-                incbin "../Resources/03_AWAKEN/UnknownAfterLookupParameters.bin"
                 assert $ == #03A3
                 disp #66A3
                 include "../Intro/DrawScrolledTexture.asm"
@@ -272,14 +276,15 @@
                 incbin "../Intro/Data/StationScreenPacked.bin"
                 assert $ == #2C6B
                 ; Следующие 149 байтов не читаются установленным экранным потоком.
-                assert $ == #2C6B
-                ; Unknown, соседний диапазон сохраняется без классификации
-                assert $ == #2C6B
-                ; Unknown, соседний диапазон сохраняется без классификации
-                incbin "../Resources/03_AWAKEN/Unclassified2C6B_2C97.bin"
+                ; Unknown, назначение 41 байта перед подготовкой обхода не установлено, исходный #8F93 обнуляется после переноса.
+                incbin "../Resources/03_AWAKEN/Unclassified2C6B_2C94.bin"
+                assert $ == #2C94
+                disp #7494
+                include "../IntroUnpack/SetAttributeScanDest.asm"                ; (0) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #2C97
                 disp #7497
-                include "../IntroUnpack/ScanAttributeCountTail.asm"
+                include "../IntroUnpack/ScanAttributeCountTail.asm"             ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #2CCD
                 disp #74CD
@@ -294,6 +299,10 @@
                 include "../IntroUnpack/CopyScreenFromBankWindow.asm"
                 ent
                 assert $ == #2CEC
-                ; Unknown, соседний диапазон сохраняется без классификации
-                incbin "../Resources/03_AWAKEN/Unclassified2CEC_2D00.bin"
+                disp #74EC
+                include "../IntroUnpack/UnpackTailGate.asm"
+                ent
+                assert $ == #2CFF
+                ; Опкод JR Z, смещение по #7500 приходит из RAM за концом секторов.
+                incbin "../Resources/03_AWAKEN/DetachedJumpOpcode.bin"
                 assert $ == #2D00

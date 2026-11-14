@@ -58,20 +58,22 @@ def main():
     memory=RecordedBanks(banks=banks,out7ffd=16);baseline=[bytearray(bank) for bank in banks]
     ratio_table=bytes(flat[0x9A00:0x9B00]);root_table=bytes(banks[1][:768])
     simulator=Simulator(memory);paths=Counter();composed=0
-    for serial in range(512):
+    for serial in range(1024):
         memory.recording=False
         for bank in range(8):memory.banks[bank][:]=baseline[bank]
         old=(serial%4)*8;memory.out7ffd(old);stack=0xBFFE
         current=tuple(((serial+1)*(index*7919+32767))&65535 for index in range(3))
-        target=tuple(((serial+37)*(index*12347+257))&65535 for index in range(3))
+        # Подготовка самовыбора в дополнительной половине полных композиций.
+        alias=serial>=512;target_pointer=0xA100 if alias else 0xA140
+        target=current if alias else tuple(((serial+37)*(index*12347+257))&65535 for index in range(3))
         columns=((serial*73)&255,(serial*109)&255);rate=(0,1,2,3,127,128,255)[serial%7]
-        for start,words in ((0xA100,current),(0xA140,target)):
+        for start,words in ((0xA100,current),(target_pointer,target)):
             for axis,value in enumerate(words):memory[start+2*axis],memory[start+2*axis+1]=value&255,value>>8
         memory[0xA108],memory[0xA109],memory[0xA125]=*columns,rate
         memory[stack],memory[stack+1]=255,63
         expected=[bytearray(bank) for bank in memory.banks]
         initial=get_registers({'PC':0xF36B,'SP':stack,'AF':(serial*73)&65535,'HL':0x1357,'DE':0x2468,'BC':0x369C,
-            '^AF':(serial*109)&65535,'^HL':0x1234,'^DE':0x5678,'^BC':0x9ABC,'IX':0xA100,'IY':0xA140},None,False)
+            '^AF':(serial*109)&65535,'^HL':0x1234,'^DE':0x5678,'^BC':0x9ABC,'IX':0xA100,'IY':target_pointer},None,False)
         initial[14],initial[15],initial[26],initial[27]=serial&255,(serial*17)&255,serial&1,serial%3
         child=arguments(initial,current,target);child[SP]-=2;child[PC]=0xAD5A
         # Учёт M1 настоящего CALL из StepRecordTargetCodes перед входом геометрии.
@@ -85,21 +87,35 @@ def main():
             expected[bank][address&0x3FFF]=value;writes.append((bank,address&0x3FFF,value))
         simulator.registers[:]=initial;trace=PortTrace(simulator);simulator.set_tracer(trace)
         memory.writes=[];memory.recording=True
-        simulator.run(start=0xF36B,stop=0x3FFF)
+        # Накопление полного M1, включая значения больше 127.
+        measured_m1=0
+        for _ in range(4000):
+            if simulator.registers[PC]==0x3FFF:break
+            before_r=simulator.registers[15];simulator.run()
+            increment=(simulator.registers[15]-before_r)&127
+            assert increment in (1,2)
+            measured_m1+=increment
+        else:raise AssertionError(('нет внешнего возврата',serial))
+        assert measured_m1==28+calculated['refresh_m1']+local['refresh_m1'],(serial,alias,measured_m1)
         memory.recording=False
         wanted=local['registers']
         assert all(wanted[index]==simulator.registers[index] for index in (*range(25),26,27)),(serial,[(i,wanted[i],simulator.registers[i]) for i in (*range(25),26,27) if wanted[i]!=simulator.registers[i]])
         assert memory.banks==expected and Counter(memory.writes)==Counter(writes)
         assert trace.writes==calculated['ports'] and memory.o7ffd==16
+        paths['same_IX_IY' if alias else 'distinct_records']+=1
         paths['first_written' if local['first_written'] else 'first_skipped']+=1
         paths['second_written' if local['second_written'] else 'second_skipped']+=1
         composed+=1
+    assert composed==1024 and paths['same_IX_IY']==512 and paths['distinct_records']==512
     result=dict(passed=True,total_cases=stage_cases+composed,parameter_cases=stage_cases,composed_cases=composed,
         all_65536_values_each_of_six_input_words_at_boundary=True,parameter_registers_flags_r_exact=True,
         parameter_ram_writes_rejected=True,parameter_m1=27,actual_geometry_root_ratio_and_step_executed=True,
         independent_existing_child_models_composed=True,composed_registers_including_r_exact=True,
         full_eight_bank_ram_and_write_multiplicity_compared=True,paths=dict(paths),
-        full_composed_r_proved=True,complete_six_word_product_exhausted=False,
+        full_composed_r_proved=True,full_M1_count_compared_not_only_R_modulo_128=True,
+        full_M1_comparison_scope='composed_cases',
+        same_IX_IY_composed_cases=paths['same_IX_IY'],distinct_record_composed_cases=paths['distinct_records'],
+        complete_six_word_product_exhausted=False,
         assembly_executed=False,irq_executed=False,native_execution=False)
     (ROOT/'Tools/Disasm/Reports/ActionSelectedRecordStepVerification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,indent=2))

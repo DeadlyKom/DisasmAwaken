@@ -6,6 +6,21 @@
   "physical_bytes": 1045,
   "verified_mutated_headers": 13,
   "vertex_bounds_checked": true,
+  "original_face_fill_modes": {
+    "0": 18,
+    "1": 59,
+    "2": 83,
+    "3": 56,
+    "4": 3
+  },
+  "original_toggle_source_headers": [
+    36,
+    35
+  ],
+  "toggled_source_headers": [
+    68,
+    67
+  ],
   "original_bytes_round_trip": true,
   "assembly_executed": false,
   "native_execution": false

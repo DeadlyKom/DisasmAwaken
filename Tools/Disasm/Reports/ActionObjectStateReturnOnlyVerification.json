@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "total_cases": 258,
+  "direct_ret_profiles": 256,
+  "out_of_table_profiles": 2,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "authored_label": "BRAINPRO.a:NTH",
+  "archived_sp_address": 61325,
+  "awaken_action_address": 61308,
+  "out_of_table_target": 56777,
+  "original_game_path_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

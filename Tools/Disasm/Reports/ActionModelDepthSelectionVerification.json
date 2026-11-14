@@ -1,0 +1,1375 @@
+{
+  "passed": true,
+  "selection_cases": 32768,
+  "outcomes": {
+    "near": 3968,
+    "packet_copy": 128,
+    "far": 12416,
+    "negative": 16384
+  },
+  "pairs": [
+    {
+      "index": "IPOL1",
+      "selector": 0,
+      "far": {
+        "symbol": "KN01pol1",
+        "address": 49152,
+        "vertices": 11,
+        "faces": 10,
+        "lines": 0,
+        "bytes": 64
+      },
+      "near": {
+        "symbol": "Kd1",
+        "address": 49216,
+        "vertices": 15,
+        "faces": 17,
+        "lines": 0,
+        "bytes": 101
+      }
+    },
+    {
+      "index": "IPOL2",
+      "selector": 4,
+      "far": {
+        "symbol": "KN06pol2",
+        "address": 49745,
+        "vertices": 4,
+        "faces": 4,
+        "lines": 0,
+        "bytes": 32
+      },
+      "near": {
+        "symbol": "Kd6",
+        "address": 49777,
+        "vertices": 11,
+        "faces": 13,
+        "lines": 0,
+        "bytes": 77
+      }
+    },
+    {
+      "index": "IPOL3",
+      "selector": 8,
+      "far": {
+        "symbol": "KN29pol6",
+        "address": 52459,
+        "vertices": 6,
+        "faces": 5,
+        "lines": 0,
+        "bytes": 37
+      },
+      "near": {
+        "symbol": "Kd29",
+        "address": 52496,
+        "vertices": 18,
+        "faces": 19,
+        "lines": 2,
+        "bytes": 123
+      }
+    },
+    {
+      "index": "IPOL4",
+      "selector": 12,
+      "far": {
+        "symbol": "KN27pol7",
+        "address": 52204,
+        "vertices": 5,
+        "faces": 5,
+        "lines": 0,
+        "bytes": 37
+      },
+      "near": {
+        "symbol": "Kd27",
+        "address": 52241,
+        "vertices": 18,
+        "faces": 16,
+        "lines": 2,
+        "bytes": 108
+      }
+    },
+    {
+      "index": "IPLS1",
+      "selector": 16,
+      "far": {
+        "symbol": "KN21plS3",
+        "address": 51671,
+        "vertices": 4,
+        "faces": 4,
+        "lines": 0,
+        "bytes": 32
+      },
+      "near": {
+        "symbol": "Kd21",
+        "address": 51703,
+        "vertices": 12,
+        "faces": 7,
+        "lines": 4,
+        "bytes": 73
+      }
+    },
+    {
+      "index": "IPLS2",
+      "selector": 20,
+      "far": {
+        "symbol": "KN25plS4",
+        "address": 51950,
+        "vertices": 5,
+        "faces": 5,
+        "lines": 0,
+        "bytes": 37
+      },
+      "near": {
+        "symbol": "Kd25",
+        "address": 51987,
+        "vertices": 9,
+        "faces": 9,
+        "lines": 2,
+        "bytes": 63
+      }
+    },
+    {
+      "index": "IPLS3",
+      "selector": 24,
+      "far": {
+        "symbol": "KN28plS5",
+        "address": 52349,
+        "vertices": 5,
+        "faces": 6,
+        "lines": 0,
+        "bytes": 40
+      },
+      "near": {
+        "symbol": "Kd28",
+        "address": 52389,
+        "vertices": 13,
+        "faces": 10,
+        "lines": 0,
+        "bytes": 70
+      }
+    },
+    {
+      "index": "IMLT1",
+      "selector": 28,
+      "far": {
+        "symbol": "KN02mlt1",
+        "address": 49317,
+        "vertices": 6,
+        "faces": 5,
+        "lines": 0,
+        "bytes": 39
+      },
+      "near": {
+        "symbol": "Kd2",
+        "address": 49356,
+        "vertices": 20,
+        "faces": 16,
+        "lines": 2,
+        "bytes": 116
+      }
+    },
+    {
+      "index": "IMLT2",
+      "selector": 32,
+      "far": {
+        "symbol": "KN09mlt2",
+        "address": 50260,
+        "vertices": 24,
+        "faces": 14,
+        "lines": 0,
+        "bytes": 94
+      },
+      "near": {
+        "symbol": "Kd9",
+        "address": 50354,
+        "vertices": 33,
+        "faces": 25,
+        "lines": 0,
+        "bytes": 157
+      }
+    },
+    {
+      "index": "IMLT3",
+      "selector": 36,
+      "far": {
+        "symbol": "KN17mlt3",
+        "address": 51269,
+        "vertices": 24,
+        "faces": 15,
+        "lines": 0,
+        "bytes": 91
+      },
+      "near": {
+        "symbol": "Kd17",
+        "address": 51360,
+        "vertices": 26,
+        "faces": 27,
+        "lines": 0,
+        "bytes": 149
+      }
+    },
+    {
+      "index": "IMLT4",
+      "selector": 40,
+      "far": {
+        "symbol": "KN26mlt4",
+        "address": 52050,
+        "vertices": 5,
+        "faces": 6,
+        "lines": 0,
+        "bytes": 40
+      },
+      "near": {
+        "symbol": "Kd26",
+        "address": 52090,
+        "vertices": 15,
+        "faces": 18,
+        "lines": 2,
+        "bytes": 114
+      }
+    },
+    {
+      "index": "IGRZ1",
+      "selector": 44,
+      "far": {
+        "symbol": "KN03grz1",
+        "address": 53507,
+        "vertices": 14,
+        "faces": 11,
+        "lines": 0,
+        "bytes": 77
+      },
+      "near": {
+        "symbol": "Kd3",
+        "address": 53584,
+        "vertices": 20,
+        "faces": 18,
+        "lines": 0,
+        "bytes": 112
+      }
+    },
+    {
+      "index": "IGRZ2",
+      "selector": 48,
+      "far": {
+        "symbol": "KN08grz2",
+        "address": 50094,
+        "vertices": 9,
+        "faces": 11,
+        "lines": 0,
+        "bytes": 67
+      },
+      "near": {
+        "symbol": "Kd8",
+        "address": 50161,
+        "vertices": 15,
+        "faces": 17,
+        "lines": 0,
+        "bytes": 99
+      }
+    },
+    {
+      "index": "IGRZ3",
+      "selector": 52,
+      "far": {
+        "symbol": "KN11grz3",
+        "address": 50690,
+        "vertices": 10,
+        "faces": 11,
+        "lines": 0,
+        "bytes": 77
+      },
+      "near": {
+        "symbol": "Kd11",
+        "address": 50767,
+        "vertices": 24,
+        "faces": 25,
+        "lines": 0,
+        "bytes": 155
+      }
+    },
+    {
+      "index": "IGRZ4",
+      "selector": 56,
+      "far": {
+        "symbol": "KN30grz4",
+        "address": 52619,
+        "vertices": 7,
+        "faces": 10,
+        "lines": 0,
+        "bytes": 62
+      },
+      "near": {
+        "symbol": "Kd30",
+        "address": 52681,
+        "vertices": 17,
+        "faces": 17,
+        "lines": 0,
+        "bytes": 109
+      }
+    },
+    {
+      "index": "IGRZ5",
+      "selector": 60,
+      "far": {
+        "symbol": "KN31grz5",
+        "address": 52790,
+        "vertices": 12,
+        "faces": 12,
+        "lines": 0,
+        "bytes": 76
+      },
+      "near": {
+        "symbol": "Kd31",
+        "address": 52866,
+        "vertices": 14,
+        "faces": 21,
+        "lines": 0,
+        "bytes": 115
+      }
+    },
+    {
+      "index": "ITRG1",
+      "selector": 64,
+      "far": {
+        "symbol": "KN04trg1",
+        "address": 49472,
+        "vertices": 6,
+        "faces": 5,
+        "lines": 0,
+        "bytes": 39
+      },
+      "near": {
+        "symbol": "Kd4",
+        "address": 49511,
+        "vertices": 20,
+        "faces": 21,
+        "lines": 0,
+        "bytes": 123
+      }
+    },
+    {
+      "index": "ITRG2",
+      "selector": 68,
+      "far": {
+        "symbol": "KN05trg2",
+        "address": 49634,
+        "vertices": 4,
+        "faces": 4,
+        "lines": 0,
+        "bytes": 32
+      },
+      "near": {
+        "symbol": "Kd5",
+        "address": 49666,
+        "vertices": 11,
+        "faces": 11,
+        "lines": 0,
+        "bytes": 79
+      }
+    },
+    {
+      "index": "ITRG3",
+      "selector": 72,
+      "far": {
+        "symbol": "KN10trg3",
+        "address": 50511,
+        "vertices": 4,
+        "faces": 4,
+        "lines": 0,
+        "bytes": 32
+      },
+      "near": {
+        "symbol": "Kd10",
+        "address": 50543,
+        "vertices": 22,
+        "faces": 19,
+        "lines": 2,
+        "bytes": 147
+      }
+    },
+    {
+      "index": "ITRG4",
+      "selector": 76,
+      "far": {
+        "symbol": "KN16trg4",
+        "address": 51085,
+        "vertices": 10,
+        "faces": 7,
+        "lines": 0,
+        "bytes": 57
+      },
+      "near": {
+        "symbol": "Kd16",
+        "address": 51142,
+        "vertices": 18,
+        "faces": 19,
+        "lines": 2,
+        "bytes": 127
+      }
+    },
+    {
+      "index": "ITRG5",
+      "selector": 80,
+      "far": {
+        "symbol": "KOBRA",
+        "address": 54915,
+        "vertices": 17,
+        "faces": 15,
+        "lines": 0,
+        "bytes": 93
+      },
+      "near": {
+        "symbol": "KOBRAD",
+        "address": 55008,
+        "vertices": 28,
+        "faces": 28,
+        "lines": 0,
+        "bytes": 160
+      }
+    },
+    {
+      "index": "ITRG6",
+      "selector": 84,
+      "far": {
+        "symbol": "KRYL",
+        "address": 55168,
+        "vertices": 18,
+        "faces": 15,
+        "lines": 0,
+        "bytes": 95
+      },
+      "near": {
+        "symbol": "KRYLD",
+        "address": 55263,
+        "vertices": 18,
+        "faces": 19,
+        "lines": 0,
+        "bytes": 109
+      }
+    },
+    {
+      "index": "IUFO1",
+      "selector": 88,
+      "far": {
+        "symbol": "KN13ufo2",
+        "address": 53696,
+        "vertices": 7,
+        "faces": 9,
+        "lines": 0,
+        "bytes": 57
+      },
+      "near": {
+        "symbol": "Kd13",
+        "address": 53753,
+        "vertices": 13,
+        "faces": 15,
+        "lines": 0,
+        "bytes": 91
+      }
+    },
+    {
+      "index": "IUFO2",
+      "selector": 92,
+      "far": {
+        "symbol": "KN14ufo3",
+        "address": 53844,
+        "vertices": 8,
+        "faces": 8,
+        "lines": 0,
+        "bytes": 54
+      },
+      "near": {
+        "symbol": "Kd14",
+        "address": 53898,
+        "vertices": 17,
+        "faces": 20,
+        "lines": 0,
+        "bytes": 126
+      }
+    },
+    {
+      "index": "IUFO3",
+      "selector": 96,
+      "far": {
+        "symbol": "KN18UFo4",
+        "address": 54168,
+        "vertices": 13,
+        "faces": 9,
+        "lines": 0,
+        "bytes": 61
+      },
+      "near": {
+        "symbol": "Kd18",
+        "address": 54229,
+        "vertices": 28,
+        "faces": 28,
+        "lines": 0,
+        "bytes": 164
+      }
+    },
+    {
+      "index": "IUFO4",
+      "selector": 100,
+      "far": {
+        "symbol": "KN20ufo5",
+        "address": 54393,
+        "vertices": 12,
+        "faces": 11,
+        "lines": 0,
+        "bytes": 69
+      },
+      "near": {
+        "symbol": "Kd20",
+        "address": 54462,
+        "vertices": 22,
+        "faces": 24,
+        "lines": 0,
+        "bytes": 140
+      }
+    },
+    {
+      "index": "IUFO5",
+      "selector": 104,
+      "far": {
+        "symbol": "KN23ufo6",
+        "address": 54754,
+        "vertices": 11,
+        "faces": 10,
+        "lines": 0,
+        "bytes": 64
+      },
+      "near": {
+        "symbol": "Kd23",
+        "address": 54818,
+        "vertices": 13,
+        "faces": 17,
+        "lines": 0,
+        "bytes": 97
+      }
+    },
+    {
+      "index": "IUFO6",
+      "selector": 108,
+      "far": {
+        "symbol": "KN24ufo7",
+        "address": 54602,
+        "vertices": 9,
+        "faces": 8,
+        "lines": 0,
+        "bytes": 52
+      },
+      "near": {
+        "symbol": "Kd24",
+        "address": 54654,
+        "vertices": 15,
+        "faces": 18,
+        "lines": 0,
+        "bytes": 100
+      }
+    },
+    {
+      "index": "IUFO7",
+      "selector": 112,
+      "far": {
+        "symbol": "UFO1D",
+        "address": 55838,
+        "vertices": 10,
+        "faces": 15,
+        "lines": 0,
+        "bytes": 77
+      },
+      "near": {
+        "symbol": "UFO1",
+        "address": 55915,
+        "vertices": 10,
+        "faces": 11,
+        "lines": 0,
+        "bytes": 63
+      }
+    },
+    {
+      "index": "IUFO8",
+      "selector": 116,
+      "far": {
+        "symbol": "Kd12",
+        "address": 54024,
+        "vertices": 20,
+        "faces": 24,
+        "lines": 0,
+        "bytes": 144
+      },
+      "near": {
+        "symbol": "Kd12",
+        "address": 54024,
+        "vertices": 20,
+        "faces": 24,
+        "lines": 0,
+        "bytes": 144
+      }
+    },
+    {
+      "index": "IKRS1",
+      "selector": 120,
+      "far": {
+        "symbol": "KN07krs1",
+        "address": 49854,
+        "vertices": 15,
+        "faces": 19,
+        "lines": 0,
+        "bytes": 107
+      },
+      "near": {
+        "symbol": "Kd7",
+        "address": 49961,
+        "vertices": 17,
+        "faces": 25,
+        "lines": 0,
+        "bytes": 133
+      }
+    },
+    {
+      "index": "IKRS2",
+      "selector": 124,
+      "far": {
+        "symbol": "Kd15",
+        "address": 50922,
+        "vertices": 23,
+        "faces": 31,
+        "lines": 0,
+        "bytes": 163
+      },
+      "near": {
+        "symbol": "Kd15",
+        "address": 50922,
+        "vertices": 23,
+        "faces": 31,
+        "lines": 0,
+        "bytes": 163
+      }
+    },
+    {
+      "index": "IKRS3",
+      "selector": 128,
+      "far": {
+        "symbol": "Kd19",
+        "address": 51509,
+        "vertices": 23,
+        "faces": 28,
+        "lines": 0,
+        "bytes": 162
+      },
+      "near": {
+        "symbol": "Kd19",
+        "address": 51509,
+        "vertices": 23,
+        "faces": 28,
+        "lines": 0,
+        "bytes": 162
+      }
+    },
+    {
+      "index": "IKRS4",
+      "selector": 132,
+      "far": {
+        "symbol": "Kd22",
+        "address": 51776,
+        "vertices": 34,
+        "faces": 28,
+        "lines": 0,
+        "bytes": 174
+      },
+      "near": {
+        "symbol": "Kd22",
+        "address": 51776,
+        "vertices": 34,
+        "faces": 28,
+        "lines": 0,
+        "bytes": 174
+      }
+    },
+    {
+      "index": "IMIK1",
+      "selector": 136,
+      "far": {
+        "symbol": "micKN",
+        "address": 52981,
+        "vertices": 8,
+        "faces": 4,
+        "lines": 0,
+        "bytes": 28
+      },
+      "near": {
+        "symbol": "micKd1",
+        "address": 53009,
+        "vertices": 12,
+        "faces": 9,
+        "lines": 2,
+        "bytes": 80
+      }
+    },
+    {
+      "index": "IMIK2",
+      "selector": 140,
+      "far": {
+        "symbol": "micKN",
+        "address": 52981,
+        "vertices": 8,
+        "faces": 4,
+        "lines": 0,
+        "bytes": 28
+      },
+      "near": {
+        "symbol": "micKd2",
+        "address": 53089,
+        "vertices": 12,
+        "faces": 5,
+        "lines": 2,
+        "bytes": 65
+      }
+    },
+    {
+      "index": "IROK",
+      "selector": 144,
+      "far": {
+        "symbol": "ROKET",
+        "address": 55396,
+        "vertices": 24,
+        "faces": 14,
+        "lines": 0,
+        "bytes": 78
+      },
+      "near": {
+        "symbol": "ROKET",
+        "address": 55396,
+        "vertices": 24,
+        "faces": 14,
+        "lines": 0,
+        "bytes": 78
+      }
+    },
+    {
+      "index": "IROKUFO",
+      "selector": 148,
+      "far": {
+        "symbol": "UfoRD",
+        "address": 53385,
+        "vertices": 16,
+        "faces": 14,
+        "lines": 0,
+        "bytes": 82
+      },
+      "near": {
+        "symbol": "UfoRD",
+        "address": 53385,
+        "vertices": 16,
+        "faces": 14,
+        "lines": 0,
+        "bytes": 82
+      }
+    },
+    {
+      "index": "ICRG",
+      "selector": 152,
+      "far": {
+        "symbol": "CRG1",
+        "address": 55506,
+        "vertices": 24,
+        "faces": 14,
+        "lines": 0,
+        "bytes": 94
+      },
+      "near": {
+        "symbol": "CRG1",
+        "address": 55506,
+        "vertices": 24,
+        "faces": 14,
+        "lines": 0,
+        "bytes": 94
+      }
+    },
+    {
+      "index": "ICRGUFO",
+      "selector": 156,
+      "far": {
+        "symbol": "KontUFO",
+        "address": 53237,
+        "vertices": 16,
+        "faces": 14,
+        "lines": 0,
+        "bytes": 82
+      },
+      "near": {
+        "symbol": "KontUFO",
+        "address": 53237,
+        "vertices": 16,
+        "faces": 14,
+        "lines": 0,
+        "bytes": 82
+      }
+    },
+    {
+      "index": "IKIB",
+      "selector": 160,
+      "far": {
+        "symbol": "Kib_K",
+        "address": 53467,
+        "vertices": 5,
+        "faces": 6,
+        "lines": 0,
+        "bytes": 40
+      },
+      "near": {
+        "symbol": "Kib_K",
+        "address": 53467,
+        "vertices": 5,
+        "faces": 6,
+        "lines": 0,
+        "bytes": 40
+      }
+    },
+    {
+      "index": "IKIBUFO",
+      "selector": 164,
+      "far": {
+        "symbol": "ufo_K",
+        "address": 53319,
+        "vertices": 9,
+        "faces": 10,
+        "lines": 0,
+        "bytes": 66
+      },
+      "near": {
+        "symbol": "ufo_K",
+        "address": 53319,
+        "vertices": 9,
+        "faces": 10,
+        "lines": 0,
+        "bytes": 66
+      }
+    },
+    {
+      "index": "IREMDR",
+      "selector": 168,
+      "far": {
+        "symbol": "REM_DR",
+        "address": 53154,
+        "vertices": 14,
+        "faces": 11,
+        "lines": 4,
+        "bytes": 83
+      },
+      "near": {
+        "symbol": "REM_DR",
+        "address": 53154,
+        "vertices": 14,
+        "faces": 11,
+        "lines": 4,
+        "bytes": 83
+      }
+    },
+    {
+      "index": "IASTER1",
+      "selector": 172,
+      "far": {
+        "symbol": "ASTER1",
+        "address": 55600,
+        "vertices": 14,
+        "faces": 24,
+        "lines": 0,
+        "bytes": 120
+      },
+      "near": {
+        "symbol": "ASTER1",
+        "address": 55600,
+        "vertices": 14,
+        "faces": 24,
+        "lines": 0,
+        "bytes": 120
+      }
+    },
+    {
+      "index": "IASTER2",
+      "selector": 176,
+      "far": {
+        "symbol": "ASTER2",
+        "address": 55720,
+        "vertices": 8,
+        "faces": 12,
+        "lines": 0,
+        "bytes": 64
+      },
+      "near": {
+        "symbol": "ASTER2",
+        "address": 55720,
+        "vertices": 8,
+        "faces": 12,
+        "lines": 0,
+        "bytes": 64
+      }
+    },
+    {
+      "index": "IASTER3",
+      "selector": 180,
+      "far": {
+        "symbol": "ASTER3",
+        "address": 55784,
+        "vertices": 9,
+        "faces": 9,
+        "lines": 0,
+        "bytes": 54
+      },
+      "near": {
+        "symbol": "ASTER3",
+        "address": 55784,
+        "vertices": 9,
+        "faces": 9,
+        "lines": 0,
+        "bytes": 54
+      }
+    },
+    {
+      "index": "IOSKOL",
+      "selector": 184,
+      "far": {
+        "symbol": "OSKOL",
+        "address": 55372,
+        "vertices": 4,
+        "faces": 4,
+        "lines": 0,
+        "bytes": 24
+      },
+      "near": {
+        "symbol": "OSKOL",
+        "address": 55372,
+        "vertices": 4,
+        "faces": 4,
+        "lines": 0,
+        "bytes": 24
+      }
+    },
+    {
+      "index": "ITARGET",
+      "selector": 188,
+      "far": {
+        "symbol": "TARGET",
+        "address": 55474,
+        "vertices": 0,
+        "faces": 0,
+        "lines": 0,
+        "bytes": 4
+      },
+      "near": {
+        "symbol": "TARGET",
+        "address": 55474,
+        "vertices": 0,
+        "faces": 0,
+        "lines": 0,
+        "bytes": 4
+      }
+    },
+    {
+      "index": "ITRASH",
+      "selector": 192,
+      "far": {
+        "symbol": "TRASH",
+        "address": 55482,
+        "vertices": 4,
+        "faces": 4,
+        "lines": 0,
+        "bytes": 24
+      },
+      "near": {
+        "symbol": "TRASH",
+        "address": 55482,
+        "vertices": 4,
+        "faces": 4,
+        "lines": 0,
+        "bytes": 24
+      }
+    },
+    {
+      "index": "IST1",
+      "selector": 196,
+      "far": {
+        "symbol": "St1",
+        "address": 55978,
+        "vertices": 40,
+        "faces": 38,
+        "lines": 0,
+        "bytes": 214
+      },
+      "near": {
+        "symbol": "St1",
+        "address": 55978,
+        "vertices": 40,
+        "faces": 38,
+        "lines": 0,
+        "bytes": 214
+      }
+    },
+    {
+      "index": "IST2",
+      "selector": 200,
+      "far": {
+        "symbol": "St2",
+        "address": 56192,
+        "vertices": 25,
+        "faces": 26,
+        "lines": 0,
+        "bytes": 186
+      },
+      "near": {
+        "symbol": "St2",
+        "address": 56192,
+        "vertices": 25,
+        "faces": 26,
+        "lines": 0,
+        "bytes": 186
+      }
+    },
+    {
+      "index": "IST3",
+      "selector": 204,
+      "far": {
+        "symbol": "St3",
+        "address": 56378,
+        "vertices": 34,
+        "faces": 30,
+        "lines": 0,
+        "bytes": 178
+      },
+      "near": {
+        "symbol": "St3",
+        "address": 56378,
+        "vertices": 34,
+        "faces": 30,
+        "lines": 0,
+        "bytes": 178
+      }
+    },
+    {
+      "index": "IST4",
+      "selector": 208,
+      "far": {
+        "symbol": "St4",
+        "address": 56556,
+        "vertices": 28,
+        "faces": 26,
+        "lines": 0,
+        "bytes": 150
+      },
+      "near": {
+        "symbol": "St4",
+        "address": 56556,
+        "vertices": 28,
+        "faces": 26,
+        "lines": 0,
+        "bytes": 150
+      }
+    },
+    {
+      "index": "IST5",
+      "selector": 212,
+      "far": {
+        "symbol": "St5",
+        "address": 56706,
+        "vertices": 18,
+        "faces": 24,
+        "lines": 0,
+        "bytes": 144
+      },
+      "near": {
+        "symbol": "St5",
+        "address": 56706,
+        "vertices": 18,
+        "faces": 24,
+        "lines": 0,
+        "bytes": 144
+      }
+    },
+    {
+      "index": "IST6",
+      "selector": 216,
+      "far": {
+        "symbol": "St6",
+        "address": 56850,
+        "vertices": 22,
+        "faces": 22,
+        "lines": 6,
+        "bytes": 154
+      },
+      "near": {
+        "symbol": "St6",
+        "address": 56850,
+        "vertices": 22,
+        "faces": 22,
+        "lines": 6,
+        "bytes": 154
+      }
+    },
+    {
+      "index": "IST7",
+      "selector": 220,
+      "far": {
+        "symbol": "St7",
+        "address": 57004,
+        "vertices": 32,
+        "faces": 38,
+        "lines": 0,
+        "bytes": 202
+      },
+      "near": {
+        "symbol": "St7",
+        "address": 57004,
+        "vertices": 32,
+        "faces": 38,
+        "lines": 0,
+        "bytes": 202
+      }
+    },
+    {
+      "index": "IST8",
+      "selector": 224,
+      "far": {
+        "symbol": "St8",
+        "address": 57206,
+        "vertices": 33,
+        "faces": 32,
+        "lines": 3,
+        "bytes": 206
+      },
+      "near": {
+        "symbol": "St8",
+        "address": 57206,
+        "vertices": 33,
+        "faces": 32,
+        "lines": 3,
+        "bytes": 206
+      }
+    },
+    {
+      "index": "IST9",
+      "selector": 228,
+      "far": {
+        "symbol": "St9",
+        "address": 57412,
+        "vertices": 12,
+        "faces": 20,
+        "lines": 0,
+        "bytes": 108
+      },
+      "near": {
+        "symbol": "St9",
+        "address": 57412,
+        "vertices": 12,
+        "faces": 20,
+        "lines": 0,
+        "bytes": 108
+      }
+    },
+    {
+      "index": "IST10",
+      "selector": 232,
+      "far": {
+        "symbol": "St10",
+        "address": 57520,
+        "vertices": 20,
+        "faces": 34,
+        "lines": 0,
+        "bytes": 162
+      },
+      "near": {
+        "symbol": "St10",
+        "address": 57520,
+        "vertices": 20,
+        "faces": 34,
+        "lines": 0,
+        "bytes": 162
+      }
+    },
+    {
+      "index": "IST11",
+      "selector": 236,
+      "far": {
+        "symbol": "St11",
+        "address": 57682,
+        "vertices": 18,
+        "faces": 15,
+        "lines": 6,
+        "bytes": 121
+      },
+      "near": {
+        "symbol": "St11",
+        "address": 57682,
+        "vertices": 18,
+        "faces": 15,
+        "lines": 6,
+        "bytes": 121
+      }
+    },
+    {
+      "index": "IST12",
+      "selector": 240,
+      "far": {
+        "symbol": "St12",
+        "address": 57803,
+        "vertices": 40,
+        "faces": 38,
+        "lines": 8,
+        "bytes": 238
+      },
+      "near": {
+        "symbol": "St12",
+        "address": 57803,
+        "vertices": 40,
+        "faces": 38,
+        "lines": 8,
+        "bytes": 238
+      }
+    },
+    {
+      "index": "IST13",
+      "selector": 244,
+      "far": {
+        "symbol": "St13",
+        "address": 58041,
+        "vertices": 15,
+        "faces": 16,
+        "lines": 4,
+        "bytes": 116
+      },
+      "near": {
+        "symbol": "St13",
+        "address": 58041,
+        "vertices": 15,
+        "faces": 16,
+        "lines": 4,
+        "bytes": 116
+      }
+    },
+    {
+      "index": "IST14",
+      "selector": 248,
+      "far": {
+        "symbol": "St14",
+        "address": 58157,
+        "vertices": 25,
+        "faces": 24,
+        "lines": 6,
+        "bytes": 166
+      },
+      "near": {
+        "symbol": "St14",
+        "address": 58157,
+        "vertices": 25,
+        "faces": 24,
+        "lines": 6,
+        "bytes": 166
+      }
+    },
+    {
+      "index": "IST15",
+      "selector": 252,
+      "far": {
+        "symbol": "St15",
+        "address": 58323,
+        "vertices": 20,
+        "faces": 26,
+        "lines": 4,
+        "bytes": 150
+      },
+      "near": {
+        "symbol": "St15",
+        "address": 58323,
+        "vertices": 20,
+        "faces": 26,
+        "lines": 4,
+        "bytes": 150
+      }
+    }
+  ],
+  "shared_packet_pairs": 32,
+  "near_variant_with_fewer_faces": [
+    "IUFO7"
+  ],
+  "entry_after_coordinate_transform": 57760,
+  "header_caller_return": 57785,
+  "negative_depth_target": 57570,
+  "packet_copy_caller_return": 54736,
+  "prepared_transformed_depth": true,
+  "full_frame_not_executed": true,
+  "assembly_executed": false,
+  "native_execution": false,
+  "record_sources": {
+    "confirmed_pair_starts": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      36,
+      40,
+      44,
+      48,
+      52,
+      56,
+      60,
+      64,
+      68,
+      72,
+      76,
+      80,
+      84,
+      88,
+      92,
+      96,
+      100,
+      104,
+      108,
+      112,
+      116,
+      120,
+      124,
+      136,
+      140,
+      144,
+      152,
+      172,
+      176,
+      184,
+      192,
+      196,
+      200,
+      204,
+      208,
+      212,
+      216,
+      220,
+      224,
+      228,
+      232,
+      236,
+      240,
+      244,
+      248,
+      252
+    ],
+    "other_tested_pair_starts": [
+      128,
+      132,
+      148,
+      156,
+      160,
+      164,
+      168,
+      180,
+      188
+    ],
+    "arbitrary_indirect_writers_audited": false
+  }
+}

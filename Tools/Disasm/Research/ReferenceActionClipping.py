@@ -5,6 +5,8 @@ from CheckSignedDivision import expected as division
 from ReferenceActionFaceOrientation import multiply
 from CheckActionVertexCodes import logic_flags
 from ReferenceControlsPointRespawn import cp_flags
+from ReferenceControlsPointRespawn import refresh
+from ReferenceActionClipRefresh import product_cost,intersection_cost,instruction_cost
 
 PRODUCT={0xC477:(0xCF37,0,False),0xC496:(0xCF33,95,False),0xC4B5:(0xCF2F,0,True),0xC4D4:(0xCF2B,255,True)}
 APPEND={0xC4F3:(0xC477,0xC4F6),0xC53D:(0xC496,0xC540),0xC588:(0xC4B5,0xC58B),0xC5E4:(0xC4D4,0xC5E7)}
@@ -18,6 +20,10 @@ class Clipping:
     def __init__(self,banks,registers,operations,pc_index,sp_index):
         self.banks=[bytearray(b) for b in banks];self.r=list(registers);self.ops=operations
         self.pc,self.sp=pc_index,sp_index;self.writes=[];self.special=False
+        self.refresh_m1=0
+
+    def m1(self,count):
+        self.r[15]=refresh(self.r[15],count);self.refresh_m1+=count
 
     def byte(self,address,value=None):
         bank=5 if address<0x8000 else 2 if address<0xC000 else 0
@@ -50,6 +56,7 @@ class Clipping:
         output,bound,vertical=PRODUCT[entry]
         x1,x2,y1,y2=(self.word(a) for a in (0xCF0B,0xCF1B,0xCF0D,0xCF1D))
         left,right,bc=((y1-y2)&65535,(x1-bound)&65535,y2) if vertical else ((y1-bound)&65535,(x1-x2)&65535,bound)
+        self.m1(product_cost(entry,left,right))
         result=multiply(left,right,bc,self.pair(8))
         # Вложенный CALL умножителя и его временное слово знака AF являются настоящими побочными записями.
         self.push(entry+23);self.push(result['stack_af'][0]*256+result['stack_af'][1]);self.pop();assert self.pop()==entry+23
@@ -66,6 +73,7 @@ class Clipping:
         self.push(entry+24);assert self.pop()==entry+24
         self.r[16:18]=[q&255,alt_flags];self.pair(2,bc);self.pair(8,(self.pair(8)&0xFF00)|(ix&255))
         base=y1 if vertical else x1;translated=(q+base)&65535
+        self.m1(intersection_cost(entry,number,d,translated))
         de=base
         if translated&32768:point=(bound,0) if vertical else (0,bound)
         elif vertical:
@@ -81,34 +89,42 @@ class Clipping:
     def helper(self,entry):
         if entry in PRODUCT:self.product(entry)
         elif entry in APPEND:
+            self.m1(1)
             product,cached=APPEND[entry];self.push(cached);self.product(product);assert self.pop()==cached;self.intersection(cached)
         elif entry in CACHED:self.intersection(entry)
         elif entry in COMPARE:
+            self.m1(instruction_cost(entry,entry+20))
             a,b=COMPARE[entry];borrow=int(self.word(a)<self.word(b));left,right=self.word(a+2),self.word(b+2)
             self.pair(6,(left-right-borrow)&65535);self.pair(2,right);self.r[1]=sbc16_flags(left,right,borrow)
         elif entry in DELTA:
+            self.m1(instruction_cost(entry,entry+11))
             a,b=DELTA[entry];left,right=self.word(a),self.word(b)
             self.pair(6,(left-right)&65535);self.pair(4,right);self.r[1]=sbc16_flags(left,right,0)
         elif entry in CORNERS:
             block=self.byte(0xCF03);self.r[0:2]=[block,logic_flags(block)|16]
+            self.m1(3 if block else 5+instruction_cost(0xC6DB,0xC6EA))
             if block==0:self.pair(4,CORNERS[entry]);self.write_pair()
         elif entry==0xC6D3:
+            self.m1(instruction_cost(0xC6D3,0xC6EA))
             self.pair(4,self.byte(0xCF1D)*256+self.byte(0xCF1B));self.write_pair()
         else:raise AssertionError(('неизвестный помощник',hex(entry)))
 
     def single_edge(self,stop=0x3FFF):
+        self.m1(instruction_cost(0xC941,0xC94D))
         self.byte(0xCF03,1)
         # Обычный индекс за массивом может направить запись связи прямо в код.
         # Поддерживаются исходный JR NZ и наблюдавшийся JR с тем же смещением.
         branch,offset=self.byte(0xC94B),self.byte(0xC94C)
         assert branch in (0x20,0x18) and offset==0x27,('неподдержанный изменённый вход ClipSingleEdge',branch,offset)
         if branch==0x20 and self.byte(0xCF0F)==0xF0:
+            self.m1(instruction_cost(0xC94D,0xC974))
             first,second=self.byte(0xCF0F),self.byte(0xCF1F)
             self.byte(0xCF0F,second);self.byte(0xCF1F,first)
             for offset in (0,2):
                 first,second=self.word(0xCF0B+offset),self.word(0xCF1B+offset)
                 self.word(0xCF1B+offset,first);self.word(0xCF0B+offset,second)
             self.r[2]=0xF0
+        self.m1(instruction_cost(0xC974,0xC993))
         self.byte(0x9BA3,0)
         index=((~self.byte(0xCF0F))&240)|(self.byte(0xCF1F)&15)
         target=self.byte(0xCF00+index)+256*self.byte(0xD000+index)
@@ -124,9 +140,11 @@ class Clipping:
             if pc in helpers:
                 self.helper(pc);self.r[self.pc]=self.pop();continue
             if pc==0xC993:
+                self.m1(instruction_cost(0xC993,0xC99B))
                 count=self.byte(0x9BA3);self.pair(4,self.pop());self.pair(4,self.pop());self.r[0:2]=[count,cp_flags(count,4)]
                 self.r[self.pc]=self.pop();continue
             if pc==0xC6EA:
+                self.m1(instruction_cost(0xC6EA,0xC6F4))
                 self.pair(0,self.pop());self.pair(2,self.pop());self.pair(6,self.pop())
                 remaining=(self.r[2]-1)&255;old=self.pair(6);total=old+remaining;value=total&65535
                 # ADD HL сохраняет S/Z/PV от DEC C, SCF сохраняет их и берёт X/Y из восстановленного A.
@@ -134,6 +152,7 @@ class Clipping:
                 self.pair(2,remaining);self.pair(6,value);self.r[1]=(dec_flags&0xC4)|(self.r[0]&0x28)|1
                 self.special=True;self.r[self.pc]=self.pop();continue
             item=self.ops[pc];operation=item['operation'];following=pc+len(bytes.fromhex(item['hex']))
+            self.m1(2 if bytes.fromhex(item['hex'])[0] in (0xCB,0xED,0xDD,0xFD) else 1)
             if operation=='RET':self.r[self.pc]=self.pop();continue
             match=re.fullmatch(r'(JP|CALL) (?:(M|P|NZ),)?#([0-9A-F]+)',operation)
             if match:

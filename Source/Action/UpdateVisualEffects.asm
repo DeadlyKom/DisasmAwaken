@@ -70,23 +70,23 @@ NextEffect:     ADD IX, DE
                 LD (IX + @FVisualEffect.SavedDE), L
                 LD (IX + @FVisualEffect.SavedDE + 1), H
                 EXX
-                LD E, (IX + @FVisualEffect.Source)
-                LD D, (IX + @FVisualEffect.Source + 1)
-                DEC (IX + @FVisualEffect.Unknown0C)
+                LD E, (IX + @FVisualEffect.FramePointer)
+                LD D, (IX + @FVisualEffect.FramePointer + 1)
+                DEC (IX + @FVisualEffect.FrameCount)
                 JR NZ, @Action.UpdateVisualEffects.AdvanceCursor                ; переход, если счётчик ресурса ещё ненулевой, прибавить шаг
 
-                LD A, (IX + @FVisualEffect.Unknown0D)
-                LD (IX + @FVisualEffect.Unknown0C), A
-                LD L, (IX + @FVisualEffect.Cursor)
-                LD H, (IX + @FVisualEffect.Cursor + 1)
+                LD A, (IX + @FVisualEffect.FrameReload)
+                LD (IX + @FVisualEffect.FrameCount), A
+                LD L, (IX + @FVisualEffect.FirstFrame)
+                LD H, (IX + @FVisualEffect.FirstFrame + 1)
                 JP @Action.UpdateVisualEffects.StoreCursor
 
                 ; Прибавление шага к текущему адресу ресурса по модулю слова.
-AdvanceCursor:  LD L, (IX + @FVisualEffect.Unknown0E)
-                LD H, (IX + @FVisualEffect.Unknown0E + 1)
+AdvanceCursor:  LD L, (IX + @FVisualEffect.FrameStride)
+                LD H, (IX + @FVisualEffect.FrameStride + 1)
                 ADD HL, DE
-StoreCursor:    LD (IX + @FVisualEffect.Source), L
-                LD (IX + @FVisualEffect.Source + 1), H
+StoreCursor:    LD (IX + @FVisualEffect.FramePointer), L
+                LD (IX + @FVisualEffect.FramePointer + 1), H
                 EXX
                 ; Сохранение настоящего SP перед вычислителем.
                 LD (@ActionVisualEffectListState.SavedSP), SP

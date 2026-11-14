@@ -62,6 +62,13 @@
       "flags": 76
     }
   ],
+  "exact_R_against_independent_prefix_cost": true,
+  "no_own_CPU_RAM_writes": true,
+  "original_return_word_preserved": true,
+  "physical_disk_and_sector_hashes_checked": true,
+  "CPU_write_watch_positive_control": true,
+  "arbitrary_stack_addresses_checked": false,
+  "full_left_right_and_R_cartesian_product_checked": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

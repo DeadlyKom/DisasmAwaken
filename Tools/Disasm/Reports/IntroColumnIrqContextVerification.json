@@ -1,0 +1,145 @@
+{
+  "passed": true,
+  "total_cases": 8,
+  "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+  "profiles": [
+    {
+      "phase": 0,
+      "stack": 24574,
+      "IY_at_HALT": 23567,
+      "prepared_frames": 0,
+      "final_frames": 1,
+      "indexed_increment_address": null,
+      "alias_before": 0,
+      "alias_after": 0,
+      "accepted_interrupts": [
+        {
+          "interrupted_instruction": 27011,
+          "IY": 23567
+        }
+      ]
+    },
+    {
+      "phase": 0,
+      "stack": 24574,
+      "IY_at_HALT": 23567,
+      "prepared_frames": 65535,
+      "final_frames": 0,
+      "indexed_increment_address": 23631,
+      "alias_before": 0,
+      "alias_after": 1,
+      "accepted_interrupts": [
+        {
+          "interrupted_instruction": 27011,
+          "IY": 23567
+        }
+      ]
+    },
+    {
+      "phase": 0,
+      "stack": 32240,
+      "IY_at_HALT": 23567,
+      "prepared_frames": 0,
+      "final_frames": 1,
+      "indexed_increment_address": null,
+      "alias_before": 0,
+      "alias_after": 0,
+      "accepted_interrupts": [
+        {
+          "interrupted_instruction": 27011,
+          "IY": 23567
+        }
+      ]
+    },
+    {
+      "phase": 0,
+      "stack": 32240,
+      "IY_at_HALT": 23567,
+      "prepared_frames": 65535,
+      "final_frames": 0,
+      "indexed_increment_address": 23631,
+      "alias_before": 0,
+      "alias_after": 1,
+      "accepted_interrupts": [
+        {
+          "interrupted_instruction": 27011,
+          "IY": 23567
+        }
+      ]
+    },
+    {
+      "phase": 128,
+      "stack": 24574,
+      "IY_at_HALT": 23567,
+      "prepared_frames": 0,
+      "final_frames": 1,
+      "indexed_increment_address": null,
+      "alias_before": 0,
+      "alias_after": 0,
+      "accepted_interrupts": [
+        {
+          "interrupted_instruction": 27011,
+          "IY": 23567
+        }
+      ]
+    },
+    {
+      "phase": 128,
+      "stack": 24574,
+      "IY_at_HALT": 23567,
+      "prepared_frames": 65535,
+      "final_frames": 0,
+      "indexed_increment_address": 23631,
+      "alias_before": 0,
+      "alias_after": 1,
+      "accepted_interrupts": [
+        {
+          "interrupted_instruction": 27011,
+          "IY": 23567
+        }
+      ]
+    },
+    {
+      "phase": 128,
+      "stack": 32240,
+      "IY_at_HALT": 23567,
+      "prepared_frames": 0,
+      "final_frames": 1,
+      "indexed_increment_address": null,
+      "alias_before": 0,
+      "alias_after": 0,
+      "accepted_interrupts": [
+        {
+          "interrupted_instruction": 27011,
+          "IY": 23567
+        }
+      ]
+    },
+    {
+      "phase": 128,
+      "stack": 32240,
+      "IY_at_HALT": 23567,
+      "prepared_frames": 65535,
+      "final_frames": 0,
+      "indexed_increment_address": 23631,
+      "alias_before": 0,
+      "alias_after": 1,
+      "accepted_interrupts": [
+        {
+          "interrupted_instruction": 27011,
+          "IY": 23567
+        }
+      ]
+    }
+  ],
+  "original_initializer_sha256": "5a094f6575f6494742f72ed6a9cb56c75bb89ae3706e6736dee94d902e2d9493",
+  "original_69A2_byte": 255,
+  "actual_initializer_and_attribute_writer_executed": true,
+  "IRQ_before_attribute_HALT_executed": false,
+  "real_ROM_IRQ_at_HALT_executed": true,
+  "frame_counter_prepared_at_boundary": true,
+  "standard_IY_5C3A_contract_not_applicable": true,
+  "natural_game_counter_carry_reachability_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -9,6 +9,7 @@ from CheckScreenUpdate import PortTrace
 from ReferenceActionLogRatio import LOG,EXP
 from ReferenceActionHalfDeltaCodes import evaluate as geometry
 from ReferenceActionRecordCodeStep import apply_codes
+from ReferenceControlsPointRespawn import refresh
 
 
 def profiles():
@@ -46,7 +47,7 @@ def main():
     banks[1]=bytearray(base_memory()[0xC000:]);root_table=bytes(banks[1][:768])
     memory=RecordedBanks(banks=banks,out7ffd=16);baseline=[bytearray(b) for b in memory.banks]
     expected=[bytearray(b) for b in baseline];simulator=Simulator(memory);counts=Counter();paths=Counter();touched=set()
-    seen0=bytearray(65536);seen1=bytearray(65536);direct_costs=set();entry_counts=Counter()
+    seen0=bytearray(65536);seen1=bytearray(65536);direct_costs=set();entry_counts=Counter();root_costs=set()
 
     def page(address):return 5 if address<0x8000 else 2 if address<0xC000 else 0
 
@@ -64,17 +65,31 @@ def main():
         operations=[];ports=[]
         if root:
             child=list(initial);child[SP]-=2;child[PC]=0xAD5A
+            # Расчёт R после настоящего CALL перед передачей аргументов дочерней геометрии.
+            child[15]=refresh(child[15],1)
             model=geometry(child,ratio_table,root_table,return_address=0x6268)
             operations.extend(((stack-2,0x68),(stack-1,0x62)));operations.extend(model['writes']);ports=model['ports']
             local=apply_codes(model['registers'],*currents,rate)
         else:local=apply_codes(initial,*currents,rate);direct_costs.add(local['refresh_m1'])
+        total_m1=local['refresh_m1']+(1+model['refresh_m1'] if root else 0)
+        if root:root_costs.add(total_m1)
         operations.extend(local['writes']);wanted=local['registers'];writes=[]
         for address,value in operations:
             bank=page(address);offset=address&0x3FFF;expected[bank][offset]=value
             writes.append((bank,offset,value));touched.add((bank,offset))
         simulator.registers[:]=initial;trace=PortTrace(simulator);simulator.set_tracer(trace)
-        memory.writes=[];memory.recording=True;simulator.run(start=entry,stop=0x3FFF);memory.recording=False
-        compared=(*range(15),*range(16,25),26,27) if root else (*range(25),26,27)
+        memory.writes=[];memory.recording=True;measured_m1=0
+        # Проверка полного M1 обоих входов, совпадения конечного R modulo 128 недостаточно.
+        for _ in range(10000):
+            if simulator.registers[PC]==0x3FFF:break
+            previous_r=simulator.registers[15];simulator.run()
+            increment=(simulator.registers[15]-previous_r)&127
+            assert increment in (1,2),(serial,'неожиданное изменение R',increment)
+            measured_m1+=increment
+        else:raise AssertionError(('нет внешнего возврата',serial,entry))
+        assert measured_m1==total_m1,(serial,'M1',measured_m1,total_m1)
+        memory.recording=False
+        compared=(*range(25),26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared),(serial,hex(entry),currents,targets,rate,local,
             [(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
         assert Counter(writes)==Counter(memory.writes),(serial,hex(entry),'write_multiplicity',writes,memory.writes)
@@ -91,9 +106,12 @@ def main():
         observed_delta_rate_pair_counts=[sum(seen0),sum(seen1)],asymmetric_step_rules_preserved=True,
         first_deadzone_0_and_1_preserved=True,zero_step_same_value_writes_preserved=True,
         second_halving_loop_unreachable_when_rate_stable=True,actual_geometry_and_all_children_executed=True,
-        exact_direct_registers_including_R=True,exact_root_registers_except_R=True,root_refresh_R_proved=False,
+        exact_direct_registers_including_R=True,exact_root_registers_including_R=True,root_refresh_R_proved=True,
         all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,direct_cpu_stack_written=False,
         maximum_additional_stack_bytes_root=16,root_real_ports_and_eight_banks=True,direct_refresh_m1=sorted(direct_costs),
+        full_M1_count_compared_not_only_R_modulo_128=True,root_call_M1_included=True,
+        observed_root_M1_min=min(root_costs),observed_root_M1_max=max(root_costs),
+        root_refresh_formula='1+EncodeHalfCoordinateDeltas_M1+ApplyCodes_M1',
         independent_numeric_step_oracle=True,complete_five_byte_product_exhausted=False,complete_six_word_product_exhausted=False,
         hardware_bus_stack_write_order_proved=False,assembly_executed=False,irq_executed=False,native_execution=False,timing_proved=False)
     assert counts.total()==1089536 and sum(seen0)==sum(seen1)==65536

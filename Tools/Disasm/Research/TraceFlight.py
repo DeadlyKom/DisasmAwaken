@@ -149,7 +149,7 @@ class FlightCycleChecks:
 
 
 def main(arguments=None, scan_observer=None, *, boot_simulator=None, save_reports=True,
-         ports_factory=Ports, instruction_observer=None):
+         ports_factory=Ports, instruction_observer=None, instruction_limit=2000000):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--region", choices=("flight", "station"), default="flight")
     parser.add_argument("--frames", type=int, default=3)
@@ -186,7 +186,7 @@ def main(arguments=None, scan_observer=None, *, boot_simulator=None, save_report
     main_count = 0
 
     # Исполнение ограничено числом инструкций, временем и числом входов в полётный кадр.
-    for step in range(2000000):
+    for step in range(instruction_limit):
         pc = registers[PC]
         bank = memory.o7ffd & 7 if pc >= 0xC000 else -1
         key = f"{bank}:{pc:04X}"
@@ -230,9 +230,13 @@ def main(arguments=None, scan_observer=None, *, boot_simulator=None, save_report
                     memory[0x5CDD+index] = value
             if function == 0x0E:
                 address = registers[H]*256 + registers[L]
-                if registers[A] != 3:
+                if registers[A] == 3:
+                    # Исходные ROM-вызовы 0E загружают полные выделенные сектора.
+                    length = selected['allocated_length']
+                else:
                     address = selected["parameter"]
-                data = disk[selected["offset"]:selected["offset"]+selected["length"]]
+                    length = selected['length']
+                data = disk[selected["offset"]:selected["offset"]+length]
                 if address + len(data) > 65536:
                     reason = "unsupported_load_wrap"
                     break

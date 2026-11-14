@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "total_cases": 1024,
+  "original_entry_sha256": "c717f87ca6504fb264ab504e05078571a8fc596b89b8022adf16593da6bb8e6c",
+  "all_F_values_checked": true,
+  "tested_R": [
+    0,
+    127,
+    128,
+    255
+  ],
+  "M1_before_tail_target": 5,
+  "full_RAM_unchanged": true,
+  "exact_registers_except_T_compared": true,
+  "stopped_before_DrawScrolledTexture": true,
+  "IRQ_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

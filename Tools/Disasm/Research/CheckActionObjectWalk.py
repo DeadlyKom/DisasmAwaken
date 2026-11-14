@@ -15,6 +15,7 @@ def main():
     memory[0x9B83] = 0
     sim = Simulator(memory)
     cases = 0
+    high_nibble_routes = {}
 
     def verify(high, low, cls, flags, value, limit, count, link, seed):
         nonlocal cases
@@ -68,6 +69,11 @@ def main():
         assert sim.registers[PC] == target and sim.registers[SP] == (0xC000 if target == 0x3FFF else 0xBFFE), context
         assert sim.registers[IXh] * 256 + sim.registers[IXl] == expected_ix, context
         assert bytes(memory[start:start + 64]) == before and memory[0x9BCD] == expected_delta, context
+        # Фиксируем влияние старшей тетрады отдельно от индивидуального назначения её битов.
+        if high == 0 and low == 128 and cls in (15, 18) and count == link == seed == 0 and flags & 15 == 0:
+            high_nibble_routes[cls, flags] = dict(class_code=cls, link_flags=flags,
+                target=target, final_state_code=memory[start + 10],
+                class_link_counter_executed=saw_resume)
         cases += 1
 
     for value, limit in product(range(256), repeat=2):
@@ -77,8 +83,22 @@ def main():
         verify(0, 128, cls, flags, 33, 70, count, link, seed)
     for high, low in ((128, 0), (128, 128)):
         verify(high, low, 18, 1, 30, 100, 0, 26, 0)
+    # Проверяем оба класса при каждой старшей тетраде и нулевых младших флагах.
+    assert len(high_nibble_routes) == 32
+    for cls in (15, 18):
+        assert high_nibble_routes[cls, 0]['target'] == 0xF843
+        for flags in range(16, 256, 16):
+            item = high_nibble_routes[cls, flags]
+            assert item['target'] == (0xF792 if cls == 15 else 0xF843)
+            assert item['class_link_counter_executed'] == (cls == 18)
+            if cls == 18:
+                assert item['final_state_code'] == 11
     report = dict(passed=True, total_cases=cases, class_link_counter_executed=True,
                   real_resume_0xf775=True, exact_state_handler_not_executed=True, assembly_executed=False)
+    report.update(high_nibble_routes=list(high_nibble_routes.values()),
+                  high_nibble_can_change_whole_byte_zero_gate=True,
+                  independent_meanings_of_bits_7_4_proved=False,
+                  high_bit_states_reachable_in_native_game_proved=False)
     payload = json.dumps(report, indent=2) + '\n'
     (ROOT / 'Tools/Disasm/Reports/ActionObjectWalkVerification.json').write_text(payload, encoding='utf-8')
     print(payload)

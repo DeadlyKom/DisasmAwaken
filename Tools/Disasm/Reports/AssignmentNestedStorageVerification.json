@@ -1,0 +1,905 @@
+{
+  "passed": true,
+  "total_cases": 98,
+  "profiles": [
+    {
+      "writer": "c",
+      "nested_groups": 0,
+      "stack": 32752,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 265
+    },
+    {
+      "writer": "c",
+      "nested_groups": 0,
+      "stack": 49136,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 265
+    },
+    {
+      "writer": "c",
+      "nested_groups": 1,
+      "stack": 32752,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 574
+    },
+    {
+      "writer": "c",
+      "nested_groups": 1,
+      "stack": 49136,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 574
+    },
+    {
+      "writer": "c",
+      "nested_groups": 2,
+      "stack": 32752,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 883
+    },
+    {
+      "writer": "c",
+      "nested_groups": 2,
+      "stack": 49136,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 883
+    },
+    {
+      "writer": "c",
+      "nested_groups": 3,
+      "stack": 32752,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1192
+    },
+    {
+      "writer": "c",
+      "nested_groups": 3,
+      "stack": 49136,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1192
+    },
+    {
+      "writer": "c",
+      "nested_groups": 4,
+      "stack": 32752,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1501
+    },
+    {
+      "writer": "c",
+      "nested_groups": 4,
+      "stack": 49136,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1501
+    },
+    {
+      "writer": "c",
+      "nested_groups": 5,
+      "stack": 32752,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1810
+    },
+    {
+      "writer": "c",
+      "nested_groups": 5,
+      "stack": 49136,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1810
+    },
+    {
+      "writer": "c",
+      "nested_groups": 6,
+      "stack": 32752,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2119
+    },
+    {
+      "writer": "c",
+      "nested_groups": 6,
+      "stack": 49136,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2119
+    },
+    {
+      "writer": "u",
+      "nested_groups": 0,
+      "stack": 32752,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 271
+    },
+    {
+      "writer": "u",
+      "nested_groups": 0,
+      "stack": 49136,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 271
+    },
+    {
+      "writer": "u",
+      "nested_groups": 1,
+      "stack": 32752,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 580
+    },
+    {
+      "writer": "u",
+      "nested_groups": 1,
+      "stack": 49136,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 580
+    },
+    {
+      "writer": "u",
+      "nested_groups": 2,
+      "stack": 32752,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 889
+    },
+    {
+      "writer": "u",
+      "nested_groups": 2,
+      "stack": 49136,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 889
+    },
+    {
+      "writer": "u",
+      "nested_groups": 3,
+      "stack": 32752,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1198
+    },
+    {
+      "writer": "u",
+      "nested_groups": 3,
+      "stack": 49136,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1198
+    },
+    {
+      "writer": "u",
+      "nested_groups": 4,
+      "stack": 32752,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1507
+    },
+    {
+      "writer": "u",
+      "nested_groups": 4,
+      "stack": 49136,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1507
+    },
+    {
+      "writer": "u",
+      "nested_groups": 5,
+      "stack": 32752,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1816
+    },
+    {
+      "writer": "u",
+      "nested_groups": 5,
+      "stack": 49136,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1816
+    },
+    {
+      "writer": "u",
+      "nested_groups": 6,
+      "stack": 32752,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2125
+    },
+    {
+      "writer": "u",
+      "nested_groups": 6,
+      "stack": 49136,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2125
+    },
+    {
+      "writer": "J",
+      "nested_groups": 0,
+      "stack": 32752,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 291
+    },
+    {
+      "writer": "J",
+      "nested_groups": 0,
+      "stack": 49136,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 291
+    },
+    {
+      "writer": "J",
+      "nested_groups": 1,
+      "stack": 32752,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 600
+    },
+    {
+      "writer": "J",
+      "nested_groups": 1,
+      "stack": 49136,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 600
+    },
+    {
+      "writer": "J",
+      "nested_groups": 2,
+      "stack": 32752,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 909
+    },
+    {
+      "writer": "J",
+      "nested_groups": 2,
+      "stack": 49136,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 909
+    },
+    {
+      "writer": "J",
+      "nested_groups": 3,
+      "stack": 32752,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1218
+    },
+    {
+      "writer": "J",
+      "nested_groups": 3,
+      "stack": 49136,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1218
+    },
+    {
+      "writer": "J",
+      "nested_groups": 4,
+      "stack": 32752,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1527
+    },
+    {
+      "writer": "J",
+      "nested_groups": 4,
+      "stack": 49136,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1527
+    },
+    {
+      "writer": "J",
+      "nested_groups": 5,
+      "stack": 32752,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1836
+    },
+    {
+      "writer": "J",
+      "nested_groups": 5,
+      "stack": 49136,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1836
+    },
+    {
+      "writer": "J",
+      "nested_groups": 6,
+      "stack": 32752,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2145
+    },
+    {
+      "writer": "J",
+      "nested_groups": 6,
+      "stack": 49136,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2145
+    },
+    {
+      "writer": "g",
+      "nested_groups": 0,
+      "stack": 32752,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 322
+    },
+    {
+      "writer": "g",
+      "nested_groups": 0,
+      "stack": 49136,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 322
+    },
+    {
+      "writer": "g",
+      "nested_groups": 1,
+      "stack": 32752,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 631
+    },
+    {
+      "writer": "g",
+      "nested_groups": 1,
+      "stack": 49136,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 631
+    },
+    {
+      "writer": "g",
+      "nested_groups": 2,
+      "stack": 32752,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 940
+    },
+    {
+      "writer": "g",
+      "nested_groups": 2,
+      "stack": 49136,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 940
+    },
+    {
+      "writer": "g",
+      "nested_groups": 3,
+      "stack": 32752,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1249
+    },
+    {
+      "writer": "g",
+      "nested_groups": 3,
+      "stack": 49136,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1249
+    },
+    {
+      "writer": "g",
+      "nested_groups": 4,
+      "stack": 32752,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1558
+    },
+    {
+      "writer": "g",
+      "nested_groups": 4,
+      "stack": 49136,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1558
+    },
+    {
+      "writer": "g",
+      "nested_groups": 5,
+      "stack": 32752,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1867
+    },
+    {
+      "writer": "g",
+      "nested_groups": 5,
+      "stack": 49136,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1867
+    },
+    {
+      "writer": "g",
+      "nested_groups": 6,
+      "stack": 32752,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2176
+    },
+    {
+      "writer": "g",
+      "nested_groups": 6,
+      "stack": 49136,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2176
+    },
+    {
+      "writer": "G",
+      "nested_groups": 0,
+      "stack": 32752,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 329
+    },
+    {
+      "writer": "G",
+      "nested_groups": 0,
+      "stack": 49136,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 329
+    },
+    {
+      "writer": "G",
+      "nested_groups": 1,
+      "stack": 32752,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 638
+    },
+    {
+      "writer": "G",
+      "nested_groups": 1,
+      "stack": 49136,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 638
+    },
+    {
+      "writer": "G",
+      "nested_groups": 2,
+      "stack": 32752,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 947
+    },
+    {
+      "writer": "G",
+      "nested_groups": 2,
+      "stack": 49136,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 947
+    },
+    {
+      "writer": "G",
+      "nested_groups": 3,
+      "stack": 32752,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1256
+    },
+    {
+      "writer": "G",
+      "nested_groups": 3,
+      "stack": 49136,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1256
+    },
+    {
+      "writer": "G",
+      "nested_groups": 4,
+      "stack": 32752,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1565
+    },
+    {
+      "writer": "G",
+      "nested_groups": 4,
+      "stack": 49136,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1565
+    },
+    {
+      "writer": "G",
+      "nested_groups": 5,
+      "stack": 32752,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1874
+    },
+    {
+      "writer": "G",
+      "nested_groups": 5,
+      "stack": 49136,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1874
+    },
+    {
+      "writer": "G",
+      "nested_groups": 6,
+      "stack": 32752,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2183
+    },
+    {
+      "writer": "G",
+      "nested_groups": 6,
+      "stack": 49136,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2183
+    },
+    {
+      "writer": "o",
+      "nested_groups": 0,
+      "stack": 32752,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 325
+    },
+    {
+      "writer": "o",
+      "nested_groups": 0,
+      "stack": 49136,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 325
+    },
+    {
+      "writer": "o",
+      "nested_groups": 1,
+      "stack": 32752,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 634
+    },
+    {
+      "writer": "o",
+      "nested_groups": 1,
+      "stack": 49136,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 634
+    },
+    {
+      "writer": "o",
+      "nested_groups": 2,
+      "stack": 32752,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 943
+    },
+    {
+      "writer": "o",
+      "nested_groups": 2,
+      "stack": 49136,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 943
+    },
+    {
+      "writer": "o",
+      "nested_groups": 3,
+      "stack": 32752,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1252
+    },
+    {
+      "writer": "o",
+      "nested_groups": 3,
+      "stack": 49136,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1252
+    },
+    {
+      "writer": "o",
+      "nested_groups": 4,
+      "stack": 32752,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1561
+    },
+    {
+      "writer": "o",
+      "nested_groups": 4,
+      "stack": 49136,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1561
+    },
+    {
+      "writer": "o",
+      "nested_groups": 5,
+      "stack": 32752,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1870
+    },
+    {
+      "writer": "o",
+      "nested_groups": 5,
+      "stack": 49136,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1870
+    },
+    {
+      "writer": "o",
+      "nested_groups": 6,
+      "stack": 32752,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2179
+    },
+    {
+      "writer": "o",
+      "nested_groups": 6,
+      "stack": 49136,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2179
+    },
+    {
+      "writer": "i",
+      "nested_groups": 0,
+      "stack": 32752,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 331
+    },
+    {
+      "writer": "i",
+      "nested_groups": 0,
+      "stack": 49136,
+      "result": 1,
+      "workspace_end_exclusive": 51841,
+      "script_bytes_written": 0,
+      "instructions": 331
+    },
+    {
+      "writer": "i",
+      "nested_groups": 1,
+      "stack": 32752,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 640
+    },
+    {
+      "writer": "i",
+      "nested_groups": 1,
+      "stack": 49136,
+      "result": 2,
+      "workspace_end_exclusive": 51845,
+      "script_bytes_written": 0,
+      "instructions": 640
+    },
+    {
+      "writer": "i",
+      "nested_groups": 2,
+      "stack": 32752,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 949
+    },
+    {
+      "writer": "i",
+      "nested_groups": 2,
+      "stack": 49136,
+      "result": 3,
+      "workspace_end_exclusive": 51849,
+      "script_bytes_written": 0,
+      "instructions": 949
+    },
+    {
+      "writer": "i",
+      "nested_groups": 3,
+      "stack": 32752,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1258
+    },
+    {
+      "writer": "i",
+      "nested_groups": 3,
+      "stack": 49136,
+      "result": 4,
+      "workspace_end_exclusive": 51853,
+      "script_bytes_written": 0,
+      "instructions": 1258
+    },
+    {
+      "writer": "i",
+      "nested_groups": 4,
+      "stack": 32752,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1567
+    },
+    {
+      "writer": "i",
+      "nested_groups": 4,
+      "stack": 49136,
+      "result": 5,
+      "workspace_end_exclusive": 51857,
+      "script_bytes_written": 2,
+      "instructions": 1567
+    },
+    {
+      "writer": "i",
+      "nested_groups": 5,
+      "stack": 32752,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1876
+    },
+    {
+      "writer": "i",
+      "nested_groups": 5,
+      "stack": 49136,
+      "result": 6,
+      "workspace_end_exclusive": 51861,
+      "script_bytes_written": 6,
+      "instructions": 1876
+    },
+    {
+      "writer": "i",
+      "nested_groups": 6,
+      "stack": 32752,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2185
+    },
+    {
+      "writer": "i",
+      "nested_groups": 6,
+      "stack": 49136,
+      "result": 7,
+      "workspace_end_exclusive": 51865,
+      "script_bytes_written": 10,
+      "instructions": 2185
+    }
+  ],
+  "original_trd_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "source_sha256": {
+    "4": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+    "5": "92f1f656d150b82844697329625d4fea9607f9a62181e8558091f6594e4a27b1"
+  },
+  "method": "original_assignment_and_all_numeric_children_until_NextCommand",
+  "all_seven_writers": true,
+  "maximum_nested_groups": 6,
+  "first_tested_depth_overwriting_script": 4,
+  "calls_stubbed": false,
+  "synthetically_nested_RHS": true,
+  "original_scripts_reaching_depth_4_proved": false,
+  "arbitrary_expression_shapes_proved": false,
+  "all_registers_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

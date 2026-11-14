@@ -9,6 +9,9 @@ from CheckActionVertexCodes import logic_flags
 from ReferenceControlsPointRespawn import cp_flags
 from ReferenceActionPolygon import Polygon as ClipPolygon
 from collections import Counter
+from ReferenceActionInsideLineRefresh import eligible as inside_line_eligible, refresh_cost as inside_line_cost
+from ReferenceControlsPointRespawn import refresh
+from ReferenceActionClippedLineRefresh import eligible as clipped_line_eligible, refresh_cost as clipped_line_cost
 
 
 class PacketRenderer(Clipping):
@@ -44,6 +47,7 @@ class PacketRenderer(Clipping):
         opcode,branch,offset=self.byte(0x8D4E),self.byte(0x8D4F),self.byte(0xDE0F)
         table=[self.byte(0xE000+offset+i) for i in range(8)]
         result=raster(first,second,opcode,branch,table,self.banks[2]);self.writes+=result['writes']
+        self.raster_m1=getattr(self,'raster_m1',0)+result['refresh_m1']
         if result['degenerate']:
             self.r[1]=0x42;self.pair(6,0);self.pair(4,second[1]*256+second[0])
         else:
@@ -125,6 +129,8 @@ class PacketRenderer(Clipping):
                         self.events['clip_segment']+=1
                         child=Clipping(self.banks,self.r,self.ops,self.pc,self.sp);child.single_edge(stop=0xDD06)
                         self.banks,self.r=child.banks,child.r;self.writes+=child.writes
+                        self.single_edge_m1+=child.refresh_m1
+                        self.single_edge_accepted=bool(self.r[1]&64)
                         self.pair(8,self.pop())
                         if self.r[1]&64:
                             self.pair(6,0x9000)
@@ -137,10 +143,23 @@ class PacketRenderer(Clipping):
 
     def render(self,clipped=False):
         self.events=Counter()
+        initial_refresh=self.r[15];self.raster_m1=0;self.refresh_proved=False
+        fixed_inside_pair=not clipped and inside_line_eligible(self.byte,self.pair(6))
+        fixed_clipped_pair=clipped and clipped_line_eligible(self.byte,self.pair(6))
+        self.single_edge_m1=0;self.single_edge_accepted=False
+        first_code,second_code=self.byte(0x8E04),self.byte(0x8E09)
         for _ in range(1024):
             header=self.byte(self.pair(6));self.r[0:2]=[header,logic_flags(header)|16]
             if header==0:
-                self.r[self.pc]=self.pop();return
+                self.r[self.pc]=self.pop()
+                if fixed_inside_pair:
+                    assert self.events==Counter(line=1)
+                    self.refresh_m1=inside_line_cost(self.raster_m1)
+                    self.r[15]=refresh(initial_refresh,self.refresh_m1);self.refresh_proved=True
+                elif fixed_clipped_pair:
+                    self.refresh_m1=clipped_line_cost(first_code,second_code,self.single_edge_m1,self.single_edge_accepted,self.raster_m1)
+                    self.r[15]=refresh(initial_refresh,self.refresh_m1);self.refresh_proved=True
+                return
             count=header&15;assert count>=2
             self.r[2]=count;self.r[0:2]=[count,logic_flags(count)|16]
             if not header&128:

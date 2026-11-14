@@ -52,3 +52,12 @@ def name_operands(region,address,operation):
  if region=='Map' and address==0xC49B:
   return operation.replace('LD H, #82','LD H, @StationTables.RowHighPage').replace('LD HL, #EE00','LD HL, @MapScreenTables.RowHigh')
  return operation
+
+
+# Точный R исходной процедуры, аппаратные IRQ не моделируются.
+_table_refresh_contract = CONTRACTS['Map',0xc49b]
+_table_refresh_contract[0].append('IRQ не вмешиваются')
+_table_refresh_contract[1][:] = [line.replace('I и IFF сохранены','I, IM и IFF сохранены') for line in _table_refresh_contract[1]]
+_table_refresh_contract[2][:] = ["HL, DE, BC только B, AF, AF', R, четыре страницы MapScreenTables"]
+_table_refresh_contract[3].insert(0,'R меняется за 5261 M1, младшие семь битов увеличены на 13 по модулю 128, бит 7 сохраняется')
+_table_refresh_contract[3].insert(1,'собственных записей CPU-стека нет, RET снимает обычный адрес возврата')

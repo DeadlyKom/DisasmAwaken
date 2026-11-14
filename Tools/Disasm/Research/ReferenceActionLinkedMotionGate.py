@@ -11,9 +11,12 @@ class MotionGateMachine(NearestMachine):
         stack=self.r[12];ix=self.r[8]*256+self.r[9]
         for pair,address in ((2,stack),(4,stack+2),(6,stack+4)):self.pair(pair,self.word(address))
         self.r[12]+=6;self.put(ix+25,self.read(ix+10));self.m1(9)
+        self.timer_read_m1=self.m1_count
         nibble=self.r[15]&15;self.r[0:2]=[nibble+5,add_flags(nibble,5)]
         self.put(ix+23,self.r[0]);self.put(ix+10,17);self.pair(2,0x8080)
-        self.path.append('enter_timed_state');return self.finish(8)
+        self.path.append('enter_timed_state');result=self.finish(8)
+        self.total_refresh_m1=self.m1_count
+        return result
 
     def select_iy(self):
         stack=self.r[12];saved=self.r[6]*256+self.r[7]
@@ -42,4 +45,6 @@ class MotionGateMachine(NearestMachine):
         child=geometry(self.r,ratio,root,return_address=0x6268)
         stepped=apply_codes(child['registers'],self.read(ix+8),self.read(ix+9),self.read(ix+37),return_address)
         for address,value in child['writes']+stepped['writes']:self.put(address,value)
-        self.r=stepped['registers'];self.ports=child['ports'];return self
+        self.r=stepped['registers'];self.ports=child['ports']
+        self.total_refresh_m1=self.m1_count+child['refresh_m1']+stepped['refresh_m1']
+        return self

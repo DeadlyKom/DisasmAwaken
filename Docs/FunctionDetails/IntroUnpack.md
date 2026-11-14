@@ -20,6 +20,14 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
+## SetAttributeScanDest
+
+[IntroUnpack.SetAttributeScanDest](../../Source/IntroUnpack/SetAttributeScanDest.asm)
+
+Выбор #FF01 и последовательный вход в условный обход атрибутов.
+
+[Договоры и границы проверки](../IntroAttributeCountTail.md).
+
 ## ScanAttributeCountTail
 
 [IntroUnpack.ScanAttributeCountTail](../../Source/IntroUnpack/ScanAttributeCountTail.asm)
@@ -51,3 +59,11 @@
 Копирование экрана из выбранного окна C000 в 4000.
 
 [Договоры и границы проверки](../IntroDetachedTail.md).
+
+## UnpackTailGate
+
+[IntroUnpack.UnpackTailGate](../../Source/IntroUnpack/UnpackTailGate.asm)
+
+Внутренний вызов распаковщика и проверка двух байтов после его возврата.
+
+[Договоры и границы проверки](../IntroDetachedUnpackGate.md).

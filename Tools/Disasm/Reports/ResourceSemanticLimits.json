@@ -1,7 +1,7 @@
 {
   "passed": true,
   "method": "explicit_separation_of_format_proof_and_game_use_proof",
-  "source_map_sha256": "4542b7bab7a8485a672ee3a4d2e1cddb2afd69cceae8d348c36c1a7a85413ed7",
+  "source_map_sha256": "9a37fbccac5150d5a83e593c8490d82336f525ba6f2ebd0b5885b3c1d4fce455",
   "groups": [
     {
       "name": "bank_screen_strips",
@@ -70,13 +70,28 @@
       "all_game_consumers_and_writers_proved": false
     },
     {
+      "name": "bank_archive_tile_copies",
+      "physical_bytes": 1524,
+      "ranges": 5,
+      "source_paths": [
+        "Source/Resources/33_BANK0/ArchiveTileLayerCopy.bin",
+        "Source/Resources/34_BANK1/ArchiveTileLayerCopy.bin",
+        "Source/Resources/35_BANK2/ArchiveTileLayerCopy.bin",
+        "Source/Resources/37_BANK4/ArchiveTileLayerCopy.bin",
+        "Source/Resources/38_BANK5/ArchiveTileLayerCopy.bin"
+      ],
+      "limit": "исходный растровый слой и его чтения подтверждены, использование копий внутри BANK не установлено",
+      "document": "Docs/BankArchiveTileLayers.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
       "name": "scene1_pixel_planes",
       "physical_bytes": 18676,
       "ranges": 1,
       "source_paths": [
         "Source/Resources/30_scene1po/PixelPairs.bin"
       ],
-      "limit": "геометрия, внекаталожный загрузчик и копирование окна проверены, вход из активной игры неизвестен",
+      "limit": "исходное ПЗУ загрузило сцену, архивный вывод и восстановление из двух расширенных страниц сверены, вход из активной игры неизвестен",
       "document": "Docs/Scene1PixelPairs.md",
       "all_game_consumers_and_writers_proved": false
     },
@@ -87,7 +102,7 @@
       "source_paths": [
         "Source/Resources/17_ACTION/EmbeddedAuthorNotes.bin"
       ],
-      "limit": "текстовый формат и происхождение доказаны, потребитель во время игры не установлен",
+      "limit": "установлена токенизированная редакция 3DTABS.a и её отличия от архива, причина размещения и игровой потребитель неизвестны",
       "document": "Docs/ActionEmbeddedNotes.md",
       "all_game_consumers_and_writers_proved": false
     },
@@ -113,7 +128,7 @@
         "Source/Resources/42_BD2/SectorTail.bin",
         "Source/Resources/43_BD3/SectorTail.bin"
       ],
-      "limit": "физические границы по каталогу доказаны, чтение, запись или неиспользуемость игрой не установлены",
+      "limit": "физические границы доказаны, загрузка HELP, D3D и LANG проверена, дальнейшие обращения к суффиксам остаются открытыми",
       "document": "Docs/AllocatedSectorSuffixes.md",
       "all_game_consumers_and_writers_proved": false
     },
@@ -127,6 +142,23 @@
       ],
       "limit": "исходные блоки совпадают с описанием NEWS и ORDER, игровой доступ к отдельным полям не установлен",
       "document": "Docs/ActionNewsOrdersAndJumpCost.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "station_news_transfer",
+      "physical_bytes": 42,
+      "ranges": 7,
+      "source_paths": [
+        "Source/Station/Data/NewsTransfer.asm",
+        "Source/Resources/11_SAVE1/NewsTransfer.asm",
+        "Source/Resources/12_SAVE2/NewsTransfer.asm",
+        "Source/Resources/13_SAVE3/NewsTransfer.asm",
+        "Source/Resources/14_SAVE4/NewsTransfer.asm",
+        "Source/Resources/15_SAVE5/NewsTransfer.asm",
+        "Source/Resources/16_SAVE0/NewsTransfer.asm"
+      ],
+      "limit": "семь копий тела NEWS в STATIONF и SAVE, перенос в ACTION доказан, отдельные потребители полей неизвестны",
+      "document": "Docs/StationNewsTransfer.md",
       "all_game_consumers_and_writers_proved": false
     },
     {
@@ -146,15 +178,15 @@
       "physical_bytes": 1259,
       "ranges": 7,
       "source_paths": [
-        "Source/Action/Data/Model2469.asm",
-        "Source/Action/Data/Model251F.asm",
-        "Source/Action/Data/Model25C1.asm",
-        "Source/Action/Data/Model266B.asm",
-        "Source/Action/Data/Model2707.asm",
-        "Source/Action/Data/Model27AB.asm",
-        "Source/Action/Data/Model2859.asm"
+        "Source/Action/Data/ModelSt16.asm",
+        "Source/Action/Data/ModelStPirat.asm",
+        "Source/Action/Data/ModelPrison.asm",
+        "Source/Action/Data/ModelStU1.asm",
+        "Source/Action/Data/ModelStScince.asm",
+        "Source/Action/Data/ModelStU2.asm",
+        "Source/Action/Data/ModelGipPl.asm"
       ],
-      "limit": "семь пакетов разобраны по физическому формату, игровые потребители и имена не установлены",
+      "limit": "семь пакетов разобраны по физическому формату, авторские имена подтверждены совпадением OBJECT3D и таблицы указателей, штатные игровые потребители не установлены",
       "document": "Docs/ActionModelTail.md",
       "all_game_consumers_and_writers_proved": false
     },
@@ -237,12 +269,24 @@
       "physical_bytes": 252,
       "ranges": 3,
       "source_paths": [
-        "Source/Action/Resources/InitialTransferredContextMiddle.bin",
+        "Source/Action/Data/ContextMapAndOptions.asm",
         "Source/Action/Data/ContextControlPairs.asm",
         "Source/Action/Resources/InitialTransferredContextTail.bin"
       ],
       "limit": "установлено назначение переноса состояния, отдельные потребители ACTION ещё требуют подтверждения",
       "document": "Docs/ActionContextTail.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "action_transferred_player_fields",
+      "physical_bytes": 4,
+      "ranges": 2,
+      "source_paths": [
+        "Source/Action/Data/PlayerIndices.asm",
+        "Source/Action/Data/PlayerMoney.asm"
+      ],
+      "limit": "установлены поля станции и их перенос, самостоятельные потребители ACTION неизвестны",
+      "document": "Docs/ActionTransferredPlayerFields.md",
       "all_game_consumers_and_writers_proved": false
     },
     {
@@ -278,10 +322,1139 @@
       "limit": "три записи совпадают с ORDER после переноса, потребитель и отдельные поля неизвестны",
       "document": "Docs/StationOrderCompatibleSlots.md",
       "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "control_legacy_context_prefix",
+      "physical_bytes": 13,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Controls/Resources/LegacyContextPrefix.bin"
+      ],
+      "limit": "совпадают физические байты двух частей префикса STATIONF, потребитель CONTROL и его рабочая разметка неизвестны",
+      "document": "Docs/ControlsTemporaryModule.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "control_archived_reset_context_tail",
+      "physical_bytes": 109,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Controls/Resources/LegacyResetContextTail.bin"
+      ],
+      "limit": "109 байтов совпадают с шаблоном NDATA архивного CONTROL, читатель в Awakenv02 не установлен",
+      "document": "Docs/ControlsTemporaryModule.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "control_archived_reset_revised_header",
+      "physical_bytes": 8,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Controls/Resources/LegacyResetRevisedHeader.bin"
+      ],
+      "limit": "восемь байтов лежат в изменённом заголовке NDATA, назначение полей и потребитель Awakenv02 не установлены",
+      "document": "Docs/ControlsTemporaryModule.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "voxel_teleport_resource_tail",
+      "physical_bytes": 832,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Voxel/Resources/TeleportResourceTail.bin"
+      ],
+      "limit": "исходный хвост HIPERJMP.van, два полных цикла эффектов его не читают, другие обращения не исключены",
+      "document": "Docs/VoxelPhysicalResources.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "d3d_authored_reserves",
+      "physical_bytes": 305,
+      "ranges": 13,
+      "source_paths": [
+        "Source/D3D/Resources/ScenePageAfterSeed.bin",
+        "Source/D3D/Resources/ScenePageAfterAngles.bin",
+        "Source/D3D/Resources/ScenePageAfterClipFirst.bin",
+        "Source/D3D/Resources/ScenePageAfterClipSecond.bin",
+        "Source/D3D/Resources/ScenePageAfterCorners.bin",
+        "Source/D3D/Resources/ScenePageAfterLineCoords.bin",
+        "Source/D3D/Resources/ScenePageAfterEdgeMode.bin",
+        "Source/D3D/Resources/ScenePageBeforeClipProducts.bin",
+        "Source/D3D/Resources/ScenePageBetweenTopBottom.bin",
+        "Source/D3D/Resources/ScenePageBetweenLeftRight.bin",
+        "Source/D3D/Resources/QueuePageTail.bin",
+        "Source/D3D/Resources/PreviewObjectRecordTail.bin",
+        "Source/D3D/Resources/PreviewObjectEndTail.bin"
+      ],
+      "limit": "авторские резервы рабочих страниц и записей объектов, обращения за пределами проверенных кадров открыты",
+      "document": "Docs/PreviewRenderWorkspace.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "object3d_authored_target_tail",
+      "physical_bytes": 4,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Action/Resources/TargetModelTail.bin"
+      ],
+      "limit": "хвост исходного TARGET после двух ограничителей, отдельное чтение не установлено",
+      "document": "Docs/ActionModelPackets.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "control0_authored_dot_buffer_tail",
+      "physical_bytes": 186,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Controls/Resources/DotBufferPageTail.bin"
+      ],
+      "limit": "часть исходного DOTB после 35 известных пар, отдельное чтение не установлено",
+      "document": "Docs/ControlsBufferPoints.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "control0_authored_star_workspace",
+      "physical_bytes": 24,
+      "ranges": 2,
+      "source_paths": [
+        "Source/Controls/Resources/ArchivedTxtrPair.bin",
+        "Source/Controls/Resources/SmallMaskBufferTail.bin"
+      ],
+      "limit": "TXTR и резерв LA8FA объявлены в STARHSUN, обращения к двум парам и хвосту при штатных радиусах не установлены",
+      "document": "Docs/ControlsSmallMasks.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "action_authored_object_buffer_tail",
+      "physical_bytes": 5,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Action/Resources/ObjectStreamBufferTail.bin"
+      ],
+      "limit": "хвост OBJBUF с исходной границей из 3DTABS, условные обращения по нечётным индексам проверены отдельно",
+      "document": "Docs/ActionObjectStreamStorage.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "action_authored_render_page_tails",
+      "physical_bytes": 60,
+      "ranges": 2,
+      "source_paths": [
+        "Source/Action/Resources/ProjectedPointsPageTail.bin",
+        "Source/Action/Resources/RenderQueuePageTail.bin"
+      ],
+      "limit": "исходные резервы L9C и L9D за доказанными записями, чтения за штатными пределами не установлены",
+      "document": "Docs/ActionInitialStorage.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "action_authored_eye_state",
+      "physical_bytes": 9,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Action/Data/ArchivedEyeState.asm"
+      ],
+      "limit": "ширина и адреса EYE и STP совпадают с исходным 3DTABS, потребители не установлены",
+      "document": "Docs/ActionInputContextData.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "action_authored_spawn_chances",
+      "physical_bytes": 10,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Action/Data/ArchivedSpawnChances.asm"
+      ],
+      "limit": "хвост PLANDICTAT и поля WERPO доказаны по исходному 3DTABS, потребители не установлены",
+      "document": "Docs/ActionQueueParameterPhysicalData.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "lang_authored_assignment_buffer_tail",
+      "physical_bytes": 10,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Text/Resources/AssignmentBufferTail.bin"
+      ],
+      "limit": "хвост ARGD, чтения и записи доказаны при вложении от семи уровней, штатный путь с такой глубиной не установлен",
+      "document": "Docs/ExpressionStack.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "station_authored_job_list",
+      "physical_bytes": 160,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Station/Data/ArchivedJobList.asm"
+      ],
+      "limit": "десять записей JLIST с полями из DATA_M и BLOCK2, отдельный потребитель в Awakenv02 не установлен",
+      "document": "Docs/StationArchivedJobs.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "station_authored_market_tables",
+      "physical_bytes": 91,
+      "ranges": 2,
+      "source_paths": [
+        "Source/Station/Data/MarketCategories.asm",
+        "Source/Station/Data/MarketRules.asm"
+      ],
+      "limit": "исходные категории и правила совпадают с DATA_M, генератор пропускает три последние категории и отдельный нулевой байт",
+      "document": "Docs/MarketGeneration.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "detached_basic_number",
+      "physical_bytes": 12,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Basic/Data/DetachedSectorNumber.asm"
+      ],
+      "limit": "равенство печатного и двоичного целого доказано, исходная команда и потребитель неизвестны",
+      "document": "Docs/BasicProgram.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "object_stream_extended_tail",
+      "physical_bytes": 13,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Action/Resources/InitialObjectStreamExtendedTail.bin"
+      ],
+      "limit": "запись и чтение хвоста подтверждены с дополнительным пакетом E859, штатный путь его выбора не установлен",
+      "document": "Docs/ActionObjectStreamStorage.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "detached_spawn_model_pairs",
+      "physical_bytes": 16,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Action/Data/DetachedSpawnModelChoices.asm"
+      ],
+      "limit": "запись полей подтверждена при подстановке указателя, выбор строки из активной игры не установлен",
+      "document": "Docs/ActionSpawnPhysicalRows.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "station_script_fields",
+      "physical_bytes": 29,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Station/Data/ScriptFields.asm"
+      ],
+      "limit": "проверены байтовые режимы и поиск разделителей, игровые значения записей остаются открытыми",
+      "document": "Docs/StationScriptFields.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "detached_basic_line_suffix",
+      "physical_bytes": 9,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Basic/Data/DetachedLineSuffix.asm"
+      ],
+      "limit": "токен LINE и цифры 20 подтверждены, начало команды и назначение соседнего байта неизвестны",
+      "document": "Docs/BasicProgram.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "basic_first_sector_buffer_tail",
+      "physical_bytes": 112,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Resources/03_AWAKEN/FirstSectorBufferTail.bin"
+      ],
+      "limit": "при RUN хвост записан в буфер и вытеснен до входа USR, происхождение исходных байтов неизвестно",
+      "document": "Docs/BasicProgram.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "station_conditional_rebuild_shift_tail",
+      "physical_bytes": 34,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Station/Resources/InitialConditionalRebuildShiftTail.bin"
+      ],
+      "limit": "физические обращения установлены для списка из 47..63 исходных указателей с повторами, штатная достижимость неизвестна",
+      "document": "Docs/RebuildInterface.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "action_noise_irq_aliases",
+      "physical_bytes": 41,
+      "ranges": 41,
+      "source_paths": [
+        "Source/Action/Resources/InitialNoiseIrqByteFA21.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFA27.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFA60.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD01.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD04.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD07.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD0A.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD0E.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD14.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD3D.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD40.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD43.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD4D.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD5D.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD63.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD7C.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD82.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD9C.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFD9F.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFDA5.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFDAB.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFDBB.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFDDE.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFE24.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFE2A.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFE5F.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFE63.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFE65.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFE7F.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFE85.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFE9E.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFEBE.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFED4.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFEDA.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFF01.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFF07.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFF13.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFF3F.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFF40.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFF45.bin",
+        "Source/Action/Resources/InitialNoiseIrqByteFF7E.bin"
+      ],
+      "limit": "ROM читает и пишет эти байты банка 0 при смещённом IY, подтверждение всех сочетаний в нативной игре отсутствует",
+      "document": "Docs/ActionNoiseExit.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "action_archived_body_and_speed",
+      "physical_bytes": 2,
+      "ranges": 2,
+      "source_paths": [
+        "Source/Action/Resources/LegacyBodyIndexLoad.bin",
+        "Source/Action/Resources/InitialArchivedSkimmerSpeed.bin"
+      ],
+      "limit": "подтверждены остаток архивного LD A,E и второй байт пары SPEED, штатное исполнение и потребитель текущего поля неизвестны",
+      "document": "Docs/ActionArchivedBodyContext.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "action_archived_player_panel",
+      "physical_bytes": 5,
+      "ranges": 2,
+      "source_paths": [
+        "Source/Action/Data/PlayerPanelWord.asm",
+        "Source/Action/Data/PlayerPanelType.asm"
+      ],
+      "limit": "байты подтверждены объявлением PLAYER, читатели TypeCode в цепочке ракетного попадания установлены, слово после ACTION и два соседних байта остаются открытыми",
+      "document": "Docs/ActionPanelPhysicalData.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "intro_stack_sample_bytes",
+      "physical_bytes": 2,
+      "ranges": 2,
+      "source_paths": [
+        "Source/Intro/Data/StackSampleBefore.asm",
+        "Source/Intro/Data/StackSampleAfter.asm"
+      ],
+      "limit": "физическая выборка и перезапись копии подтверждены, исходное назначение соседних нулей неизвестно",
+      "document": "Docs/IntroStationTransition.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "station_legacy_mission_return_pair",
+      "physical_bytes": 2,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Station/Resources/LegacyMissionReturnPair.bin"
+      ],
+      "limit": "два RET соответствуют раскладке WMISS2 перед пустым наведением, штатный вход в текущей версии не установлен",
+      "document": "Docs/PassivePanelHovers.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "station_conditional_popup_shift_tail",
+      "physical_bytes": 2,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Station/Resources/InitialConditionalPopupShiftTail.bin"
+      ],
+      "limit": "чтение подтверждено при удалении последнего из 64 исходных указателей с повторами, штатная достижимость неизвестна",
+      "document": "Docs/PopupItems.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "action_object_table_alignment",
+      "physical_bytes": 67,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Action/Resources/ObjectTablePageAlignment.bin"
+      ],
+      "limit": "выравнивание подтверждено макросом ADRXX00 и тремя машинными версиями, косвенные обращения в игре остаются открытыми",
+      "document": "Docs/ActionObjectPointers.md",
+      "all_game_consumers_and_writers_proved": false
     }
   ],
-  "classified_format_or_extent_bytes_with_unproved_game_use": 119903,
-  "unclassified_bytes": 15519,
+  "classified_format_or_extent_bytes_with_unproved_game_use": 123645,
+  "unclassified_bytes": 10449,
+  "adjacent_control_header": {
+    "control_header_offset": 328,
+    "station_header_offset": 14409,
+    "equal_byte_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        7,
+        8
+      ]
+    ],
+    "equal_zero_bytes_after_header": 34,
+    "legacy_header_layout_proved": false,
+    "runtime_consumer_proved": false
+  },
+  "model_name_provenance": {
+    "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+    "source_member": "awk1.trd",
+    "table_source": "3DTABS.a",
+    "label_source": "LABELS.a",
+    "matching_model_bytes": 10580,
+    "matching_pointer_words": 142,
+    "named_tail_models": [
+      {
+        "name": "St16",
+        "address": 58473,
+        "source_label": "ActionModels.St16",
+        "source_path": "Source/Action/Data/ModelSt16.asm"
+      },
+      {
+        "name": "St_pirat",
+        "address": 58655,
+        "source_label": "ActionModels.StPirat",
+        "source_path": "Source/Action/Data/ModelStPirat.asm"
+      },
+      {
+        "name": "Prison",
+        "address": 58817,
+        "source_label": "ActionModels.Prison",
+        "source_path": "Source/Action/Data/ModelPrison.asm"
+      },
+      {
+        "name": "St_u1",
+        "address": 58987,
+        "source_label": "ActionModels.StU1",
+        "source_path": "Source/Action/Data/ModelStU1.asm"
+      },
+      {
+        "name": "St_u2",
+        "address": 59307,
+        "source_label": "ActionModels.StU2",
+        "source_path": "Source/Action/Data/ModelStU2.asm"
+      },
+      {
+        "name": "St_scince",
+        "address": 59143,
+        "source_label": "ActionModels.StScince",
+        "source_path": "Source/Action/Data/ModelStScince.asm"
+      },
+      {
+        "name": "Gip_pl",
+        "address": 59481,
+        "source_label": "ActionModels.GipPl",
+        "source_path": "Source/Action/Data/ModelGipPl.asm"
+      }
+    ],
+    "named_models": [
+      {
+        "name": "KN01pol1",
+        "address": 49152,
+        "source_label": "ActionModels.KN01pol1",
+        "source_path": "Source/Action/Data/ModelKN01pol1.asm"
+      },
+      {
+        "name": "Kd1",
+        "address": 49216,
+        "source_label": "ActionModels.Kd1",
+        "source_path": "Source/Action/Data/ModelKd1.asm"
+      },
+      {
+        "name": "KN02mlt1",
+        "address": 49317,
+        "source_label": "ActionModels.KN02mlt1",
+        "source_path": "Source/Action/Data/ModelKN02mlt1.asm"
+      },
+      {
+        "name": "Kd2",
+        "address": 49356,
+        "source_label": "ActionModels.Kd2",
+        "source_path": "Source/Action/Data/ModelKd2.asm"
+      },
+      {
+        "name": "KN04trg1",
+        "address": 49472,
+        "source_label": "ActionModels.KN04trg1",
+        "source_path": "Source/Action/Data/ModelKN04trg1.asm"
+      },
+      {
+        "name": "Kd4",
+        "address": 49511,
+        "source_label": "ActionModels.Kd4",
+        "source_path": "Source/Action/Data/ModelKd4.asm"
+      },
+      {
+        "name": "KN05trg2",
+        "address": 49634,
+        "source_label": "ActionModels.KN05trg2",
+        "source_path": "Source/Action/Data/ModelKN05trg2.asm"
+      },
+      {
+        "name": "Kd5",
+        "address": 49666,
+        "source_label": "ActionModels.Kd5",
+        "source_path": "Source/Action/Data/ModelKd5.asm"
+      },
+      {
+        "name": "KN06pol2",
+        "address": 49745,
+        "source_label": "ActionModels.KN06pol2",
+        "source_path": "Source/Action/Data/ModelKN06pol2.asm"
+      },
+      {
+        "name": "Kd6",
+        "address": 49777,
+        "source_label": "ActionModels.Kd6",
+        "source_path": "Source/Action/Data/ModelKd6.asm"
+      },
+      {
+        "name": "KN07krs1",
+        "address": 49854,
+        "source_label": "ActionModels.KN07krs1",
+        "source_path": "Source/Action/Data/ModelKN07krs1.asm"
+      },
+      {
+        "name": "Kd7",
+        "address": 49961,
+        "source_label": "ActionModels.Kd7",
+        "source_path": "Source/Action/Data/ModelKd7.asm"
+      },
+      {
+        "name": "KN08grz2",
+        "address": 50094,
+        "source_label": "ActionModels.KN08grz2",
+        "source_path": "Source/Action/Data/ModelKN08grz2.asm"
+      },
+      {
+        "name": "Kd8",
+        "address": 50161,
+        "source_label": "ActionModels.Kd8",
+        "source_path": "Source/Action/Data/ModelKd8.asm"
+      },
+      {
+        "name": "KN09mlt2",
+        "address": 50260,
+        "source_label": "ActionModels.KN09mlt2",
+        "source_path": "Source/Action/Data/ModelKN09mlt2.asm"
+      },
+      {
+        "name": "Kd9",
+        "address": 50354,
+        "source_label": "ActionModels.Kd9",
+        "source_path": "Source/Action/Data/ModelKd9.asm"
+      },
+      {
+        "name": "KN10trg3",
+        "address": 50511,
+        "source_label": "ActionModels.KN10trg3",
+        "source_path": "Source/Action/Data/ModelKN10trg3.asm"
+      },
+      {
+        "name": "Kd10",
+        "address": 50543,
+        "source_label": "ActionModels.Kd10",
+        "source_path": "Source/Action/Data/ModelKd10.asm"
+      },
+      {
+        "name": "KN11grz3",
+        "address": 50690,
+        "source_label": "ActionModels.KN11grz3",
+        "source_path": "Source/Action/Data/ModelKN11grz3.asm"
+      },
+      {
+        "name": "Kd11",
+        "address": 50767,
+        "source_label": "ActionModels.Kd11",
+        "source_path": "Source/Action/Data/ModelKd11.asm"
+      },
+      {
+        "name": "Kd15",
+        "address": 50922,
+        "source_label": "ActionModels.Kd15",
+        "source_path": "Source/Action/Data/ModelKd15.asm"
+      },
+      {
+        "name": "KN16trg4",
+        "address": 51085,
+        "source_label": "ActionModels.KN16trg4",
+        "source_path": "Source/Action/Data/ModelKN16trg4.asm"
+      },
+      {
+        "name": "Kd16",
+        "address": 51142,
+        "source_label": "ActionModels.Kd16",
+        "source_path": "Source/Action/Data/ModelKd16.asm"
+      },
+      {
+        "name": "KN17mlt3",
+        "address": 51269,
+        "source_label": "ActionModels.KN17mlt3",
+        "source_path": "Source/Action/Data/ModelKN17mlt3.asm"
+      },
+      {
+        "name": "Kd17",
+        "address": 51360,
+        "source_label": "ActionModels.Kd17",
+        "source_path": "Source/Action/Data/ModelKd17.asm"
+      },
+      {
+        "name": "Kd19",
+        "address": 51509,
+        "source_label": "ActionModels.Kd19",
+        "source_path": "Source/Action/Data/ModelKd19.asm"
+      },
+      {
+        "name": "KN21plS3",
+        "address": 51671,
+        "source_label": "ActionModels.KN21plS3",
+        "source_path": "Source/Action/Data/ModelKN21plS3.asm"
+      },
+      {
+        "name": "Kd21",
+        "address": 51703,
+        "source_label": "ActionModels.Kd21",
+        "source_path": "Source/Action/Data/ModelKd21.asm"
+      },
+      {
+        "name": "Kd22",
+        "address": 51776,
+        "source_label": "ActionModels.Kd22",
+        "source_path": "Source/Action/Data/ModelKd22.asm"
+      },
+      {
+        "name": "KN25plS4",
+        "address": 51950,
+        "source_label": "ActionModels.KN25plS4",
+        "source_path": "Source/Action/Data/ModelKN25plS4.asm"
+      },
+      {
+        "name": "Kd25",
+        "address": 51987,
+        "source_label": "ActionModels.Kd25",
+        "source_path": "Source/Action/Data/ModelKd25.asm"
+      },
+      {
+        "name": "KN26mlt4",
+        "address": 52050,
+        "source_label": "ActionModels.KN26mlt4",
+        "source_path": "Source/Action/Data/ModelKN26mlt4.asm"
+      },
+      {
+        "name": "Kd26",
+        "address": 52090,
+        "source_label": "ActionModels.Kd26",
+        "source_path": "Source/Action/Data/ModelKd26.asm"
+      },
+      {
+        "name": "KN27pol7",
+        "address": 52204,
+        "source_label": "ActionModels.KN27pol7",
+        "source_path": "Source/Action/Data/ModelKN27pol7.asm"
+      },
+      {
+        "name": "Kd27",
+        "address": 52241,
+        "source_label": "ActionModels.Kd27",
+        "source_path": "Source/Action/Data/ModelKd27.asm"
+      },
+      {
+        "name": "KN28plS5",
+        "address": 52349,
+        "source_label": "ActionModels.KN28plS5",
+        "source_path": "Source/Action/Data/ModelKN28plS5.asm"
+      },
+      {
+        "name": "Kd28",
+        "address": 52389,
+        "source_label": "ActionModels.Kd28",
+        "source_path": "Source/Action/Data/ModelKd28.asm"
+      },
+      {
+        "name": "KN29pol6",
+        "address": 52459,
+        "source_label": "ActionModels.KN29pol6",
+        "source_path": "Source/Action/Data/ModelKN29pol6.asm"
+      },
+      {
+        "name": "Kd29",
+        "address": 52496,
+        "source_label": "ActionModels.Kd29",
+        "source_path": "Source/Action/Data/ModelKd29.asm"
+      },
+      {
+        "name": "KN30grz4",
+        "address": 52619,
+        "source_label": "ActionModels.KN30grz4",
+        "source_path": "Source/Action/Data/ModelKN30grz4.asm"
+      },
+      {
+        "name": "Kd30",
+        "address": 52681,
+        "source_label": "ActionModels.Kd30",
+        "source_path": "Source/Action/Data/ModelKd30.asm"
+      },
+      {
+        "name": "KN31grz5",
+        "address": 52790,
+        "source_label": "ActionModels.KN31grz5",
+        "source_path": "Source/Action/Data/ModelKN31grz5.asm"
+      },
+      {
+        "name": "Kd31",
+        "address": 52866,
+        "source_label": "ActionModels.Kd31",
+        "source_path": "Source/Action/Data/ModelKd31.asm"
+      },
+      {
+        "name": "micKN",
+        "address": 52981,
+        "source_label": "ActionModels.micKN",
+        "source_path": "Source/Action/Data/ModelmicKN.asm"
+      },
+      {
+        "name": "micKd1",
+        "address": 53009,
+        "source_label": "ActionModels.micKd1",
+        "source_path": "Source/Action/Data/ModelmicKd1.asm"
+      },
+      {
+        "name": "micKd2",
+        "address": 53089,
+        "source_label": "ActionModels.micKd2",
+        "source_path": "Source/Action/Data/ModelmicKd2.asm"
+      },
+      {
+        "name": "REM_DR",
+        "address": 53154,
+        "source_label": "ActionModels.REM_DR",
+        "source_path": "Source/Action/Data/ModelREM_DR.asm"
+      },
+      {
+        "name": "KontUFO",
+        "address": 53237,
+        "source_label": "ActionModels.KontUFO",
+        "source_path": "Source/Action/Data/ModelKontUFO.asm"
+      },
+      {
+        "name": "ufo_K",
+        "address": 53319,
+        "source_label": "ActionModels.ufo_K",
+        "source_path": "Source/Action/Data/Modelufo_K.asm"
+      },
+      {
+        "name": "UfoRD",
+        "address": 53385,
+        "source_label": "ActionModels.UfoRD",
+        "source_path": "Source/Action/Data/ModelUfoRD.asm"
+      },
+      {
+        "name": "Kib_K",
+        "address": 53467,
+        "source_label": "ActionModels.Kib_K",
+        "source_path": "Source/Action/Data/ModelKib_K.asm"
+      },
+      {
+        "name": "KN03grz1",
+        "address": 53507,
+        "source_label": "ActionModels.KN03grz1",
+        "source_path": "Source/Action/Data/ModelKN03grz1.asm"
+      },
+      {
+        "name": "Kd3",
+        "address": 53584,
+        "source_label": "ActionModels.Kd3",
+        "source_path": "Source/Action/Data/ModelKd3.asm"
+      },
+      {
+        "name": "KN13ufo2",
+        "address": 53696,
+        "source_label": "ActionModels.KN13ufo2",
+        "source_path": "Source/Action/Data/ModelKN13ufo2.asm"
+      },
+      {
+        "name": "Kd13",
+        "address": 53753,
+        "source_label": "ActionModels.Kd13",
+        "source_path": "Source/Action/Data/ModelKd13.asm"
+      },
+      {
+        "name": "KN14ufo3",
+        "address": 53844,
+        "source_label": "ActionModels.KN14ufo3",
+        "source_path": "Source/Action/Data/ModelKN14ufo3.asm"
+      },
+      {
+        "name": "Kd14",
+        "address": 53898,
+        "source_label": "ActionModels.Kd14",
+        "source_path": "Source/Action/Data/ModelKd14.asm"
+      },
+      {
+        "name": "Kd12",
+        "address": 54024,
+        "source_label": "ActionModels.Kd12",
+        "source_path": "Source/Action/Data/ModelKd12.asm"
+      },
+      {
+        "name": "KN18UFo4",
+        "address": 54168,
+        "source_label": "ActionModels.KN18UFo4",
+        "source_path": "Source/Action/Data/ModelKN18UFo4.asm"
+      },
+      {
+        "name": "Kd18",
+        "address": 54229,
+        "source_label": "ActionModels.Kd18",
+        "source_path": "Source/Action/Data/ModelKd18.asm"
+      },
+      {
+        "name": "KN20ufo5",
+        "address": 54393,
+        "source_label": "ActionModels.KN20ufo5",
+        "source_path": "Source/Action/Data/ModelKN20ufo5.asm"
+      },
+      {
+        "name": "Kd20",
+        "address": 54462,
+        "source_label": "ActionModels.Kd20",
+        "source_path": "Source/Action/Data/ModelKd20.asm"
+      },
+      {
+        "name": "KN24ufo7",
+        "address": 54602,
+        "source_label": "ActionModels.KN24ufo7",
+        "source_path": "Source/Action/Data/ModelKN24ufo7.asm"
+      },
+      {
+        "name": "Kd24",
+        "address": 54654,
+        "source_label": "ActionModels.Kd24",
+        "source_path": "Source/Action/Data/ModelKd24.asm"
+      },
+      {
+        "name": "KN23ufo6",
+        "address": 54754,
+        "source_label": "ActionModels.KN23ufo6",
+        "source_path": "Source/Action/Data/ModelKN23ufo6.asm"
+      },
+      {
+        "name": "Kd23",
+        "address": 54818,
+        "source_label": "ActionModels.Kd23",
+        "source_path": "Source/Action/Data/ModelKd23.asm"
+      },
+      {
+        "name": "KOBRA",
+        "address": 54915,
+        "source_label": "ActionModels.KOBRA",
+        "source_path": "Source/Action/Data/ModelKOBRA.asm"
+      },
+      {
+        "name": "KOBRAD",
+        "address": 55008,
+        "source_label": "ActionModels.KOBRAD",
+        "source_path": "Source/Action/Data/ModelKOBRAD.asm"
+      },
+      {
+        "name": "KRYL",
+        "address": 55168,
+        "source_label": "ActionModels.KRYL",
+        "source_path": "Source/Action/Data/ModelKRYL.asm"
+      },
+      {
+        "name": "KRYLD",
+        "address": 55263,
+        "source_label": "ActionModels.KRYLD",
+        "source_path": "Source/Action/Data/ModelKRYLD.asm"
+      },
+      {
+        "name": "OSKOL",
+        "address": 55372,
+        "source_label": "ActionModels.OSKOL",
+        "source_path": "Source/Action/Data/ModelOSKOL.asm"
+      },
+      {
+        "name": "ROKET",
+        "address": 55396,
+        "source_label": "ActionModels.ROKET",
+        "source_path": "Source/Action/Data/ModelROKET.asm"
+      },
+      {
+        "name": "TARGET",
+        "address": 55474,
+        "source_label": "ActionModels.TARGET",
+        "source_path": "Source/Action/Data/ModelTARGET.asm"
+      },
+      {
+        "name": "TRASH",
+        "address": 55482,
+        "source_label": "ActionModels.TRASH",
+        "source_path": "Source/Action/Data/ModelTRASH.asm"
+      },
+      {
+        "name": "CRG1",
+        "address": 55506,
+        "source_label": "ActionModels.CRG1",
+        "source_path": "Source/Action/Data/ModelCRG1.asm"
+      },
+      {
+        "name": "ASTER1",
+        "address": 55600,
+        "source_label": "ActionModels.ASTER1",
+        "source_path": "Source/Action/Data/ModelASTER1.asm"
+      },
+      {
+        "name": "ASTER2",
+        "address": 55720,
+        "source_label": "ActionModels.ASTER2",
+        "source_path": "Source/Action/Data/ModelASTER2.asm"
+      },
+      {
+        "name": "ASTER3",
+        "address": 55784,
+        "source_label": "ActionModels.ASTER3",
+        "source_path": "Source/Action/Data/ModelASTER3.asm"
+      },
+      {
+        "name": "UFO1D",
+        "address": 55838,
+        "source_label": "ActionModels.UFO1D",
+        "source_path": "Source/Action/Data/ModelUFO1D.asm"
+      },
+      {
+        "name": "UFO1",
+        "address": 55915,
+        "source_label": "ActionModels.UFO1",
+        "source_path": "Source/Action/Data/ModelUFO1.asm"
+      },
+      {
+        "name": "St1",
+        "address": 55978,
+        "source_label": "ActionModels.St1",
+        "source_path": "Source/Action/Data/ModelSt1.asm"
+      },
+      {
+        "name": "St2",
+        "address": 56192,
+        "source_label": "ActionModels.St2",
+        "source_path": "Source/Action/Data/ModelSt2.asm"
+      },
+      {
+        "name": "St3",
+        "address": 56378,
+        "source_label": "ActionModels.St3",
+        "source_path": "Source/Action/Data/ModelSt3.asm"
+      },
+      {
+        "name": "St4",
+        "address": 56556,
+        "source_label": "ActionModels.St4",
+        "source_path": "Source/Action/Data/ModelSt4.asm"
+      },
+      {
+        "name": "St5",
+        "address": 56706,
+        "source_label": "ActionModels.St5",
+        "source_path": "Source/Action/Data/ModelSt5.asm"
+      },
+      {
+        "name": "St6",
+        "address": 56850,
+        "source_label": "ActionModels.St6",
+        "source_path": "Source/Action/Data/ModelSt6.asm"
+      },
+      {
+        "name": "St7",
+        "address": 57004,
+        "source_label": "ActionModels.St7",
+        "source_path": "Source/Action/Data/ModelSt7.asm"
+      },
+      {
+        "name": "St8",
+        "address": 57206,
+        "source_label": "ActionModels.St8",
+        "source_path": "Source/Action/Data/ModelSt8.asm"
+      },
+      {
+        "name": "St9",
+        "address": 57412,
+        "source_label": "ActionModels.St9",
+        "source_path": "Source/Action/Data/ModelSt9.asm"
+      },
+      {
+        "name": "St10",
+        "address": 57520,
+        "source_label": "ActionModels.St10",
+        "source_path": "Source/Action/Data/ModelSt10.asm"
+      },
+      {
+        "name": "St11",
+        "address": 57682,
+        "source_label": "ActionModels.St11",
+        "source_path": "Source/Action/Data/ModelSt11.asm"
+      },
+      {
+        "name": "St12",
+        "address": 57803,
+        "source_label": "ActionModels.St12",
+        "source_path": "Source/Action/Data/ModelSt12.asm"
+      },
+      {
+        "name": "St13",
+        "address": 58041,
+        "source_label": "ActionModels.St13",
+        "source_path": "Source/Action/Data/ModelSt13.asm"
+      },
+      {
+        "name": "St14",
+        "address": 58157,
+        "source_label": "ActionModels.St14",
+        "source_path": "Source/Action/Data/ModelSt14.asm"
+      },
+      {
+        "name": "St15",
+        "address": 58323,
+        "source_label": "ActionModels.St15",
+        "source_path": "Source/Action/Data/ModelSt15.asm"
+      },
+      {
+        "name": "St16",
+        "address": 58473,
+        "source_label": "ActionModels.St16",
+        "source_path": "Source/Action/Data/ModelSt16.asm"
+      },
+      {
+        "name": "St_pirat",
+        "address": 58655,
+        "source_label": "ActionModels.StPirat",
+        "source_path": "Source/Action/Data/ModelStPirat.asm"
+      },
+      {
+        "name": "Prison",
+        "address": 58817,
+        "source_label": "ActionModels.Prison",
+        "source_path": "Source/Action/Data/ModelPrison.asm"
+      },
+      {
+        "name": "St_u1",
+        "address": 58987,
+        "source_label": "ActionModels.StU1",
+        "source_path": "Source/Action/Data/ModelStU1.asm"
+      },
+      {
+        "name": "St_scince",
+        "address": 59143,
+        "source_label": "ActionModels.StScince",
+        "source_path": "Source/Action/Data/ModelStScince.asm"
+      },
+      {
+        "name": "St_u2",
+        "address": 59307,
+        "source_label": "ActionModels.StU2",
+        "source_path": "Source/Action/Data/ModelStU2.asm"
+      },
+      {
+        "name": "Gip_pl",
+        "address": 59481,
+        "source_label": "ActionModels.GipPl",
+        "source_path": "Source/Action/Data/ModelGipPl.asm"
+      }
+    ],
+    "current_game_callers_proved": false
+  },
+  "subscriber_base_literal_matches": [
+    {
+      "slot": 0,
+      "file_offset": 35377,
+      "source_path": null
+    },
+    {
+      "slot": 3,
+      "file_offset": 7072,
+      "source_path": "Source/Intro/Data/InitialScreenBitmap.bin"
+    },
+    {
+      "slot": 4,
+      "file_offset": 33364,
+      "source_path": "Source/Station/Resources/SubscriberSystemRows.bin"
+    },
+    {
+      "slot": 4,
+      "file_offset": 33384,
+      "source_path": "Source/Station/Resources/DecodedMessages.bin"
+    },
+    {
+      "slot": 4,
+      "file_offset": 33429,
+      "source_path": "Source/Station/Resources/DecodedMessages.bin"
+    },
+    {
+      "slot": 7,
+      "file_offset": 4448,
+      "source_path": "Source/Map/SetupMapRasterWindow.asm"
+    },
+    {
+      "slot": 9,
+      "file_offset": 31587,
+      "source_path": "Source/Screens/Station/Include.inc"
+    },
+    {
+      "slot": 23,
+      "file_offset": 1538,
+      "source_path": "Source/Controls/UpdateGlyphIndicators.asm"
+    },
+    {
+      "slot": 35,
+      "file_offset": 10492,
+      "source_path": "Source/Resources/35_BANK2/StripsSuffix.asm"
+    },
+    {
+      "slot": 35,
+      "file_offset": 11005,
+      "source_path": "Source/Resources/35_BANK2/StripsSuffix.asm"
+    }
+  ],
   "complete_unknown_resource_graph_proved": false,
   "full_semantic_analysis_complete": false,
   "assembly_executed": false,

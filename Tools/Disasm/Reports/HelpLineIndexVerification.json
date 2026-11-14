@@ -3,12 +3,18 @@
   "cases_by_path": {
     "normal_index_passes": 374,
     "rows_indexed": 5459,
+    "logical_help_passes": 96,
+    "physical_suffix_passes": 12,
     "capacity_boundary_stopped_before_ldir": 1,
     "nonprogress_stopped_before_repeated_store": 1
   },
   "actual_disk_records": 9,
   "all_256_selector_bytes": true,
   "entire_2048_byte_cache_and_end_guard_checked": true,
+  "logical_help_records": 8,
+  "physical_suffix_selector": 8,
+  "physical_suffix_first_line": 61985,
+  "physical_suffix_first_lf": 62075,
   "independent_lf_selection_and_justified_row_layout": true,
   "exact_main_index_alternate_context": true,
   "final_flags_from_actual_zero_fill_ldi": true,

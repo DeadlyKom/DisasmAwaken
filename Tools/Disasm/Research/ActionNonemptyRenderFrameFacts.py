@@ -68,7 +68,8 @@ COMMENTS = {
     0xE18D: ([], 'переход, если половина максимума не меньше #0F, обнулить кандидат'),
     0xE19A: ([], 'переход, если прежний уровень не меньше кандидата'),
     0xE1A2: ([], 'переход, если глубина отрицательна, пропустить запись'),
-    0xE1AA: ([], 'переход, если старший байт глубины не меньше #1F'),
+    0xE1A5: (['Выбор указателя по преобразованной глубине, вторая запись пары относится к ближнему варианту.'], None),
+    0xE1AA: ([], 'переход, если старший байт глубины не меньше порога, сохранить исходное смещение'),
     0xE1B2: (['Восстановление настоящего SP перед чтением заголовка модели.'], None),
 }
 for address in (0xE062, 0xE06D, 0xE078, 0xE083, 0xE08E, 0xE099, 0xE0A4, 0xE0AF, 0xE0BA):
@@ -98,4 +99,6 @@ def name_operands(region, address, operation):
         aliases[operand] = f'ActionPatchedVectorCoeffs.C{index % 3}{index // 3}'
     for operand, alias in aliases.items():
         operation = operation.replace(f'(#{operand})', f'(@{alias})')
-    return operation.replace('LD IY, #E14C', 'LD IY, @Action.RenderSceneFrame.ResumeTransform')
+    return (operation.replace('LD IY, #E14C', 'LD IY, @Action.RenderSceneFrame.ResumeTransform')
+            .replace('CP #1F', 'CP @ActionObjectCopyConst.NearDepthEnd')
+            .replace('ADD A, #02', 'ADD A, @FObjectDataPointer'))

@@ -71,19 +71,29 @@ def check(data, frame_report):
     assert frame_report['all_13_headers_consumed_by_face_parsers'] and frame_report['all_cases_returned']
     sizes = Counter()
     headers = {}
+    fill_modes = Counter()
     for stream in streams:
         render(data, stream)
         for record in stream['records']:
             headers[record['offset'] + 0xC000] = record
             sizes['lines' if record['line'] else 'faces'] += 1
+            if not record['line']:
+                fill_modes[record['header'] >> 4] += 1
     for address in (0xF0F0, 0xF382, 0xF434, 0xF4C4, 0xF144, 0xF266, 0xF31A):
         assert headers[address]['size'] == 4 and not headers[address]['line']
     for address in (0xF2B7, 0xF544, 0xF548, 0xF2BB, 0xF1BE, 0xF1DB):
         assert headers[address]['size'] == 3 and not headers[address]['line']
     assert sizes == {'faces': 219, 'lines': 4}
+    # Два опорных заголовка TogglePreviewFaceFill сохраняют число вершин.
+    toggle_sources = [headers[address]['header'] for address in (0xF0F0, 0xF2B7)]
+    assert toggle_sources == [0x24, 0x23]
+    toggled = [value ^ 0x60 for value in toggle_sources]
+    assert toggled == [0x44, 0x43] and [value ^ 0x60 for value in toggled] == toggle_sources
     return dict(passed=True, stream_count=len(streams), **sizes,
                 physical_bytes=sum(s['end'] - s['start'] for s in streams),
                 verified_mutated_headers=13, vertex_bounds_checked=True,
+                original_face_fill_modes=dict(sorted(fill_modes.items())),
+                original_toggle_source_headers=toggle_sources, toggled_source_headers=toggled,
                 original_bytes_round_trip=True, assembly_executed=False, native_execution=False)
 
 

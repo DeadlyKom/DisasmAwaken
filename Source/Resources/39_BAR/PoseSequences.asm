@@ -111,6 +111,7 @@ Index35:        FFighterPosePointer {
                     #0BF2                                                       ; FileOffset, смещение начала группы в BAR
                 }
                 assert $ == #0048
+                ; действие 0, исходная неподвижная последовательность без нажатий
 Group0048:      FFighterPoseHeader {
                     #0A,                                                        ; FrameCount, число кадров группы
                     #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
@@ -228,6 +229,7 @@ R0048_09:       FFighterPoseStep {
                     #55                                                         ; Height, число строк
                 }
                 assert $ == #00D8
+                ; действие 1, девять шагов MoveX=+1 относительно стороны бойца
 Group00D8:      FFighterPoseHeader {
                     #09,                                                        ; FrameCount, число кадров группы
                     #40,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
@@ -334,6 +336,7 @@ R00D8_08:       FFighterPoseStep {
                     #58                                                         ; Height, число строк
                 }
                 assert $ == #015A
+                ; действие 2, девять шагов MoveX=-1 относительно стороны бойца
 Group015A:      FFighterPoseHeader {
                     #09,                                                        ; FrameCount, число кадров группы
                     #40,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
@@ -440,6 +443,7 @@ R015A_08:       FFighterPoseStep {
                     #5B                                                         ; Height, число строк
                 }
                 assert $ == #01DC
+                ; действие 3, вертикальная последовательность без смещения X
 Group01DC:      FFighterPoseHeader {
                     #11,                                                        ; FrameCount, число кадров группы
                     #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
@@ -706,6 +710,7 @@ R0304_00:       FFighterPoseStep {
                     #39                                                         ; Height, число строк
                 }
                 assert $ == #0316
+                ; действие 7, вертикальная последовательность с MoveX=+1
 Group0316:      FFighterPoseHeader {
                     #0D,                                                        ; FrameCount, число кадров группы
                     #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
@@ -856,6 +861,7 @@ R0316_12:       FFighterPoseStep {
                     #54                                                         ; Height, число строк
                 }
                 assert $ == #03D0
+                ; действие 8, вертикальная последовательность с MoveX=-1
 Group03D0:      FFighterPoseHeader {
                     #0D,                                                        ; FrameCount, число кадров группы
                     #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction

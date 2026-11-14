@@ -1,0 +1,569 @@
+{
+  "passed": true,
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "model_disk_offset": 553984,
+  "menu_entry": 24576,
+  "screens": [
+    25565,
+    32477
+  ],
+  "screen_bytes": 6912,
+  "font_address": 39389,
+  "font_bytes": 768,
+  "initial_text_bitmaps_checked": true,
+  "profiles": [
+    {
+      "mode": 0,
+      "option_cycle": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "dos_key": "START   C",
+      "dos_status": 1,
+      "sector_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "return_pc": 24576,
+      "destination_unchanged": true,
+      "mode_handoff_address": 24414,
+      "separate_mode_readers": [
+        {
+          "name": "scene1",
+          "patched_operand": 20406,
+          "target": 20408,
+          "selector_profiles": [
+            {
+              "page_code": 8,
+              "writes": [
+                [
+                  32765,
+                  88
+                ]
+              ]
+            },
+            {
+              "page_code": 9,
+              "writes": [
+                [
+                  32765,
+                  89
+                ]
+              ]
+            },
+            {
+              "page_code": 10,
+              "writes": [
+                [
+                  32765,
+                  90
+                ]
+              ]
+            },
+            {
+              "page_code": 11,
+              "writes": [
+                [
+                  32765,
+                  91
+                ]
+              ]
+            },
+            {
+              "page_code": 12,
+              "writes": [
+                [
+                  32765,
+                  92
+                ]
+              ]
+            },
+            {
+              "page_code": 13,
+              "writes": [
+                [
+                  32765,
+                  93
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "bank_strips",
+          "patched_operand": 25433,
+          "target": 25518,
+          "selector_profiles": [
+            {
+              "page_code": 8,
+              "writes": [
+                [
+                  32765,
+                  88
+                ]
+              ]
+            },
+            {
+              "page_code": 9,
+              "writes": [
+                [
+                  32765,
+                  89
+                ]
+              ]
+            },
+            {
+              "page_code": 10,
+              "writes": [
+                [
+                  32765,
+                  90
+                ]
+              ]
+            },
+            {
+              "page_code": 11,
+              "writes": [
+                [
+                  32765,
+                  91
+                ]
+              ]
+            },
+            {
+              "page_code": 12,
+              "writes": [
+                [
+                  32765,
+                  92
+                ]
+              ]
+            },
+            {
+              "page_code": 13,
+              "writes": [
+                [
+                  32765,
+                  93
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": 1,
+      "option_cycle": [
+        0,
+        1
+      ],
+      "dos_key": "START   C",
+      "dos_status": 1,
+      "sector_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "return_pc": 24576,
+      "destination_unchanged": true,
+      "mode_handoff_address": 24414,
+      "separate_mode_readers": [
+        {
+          "name": "scene1",
+          "patched_operand": 20406,
+          "target": 20431,
+          "selector_profiles": [
+            {
+              "page_code": 8,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  24
+                ]
+              ]
+            },
+            {
+              "page_code": 9,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  25
+                ]
+              ]
+            },
+            {
+              "page_code": 10,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  26
+                ]
+              ]
+            },
+            {
+              "page_code": 11,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  27
+                ]
+              ]
+            },
+            {
+              "page_code": 12,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  28
+                ]
+              ]
+            },
+            {
+              "page_code": 13,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  29
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "bank_strips",
+          "patched_operand": 25433,
+          "target": 25435,
+          "selector_profiles": [
+            {
+              "page_code": 8,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  24
+                ]
+              ]
+            },
+            {
+              "page_code": 9,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  25
+                ]
+              ]
+            },
+            {
+              "page_code": 10,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  26
+                ]
+              ]
+            },
+            {
+              "page_code": 11,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  27
+                ]
+              ]
+            },
+            {
+              "page_code": 12,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  28
+                ]
+              ]
+            },
+            {
+              "page_code": 13,
+              "writes": [
+                [
+                  8189,
+                  16
+                ],
+                [
+                  32765,
+                  29
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode": 2,
+      "option_cycle": [
+        0,
+        1,
+        2
+      ],
+      "dos_key": "START   C",
+      "dos_status": 1,
+      "sector_reads": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "return_pc": 24576,
+      "destination_unchanged": true,
+      "mode_handoff_address": 24414,
+      "separate_mode_readers": [
+        {
+          "name": "scene1",
+          "patched_operand": 20406,
+          "target": 20453,
+          "selector_profiles": [
+            {
+              "page_code": 8,
+              "writes": [
+                [
+                  32765,
+                  24
+                ],
+                [
+                  65527,
+                  247
+                ]
+              ]
+            },
+            {
+              "page_code": 9,
+              "writes": [
+                [
+                  32765,
+                  25
+                ],
+                [
+                  65527,
+                  246
+                ]
+              ]
+            },
+            {
+              "page_code": 10,
+              "writes": [
+                [
+                  32765,
+                  26
+                ],
+                [
+                  65527,
+                  245
+                ]
+              ]
+            },
+            {
+              "page_code": 11,
+              "writes": [
+                [
+                  32765,
+                  27
+                ],
+                [
+                  65527,
+                  244
+                ]
+              ]
+            },
+            {
+              "page_code": 12,
+              "writes": [
+                [
+                  32765,
+                  28
+                ],
+                [
+                  65527,
+                  243
+                ]
+              ]
+            },
+            {
+              "page_code": 13,
+              "writes": [
+                [
+                  32765,
+                  29
+                ],
+                [
+                  65527,
+                  242
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "bank_strips",
+          "patched_operand": 25433,
+          "target": 25470,
+          "selector_profiles": [
+            {
+              "page_code": 8,
+              "writes": [
+                [
+                  32765,
+                  24
+                ],
+                [
+                  65527,
+                  247
+                ]
+              ]
+            },
+            {
+              "page_code": 9,
+              "writes": [
+                [
+                  32765,
+                  25
+                ],
+                [
+                  65527,
+                  246
+                ]
+              ]
+            },
+            {
+              "page_code": 10,
+              "writes": [
+                [
+                  32765,
+                  26
+                ],
+                [
+                  65527,
+                  245
+                ]
+              ]
+            },
+            {
+              "page_code": 11,
+              "writes": [
+                [
+                  32765,
+                  27
+                ],
+                [
+                  65527,
+                  244
+                ]
+              ]
+            },
+            {
+              "page_code": 12,
+              "writes": [
+                [
+                  32765,
+                  28
+                ],
+                [
+                  65527,
+                  243
+                ]
+              ]
+            },
+            {
+              "page_code": 13,
+              "writes": [
+                [
+                  32765,
+                  29
+                ],
+                [
+                  65527,
+                  242
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "active_game_entry_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

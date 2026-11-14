@@ -40,7 +40,7 @@ Entry:          LD HL, #0000
                 LD BC, FActionRecord.LinkFlags
                 ADD HL, BC
                 ; Обновление бита 0 LinkFlags с сохранением остальных семи разрядов, игровой смысл бита ещё не установлен.
-                SET 0, (HL)
+                SET @ActionLinkFlagsConst.BackLinkBit, (HL)
                 ; Сохранение старого LinkedIndex в C и замена поля исходным кодом 1A.
                 DEC HL
                 LD C, (HL)

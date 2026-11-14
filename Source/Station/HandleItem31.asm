@@ -9,8 +9,12 @@
 ;   тот же входной контекст и предусловия, что у UpdateMissionRowHover
 ; Out:
 ;   хвостовой переход UpdateMissionRowHover с исходным адресом возврата, дальнейшие выходы по его договору
-; Corrupt:
-;   HL, DE, BC, AF, AF' по UpdateMissionRowHover
+                ; Corrupt:
+                ;   HL, DE, BC, AF, AF', R
+                ;   bitmap полосы, MapHighlightState.WidthSkip банка 1, StationState.CurrentPage, управление 7FFD и временные слова CPU-стека
+                ;   PointerState.UpdateBlocked, PointerState.RestoredFlag, PointerState.SpriteBase, PointerState.BackgroundAddr и PointerState.VisibleRows
+                ;   InterfaceState.HoverItem, InterfaceState.HoverCallback и строки PointerBackground
+                ;   MissionHoverState.Row при возвращённом Z=0
 ; Note:
 ;   это только трёхбайтовый вход наведения из EventHandler элемента 31
 ;   диспетчер нажатия использует EventHandler+3, то есть отдельный вход 6E9C, его алгоритм ещё разбирается

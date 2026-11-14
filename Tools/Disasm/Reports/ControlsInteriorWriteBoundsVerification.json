@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "method": "original_layout_and_complete_row_count_address_domains",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "original_code_sha256": "6a2780c2d87dc43ec45aef36a33c314ada38f3c43739262c5638be42c599732e",
+  "original_instruction_count": 118,
+  "original_code_bytes": 160,
+  "full_wrapper_entries": [
+    53768,
+    53777
+  ],
+  "direct_direction_entries": [
+    54666,
+    54677
+  ],
+  "preparation_entry_without_RAM_writes": 54651,
+  "domains": {
+    "own_raster_store_pcs": [
+      54715,
+      54717,
+      54719,
+      54721,
+      54723,
+      54725,
+      54727,
+      54729,
+      54731,
+      54733,
+      54735,
+      54737,
+      54739,
+      54741,
+      54743,
+      54745,
+      54747,
+      54749,
+      54751,
+      54753,
+      54755,
+      54757,
+      54759,
+      54761,
+      54763,
+      54765,
+      54767,
+      54769,
+      54771,
+      54773
+    ],
+    "code_patch_addresses": [
+      54709,
+      54710,
+      54784,
+      54785
+    ],
+    "stack_byte_depths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "initial_H": 4
+  },
+  "all_start_row_and_count_pairs_both_directions": 49152,
+  "raster_destination_count": 2880,
+  "raster_address_minimum": 32769,
+  "raster_address_maximum": 35838,
+  "raster_physical_bank": 2,
+  "code_patch_physical_bank": 1,
+  "raster_and_code_patch_destinations_disjoint_from_DB01_DB02": true,
+  "zero_count_still_writes_four_code_bytes_and_six_stack_bytes": true,
+  "initial_H_7_probe_reaches_DB01_DB02": true,
+  "unsupported_layout_mutations_rejected": [
+    "DEC_L_replaced_by_INC_H",
+    "conditional_boundary_replaced_by_JR"
+  ],
+  "stack_overlap_input_SP": [
+    56066,
+    56067,
+    56068,
+    56069,
+    56070,
+    56071,
+    56072
+  ],
+  "required_preconditions": [
+    "A=0..95 и B=0..255 при входе через обёртку или выбор направления",
+    "банк 1 содержит исходный CONTROL, исходные команды не меняются извне",
+    "код, растр и шесть байтов рамки с внешним возвратом доступны и не перекрываются",
+    "IRQ, NMI и иные внешние писатели не вмешиваются"
+  ],
+  "arbitrary_direct_PrepareRows_and_FillRow_entries_proved": false,
+  "all_game_callers_and_stack_placements_proved": false,
+  "all_temporary_module_length_writers_excluded": false,
+  "full_CPU_register_execution_or_bus_timing_simulated": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

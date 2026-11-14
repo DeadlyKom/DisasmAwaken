@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "method": "archived_source_text_and_coordinate_definition_inspection",
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "active_sources_checked": 160,
+  "ordinary_text_source_entries_checked": 129,
+  "structured_storm_source_entries_checked": 31,
+  "structured_text_parts_checked": {
+    "comments": 1512,
+    "string_literals": 39,
+    "symbols": 5027
+  },
+  "structured_unit_word_occurrences": [],
+  "whole_word_units_pattern": "\\b(?:КИЛОМЕТР\\w*|КМ|KM|МЕТРОВ|МЕТРАХ|МЕТРЫ|СЕКУНД\\w*|ЕДИНИЦ\\w*)\\b",
+  "unit_word_occurrences": [
+    {
+      "member": "awk1.trd",
+      "name": "BRAINPROa",
+      "line": 636,
+      "raw_line_cp866_hex": "8e928b8592208220878084808d8d8e8c208d808f9080828b858d88882091858a938d8493"
+    }
+  ],
+  "archived_coordinate_word_offsets": {
+    "XW": 0,
+    "YW": 2,
+    "ZW": 4
+  },
+  "spatial_or_speed_SI_unit_proved": false,
+  "text_search_does_not_exclude_other_notations_or_packed_manuals": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

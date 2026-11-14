@@ -5,6 +5,302 @@
   "action_runtime_start": 35840,
   "action_runtime_end_exclusive": 43053,
   "sha256": "d7c970768efdeb1bc606776afdae5a3cc892ea071e01e77c108b98cc1678b06e",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "bytes_by_action_kind": {
+    "typed_data": 4277,
+    "binary_resource": 2863,
+    "unclassified": 73
+  },
+  "literal_file_key_offsets": [
+    288
+  ],
+  "direct_trdos_branch_patterns": {
+    "active": [
+      {
+        "disk_offset": 74011,
+        "slot": 3,
+        "file_offset": 27,
+        "runtime_address": 23894,
+        "region": "Basic",
+        "operation": "JP #3D13"
+      },
+      {
+        "disk_offset": 74746,
+        "slot": 3,
+        "file_offset": 762,
+        "runtime_address": 26106,
+        "region": "Intro",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 74752,
+        "slot": 3,
+        "file_offset": 768,
+        "runtime_address": 26112,
+        "region": "Intro",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 74770,
+        "slot": 3,
+        "file_offset": 786,
+        "runtime_address": 26130,
+        "region": "Intro",
+        "operation": "JP #3D13"
+      },
+      {
+        "disk_offset": 86437,
+        "slot": 4,
+        "file_offset": 933,
+        "runtime_address": 16524,
+        "region": "StationBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 86463,
+        "slot": 4,
+        "file_offset": 959,
+        "runtime_address": 16550,
+        "region": "StationBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 86492,
+        "slot": 4,
+        "file_offset": 988,
+        "runtime_address": 16579,
+        "region": "StationBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 86518,
+        "slot": 4,
+        "file_offset": 1014,
+        "runtime_address": 16605,
+        "region": "StationBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 86583,
+        "slot": 4,
+        "file_offset": 1079,
+        "runtime_address": 16670,
+        "region": "StationBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 86604,
+        "slot": 4,
+        "file_offset": 1100,
+        "runtime_address": 16691,
+        "region": "StationBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 86610,
+        "slot": 4,
+        "file_offset": 1106,
+        "runtime_address": 16697,
+        "region": "StationBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 86673,
+        "slot": 4,
+        "file_offset": 1169,
+        "runtime_address": 16760,
+        "region": "StationBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 89878,
+        "slot": 4,
+        "file_offset": 4374,
+        "runtime_address": 16473,
+        "region": "StationFinalExit",
+        "operation": "JP #3D13"
+      },
+      {
+        "disk_offset": 91397,
+        "slot": 4,
+        "file_offset": 5893,
+        "runtime_address": 29785,
+        "region": "Station",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 91403,
+        "slot": 4,
+        "file_offset": 5899,
+        "runtime_address": 29791,
+        "region": "Station",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 91417,
+        "slot": 4,
+        "file_offset": 5913,
+        "runtime_address": 29805,
+        "region": "Station",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 91534,
+        "slot": 4,
+        "file_offset": 6030,
+        "runtime_address": 29922,
+        "region": "Station",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 91540,
+        "slot": 4,
+        "file_offset": 6036,
+        "runtime_address": 29928,
+        "region": "Station",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 91554,
+        "slot": 4,
+        "file_offset": 6050,
+        "runtime_address": 29942,
+        "region": "Station",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 94111,
+        "slot": 4,
+        "file_offset": 8607,
+        "runtime_address": 16947,
+        "region": "StationExit",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 236396,
+        "slot": 17,
+        "file_offset": 108,
+        "runtime_address": 16937,
+        "region": "ActionBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 236443,
+        "slot": 17,
+        "file_offset": 155,
+        "runtime_address": 16984,
+        "region": "ActionBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 236536,
+        "slot": 17,
+        "file_offset": 248,
+        "runtime_address": 17077,
+        "region": "ActionBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 236542,
+        "slot": 17,
+        "file_offset": 254,
+        "runtime_address": 17083,
+        "region": "ActionBoot",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 236560,
+        "slot": 17,
+        "file_offset": 272,
+        "runtime_address": 17101,
+        "region": "ActionBoot",
+        "operation": "JP #3D13"
+      },
+      {
+        "disk_offset": 241465,
+        "slot": 17,
+        "file_offset": 5177,
+        "runtime_address": 16945,
+        "region": "Action",
+        "operation": "CALL #3D13"
+      },
+      {
+        "disk_offset": 315641,
+        "slot": 23,
+        "file_offset": 505,
+        "runtime_address": 16430,
+        "region": "Controls",
+        "operation": "JP #3D13"
+      },
+      {
+        "disk_offset": 315745,
+        "slot": 23,
+        "file_offset": 609,
+        "runtime_address": 16924,
+        "region": "Controls",
+        "operation": "CALL #3D13"
+      }
+    ],
+    "deleted": [
+      {
+        "disk_offset": 4177,
+        "slots": [
+          0
+        ],
+        "hex": "c3133d"
+      },
+      {
+        "disk_offset": 14407,
+        "slots": [
+          0
+        ],
+        "hex": "cd133d"
+      }
+    ],
+    "outside_catalogue": [
+      {
+        "disk_offset": 554287,
+        "hex": "c3133d"
+      },
+      {
+        "disk_offset": 571267,
+        "hex": "cd133d"
+      },
+      {
+        "disk_offset": 571288,
+        "hex": "cd133d"
+      },
+      {
+        "disk_offset": 571322,
+        "hex": "cd133d"
+      },
+      {
+        "disk_offset": 571944,
+        "hex": "cd133d"
+      },
+      {
+        "disk_offset": 574348,
+        "hex": "c3133d"
+      },
+      {
+        "disk_offset": 575247,
+        "hex": "cd133d"
+      },
+      {
+        "disk_offset": 575310,
+        "hex": "cd133d"
+      }
+    ],
+    "indirect_and_computed_targets_covered": false
+  },
+  "first_sector_read": {
+    "track": 67,
+    "sector": 12,
+    "length": 256,
+    "scratch": 23845,
+    "flight_profiles": 2,
+    "action_load_and_reload": true
+  },
   "disk_copy_load_path_proved": false,
   "source_spans": [
     {
@@ -333,8 +629,8 @@
       "datas_offset": 347,
       "length": 1,
       "action_offset": 11611,
-      "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified2D5B_2D5C.bin"
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/OddRightPhase2Mode5Or.bin"
     },
     {
       "datas_offset": 348,
@@ -494,8 +790,8 @@
       "datas_offset": 712,
       "length": 56,
       "action_offset": 11976,
-      "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified2EC8_2F00.bin"
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/ProjectedPointsPageTail.bin"
     },
     {
       "datas_offset": 768,
@@ -508,8 +804,8 @@
       "datas_offset": 1020,
       "length": 4,
       "action_offset": 12284,
-      "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified2FFC_3000.bin"
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/RenderQueuePageTail.bin"
     },
     {
       "datas_offset": 1024,
@@ -683,8 +979,8 @@
       "datas_offset": 3992,
       "length": 9,
       "action_offset": 15256,
-      "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified3B98_3BA1.bin"
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ArchivedEyeState.asm"
     },
     {
       "datas_offset": 4001,
@@ -711,8 +1007,8 @@
       "datas_offset": 4019,
       "length": 10,
       "action_offset": 15283,
-      "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified3BB3_3BBD.bin"
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ArchivedSpawnChances.asm"
     },
     {
       "datas_offset": 4029,
@@ -746,36 +1042,36 @@
       "datas_offset": 4043,
       "length": 2,
       "action_offset": 15307,
-      "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified3BCB_3BCD.bin"
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PlayerIndices.asm"
     },
     {
       "datas_offset": 4045,
       "length": 1,
       "action_offset": 15309,
       "action_kind": "typed_data",
-      "action_path": "Source/Action/Data/IndexedGate.asm"
+      "action_path": "Source/Action/Data/FlightStatus.asm"
     },
     {
       "datas_offset": 4046,
       "length": 2,
       "action_offset": 15310,
       "action_kind": "typed_data",
-      "action_path": "Source/Action/Data/ArrivalCounter.asm"
+      "action_path": "Source/Action/Data/RankScore.asm"
     },
     {
       "datas_offset": 4048,
       "length": 2,
       "action_offset": 15312,
-      "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified3BD0_3BD2.bin"
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PlayerMoney.asm"
     },
     {
       "datas_offset": 4050,
       "length": 2,
       "action_offset": 15314,
       "action_kind": "typed_data",
-      "action_path": "Source/Action/Data/ByteLimitCounter.asm"
+      "action_path": "Source/Action/Data/FlightTonnage.asm"
     },
     {
       "datas_offset": 4052,
@@ -851,8 +1147,8 @@
       "datas_offset": 4235,
       "length": 193,
       "action_offset": 15499,
-      "action_kind": "binary_resource",
-      "action_path": "Source/Action/Resources/InitialTransferredContextMiddle.bin"
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ContextMapAndOptions.asm"
     },
     {
       "datas_offset": 4428,
@@ -905,10 +1201,17 @@
     },
     {
       "datas_offset": 5130,
-      "length": 18,
+      "length": 13,
       "action_offset": 16394,
-      "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified400A_401C.bin"
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialObjectStreamExtendedTail.bin"
+    },
+    {
+      "datas_offset": 5143,
+      "length": 5,
+      "action_offset": 16407,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/ObjectStreamBufferTail.bin"
     },
     {
       "datas_offset": 5148,
@@ -921,8 +1224,8 @@
       "datas_offset": 5159,
       "length": 217,
       "action_offset": 16423,
-      "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified4027_4100.bin"
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/ObjectRecordsAlignment.bin"
     },
     {
       "datas_offset": 5376,

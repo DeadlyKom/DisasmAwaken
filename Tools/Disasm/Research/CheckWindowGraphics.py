@@ -12,13 +12,17 @@ from skoolkit.simulator import Simulator
 from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,PC,SP,IFF
 from CheckInsetFrame import bitmap_address
 from CheckStationInterrupt import InterruptPorts
+from CheckPreviewCoordinateMultiply import Memory
+from ReferenceControlsPointRespawn import refresh
+from CheckStationSpans import add_flags,subtract_flags,increment_flags
+from CheckGlyphRenderer import and_flags
 
 
 def main():
     manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_text('utf-8'))
     entry=next(e for e in manifest['entries'] if e['slot']==4)
     source=(ROOT/(entry['path']+'.sectors.bin')).read_bytes()
-    memory=[0]*65536;memory[0x6000:]=source
+    memory=Memory([0]*65536);memory[0x6000:]=source
     memory[0x6322:0x7F8C]=source[0x5CE:0x2238]
     flow=json.loads((ROOT/'Tools/Disasm/Reports/ControlFlow.json').read_text('utf-8'))
     for region in flow:
@@ -32,7 +36,7 @@ def main():
     initial=get_registers({'SP':0x7FFE,'HL':0x7000,'DE':0x247A,'BC':0x36C9,'IX':0x2468,
                            'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
     bindings=[tuple(memory[a:a+2]) for a in range(0x99B6,0x99C2,2)]
-    observed={};body_cases=icon_cases=injections=icon_overflow_cases=icon_attribute_cases=0;irq_stack_positions=set()
+    observed={};body_cases=icon_cases=injections=icon_overflow_cases=icon_attribute_cases=0;irq_stack_positions=set();icon_m1=set()
     baseline=[(i*73+(i>>8)*19+17)&255 for i in range(8192)]
 
     def setup(x,y,width,height):
@@ -100,26 +104,36 @@ def main():
         setup(x,y,6,5);memory[0x4000:0x6000]=baseline;memory[0x7000:0x7080]=image
         memory[0x7FFE:0x8000]=[255,63];simulator.registers[:]=initial;r=simulator.registers
         r[B],r[C],r[PC]=bc>>8,bc&255,0xA020
+        r[14]=(x+y+bc)&255;r[15]=(x^y^bc)&255;r[27]=(x+y)%3
+        before=r.copy();memory.writes=[];memory.recording=True;m1=0
         for step in range(1100):
             pc=r[PC]
             if pc==0x3FFF:break
             assert 0xA020<=pc<0xA05B
             instruction=dis.disassemble(pc,pc+1,'h')[0]
             raw=bytes(memory[pc:pc+len(instruction.bytes)]);assert raw==bytes(original[pc:pc+len(raw)])
-            observed[f'{pc:04X}']=raw.hex();simulator.run()
+            observed[f'{pc:04X}']=raw.hex();old_r=r[15];simulator.run();delta=(r[15]-old_r)&127
+            assert delta in (1,2);m1+=delta
         else:raise AssertionError('Иконка не завершилась')
+        memory.recording=False
         expected=baseline[:];address=bitmap_address(8*(y+1),x+1)
+        expected_writes=[(0x7FFC,0),(0x7FFD,0x70)];expected_m1=594
         overflows=attributes=False
         for row in range(32):
             assert 0x4000<=address<0x5FFD
             attributes|=address>=0x5800
             expected[address-0x4000:address-0x4000+4]=image[4*row:4*row+4]
+            expected_writes.extend((address+j,image[4*row+j]) for j in range(4))
             # Расчёт физического следующего адреса учитывает перенос четырёхбайтового LDI через младший байт.
             end=address+4
             overflows|=end>>8!=address>>8
             high=((end>>8)+1)&255;low=address&255
+            alternate_a=high&7;alternate_f=and_flags(alternate_a)
             if not high&7:
-                new_low=low+32
+                new_low=low+32;expected_m1+=4+3*int(new_low<=255)
+                alternate_a=new_low&255;alternate_f=add_flags(low,32)
+                if new_low<=255:
+                    alternate_a=(high-8)&255;alternate_f=subtract_flags(high,8)
                 high=(high-(0 if new_low>255 else 8))&255
                 low=new_low&255
             address=256*high+low
@@ -132,13 +146,40 @@ def main():
                 offset=bitmap_address(8*(y+1)+row,x+1)-0x4000
                 assert expected[offset:offset+4]==image[4*row:4*row+4]
         assert r[A]==0 and r[F]==0x42
+        assert (r[16],r[17])==(alternate_a,alternate_f),(x,y,bc,r[16:18],alternate_a,alternate_f)
+        assert m1==expected_m1,(x,y,bc,m1,expected_m1)
+        assert r[15]==refresh(before[15],m1) and all(r[i]==before[i] for i in (14,26,27))
+        assert memory.writes==expected_writes
+        icon_m1.add(m1)
         assert r[8:12]==initial[8:12] and r[18:24]==initial[18:24]
         icon_cases+=1
         icon_overflow_cases+=overflows;icon_attribute_cases+=attributes
+    # Проверка каждого укороченного входа, всех байтов E и старших адресов bitmap, Carry и отдельного RestoreLow.
+    assert memory[0xA0C4:0xA102]==original[0xA0C4:0xA102]
+    row_cases=0;row_m1=set()
+    for count,high,low,carry in product(range(-1,31),range(0x40,0x58),range(256),(0,1)):
+        memory[0x7FFE:0x8000]=[255,63];simulator.registers[:]=initial;r=simulator.registers
+        r[A]=(73*low+high+count)&255;r[F]=((low^high^count)&0xFE)|carry
+        r[D],r[E],r[C]=high,low,low if count==0 else (low+73)&255
+        r[14]=high^low;r[15]=(low^count)&255;r[27]=count%3
+        before=r.copy();memory.writes=[];memory.recording=True
+        start=0xA0FF if count<0 else 0xA100-2*count
+        simulator.run(start=start,stop=0x3FFF);memory.recording=False
+        expected_m1=3 if count<0 else 2*count+2
+        assert r[15]==refresh(before[15],expected_m1)
+        assert (r[A],r[F],r[D],r[E],r[SP])==(before[A],increment_flags(high,carry),(high+1)&255,before[C],0x8000)
+        assert all(r[i]==before[i] for i in (*range(2,4),*range(6,12),14,*range(16,24),26,27))
+        assert memory.writes==[(256*high+((low+j)&255),before[A]) for j in range(max(0,count))]
+        row_cases+=1;row_m1.add(expected_m1)
     report=dict(method='original_window_icon_body_and_manual_irq_pc_push',passed=True,
                 source_sha256=hashlib.sha256(source).hexdigest(),body_cases=body_cases,icon_cases=icon_cases,
                 injected_isr_calls=injections,irq_pc_word_addresses=[f'{a:04X}' for a in sorted(irq_stack_positions)],
                 icon_low_byte_overflow_cases=icon_overflow_cases,icon_attribute_write_cases=icon_attribute_cases,
+                fill_body_row_cases=row_cases,fill_body_row_full_m1_values=sorted(row_m1),
+                fill_body_row_exact_flags_registers_writes_and_refresh=True,fill_body_row_iff_fixture=0,
+                fill_body_row_i_im_iff_preserved=True,
+                icon_exact_alternate_af=True,icon_full_m1_values=sorted(icon_m1),
+                icon_exact_refresh_and_all_130_memory_writes=True,icon_i_im_iff_preserved=True,icon_iff_fixture=0,
                 original_visited=observed,physical_bank_switching=False,hardware_irq_timing=False,native_execution=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/WindowGraphicsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
     print(json.dumps({k:v for k,v in report.items() if k!='original_visited'},ensure_ascii=False,indent=2))

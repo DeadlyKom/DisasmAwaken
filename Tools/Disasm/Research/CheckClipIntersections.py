@@ -1,5 +1,9 @@
-"""Четыре исходных пересечения с полным и кэшированным входом, точное старое деление и выходная страница."""
+"""Четыре исходных пересечения с полным и кэшированным входом, точное старое деление и выходная страница.
+
+Документация: ../../../Docs/ClipIntersections.md
+"""
 from pathlib import Path
+from hashlib import sha256
 import json,random,sys
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/'Tools/Disasm/Research/vendor/skoolkit-10.1'),str(ROOT/'Tools/Disasm/Research')]
@@ -9,6 +13,8 @@ from CheckRowHighlight import make_context
 from CheckSignedMultiply import signed,sbc16_flags
 from CheckSignedDivision import expected as divide_expected
 from CheckWorldSignature import logical_flags
+from ReferenceControlsPointRespawn import refresh
+from skoolkit.simutils import PC,R
 
 
 def inc_flags(value,carry):
@@ -82,4 +88,88 @@ def main(configured=False):
  print(json.dumps(report,ensure_ascii=False,indent=2))
 
 
-if __name__=='__main__':main('--configured' in sys.argv)
+def refresh_witness():
+ """Свидетельства изменения R для восьми входов, без повторения всей координатной матрицы."""
+ manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_bytes())
+ disk=(ROOT/'Tools/Disasm/Disk/original.trd').read_bytes()
+ assert sha256(disk).hexdigest()==manifest['sha256']
+ for slot in (4,7):
+  entry=next(row for row in manifest['entries'] if row['slot']==slot)
+  raw=(ROOT/(entry['path']+'.sectors.bin')).read_bytes()
+  assert raw==disk[entry['offset']:entry['offset']+entry['allocated_length']]
+ _,source,banks=make_context()
+ original=bytearray(65536)
+ original[0x4000:0x8000]=bytes(banks[5]);original[0x8000:0xC000]=bytes(banks[2])
+ original[0xC000:0xC000+len(source)]=source
+ rows=[];changed=set();product_rows=[];product_changed=set()
+ symbols=json.loads((ROOT/'Tools/Disasm/Reports/Symbols.json').read_bytes())
+ for kind,entry,cached,destination in ((0,0xD95E,0xD961,0xDE6B),(1,0xD9A9,0xD9AC,0xDE6F),
+                                       (2,0xD9F4,0xD9F7,0xDE73),(3,0xDA52,0xDA55,0xDE77)):
+  for use_cache in (False,True):
+   for initial_r in (0,0x95):
+    memory=bytearray(original)
+    # Подготовка двух точек с ненулевым делителем 64, нулевого выходного курсора и обычного возврата.
+    points=bytes((0,0,0,0,0xA7,64,0,64,0,0x5A))
+    memory[0xDE2F:0xDE39]=points;memory[0xDE3B]=0
+    product=0 if kind in (0,2) else 64*255
+    if use_cache:memory[destination:destination+4]=product.to_bytes(4,'little')
+    memory[0x7FFE:0x8000]=bytes((255,63))
+    start=cached if use_cache else entry
+    cpu=Simulator(memory)
+    cpu.registers[:]=get_registers(dict(PC=start,SP=0x7FFE,HL=0x1357,DE=0x247A,
+        BC=0x36C9,AF=0x5A5C,IX=0x2468,IY=0x5C3A,R=initial_r),None,False)
+    m1=0;product_start_m1=product_start_r=None;product_seen=False
+    product_name=('Top','Bottom','Left','Right')[kind]
+    product_entry=symbols['Map.Compute'+product_name+'ClipProduct.Entry']
+    assert memory[entry]==0xCD and int.from_bytes(memory[entry+1:entry+3],'little')==product_entry
+    # Подсчёт выборок M1 по реально достигнутым опкодам, повторные DD/FD и запись LD R,A не допускаются.
+    for _ in range(10000):
+     pc=cpu.registers[PC]
+     if pc==0x3FFF:break
+     if not use_cache and pc==product_entry:
+      assert product_start_m1 is None and m1==1
+      product_start_m1,product_start_r=m1,cpu.registers[R]
+     if not use_cache and pc==cached and not product_seen:
+      assert product_start_m1 is not None
+      own_m1=m1-product_start_m1
+      assert cpu.registers[R]==refresh(product_start_r,own_m1)
+      if cpu.registers[R]!=product_start_r:product_changed.add(kind)
+      product_rows.append(dict(kind=kind,entry=product_entry,caller_entry=entry,
+          return_pc=cached,initial_R=product_start_r,final_R=cpu.registers[R],observed_M1=own_m1))
+      product_seen=True
+     first,second=memory[pc],memory[(pc+1)&65535]
+     assert (first,second)!=(0xED,0x4F)
+     assert not (first in (0xDD,0xFD) and second in (0xDD,0xFD,0xED))
+     m1+=2 if first in (0xCB,0xED,0xDD,0xFD) else 1
+     cpu.run()
+    else:raise AssertionError(('Не завершилось пересечение',kind,use_cache))
+    assert cpu.registers[R]==refresh(initial_r,m1)
+    assert cpu.registers[SP]==0x8000 and cpu.registers[R]&128==initial_r&128
+    assert memory[0xDE3B]==2 and memory[0xDE2F:0xDE39]==points
+    expected=((0,0),(255,255),(0,0),(255,255))[kind]
+    assert tuple(memory[0xF900:0xF902])==expected
+    assert memory[destination:destination+4]==product.to_bytes(4,'little')
+    assert product_seen == (not use_cache)
+    if cpu.registers[R]!=initial_r:changed.add((kind,use_cache))
+    rows.append(dict(kind=kind,entry=start,cached=use_cache,initial_R=initial_r,
+                     final_R=cpu.registers[R],observed_M1=m1,output_point=list(expected)))
+ assert changed=={(kind,cached) for kind in range(4) for cached in (False,True)}
+ assert product_changed==set(range(4)) and len(product_rows)==8
+ result=dict(passed=True,method='original_four_intersections_refresh_witnesses',cases=len(rows),profiles=rows,
+     product_helper_profiles=product_rows,product_helper_cases=8,
+     all_four_product_helpers_have_changed_R_witness=True,
+     outer_CALL_excluded_from_product_M1=True,
+     original_disk_sha256=manifest['sha256'],original_physical_files_checked=[4,7],
+     all_eight_entries_have_changed_R_witness=True,exact_R_from_observed_opcode_prefix_M1_checked=True,
+     original_default_bounds_only=True,points=[0,0,64,64],
+     all_coordinate_register_and_mutable_bound_combinations_proved=False,
+     whole_RAM_write_sequence_T_or_hardware_bus_proved=False,
+     original_children_executed=True,IRQ_executed=False,assembly_executed=False,native_execution=False)
+ target=ROOT/'Tools/Disasm/Reports/ClipIntersectionRefreshWitnessVerification.json'
+ target.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+ print(json.dumps(dict(passed=True,cases=len(rows),M1=sorted({row['observed_M1'] for row in rows}))))
+
+
+if __name__=='__main__':
+ if '--refresh-witness' in sys.argv:refresh_witness()
+ else:main('--configured' in sys.argv)

@@ -5,6 +5,8 @@ from CheckEnvironmentRows import reference as printed_rows
 from CheckScrollBodyClear import rectangle
 from CheckScreenUpdate import pointer_image
 from skoolkit.simutils import PC,SP
+from CheckActionParameterActivation import RecordedBanks
+from ReferenceControlsPointRespawn import refresh
 
 
 class Keys(Trace):
@@ -20,6 +22,19 @@ def main():
  key_delay=next(i['address'] for i in rows if 0xA116<=i['address']<0xA163 and i['operation']=='HALT')
  modes={False:(0x6AEC,0x6B2C,0x6B84,0x6BA5,41,0x6B23,0x6B95,0x9728,0x99AE,13,66,12),
   True:(0x759C,0x75DC,0x7616,0x7637,42,0x75D3,0x7627,0x9736,0x99C8,43,110,26)}
+ # Проверка внутреннего SelectValue при TopRow.L=FF до любых PUSH, обоих обработчиков и всех пар F/TopRow.H.
+ for game in (False,True):
+  start,select,redraw,draw,key,top,hover,values,records,length,column,limit=modes[game]
+  f=Fixture(base,memory_type=RecordedBanks);m=f.memory;s0=f.sim;r=s0.registers;f.trace.writes.clear();m[top]=255
+  for flags in range(256):
+   for high in range(256):
+    m[top+1]=high;m[hover]=flags^high;r[:]=f.initial;r[0]=flags^high;r[1]=flags
+    r[14]=flags^high;r[15]=flags;r[26]=high&1;r[27]=high%3;before=r.copy()
+    m.writes=[];m.recording=True;s0.run(start=select,stop=0x3FFF);m.recording=False
+    assert r[:2]==[0,0x50|(flags&1)]
+    assert all(r[i]==before[i] for i in (*range(2,12),14,*range(16,24),26,27))
+    assert r[SP]==0x8000 and r[15]==refresh(before[15],3) and not m.writes and not f.trace.writes
+    counts['select_ff_guard']+=1
  def prepare(game,selector=1,index=0,page=0x10):
   start,select,redraw,draw,key,top,hover,values,records,length,column,limit=modes[game]
   f=Fixture(base,page=page);f.trace=Keys(f.sim);f.sim.set_tracer(f.trace);m=f.memory;r=f.sim.registers;p=0xF0FD+16*key
@@ -150,6 +165,56 @@ def main():
      assert m[top]+256*m[top+1]==index and r[6]*256+r[7]==index and r[:2]==[0,0x44] and m[0x6307:0x6309]==[50,80]
      assert bytes(m[0x4000:0x6000])==bytes(pointer_image(frame,station,50,80)) and bytes(m.banks[7][6144:6912])==attributes and poll==presses+1
      assert f.wakes==steps and m.o7ffd==m[0x6306]==0x10;counts['scroll_actions']+=1;counts['scroll_steps_and_real_im2']+=steps
+ # Проверка нижнего края с геометрией сохранённой записи установок игры.
+ start,select,redraw,draw,key,top,hover,values,records,length,column,limit=modes[True]
+ labels=station[0x7F3C:0x80E4].removesuffix(b'\n').split(b'\r')
+ assert labels[0]==b'' and len(labels)==44 and labels[29:]==[b' ']*15
+ assert labels[27].decode('cp866')=='Передний и задний вид'
+ assert labels[28].decode('cp866')=='Защита от косм.излучений'
+ f=prepare(True,selector=0);m=f.memory;r=f.sim.registers;item=0xF0FD+16*key
+ geometry=bytes(m[item+8:item+12]);assert geometry==bytes((5,2,17,12))
+ put(m,item,geometry);put(m,top,(16,0));m[hover]=255
+ for a in (0x66EC,0x6585,0x66ED,0x658A):m[a]=0
+ def reenter():
+  put(m,0x7FFE,(255,63));r[SP]=0x7FFE
+ def select_input(selector):
+  r[0]=selector;r[4:6]=[0,key];r[6:8]=list(draw.to_bytes(2,'big'));r[8:10]=list(item.to_bytes(2,'big'))
+ m[0x9B16]=1;run(f,draw);m[0x9B16]=0
+ assert (m[0xAEAB],m[0x7621])==(85,11),(m[0xAEAB],m[0x7621])
+ reenter();select_input(0);poll=[];redraw_indices=[]
+ def limit_observer(f,pc):
+  if pc==0xA20A:
+   poll.append(r[6]*256+r[7]);m[0x66ED]=int(len(poll)<=3);m[0x6308]=99
+  if pc==0x7648:redraw_indices.append(r[6]*256+r[7])
+ run(f,start,observer=limit_observer)
+ assert poll==[16,17,17,17] and redraw_indices==[17] and bytes(m[top:top+2])==b'\x11\0'
+ for y,expected in ((107,255),(99,9)):
+  reenter();select_input(1);m[0x6308]=y;run(f,0x7599);assert m[hover]==expected,(y,m[hover])
+ old_caption=bytes(m[values:values+length+1]);assert old_caption[26]!=ord('Z')
+ reenter();select_input(1);run(f,start,(ord('Z'),))
+ assert bytes(m[values:values+length+1])==old_caption[:26]+b'Z'+old_caption[27:]
+ expected_records,_=parsed(m,values,records,length)
+ reenter();select_input(0);m[0x6308]=19;run(f,start)
+ assert bytes(m[records:records+2*length])==expected_records
+ counts['game_default_geometry_last_row']=1
+ # Проверка последней физической записи, общий парсер разделяет её два счётчика LANG.
+ f=prepare(True,selector=0);m=f.memory;r=f.sim.registers
+ assert bytes(m[0x9A1C:0x9A1E])==b'\0\0'
+ r[2:6]=[*values.to_bytes(2,'big'),*records.to_bytes(2,'big')]
+ run(f,0xA163)
+ assert m[values+42]==ord('0')
+ put(m,0x9A1C,(2,1));reenter();select_input(0);put(m,0x6307,(50,3))
+ run(f,start)
+ assert bytes(m[0x9A1C:0x9A1E])==b'\0\1' and m[values+42]==ord('0')
+ counts['resource_group_reapplied_record_preserved']=1
+ # Назначение свободной клавиши 4 строке «Набор скорости» штатным редактором.
+ f=prepare(True,index=8);m=f.memory;r=f.sim.registers
+ assert bytes(m[0x99D8:0x99DA])==b'\x7F\x01'
+ run(f,start,(ord('4'),))
+ assert m[values+8]==ord('4') and bytes(m[0x99D8:0x99DA])==b'\x7F\x01'
+ reenter();select_input(0);put(m,0x6307,(50,3));run(f,start)
+ assert bytes(m[0x99D8:0x99DA])==b'\xF7\x08'
+ counts['speed_up_key_4_saved_on_close']=1
  # Проверка обязательного раннего Carry после настоящей перерисовки, значение и верхний индекс не редактируются.
  for game in (False,True):
   start,select,redraw,draw,key,top,hover,values,records,length,column,limit=modes[game]
@@ -184,8 +249,11 @@ def main():
  report=dict(passed=True,cases_by_path=dict(counts),real_keyboard_matrix_and_lookup_executed=True,keyboard_delay_irq_and_time_not_modelled=True,
   caption_irq_real_and_music_disabled=True,all_256_old_toggle_bytes=True,all_physical_non_caps_keys=True,
   ink_paper_range_0_7_and_bright_range_0_1_checked=True,caps_shift_rejected=True,independent_full_scroll_bitmap_and_parsed_records=True,
-  game_template_43_labels_but_scroll_last_index_26=True,repaint_physical_tail_shift_included=True,single_pressed_key_at_a_time=True,
-  independent_whole_edit_redraw_bitmap=False,keyboard_delay_irq_executed=False,iff_remains_enabled_in_model=True,
+  game_template_43_labels_but_scroll_last_index_26=True,game_default_geometry_last_top_row=17,
+  game_default_geometry_last_selectable_row=26,repaint_physical_tail_shift_included=True,single_pressed_key_at_a_time=True,
+  independent_whole_edit_redraw_bitmap=False,keyboard_delay_irq_executed=False,iff_remains_enabled_in_interactive_paths=True,
+  select_ff_all_f_and_top_high_bytes=True,select_ff_exact_refresh_m1=3,
+  select_ff_no_cpu_writes_or_out=True,select_ff_i_im_iff_preserved=True,select_ff_both_iff_without_irq=True,
   both_dynamic_stack_frames_verified=True,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/SettingsPanelActionsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 

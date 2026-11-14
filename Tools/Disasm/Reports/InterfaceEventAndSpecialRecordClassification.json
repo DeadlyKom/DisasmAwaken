@@ -15,5 +15,7 @@
   "invalid_pair_gameplay_proved": false,
   "cf08_reclassified": false,
   "assembly_executed": false,
-  "native_execution": false
+  "native_execution": false,
+  "special_player_model_offset_reader": 59959,
+  "player_target_effect_profiles": 512
 }

@@ -25,3 +25,8 @@
 [Извлечённый результат](../Tools/Disasm/Extracted/Deleted/00__XTime15.B.unpacked.bin)
 сохранён отдельно. [Отчёт](../Tools/Disasm/Reports/DeletedXTimeArchiveVerification.json)
 содержит границы и SHA256. Каталог и сектора образа сохранены в прежнем виде.
+
+В следующих выделенных секторах той же записи расположен отдельный
+[архивный загрузчик со строкой AWAKEN](DeletedArticleLoader.md).
+Его три потока используют формат `hr21` и проверяются независимо от
+распаковщика ZXTime.

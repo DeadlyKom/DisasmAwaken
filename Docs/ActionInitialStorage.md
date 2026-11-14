@@ -31,9 +31,10 @@
 
 [InsertRenderQueue](../Source/Action/InsertRenderQueue.asm) использует 18 мест
 по 14 байтов в 8F00..8FFB. При FreeOffset=FC вставка отказывается от создания
-узла. Последние четыре байта 8FFC..8FFF сохранены отдельно, их начальное
-назначение не установлено. В образе записаны исходные байты, которые не
-задаются заново как 18 готовых узлов.
+узла. Последние четыре байта 8FFC..8FFF входят в авторский резерв
+страницы L9D. Они лежат за границей 18 полных узлов.
+[Хвост L9D](../Source/Action/Resources/RenderQueuePageTail.bin) ·
+[Сверка авторского размещения](../Tools/Disasm/Reports/ActionArchivedWorkspaceVerification.json)
 
 [RenderInsideRecords](../Source/Action/RenderInsideRecords.asm) и
 [RenderClippedRecords](../Source/Action/RenderClippedRecords.asm) копируют

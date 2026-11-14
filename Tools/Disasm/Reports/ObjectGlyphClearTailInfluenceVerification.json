@@ -1,0 +1,176 @@
+{
+  "passed": true,
+  "total_cases": 2688,
+  "cases_by_mode": {
+    "ordinary": 2680,
+    "forced": 8
+  },
+  "all_accepted_positions_each_20_pointer_entries": false,
+  "all_control_bytes": true,
+  "physical_shape_count": 12,
+  "physical_phase_count": 96,
+  "physical_mask_records": 8,
+  "original_resource_bytes_checked": 672,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "maximum_additional_stack_bytes": 2,
+  "type_domain": [
+    0,
+    19
+  ],
+  "types_outside_table_proved": false,
+  "full_e291_proved": false,
+  "boundary_positions_only": true,
+  "nonzero_clear_tail_fixture": true,
+  "clear_tail_fixture_bytes": 32,
+  "clear_tail_fixture_values": [
+    [
+      106,
+      159,
+      212,
+      9
+    ],
+    [
+      143,
+      196,
+      249,
+      46
+    ],
+    [
+      180,
+      233,
+      30,
+      83
+    ],
+    [
+      217,
+      14,
+      67,
+      120
+    ],
+    [
+      254,
+      51,
+      104,
+      157
+    ],
+    [
+      35,
+      88,
+      141,
+      194
+    ],
+    [
+      72,
+      125,
+      178,
+      231
+    ],
+    [
+      109,
+      162,
+      215,
+      12
+    ]
+  ],
+  "phase_index_evidence": {
+    "phase_multiplier": 6,
+    "index_shared_by_shape_and_clear_mask": true,
+    "instructions_checked_against_original": [
+      {
+        "address": 58853,
+        "operation": "EXX",
+        "hex": "d9"
+      },
+      {
+        "address": 58854,
+        "operation": "LD A,E",
+        "hex": "7b"
+      },
+      {
+        "address": 58855,
+        "operation": "AND #07",
+        "hex": "e607"
+      },
+      {
+        "address": 58857,
+        "operation": "ADD A,A",
+        "hex": "87"
+      },
+      {
+        "address": 58858,
+        "operation": "LD E,A",
+        "hex": "5f"
+      },
+      {
+        "address": 58859,
+        "operation": "ADD A,A",
+        "hex": "87"
+      },
+      {
+        "address": 58860,
+        "operation": "ADD A,E",
+        "hex": "83"
+      },
+      {
+        "address": 58861,
+        "operation": "EXX",
+        "hex": "d9"
+      },
+      {
+        "address": 58862,
+        "operation": "LD C,A",
+        "hex": "4f"
+      },
+      {
+        "address": 58863,
+        "operation": "LD B,#00",
+        "hex": "0600"
+      },
+      {
+        "address": 58890,
+        "operation": "ADD HL,BC",
+        "hex": "09"
+      },
+      {
+        "address": 58891,
+        "operation": "PUSH HL",
+        "hex": "e5"
+      },
+      {
+        "address": 58892,
+        "operation": "LD HL,#E68D",
+        "hex": "218de6"
+      },
+      {
+        "address": 58895,
+        "operation": "ADD HL,BC",
+        "hex": "09"
+      },
+      {
+        "address": 58896,
+        "operation": "LD B,(HL)",
+        "hex": "46"
+      },
+      {
+        "address": 58897,
+        "operation": "INC HL",
+        "hex": "23"
+      },
+      {
+        "address": 58898,
+        "operation": "LD C,(HL)",
+        "hex": "4e"
+      },
+      {
+        "address": 58899,
+        "operation": "POP HL",
+        "hex": "e1"
+      }
+    ]
+  },
+  "global_tail_purpose_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

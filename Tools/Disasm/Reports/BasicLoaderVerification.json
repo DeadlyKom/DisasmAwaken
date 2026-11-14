@@ -6,5 +6,20 @@
   "disk_read_performed": false,
   "source_sha256": "202672e6e050bc142cd4c3592efe18efb3740892e710fd3921f5050385886552",
   "passed": true,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "exact_R_M1": 12,
+  "full_RAM_and_write_counts_compared": true,
+  "physical_sectors_compared_with_original_TRD": true,
+  "only_CPU_writes": [
+    [
+      24573,
+      0
+    ],
+    [
+      24574,
+      101
+    ]
+  ],
+  "external_call_stack_abandoned": true,
+  "native_execution": false
 }

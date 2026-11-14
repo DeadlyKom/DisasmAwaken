@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "layout": {
+    "exact_bytes_per_copy": 113,
+    "copies": [
+      {
+        "source": "awk1.trd:DATAS.C",
+        "saved_points": 40074,
+        "route_points": 40125,
+        "route_order": 40176
+      },
+      {
+        "source": "awk5.trd:SP.C",
+        "saved_points": 40072,
+        "route_points": 40123,
+        "route_order": 40174
+      },
+      {
+        "source": "Awakenv02:ACTION",
+        "saved_points": 40076,
+        "route_points": 40127,
+        "route_order": 40178
+      },
+      {
+        "source": "Awakenv02:STATIONF",
+        "saved_points": 39178,
+        "route_points": 39229,
+        "route_order": 39280
+      }
+    ]
+  },
+  "consumers": {
+    "source": "awk6.trd:KARTA.a",
+    "saved_lookup": 50191,
+    "saved_lookup_bytes": 59,
+    "route_dispatch": 49472,
+    "route_consumer": 53676,
+    "saved_lookup_base_before_record": [
+      39171,
+      39173
+    ],
+    "first_saved_points": [
+      39176,
+      39178
+    ],
+    "route_points": [
+      39227,
+      39229
+    ],
+    "route_order": [
+      39278,
+      39280
+    ]
+  },
+  "distance": {
+    "entry": 59322,
+    "archived_return": 59440,
+    "current_write": 59440,
+    "current_return": 59443,
+    "destination": 39176,
+    "archived_root_entry": 59445,
+    "current_root_entry": 59448,
+    "profiles": 450,
+    "extra_tstates": 13,
+    "other_fixed_ram_preserved_relative_to_archive": true
+  },
+  "assembly_executed": false,
+  "native_execution": false
+}

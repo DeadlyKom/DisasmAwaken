@@ -1,8 +1,9 @@
 {
   "passed": true,
-  "total_cases": 23297,
+  "total_cases": 24577,
   "cases_by_entry": {
     "CEA4": 20736,
+    "CEB5": 1280,
     "CEB7": 1280,
     "CECF": 1280
   },
@@ -32,8 +33,13 @@
   "count_128_skips": true,
   "count_16_nonprogress": true,
   "other_counts_outside_contract": true,
-  "first_unused_pair_address": "CEB5",
-  "unclassified_but_executed_bytes": 24,
+  "direct_prefix_entry": "CEB5",
+  "direct_prefix_writes": 31,
+  "computed_jump_never_selects_CEB5_or_CEB6": true,
+  "direct_prefix_game_caller_proved": false,
+  "direction_address": 53643,
+  "separate_mode_address": 53644,
+  "direction_and_separate_mode_differ_in_every_fill_case": true,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

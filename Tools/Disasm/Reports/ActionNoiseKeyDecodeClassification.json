@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 1,
+  "resources": 1,
+  "verification": "ActionNoiseStationCycleVerification.json",
+  "bank": 0,
+  "read_pc": 764,
+  "native_alias_reachability_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

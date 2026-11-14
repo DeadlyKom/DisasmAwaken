@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "total_cases": 512,
+  "all_initial_c_bytes": true,
+  "entry_stack_locations": [
+    32766,
+    49150
+  ],
+  "child_executed": true,
+  "independent_prelude_and_postlude": true,
+  "exact_registers_except_r_t": true,
+  "full_ram_and_write_multiplicity_checked": true,
+  "restore_sp_operand_preserved_until_generated_execution": true,
+  "stack_depth_below_entry_sp": 12,
+  "generated_code_executed": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

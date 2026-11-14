@@ -16,17 +16,23 @@ def compose(scene,model,flags,angle):
    for column,(source,sign) in enumerate(selection):output[row][column]=(scene[row][source]*sign)&255
   last_negated=(scene[2][2] if angle in (64,128) else scene[2][0])
   f=0x54 if angle==0 else arithmetic(0,last_negated,True)[1]
-  return dict(output=output,branch='quadrant'+str(angle//64),af=(output[2][1],f))
+  return dict(output=output,branch='quadrant'+str(angle//64),af=(output[2][1],f),m1=(31,38,45,39)[angle//64])
  # Последовательность двух отражаемых сложений сохраняется, одноосная ветвь пропускает средний член.
+ extras=[]
+ def fix(a,b):
+  # Расчёт стоимости отражения переполнения, NEG и дополнительного DEC для обёрнутого 80.
+  value,flags=arithmetic(a,b)
+  extras.append(0 if not flags&4 else 3+int(value==128))
+  return corrected(a,b)
  columns=2 if one else 3
  for column in range(columns):
   for row in range(3):
    first=product(scene[row][0],model[0][column])[0]
-   partial=first if one else corrected(first,product(scene[row][1],model[1][column])[0])[0]
+   partial=first if one else fix(first,product(scene[row][1],model[1][column])[0])[0]
    last,index,table_value=product(scene[row][2],model[2][column])
-   output[row][column],f=corrected(last,partial)
+   output[row][column],f=fix(last,partial)
  if one:
   for row in range(3):output[row][2]=scene[row][1]
   final_af=(scene[2][1],0x18|(f&1))
  else:final_af=(output[2][2],f)
- return dict(output=output,branch='one_axis' if one else 'general',af=final_af,hl=0xC300|index,bc=model[0][columns-1]*256+model[1][columns-1],de=model[2][columns-1]*256+table_value,ixh=partial,stack_return=0xD693 if one else 0xD72D)
+ return dict(output=output,branch='one_axis' if one else 'general',af=final_af,hl=0xC300|index,bc=model[0][columns-1]*256+model[1][columns-1],de=model[2][columns-1]*256+table_value,ixh=partial,stack_return=0xD693 if one else 0xD72D,m1=(259 if one else 541)+sum(extras))

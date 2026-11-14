@@ -1,8 +1,8 @@
 {
   "passed": true,
-  "total_cases": 3398,
+  "total_cases": 3978,
   "profiles": {
-    "flat": 480,
+    "flat": 1060,
     "prepared": 2918
   },
   "boundary": 53801,
@@ -14,6 +14,8 @@
   "modes_0_to_4": true,
   "convex_positive_winding_profile": true,
   "whole_polygon_fill_proved": false,
+  "flat_counts_3_to_60_both_initial_Carry": true,
+  "closed_AF_and_alternate_AF_formulas_checked": true,
   "assembly_executed": false,
   "irq_executed": false,
   "native_execution": false

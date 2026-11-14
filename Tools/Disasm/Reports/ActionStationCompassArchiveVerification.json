@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "caption_cp866_hex": "8d809192908e898a80208a8e8e9084888d8092208a8e8c8f809180208d80209192808d96889e",
+  "source": "awk1.trd:SLOWPRO.a:STATCOMPOS",
+  "station_generator": "awk1.trd:OBJGENER.a:STATGEN_",
+  "authored_addresses": {
+    "SSZ": 39806,
+    "TTX": 39813,
+    "TTY": 39812,
+    "TTZ": 39814,
+    "NOSTAT": 39810,
+    "SSX": 39800,
+    "SSY": 39803
+  },
+  "matched_station_vector_bytes": 9,
+  "station_vector_hex": "000000000000fff7ff",
+  "archived_sp_file_offset": 3579,
+  "archived_sp_physical_address": 28155,
+  "archived_execution_address": 27582,
+  "current_execution_address": 27791,
+  "matched_code_bytes": 71,
+  "original_archived_code_hex": "3a829bb7c02a799b22d3af2a7c9b22e1af2a7f9b22f4afed73e16bfd21e06bc3ceaf310000e82ab8d97dcb2c1fcb2c1f32849b2ac6d77dcb2c1fcb2c1f32839b3aa5d732859bc9",
+  "original_current_code_hex": "3a829bb7c02a799b2248af2a7c9b2256af2a7f9b2269afed73b26cfd21b16cc343af310000e82ab6d97dcb2c1fcb2c1f32859b2ac4d77dcb2c1fcb2c1f32849b3aa3d732869bc9",
+  "operand_replacements": [
+    [
+      9,
+      45011,
+      44872,
+      "Input0"
+    ],
+    [
+      15,
+      45025,
+      44886,
+      "Input1"
+    ],
+    [
+      21,
+      45044,
+      44905,
+      "Input2"
+    ],
+    [
+      25,
+      27617,
+      27826,
+      "SavedCpuSP"
+    ],
+    [
+      29,
+      27616,
+      27825,
+      "RestoreThirdGlyphStack"
+    ],
+    [
+      32,
+      45006,
+      44867,
+      "ComputePatchedVector"
+    ],
+    [
+      39,
+      55736,
+      55734,
+      "Output0"
+    ],
+    [
+      49,
+      39812,
+      39813,
+      "Third.X"
+    ],
+    [
+      52,
+      55238,
+      55236,
+      "Output1"
+    ],
+    [
+      62,
+      39811,
+      39812,
+      "Third.Y"
+    ],
+    [
+      65,
+      55205,
+      55203,
+      "Output2.High"
+    ],
+    [
+      68,
+      39813,
+      39814,
+      "Third.SignSource"
+    ]
+  ],
+  "old_sp_destination_layout_differs": true,
+  "identical_after_explicit_operand_changes": true,
+  "third_indicator_role": "station_compass",
+  "exact_spatial_units_proved": false,
+  "full_native_compass_behavior_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

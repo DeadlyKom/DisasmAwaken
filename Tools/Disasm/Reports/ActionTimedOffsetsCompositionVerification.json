@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "original_action_sha256": "63f2ac2717bb7f630b25ec3cb92671e5f78f2174f36d7370d1bae39baf3fc39a",
+  "total_cases": 49152,
+  "paths": {
+    "F66A/zero_unchanged/preserve": 12,
+    "F66A/zero_unchanged/increment": 24,
+    "F66A/zero_unchanged/marker_return": 36,
+    "F66A/expired_reuse/direct_return": 6144,
+    "F66A/halve/preserve": 6084,
+    "F66A/halve/increment": 3096,
+    "F66A/halve/marker_return": 9180,
+    "F3A1/continue/preserve": 6120,
+    "F3A1/continue/increment": 3096,
+    "F3A1/continue/marker_return": 9216,
+    "F3A1/state_10/preserve": 2040,
+    "F3A1/state_10/increment": 1032,
+    "F3A1/state_10/marker_return": 3072
+  },
+  "witnesses": {
+    "decay_0": {
+      "scale_in": 0,
+      "scale_before_common": 0,
+      "scale_out": 1,
+      "final_AF": 33602
+    },
+    "decay_1": {
+      "scale_in": 1,
+      "scale_before_common": 0,
+      "scale_out": 1,
+      "final_AF": 28964
+    },
+    "decay_2": {
+      "scale_in": 2,
+      "scale_before_common": 1,
+      "scale_out": 2,
+      "final_AF": 45378
+    },
+    "pattern_active": {
+      "prefix_AF_prime": 81,
+      "final_AF_prime": 64,
+      "final_AF": 45243
+    },
+    "pattern_marker": {
+      "prefix_AF_prime": 81,
+      "final_AF_prime": 81,
+      "final_AF": 32834
+    }
+  },
+  "full_external_return": true,
+  "actual_mark_reuse_and_common_tail_children": true,
+  "exact_registers_including_R": true,
+  "all_eight_banks_and_write_multiplicity": true,
+  "all_scale_bytes_for_decay": true,
+  "all_phase1_bytes_for_pattern": true,
+  "timer_samples": [
+    0,
+    1,
+    2,
+    255
+  ],
+  "class_samples": [
+    3,
+    20
+  ],
+  "marker_and_active": true,
+  "both_input_carries": true,
+  "limit_samples": [
+    0,
+    3,
+    255
+  ],
+  "initial_high_scale": 128,
+  "correlated_pattern_phase2_and_low_scale": true,
+  "all_input_products_exhausted": false,
+  "no_OUT": true,
+  "exact_T_claimed": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

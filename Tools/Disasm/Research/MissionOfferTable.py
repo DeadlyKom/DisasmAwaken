@@ -1,6 +1,7 @@
 """Шестнадцать исходных байтов состояния, четыре промежуточных слова Unknown, MessageIndex задаёт сообщение расшифровки."""
 PATH='Source/Station/Data/MissionOffer.asm'
 FIELDS=('FirstWord','SecondWord','UnknownWord04','UnknownWord06','UnknownWord08','UnknownWord0A','Reward','RequiredTonnage','MessageIndex')
+CONDITIONAL_KEY_COMMENTS={'UnknownWord04': 'при Cursor=99A4 первое слово ключа CenterContractMap, исходное назначение неизвестно', 'UnknownWord06': 'при Cursor=99A4 второе слово ключа CenterContractMap, исходное назначение неизвестно', 'UnknownWord08': 'при Cursor=99A5 первое слово ключа CenterContractMap, исходное назначение неизвестно', 'UnknownWord0A': 'при Cursor=99A5 второе слово ключа CenterContractMap, исходное назначение неизвестно'}
 
 
 def render(source):
@@ -10,7 +11,7 @@ def render(source):
  symbols={'MissionOffer.Entry':0x98B0}
  for i,(field,value) in enumerate(zip(FIELDS,values)):
   line='                    #'+format(value,'04X' if i<7 else '02X')+(',' if i<8 else '')
-  lines.append(line.ljust(80)+'; '+field+', исходное значение поля')
+  lines.append(line.ljust(80)+'; '+field+', '+CONDITIONAL_KEY_COMMENTS.get(field,'исходное значение поля'))
   symbols['MissionOffer.Entry.'+field]=0x98B0+(2*i if i<7 else 14+i-7)
  lines+=['                }','                assert $ == #98C0','                endmodule']
  return '\n'.join(lines)+'\n',symbols

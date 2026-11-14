@@ -29,13 +29,15 @@ def profiles():
         yield ('left','right')[randomizer.randrange(2)],(-1,1)[randomizer.randrange(2)],x,y,randomizer.randrange(8,248),randomizer.randrange(96),randomizer.randrange(256),randomizer.randrange(65536),randomizer.randrange(65536),randomizer.randrange(256),'mixed_clipped_spans'
 
 
-def pixel_oracle(clip,direction,x,y,curve,row,threshold,pattern,background,initial_raster=None):
+def pixel_oracle(clip,direction,x,y,curve,row,threshold,pattern,background,initial_raster=None,end_state=None):
     raster=[background]*3072 if initial_raster is None else list(initial_raster)
     fill=pattern&255;toggle=pattern>>8
     left,right=(7,curve) if clip=='left' else (curve,248);counter=(-x)&255;error=0;rows=0;transitions=0
     def left_byte():return 1 if left==7 else left//8
     def draw():
         nonlocal fill,row,rows
+        # Сохранение адреса последнего рисуемого правого края отдельно от последующего переноса строки.
+        if end_state is not None:end_state['last_right_low']=(32*row+right//8)&255
         for pixel in range(left+1,right):
             index=row*32+pixel//8;bit=128>>(pixel&7)
             raster[index]=(raster[index]&(~bit&255))|(fill&bit)
@@ -80,6 +82,7 @@ def pixel_oracle(clip,direction,x,y,curve,row,threshold,pattern,background,initi
             difference()
             if not draw():reason='vertical';break
         else:raise AssertionError('скалярный проход не завершился')
+    if end_state is not None:end_state.update(error=error,counter=counter,y=y)
     return raster,fill,rows,reason,transitions
 
 
@@ -102,7 +105,8 @@ def main():
             'IX':pattern,'IY':0x5C3A,'SP':stack,'PC':entry},None,False)
         initial[14],initial[15],initial[26],initial[27]=serial&255,serial&255,serial&1,serial%3
         local=evaluate_clipped_half(initial,curve,cy,x,y,direction,clip);wanted=local['registers'];expected=[bytearray(bank) for bank in memory.banks]
-        raster,fill,rows,reason,changed=pixel_oracle(clip,direction,x,y,curve,cy,threshold,pattern,background)
+        scalar_state={}
+        raster,fill,rows,reason,changed=pixel_oracle(clip,direction,x,y,curve,cy,threshold,pattern,background,end_state=scalar_state)
         path=local['paths'][0]
         assert wanted[9]==fill and path['rows']==rows and path['reason']==reason and path['transitions']==changed,(serial,'independent_scalar_geometry',path,rows,reason,changed)
         expected[2][:3072]=bytes(raster)
@@ -115,6 +119,17 @@ def main():
         memory.recording=False;compared=(*range(15),*range(16,25),26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared),(serial,hex(entry),x,y,curve,cy,threshold,path,
             [(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
+        # Проверка переставленного набора по независимой причине выхода и состоянию скалярной рекурсии.
+        swapped=reason in ('counter_wrap_fast','left_transition_same_byte')
+        bc,de,hl=(2,4,6) if swapped else (18,20,22)
+        assert simulator.registers[bc:bc+2]==[255,scalar_state['counter']]
+        assert simulator.registers[de:de+2]==[0,scalar_state['y']]
+        error=scalar_state['error']&65535
+        assert simulator.registers[hl:hl+2]==[error>>8,error&255]
+        address_d=20 if swapped else 4
+        assert simulator.registers[address_d]==scalar_state['last_right_low']
+        assert simulator.registers[0:2]==initial[0:2] and simulator.registers[16]==threshold
+        assert simulator.registers[9]==(initial[9]^(initial[8] if rows&1 else 0))
         nonpixel=[]
         for bank,offset,value in memory.writes:
             if bank==2 and offset<3072:continue
@@ -132,6 +147,7 @@ def main():
         exact_registers_except_R=True,refresh_R_proved=False,all_physical_ram_bytes_proved=True,
         all_nonpixel_values_and_write_multiplicity_proved=True,independent_scalar_interval_oracle=True,
         original_EXX_active_exit_preserved=True,pixel_write_multiplicity_proved=False,maximum_additional_stack_bytes=6,
+        direct_arithmetic_register_set_and_last_drawn_right_low_checked=True,
         no_port_or_page_writes=True,complete_input_product_exhausted=False,
         assembly_executed=False,irq_executed=False,native_execution=False,timing_proved=False)
     (ROOT/'Tools/Disasm/Reports/ControlsClippedCircleHalfVerification.json').write_text(json.dumps(report,indent=2)+'\n','utf-8')

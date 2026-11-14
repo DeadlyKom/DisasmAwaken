@@ -31,5 +31,20 @@
   "assembly_executed": false,
   "irq_executed": false,
   "native_execution": false,
-  "timing_proved": false
+  "timing_proved": false,
+  "return_only_target_composition": {
+    "passed": true,
+    "total_cases": 16384,
+    "original_fixed_bank_RET_target": "6D05",
+    "target_code_injected": false,
+    "all_64_initial_pages": true,
+    "full_M1_count": 26,
+    "full_outer_return": true,
+    "IY_remains_A783_not_initial_IY": true,
+    "exact_registers_ram_writes_and_ports": true,
+    "game_callback_semantics_proved": false,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  }
 }

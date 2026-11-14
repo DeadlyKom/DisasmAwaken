@@ -26,6 +26,12 @@
   "BC_DE_HL_SP_and_preserved_registers_checked": true,
   "all_AF_and_alternate_AF_proved": true,
   "refresh_and_timing_independently_checked": false,
+  "exact_refresh_R_checked": true,
+  "full_M1_count_compared_not_only_R_modulo_128": true,
+  "all_256_initial_R_values": true,
+  "observed_M1_min": 7,
+  "observed_M1_max": 3341,
+  "exact_T_checked": false,
   "assembly_executed": false,
   "irq_executed": false,
   "native_execution": false

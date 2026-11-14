@@ -26,12 +26,15 @@
 Адреса исходных полей, изменяемых операндов и шести верхних байтов не менялись.
 В Includes/Variables используются псевдонимы существующих байтов,
 в Includes/Const исходные целевые адреса и пределы 2E/2F.
-Игровые значения FirstValue, ThirdValue и SignedWord пока не установлены.
+SpeedWord хранит знаковую скорость, она масштабирует три компоненты
+движения. FirstValue хранит [уровень защиты SHILD](ActionPanelPhysicalData.md).
+Физическая единица скорости и игровой смысл ThirdValue остаются
+открытыми. [Договор управления скоростью](ActionGaugeWordKeys.md)
 ThirdValue точно является операндом LD A,n по A8BB внутри
 [UpdateFrame](../Source/Action/UpdateFrame.asm), его нельзя трактовать
 как новый выделенный байт данных.
 
-Вторая ветвь вызывает [SelectPreferredByte](ActionPreferredByte.md), затем RRA.
+Вторая ветвь вызывает [SelectFuelStock](ActionPreferredByte.md), затем RRA.
 Carry этого читателя равен нулю на обоих путях, поэтому в шкалу передаётся
 целая половина выбранного байта. Сами Preferred и Fallback не меняются.
 Ненулевой SecondRequest сохраняется и может допускать следующие обновления

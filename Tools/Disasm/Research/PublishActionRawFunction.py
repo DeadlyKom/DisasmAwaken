@@ -124,7 +124,7 @@ def main(facts,tag,start,end,expected_cases,allow_subrange=False,proof_tag=None)
         pending[path]=text.replace('                endif',block+'                endmodule\n\n                endif').encode('utf-8')
     path=ROOT/'Source/Files/17_ACTION.inc';text=path.read_text('utf-8');needle='                incbin "../Resources/17_ACTION/'+old_path.name+'"';assert text.count(needle)==1
     # Удаление прежнего предупреждения только у заменяемого ресурса, новые неизвестные части получают свои комментарии.
-    text=re.sub(r'(?m)^[ \t]*; Unknown, соседние байты вне доказанного входа[^\n]*\n(?='+re.escape(needle)+r')','',text)
+    text=re.sub(r'(?m)^[ \t]*; Unknown, (?:соседние байты вне доказанного входа|исходные байты вне подтверждённого прямого потока управления)[^\n]*\n(?='+re.escape(needle)+r')','',text)
     include_lines=[]
     for piece in pieces:
         include_lines.append('                assert $ == #'+format(piece['offset'],'04X'))
@@ -135,13 +135,15 @@ def main(facts,tag,start,end,expected_cases,allow_subrange=False,proof_tag=None)
                             '                incbin "../Resources/17_ACTION/'+piece['path'].rsplit('/',1)[-1]+'"']
     pending[path]=text.replace(needle,'\n'.join(include_lines)).encode('utf-8')
     if hasattr(facts,'INCLUDE_ORDER'):
-        first,second=facts.INCLUDE_ORDER
-        owners=[next(f for f in functions if f['region']=='Action' and f['name']==value) for value in (first,second)]
-        assert owners[0]['slot']==owners[1]['slot'] and owners[0]['end_offset']==owners[1]['offset']
+        owners=[next(f for f in functions if f['region']=='Action' and f['name']==value)
+                for value in facts.INCLUDE_ORDER]
+        assert all(a['slot']==b['slot'] and a['end_offset']==b['offset'] for a,b in zip(owners,owners[1:]))
         ordered=pending[path].decode('utf-8')
-        for number,value in enumerate((first,second)):
-            line='                include "../Action/'+value+'.asm"';assert ordered.count(line)==1
-            ordered=ordered.replace(line,line.ljust(80)+'; ('+str(number)+') жёсткий порядок, последовательное исполнение')
+        for number,value in enumerate(facts.INCLUDE_ORDER):
+            line='                include "../Action/'+value+'.asm"'
+            pattern=r'(?m)^'+re.escape(line)+r'(?:[ \t]+; \(\d+\) жёсткий порядок, последовательное исполнение)?$'
+            ordered,count=re.subn(pattern,line.ljust(80)+'; ('+str(number)+') жёсткий порядок, последовательное исполнение',ordered)
+            assert count==1
         pending[path]=ordered.encode('utf-8')
     prefix=re.sub(r'(?<!^)(?=[A-Z][a-z])','_',tag).upper();handler=prefix.lower()+'_name_operands'
     for filename,extra in (

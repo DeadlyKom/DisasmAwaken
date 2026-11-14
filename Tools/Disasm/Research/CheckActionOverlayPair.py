@@ -37,19 +37,26 @@ def main():
             if simulator.registers[24]==0x3FFF:break
             simulator.run()
         else:raise AssertionError(('нет возврата',first,second,model.path))
-        memory.recording=False;compared=[i for i in (*range(25),26,27) if i!=15 or not model.rendered]
+        memory.recording=False
+        # R сравнивается и после рисования, если все достигнутые дети имеют доказанный счёт M1.
+        refresh_proved=not getattr(model,'r_uncertain',False)
+        compared=[i for i in (*range(25),26,27) if i!=15 or refresh_proved]
         assert all(model.r[i]==simulator.registers[i] for i in compared),(serial,first,second,model.path,[(i,model.r[i],simulator.registers[i]) for i in compared if model.r[i]!=simulator.registers[i]])
         assert memory.banks==model.banks and Counter(memory.writes)==Counter(model.writes),(serial,'RAM',model.path)
         for page,offset,_ in memory.writes:
             if page==2 and stack-32<=offset+0x8000<stack:depth=max(depth,stack-offset-0x8000)
-        counts[model.path[-1]]+=1;r_cases+=int(not model.rendered)
+        counts[model.path[-1]]+=1;r_cases+=int(refresh_proved)
     assert sum(counts.values())==4825 and counts['inside_line'] and counts['clipped_line'] and counts['common_outside_side']
+    # Каждый сценарий использует исходный фиксированный пакет, неподтверждённых путей R быть не должно.
+    assert r_cases==len(inputs),('неподтверждённый R',r_cases,len(inputs))
     result=dict(passed=True,total_cases=sum(counts.values()),outcomes=dict(counts),
         actual_projection_pair_codes_clipping_and_XOR_raster_executed=True,
-        exact_registers_except_R_on_renderer=True,exact_R_on_nonrenderer_cases=r_cases,
+        exact_registers_including_R=True,exact_R_cases=r_cases,
+        exact_R_on_nonrenderer_cases=sum(counts.values())-counts['inside_line']-counts['clipped_line'],
         full_eight_bank_ram_and_write_multiplicity_compared=True,maximum_observed_additional_stack_bytes=depth,
         second_projection_reject_leaves_EXX_exchanged=True,all_input_products_exhausted=False,
-        renderer_R_proved=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        renderer_R_proved=True,fixed_packet=[178,0,5,0],arbitrary_polygon_streams_proved=False,
+        exact_T_claimed=False,assembly_executed=False,irq_executed=False,native_execution=False)
     path=ROOT/'Tools/Disasm/Reports/ActionOverlayPairVerification.json'
     temporary=path.with_suffix('.json.tmp');temporary.write_text(json.dumps(result,indent=2)+'\n','utf-8');temporary.replace(path)
     print(json.dumps(result,indent=2))

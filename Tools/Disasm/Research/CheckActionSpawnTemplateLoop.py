@@ -2,9 +2,11 @@
 from itertools import product
 import json
 
-from CheckActionParameterActivation import flat_action
+from CheckActionParameterActivation import RecordedBanks, flat_action
+from CheckControlsTextQueue import base_memory
 from CheckIntro import ROOT
 from CheckMusic import PC, SP, Simulator, get_registers
+from CheckScreenUpdate import PortTrace, put
 from skoolkit.simutils import IXh, IXl
 
 
@@ -16,8 +18,41 @@ def signed(value):
     return value if value < 32768 else value - 65536
 
 
+def check_template_mode(flat):
+    banks = [bytearray(0x4000) for _ in range(8)]
+    for bank, address in ((5, 0x4000), (2, 0x8000), (0, 0xC000)):
+        banks[bank][:] = bytes(flat[address:address + 0x4000])
+    banks[1][:] = bytes(base_memory()[0xC000:])
+    for free_slot in (False, True):
+        memory = RecordedBanks(banks=[bank.copy() for bank in banks], out7ffd=0x10)
+        put(memory, 0x9B82, (0, 0))
+        put(memory, 0x9B78, bytes(8))
+        put(memory, 0xBFFE, (255, 63))
+        put(memory, 0xA100, bytes(64))
+        if free_slot:
+            put(memory, 0xA100, (0, 0x80))
+            put(memory, 0xA140, (0x80, 0x80))
+        else:
+            put(memory, 0xA100, (0x80, 0x80))
+        simulator = Simulator(memory)
+        simulator.set_tracer(PortTrace(simulator))
+        simulator.registers[:] = get_registers({'PC': 0x7859, 'SP': 0xBFFE}, None, False)
+        simulator.run(0x7859, 0x3FFF)
+        assert bytes(memory[0x9B82:0x9B84]) == b'\x01\x01'
+        assert memory[0xA112] == (0x12 if free_slot else 0)
+        if free_slot:
+            # Вход очистки получает только что созданную запись класса 12.
+            simulator.registers[:] = get_registers({'PC': 0xE65F, 'SP': 0xBFFE, 'IX': 0xA100}, None, False)
+            simulator.run(0xE65F, 0x3FFF)
+            assert bytes(memory[0x9B82:0x9B84]) == bytes(2)
+            assert word(memory, 0xA100) == 0x8000 and memory[0xA118] == 0xFF
+    return dict(real_template_entry=0x7859, empty_and_available_list_profiles=2,
+                both_flags_set_before_allocation=True, real_release_clears_both=True)
+
+
 def main():
     memory = flat_action()
+    template_mode = check_template_mode(memory)
     memory[0xBFFE:0xC000] = [255, 63]
     sim = Simulator(memory)
     initial = [((offset * 43 + 7) & 255) for offset in range(64)]
@@ -74,6 +109,7 @@ def main():
         memory[row:row + 8] = before
         cases += 1
     report = dict(passed=True, total_cases=cases, all_original_template_pointers=True,
+                  template_mode_lifecycle=template_mode,
                   injected_overflow_per_axis=True, whole_records_compared=True, assembly_executed=False)
     payload = json.dumps(report, indent=2) + '\n'
     (ROOT / 'Tools/Disasm/Reports/ActionSpawnTemplateLoopVerification.json').write_text(payload, encoding='utf-8')

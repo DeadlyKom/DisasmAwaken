@@ -19,5 +19,10 @@
   "left_product_low_and_high_physically_separated": true,
   "irq_executed": false,
   "native_execution": false,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "R_full_M1": 12,
+  "all_256_R_values_per_entry": true,
+  "R_bit7_and_I_IM_IFF_preserved": true,
+  "all_original_80_code_bytes_checked": true,
+  "R_full_joint_input_product": false
 }

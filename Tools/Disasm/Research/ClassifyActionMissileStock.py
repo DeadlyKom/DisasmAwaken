@@ -138,7 +138,7 @@ def main():
     text=re.sub(r'\| Action \| \d+ \| \d+ \|',f'| Action | {total} | {described} |',text)
     needle='| #74FB |';assert text.count(needle)==1
     pending[path]=text.replace(needle,'| #70ED | [Action.SelectMissileStock](../'+code_path+') | '+description+' |\n'+needle).encode('utf-8')
-    path=ROOT/'Docs/FunctionDetails/Action.md';text=path.read_text('utf-8');needle='## SelectPreferredByte\n';assert text.count(needle)==1
+    path=ROOT/'Docs/FunctionDetails/Action.md';text=path.read_text('utf-8');needle='## SelectFuelStock\n';assert text.count(needle)==1
     section='## SelectMissileStock\n\n[Action.SelectMissileStock](../../'+code_path+')\n\n'+description+'.\n\nВход `#70ED`, запись 17, смещения `#132A..#1332`.\n\n[Назначение, контракт и проверка](../ActionMissileStock.md).\n\n'
     pending[path]=text.replace(needle,section+needle).encode('utf-8')
     candidate=ROOT/'Tools/Disasm/Research/Candidates/ActionMissileStock';history=ROOT/'Tools/Disasm/Research/History/BeforeActionMissileStock'

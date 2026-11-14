@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "total_cases": 6144,
+  "cases_by_entry_and_outcome": {
+    "EC00_allocated": 768,
+    "EC00_negative_end": 768,
+    "EC0E_allocated": 768,
+    "EC0E_negative_end": 768,
+    "EC1B_allocated": 768,
+    "EC1B_negative_end": 768,
+    "EC33_allocated": 768,
+    "EC33_negative_end": 768
+  },
+  "observed_M1": {
+    "EC00_allocated": [
+      59,
+      66,
+      108
+    ],
+    "EC00_negative_end": [
+      17,
+      24,
+      66
+    ],
+    "EC0E_allocated": [
+      54,
+      61,
+      103
+    ],
+    "EC0E_negative_end": [
+      12,
+      19,
+      61
+    ],
+    "EC1B_allocated": [
+      58,
+      65,
+      107
+    ],
+    "EC1B_negative_end": [
+      16,
+      23,
+      65
+    ],
+    "EC33_allocated": [
+      49,
+      56,
+      98
+    ],
+    "EC33_negative_end": [
+      7,
+      14,
+      56
+    ]
+  },
+  "all_mode_and_new_state_bytes_observed": true,
+  "occupied_prefix_lengths": [
+    0,
+    1,
+    7
+  ],
+  "exact_registers_except_T": true,
+  "all_physical_banks_and_write_multiplicities_compared": true,
+  "new_zero_or_negative_state_not_rejected": true,
+  "CPU_stack_writes": 0,
+  "ports_written": 0,
+  "all_joint_inputs_exhausted": false,
+  "IRQ_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

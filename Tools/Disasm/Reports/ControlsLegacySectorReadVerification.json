@@ -142,6 +142,23 @@
           "destination_end": 37381
         }
       ],
+      "call_bridge": {
+        "cases": 65560,
+        "all_65536_IX_targets": true,
+        "initial_R_values": 256,
+        "own_prefix_m1": 3,
+        "including_ROM_NOP_RET_m1": 5,
+        "exact_registers_except_T": true,
+        "exact_CPU_write_addresses_values_and_multiplicity": true,
+        "hardware_bus_write_order_proved": false,
+        "ROM_already_selected_in_fixture": true,
+        "ROM_paging_proved_by_this_probe": false,
+        "arbitrary_target_not_executed": true,
+        "all_joint_inputs_exhausted": false,
+        "legacy_copy_placement_is_fixture": true,
+        "game_entry_proved": false,
+        "irq_executed": false
+      },
       "executed_rom_entries": {
         "2740": 12,
         "2A53": 51,
@@ -290,6 +307,23 @@
           "destination_end": 37381
         }
       ],
+      "call_bridge": {
+        "cases": 65560,
+        "all_65536_IX_targets": true,
+        "initial_R_values": 256,
+        "own_prefix_m1": 3,
+        "including_ROM_NOP_RET_m1": 5,
+        "exact_registers_except_T": true,
+        "exact_CPU_write_addresses_values_and_multiplicity": true,
+        "hardware_bus_write_order_proved": false,
+        "ROM_already_selected_in_fixture": true,
+        "ROM_paging_proved_by_this_probe": false,
+        "arbitrary_target_not_executed": true,
+        "all_joint_inputs_exhausted": false,
+        "legacy_copy_placement_is_fixture": true,
+        "game_entry_proved": false,
+        "irq_executed": false
+      },
       "executed_rom_entries": {
         "2740": 12,
         "2A53": 51,
@@ -438,6 +472,23 @@
           "destination_end": 37381
         }
       ],
+      "call_bridge": {
+        "cases": 65560,
+        "all_65536_IX_targets": true,
+        "initial_R_values": 256,
+        "own_prefix_m1": 3,
+        "including_ROM_NOP_RET_m1": 5,
+        "exact_registers_except_T": true,
+        "exact_CPU_write_addresses_values_and_multiplicity": true,
+        "hardware_bus_write_order_proved": false,
+        "ROM_already_selected_in_fixture": true,
+        "ROM_paging_proved_by_this_probe": false,
+        "arbitrary_target_not_executed": true,
+        "all_joint_inputs_exhausted": false,
+        "legacy_copy_placement_is_fixture": true,
+        "game_entry_proved": false,
+        "irq_executed": false
+      },
       "executed_rom_entries": {
         "2740": 12,
         "2A53": 51,
@@ -586,6 +637,23 @@
           "destination_end": 37381
         }
       ],
+      "call_bridge": {
+        "cases": 65560,
+        "all_65536_IX_targets": true,
+        "initial_R_values": 256,
+        "own_prefix_m1": 3,
+        "including_ROM_NOP_RET_m1": 5,
+        "exact_registers_except_T": true,
+        "exact_CPU_write_addresses_values_and_multiplicity": true,
+        "hardware_bus_write_order_proved": false,
+        "ROM_already_selected_in_fixture": true,
+        "ROM_paging_proved_by_this_probe": false,
+        "arbitrary_target_not_executed": true,
+        "all_joint_inputs_exhausted": false,
+        "legacy_copy_placement_is_fixture": true,
+        "game_entry_proved": false,
+        "irq_executed": false
+      },
       "executed_rom_entries": {
         "2740": 12,
         "2A53": 51,

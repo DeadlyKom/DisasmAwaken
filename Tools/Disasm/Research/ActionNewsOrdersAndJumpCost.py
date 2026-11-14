@@ -52,8 +52,13 @@ def validate_sources(sources):
 
 def render(source, origin, table):
     text, labels = render_records(source, table, origin)
-    return text.replace('[подготовка и обход объектов](../../../Docs/PreviewQueueBuild.md)',
-                        '[исходные записи и стоимость гиперперехода](../../../Docs/' + DOCUMENT + '.md)'), labels
+    text = text.replace('[подготовка и обход объектов](../../../Docs/PreviewQueueBuild.md)',
+                        '[исходные записи и стоимость гиперперехода](../../../Docs/' + DOCUMENT + '.md)')
+    text = text.replace('assert $ == #9C41\n', 'assert $ == #9C41\n'
+                        '                ; При вылете первый байт получает MissionOffer.MessageIndex, шесть следующих приходят из #98C0..#98C5.\n')
+    text = text.replace('исходная физическая запись Order3\n', 'исходная физическая запись Order3\n'
+                        '                ; При вылете этот интервал заполняют количества вторичного оснащения и два соседних байта станции.\n')
+    return text, labels
 
 
 def parse(text, origin, table):

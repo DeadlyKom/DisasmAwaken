@@ -8,9 +8,10 @@
                 ;   HL, DE сохраняются, BC и AF входных аргументов не задают
                 ;   банк 1 выбран, WorkY, WorkX и SectionRadius доступны для чтения, на стеке внешний возврат, IRQ не вмешиваются
                 ; Out:
-                ;   HL, DE сохраняются, B=WorkX, C=WorkY, A=SectionRadius
-                ;   C'=(136-WorkX) AND FF, E'=SectionRadius, F соответствует SUB между 136 и WorkX
-                ;   HL', DE', BC' сохраняются кроме C' и E', AF', IX, IY, I, IM и IFF сохраняются
+                ;   HL и DE сохраняются, B=WorkX, C=WorkY, A=SectionRadius
+                ;   F соответствует SUB между 136 и WorkX, Z установлен при WorkX=136, Carry при WorkX>136
+                ;   HL' сохраняется, D' сохраняется, E'=SectionRadius, B' сохраняется, C'=(136-WorkX) AND FF
+                ;   AF', IX, IY, I, IM и IFF сохраняются
                 ;   SP=входной SP+2, R получает 10 M1
                 ; Corrupt:
                 ;   BC, AF, E', C', R

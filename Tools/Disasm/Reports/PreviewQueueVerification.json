@@ -1,14 +1,16 @@
 {
   "passed": true,
-  "cases": 267008,
+  "cases": 267388,
   "outcomes": {
-    "head": 117181,
-    "tail": 147727,
-    "middle": 1844,
-    "full_stop": 256
+    "head": 117217,
+    "tail": 147761,
+    "middle": 2116,
+    "full_stop": 294
   },
   "all_flag_byte_pairs": true,
   "all_valid_queue_sizes": true,
+  "all_positions_for_each_size_and_key_selector_checked": true,
+  "targeted_position_cases": 380,
   "wrapped_sign_comparisons": 2147,
   "independent_list_insertion_and_binary_record_pack": true,
   "full_queue_does_not_write": true,
@@ -16,6 +18,30 @@
   "sp_at_node_plus_one": true,
   "register_and_write_boundaries_checked": true,
   "child_rendering_not_executed": true,
+  "direct_full_M1_and_R_checked": true,
+  "I_IM_IFF_preserved_checked": true,
+  "exact_write_values_and_multiplicity_checked": true,
+  "successful_insert_byte_writes": 17,
+  "full_queue_last_comparison_HL_checked": true,
+  "observed_M1_bounds": {
+    "head": [
+      35,
+      50
+    ],
+    "tail": [
+      55,
+      408
+    ],
+    "middle": [
+      70,
+      401
+    ],
+    "full_stop": [
+      25,
+      406
+    ]
+  },
+  "complete_joint_input_product_exhausted": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

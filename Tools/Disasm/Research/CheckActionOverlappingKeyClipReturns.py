@@ -1,4 +1,7 @@
-"""Возвраты C0C9 с реальной клавиатурной рамкой и подготовленными координатами отсечения."""
+"""Возвраты C0C9 с клавиатурной рамкой, координатами и всеми байтами размера.
+
+Документация: ../../../Docs/ActionKeyDispatchPrefix.md#байтовый-размер-скрытого-отсечения
+"""
 from collections import Counter
 from itertools import product
 import json
@@ -49,9 +52,18 @@ def main():
     assert len(case['paths']) == 3 and {path['exit'] for path in case['paths']} == {'normal'}
     path_entries = {0xC4F6: 'top_intersection', 0xC641: 'left_then_corner_request', 0xC0E0: 'left_then_corner_mark'}
     counts = Counter()
+    zero_size_paths = Counter()
+    size_counts = Counter()
+    appended_pairs = Counter()
+    wrap_cases = 0
     examples = {}
     positions = product((0, 127, 255), (0, 47, 95), (-256, -64, -1), (-256, -64, -1), (0, 8, 15), (0, 1))
-    for second0, first0, second1, first1, seen, block in positions:
+    profiles = [(*position, 0) for position in positions]
+    # Проверка всех ненулевых размеров на представителях трёх путей, отметок и запрета углов.
+    profiles.extend((*point, seen, block, size)
+                    for point, seen, block, size in product(
+                        ((0,0,-256,-256), (127,0,-256,-256)), (0,8,15), (0,1), range(1,256)))
+    for second0, first0, second1, first1, seen, block, initial_size in profiles:
         memory.recording = False
         for bank, original in zip(memory.banks, baseline):
             bank[:] = original
@@ -59,7 +71,7 @@ def main():
         put(memory, 0xCF1B, packed_point(second1, first1, 0x5A))
         memory[0xCF07] = seen
         memory[0xCF03] = block
-        memory[0x9BA3] = 0
+        memory[0x9BA3] = initial_size
         put(memory, 0xBFFE, (255, 63))
         simulator.registers[:] = get_registers({'PC': 0x6F1D, 'SP': 0xBFFE, 'HL': 0x1357}, None, False)
         ports.reads.clear()
@@ -80,6 +92,16 @@ def main():
         compared = (*range(13), 14, *range(16, 25), 26, 27)
         assert all(oracle.r[index] == simulator.registers[index] for index in compared)
         assert memory.banks == oracle.banks and Counter(memory.writes) == Counter(oracle.writes)
+        # Проверка адресов выходных пар отдельно от полного сравнения числовой композиции.
+        output_writes = [(offset,value) for bank,offset,value in memory.writes if bank == 2 and 0x1000 <= offset < 0x1100]
+        pairs = len(output_writes) // 2
+        assert pairs in (1,2) and len(output_writes) == 2 * pairs
+        assert [offset for offset,value in output_writes] == [0x1000 + ((initial_size + i) & 255) for i in range(2 * pairs)]
+        final_size = memory[0x9BA3]
+        assert final_size == (initial_size + 2 * pairs) & 255
+        size_counts[initial_size] += 1
+        appended_pairs[pairs] += 1
+        wrap_cases += int(initial_size + 2 * pairs >= 256)
 
         return_sp = simulator.registers[SP]
         assert return_sp == 0xBFF6 and 0xC993 not in visited and 0xC6EA not in visited
@@ -90,10 +112,13 @@ def main():
         path = paths[0]
         assert not ports.outs and memory.o7ffd == 16
         counts[path] += 1
+        if initial_size == 0:
+            zero_size_paths[path] += 1
         examples.setdefault(path, dict(points=[[second0, first0], [second1, first1]], seen=seen, block=block,
                                       immediate_return=immediate_return, sp_after_clip=return_sp,
                                       final_PC=simulator.registers[PC]))
-    assert set(counts) == set(path_entries.values()) and counts.total() == 486, counts
+    assert set(counts) == set(path_entries.values()) and counts.total() == 3546, counts
+    assert set(size_counts) == set(range(256))
     result = dict(passed=True, total_cases=counts.total(), paths=dict(counts), examples=examples,
                   real_keyboard_scan_first_handler_clip_and_return_executed=True,
                   prepared_valid_clip_coordinates=True, geometry_initialized_by_game_before_key_not_proved=True,
@@ -102,6 +127,11 @@ def main():
                   all_three_abstract_paths_end_in_normal_RET=True, geometry_finish_C993_bypassed=True,
                   RestoreKeyScanFrame_returns_to_decay_with_original_SP=True,
                   stopped_before_decay=True, author_intent_proved=False,
+                  original_zero_size_cases=486, all_initial_output_size_bytes_checked=True,
+                  zero_size_paths=dict(zero_size_paths),
+                  size_cases=dict(sorted(size_counts.items())), appended_pair_counts=dict(appended_pairs),
+                  output_wrap_cases=wrap_cases, output_writes_stay_in_page_90=True,
+                  odd_size_natural_reachability_proved=False,
                   assembly_executed=False, native_execution=False)
     report = reports / 'ActionOverlappingKeyClipReturnsVerification.json'
     report.write_text(json.dumps(result, indent=2) + '\n', encoding='utf-8')

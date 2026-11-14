@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 from CheckUnpackResource import ROOT,payload,decode,Simulator,get_registers,PC,SP,I,IFF,IM
+from PackedRefreshTrace import PackedRefreshTrace
 
 
 class RecordedFlat(list):
@@ -50,7 +51,9 @@ def main():
             wanted_memory=list(m)
             wanted_memory[base+1:base+packed]=raw[1:]
             wanted_memory[dest:dest+size]=expected['data']
-            simulator=Simulator(m);r=simulator.registers;r[:]=initial
+            simulator=Simulator(m,config={'fast_ldir':False});r=simulator.registers;r[:]=initial
+            r[15]=(len(profiles)*73)&255
+            refresh=PackedRefreshTrace(action,r[15])
             r[6:8]=[source>>8,source&255];r[4:6]=[dest>>8,dest&255];r[PC]=0xAB23
             native=collections.Counter();tail=0;frame=False;m.writes=[];m.recording=True
             for steps in range(600000):
@@ -64,7 +67,9 @@ def main():
                 if pc==0x9FE6+delta:
                     assert tail<3 and r[SP]==0x5FF8+2*tail
                     assert bytes(m[r[SP]:r[SP]+2])==raw[6+2*tail:8+2*tail];tail+=1
+                refresh.before(m,pc,r[15])
                 simulator.run()
+                refresh.after(r[15])
             else:raise AssertionError(('instruction_limit',record['slot'],record['index'],r[PC]))
             m.recording=False
             assert bytes(m[dest:dest+size])==expected['data'] and frame and tail==3
@@ -83,11 +88,23 @@ def main():
             counts['output_bytes']+=size
             if source==0xC000:packets.update(expected['counts'])
             profiles.append(dict(slot=record['slot'],index=record['index'],source=source,dest=dest,
-                relocated_base=base,instructions=steps,write_count=len(m.writes)))
+                relocated_base=base,instructions=steps,write_count=len(m.writes),
+                refresh=refresh.finish(r[15])))
+    # Сопоставление полных сумм с ранее выполненной станционной моделью тех же ресурсов.
+    station_report=json.loads((ROOT/'Tools/Disasm/Reports/UnpackResourceVerification.json').read_text('utf-8'))
+    assert station_report['passed'] and station_report['full_m1_count_from_original_opcode_prefixes']
+    assert len(station_report['profiles'])==len(profiles)==80
+    for own,other in zip(profiles,station_report['profiles']):
+        assert all(own[key]==other[key] for key in ('slot','index','source','dest','refresh'))
     report=dict(passed=True,total_cases=len(profiles),resources=len(records),instruction_pairs=184,
         address_delta=delta,all_instruction_operands_verified=True,cases_by_path=dict(counts),
         independent_packet_counts=dict(packets),profiles=profiles,
-        independent_numeric_decoder=True,all_registers_except_R=True,
+        independent_numeric_decoder=True,
+        all_general_registers_and_R_checked=True,full_m1_count_from_original_opcode_prefixes=True,
+        each_R_increment_and_bit7_checked=True,fast_ldir=False,
+        R_initial_values=sorted({p['refresh']['initial_R'] for p in profiles}),
+        R_full_cartesian_input_product=False,independent_full_algorithm_timing_oracle=False,
+        station_copy_paired_refresh_profiles=len(profiles),
         full_logical_RAM_except_stack_residue=True,tail_frame_and_return_verified=True,
         every_write_address_range_verified=True,write_multiplicity_independently_proved=False,
         physical_banks_proved=False,irq_executed=False,native_execution=False,assembly_executed=False)

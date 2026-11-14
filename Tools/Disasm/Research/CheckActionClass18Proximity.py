@@ -104,16 +104,23 @@ def main():
                 operations.extend(calculated['writes']);operations.extend(local['writes'])
                 wanted=local['registers'];wanted[PC]=0xF0F8;ports=calculated['ports'];kind='far_step'
                 wanted[15]=refresh(wanted[15],1)
+        total_m1=timing.m1_count+(7 if kind=='near_reuse' else 30+calculated['refresh_m1']+local['refresh_m1'] if kind=='far_step' else 0)
         writes=[]
         for address,value in operations:
             bank=5 if address<0x8000 else 2 if address<0xC000 else 0
             expected[bank][address&0x3FFF]=value;writes.append((bank,address&0x3FFF,value))
         simulator.registers[:]=initial;trace=PortTrace(simulator);simulator.set_tracer(trace)
         memory.writes=[];memory.recording=True
+        measured_m1=0
         for _ in range(20000):
             if simulator.registers[PC] in (0xF0F8,0x3FFF):break
+            previous_r=simulator.registers[15]
             simulator.run()
+            increment=(simulator.registers[15]-previous_r)&127
+            assert increment in (1,2)
+            measured_m1+=increment
         else:raise AssertionError(('не достигнут выход',position,differences))
+        assert measured_m1==total_m1,(cases,kind,'M1',measured_m1,total_m1)
         memory.recording=False
         assert all(wanted[index]==simulator.registers[index] for index in (*range(25),26,27)),(cases,kind,[(i,wanted[i],simulator.registers[i]) for i in (*range(25),26,27) if wanted[i]!=simulator.registers[i]])
         assert memory.banks==expected and Counter(memory.writes)==Counter(writes),(cases,kind,'RAM')
@@ -125,6 +132,7 @@ def main():
         actual_class_search_distance_geometry_and_reuse_executed=True,independent_existing_child_models_composed=True,
         exact_registers_including_r=True,full_eight_bank_ram_and_write_multiplicity_compared=True,
         real_ports_verified=True,maximum_extra_stack_bytes=max_stack,common_offset_tail_executed=False,
+        full_M1_count_compared_not_only_R_modulo_128=True,
         common_tail_boundary=0xF0F8,near_path_external_ret_executed=True,
         all_input_records_product_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)
     (ROOT/'Tools/Disasm/Reports/ActionClass18ProximityVerification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')

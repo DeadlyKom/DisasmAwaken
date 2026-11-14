@@ -19,3 +19,36 @@ python Tools/Disasm/Research/ResearchArchive.py History/BeforeStoredPointProcedu
 В .gitignore и настройках редактора старые снимки и архивы исключены из наблюдения и поиска. Это предотвращает повторное сканирование десятков тысяч файлов при восстановлении старого выпуска. Рабочие исходники из поиска и Git не исключены.
 
 [Отчёт очистки](../Tools/Disasm/Reports/ResearchCleanupVerification.json) содержит фактические объёмы и результаты проверки. Очистка не является сборкой или доказательством завершения смыслового дизассемблирования.
+
+## Архивные материалы для сравнения версий
+
+Постоянные компактные копии входных ZIP сохранены в
+`Tools/Disasm/Research/References/AuthorArchives`. Они побайтово
+совпадают с использованными исследованием файлами. Все 10 вложенных
+файлов проверены по CRC ZIP и SHA-256. Общий размер четырёх ZIP
+составляет 1541485 байтов. Содержимое не распаковывалось.
+
+| Архив | Содержимое |
+| --- | --- |
+| [ArchiveAwakenSources.zip](../Tools/Disasm/Research/References/AuthorArchives/ArchiveAwakenSources.zip) | шесть TRD awk1..awk6 и opensourcezx.diz |
+| [ArchiveAwakenAuthor.zip](../Tools/Disasm/Research/References/AuthorArchives/ArchiveAwakenAuthor.zip) | авторское демо AWAKEN_D.SCL |
+| [ArchiveAwakenSDC.zip](../Tools/Disasm/Research/References/AuthorArchives/ArchiveAwakenSDC.zip) | AWAK_SDC.SCL для сравнения физических файлов |
+| [ArchiveAwakenSpace.zip](../Tools/Disasm/Research/References/AuthorArchives/ArchiveAwakenSpace.zip) | SPACE.SCL |
+
+[Манифест](../Tools/Disasm/Research/References/AuthorArchives/Manifest.json)
+содержит относительные пути, размеры и полные контрольные суммы
+архивов и каждого вложенного файла. Эти материалы нужны для
+воспроизведения сравнения версий. Обычная сборка их не использует.
+Смысл кода другой версии устанавливается отдельно, совпадение
+архива не доказывает назначения кода Awakenv02.
+
+Исследовательские сценарии, принимающие путь к архиву, могут работать
+с постоянной копией. Например, из корня проекта:
+
+```text
+python Tools/Disasm/Research/InspectArchivedOrderReferences.py Tools/Disasm/Research/References/AuthorArchives/ArchiveAwakenSources.zip
+```
+
+Предыдущие копии в Tmp пока сохранены. При окончательной очистке
+они могут быть рассмотрены как дубликаты только после повторного
+сравнения с постоянными копиями и проверки зависимостей сценариев.

@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "basic_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "length_writes": [
+    {
+      "phase": "fixture",
+      "pc": null,
+      "value": 0,
+      "pc_bytes": null,
+      "selected_rom_sha256": null
+    },
+    {
+      "phase": "RUN",
+      "pc": 820,
+      "value": 9,
+      "pc_bytes": "32065daf",
+      "selected_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13"
+    }
+  ],
+  "checkpoints": [
+    {
+      "phase": "BASIC_USR",
+      "pc": 23873,
+      "length": 9
+    },
+    {
+      "phase": "intro_entry",
+      "pc": 25856,
+      "length": 9
+    },
+    {
+      "phase": "relocated_loader",
+      "pc": 23867,
+      "length": 9
+    },
+    {
+      "phase": "before_search",
+      "pc": 15635,
+      "length": 9
+    },
+    {
+      "phase": "after_catalogue",
+      "pc": 23943,
+      "length": 9
+    },
+    {
+      "phase": "station_entry",
+      "pc": 25344,
+      "length": 9
+    }
+  ],
+  "editor_RUN_fixture": true,
+  "station_catalogue_header_supplied": false,
+  "trdos_calls_substituted": false,
+  "controller_and_ROM_paging_modelled": true,
+  "intro_does_not_write_search_length": true,
+  "search_length_inherited_from_RUN": true,
+  "cold_boot_proved": false,
+  "final_effect_keyboard_polls": 1,
+  "all_DOS_versions_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

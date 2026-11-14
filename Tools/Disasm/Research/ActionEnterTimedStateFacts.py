@@ -2,23 +2,23 @@
 FUNCTIONS={0x62B5:('EnterTimedPhaseFromMotion','Восстановление рамки движения и установка временного состояния 11 со случайным таймером')}
 LOCAL={}
 CONTRACTS={('Action',0x62B5):(
-    ['HL, DE, BC и AF числовых аргументов не задают, IX указывает FActionRecord с StateCode, Unknown19 и PhaseMoveTimer',
+    ['HL, DE, BC и AF числовых аргументов не задают, IX указывает FActionRecord с StateCode, TimedResumeCode и PhaseMoveTimer',
      'на CPU-стеке последовательно лежат сохранённые BC, DE, HL и внешний адрес возврата, вход не является обычным CALL без этой рамки',
      'перенесённый код банка 5 и поля записи доступны, IRQ не вмешиваются'],
     ['HL и DE восстановлены из рамки, BC после восстановления заменён полным словом 8080',
-     'Unknown19 получает прежний полный StateCode, StateCode получает 11',
+     'TimedResumeCode получает прежний полный StateCode, StateCode получает 11',
      'PhaseMoveTimer равен (прочитанный R AND 0F)+5, диапазон от 5 до 20 вызовов',
      'A равен новому таймеру, F соответствует ADD младшей тетрады и 5',
      "HL', DE', BC', AF', IX, IY, I/IM/IFF и paging сохраняются",
      'SP после внешнего RET равен входному SP+8, шесть байтов рамки не записываются и не очищаются, R добавляет 17 M1'],
-    ['HL, DE, BC, AF, R, Unknown19, PhaseMoveTimer, StateCode, SP после снятия рамки и внешнего RET'],
+    ['HL, DE, BC, AF, R, TimedResumeCode, PhaseMoveTimer, StateCode, SP после снятия рамки и внешнего RET'],
     ['LD A,R читает R после девяти M1 данного входа, старший бит R не участвует в таймере',
      '65536 сценариев покрыли все пары начального R и прежнего StateCode, сохранённые слова менялись по перестановкам полного словарного диапазона',
      'сверены точные регистры, флаги, R, восемь банков и кратность записей, новых CPU-стековых записей нет',
      'полное произведение входов, аппаратные IRQ, время, сборка и нативная игра не проверялись'])}
 COMMENTS={
     0x62B5:(['Восстановление трёх слов, которые CheckLinkedDistanceAndStepCodes сохранил до поиска цели.'],None),
-    0x62B8:(['Сохранение прежнего полного состояния для последующего восстановления через Unknown19.'],None),
+    0x62B8:(['Сохранение прежнего полного состояния для последующего восстановления через TimedResumeCode.'],None),
     0x62BE:(['Расчёт длительности от 5 до 20 по младшей тетраде аппаратного R.'],None),
     0x62C7:(['Обновление состояния до State11, отдельный обработчик обновляет таймер и две фазы.'],None),
     0x62CB:(['Обновление полного BC до 8080 как исходного результата ближнего пути.'],None),
@@ -27,6 +27,6 @@ COMMENTS={
 
 def name_operands(region,function_address,operation):
     if (region,function_address)!=('Action',0x62B5):return operation
-    for literal,name in (('0A','StateCode'),('19','Unknown19'),('17','PhaseMoveTimer')):
+    for literal,name in (('0A','StateCode'),('19','TimedResumeCode'),('17','PhaseMoveTimer')):
         operation=operation.replace('(IX+#'+literal+')','(IX + @FActionRecord.'+name+')')
     return operation

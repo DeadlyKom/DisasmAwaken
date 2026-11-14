@@ -46,7 +46,7 @@ COMMENTS={
  0x70B1:(['-----------------------------------------','Снятие всех трёх захватов при пустом запасе'],None),
  0x70BC:(['Сохранение DE и постановка сообщения об исчерпанных ракетах.'],None),
  0x70C4:(['Формирование нулевого результата отказа независимо от приёма сообщения очередью.'],None)}
-FIELDS=tuple(('Target'+str(i),1,'код захвата '+str(i)+', FF означает отсутствие цели, соответствие объектам ещё не установлено') for i in range(3))
+FIELDS=tuple(('Target'+str(i),1,'код записи цели в слоте '+str(i)+', FF означает отсутствие захвата') for i in range(3))
 TABLE=('ActionMissileTargets','Source/Action/Data/MissileTargets.asm',0x3B1B,0x3B1E,'FMissileTargets',FIELDS,('Value',))
 
 

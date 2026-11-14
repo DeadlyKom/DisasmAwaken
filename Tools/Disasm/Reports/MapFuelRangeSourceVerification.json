@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "method": "original_range_and_radius_prefixes_all_raw_fuel_pairs",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "original_instruction_witnesses": [
+    {
+      "region": "Map",
+      "start": 49155,
+      "stop_before": 49170,
+      "original_hex": "2a8e987ca720027d1f6f878532aedf",
+      "sha256": "ebd36c2eee784f1012d8900d236422ae097d1c3fce07a97b0539cc2150423154"
+    },
+    {
+      "region": "Station",
+      "start": 30373,
+      "stop_before": 30386,
+      "original_hex": "2a8e987ca720027d1f4f0600af",
+      "sha256": "f80840320a208f7f736803e8bb68e9bda7045b5e340870a17880c7032ad8bb76"
+    }
+  ],
+  "raw_word_values": 65536,
+  "input_carry_values": [
+    0,
+    1
+  ],
+  "cases_by_prefix": {
+    "range": 131072,
+    "radius": 131072
+  },
+  "fuel_rows": [
+    "Топливо МРП",
+    "Топливо ЛНП"
+  ],
+  "fuel_addresses": [
+    39054,
+    39055
+  ],
+  "original_panel_caption": "Топлива на:         сл",
+  "original_equipment_names_sha256": "06d8fd3f1c0b2ca93bc27209f0062d7f50a31dc6ac2b22e0d615446a614c1e0f",
+  "original_panel_template_sha256": "f6f75cf525f766522c3f63ff1f4c574099b585ab9c3b5b0f4c703154146f9cdc",
+  "displayed_distance": "high if high != 0 else low//2",
+  "radius": "(3*displayed_distance)&255",
+  "all_registers_except_T_and_all_RAM_and_writes_checked": true,
+  "positive_probe_passed": true,
+  "raw_codes_not_inverse_decoded_by_these_readers": true,
+  "arbitrary_raw_pairs_not_claimed_as_valid_gameplay": true,
+  "current_formula_changes_not_made": true,
+  "full_panel_and_map_not_executed_here": true,
+  "physical_distance_units_or_global_reachability_proved": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

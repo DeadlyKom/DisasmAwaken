@@ -20,7 +20,7 @@ def context():
  return m,s,initial
 
 
-def execute(m,s,initial,vertices,mode=0):
+def execute(m,s,initial,vertices,mode=0,refresh=None):
  m.recording=False;m[0xC800:0xC800+2*len(vertices)]=[b for row,col in vertices for b in (col,row)]
  m[0xC22B]=2*len(vertices);m[0xC23B]=mode;m[0x7FFE:0x8000]=[255,63]
  s.registers[:]=initial;s.registers[PC]=0xD41B;m.recording=True;m.writes=[];m.rom_write_attempts=[]
@@ -30,7 +30,9 @@ def execute(m,s,initial,vertices,mode=0):
   if m[s.registers[PC]]==0x02:
    pointer=s.registers[2]*256+s.registers[3]
    if pointer<0x4000:m.rom_write_attempts.append((pointer,s.registers[0]))
+  if refresh is not None:refresh.before(s.registers)
   s.run()
+  if refresh is not None:refresh.after(s.registers)
  else:raise AssertionError(('instruction_limit',vertices,mode,s.registers[PC]))
  assert s.registers[SP]==0x8000
  return step

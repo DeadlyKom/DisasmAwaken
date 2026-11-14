@@ -19,5 +19,14 @@
   "return_sp_delta": 4,
   "irq_executed": false,
   "native_execution": false,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "refill_m1_count": 10,
+  "refill_original_12_bytes_checked": true,
+  "refill_R_initial_values": 256,
+  "refill_R_bit7_preserved": true,
+  "refill_R_full_input_product": false,
+  "restore_AF_m1_count": 2,
+  "restore_AF_R_initial_values": 256,
+  "restore_AF_R_bit7_preserved": true,
+  "restore_AF_R_full_input_product": false
 }

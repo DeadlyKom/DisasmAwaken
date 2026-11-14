@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "source": 36715,
+  "relocated": 29803,
+  "texture": 58283,
+  "texture_bank": 1,
+  "overwrite_pc": 27163,
+  "stop_pc": 15635,
+  "length": 41,
+  "original": "8000000000000000000000000000000000000000000000000000000000efbbbbb00000ffc1ff87feff",
+  "replacement": "202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748",
+  "profiles": [
+    {
+      "frames": 0,
+      "equal_port_writes": 19,
+      "compared_ram_bytes": 131072,
+      "ram_differences": 41
+    },
+    {
+      "frames": 1,
+      "equal_port_writes": 20,
+      "compared_ram_bytes": 131072,
+      "ram_differences": 41
+    },
+    {
+      "frames": 2,
+      "equal_port_writes": 21,
+      "compared_ram_bytes": 131072,
+      "ram_differences": 41
+    },
+    {
+      "frames": 300,
+      "equal_port_writes": 319,
+      "compared_ram_bytes": 131072,
+      "ram_differences": 41
+    }
+  ],
+  "disk_modified": false,
+  "assembly_executed": false
+}

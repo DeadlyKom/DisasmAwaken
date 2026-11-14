@@ -6,6 +6,1697 @@
   "halt_wakeup_injected": true,
   "station_loader_relocated_without_call": true,
   "hardware_irq_executed": false,
+  "timed_rom_irq": {
+    "actual_rom_irq_executed": true,
+    "irq_period_tstates": 70908,
+    "profiles": [
+      {
+        "rom": "128-1.rom",
+        "full_noise_frames": 100,
+        "minimum_irq_sp": 49124,
+        "initial_rom_counter": 0,
+        "first_frame_counter_high_byte_increment": {
+          "address": 23674,
+          "old": 255,
+          "bank0": false,
+          "new": 0
+        },
+        "original_tail_reads": [
+          [
+            "read",
+            14448,
+            64769,
+            0
+          ],
+          [
+            "read",
+            14448,
+            65281,
+            0
+          ],
+          [
+            "read",
+            14448,
+            65281,
+            0
+          ],
+          [
+            "read",
+            14448,
+            64927,
+            0
+          ],
+          [
+            "read",
+            14448,
+            64769,
+            0
+          ]
+        ],
+        "tail_aliases_with_original_refresh_and_prepared_frames": [
+          {
+            "frame": 6,
+            "address": 64832,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "frame": 64,
+            "address": 64990,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "frame": 20,
+            "address": 65344,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          }
+        ],
+        "tail_aliases_with_prepared_refresh_and_frames": [
+          {
+            "seed": 6,
+            "iy": 64828,
+            "address": 64892,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 33,
+            "iy": 64781,
+            "address": 64845,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 37,
+            "iy": 64926,
+            "address": 64990,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 90,
+            "iy": 64891,
+            "address": 64955,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 106,
+            "iy": 64768,
+            "address": 64832,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 108,
+            "iy": 65118,
+            "address": 65182,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 115,
+            "iy": 64771,
+            "address": 64835,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 118,
+            "iy": 65280,
+            "address": 65344,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 140,
+            "iy": 64860,
+            "address": 64924,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 154,
+            "iy": 64860,
+            "address": 64924,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 169,
+            "iy": 65150,
+            "address": 65214,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 179,
+            "iy": 65059,
+            "address": 65123,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 186,
+            "iy": 65342,
+            "address": 65406,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 208,
+            "iy": 65235,
+            "address": 65299,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 226,
+            "iy": 64032,
+            "address": 64096,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          }
+        ],
+        "keyboard_flag_aliases_with_prepared_refresh": [
+          {
+            "seed": 6,
+            "iy": 64828,
+            "address": 64829,
+            "value": 0
+          },
+          {
+            "seed": 33,
+            "iy": 64781,
+            "address": 64782,
+            "value": 0
+          },
+          {
+            "seed": 37,
+            "iy": 64926,
+            "address": 64927,
+            "value": 0
+          },
+          {
+            "seed": 90,
+            "iy": 64891,
+            "address": 64892,
+            "value": 0
+          },
+          {
+            "seed": 106,
+            "iy": 64768,
+            "address": 64769,
+            "value": 0
+          },
+          {
+            "seed": 108,
+            "iy": 65118,
+            "address": 65119,
+            "value": 0
+          },
+          {
+            "seed": 115,
+            "iy": 64771,
+            "address": 64772,
+            "value": 0
+          },
+          {
+            "seed": 118,
+            "iy": 65280,
+            "address": 65281,
+            "value": 0
+          },
+          {
+            "seed": 140,
+            "iy": 64860,
+            "address": 64861,
+            "value": 0
+          },
+          {
+            "seed": 154,
+            "iy": 64860,
+            "address": 64861,
+            "value": 0
+          },
+          {
+            "seed": 169,
+            "iy": 65150,
+            "address": 65151,
+            "value": 0
+          },
+          {
+            "seed": 179,
+            "iy": 65059,
+            "address": 65060,
+            "value": 0
+          },
+          {
+            "seed": 186,
+            "iy": 65342,
+            "address": 65343,
+            "value": 0
+          },
+          {
+            "seed": 208,
+            "iy": 65235,
+            "address": 65236,
+            "value": 0
+          },
+          {
+            "seed": 226,
+            "iy": 64032,
+            "address": 64033,
+            "value": 0
+          }
+        ],
+        "fixed_ram_aliases": [
+          {
+            "first_copy_seed": 59,
+            "second_irq_iy": 23682,
+            "increment": {
+              "address": 23746,
+              "old": 241,
+              "bank0": false,
+              "new": 242
+            },
+            "initial_frames": 5439486,
+            "final_frames": 5373952
+          },
+          {
+            "first_copy_seed": 107,
+            "second_irq_iy": 24317,
+            "increment": {
+              "address": 24381,
+              "old": 0,
+              "bank0": false,
+              "new": 1
+            },
+            "initial_frames": 5439486,
+            "final_frames": 5373952
+          },
+          {
+            "first_copy_seed": 139,
+            "second_irq_iy": 23682,
+            "increment": {
+              "address": 23746,
+              "old": 241,
+              "bank0": false,
+              "new": 242
+            },
+            "initial_frames": 5439486,
+            "final_frames": 5373952
+          },
+          {
+            "first_copy_seed": 199,
+            "second_irq_iy": 23608,
+            "increment": {
+              "address": 23672,
+              "old": 0,
+              "bank0": false,
+              "new": 1
+            },
+            "initial_frames": 5439486,
+            "final_frames": 5373953
+          },
+          {
+            "first_copy_seed": 249,
+            "second_irq_iy": 23608,
+            "increment": {
+              "address": 23672,
+              "old": 0,
+              "bank0": false,
+              "new": 1
+            },
+            "initial_frames": 5439486,
+            "final_frames": 5373953
+          }
+        ],
+        "pressed_key_tail": {
+          "seeds_checked": 256,
+          "space_pressed_at_second_irq": true,
+          "no_frames_wrap": true,
+          "cases_with_tail_accesses": [
+            {
+              "first_copy_seed": 6,
+              "second_irq_iy": 64828,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 64829,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64835,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64829,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64829,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64829,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 33,
+              "second_irq_iy": 64781,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 64782,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64788,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64782,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64782,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64782,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 37,
+              "second_irq_iy": 64926,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 64927,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64933,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64927,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64927,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64927,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 90,
+              "second_irq_iy": 64891,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 64892,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64898,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64892,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64892,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64892,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 106,
+              "second_irq_iy": 64768,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 64769,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64775,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64769,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64769,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64769,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 108,
+              "second_irq_iy": 65118,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 65119,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65125,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65119,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65119,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65119,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 115,
+              "second_irq_iy": 64771,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 64772,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64778,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64772,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64772,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64772,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 118,
+              "second_irq_iy": 65280,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 65281,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65287,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65281,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65281,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65281,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 140,
+              "second_irq_iy": 64860,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 64861,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64867,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64861,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64861,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64861,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 154,
+              "second_irq_iy": 64860,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 64861,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64867,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64861,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64861,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64861,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 169,
+              "second_irq_iy": 65150,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 65151,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65157,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65151,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65151,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65151,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 179,
+              "second_irq_iy": 65059,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 65060,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65066,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65060,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65060,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65060,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 186,
+              "second_irq_iy": 65342,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 65343,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65349,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65343,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65343,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65343,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 208,
+              "second_irq_iy": 65235,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 65236,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65242,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65236,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65236,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65236,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 226,
+              "second_irq_iy": 64032,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 14448,
+                  "address": 64033,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64039,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64033,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64033,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64033,
+                  "value": 32
+                }
+              ]
+            }
+          ]
+        },
+        "ay_select_opcode_alias": [
+          {
+            "initial_frames": 0,
+            "first_copy_seed": 211,
+            "second_irq_increment": null,
+            "ay_select_address": 60798,
+            "hl_after_instruction": 60960,
+            "volume": 4,
+            "ay_writes": [
+              [
+                65533,
+                10
+              ],
+              [
+                49149,
+                4
+              ]
+            ],
+            "final_ay_noise_period": 5,
+            "final_ay_channel_c_volume": 4
+          },
+          {
+            "initial_frames": 65534,
+            "first_copy_seed": 211,
+            "second_irq_increment": {
+              "address": 60799,
+              "old": 121,
+              "bank0": true,
+              "new": 122
+            },
+            "ay_select_address": 60798,
+            "hl_after_instruction": 44568,
+            "volume": 4,
+            "ay_writes": [
+              [
+                49149,
+                4
+              ]
+            ],
+            "final_ay_noise_period": 4,
+            "final_ay_channel_c_volume": 4
+          }
+        ]
+      },
+      {
+        "rom": "48.rom",
+        "full_noise_frames": 100,
+        "minimum_irq_sp": 49130,
+        "initial_rom_counter": 0,
+        "first_frame_counter_high_byte_increment": {
+          "address": 23674,
+          "old": 255,
+          "bank0": false,
+          "new": 0
+        },
+        "original_tail_reads": [],
+        "tail_aliases_with_original_refresh_and_prepared_frames": [
+          {
+            "frame": 29,
+            "address": 64832,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "frame": 63,
+            "address": 64835,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "frame": 26,
+            "address": 64892,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "frame": 92,
+            "address": 64955,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "frame": 95,
+            "address": 64990,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "frame": 17,
+            "address": 65182,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "frame": 46,
+            "address": 65344,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          }
+        ],
+        "tail_aliases_with_prepared_refresh_and_frames": [
+          {
+            "seed": 6,
+            "iy": 64828,
+            "address": 64892,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 33,
+            "iy": 64781,
+            "address": 64845,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 37,
+            "iy": 64926,
+            "address": 64990,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 90,
+            "iy": 64891,
+            "address": 64955,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 106,
+            "iy": 64768,
+            "address": 64832,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 108,
+            "iy": 65118,
+            "address": 65182,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 115,
+            "iy": 64771,
+            "address": 64835,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 118,
+            "iy": 65280,
+            "address": 65344,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 140,
+            "iy": 64860,
+            "address": 64924,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 154,
+            "iy": 64860,
+            "address": 64924,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 169,
+            "iy": 65150,
+            "address": 65214,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 179,
+            "iy": 65059,
+            "address": 65123,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 186,
+            "iy": 65342,
+            "address": 65406,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 208,
+            "iy": 65235,
+            "address": 65299,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          },
+          {
+            "seed": 226,
+            "iy": 64032,
+            "address": 64096,
+            "old": 0,
+            "bank0": true,
+            "new": 1
+          }
+        ],
+        "keyboard_flag_aliases_with_prepared_refresh": [],
+        "fixed_ram_aliases": [
+          {
+            "first_copy_seed": 59,
+            "second_irq_iy": 23682,
+            "increment": {
+              "address": 23746,
+              "old": 241,
+              "bank0": false,
+              "new": 242
+            },
+            "initial_frames": 5439486,
+            "final_frames": 5373952
+          },
+          {
+            "first_copy_seed": 107,
+            "second_irq_iy": 24317,
+            "increment": {
+              "address": 24381,
+              "old": 0,
+              "bank0": false,
+              "new": 1
+            },
+            "initial_frames": 5439486,
+            "final_frames": 5373952
+          },
+          {
+            "first_copy_seed": 139,
+            "second_irq_iy": 23682,
+            "increment": {
+              "address": 23746,
+              "old": 241,
+              "bank0": false,
+              "new": 242
+            },
+            "initial_frames": 5439486,
+            "final_frames": 5373952
+          },
+          {
+            "first_copy_seed": 199,
+            "second_irq_iy": 23608,
+            "increment": {
+              "address": 23672,
+              "old": 0,
+              "bank0": false,
+              "new": 1
+            },
+            "initial_frames": 5439486,
+            "final_frames": 5373953
+          },
+          {
+            "first_copy_seed": 249,
+            "second_irq_iy": 23608,
+            "increment": {
+              "address": 23672,
+              "old": 0,
+              "bank0": false,
+              "new": 1
+            },
+            "initial_frames": 5439486,
+            "final_frames": 5373953
+          }
+        ],
+        "pressed_key_tail": {
+          "seeds_checked": 256,
+          "space_pressed_at_second_irq": true,
+          "no_frames_wrap": true,
+          "cases_with_tail_accesses": [
+            {
+              "first_copy_seed": 6,
+              "second_irq_iy": 64828,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64835,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64829,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64829,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64829,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 33,
+              "second_irq_iy": 64781,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64788,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64782,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64782,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64782,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 37,
+              "second_irq_iy": 64926,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64933,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64927,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64927,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64927,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 90,
+              "second_irq_iy": 64891,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64898,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64892,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64892,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64892,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 106,
+              "second_irq_iy": 64768,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64775,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64769,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64769,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64769,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 108,
+              "second_irq_iy": 65118,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65125,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65119,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65119,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65119,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 115,
+              "second_irq_iy": 64771,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64778,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64772,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64772,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64772,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 118,
+              "second_irq_iy": 65280,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65287,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65281,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65281,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65281,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 140,
+              "second_irq_iy": 64860,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64867,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64861,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64861,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64861,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 154,
+              "second_irq_iy": 64860,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64867,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64861,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64861,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64861,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 169,
+              "second_irq_iy": 65150,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65157,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65151,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65151,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65151,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 179,
+              "second_irq_iy": 65059,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65066,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65060,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65060,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65060,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 186,
+              "second_irq_iy": 65342,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65349,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65343,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65343,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65343,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 208,
+              "second_irq_iy": 65235,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 65242,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 65236,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 65236,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 65236,
+                  "value": 32
+                }
+              ]
+            },
+            {
+              "first_copy_seed": 226,
+              "second_irq_iy": 64032,
+              "accesses": [
+                {
+                  "mode": "read",
+                  "pc": 764,
+                  "address": 64039,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 767,
+                  "address": 64033,
+                  "value": 0
+                },
+                {
+                  "mode": "read",
+                  "pc": 779,
+                  "address": 64033,
+                  "value": 0
+                },
+                {
+                  "mode": "write",
+                  "pc": 779,
+                  "address": 64033,
+                  "value": 32
+                }
+              ]
+            }
+          ]
+        },
+        "ay_select_opcode_alias": [
+          {
+            "initial_frames": 0,
+            "first_copy_seed": 211,
+            "second_irq_increment": null,
+            "ay_select_address": 60798,
+            "hl_after_instruction": 60960,
+            "volume": 4,
+            "ay_writes": [
+              [
+                65533,
+                10
+              ],
+              [
+                49149,
+                4
+              ]
+            ],
+            "final_ay_noise_period": 5,
+            "final_ay_channel_c_volume": 4
+          },
+          {
+            "initial_frames": 65534,
+            "first_copy_seed": 211,
+            "second_irq_increment": {
+              "address": 60799,
+              "old": 121,
+              "bank0": true,
+              "new": 122
+            },
+            "ay_select_address": 60798,
+            "hl_after_instruction": 44568,
+            "volume": 4,
+            "ay_writes": [
+              [
+                49149,
+                4
+              ]
+            ],
+            "final_ay_noise_period": 4,
+            "final_ay_channel_c_volume": 4
+          }
+        ]
+      }
+    ],
+    "action_initialization_trdos_substituted": true,
+    "damage_threshold_prepared": true,
+    "native_reachability_of_ram_aliases_proved": false
+  },
   "assembly_executed": false,
   "native_execution": false
 }

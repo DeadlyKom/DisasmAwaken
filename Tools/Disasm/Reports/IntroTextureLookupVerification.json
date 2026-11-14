@@ -1,0 +1,631 @@
+{
+  "passed": true,
+  "total_cases": 36,
+  "profiles": [
+    {
+      "opcode": 111,
+      "coordinates_case": 0,
+      "rom": "48.rom",
+      "parameter_case": 0,
+      "M1": 996976,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        13393,
+        12884
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 41,
+      "table_sha256": "f4f9cac72b4e44e3d3df1956745b92fa3100c4ca324ed5b3140aa7af48a3a104"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 0,
+      "rom": "48.rom",
+      "parameter_case": 1,
+      "M1": 996976,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        13393,
+        12884
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 0,
+      "table_sha256": "1ed409f559b24226d01c4cc927128b22ad8bf037dca5a0deae40527aecfc5095"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 0,
+      "rom": "48.rom",
+      "parameter_case": 2,
+      "M1": 1045936,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        16256,
+        16141
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 255,
+      "table_sha256": "ccaca8b55827c57ce771a70dcb387666b9b0a3b56e1964e204fdbe77fd63b7c2"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 0,
+      "rom": "128-1.rom",
+      "parameter_case": 0,
+      "M1": 996976,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        13393,
+        12884
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 41,
+      "table_sha256": "af73f00ecd69057bbe00f8eb3d8594a8401e3c1a280114e97c98b6da0dccd7cc"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 0,
+      "rom": "128-1.rom",
+      "parameter_case": 1,
+      "M1": 996976,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        13393,
+        12884
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 0,
+      "table_sha256": "d1898f739f4bed10705f9e5953dacc9cb54c7f80c62265c6ced76e0837426083"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 0,
+      "rom": "128-1.rom",
+      "parameter_case": 2,
+      "M1": 1045936,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        16256,
+        16141
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 255,
+      "table_sha256": "2ce1d12353e6215af55b744634d0cc2c32f20f5612879743583f69b01372347a"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 1,
+      "rom": "48.rom",
+      "parameter_case": 0,
+      "M1": 996968,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        13393,
+        12883
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 41,
+      "table_sha256": "3f721ef7012916ccb925cc171b6c1dc18274b9f8a1ef008bf63e17c01dd51bff"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 1,
+      "rom": "48.rom",
+      "parameter_case": 1,
+      "M1": 996968,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        13393,
+        12883
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 0,
+      "table_sha256": "1895c668f60363615d2b77b9ea27d1a76e0d564ab2e68ba9f4f31543e09ea0e7"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 1,
+      "rom": "48.rom",
+      "parameter_case": 2,
+      "M1": 1045936,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        16256,
+        16141
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 255,
+      "table_sha256": "cd30096768fc42cd0d454b45b4b13a5a71afc3bcaaca9b62d9764e97dd9b9b96"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 1,
+      "rom": "128-1.rom",
+      "parameter_case": 0,
+      "M1": 996968,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        13393,
+        12883
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 41,
+      "table_sha256": "d331fd1cb6f0ac432684c425b4fec3766e312cd9be5ee7bc7de695ef6bd56c63"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 1,
+      "rom": "128-1.rom",
+      "parameter_case": 1,
+      "M1": 996968,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        13393,
+        12883
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 0,
+      "table_sha256": "5fc9b147f844dbd539ff565352aa7a34cc130f8ed7fb15bc91c5c7491ffd3cf3"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 1,
+      "rom": "128-1.rom",
+      "parameter_case": 2,
+      "M1": 1045936,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        16256,
+        16141
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 255,
+      "table_sha256": "4b65e26b75cb86ec6100c1d09a2363d5e474014bfcbf9de1ea4a76c85dba4bfa"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 2,
+      "rom": "48.rom",
+      "parameter_case": 0,
+      "M1": 1045912,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        16255,
+        16139
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 41,
+      "table_sha256": "d88eab90327e8e85b64e173e26bb879e2ba7bd3b45999c32339d65d4697b6572"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 2,
+      "rom": "48.rom",
+      "parameter_case": 1,
+      "M1": 1045912,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        16255,
+        16139
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 0,
+      "table_sha256": "805bcb7f30e492eb8301a6ed9a7d1b6ffe81ee5b67b5d15544bdc44f19df23ec"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 2,
+      "rom": "48.rom",
+      "parameter_case": 2,
+      "M1": 1045936,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        16256,
+        16141
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 255,
+      "table_sha256": "65870e8c6ba6a17b55c8d44b95609457646c88d3ebb8d83042091654e31e4995"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 2,
+      "rom": "128-1.rom",
+      "parameter_case": 0,
+      "M1": 1045912,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        16255,
+        16139
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 41,
+      "table_sha256": "9e7f0bcc053d6349b0c40c3126757d0669016818f1cc8314a479dc003f41e026"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 2,
+      "rom": "128-1.rom",
+      "parameter_case": 1,
+      "M1": 1045912,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        16255,
+        16139
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 0,
+      "table_sha256": "c3e680ceeec607b220f079efbb7d1f96fd43cfb483732d7be4b06231b79971b5"
+    },
+    {
+      "opcode": 111,
+      "coordinates_case": 2,
+      "rom": "128-1.rom",
+      "parameter_case": 2,
+      "M1": 1045936,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        16256,
+        16141
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 255,
+      "table_sha256": "2b38fd5b9bdbf20d8173943041b6b708af1ec2ca59716a3bd2b56ed57f6c030b"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 0,
+      "rom": "48.rom",
+      "parameter_case": 0,
+      "M1": 996976,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        13393,
+        12884
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 153,
+      "table_sha256": "06d8dada21293ce7d16d488611a02d441e2bb5a598866551dccd5ec316e4ee10"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 0,
+      "rom": "48.rom",
+      "parameter_case": 1,
+      "M1": 996976,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        13393,
+        12884
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 190,
+      "table_sha256": "c0dcf8d0ed8f0a8de936d5ab765c03b496cebe0f1e634bccf3aaef6feccb2ed0"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 0,
+      "rom": "48.rom",
+      "parameter_case": 2,
+      "M1": 996976,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        13393,
+        12884
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 227,
+      "table_sha256": "e3379f13cc464177ffa5fec941e8c25f4a1ce8ffb9a5e5587e4887d2c92e2d8c"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 0,
+      "rom": "128-1.rom",
+      "parameter_case": 0,
+      "M1": 997640,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        13453,
+        12907
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 8,
+      "table_sha256": "2a32b0ccab657bdb212cbc37e9e8c45103aa67a70b222bb1546835e5a077a149"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 0,
+      "rom": "128-1.rom",
+      "parameter_case": 1,
+      "M1": 997424,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        13436,
+        12897
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 45,
+      "table_sha256": "b2ec663e187328bdee7bb914df8afe26ab3e50e672d2634486d888e8c1489178"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 0,
+      "rom": "128-1.rom",
+      "parameter_case": 2,
+      "M1": 996976,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        13393,
+        12884
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 82,
+      "table_sha256": "b4cad0107d0a221d8b28291c7fee012fe631d46dae0e0c3494981c87e83df617"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 1,
+      "rom": "48.rom",
+      "parameter_case": 0,
+      "M1": 996968,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        13393,
+        12883
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 119,
+      "table_sha256": "dbd73ae72f1613feeaa7135b4c5a3028a41556379e2f3aedfbd03f38531081c7"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 1,
+      "rom": "48.rom",
+      "parameter_case": 1,
+      "M1": 996968,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        13393,
+        12883
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 156,
+      "table_sha256": "c502e2bb9f10fc6401db98ecd30226fc35cf3ed23b51968568bd7ce54899b3c5"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 1,
+      "rom": "48.rom",
+      "parameter_case": 2,
+      "M1": 996968,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        13393,
+        12883
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 193,
+      "table_sha256": "9a8f8b3e376e2dd1c69f4d92a06ac5255c87645ac6c7d9a6472b66332a4e9d33"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 1,
+      "rom": "128-1.rom",
+      "parameter_case": 0,
+      "M1": 996968,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        13393,
+        12883
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 230,
+      "table_sha256": "164eb044e36818e4e485dff71e5583e5a6a0d1660c14706b33f87cde8cea2500"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 1,
+      "rom": "128-1.rom",
+      "parameter_case": 1,
+      "M1": 997808,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        13470,
+        12911
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 11,
+      "table_sha256": "7bd2f8b1d51e94dfceeaa0fecff0d9f17b6b6e570dfe094dbc7d9361452f82c8"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 1,
+      "rom": "128-1.rom",
+      "parameter_case": 2,
+      "M1": 997032,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        13400,
+        12884
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 48,
+      "table_sha256": "5f8645e59d16830ed807d1db51592a2eb1c42147c2ee5d0c21b007e44cf6ed6e"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 2,
+      "rom": "48.rom",
+      "parameter_case": 0,
+      "M1": 1045912,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        16255,
+        16139
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 85,
+      "table_sha256": "aa4efb91ea6f0ef57d2cd059ea56fa95aa604d9af231b5ed9e399410d21307c1"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 2,
+      "rom": "48.rom",
+      "parameter_case": 1,
+      "M1": 1045912,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        16255,
+        16139
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 122,
+      "table_sha256": "c8949ee990c31346268bf0259666dac831ce7e067b815248d3da1d725e7aef80"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 2,
+      "rom": "48.rom",
+      "parameter_case": 2,
+      "M1": 1045912,
+      "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+      "fills": [
+        16255,
+        16139
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 159,
+      "table_sha256": "362a4f88bf5e33fbebad39e282c655dd04b04a7359f16c74a2049c81165da0bb"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 2,
+      "rom": "128-1.rom",
+      "parameter_case": 0,
+      "M1": 1045912,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        16255,
+        16139
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 196,
+      "table_sha256": "e2ca93077d2c0d8b33134e406e84f5ae4b20527807ffd51a5ada1f2c8469859f"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 2,
+      "rom": "128-1.rom",
+      "parameter_case": 1,
+      "M1": 1045912,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        16255,
+        16139
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 233,
+      "table_sha256": "023b948f9269cc7934811c6602cbcbf205a2c5632ceb04e2c36ecf70463f238c"
+    },
+    {
+      "opcode": 44,
+      "coordinates_case": 2,
+      "rom": "128-1.rom",
+      "parameter_case": 2,
+      "M1": 1045912,
+      "rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+      "fills": [
+        16255,
+        16139
+      ],
+      "A": 206,
+      "F": 67,
+      "DE": 65535,
+      "IYL": 14,
+      "table_sha256": "1b29f52e7f2cea8ad832e2e214cafc4df76a49d2afc3443ae8d8fa9416096a71"
+    }
+  ],
+  "full_BuildAlternatingTexture_cases": 6,
+  "both_opcode_variants": true,
+  "all_physical_banks_compared": true,
+  "exact_registers_except_T": true,
+  "original_parameter_count": 63,
+  "additional_constant_parameters": [
+    0,
+    255
+  ],
+  "all_coordinate_and_parameter_inputs_exhausted": false,
+  "IRQ_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

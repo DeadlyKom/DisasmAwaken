@@ -1,0 +1,334 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "disk_members": [
+    "awk1.trd",
+    "awk2.trd",
+    "awk3.trd",
+    "awk4.trd",
+    "awk5.trd",
+    "awk6.trd"
+  ],
+  "active_source_entries_checked": 129,
+  "total_text_and_storm_sources_checked": 160,
+  "structured_storm_inspection": {
+    "passed": true,
+    "method": "structured_STORM_symbol_comment_and_literal_search",
+    "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+    "queried_names": [
+      "ORDER"
+    ],
+    "source_entries": 31,
+    "records": 18123,
+    "decoded_symbol_occurrences": 5027,
+    "comment_fragments": 1512,
+    "string_literal_fragments": 39,
+    "source_identities": [
+      {
+        "member": "awk2.trd",
+        "slot": 9,
+        "name": "CNVVOXSPC",
+        "bytes": 125,
+        "sha256": "57e7ab29288eaefd19c1d7fcf2d876089cb46d55f12e3d28b5c7270e6cb6dda1"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 12,
+        "name": "CNVVOXTBC",
+        "bytes": 115,
+        "sha256": "a9f401926bffbb68bcd07c5d8fd1777a2fab3fbd36f4866b3844b8b997850279"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 16,
+        "name": "VOXL    C",
+        "bytes": 3337,
+        "sha256": "d8b93838744e97ab6b37857bc79b6f2a634c025a559cdf3f76f425b7e2ad750a"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 18,
+        "name": "VOXP    C",
+        "bytes": 7428,
+        "sha256": "07413325be1a4d83bda26f9c223468eec9746fcedc2128e95d96dca650fdc86f"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 19,
+        "name": "VOXEL   C",
+        "bytes": 4798,
+        "sha256": "818fb391586ceb3c7713bd96a5e9a5936204a091c3a2a3fb15cb2d25f542bcc0"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 21,
+        "name": "BLK1    C",
+        "bytes": 4458,
+        "sha256": "3ef8ba2729f933db0b6816fc9cd255cbc758919c279cd6edb9bc4eb956d8e706"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 22,
+        "name": "BLK2    C",
+        "bytes": 5386,
+        "sha256": "ddc5766e16f86a1e5b9b4c17acc19cb7036c344f40dea2420c71d74463341207"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 23,
+        "name": "BLK3    C",
+        "bytes": 357,
+        "sha256": "e3798b91a3eb86f4468547e88f2c40d928faaf7a4809b922a99599aee9b41cf1"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 24,
+        "name": "BLK5    C",
+        "bytes": 416,
+        "sha256": "e95aa4ae72a70af0d4229246c1af189223632533d91579f28a7d5acfbea7c3d2"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 25,
+        "name": "BLK6    C",
+        "bytes": 3393,
+        "sha256": "4bbb116eca4e8cd6155e58e582eb1ea72ebe823b4d76d0826126bf47321249f4"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 26,
+        "name": "BLK7    C",
+        "bytes": 3902,
+        "sha256": "bde59fa0ce146859605b4a3c332dcb7627366247ca58ddf7154b524db2abd808"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 29,
+        "name": "XCLP    C",
+        "bytes": 6878,
+        "sha256": "1f359a35fd8aa03413cdc218a45da29e31a54d0fcd0a0b651ae504e223afbef3"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 32,
+        "name": "INVTAB3DC",
+        "bytes": 95,
+        "sha256": "59ff4a634a1d57bcef2e10ec3f2bd9f1ae96b05ce2af5c84bddbf2ca74690a7b"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 33,
+        "name": "xR2     C",
+        "bytes": 10029,
+        "sha256": "dca27c2532611d2562fc9594566c61709db4cdbdaee2eb8eae8456d399b87ab9"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 39,
+        "name": "CNVVOXS3C",
+        "bytes": 180,
+        "sha256": "d04b6216048bc23db1d5b961b01bf2da76623342691053ff2f103f9466c6de10"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 45,
+        "name": "NXT     C",
+        "bytes": 4272,
+        "sha256": "39ca5cfb8808f2c94ad9f531701fce85afc613407a939dbfbbcd395c129bd910"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 47,
+        "name": "SERV    C",
+        "bytes": 1417,
+        "sha256": "45639ea5933eb2775f75096c8a182a68aaf1a5ec4a9c5978287491dc0dd2e061"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 48,
+        "name": "DATAM   C",
+        "bytes": 4074,
+        "sha256": "f45a34cf3c9df53b68d30a88da503882ce41b0f320e215516a176e1a3e9302bb"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 49,
+        "name": "EQUS    C",
+        "bytes": 2214,
+        "sha256": "7f0afda6578673cccc953eaf6c1f2a298ec2d66baf580aa17b7c533e86b5558f"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 50,
+        "name": "OBJX    C",
+        "bytes": 1595,
+        "sha256": "9ea827d40f36e016fc9372d53d28d5cc649e57e8a6b61ae0ff87195ed91fc684"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 61,
+        "name": "VXXX    C",
+        "bytes": 5171,
+        "sha256": "deb0f6477375af9bfbd718a479a55f707a0599e8442b925a15580a4aad3f7468"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 62,
+        "name": "XR1     C",
+        "bytes": 4272,
+        "sha256": "39ca5cfb8808f2c94ad9f531701fce85afc613407a939dbfbbcd395c129bd910"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 64,
+        "name": "LAND    C",
+        "bytes": 11518,
+        "sha256": "e8d5def3b6e55cdfa50bba75e7efd5d9e8c936283b0b534966aa6790c9bdf63d"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 65,
+        "name": "LOADER  C",
+        "bytes": 162,
+        "sha256": "eae56ceea89fd9c5c75b1b94e190ee59807af851f29094a4b0bb90f34437ce0f"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 66,
+        "name": "VSPRITE C",
+        "bytes": 11466,
+        "sha256": "ff4d93857ebcc71bcc90056872aea681f5e67c1d63a0b97ed2a1fde8d3b79bf1"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 67,
+        "name": "S3D     C",
+        "bytes": 5269,
+        "sha256": "7ff9180c9f346b395cab7f26907a8cf369f9f0bf7bc5a657e942a257c6bccc51"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 68,
+        "name": "XR2     C",
+        "bytes": 10427,
+        "sha256": "31cf21ed762bb14397381d2f333876e93a6eb67b77ec63c3d1087897a4118ad7"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 69,
+        "name": "BLOK1   C",
+        "bytes": 1423,
+        "sha256": "72da49c98c38134d81f7b6924634ebfb5ed7e00fd3a3e8c4fb6c5e0611009e54"
+      },
+      {
+        "member": "awk5.trd",
+        "slot": 14,
+        "name": "LOAD+   C",
+        "bytes": 662,
+        "sha256": "45210bda98b215e36c5907ff6ea8bf11e92cf1da453959df99031549303e9ab4"
+      },
+      {
+        "member": "awk5.trd",
+        "slot": 15,
+        "name": "INVDISK C",
+        "bytes": 115,
+        "sha256": "8afad1145e98f77fa57c833fca3aace2f071603b896bf3e49ab956776d941b8d"
+      },
+      {
+        "member": "awk5.trd",
+        "slot": 16,
+        "name": "LOAD    C",
+        "bytes": 767,
+        "sha256": "c6b82becdcc30eedf8f8f21dd654c2721619324734321d0c765616a2b69ba61f"
+      }
+    ],
+    "mentions": [
+      {
+        "member": "awk2.trd",
+        "slot": 48,
+        "source": "DATAM   C",
+        "line": 135,
+        "file_offset": 2574,
+        "original_record_hex": "ce5d0f109d",
+        "kind": "definition",
+        "byte_offset": 0,
+        "name": "ORDER"
+      },
+      {
+        "member": "awk2.trd",
+        "slot": 64,
+        "source": "LAND    C",
+        "line": 460,
+        "file_offset": 2839,
+        "original_record_hex": "2f4e554d4245525301494e014f52444552015052494e5400",
+        "kind": "comment",
+        "byte_offset": 0,
+        "name": "ORDER",
+        "text": ";NUMBERS IN ORDER PRINT"
+      }
+    ],
+    "binary_source_not_treated_as_CR_text": true,
+    "numeric_or_aliased_accesses_excluded": false,
+    "computed_or_indirect_accesses_excluded": false,
+    "current_consumers_proved": false,
+    "semantic_field_names_established": false,
+    "assembly_executed": false,
+    "native_execution": false
+  },
+  "identifier": "ORDER",
+  "identifier_occurrences": [
+    {
+      "member": "awk1.trd",
+      "slot": 49,
+      "name": "3DTABS  a",
+      "line": 349,
+      "raw_line_hex": "4f524445523a",
+      "kind": "data_declaration"
+    },
+    {
+      "member": "awk1.trd",
+      "slot": 63,
+      "name": "LABELS  a",
+      "line": 445,
+      "raw_line_hex": "4f52444552068a04663430303036",
+      "kind": "symbol_listing"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 33,
+      "name": "DATAM   C",
+      "line": 135,
+      "raw_line_hex": "4f52444552",
+      "kind": "data_declaration"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 47,
+      "name": "LAND    C",
+      "line": 460,
+      "raw_line_hex": "3b4e554d4245525320494e204f52444552205052494e54",
+      "kind": "unrelated_English_comment"
+    },
+    {
+      "member": "awk4.trd",
+      "slot": 60,
+      "name": "DATAM   a",
+      "line": 135,
+      "raw_line_hex": "4f52444552",
+      "kind": "data_declaration"
+    },
+    {
+      "member": "awk6.trd",
+      "slot": 56,
+      "name": "DATA_M  a",
+      "line": 877,
+      "raw_line_hex": "4f52444552",
+      "kind": "data_declaration"
+    }
+  ],
+  "named_consumer_text_found": false,
+  "numeric_or_aliased_references_excluded": false,
+  "current_game_consumer_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

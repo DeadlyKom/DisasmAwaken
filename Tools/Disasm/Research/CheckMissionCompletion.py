@@ -8,6 +8,21 @@ from skoolkit.pagingtracer import SliceableMemory
 from skoolkit.simutils import get_registers,H,L,PC,SP
 from CheckRowHighlight import make_context
 from CheckScreenUpdate import PortTrace,put
+from CheckActionParameterActivation import RecordedBanks
+from ReferenceControlsPointRespawn import refresh
+
+
+def check_disabled(banks,initial):
+ memory=RecordedBanks(banks=[list(b) for b in banks],out7ffd=0x10);memory[0xAA85]=0xC9;put(memory,0x7FFE,[255,63])
+ sim=Simulator(memory);trace=PortTrace(sim);sim.set_tracer(trace);snapshot=[bytes(b) for b in memory.banks]
+ for af in range(65536):
+  sim.registers[:]=initial;r=sim.registers;r[0],r[1]=af>>8,af&255;r[14]=af>>8;r[15]=af&255;r[26]=(af>>8)&1;r[27]=af%3
+  before=r.copy();memory.writes=[];memory.recording=True;sim.run(start=0xAA85,stop=0x3FFF);memory.recording=False
+  assert all(r[i]==before[i] for i in (*range(12),14,*range(16,24),26,27))
+  assert r[SP]==0x8000 and r[15]==refresh(before[15],1) and not memory.writes and not trace.writes
+ assert [bytes(b) for b in memory.banks]==snapshot
+ return dict(cases=65536,all_af_words=True,exact_refresh_m1=1,ordinary_context_and_i_im_iff_preserved=True,
+  both_iff_values_without_irq=True,no_cpu_memory_writes=True,all_banks_unchanged=True,no_out=True)
 
 
 def main():
@@ -34,7 +49,7 @@ def main():
   memory[0x99A3]=active;memory[0x99A4]=guard;memory[0x9852]=quantity;memory[0x98BE]=required
   put(memory,0x984E,credits.to_bytes(2,'little'));put(memory,0x98BC,reward.to_bytes(2,'little'));put(memory,0x7FFE,[255,63])
   sim.registers[:]=initial;r=sim.registers;r[PC]=0xAA85;trace=PortTrace(sim);sim.set_tracer(trace)
-  entries=offers=scripts=halts=0;completion_states=[]
+  entries=offers=scripts=halts=0;completion_states=[];script_return_ix=None;finish_script_ix=None
   for steps in range(700000):
    pc=r[PC]
    if pc==0x3FFF:break
@@ -43,6 +58,8 @@ def main():
    if pc==0xAA85:entries+=1;completion_states.append((memory[0x99A3],memory[0x99A4]))
    if memory[pc]==0xCD and memory[(pc+1)&65535]==0x14 and memory[(pc+2)&65535]==0xAC:offers+=1
    if pc==0xC000 and memory.o7ffd&7==6:scripts+=1
+   if pc==0xC0E7 and memory.o7ffd&7==6:finish_script_ix=r[8]*256+r[9]
+   if pc==0xAB2D:script_return_ix=r[8]*256+r[9]
    sim.opcodes[memory[pc]]()
   else:raise AssertionError(('instruction_limit',name,hex(r[PC]),r[SP],memory.o7ffd,entries))
   success=name=='complete';expected_credits=65000 if credits+reward>65535 else credits+reward
@@ -51,10 +68,12 @@ def main():
   assert (memory[0x99A3],memory[0x99A4])==((0,1) if success else (active,guard))
   assert (entries,offers,scripts)==((2,1,1) if success else (1,0,0)),(name,entries,offers,scripts,completion_states)
   assert r[10:12]==initial[10:12] and (success or r[8:10]==initial[8:10]) and r[SP]==0x8000 and memory.o7ffd==0x10 and memory[0x6306]==0x10
-  if success:assert completion_states==[(1,0),(0,1)]
+  if success:
+   assert completion_states==[(1,0),(0,1)]
+   assert script_return_ix is not None and finish_script_ix==script_return_ix==r[8]*256+r[9],(script_return_ix,finish_script_ix,r[8:10])
   branches[name]=branches.get(name,0)+1;completed+=success;cases+=1;wakeups+=halts;max_steps=max(max_steps,steps)
   results.append(dict(branch=name,status_width=width,credits=credits,reward=reward,final_credits=int.from_bytes(bytes(memory[0x984E:0x9850]),'little'),quantity=quantity,halt_wakeups=halts))
- report=dict(passed=True,cases=cases,completed=completed,branches=branches,max_instructions=max_steps,
+ report=dict(passed=True,disabled_entry=check_disabled(banks,initial),final_ix_matches_real_finish_script=True,cases=cases,completed=completed,branches=branches,max_instructions=max_steps,
   halt_fixture_wakeups=wakeups,recursive_draw_count_on_completion=2,results=results,
   method='complete_original_DrawItem32_caption_printing_system_name_script_reward_offer_and_recursive_redraw',
   model_rom_sha256=hashlib.sha256(bytes(memory.roms[1])).hexdigest(),emulator_rom_match_verified=False,

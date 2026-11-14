@@ -1,18 +1,27 @@
 """Оригинальный поиск текстового заголовка CF18 и установка байта записи FF/FE."""
 from pathlib import Path
 from itertools import product
-import json,sys
+import hashlib,json,sys
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/'Tools/Disasm/Research/vendor/skoolkit-10.1'),str(ROOT/'Tools/Disasm/Research')]
 from skoolkit.simulator import Simulator
 from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,SP
 from CheckMarketAccess import add16_flags
+from CheckGeometryReturnEntries import Memory
 
 
 def main():
  manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_text('utf-8'));e=next(e for e in manifest['entries'] if e['slot']==5)
  source=(ROOT/(e['path']+'.sectors.bin')).read_bytes();original=bytearray(65536);original[0xC000:0xC000+len(source)]=source
- memory=original.copy();sim=Simulator(memory)
+ # Проверка физических исходных байтов и положительный контроль записи CPU.
+ disk=(ROOT/'Tools/Disasm/Disk/original.trd').read_bytes()
+ assert hashlib.sha256(disk).hexdigest()==manifest['sha256']
+ assert source==disk[e['offset']:e['offset']+e['allocated_length']]
+ assert hashlib.sha256(source).hexdigest()==e['sectors_sha256']
+ probe=Memory(65536);probe[0x4000:0x4003]=bytes.fromhex('320070')
+ cpu=Simulator(probe);cpu.registers[24]=0x4000;probe.recording=True;cpu.run()
+ assert probe.writes==[(0x7000,0)]
+ memory=Memory(65536);memory[:]=original;sim=Simulator(memory)
  initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5C,'IX':0xB000,'IY':0x5C3A,
   '^HL':0xB800,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69A5},None,False)
  active=skipped=0
@@ -25,7 +34,15 @@ def main():
   header=lambda g,r,i:('_X'+str(g)+'?'+str(r)+'!'+str(i)+' payload\r').encode()
   headers=header((group+1)&255,record,offset&255)+header(group,(record+1)&255,offset&255)+header(group,record,(offset+1)&255)+header(group,record,offset&255)
   memory[0xCF18:0xCF18+len(headers)]=headers;memory[0x7FFE:0x8000]=bytes([255,63]);sim.registers[:]=initial;r=sim.registers;r[16]=mode
-  sim.run(start=0xC10E,stop=0x3FFF)
+  refresh=(group^record^offset)&255;r[15]=refresh
+  memory.writes.clear();memory.recording=True;sim.run(start=0xC10E,stop=0x3FFF);memory.recording=False
+  assert memory[0x7FFE:0x8000]==bytes([255,63])
+  # Проверка областей всех записей, отдельно от временных значений восьми стековых байтов.
+  if mode:
+   persistent=[(a,v) for a,v in memory.writes if not 0x7FF6<=a<0x7FFE]
+   assert persistent==[(0xC856,group),(0xC862,record),(target,1)],persistent
+  else:
+   assert not memory.writes and r[15]==((refresh&128)|((refresh+3)&127))
   if mode:
    assert (memory[target],r[A],r[F],r[H]*256+r[L],r[D]*256+r[E],r[B],r[C],r[SP])==(1,254,add16_flags(marker,offset,0x44),0xCF18+len(headers),offset,0,group,0x8000)
    assert r[8]*256+r[9]==0xB000+len(text)-1;active+=1
@@ -35,6 +52,11 @@ def main():
   assert r[16:18]==initial[0:2] and r[18:24]==initial[18:24] and r[10:12]==initial[10:12]
  report=dict(passed=True,method='original_resource_activation_with_three_header_mismatch_paths',active_cases=active,skipped_cases=skipped,
   header_index_compared_as_byte_but_target_offset_is_word=True,zero_counts_mean_256=True,
+  exact_non_stack_writes_and_bounded_stack_addresses_checked=True,
+  maximum_tested_stack_depth_bytes=8,zero_mode_M1=3,zero_mode_no_CPU_RAM_writes=True,
+  original_return_word_preserved=True,CPU_write_watch_positive_control=True,
+  physical_disk_and_sector_hashes_checked=True,full_active_path_R_proved=False,
+  all_possible_headers_and_aliases_checked=False,
   irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/ResourceActivationVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))

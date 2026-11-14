@@ -1,7 +1,7 @@
 # Нормализация отношения, частичный разбор D0CA
 
-Исследуются исходные [UnknownD0CA](../Source/Controls/EncodeProjectionRatio.asm)
-и продолжение [UnknownD10A](../Source/Controls/ContinueProjectionRatio.asm) банка 1.
+Исследуются исходные [EncodeProjectionRatio](../Source/Controls/EncodeProjectionRatio.asm)
+и продолжение [ContinueProjectionRatio](../Source/Controls/ContinueProjectionRatio.asm) банка 1.
 Этот документ фиксирует первоначальную ограниченную проверку внутренней ветви.
 Полный числовой договор и разбор вызывающей процедуры опубликованы отдельно
 в [проекции компонент](ControlsBodyProjection.md).
@@ -11,7 +11,7 @@
 На входе 24-битный числитель N равен 256*HL+C, делитель Q равен
 256*DE+B. Рассмотрена только область 0≤N≤Q≤7FFFFF и альтернативный
 C, равный 3 или 2. Главный вызывающий
-[UnknownCF0B](../Source/Controls/BuildBodyProjection.asm) начинает с C'=3,
+[BuildBodyProjection](../Source/Controls/BuildBodyProjection.asm) начинает с C'=3,
 двумя координатными вызовами последовательно уменьшает его.
 Входной AF не участвует в этих величинах.
 

@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 2,
+  "resources": 1,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "archive_disk": "awk6.trd",
+  "archive_event": "WMISS2",
+  "archive_hover": "WMISS2C",
+  "archive_draw": "WMISS2_",
+  "archive_two_returns_before_hover": true,
+  "archive_second_return_label": "F_S5",
+  "current_descriptor_audit": {
+    "start": 43650,
+    "end_exclusive": 43652,
+    "physical_interface_records": 46,
+    "contract_hover_entry": 43605,
+    "contract_action_entry": 43608,
+    "contract_ret": 43652,
+    "physical_hover_action_or_draw_targets": 0,
+    "registered_direct_branch_targets": 0,
+    "dynamic_indirect_targets_exhausted": false
+  },
+  "original_action_exit_profiles": {
+    "AA81": 129,
+    "AA7E": 127,
+    "AA5B": 256
+  },
+  "separately_forced_ret_profiles": 131072,
+  "current_normal_entry_to_either_ret_proved": false,
+  "native_execution": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

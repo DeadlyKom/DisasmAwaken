@@ -15,7 +15,7 @@ for a,name,_,internal,target,callee in ENTRIES:
  parts[0][0]='HL входа не является параметром, DE индекс выбранного элемента, BC сохраняемый контекст, AF селектор общего действия'
  parts[0].append('выбранный DE-индекс присутствует в списке, устанавливаемая цель Station.'+callee+'.Entry доступна в своём банковом контексте при последующем вызове')
  parts[1][0]='NextCallback всегда получает Station.'+callee+'.Entry до проверки селектора, сама эта цель здесь не исполняется'
- parts[1]=[line.replace('HL=входной callback','HL=Station.'+callee+'.Entry').replace('HL,DE,BC и IX сохранены','HL=Station.'+callee+'.Entry, DE, BC и IX сохранены') for line in parts[1]]
+ parts[1]=[line.replace('HL=входной callback','HL=Station.'+callee+'.Entry').replace('при A=0 и выполненной геометрии HL, DE и BC сохранены','при A=0 и выполненной геометрии HL=Station.'+callee+'.Entry, DE и BC сохранены') for line in parts[1]]
  parts[1].append('после CALL общего обработчика выполняется собственный RET, SP обычного возврата входному+2')
  parts[3].append('Entry сначала делает исходный JP BindCallback, отдельный внутренний вход принимает тот же контекст')
  parts[3].append('новый callback не подменяет немедленную ветвь A=0, она по-прежнему меняет геометрию и возвращает Carry')

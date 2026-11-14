@@ -6,9 +6,9 @@
 
 ## Данные и потребитель
 
-Загрузчик [InitializeFlight](../Source/ActionBoot/InitializeFlight.asm) выбирает банк 4 и ключ OBJECT3D по исходному адресу 42FD. Фактический файл — [24_OBJECT3D.C.bin](../Tools/Disasm/Extracted/Active/24_OBJECT3D.C.bin), его длина 10580 байтов. Страница указателей 9E00 находится в общей RAM ACTION. Все 128 исходных чётных смещений дают адреса внутри загруженного OBJECT3D, но полный допустимый диапазон игровых индексов и значения обоих байтов заголовка ещё не доказаны.
+Загрузчик [InitializeFlight](../Source/ActionBoot/InitializeFlight.asm) выбирает банк 4 и ключ OBJECT3D по исходному адресу 42FD. Фактический файл — [24_OBJECT3D.C.bin](../Tools/Disasm/Extracted/Active/24_OBJECT3D.C.bin), его длина 10580 байтов. Страница указателей 9E00 находится в общей RAM ACTION. Все 128 исходных чётных смещений дают адреса внутри загруженного OBJECT3D. Полный допустимый диапазон игровых индексов остаётся открытым.
 
-В [UnknownE020](../Source/Action/RenderSceneFrame.asm) вход вызывается с кодом из 9B8E. [UnknownE1B9](../Source/Action/PrepareProjectionScale.asm) использует возвращённый H для изменения трёх относительных переходов, а L для подготовки величин перед [локальным выбором записи](ActionProjectedCapture.md). Это устанавливает числового потребителя слова, но не доказывает полный договор окружающего сканирования. Имена физического размера, единиц или модели объекта до этого разбора не назначены.
+В [RenderSceneFrame](../Source/Action/RenderSceneFrame.asm) вход вызывается с кодом из 9B8E. В исходных записях L содержит BoundMantissa, H содержит ScaleExponent. [PrepareProjectionScale](../Source/Action/PrepareProjectionScale.asm) использует H для изменения трёх относительных переходов и масштабирует L. Полученное слово проверяет близость записи и участвует в [расчёте проецируемой границы](ActionProjectedBounds.md). Физические единицы этой границы пока неизвестны.
 
 ## Контракт и проверка
 

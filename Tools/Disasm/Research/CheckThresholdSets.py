@@ -8,7 +8,8 @@ from skoolkit.pagingtracer import SliceableMemory
 from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,SP
 from CheckRowHighlight import make_context
 from CheckScreenUpdate import PortTrace,put
-from CheckWorldSignature import signature
+from CheckWorldSignature import signature,step_key
+from CheckBank4Index import WriteMemory
 from CheckGlyphRenderer import compare_flags
 
 
@@ -16,7 +17,7 @@ def main():
  _,_,base=make_context();base=[bytearray(b) for b in base]
  manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_text('utf-8'));e=next(e for e in manifest['entries'] if e['slot']==5)
  lang=(ROOT/(e['path']+'.sectors.bin')).read_bytes();base[6][:len(lang)]=lang
- memory=SliceableMemory(banks=[b.copy() for b in base],out7ffd=0x16);sim=Simulator(memory)
+ memory=WriteMemory(banks=[b.copy() for b in base],out7ffd=0x16);sim=Simulator(memory)
  initial=get_registers({'SP':0x7FFC,'BC':0x365D,'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
  rng=random.Random(0xC4EF);count=0
  for entry,thresholds,weights,n in ((0xC4EF,0x95F0,0x988E,30),(0xC596,0x98F6,0x9632,14)):
@@ -29,7 +30,23 @@ def main():
      memory[thresholds+2*i]=(size if pattern==0 else size+1 if pattern==1 else rng.randrange(256))
      memory[weights+i]=(0 if pattern==2 else 255 if pattern==3 else rng.randrange(1,255))
     failure=next((i for i in range(n) if memory[weights+i] not in (0,255) and size<memory[thresholds+2*i]),None)
-    sim.registers[:]=initial;trace=PortTrace(sim);sim.set_tracer(trace);sim.run(start=entry,stop=0x3FFF);r=sim.registers
+    sim.registers[:]=initial;trace=PortTrace(sim);sim.set_tracer(trace)
+    memory.cpu_writes.clear();memory.recording=True;sim.run(start=entry,stop=0x3FFF);memory.recording=False;r=sim.registers
+    # Расчёт всех нестековых записей через независимый шаг рабочего ключа.
+    expected_writes=[(0x6306,0x11)]
+    first,second=0x4B38,0x1357
+    def key_writes(first,second):
+     data=first.to_bytes(2,'little')+second.to_bytes(2,'little')
+     return [(0x631C+i,v) for i,v in enumerate(data)]
+    expected_writes+=key_writes(first,second)
+    for iteration in range(variant+1):
+     first,second,_=step_key(first,second)
+     expected_writes+=key_writes(first,second)
+    expected_writes.extend(((0x6306,0x10),(0x6306,0x16),(0xC509,size)))
+    persistent=[(a,v) for a,v in memory.cpu_writes if not 0x7FF0<=a<0x7FFE]
+    assert persistent==expected_writes,(entry,variant,pattern,persistent,expected_writes)
+    assert bytes(memory[0x7FFE:0x8000])==bytes([255,63])
+    assert bytes(memory[0x7FFC:0x7FFE])==(0xC4F3 if entry==0xC4EF else 0xC59A).to_bytes(2,'little')
     expected=int(failure is None);expected_hl=thresholds+2*(failure if failure is not None else n)
     assert (r[A],r[D],r[E],r[H]*256+r[L],r[B],r[C],r[SP])==(expected,0,expected,expected_hl,n-failure if failure is not None else 0,0x5D,0x8000)
     if failure is not None:assert r[F]==compare_flags(size,memory[thresholds+2*failure])
@@ -39,7 +56,10 @@ def main():
     assert trace.writes==[(0x7FFD,0x11),(0x7FFD,0x10),(0x7FFD,0x16)]
     count+=1
  report=dict(passed=True,cases=count,method='original_threshold_sets_with_real_key_size',second_entry_uses_thresholds_98F6_and_weights_9632=True,
-  all_variants=True,irq_executed=False,native_execution=False,assembly_executed=False)
+  all_variants=True,exact_non_stack_write_sequence_checked=True,bounded_stack_write_addresses_checked=True,
+  stack_write_address_interval=[0x7FF0,0x7FFE],consumed_index_word_reused_by_CALL=True,
+  original_return_word_preserved=True,full_R_proved=False,all_signature_words_checked=False,
+  physical_paging_lock_emulation_proved=False,irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/ThresholdSetsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))
 

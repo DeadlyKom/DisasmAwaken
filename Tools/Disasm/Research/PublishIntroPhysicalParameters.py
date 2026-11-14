@@ -29,7 +29,7 @@ def main():
     for block in BLOCKS:
         offset, length, module, filename = block
         old = next(row for row in source_map if row['slot'] == 3 and row['offset'] == offset)
-        assert old['kind'] == 'unclassified' and old['length'] in (length, length+1)
+        assert old['kind'] == 'unclassified' and old['length'] == length
         old_path = ROOT / old['path']
         assert old_path.read_bytes() == source[offset:offset+old['length']]
         removed.append(old_path)
@@ -40,17 +40,8 @@ def main():
         pending[ROOT / new_path] = text.encode('utf-8')
         new_row = dict(old, length=length, kind='typed_data', origin=0x6300+offset,
                        path=new_path, sha256=hashlib.sha256(raw).hexdigest())
-        replacement_rows = [new_row]
         replacement = f'                disp #{0x6300+offset:04X}\n                include "../Intro/Data/{filename}"\n                ent'
-        if old['length'] != length:
-            residual = 'Source/Resources/03_AWAKEN/UnknownAfterLookupParameters.bin'
-            tail = source[offset+length:offset+old['length']]
-            pending[ROOT / residual] = tail
-            replacement_rows.append(dict(old, offset=offset+length, length=len(tail), path=residual,
-                                         sha256=hashlib.sha256(tail).hexdigest()))
-            replacement += '\n                ; Назначение соседнего байта 66A2 ещё не установлено.\n'
-            replacement += '                incbin "../Resources/03_AWAKEN/UnknownAfterLookupParameters.bin"'
-        source_map[source_map.index(old):source_map.index(old)+1] = replacement_rows
+        source_map[source_map.index(old)] = new_row
         needle = '                incbin "../' + old_path.relative_to(ROOT / 'Source').as_posix() + '"'
         assert include_text.count(needle) == 1
         include_text = include_text.replace(needle, replacement)
@@ -141,7 +132,7 @@ def main():
         assert path.resolve().is_relative_to((ROOT / 'Source/Resources').resolve())
         assert path.read_bytes() == (history/path.relative_to(ROOT)).read_bytes()
         path.unlink()
-    print('172 исходных байта параметров вступления оформлены, соседний байт 66A2 оставлен Unknown')
+    print('173 исходных байта параметров вступления оформлены, включая весь IM_IT')
 
 
 if __name__ == '__main__':

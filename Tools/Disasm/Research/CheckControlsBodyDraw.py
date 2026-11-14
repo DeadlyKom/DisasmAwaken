@@ -14,6 +14,47 @@ from CheckScreenUpdate import PortTrace
 from ReferenceControlsPointRespawn import cp_flags
 
 
+class CircleCallObserver(Simulator):
+    def __init__(self, memory):
+        super().__init__(memory)
+        self.wrapper_calls = 0
+        self.wrapper_returns = 0
+        self.wrapper_initial_R = set()
+        original_call, original_ret = self.opcodes[0xCD], self.opcodes[0xC9]
+
+        def call():
+            if self.registers[24] != 0xD232:
+                original_call()
+                return
+            # Проверка четырёх исходных байтов обёртки и собственного слова возврата.
+            assert bytes(memory[0xD232:0xD236]) == bytes.fromhex('cd36d2c9')
+            before = list(self.registers)
+            self.wrapper_initial_R.add(before[15])
+            original_call()
+            after = self.registers
+            assert after[24] == 0xD236 and after[12] == (before[12] - 2) & 65535
+            assert bytes(memory[after[12]:after[12] + 2]) == bytes.fromhex('35d2')
+            assert after[15] == (before[15] & 128) | ((before[15] + 1) & 127)
+            assert all(after[i] == before[i] for i in range(len(before)) if i not in (12, 15, 24, 25))
+            self.wrapper_calls += 1
+
+        def ret():
+            if self.registers[24] != 0xD235:
+                original_ret()
+                return
+            # Проверка снятия внешнего возврата и второй собственной выборки M1.
+            before = list(self.registers)
+            target = memory[before[12]] | memory[(before[12] + 1) & 65535] << 8
+            original_ret()
+            after = self.registers
+            assert after[24] == target and after[12] == (before[12] + 2) & 65535
+            assert after[15] == (before[15] & 128) | ((before[15] + 1) & 127)
+            assert all(after[i] == before[i] for i in range(len(before)) if i not in (12, 15, 24, 25))
+            self.wrapper_returns += 1
+
+        self.opcodes[0xCD], self.opcodes[0xC9] = call, ret
+
+
 def reference(banks, initial, x, y, radius, flags, small_mode, large_mode, pattern, background):
     r = list(initial)
     stack = r[12]
@@ -71,7 +112,7 @@ def main():
     banks[5], banks[2], banks[1] = bytearray(flat[0x4000:0x8000]), bytearray(flat[0x8000:0xC000]), bytearray(flat[0xC000:])
     memory = RecordedBanks(banks=banks, out7ffd=17)
     baseline = [bytearray(bank) for bank in memory.banks]
-    simulator = Simulator(memory)
+    simulator = CircleCallObserver(memory)
     counts, entries = Counter(), Counter()
     touched = set()
     standard = list(profiles())
@@ -92,6 +133,7 @@ def main():
         initial = get_registers({'AF': serial & 65535, 'HL': 0x1357, 'DE': 0x2468, 'BC': 0x369C,
             '^HL': 0x1234, '^DE': 0x5678, '^BC': 0x9ABC, '^AF': 0xDEF0, 'IX': 0xABCD, 'IY': 0x5C3A,
             'SP': stack, 'PC': entry}, None, False)
+        initial[15] = serial & 255
         wanted, writes, raster, path = reference(memory.banks, initial, x, y, radius, flags, mode, large_mode, pattern, background)
         expected = [bytearray(bank) for bank in memory.banks]
         expected[2][:3072] = bytes(raster)
@@ -119,11 +161,16 @@ def main():
         touched = {(bank, offset) for bank, offset, _ in memory.writes}
         counts[path] += 1
         entries[f'{entry:04X}'] += 1
+    assert simulator.wrapper_calls == simulator.wrapper_returns
+    assert simulator.wrapper_calls == sum(count for name, count in counts.items() if name.startswith('large_'))
     report = dict(passed=True, total_cases=counts.total(), paths=dict(counts), cases_by_entry=dict(entries),
         original_small_and_large_children_without_stubs=True, exact_registers_except_R=True,
         all_physical_ram_bytes_proved=True, nonpixel_write_multiplicity_proved=True,
         large_fallback_mode_by_entry={'D21A': 0, 'D227': 1}, alternate_small_entry_at_operand=True,
         actual_large_call_frame_preserved=True,
+        wrapper_CALL_RET_own_m1=2,wrapper_own_R_step_bit7_and_preserved_registers_checked=True,
+        wrapper_calls=simulator.wrapper_calls,wrapper_returns=simulator.wrapper_returns,
+        wrapper_initial_R_values=sorted(simulator.wrapper_initial_R),full_child_R_cost_proved=False,
         assembly_executed=False, irq_executed=False, native_execution=False)
     (ROOT / 'Tools/Disasm/Reports/ControlsBodyDrawVerification.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(report, indent=2))

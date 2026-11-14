@@ -35,6 +35,7 @@
   "all_nonpixel_values_and_write_multiplicity_proved": true,
   "independent_pixel_intervals_and_second_order_error": true,
   "pixel_write_multiplicity_proved": false,
+  "direct_preserved_AF_and_last_drawn_right_low_checked": true,
   "initial_same_byte_exit_preserved": true,
   "maximum_additional_stack_bytes": 6,
   "no_port_or_page_writes": true,

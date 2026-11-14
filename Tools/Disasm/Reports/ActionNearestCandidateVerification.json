@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "total_cases": 67541,
+  "total_cases": 67544,
   "profiles": {
     "all_first_differences": 65536,
     "all_indices": 254,
@@ -8,14 +8,17 @@
     "ties_and_boundaries": 729,
     "empty_stale": 256,
     "skipped_stale": 256,
-    "duplicate_unavailable": 256
+    "duplicate_unavailable": 256,
+    "last_available_is_not_best": 1,
+    "unavailable_after_available": 1,
+    "only_unavailable_context": 1
   },
   "paths": {
-    "improve": 66571,
-    "end": 67541,
-    "invalidate": 1065,
+    "improve": 66573,
+    "end": 67544,
+    "invalidate": 1067,
     "skip": 1241,
-    "tie_or_farther": 1107
+    "tie_or_farther": 1109
   },
   "stack_bytes": 6,
   "exact_registers_flags_r_sp": true,
@@ -24,6 +27,10 @@
   "all_254_ordinary_index_bytes": true,
   "no_valid_candidate_preserves_old_result_operand": true,
   "first_equal_distance_wins": true,
+  "full_M1_count_compared_not_only_R_modulo_128": true,
+  "observed_M1_min": 9,
+  "observed_M1_max": 286,
+  "explicit_last_available_not_best_and_mixed_alternate_context_cases": 3,
   "all_possible_lists_exhausted": false,
   "assembly_executed": false,
   "irq_executed": false,

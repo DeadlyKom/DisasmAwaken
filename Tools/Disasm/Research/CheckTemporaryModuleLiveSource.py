@@ -4,7 +4,7 @@ import json
 from CheckScreenUpdate import PortTrace, put
 from CheckStationFlightCycle import payload, run_to
 from PackedResourceCodec import decode
-from TraceFlight import B, D, H, PC, SP, ROOT, Simulator, main as trace
+from TraceFlight import A, B, D, H, PC, SP, ROOT, Simulator, main as trace
 from skoolkit.pagingtracer import SliceableMemory
 
 
@@ -33,6 +33,30 @@ def restore_cpu(memory, bank_snapshot, register_snapshot, length):
     tracer = PortTrace(cpu)
     cpu.set_tracer(tracer)
     return cpu, tracer
+
+
+def inspect_banked_entry(memory, register_snapshot):
+    memory.out7ffd(0x11)
+    cpu = Simulator(memory)
+    registers = cpu.registers
+    registers[:] = register_snapshot
+    registers[PC], registers[SP] = 0xDADE, 0x5FF0
+    tracer = PortTrace(cpu)
+    cpu.set_tracer(tracer)
+    for address in (0xDADE, 0xDAE0, 0xDAE4, 0xDAE6, 0xDAE9):
+        assert registers[PC] == address and memory.o7ffd == 0x11
+        cpu.run()
+    assert tracer.writes == [(0x7FFD, 0x16)] and memory.o7ffd == 0x16
+    assert bytes(memory[0xDAEB:0x10000]) == b'\x04' * 9 + b'\x07' * 12 + bytes(9472)
+    for address in range(0xDAEB, 0x10000):
+        assert registers[PC] == address and memory.o7ffd == 0x16
+        cpu.run()
+    assert (registers[PC], registers[SP]) == (0, 0x5FEE)
+    assert (registers[A], word(registers, B)) == (0x61, 0x88FD)
+    assert tracer.writes == [(0x7FFD, 0x16)] and memory[0] == 0xF3
+    return dict(inc_b_instructions=9, rlca_instructions=12, nop_instructions=9472,
+                instructions_from_banked_entry=9498, final_page=memory.o7ffd,
+                rom_entry=registers[PC], sp_at_rom_entry=registers[SP])
 
 
 def inspect_zero_length(cpu):
@@ -86,14 +110,39 @@ def inspect_zero_continuation(cpu):
     return dict(backup_copy_bytes=8192, third_copy_before_self_overwrite=third_copy_count,
                 third_copy_new_instruction='DD-prefixed OR B', third_copy_count_remaining=0x0622,
                 original_unpacker_entry_reached_with_replaced_code=True,
-                reached_rom=0x0E00, reached_temporary_entry=False, stopped_before_rom_execution=True)
+                reached_rom=0x0E00)
 
 
-def inspect_font_match(cpu, font):
+def inspect_rom_error(cpu):
+    memory, registers = cpu.memory, cpu.registers
+    assert memory.o7ffd == 0x11 and registers[PC] == 0x0E00
+    rom_calls = []
+    last_pc = None
+    for steps in range(800000):
+        pc = registers[PC]
+        assert pc not in (0x5DE5, 0x5DE8, 0x6500)
+        if pc == 0x0E00:
+            rom_calls.append(steps)
+        if pc == 0x0008:
+            break
+        last_pc = pc
+        cpu.run()
+    else:
+        raise AssertionError('Не достигнут вход обработки ошибки ROM')
+    assert rom_calls == [0, 8113] and steps == 717166
+    assert last_pc == 0x1BEC and memory[last_pc] == 0xCF
+    assert registers[SP] == 0x5FEA and bytes(memory[0x5FEA:0x5FEC]) == bytes.fromhex('ED 1B')
+    assert memory[0x1BED] == 0x16
+    return dict(rom_calls=rom_calls, simulator_steps_after_first_rom_call=steps,
+                rom_error_instruction=last_pc, rom_error_entry=0x0008, rom_error_byte=0x16,
+                reached_temporary_entry=False, stopped_before_error_handler_execution=True)
+
+
+def inspect_font_match(cpu, source_window):
     memory, registers = cpu.memory, cpu.registers
     run_to(cpu, 0xAB23)
     assert (word(registers, H), word(registers, D)) == (0x6400, 0x6400)
-    assert bytes(memory[0x6400:0x6800]) == font
+    assert bytes(memory[0x6400:0x6800]) == source_window
     run_to(cpu, 0xABC0)
     assert (word(registers, H), word(registers, D), word(registers, B)) == (0x6400, 0x6404, 1)
     cpu.run()
@@ -129,20 +178,24 @@ def main():
         assert bytes(memory.banks[1][0x600:0xA00]) == raw
         bank_snapshot = [bank.copy() for bank in memory.banks]
         register_snapshot = cpu.registers[:]
+        direct = inspect_banked_entry(memory, register_snapshot)
         original, ports = restore_cpu(memory, bank_snapshot, register_snapshot, 0)
         zero = inspect_zero_length(original)
         zero.update(inspect_zero_continuation(original))
+        zero.update(inspect_rom_error(original))
         assert ports.writes == [(0x7FFD, 0x16), (0x7FFD, 0x11)]
         conditional, ports = restore_cpu(memory, bank_snapshot, register_snapshot, len(raw))
         nonzero = inspect_font_match(conditional, raw)
         assert ports.writes == [(0x7FFD, 0x16), (0x7FFD, 0x11)]
-        cases.append(dict(frame_entries=frames, zero_length=zero, length_from_font_header=nonzero))
+        cases.append(dict(frame_entries=frames, direct_banked_entry=direct,
+                          zero_length=zero, length_from_font_header=nonzero))
     result = dict(passed=True, cases=cases, template_copy_base=COPY_BASE, relocation_is_fixture=True,
+                  source_window_font_bytes=0x270, source_window_viewport_code_bytes=0x190,
                   trdos_substituted_during_flight_start=True, native_execution=False,
                   actual_game_caller_proved=False, assembly_executed=False)
     path = ROOT / 'Tools/Disasm/Reports/TemporaryModuleLiveSourceVerification.json'
     path.write_text(json.dumps(result, indent=2) + '\n', encoding='utf-8')
-    print('3 профиля ACTION, два самоперезаписанных LDIR и вход ROM при нуле, недопустимая ссылка при длине 0400')
+    print('3 профиля ACTION, переход в ПЗУ при прямом банковом входе, ошибка ROM при нулевой длине копии')
 
 
 if __name__ == '__main__':

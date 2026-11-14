@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "cases": 458240,
+  "cases_by_entry": {
+    "success": 65536,
+    "status": 65536,
+    "height": 65536,
+    "width": 65536,
+    "origin_x": 65280,
+    "origin_y": 65280,
+    "bottom": 65536
+  },
+  "refresh_m1_by_entry": {
+    "success": [
+      13
+    ],
+    "status": [
+      11
+    ],
+    "height": [
+      14
+    ],
+    "width": [
+      14
+    ],
+    "origin_x": [
+      15
+    ],
+    "origin_y": [
+      15,
+      16
+    ],
+    "bottom": [
+      13
+    ]
+  },
+  "all_valid_input_A_and_F_bytes": true,
+  "all_initial_R_values_covered": true,
+  "physical_frame_bytes": 16,
+  "stack_delta": 16,
+  "exact_restored_registers_and_status": true,
+  "no_cpu_memory_writes": true,
+  "watcher_positive_store_control_passed": true,
+  "source_station_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "source_bytes_matched_to_original_disk": true,
+  "saved_word_combinations_exhausted": false,
+  "arbitrary_stack_overlap_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

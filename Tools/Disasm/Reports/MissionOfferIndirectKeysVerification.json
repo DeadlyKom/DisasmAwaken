@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "method": "two_original_local_invocations_with_observed_opaque_reads",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "physical_instruction_count": 28,
+  "counts": {
+    "local_invocations": 8176,
+    "opaque_key_1": 3064,
+    "rom_patterns": 4080,
+    "opaque_key_2": 3064,
+    "first_offer_key": 2048,
+    "individual_bytes": 4096
+  },
+  "instruction_profiles": [
+    {
+      "negative_rom": false,
+      "instructions": 27,
+      "m1": 28
+    },
+    {
+      "negative_rom": true,
+      "instructions": 28,
+      "m1": 29
+    }
+  ],
+  "all_nonzero_rom_bytes": true,
+  "all_values_of_each_opaque_byte": true,
+  "every_local_write_checked": true,
+  "full_ram_compared": true,
+  "exact_key_registers_flags_and_r_checked": true,
+  "all_four_words_conditionally_read": true,
+  "positive_probe_passed": true,
+  "cursor_preserved_between_local_invocations": true,
+  "stop_before_shared_center": true,
+  "stable_local_af_rom_selects_opaque_words": false,
+  "opaque_word_writers_proved": false,
+  "original_game_data_purpose_proved": false,
+  "full_map_redraw_executed": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

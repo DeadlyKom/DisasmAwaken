@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "archive": {
+    "exact_layout_bytes": 75,
+    "archived_speed_address": 40068,
+    "current_speed_pair_address": 40072,
+    "archived_distance_address": 40070,
+    "current_cost_address": 40074,
+    "old_high_byte_return": 28736,
+    "profiles": 1024
+  },
+  "current_profiles": [
+    {
+      "route": "Preferred",
+      "cost": 12,
+      "equal_destination": false,
+      "stop": 29046,
+      "compared_registers": 30,
+      "varied_adjacent_pairs": 256
+    },
+    {
+      "route": "Preferred",
+      "cost": 12,
+      "equal_destination": true,
+      "stop": 16383,
+      "compared_registers": 30,
+      "varied_adjacent_pairs": 256
+    },
+    {
+      "route": "Preferred",
+      "cost": 85,
+      "equal_destination": false,
+      "stop": 16383,
+      "compared_registers": 30,
+      "varied_adjacent_pairs": 256
+    },
+    {
+      "route": "Fallback",
+      "cost": 12,
+      "equal_destination": false,
+      "stop": 29046,
+      "compared_registers": 30,
+      "varied_adjacent_pairs": 256
+    },
+    {
+      "route": "Fallback",
+      "cost": 12,
+      "equal_destination": true,
+      "stop": 16383,
+      "compared_registers": 30,
+      "varied_adjacent_pairs": 256
+    },
+    {
+      "route": "Fallback",
+      "cost": 85,
+      "equal_destination": false,
+      "stop": 16383,
+      "compared_registers": 30,
+      "varied_adjacent_pairs": 256
+    }
+  ],
+  "current_adjacent_addresses": [
+    40073,
+    40075
+  ],
+  "current_cost_address": 40074,
+  "all_ram_and_write_order_compared": true,
+  "stops_before_message": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

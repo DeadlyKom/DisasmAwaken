@@ -65,12 +65,14 @@ CONTRACTS['Map',0xE228]=(
   'MapArcState и таблицы подготовлены для PrepareArcLeftEdge и PrepareArcRightEdge, остальные биты входного E игнорируются',
   'Entry вычисляет Limit=(B-операнд E22A)&FF, UseLimit по E22B принимает готовый Limit в основном A',
   'действуют требования обёрток и RasterizeArcEdges, KARTA выбран, обычный стек доступен'],
- ['Limit перенесён в A\', затем край подготовлен заново перед каждым проходом',
-  'первый проход идёт вниз, второй вверх от той же MapArcState.RowY, RasterDown после завершения равен 0',
-  'при обоих начавшихся проходах исходные граничные пиксели общей начальной строки инвертируются дважды',
-  'AF равен результату второй PrepareArcLeftEdge либо PrepareArcRightEdge и сохранён обёрткой прохода вверх',
-  "HL, DE, BC и альтернативные общие пары рабочие, A'=Limit, F' рабочий, LeftMask получает OffsetX на правом пути и сохраняется на левом",
-  'IX, IY, I и IFF сами инструкции сохраняют, SP обычного возврата равен входному SP+2'],
+ ['HL, DE, BC рабочие после двух растровых проходов',
+ 'AF равен результату второй PrepareArcLeftEdge либо PrepareArcRightEdge и сохранён обёрткой прохода вверх',
+ "HL', DE', BC' рабочие, AF' содержит A'=Limit и рабочий F'",
+ 'IX, IY, I, IM и IFF сами инструкции сохраняют, SP обычного возврата равен входному SP+2',
+ 'край подготовлен заново перед каждым проходом',
+ 'первый проход идёт вниз, второй вверх от той же MapArcState.RowY, RasterDown после завершения равен 0',
+ 'при обоих начавшихся проходах исходные граничные пиксели общей начальной строки инвертируются дважды',
+ 'LeftMask получает OffsetX на правом пути и сохраняется на левом'],
  ["HL, DE, BC, AF, HL', DE', BC', AF', bitmap, RasterStack, RasterDown, LeftMask на правом пути"],
  ['последний проход вызывается через JP с адресом возврата всей пары, дополнительной CALL не добавлено',
   'настройщик D0C3 пишет HalfX-2 modulo 256 в E22A, исходное значение ноль в файле сохранено',
@@ -133,3 +135,30 @@ def name_operands(region,address,operation):
  if region=='Map' and address in FUNCTIONS:
   operation=operation.replace('SUB #00','SUB @MapArcConst.InitialBias') if address==0xE228 else operation
  return operation
+
+
+# Уточнение R по полным вызовам, экспорт исходников не запускается.
+_refresh_contract = CONTRACTS['Map',0xE2AB]
+_refresh_contract[0].append('IRQ не вмешиваются, стек и bitmap не перекрывают исполняемый код')
+_refresh_contract[2][:] = [line.replace(", AF' только F' на однокраевых путях, bitmap",", AF' только F' на однокраевых путях, R, bitmap") for line in _refresh_contract[2]]
+_refresh_contract[3].insert(0,'R меняется по достигнутым инструкциям и префиксам, бит 7 сохраняется, равенство после полного оборота не означает сохранение регистра')
+
+
+# Уточнение R шести обёрток, рамка AF остаётся прежней.
+for _refresh_address in (0xE681,0xE688,0xE68F,0xE696,0xE69D,0xE6A4):
+    _refresh_contract = CONTRACTS['Map',_refresh_address]
+    _refresh_contract[0].append('IRQ не вмешиваются, стек и bitmap не перекрывают исполняемый код')
+    _refresh_contract[2][:] = [line.replace(', bitmap, RasterStack, RasterDown', ', R, bitmap, RasterStack, RasterDown') for line in _refresh_contract[2]]
+    _refresh_contract[3].insert(0,'R меняется, собственная обёртка со сбросом добавляет 11 M1 к достигнутому проходу ядра, внешний CALL не включён')
+
+
+# Точные M1 одиночных закрывающих масок внутри ядра.
+CONTRACTS['Map',0xE2AB][3].insert(0,'CloseLowTail требует 14 M1 при нуле либо 19+5k, CloseHighTail 13 либо 16+5k, k число пропущенных битов выбранного режима')
+
+
+# Композиция Entry/UseLimit с двумя подготовками и двумя обёртками.
+_pair_refresh_contract = CONTRACTS['Map',0xE228]
+_pair_refresh_contract[0].append('IRQ не вмешиваются, выполняются требования стековых кадров подготовителя и выбранного растрового прохода')
+_pair_refresh_contract[1][:] = [line.replace('IX, IY, I и IFF','IX, IY, I, IM и IFF') for line in _pair_refresh_contract[1]]
+_pair_refresh_contract[2][:] = [line.replace("AF', bitmap","AF', R, bitmap") for line in _pair_refresh_contract[2]]
+_pair_refresh_contract[3].insert(0,'R меняется, собственный код Entry добавляет 10 M1 к двум подготовкам и двум обёрткам, UseLimit добавляет 8 M1, внешний CALL не включён')

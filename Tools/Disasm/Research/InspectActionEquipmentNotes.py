@@ -39,7 +39,7 @@ def main():
         notes_file_offset=0x516F,notes_sha256=hashlib.sha256(notes).hexdigest(),
         initial_codes_sha256=hashlib.sha256(raw).hexdigest(),rows=rows,
         direct_consumers_already_established={
-            '9C10..9C11':'SelectPreferredByte, пополнение разрешается кодом по 9C29',
+            '9C10..9C11':'SelectFuelStock, пополнение разрешается кодом по 9C29',
             '9C12..9C13':'SelectMissileStock и ConsumeMissileStock, вывод остатка ракет',
             '9C1A..9C1B':'CheckRecordEffectThreshold, допуски 1E и 3C при LinkIndex=1A и бите 3',
             '9C1C..9C1E':'UpdateFrame, стоимость события 3, 2 или 1 по первому байту не FF',

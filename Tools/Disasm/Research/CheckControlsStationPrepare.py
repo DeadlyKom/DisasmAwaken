@@ -45,6 +45,8 @@ def main():
         simulator.run(start=0xDCE3,stop=0x4200);memory.recording=False
         assert wanted[:25]==simulator.registers[:25] and wanted[26:28]==simulator.registers[26:28],(serial,
             [(i,wanted[i],simulator.registers[i]) for i in (*range(25),26,27) if wanted[i]!=simulator.registers[i]])
+        # Проверка флагов последнего LDIR напрямую, H/N/PV сброшены, S/Z/Carry сохраняются от входа.
+        assert simulator.registers[1]&0x16==0 and simulator.registers[1]&0xC1==initial[1]&0xC1
         assert Counter(writes)==Counter(memory.writes),(serial,'writes',Counter(writes)-Counter(memory.writes),Counter(memory.writes)-Counter(writes))
         assert all(a==b for a,b in zip(memory.banks,expected)),(serial,'physical_RAM')
         assert not trace.writes and memory.o7ffd==17,(serial,'ports')

@@ -1,6 +1,6 @@
 """Три проверенные подготовки дуги, геометрический смысл полного ядра оформляется отдельно."""
 FUNCTIONS={0xE208:('PrepareArcFullSpan','Подготовка двух симметричных краёв дуги относительно CenterX'),
- 0xE299:('LoadClippedArcInputs','Загрузка смещений и ненулевого начального состояния альтернативной пары C\', E\''),
+ 0xE299:('LoadClippedArcInputs','Загрузка смещений и начального состояния отсечённого прохода'),
  0xE278:('LoadArcRasterInputs','Загрузка смещений и радиуса с подготовкой C\'=-Radius и E\'=0'),
  0xE248:('PrepareArcLeftEdge','Подготовка левого края дуги и изменяемой правой колонки'),
  0xE260:('PrepareArcRightEdge','Подготовка правого края дуги и изменяемой левой колонки')}
@@ -31,13 +31,13 @@ CONTRACTS['Map',0xE208]=(
 CONTRACTS['Map',0xE299]=(
  ['MapArcState.OffsetY, OffsetX, ReferenceX и StartY содержат текущие рабочие байты'],
  ['HL, DE сохранены, BC=OffsetX*256+OffsetY',
-  'AF - A=StartY, F соответствует NEG от (ReferenceX+OffsetX)&255',
-  'C\'=(-(ReferenceX+OffsetX))&255, E\'=StartY',
-  "HL', D', B', AF', IX, IY, I и IFF сохранены",
-  'входные поля не меняются, SP обычного возврата равен входному SP+2'],
+ 'AF - A=StartY, F соответствует NEG от (ReferenceX+OffsetX)&255',
+ "HL' и D' сохранены, E'=StartY, B' сохранён, C'=(-(ReferenceX+OffsetX))&255",
+ "AF', IX, IY, I, IM и IFF сохранены",
+ 'входные поля не меняются, SP обычного возврата равен входному SP+2'],
  ['BC, AF, C\', E\''],
  ['первое ADD оборачивает сумму до NEG, флаги NEG сохраняются при последующем чтении StartY',
-  'StartY далее участвует в рекурсии растрового ядра, его геометрическое вычисление вызывающим кодом ещё разбирается'])
+  'DrawClippedMapArc вычисляет StartY через SqrtSquareDiff, выбор оси и входной заём описаны в ArcDispatcher.md'])
 for address,left in ((0xE248,True),(0xE260,False)):
  CONTRACTS['Map',address]=(
   ['LeftColumn и RightColumn обозначают изменяемые операнды OR, исходно 1 и 30',
@@ -91,3 +91,12 @@ def name_operands(region,address,operation):
   for value,name in ((0xDFAD,'QuadrantCode'),(0xDFAE,'Radius'),(0xDFAF,'OffsetY'),(0xDFB0,'OffsetX'),(0xDFB1,'RowY'),(0xDFB2,'CenterX'),(0xDFB3,'StartY'),(0xDFBF,'ReferenceX')):
    operation=operation.replace('(#'+format(value,'04X')+')','(@MapArcState.'+name+')')
  return operation
+
+
+# Точные M1 составных подготовок, включая настоящие помощники и их префиксы.
+for _preparation_refresh_address,_preparation_refresh_note,_preparation_refresh_irq in ((57864, 'R меняется за 98+4*(kL-kR) M1, kL и kR младшие три бита рассчитанных X краёв, бит 7 R сохраняется', 'IRQ не вмешиваются, два временных байта CPU-стека не перекрывают код, таблицы и поля дуги'), (58009, 'R меняется за 12 M1, младшие семь битов увеличены на 12 по модулю 128, бит 7 сохраняется', 'IRQ не вмешиваются, обычный возврат доступен на CPU-стеке'), (57976, 'R меняется за 12 M1, младшие семь битов увеличены на 12 по модулю 128, бит 7 сохраняется', 'IRQ не вмешиваются, обычный возврат доступен на CPU-стеке'), (57928, 'R меняется за 47+4k M1, k младшие три бита рассчитанного левого X, бит 7 R сохраняется', 'IRQ не вмешиваются, два временных байта CPU-стека не перекрывают код, таблицы и поля дуги'), (57952, 'R меняется за 82-4k M1, k младшие три бита рассчитанного правого X, бит 7 R сохраняется', 'IRQ не вмешиваются, четыре временных байта CPU-стека не перекрывают код, таблицы и поля дуги')):
+    _preparation_refresh_contract = CONTRACTS['Map',_preparation_refresh_address]
+    _preparation_refresh_contract[0].append(_preparation_refresh_irq)
+    _preparation_refresh_contract[1][:] = [line.replace('I и IFF сохранены','I, IM и IFF сохранены') for line in _preparation_refresh_contract[1]]
+    _preparation_refresh_contract[2][:] = [line.replace("C', E'","E', C'")+', R' for line in _preparation_refresh_contract[2]]
+    _preparation_refresh_contract[3].insert(0,_preparation_refresh_note)

@@ -9,7 +9,7 @@
 |---|---:|---|---|
 | 6615 | 9 | [StationFileKey](../Source/Intro/Data/StationFileKey.asm) | [LoadStation](../Source/Intro/LoadStation.asm) |
 | 662C | 12 | [FinalTexturePhases](../Source/Intro/Data/FinalTexturePhases.asm) | [DrawFinalTextureFrame](../Source/Intro/DrawFinalTextureFrame.asm) |
-| 6663 | 63 | [AlternatingLookup](../Source/Intro/Data/AlternatingLookup.asm) | [BuildAlternatingTexture](../Source/Intro/BuildAlternatingTexture.asm) |
+| 6663 | 64 | [AlternatingLookup](../Source/Intro/Data/AlternatingLookup.asm) | [BuildAlternatingTexture](../Source/Intro/BuildAlternatingTexture.asm), первые 63 байта |
 | 6993 | 16 | [AttributeNibbleSeeds](../Source/Intro/Data/AttributeNibbleSeeds.asm) | [BuildAttributeWriter](../Source/Intro/BuildAttributeWriter.asm) |
 | 6B73 | 32 | [ColumnTailSamples](../Source/Intro/Data/ColumnTailSamples.asm) | [InitializeColumnEffect](../Source/Intro/InitializeColumnEffect.asm) |
 | 6C62 | 40 | [ScaleCycle](../Source/Intro/Data/ScaleCycle.asm) | [AdvanceTextureScale](../Source/Intro/AdvanceTextureScale.asm) |
@@ -27,10 +27,28 @@ FTrDosFileKey, девять байтов без нулевого термина�
 BuildTextureLookup читает ровно 63 байта от 6663. Каждый задаёт начальный
 IYL очередной последовательности. В варианте BuildAlternatingTexture
 внутренний LD IYL,A сохраняется, значения становятся вторыми байтами
-записей построенной таблицы. Соседний исходный байт по 66A2 не входит
-в эти чтения и остаётся неизвестным. Другой вызов через BuildIntroTexture
-получает свой указатель от предыдущего построителя, к этой таблице он
-автоматически не приравнивается.
+записей построенной таблицы. Последний отсчёт `P3F=#29` по `#66A2`
+лежит за границей этих чтений. Все 64 байта совпадают с таблицей `IM_IT`
+в `TUNEL.a`, `HIPER.a` и `DOOM.a`, а также в распакованных `EFF.c`
+и `EFF1.c` из `awk1.trd`. У `EFF1.c` совпадают и соседние команды
+до и после таблицы с поправкой на абсолютные адреса.
+[Авторский архив](https://opensourcezx.untergrund.net/a_games-awaken_src.html) ·
+[Проверка](../Tools/Disasm/Research/CheckIntroArchivedLookup.py) ·
+[Сверка 64 байтов](../Tools/Disasm/Reports/IntroArchivedLookupVerification.json)
+
+В первом вызове BuildIntroTexture
+получает указатель #6080 от BuildScreenTables. Чтение 63 байтов сохраняется,
+но вместо присваивания IYL выполняется INC IYL. Счётчик проходит от #C1
+до #FF после начального #C0. В четырёх опытах менялись все 63 входных
+байта. Содержимое итоговых 32 КиБ совпало для INC IYL и различалось для
+LD IYL,A. [Сравнение вариантов](../Tools/Disasm/Reports/IntroVerification.json).
+
+Исходный байт #66A2 переносится по #5E26 вместе с загрузчиком,
+там чтений не обнаружено. Кроме этого переноса, он читается при
+широком копировании строк BuildIntroTexture и попадает в #DCE2
+банка 1. До чтения его заменяет #FF при заполнении для следующей
+текстуры. Обе копии прослежены в четырёх профилях оригинального
+вступления. [Трасса](../Tools/Disasm/Reports/IntroStationTransitionVerification.json).
 
 Два набора по восемь байтов 6993 и 699B используются отдельно. Матрица
 строки r и столбца c получается как `(source[c] & F0) | (source[r] & 0F)`.
@@ -55,7 +73,7 @@ IYL очередной последовательности. В варианте
 описывает также начальную ветвь нарастания.
 
 [Проверка](../Tools/Disasm/Research/CheckIntroPhysicalParameters.py) сравнивает
-172 исходных байта и выполняет шесть сценариев реальных читателей фаз и
+173 исходных байта и выполняет шесть сценариев реальных читателей фаз и
 матриц. Матрицы рассчитаны независимо для обоих наборов и варианта с
 обнулением первого байта. Это не полная инициализация, не сборка и не
 нативный запуск. Полная подготовка хвостов разобрана отдельно в

@@ -3,10 +3,39 @@ from collections import Counter
 import json
 from CheckIntro import ROOT
 from CheckActionParameterActivation import RecordedBanks,flat_action
-from CheckMusic import Simulator,get_registers
+from CheckMusic import PC, SP, Simulator, get_registers
+from CheckScreenUpdate import put
 from CheckActionRecordIndex import add_flags
 from ReferenceActionObjectOffsetVector import evaluate
 from ReferenceControlsPointRespawn import refresh
+
+
+def check_inherited_local_phases(baseline):
+    parent, child, stack = 0xA100, 0xA140, 0xBFFE
+    for value in range(256):
+        memory = RecordedBanks(banks=[bank.copy() for bank in baseline], out7ffd=0x10)
+        phases = (value, value ^ 0xA5, (value * 73) & 0xFF)
+        put(memory, parent + 7, phases)
+        memory[child + 0x10] = value
+        sim = Simulator(memory, {'PC': 0x6482, 'SP': stack, 'IX': parent, 'IY': child})
+        memory.writes = []
+        memory.recording = True
+        sim.run(0x6482, 0x6494)
+        assert memory.writes == [(2, (child + offset) & 0x3FFF, phase)
+                                 for offset, phase in zip((0x0D, 0x0E, 0x0F), phases)]
+        assert sim.registers[SP] == stack
+        sim.registers[:] = get_registers({'PC': 0xF6CD, 'SP': stack, 'IX': child}, None, False)
+        memory.writes.clear()
+        original_phase0 = memory[child + 7]
+        sim.run(0xF6CD, 0x6D06)
+        assert sim.registers[PC] == 0x6D06 and sim.registers[SP] == stack
+        assert tuple(sim.registers[4:6]) == (0, value)
+        assert memory.writes == [(2, (child + 7) & 0x3FFF, (original_phase0 + 1) & 0xFF),
+                                 (2, 0x3045, phases[0]), (2, 0x304F, phases[1] ^ 0x80),
+                                 (2, 0x305C, phases[2])]
+        assert tuple(memory[child + 0x0D:child + 0x10]) == phases
+    return dict(profiles=256, original_phase_writer_and_reader=True,
+                reader_stop_before_multiply=0x6D06, field_byte_offsets=[0x0D, 0x0E, 0x0F])
 
 
 def main():
@@ -53,6 +82,7 @@ def main():
                 if cases%32768==0:print(str(cases)+' local offset cases passed',flush=True)
     assert cases==131072
     result=dict(passed=True,total_cases=cases,cases_by_entry=dict(counts),coefficient_overflow_paths=dict(overflows),
+        inherited_local_phases=check_inherited_local_phases(baseline),
         all_first_two_offset_bytes_for_core=True,all_phase1_phase2_bytes_for_state04=True,
         all_rate_and_third_offset_bytes_covered=True,real_coefficient_and_three_multiply_children_executed=True,
         exact_registers_flags_r_sp=True,full_eight_bank_ram_and_write_multiplicity_compared=True,

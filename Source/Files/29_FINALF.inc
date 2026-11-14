@@ -19,8 +19,13 @@
                 include "../Final/Interrupt.asm"                                ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #017A
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/29_FINALF/Unclassified000.bin"
+                ; Unknown, 24 исходных байта перед временным стеком, в проверенных фазах не затрагиваются
+                ; Документация [временный стек прерывания](../../Docs/FinalCycle.md)
+                incbin "../Resources/29_FINALF/Unclassified017A_0192.bin"
+                assert $ == #0192
+                disp #6192
+                include "../Final/Data/IrqFrame.asm"
+                ent
                 assert $ == #0196
                 disp #6196
                 include "../Final/PrepareFrame.asm"

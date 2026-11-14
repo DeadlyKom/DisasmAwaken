@@ -6,14 +6,14 @@
                 ; исходная запись 17, адреса F3F0..F49B
                 ; In:
                 ;   HL, DE, BC и AF числовых аргументов не задают, IX указывает активную FActionRecord родителя
-                ;   Unknown0D задаёт обычный байтовый индекс связанной записи, SavedStateCode используется здесь как счётчик оставшихся созданий
+                ;   Phase0OrLink задаёт обычный байтовый индекс связанной записи, SavedStateCode используется здесь как счётчик оставшихся созданий
                 ;   SpawnPhase доступен для изменения, от A100 достижим маркер либо свободная запись, слово координат по 9BC1 читается классификатором
                 ;   действуют договоры FindReusableRecord, RecordIndexToAddress, ClassifyCoordinateRegion и ResetRecordUpdateBases
                 ;   ACTION банка 0 выбран, два дополнительных байта CPU-стека доступны, IRQ и повторный вход исключены
                 ; Out:
                 ;   SpawnPhase получает wrap8(SpawnPhase+1) AND 0F, только нулевой результат допускает попытку создания
                 ;   при ненулевой фазе либо отсутствии свободной записи новая запись не создаётся, Base0..2 всё равно обнуляются
-                ;   при найденной свободной записи проверяется Component0.High записи по индексу Unknown0D, значение 80 переводит родителя в StateCode=09 без заполнения ребёнка
+                ;   при найденной свободной записи проверяется Component0.High записи по индексу Phase0OrLink, значение 80 переводит родителя в StateCode=09 без заполнения ребёнка
                 ;   иначе ребёнок получает компоненты 0 и 2 родителя, компоненту 1 плюс BC, B=1 либо 2 по R и C=80
                 ;   ClassCode ребёнка=3, ModelOffset=10+4*код ClassifyCoordinateRegion слова по 9BC1, остальные записываемые поля перечислены в документации
                 ;   после заполнения SavedStateCode родителя уменьшен на один по модулю 256, только переход 1 в 0 устанавливает родительский StateCode=09
@@ -41,8 +41,8 @@ Entry:          LD A, #0A
                 CALL @Action.FindReusableRecord.Entry
                 JP Z, @Action.ResetRecordUpdateBases.Entry                      ; переход, если поиск достиг маркера, обнулить базы без создания ребёнка
 
-                ; Преобразование обычного индекса из Unknown0D, отдельной обработки FF здесь нет.
-                LD A, (IX + @FActionRecord.Unknown0D)
+                ; Преобразование обычного индекса из Phase0OrLink, отдельной обработки FF здесь нет.
+                LD A, (IX + @FActionRecord.Phase0OrLink)
                 CALL @Action.RecordIndexToAddress.Entry
                 ; Проверка старшего байта Component0 связанной записи перед заполнением найденного свободного слота.
                 INC L
@@ -85,22 +85,24 @@ CreateChild:    LD L, (IX + @FActionRecord.Components.Component0.Low)
                 ADD A, @ActionPeriodicClass3Const.ModelBase
                 LD (IY + @FActionRecord.ModelOffset), A
                 ; Заполнение исходных управляющих полей ребёнка класса 3, не записываемые поля свободного слота сохраняются.
-                LD (IY + @FActionRecord.TargetIndex), @ActionPeriodicClass3Const.TargetLife
+                ; Установка исключающего порога роста масштаба для общего хвоста F0F8.
+                LD (IY + @FActionRecord.Phase2OrTarget), @ActionPeriodicClass3Const.ScaleLimit
                 LD (IY + @FActionRecord.OffsetPhase0), @ActionPeriodicClass3Const.InitialPhase0
                 LD (IY + @FActionRecord.OffsetPhase1), #00
                 LD (IY + @FActionRecord.OffsetPhase2), #00
-                LD (IY + @FActionRecord.Unknown11), @ActionPeriodicClass3Const.TimerByte11
+                ; Инициализация порога State02 для младшего байта потока 0, здесь байт 11 не декрементируется.
+                LD (IY + @FActionRecord.Unknown11), @ActionPeriodicClass3Const.LinkedThreshold
                 LD (IY + @FActionRecord.StateCode), @ActionPeriodicClass3Const.InitialState
                 LD (IY + @FActionRecord.SavedStateCode), @ActionPeriodicClass3Const.SavedState
                 LD (IY + @FActionRecord.LinkFlags), #00
                 LD (IY + @FActionRecord.ClassCode), @ActionPeriodicClass3Const.ChildClass
-                LD (IY + @FActionRecord.Unknown14), #00
-                ; Копирование индекса связи Unknown0D родителя в LinkedIndex ребёнка и завершение его управляющих полей.
-                LD A, (IX + @FActionRecord.Unknown0D)
+                LD (IY + @FActionRecord.MissileRepeatDelay), #00
+                ; Копирование индекса связи Phase0OrLink родителя в LinkedIndex ребёнка и завершение его управляющих полей.
+                LD A, (IX + @FActionRecord.Phase0OrLink)
                 LD (IY + @FActionRecord.LinkOverride), #FF
                 LD (IY + @FActionRecord.LinkedIndex), A
-                LD (IY + @FActionRecord.Unknown13), @ActionPeriodicClass3Const.ControlByte13
-                LD (IY + @FActionRecord.Unknown10), @ActionPeriodicClass3Const.InitialByte10
+                LD (IY + @FActionRecord.EffectReserve), @ActionPeriodicClass3Const.ControlByte13
+                LD (IY + @FActionRecord.OffsetScaleLow), @ActionPeriodicClass3Const.InitialByte10
                 LD (IY + @FActionRecord.TargetCodeStep), @ActionChildSpawnConst.TargetStep
                 ; Обновление счётчика числа созданий, физическое поле SavedStateCode имеет в этом состоянии числовую роль.
                 LD A, (IX + @FActionRecord.SavedStateCode)

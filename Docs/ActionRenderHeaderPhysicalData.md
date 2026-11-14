@@ -2,7 +2,7 @@
 
 [RenderHeader.asm](../Source/Action/Data/RenderHeader.asm) оформляет два исходных нулевых байта по 9B8D..9B8E фиксированного банка 2. Их слово уже известно как HeaderWord0. FRenderHeaderState разделяет физические ModeBits по смещению 0 и ModelByteOffset по смещению 1. Новая память не выделяется.
 
-[RenderSceneFrame](../Source/Action/RenderSceneFrame.asm) получает ModelByteOffset из поля модели текущей записи. Затем проверяет Phase0 OR Phase2 и записывает ModeBits=01 при обеих нулевых фазах, иначе 00. [TransformObjectVertices](../Source/Action/TransformObjectVertices.asm) использует ModelByteOffset как байтовое смещение слова указателя в таблице OBJECT3D по 9E00. Это не номер аппаратного банка и не доказательство допустимости произвольного нечётного смещения.
+[RenderSceneFrame](../Source/Action/RenderSceneFrame.asm) получает ModelByteOffset из поля модели текущей записи. Затем проверяет Phase0 OR Phase2 и записывает ModeBits=01 при обеих нулевых фазах, иначе 00. После преобразования координат он увеличивает ModelByteOffset на два при неотрицательной глубине ниже `#1F00`. [TransformObjectVertices](../Source/Action/TransformObjectVertices.asm) читает по итоговому смещению слово указателя в таблице OBJECT3D по `#9E00`. [Выбор варианта пары](ActionObjectPointers.md#выбор-варианта-по-глубине)
 
 ## Разряды ModeBits
 

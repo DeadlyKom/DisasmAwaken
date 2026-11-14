@@ -2,115 +2,115 @@
                 ; Документация [состояние дискового слота](../../../Docs/SavedStateLayout.md)
                 ; Смещения относятся к файлу, перенос в 983B выполняют исходные обработчики.
                 assert $ == #018D
-Unknown00:      FSettingWord {
+MouseOption:    FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown01:      FSettingWord {
+PitchUp:        FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown02:      FSettingWord {
+PitchDown:      FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown03:      FSettingWord {
+YawLeft:        FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown04:      FSettingWord {
+YawRight:       FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown05:      FSettingWord {
+RollLeft:       FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown06:      FSettingWord {
+RollRight:      FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown07:      FSettingWord {
+LaserKey:       FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown08:      FSettingWord {
+SpeedUp:        FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown09:      FSettingWord {
+SpeedDown:      FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown10:      FSettingWord {
+ComputerKey:    FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown11:      FSettingWord {
+MissileAim:     FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown12:      FSettingWord {
+ClearTargets:   FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown13:      FSettingWord {
+Missile1:       FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown14:      FSettingWord {
+Missile2:       FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown15:      FSettingWord {
+Missile3:       FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown16:      FSettingWord {
+BoostKey:       FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown17:      FSettingWord {
+FreeFlightKey:  FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown18:      FSettingWord {
+GuidanceKey:    FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown19:      FSettingWord {
+ReturnKey:      FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown20:      FSettingWord {
+TractorKey:     FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown21:      FSettingWord {
+AntimissileKey: FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown22:      FSettingWord {
+CargoEject:     FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown23:      FSettingWord {
+MineEject:      FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown24:      FSettingWord {
+HyperJumpKey:   FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown25:      FSettingWord {
+NeonKey:        FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown26:      FSettingWord {
+ViewToggle:     FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown27:      FSettingWord {
+RadiationKey:   FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
@@ -170,9 +170,9 @@ Unknown41:      FSettingWord {
                     #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
                     #00                                                         ; FSettingWord.KeyMask, значение дискового слота
                 }
-Unknown42:      FSettingWord {
-                    #00,                                                        ; FSettingWord.ValueOrRow, значение дискового слота
-                    #00                                                         ; FSettingWord.KeyMask, значение дискового слота
+ResourceSelect: FScriptResourceSelection {
+                    #00,                                                        ; FScriptResourceSelection.GroupCount, значение дискового слота
+                    #00                                                         ; FScriptResourceSelection.RecordCount, значение дискового слота
                 }
                 assert $ == #01E3
                 endmodule

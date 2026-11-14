@@ -18,6 +18,7 @@ def and_flags(value):
 
 def main():
     memory = Memory(base_memory())
+    assert bytes(memory[0xCEF4:0xCEF7]) == bytes.fromhex('3A 8B D1')
     simulator = Simulator(memory)
     counts, targets = Counter(), Counter()
     last_changed = set()
@@ -30,6 +31,8 @@ def main():
             memory[address] = 0xA5 if address < 0xC000 else original[address]
         memory[0xCEB4] = 0xFE
         memory[0xD18B] = mode
+        # Различаем Direction по D18B и отдельный Mode по D18C, соседний байт не должен подменить результат.
+        memory[0xD18C] = mode ^ 255
         start_sp = 0xBFFE if entry == 0xCEA4 else 0xBFFC
         memory[0xBFFC:0xC000] = [0x57, 0x13, 0xFF, 0x3F]
         initial = get_registers({'AF':count*256+((fill*7)&255), 'HL':page*256+0x39,
@@ -51,7 +54,7 @@ def main():
                 writes += [(0xBFFD,page),(0xBFFC,end),(0xCEB4,displacement)]
                 targets[0xCEF3-4*count] += 1
         else:
-            length = 30 if entry == 0xCEB7 else 18
+            length = {0xCEB5: 31, 0xCEB7: 30, 0xCECF: 18}[entry]
             returned_hl = 0x1357
             m1 = length*2+4
         # Вычисление адресов в пределах одной страницы, DEC L не переносит заём в H.
@@ -88,7 +91,8 @@ def main():
         for count in (*range(16),128):
             check(0xCEA4,count,(mode*17+count)&255,0x80,mode,mode)
     # Проверка физических входов двух частей развёрнутой цепочки с собственной рамкой стека.
-    for entry in (0xCEB7,0xCECF):
+    assert bytes(original[0xCEB5:0xCEB7]) == bytes.fromhex('2D 77')
+    for entry in (0xCEB5,0xCEB7,0xCECF):
         for end in range(256):
             for fill in (0,1,0x55,0x80,0xFF):
                 check(entry,fill,end,0x80,(fill+end)&255,fill)
@@ -100,12 +104,19 @@ def main():
     for _ in range(40):
         simulator.run()
     assert simulator.registers[PC] == 0xCEB3 and memory[0xCEB4] == 0xFE and simulator.registers[SP] == 0xBFFC
+    # Проверка всех знаковых смещений без исполнения путей за договором заполнителя.
+    possible_targets = {0xCEB5 + int.from_bytes(bytes(((62 - 4*count) & 255,)), 'little', signed=True)
+                        for count in range(256) if count not in (0, 128)}
+    assert 0xCEB5 not in possible_targets and 0xCEB6 not in possible_targets
     report = dict(passed=True,total_cases=sum(counts.values())+1,cases_by_entry=dict(counts),
         dynamic_targets={format(a,'04X'):n for a,n in sorted(targets.items())},
         all_valid_half_lengths=True,all_endpoint_low_bytes=True,all_fill_and_mode_bytes=True,
         page_local_wrap_preserved=True,every_ram_byte_and_write_checked=True,exact_registers_flags_and_r=True,
         count_128_skips=True,count_16_nonprogress=True,other_counts_outside_contract=True,
-        first_unused_pair_address='CEB5',unclassified_but_executed_bytes=24,
+        direct_prefix_entry='CEB5',direct_prefix_writes=31,
+        computed_jump_never_selects_CEB5_or_CEB6=True,direct_prefix_game_caller_proved=False,
+        direction_address=0xD18B,separate_mode_address=0xD18C,
+        direction_and_separate_mode_differ_in_every_fill_case=True,
         irq_executed=False,native_execution=False,assembly_executed=False)
     (ROOT / 'Tools/Disasm/Reports/ControlsEvenSpanVerification.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,indent=2))

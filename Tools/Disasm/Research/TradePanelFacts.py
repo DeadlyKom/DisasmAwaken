@@ -1,4 +1,5 @@
 """Торговая панель, динамический предел подсветки, действие и банковый вызов события."""
+from RowHoverFacts import HOVER_CORRUPT
 FUNCTIONS={
  0x6FEE:('HandleTradePanelHover','Хвостовой вход обновления торговой строки наведения'),
  0x6FF1:('HandleTradePanelClick','Закрытие торговой панели с меню, прокрутка либо выбор кода события по колонке'),
@@ -10,19 +11,20 @@ LABELS={('Station',a):name for a,name in ((0x7005,'StartScroll'),(0x702F,'Select
 CONTRACTS={('Station',0x6FEE):(
  ['тот же контекст и условия, что у UpdateTradeRowHover'],
  ['хвостовой JP передаёт исходный возврат UpdateTradeRowHover, все выходы по его договору'],
- ["HL, DE, BC, AF, AF' на обновлении по UpdateTradeRowHover"],
+ [*HOVER_CORRUPT, 'ScriptSelection.CargoRow при возвращённом Z=0'],
  ['это Event вход наведения, Event+3 начинается в HandleTradePanelClick, нового CALL этот вход не создаёт']),
  ('Station',0x7061):(
  ['IX - FInterfaceItem товаров, действуют UpdateRowHover и его банковое XOR-ядро и указатель',
   'список рисования непуст, PointerY=0..191, станционный банк 0 выбран',
   'TradePanelState.HoverRows содержит байтовый запрос строк, младший HoverArea задаёт отступ, исходно 35 пикселей',
   'ScriptSelection.CargoRow содержит прежнюю строку либо FF и доступен для записи'],
- ['перед UpdateRowHover HL=DrawTradePanel.Entry, DE прочитано из изменяемого HoverArea, A прежняя CargoRow',
+ ['HL, DE, BC и AF принадлежат UpdateRowHover',
+  "HL', DE', BC' сохраняются, AF' рабочий на восстановлении указателя, IX и IY сохраняются",
+  'перед UpdateRowHover HL=DrawTradePanel.Entry, DE прочитано из изменяемого HoverArea, A прежняя CargoRow',
   'D является числом строк и проходит исходное умножение на восемь и ограничение ClampRowHeight, а не прямой пиксельной высотой',
   'при Z=1 дочернего входа CargoRow сохраняется, при Z=0 получает весь A, в том числе нулевую строку либо результат позднего отказа',
-  "HL, DE, BC и AF принадлежат UpdateRowHover, HL', DE', BC', IX, IY сохраняются, AF' рабочий на восстановлении указателя",
   'сам HoverRows не меняется, I, IFF и IM не меняются, SP обычного возврата равен входному SP+2'],
- ["HL, DE, BC, AF, AF', XOR-полосы и указатель по UpdateRowHover"],
+ [*HOVER_CORRUPT, 'ScriptSelection.CargoRow при возвращённом Z=0'],
  ['HoverRows является старшим байтом непосредственного LD DE и записывается DrawTradePanel из A\' счётчика строк',
   'начальное D=30 не является постоянным пределом после рисования, ноль отключает область попадания',
   'для запроса 32 умножение на восемь даёт ноль, исходная байтовая особенность сохранена',

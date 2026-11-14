@@ -7,6 +7,8 @@ import sys
 
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/'Tools/Disasm'),str(ROOT/'Tools/Disasm/Research/vendor/skoolkit-10.1')]
+from CheckPreviewCoordinateMultiply import Memory
+from ReferenceControlsPointRespawn import refresh
 from skoolkit.simulator import Simulator
 from skoolkit.simutils import get_registers,A,F,B,C,D,E,H,L,SP
 from CheckMatrixKey import add_flags
@@ -17,17 +19,28 @@ def main():
     manifest=json.loads((ROOT/'Tools/Disasm/Disk/Manifest.json').read_text('utf-8'))
     entry=next(e for e in manifest['entries'] if e['slot']==4)
     source=(ROOT/(entry['path']+'.sectors.bin')).read_bytes()
-    memory=bytearray(65536);memory[0x6000:]=source
+    memory=Memory([0]*65536);memory[0x6000:]=source
     simulator=Simulator(memory)
     initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'IX':0xF37D,
                            'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
-    counts={'coordinates':0,'height':0,'selection':0};selection={'above':0,'below':0,'inside':0}
+    counts={'coordinates':0,'height':0,'selection':0};selection={'above':0,'below':0,'inside':0};height_m1=set()
 
     def run(start,y,height,offset,extent,pointer_y):
         memory[0xF37E]=y;memory[0xF380]=height;memory[0x6308]=pointer_y
         memory[0x7FFE:0x8000]=bytes([255,63]);simulator.registers[:]=initial;r=simulator.registers
         r[D],r[E]=extent,offset
-        simulator.run(start=start,stop=0x3FFF)
+        if start==0xA28F:
+            r[14]=(height+offset)&255;r[15]=(height^offset^extent)&255;r[27]=(height+extent)%3
+            before=r.copy();memory.writes=[];memory.recording=True
+            simulator.run(start=start,stop=0x3FFF)
+            memory.recording=False
+            available=((((height<<3)|(height>>5))&255)-offset-5)&0xF8
+            expected_m1=16 if available>=((extent<<3)&255) else 18
+            assert r[15]==refresh(before[15],expected_m1)
+            assert all(r[i]==before[i] for i in (14,26,27)) and not memory.writes
+            height_m1.add(expected_m1)
+        else:
+            simulator.run(start=start,stop=0x3FFF)
         assert r[SP]==0x8000 and r[H]*256+r[L]==0x1357
         assert r[8:12]==initial[8:12] and r[16:24]==initial[16:24]
         return r
@@ -66,7 +79,9 @@ def main():
         selection[kind]+=1;counts['selection']+=1
     report=dict(method='original_row_selection_byte_arithmetic_with_full_flags',passed=True,
                 source_sha256=hashlib.sha256(source).hexdigest(),cases=sum(counts.values()),by_function=counts,
-                selection_results=selection,irq_executed=False,native_execution=False,assembly_executed=False)
+                selection_results=selection,height_full_m1_values=sorted(height_m1),
+                height_exact_refresh_checked=True,height_i_im_iff_preserved=True,height_iff_fixture=0,
+                height_no_memory_writes=True,irq_executed=False,native_execution=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/RowSelectionMathVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
     print(json.dumps(report,ensure_ascii=False,indent=2))
 

@@ -41,4 +41,8 @@ return {
     {slot=41, offset=508672, size=16384},
     {slot=42, offset=525056, size=16384},
     {slot=43, offset=541440, size=12288},
+    {slot=44, offset=553728, size=256, archived=true},
+    {slot=45, offset=553984, size=15616, archived=true},
+    {slot=46, offset=569600, size=4352, archived=true},
+    {slot=47, offset=573952, size=33024, archived=true},
 }

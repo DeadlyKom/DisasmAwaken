@@ -19,6 +19,110 @@
     5,
     6
   ],
+  "observed_register_pair_changes": {
+    "AF": 560,
+    "DE": 480,
+    "BC": 448,
+    "AF'": 480,
+    "HL": 460,
+    "BC'": 450,
+    "IX": 77,
+    "DE'": 54,
+    "HL'": 4
+  },
+  "first_register_change_examples": {
+    "AF": {
+      "profile": [
+        0,
+        false,
+        0,
+        0
+      ],
+      "before": 0,
+      "after": 68
+    },
+    "DE": {
+      "profile": [
+        1,
+        false,
+        0,
+        0
+      ],
+      "before": 0,
+      "after": 12
+    },
+    "BC": {
+      "profile": [
+        1,
+        false,
+        0,
+        0
+      ],
+      "before": 0,
+      "after": 254
+    },
+    "AF'": {
+      "profile": [
+        1,
+        false,
+        0,
+        0
+      ],
+      "before": 0,
+      "after": 64
+    },
+    "HL": {
+      "profile": [
+        1,
+        false,
+        0,
+        1
+      ],
+      "before": 0,
+      "after": 37402
+    },
+    "BC'": {
+      "profile": [
+        1,
+        false,
+        0,
+        1
+      ],
+      "before": 0,
+      "after": 1
+    },
+    "IX": {
+      "profile": [
+        1,
+        true,
+        0,
+        4
+      ],
+      "before": 0,
+      "after": 65450
+    },
+    "DE'": {
+      "profile": [
+        2,
+        false,
+        0,
+        0
+      ],
+      "before": 0,
+      "after": 225
+    },
+    "HL'": {
+      "profile": [
+        2,
+        true,
+        1,
+        7
+      ],
+      "before": 0,
+      "after": 16
+    }
+  },
+  "observation_is_not_complete_register_contract_proof": true,
   "assembly_executed": false,
   "native_execution": false
 }

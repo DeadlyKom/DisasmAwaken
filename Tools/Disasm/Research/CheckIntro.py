@@ -12,7 +12,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "Tools/Disasm/Research/vendor/skoolkit-10.1"))
 from skoolkit.simulator import Simulator
-from skoolkit.simutils import get_registers, PC, SP, A, H, L, D, E
+from skoolkit.simutils import get_registers, PC, SP, A, H, L, D, E, IYl
 
 
 def original_memory():
@@ -87,6 +87,26 @@ def main():
         require(simulator.registers[A] == rom_high, "Не подтверждена зависимость A от хвоста заполнения")
     results.append(dict(name="BuildTextureLookupRomBoundary", fixtures=3,
                         synthetic_rom_bytes=True, original_rom_required=False, passed=True))
+
+    # В варианте INC IYL чтения остаются, но значения потока не задают вторые байты таблицы.
+    tables = {}
+    for opcode, fill in itertools.product((0x2C, 0x6F), (0x20, 0x5C)):
+        memory = original_memory()
+        memory[0xFE:0x100] = [0x49, 0xCE]
+        word(memory, 0x5FFE, 0x3FFF)
+        simulator, _ = execute(memory, {"PC": 0x69B6, "SP": 0x5FFE})
+        pointer = simulator.registers[H] * 256 + simulator.registers[L]
+        require(pointer == 0x6080, "Изменилось начало потока параметров первого построителя")
+        memory[pointer:pointer + 63] = [fill] * 63
+        simulator, _ = execute(memory, {"PC": 0x6763, "SP": 0x5FFE, "HL": pointer,
+                                        "A": opcode, "IY": 0x5CC0}, limit=1000000)
+        require(simulator.registers[IYl] == (0xFF if opcode == 0x2C else fill),
+                "Изменилось правило обновления IYL")
+        tables[opcode, fill] = bytes(memory[0x8000:])
+    require(tables[0x2C, 0x20] == tables[0x2C, 0x5C], "INC IYL использовал прочитанный параметр")
+    require(tables[0x6F, 0x20] != tables[0x6F, 0x5C], "LD IYL,A не изменил таблицу")
+    results.append(dict(name="BuildTextureLookupParameterSource", fixtures=4, parameter_count=63,
+                        parameter_address=0x6080, both_opcode_variants_compared=True, passed=True))
 
     # Проверка адресации таблицы, шагов с переполнением младшего байта и неполной первой страницы.
     phase_cases = list(itertools.product((0, 3, 6, 9, 255), (0, 0x40, 0xFF)))

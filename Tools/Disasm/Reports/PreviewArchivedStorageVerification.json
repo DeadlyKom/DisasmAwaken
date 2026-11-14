@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "archive_sha256": "d3a9efb3b7d4dbd9a2c44f5ed4d43801723a2a9f6393e7266c7ebb57c6c3647b",
+  "source_disk": "awk6.trd",
+  "common_binary_prefix_bytes": 8406,
+  "matched_ranges": [
+    [
+      515,
+      524
+    ],
+    [
+      545,
+      555
+    ],
+    [
+      561,
+      571
+    ],
+    [
+      577,
+      587
+    ],
+    [
+      593,
+      603
+    ],
+    [
+      609,
+      619
+    ],
+    [
+      625,
+      635
+    ],
+    [
+      636,
+      732
+    ],
+    [
+      736,
+      746
+    ],
+    [
+      752,
+      762
+    ],
+    [
+      2044,
+      2048
+    ],
+    [
+      3530,
+      3584
+    ],
+    [
+      3586,
+      3648
+    ],
+    [
+      3844,
+      4096
+    ],
+    [
+      4140,
+      4352
+    ],
+    [
+      4368,
+      4544
+    ]
+  ],
+  "matched_bytes": 945,
+  "authored_scene_page": [
+    49664,
+    49920
+  ],
+  "authored_queue_page": [
+    50944,
+    51200
+  ],
+  "authored_object_slots": [
+    52672,
+    52800
+  ],
+  "object_slot_stride": 64,
+  "authored_fill_reserve": [
+    53514,
+    53696
+  ],
+  "published_fill_reserve": [
+    53520,
+    53696
+  ],
+  "assembly_executed": false,
+  "native_execution": false
+}

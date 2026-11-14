@@ -55,6 +55,7 @@ Item16:         FEquipmentQuantityCode {
 Item17:         FEquipmentQuantityCode {
                     #FF                                                         ; FEquipmentQuantityCode.Code, исходное значение
                 }
+                ; Строка X артефакт, инверсный код FE проверяет панель расшифровки.
 Item18:         FEquipmentQuantityCode {
                     #FF                                                         ; FEquipmentQuantityCode.Code, исходное значение
                 }

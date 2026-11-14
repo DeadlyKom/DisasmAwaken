@@ -33,6 +33,41 @@
       "stop_address": 20546
     }
   ],
+  "entry_prefix_cases": 262144,
+  "entry_prefix_all_IX_words": true,
+  "entry_prefix_initial_pages": [
+    1,
+    9,
+    17,
+    25
+  ],
+  "entry_prefix_exact_R_M1": 8,
+  "entry_prefix_all_registers_except_T_checked": true,
+  "entry_prefix_exact_RAM_writes_checked": true,
+  "entry_prefix_physical_bytes_checked": true,
+  "CPU_write_watch_positive_control": true,
+  "entry_prefix_CurrentPage_not_updated": true,
+  "entry_prefix_stack_address": 32766,
+  "entry_prefix_additional_valid_stack_addresses": [
+    16386,
+    24114,
+    24115,
+    24119,
+    25350,
+    25353,
+    32767,
+    32768,
+    49150,
+    49152
+  ],
+  "entry_prefix_additional_stack_exact_RAM_and_registers": true,
+  "entry_prefix_negative_stack_aliases": {
+    "saved_IX_overwritten_by_saved_SP": 24117,
+    "CurrentPage_overwritten_by_PUSH_IX": 25352,
+    "banked_stack_switches_physical_word": 56048
+  },
+  "entry_prefix_full_input_cartesian_product_checked": false,
+  "entry_prefix_hardware_bus_order_verified": false,
   "direct_switch_changes_next_opcode": true,
   "stored_opcode": 217,
   "bank6_panel_opcode": 4,

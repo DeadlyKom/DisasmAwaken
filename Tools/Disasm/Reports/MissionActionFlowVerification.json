@@ -1,5 +1,35 @@
 {
   "passed": true,
+  "finish_tail": {
+    "cases": 65626,
+    "outcomes": {
+      "matching_found": 2098,
+      "different_rows": 63488,
+      "matching_missing": 40
+    },
+    "full_m1_values": [
+      29,
+      50,
+      71,
+      113,
+      334,
+      376,
+      1016,
+      1279
+    ],
+    "all_pointer_and_origin_y_bytes": true,
+    "all_saved_af_words": true,
+    "exact_restored_context_and_final_flags": true,
+    "exact_sp_plus_14_and_return_word_preserved": true,
+    "all_128_shift_writes_and_tail_checked": true,
+    "only_declared_memory_writes": true,
+    "exact_refresh_and_i_im_iff_preservation": true,
+    "iff_fixture": 0,
+    "starts_at_pop_frame_after_graphics": true,
+    "graphics_before_frame_restore_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
   "cases": 38,
   "results": [
     {
@@ -314,6 +344,253 @@
   "prefix_RepaintAndFlag_executed": true,
   "close_menu_row_match_and_mismatch": true,
   "frame_bytes": 14,
+  "opaque_offer_words": {
+    "start": 39092,
+    "end_exclusive": 39100,
+    "read_count": 0,
+    "write_count": 0,
+    "distinct_test_patterns": 38,
+    "scalar_and_slice_accesses_watched": true,
+    "watcher_positive_cpu_and_slice_control_passed": true,
+    "whole_game_unusedness_proved": false
+  },
+  "offer_literal_reference_audit": {
+    "registered_instruction_views": 50957,
+    "regions": 20,
+    "references": [
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 28278,
+        "operation": "LD A,(#98BF)",
+        "original_hex": "3abf98",
+        "physical_disk_offset": 89890
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 28348,
+        "operation": "LD DE,(#98B0)",
+        "original_hex": "ed5bb098",
+        "physical_disk_offset": 89960
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 28361,
+        "operation": "LD DE,(#98B2)",
+        "original_hex": "ed5bb298",
+        "physical_disk_offset": 89973
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 28385,
+        "operation": "LD DE,(#98BE)",
+        "original_hex": "ed5bbe98",
+        "physical_disk_offset": 89997
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 28410,
+        "operation": "LD DE,(#98BE)",
+        "original_hex": "ed5bbe98",
+        "physical_disk_offset": 90022
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 28422,
+        "operation": "LD DE,(#98BE)",
+        "original_hex": "ed5bbe98",
+        "physical_disk_offset": 90034
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 28517,
+        "operation": "LD A,(#98BE)",
+        "original_hex": "3abe98",
+        "physical_disk_offset": 90129
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 28628,
+        "operation": "LD HL,(#98B0)",
+        "original_hex": "2ab098",
+        "physical_disk_offset": 90240
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 28631,
+        "operation": "LD DE,(#98B2)",
+        "original_hex": "ed5bb298",
+        "physical_disk_offset": 90243
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 31944,
+        "operation": "LD (#98BF),A",
+        "original_hex": "32bf98",
+        "physical_disk_offset": 93556
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 31978,
+        "operation": "LD DE,#98B0",
+        "original_hex": "11b098",
+        "physical_disk_offset": 93590
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 43665,
+        "operation": "LD A,(#98BE)",
+        "original_hex": "3abe98",
+        "physical_disk_offset": 104593
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 43680,
+        "operation": "LD BC,(#98BC)",
+        "original_hex": "ed4bbc98",
+        "physical_disk_offset": 104608
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 43707,
+        "operation": "LD HL,(#98B0)",
+        "original_hex": "2ab098",
+        "physical_disk_offset": 104635
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 43710,
+        "operation": "LD DE,(#98B2)",
+        "original_hex": "ed5bb298",
+        "physical_disk_offset": 104638
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 43742,
+        "operation": "LD DE,(#98B0)",
+        "original_hex": "ed5bb098",
+        "physical_disk_offset": 104670
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 43755,
+        "operation": "LD DE,(#98B2)",
+        "original_hex": "ed5bb298",
+        "physical_disk_offset": 104683
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 43773,
+        "operation": "LD HL,(#98BE)",
+        "original_hex": "2abe98",
+        "physical_disk_offset": 104701
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 43786,
+        "operation": "LD DE,(#98BC)",
+        "original_hex": "ed5bbc98",
+        "physical_disk_offset": 104714
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 43801,
+        "operation": "LD HL,#98BE",
+        "original_hex": "21be98",
+        "physical_disk_offset": 104729
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 44055,
+        "operation": "LD (#98B0),HL",
+        "original_hex": "22b098",
+        "physical_disk_offset": 104983
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 44069,
+        "operation": "LD (#98B2),HL",
+        "original_hex": "22b298",
+        "physical_disk_offset": 104997
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 44073,
+        "operation": "LD (#98BF),A",
+        "original_hex": "32bf98",
+        "physical_disk_offset": 105001
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 44089,
+        "operation": "LD (#98BE),A",
+        "original_hex": "32be98",
+        "physical_disk_offset": 105017
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 44106,
+        "operation": "LD DE,(#98B0)",
+        "original_hex": "ed5bb098",
+        "physical_disk_offset": 105034
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 44110,
+        "operation": "LD BC,(#98B2)",
+        "original_hex": "ed4bb298",
+        "physical_disk_offset": 105038
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 44128,
+        "operation": "LD A,(#98BE)",
+        "original_hex": "3abe98",
+        "physical_disk_offset": 105056
+      },
+      {
+        "region": "Station",
+        "slot": 4,
+        "pc": 44135,
+        "operation": "LD (#98BC),DE",
+        "original_hex": "ed53bc98",
+        "physical_disk_offset": 105063
+      }
+    ],
+    "reference_instruction_bytes_matched_to_original_disk": true,
+    "direct_byte_and_word_LD_overlap_candidates": [],
+    "boundary_word_and_adjacent_byte_controls_passed": true,
+    "literals_into_unknown_words_found": false,
+    "indirect_indexed_block_or_generated_accesses_excluded": false,
+    "address_coincidence_is_not_cross_mode_object_identity": true,
+    "whole_game_unusedness_proved": false
+  },
   "model_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
   "emulator_rom_match_verified": false,
   "calls_stubbed": false,

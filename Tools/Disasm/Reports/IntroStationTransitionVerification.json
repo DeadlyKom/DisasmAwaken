@@ -9,9 +9,4556 @@
   ],
   "actual_intro_initialization_and_screen_unpack": true,
   "real_rom_executed": true,
+  "tail_access_profiles": [
+    {
+      "frames": 0,
+      "scratch_bank": 1,
+      "scratch_reads_before_overwrite": 0,
+      "screen_tail_original_reads": [
+        {
+          "pc": 25894,
+          "bytes": 149
+        }
+      ],
+      "screen_tail_first_writes": [
+        {
+          "pc": 27163,
+          "value": 255,
+          "start": 36715,
+          "end_exclusive": 36755
+        },
+        {
+          "pc": 25945,
+          "value": 0,
+          "start": 36755,
+          "end_exclusive": 36756
+        },
+        {
+          "pc": 25947,
+          "value": 0,
+          "start": 36756,
+          "end_exclusive": 36864
+        }
+      ],
+      "sample_rows": 206,
+      "bank4_rows": 38,
+      "scratch_overwrites": [
+        {
+          "pc": 27163,
+          "value": 255,
+          "byte_count": 90
+        }
+      ],
+      "accesses": [
+        {
+          "region": "lookup_copy",
+          "mode": "write",
+          "pc": 25866,
+          "byte_count": 1
+        },
+        {
+          "region": "lookup_successor",
+          "mode": "read",
+          "pc": 25866,
+          "byte_count": 1
+        },
+        {
+          "region": "lookup_successor",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 1
+        },
+        {
+          "region": "saved_stack_and_neighbors",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 4
+        },
+        {
+          "region": "saved_stack_and_neighbors",
+          "mode": "write",
+          "pc": 25905,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "read",
+          "pc": 25883,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "write",
+          "pc": 25894,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 25894,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 25947,
+          "byte_count": 109
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26445,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26464,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26586,
+          "byte_count": 75
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26592,
+          "byte_count": 42
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26594,
+          "byte_count": 42
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 27163,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 27456,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 28083,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 28204,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 25945,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 25947,
+          "byte_count": 108
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26188,
+          "byte_count": 74
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26192,
+          "byte_count": 75
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26445,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26566,
+          "byte_count": 38
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26570,
+          "byte_count": 39
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26596,
+          "byte_count": 37
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26598,
+          "byte_count": 37
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26890,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26894,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26898,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26902,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 27163,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 27456,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 28063,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 28182,
+          "byte_count": 149
+        }
+      ]
+    },
+    {
+      "frames": 1,
+      "scratch_bank": 1,
+      "scratch_reads_before_overwrite": 0,
+      "screen_tail_original_reads": [
+        {
+          "pc": 25894,
+          "bytes": 149
+        }
+      ],
+      "screen_tail_first_writes": [
+        {
+          "pc": 27163,
+          "value": 255,
+          "start": 36715,
+          "end_exclusive": 36755
+        },
+        {
+          "pc": 25945,
+          "value": 0,
+          "start": 36755,
+          "end_exclusive": 36756
+        },
+        {
+          "pc": 25947,
+          "value": 0,
+          "start": 36756,
+          "end_exclusive": 36864
+        }
+      ],
+      "sample_rows": 206,
+      "bank4_rows": 38,
+      "scratch_overwrites": [
+        {
+          "pc": 27163,
+          "value": 255,
+          "byte_count": 90
+        }
+      ],
+      "accesses": [
+        {
+          "region": "lookup_copy",
+          "mode": "write",
+          "pc": 25866,
+          "byte_count": 1
+        },
+        {
+          "region": "lookup_successor",
+          "mode": "read",
+          "pc": 25866,
+          "byte_count": 1
+        },
+        {
+          "region": "lookup_successor",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 1
+        },
+        {
+          "region": "saved_stack_and_neighbors",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 4
+        },
+        {
+          "region": "saved_stack_and_neighbors",
+          "mode": "write",
+          "pc": 25905,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "read",
+          "pc": 25883,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "write",
+          "pc": 25894,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 25894,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 25947,
+          "byte_count": 109
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26445,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26464,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26586,
+          "byte_count": 75
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26592,
+          "byte_count": 42
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26594,
+          "byte_count": 42
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26684,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26687,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26690,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26693,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26696,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26699,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26702,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26705,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26708,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26711,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26714,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26717,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26720,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26723,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26726,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26729,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26732,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26735,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26738,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26741,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26744,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26747,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26750,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26753,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26756,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26759,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26762,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26765,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26768,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26771,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26774,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26777,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 27163,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 27456,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 28083,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 28204,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 25945,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 25947,
+          "byte_count": 108
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26188,
+          "byte_count": 74
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26192,
+          "byte_count": 75
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26445,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26566,
+          "byte_count": 38
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26570,
+          "byte_count": 39
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26596,
+          "byte_count": 37
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26598,
+          "byte_count": 37
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26890,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26894,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26898,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26902,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 27163,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 27456,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 28063,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 28182,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32261,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32268,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32275,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32282,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32289,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32296,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32303,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32310,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32317,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32324,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32331,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32338,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32345,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32352,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32359,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32366,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32373,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32380,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32387,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32394,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32401,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32408,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32415,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32422,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32429,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32436,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32443,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32450,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32457,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32464,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32471,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32478,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32485,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32492,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32499,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32506,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32513,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32520,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32527,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32534,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32541,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32548,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32555,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32562,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32569,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32576,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32583,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32590,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32597,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32604,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32611,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32618,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32625,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32632,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32639,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32646,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32653,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32660,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32667,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32674,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32681,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32688,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32695,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32702,
+          "byte_count": 1
+        }
+      ]
+    },
+    {
+      "frames": 2,
+      "scratch_bank": 1,
+      "scratch_reads_before_overwrite": 0,
+      "screen_tail_original_reads": [
+        {
+          "pc": 25894,
+          "bytes": 149
+        }
+      ],
+      "screen_tail_first_writes": [
+        {
+          "pc": 27163,
+          "value": 255,
+          "start": 36715,
+          "end_exclusive": 36755
+        },
+        {
+          "pc": 25945,
+          "value": 0,
+          "start": 36755,
+          "end_exclusive": 36756
+        },
+        {
+          "pc": 25947,
+          "value": 0,
+          "start": 36756,
+          "end_exclusive": 36864
+        }
+      ],
+      "sample_rows": 206,
+      "bank4_rows": 38,
+      "scratch_overwrites": [
+        {
+          "pc": 27163,
+          "value": 255,
+          "byte_count": 90
+        }
+      ],
+      "accesses": [
+        {
+          "region": "lookup_copy",
+          "mode": "write",
+          "pc": 25866,
+          "byte_count": 1
+        },
+        {
+          "region": "lookup_successor",
+          "mode": "read",
+          "pc": 25866,
+          "byte_count": 1
+        },
+        {
+          "region": "lookup_successor",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 1
+        },
+        {
+          "region": "saved_stack_and_neighbors",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 4
+        },
+        {
+          "region": "saved_stack_and_neighbors",
+          "mode": "write",
+          "pc": 25905,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "read",
+          "pc": 25883,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "write",
+          "pc": 25894,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 25894,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 25947,
+          "byte_count": 109
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26445,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26464,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26586,
+          "byte_count": 75
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26592,
+          "byte_count": 42
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26594,
+          "byte_count": 42
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26684,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26687,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26690,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26693,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26696,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26699,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26702,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26705,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26708,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26711,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26714,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26717,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26720,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26723,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26726,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26729,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26732,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26735,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26738,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26741,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26744,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26747,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26750,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26753,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26756,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26759,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26762,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26765,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26768,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26771,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26774,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26777,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 27163,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 27456,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 28083,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 28204,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32456,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32463,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32470,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32477,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32484,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32491,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32498,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32505,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32512,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32519,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32526,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32533,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32540,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32547,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32554,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32561,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32568,
+          "byte_count": 3
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 25945,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 25947,
+          "byte_count": 108
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26188,
+          "byte_count": 74
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26192,
+          "byte_count": 75
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26445,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26566,
+          "byte_count": 38
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26570,
+          "byte_count": 39
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26596,
+          "byte_count": 37
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26598,
+          "byte_count": 37
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26890,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26894,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26898,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26902,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 27163,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 27456,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 28063,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 28182,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32261,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32268,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32275,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32282,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32289,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32296,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32303,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32310,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32317,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32324,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32331,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32338,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32345,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32352,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32359,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32366,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32373,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32380,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32387,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32394,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32401,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32408,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32415,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32422,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32429,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32436,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32443,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32450,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32457,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32464,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32471,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32478,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32485,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32492,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32499,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32506,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32513,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32520,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32527,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32534,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32541,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32548,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32555,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32562,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32569,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32576,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32583,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32590,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32597,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32604,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32611,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32618,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32625,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32632,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32639,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32646,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32653,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32660,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32667,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32674,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32681,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32688,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32695,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32702,
+          "byte_count": 1
+        }
+      ]
+    },
+    {
+      "frames": 300,
+      "scratch_bank": 1,
+      "scratch_reads_before_overwrite": 0,
+      "screen_tail_original_reads": [
+        {
+          "pc": 25894,
+          "bytes": 149
+        }
+      ],
+      "screen_tail_first_writes": [
+        {
+          "pc": 27163,
+          "value": 255,
+          "start": 36715,
+          "end_exclusive": 36755
+        },
+        {
+          "pc": 25945,
+          "value": 0,
+          "start": 36755,
+          "end_exclusive": 36756
+        },
+        {
+          "pc": 25947,
+          "value": 0,
+          "start": 36756,
+          "end_exclusive": 36864
+        }
+      ],
+      "sample_rows": 206,
+      "bank4_rows": 38,
+      "scratch_overwrites": [
+        {
+          "pc": 27163,
+          "value": 255,
+          "byte_count": 90
+        }
+      ],
+      "accesses": [
+        {
+          "region": "lookup_copy",
+          "mode": "write",
+          "pc": 25866,
+          "byte_count": 1
+        },
+        {
+          "region": "lookup_successor",
+          "mode": "read",
+          "pc": 25866,
+          "byte_count": 1
+        },
+        {
+          "region": "lookup_successor",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 1
+        },
+        {
+          "region": "saved_stack_and_neighbors",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 4
+        },
+        {
+          "region": "saved_stack_and_neighbors",
+          "mode": "write",
+          "pc": 25905,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "read",
+          "pc": 25883,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "read",
+          "pc": 28063,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_copy",
+          "mode": "write",
+          "pc": 25894,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 25894,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 25947,
+          "byte_count": 109
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26445,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26464,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26586,
+          "byte_count": 75
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26592,
+          "byte_count": 42
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26594,
+          "byte_count": 42
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26684,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26687,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26690,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26693,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26696,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26699,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26702,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26705,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26708,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26711,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26714,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26717,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26720,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26723,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26726,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26729,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26732,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26735,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26738,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26741,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26744,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26747,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26750,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26753,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26756,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26759,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26762,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26765,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26768,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26771,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26774,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 26777,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 27163,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 27456,
+          "byte_count": 85
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 28083,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 28204,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32456,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32463,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32470,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32477,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32484,
+          "byte_count": 3
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32491,
+          "byte_count": 4
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32498,
+          "byte_count": 3
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32505,
+          "byte_count": 4
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32512,
+          "byte_count": 4
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32519,
+          "byte_count": 5
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32526,
+          "byte_count": 5
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32533,
+          "byte_count": 6
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32540,
+          "byte_count": 6
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32547,
+          "byte_count": 8
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32554,
+          "byte_count": 8
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32561,
+          "byte_count": 10
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32568,
+          "byte_count": 11
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32575,
+          "byte_count": 12
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32582,
+          "byte_count": 13
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32589,
+          "byte_count": 9
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32596,
+          "byte_count": 12
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32603,
+          "byte_count": 8
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32610,
+          "byte_count": 8
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32617,
+          "byte_count": 8
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32624,
+          "byte_count": 8
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32631,
+          "byte_count": 8
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32638,
+          "byte_count": 7
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32645,
+          "byte_count": 6
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32652,
+          "byte_count": 6
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32659,
+          "byte_count": 6
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32666,
+          "byte_count": 5
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32673,
+          "byte_count": 5
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32680,
+          "byte_count": 4
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32687,
+          "byte_count": 4
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32694,
+          "byte_count": 4
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "read",
+          "pc": 32701,
+          "byte_count": 3
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 25945,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 25947,
+          "byte_count": 108
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26188,
+          "byte_count": 74
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26192,
+          "byte_count": 75
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26445,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26566,
+          "byte_count": 38
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26570,
+          "byte_count": 39
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26596,
+          "byte_count": 37
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26598,
+          "byte_count": 37
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26890,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26894,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26898,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 26902,
+          "byte_count": 2
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 27163,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 27456,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 28063,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 28182,
+          "byte_count": 149
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32261,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32268,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32275,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32282,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32289,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32296,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32303,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32310,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32317,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32324,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32331,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32338,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32345,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32352,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32359,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32366,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32373,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32380,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32387,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32394,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32401,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32408,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32415,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32422,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32429,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32436,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32443,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32450,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32457,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32464,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32471,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32478,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32485,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32492,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32499,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32506,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32513,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32520,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32527,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32534,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32541,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32548,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32555,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32562,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32569,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32576,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32583,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32590,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32597,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32604,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32611,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32618,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32625,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32632,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32639,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32646,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32653,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32660,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32667,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32674,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32681,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32688,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32695,
+          "byte_count": 1
+        },
+        {
+          "region": "screen_tail_source",
+          "mode": "write",
+          "pc": 32702,
+          "byte_count": 1
+        }
+      ]
+    }
+  ],
+  "detached_prefix_jp_target_after_generation": 26862,
+  "generated_opcode_at_target": 34,
+  "generated_pop_hl_before_target": 26861,
   "saved_intro_stack_address": 26036,
   "saved_intro_stack_value": 24575,
+  "saved_stack_texture_copy": {
+    "bank": 1,
+    "source": 26035,
+    "destination": 56435,
+    "data": "00ff5f00",
+    "read_pc": 28063,
+    "overwrite_pc": 27163,
+    "reads_before_overwrite": 0
+  },
   "trdos_search_and_info_stubbed": true,
   "stops_at_sector_read_entry": true,
-  "assembly_executed": false
+  "assembly_executed": false,
+  "initializer_entry_contexts": [
+    {
+      "final_effect_frames": 0,
+      "entries": {
+        "6D8D": {
+          "IY": 23610,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 0,
+          "paging": 22,
+          "HL": 24704,
+          "DE": 24960,
+          "BC": 0,
+          "AF": 20116,
+          "IX": 43981
+        },
+        "6638": {
+          "IY": 23807,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 0,
+          "paging": 20,
+          "HL": 37632,
+          "DE": 54016,
+          "BC": 0,
+          "AF": 5193,
+          "IX": 25600
+        },
+        "6C9C": {
+          "IY": 23593,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 22,
+          "HL": 49152,
+          "DE": 0,
+          "BC": 0,
+          "AF": 5633,
+          "IX": 25600
+        },
+        "6DB6": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 65535,
+          "DE": 24832,
+          "BC": 27035,
+          "AF": 68,
+          "IX": 0
+        },
+        "6AC1": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 36864,
+          "DE": 53248,
+          "BC": 32765,
+          "AF": 4416,
+          "IX": 0
+        },
+        "66FB": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 65535,
+          "DE": 24832,
+          "BC": 27035,
+          "AF": 68,
+          "IX": 0
+        },
+        "6A4B": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 26142,
+          "DE": 23040,
+          "BC": 300,
+          "AF": 73,
+          "IX": 0
+        }
+      },
+      "loader_IY": 23567,
+      "loader_SP": 24569,
+      "loader_IFF": 1,
+      "loader_AF": 48746,
+      "loader_BC": 32766,
+      "timed_callback_counters": [],
+      "FRAMES_before_loader": 45,
+      "IRQ_contexts": [
+        {
+          "PC": 26424,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26426,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26427,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26428,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26429,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26445,
+          "IY": 23567,
+          "count": 8
+        },
+        {
+          "PC": 26949,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27011,
+          "IY": 23567,
+          "count": 3
+        },
+        {
+          "PC": 27156,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27171,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27171,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27210,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27366,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27374,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27435,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27437,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27442,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27446,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27448,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27456,
+          "IY": 23567,
+          "count": 3
+        },
+        {
+          "PC": 27818,
+          "IY": 23593,
+          "count": 2
+        },
+        {
+          "PC": 27878,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27944,
+          "IY": 23593,
+          "count": 2
+        },
+        {
+          "PC": 27950,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27956,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27958,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 28018,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 28148,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28159,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28181,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28204,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 40748,
+          "IY": 23567,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "final_effect_frames": 1,
+      "entries": {
+        "6D8D": {
+          "IY": 23610,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 0,
+          "paging": 22,
+          "HL": 24704,
+          "DE": 24960,
+          "BC": 0,
+          "AF": 20116,
+          "IX": 43981
+        },
+        "6638": {
+          "IY": 23807,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 0,
+          "paging": 20,
+          "HL": 37632,
+          "DE": 54016,
+          "BC": 0,
+          "AF": 5193,
+          "IX": 25600
+        },
+        "6C9C": {
+          "IY": 23593,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 22,
+          "HL": 49152,
+          "DE": 0,
+          "BC": 0,
+          "AF": 5633,
+          "IX": 25600
+        },
+        "6DB6": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 65535,
+          "DE": 24832,
+          "BC": 27035,
+          "AF": 68,
+          "IX": 0
+        },
+        "6AC1": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 36864,
+          "DE": 53248,
+          "BC": 32765,
+          "AF": 4416,
+          "IX": 0
+        },
+        "66FB": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 65535,
+          "DE": 24832,
+          "BC": 27035,
+          "AF": 68,
+          "IX": 0
+        },
+        "6A4B": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 26142,
+          "DE": 23040,
+          "BC": 300,
+          "AF": 73,
+          "IX": 0
+        },
+        "661E": {
+          "IY": 23567,
+          "SP": 24569,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 26142,
+          "DE": 23040,
+          "BC": 300,
+          "AF": 73,
+          "IX": 0
+        },
+        "66A3": {
+          "IY": 23567,
+          "SP": 24569,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 26156,
+          "DE": 65535,
+          "BC": 26162,
+          "AF": 5705,
+          "IX": 0
+        }
+      },
+      "loader_IY": 23567,
+      "loader_SP": 24569,
+      "loader_IFF": 0,
+      "loader_AF": 48746,
+      "loader_BC": 32766,
+      "timed_callback_counters": [
+        300
+      ],
+      "FRAMES_before_loader": 48,
+      "IRQ_contexts": [
+        {
+          "PC": 26424,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26426,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26427,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26428,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26429,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26445,
+          "IY": 23567,
+          "count": 8
+        },
+        {
+          "PC": 26949,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27011,
+          "IY": 23567,
+          "count": 3
+        },
+        {
+          "PC": 27156,
+          "IY": 23567,
+          "count": 4
+        },
+        {
+          "PC": 27171,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27171,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27210,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27366,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27374,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27435,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27437,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27442,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27446,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27448,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27456,
+          "IY": 23567,
+          "count": 3
+        },
+        {
+          "PC": 27818,
+          "IY": 23593,
+          "count": 2
+        },
+        {
+          "PC": 27878,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27944,
+          "IY": 23593,
+          "count": 2
+        },
+        {
+          "PC": 27950,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27956,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27958,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 28018,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 28148,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28159,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28181,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28204,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 40748,
+          "IY": 23567,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "final_effect_frames": 2,
+      "entries": {
+        "6D8D": {
+          "IY": 23610,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 0,
+          "paging": 22,
+          "HL": 24704,
+          "DE": 24960,
+          "BC": 0,
+          "AF": 20116,
+          "IX": 43981
+        },
+        "6638": {
+          "IY": 23807,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 0,
+          "paging": 20,
+          "HL": 37632,
+          "DE": 54016,
+          "BC": 0,
+          "AF": 5193,
+          "IX": 25600
+        },
+        "6C9C": {
+          "IY": 23593,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 22,
+          "HL": 49152,
+          "DE": 0,
+          "BC": 0,
+          "AF": 5633,
+          "IX": 25600
+        },
+        "6DB6": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 65535,
+          "DE": 24832,
+          "BC": 27035,
+          "AF": 68,
+          "IX": 0
+        },
+        "6AC1": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 36864,
+          "DE": 53248,
+          "BC": 32765,
+          "AF": 4416,
+          "IX": 0
+        },
+        "66FB": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 65535,
+          "DE": 24832,
+          "BC": 27035,
+          "AF": 68,
+          "IX": 0
+        },
+        "6A4B": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 26142,
+          "DE": 23040,
+          "BC": 300,
+          "AF": 73,
+          "IX": 0
+        },
+        "661E": {
+          "IY": 23567,
+          "SP": 24569,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 26142,
+          "DE": 23040,
+          "BC": 300,
+          "AF": 73,
+          "IX": 0
+        },
+        "66A3": {
+          "IY": 23567,
+          "SP": 24569,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 26156,
+          "DE": 65535,
+          "BC": 26162,
+          "AF": 5705,
+          "IX": 0
+        }
+      },
+      "loader_IY": 23567,
+      "loader_SP": 24569,
+      "loader_IFF": 0,
+      "loader_AF": 48746,
+      "loader_BC": 32766,
+      "timed_callback_counters": [
+        300,
+        299
+      ],
+      "FRAMES_before_loader": 51,
+      "IRQ_contexts": [
+        {
+          "PC": 26424,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26426,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26427,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26428,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26429,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26445,
+          "IY": 23567,
+          "count": 8
+        },
+        {
+          "PC": 26949,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27011,
+          "IY": 23567,
+          "count": 3
+        },
+        {
+          "PC": 27156,
+          "IY": 23567,
+          "count": 7
+        },
+        {
+          "PC": 27171,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27171,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27210,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27366,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27374,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27435,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27437,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27442,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27446,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27448,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27456,
+          "IY": 23567,
+          "count": 3
+        },
+        {
+          "PC": 27818,
+          "IY": 23593,
+          "count": 2
+        },
+        {
+          "PC": 27878,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27944,
+          "IY": 23593,
+          "count": 2
+        },
+        {
+          "PC": 27950,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27956,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27958,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 28018,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 28148,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28159,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28181,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28204,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 40748,
+          "IY": 23567,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "final_effect_frames": 300,
+      "entries": {
+        "6D8D": {
+          "IY": 23610,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 0,
+          "paging": 22,
+          "HL": 24704,
+          "DE": 24960,
+          "BC": 0,
+          "AF": 20116,
+          "IX": 43981
+        },
+        "6638": {
+          "IY": 23807,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 0,
+          "paging": 20,
+          "HL": 37632,
+          "DE": 54016,
+          "BC": 0,
+          "AF": 5193,
+          "IX": 25600
+        },
+        "6C9C": {
+          "IY": 23593,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 22,
+          "HL": 49152,
+          "DE": 0,
+          "BC": 0,
+          "AF": 5633,
+          "IX": 25600
+        },
+        "6DB6": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 65535,
+          "DE": 24832,
+          "BC": 27035,
+          "AF": 68,
+          "IX": 0
+        },
+        "6AC1": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 36864,
+          "DE": 53248,
+          "BC": 32765,
+          "AF": 4416,
+          "IX": 0
+        },
+        "66FB": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 65535,
+          "DE": 24832,
+          "BC": 27035,
+          "AF": 68,
+          "IX": 0
+        },
+        "6A4B": {
+          "IY": 23567,
+          "SP": 24573,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 26142,
+          "DE": 23040,
+          "BC": 300,
+          "AF": 73,
+          "IX": 0
+        },
+        "661E": {
+          "IY": 23567,
+          "SP": 24569,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 26142,
+          "DE": 23040,
+          "BC": 300,
+          "AF": 73,
+          "IX": 0
+        },
+        "66A3": {
+          "IY": 23567,
+          "SP": 24569,
+          "I": 63,
+          "IM": 1,
+          "IFF": 1,
+          "paging": 17,
+          "HL": 26156,
+          "DE": 65535,
+          "BC": 26162,
+          "AF": 5705,
+          "IX": 0
+        }
+      },
+      "loader_IY": 23567,
+      "loader_SP": 24575,
+      "loader_IFF": 1,
+      "loader_AF": 65,
+      "loader_BC": 0,
+      "timed_callback_counters": [
+        300,
+        299,
+        298,
+        297,
+        296,
+        295,
+        294,
+        293,
+        292,
+        291,
+        290,
+        289,
+        288,
+        287,
+        286,
+        285,
+        284,
+        283,
+        282,
+        281,
+        280,
+        279,
+        278,
+        277,
+        276,
+        275,
+        274,
+        273,
+        272,
+        271,
+        270,
+        269,
+        268,
+        267,
+        266,
+        265,
+        264,
+        263,
+        262,
+        261,
+        260,
+        259,
+        258,
+        257,
+        256,
+        255,
+        254,
+        253,
+        252,
+        251,
+        250,
+        249,
+        248,
+        247,
+        246,
+        245,
+        244,
+        243,
+        242,
+        241,
+        240,
+        239,
+        238,
+        237,
+        236,
+        235,
+        234,
+        233,
+        232,
+        231,
+        230,
+        229,
+        228,
+        227,
+        226,
+        225,
+        224,
+        223,
+        222,
+        221,
+        220,
+        219,
+        218,
+        217,
+        216,
+        215,
+        214,
+        213,
+        212,
+        211,
+        210,
+        209,
+        208,
+        207,
+        206,
+        205,
+        204,
+        203,
+        202,
+        201,
+        200,
+        199,
+        198,
+        197,
+        196,
+        195,
+        194,
+        193,
+        192,
+        191,
+        190,
+        189,
+        188,
+        187,
+        186,
+        185,
+        184,
+        183,
+        182,
+        181,
+        180,
+        179,
+        178,
+        177,
+        176,
+        175,
+        174,
+        173,
+        172,
+        171,
+        170,
+        169,
+        168,
+        167,
+        166,
+        165,
+        164,
+        163,
+        162,
+        161,
+        160,
+        159,
+        158,
+        157,
+        156,
+        155,
+        154,
+        153,
+        152,
+        151,
+        150,
+        149,
+        148,
+        147,
+        146,
+        145,
+        144,
+        143,
+        142,
+        141,
+        140,
+        139,
+        138,
+        137,
+        136,
+        135,
+        134,
+        133,
+        132,
+        131,
+        130,
+        129,
+        128,
+        127,
+        126,
+        125,
+        124,
+        123,
+        122,
+        121,
+        120,
+        119,
+        118,
+        117,
+        116,
+        115,
+        114,
+        113,
+        112,
+        111,
+        110,
+        109,
+        108,
+        107,
+        106,
+        105,
+        104,
+        103,
+        102,
+        101,
+        100,
+        99,
+        98,
+        97,
+        96,
+        95,
+        94,
+        93,
+        92,
+        91,
+        90,
+        89,
+        88,
+        87,
+        86,
+        85,
+        84,
+        83,
+        82,
+        81,
+        80,
+        79,
+        78,
+        77,
+        76,
+        75,
+        74,
+        73,
+        72,
+        71,
+        70,
+        69,
+        68,
+        67,
+        66,
+        65,
+        64,
+        63,
+        62,
+        61,
+        60,
+        59,
+        58,
+        57,
+        56,
+        55,
+        54,
+        53,
+        52,
+        51,
+        50,
+        49,
+        48,
+        47,
+        46,
+        45,
+        44,
+        43,
+        42,
+        41,
+        40,
+        39,
+        38,
+        37,
+        36,
+        35,
+        34,
+        33,
+        32,
+        31,
+        30,
+        29,
+        28,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "FRAMES_before_loader": 945,
+      "IRQ_contexts": [
+        {
+          "PC": 26424,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26426,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26427,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26428,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26429,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 26445,
+          "IY": 23567,
+          "count": 8
+        },
+        {
+          "PC": 26949,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27011,
+          "IY": 23567,
+          "count": 3
+        },
+        {
+          "PC": 27156,
+          "IY": 23567,
+          "count": 901
+        },
+        {
+          "PC": 27171,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27171,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27210,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27366,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27374,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27435,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27437,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27442,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27446,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27448,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 27456,
+          "IY": 23567,
+          "count": 3
+        },
+        {
+          "PC": 27818,
+          "IY": 23593,
+          "count": 2
+        },
+        {
+          "PC": 27878,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27944,
+          "IY": 23593,
+          "count": 2
+        },
+        {
+          "PC": 27950,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27956,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 27958,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 28018,
+          "IY": 23593,
+          "count": 1
+        },
+        {
+          "PC": 28148,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28159,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28181,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 28204,
+          "IY": 23567,
+          "count": 1
+        },
+        {
+          "PC": 40748,
+          "IY": 23567,
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "initial_IM_IFF_explicit": true,
+  "original_initializer_sha256": "be81c26a2ab95c5be98a9760d6dd79c38662d0b345cfb695716a9f6ca5ff7d57",
+  "original_IY_chain_and_ROM_IRQ_contexts_executed": true,
+  "native_execution": false,
+  "nonzero_AF_alternate_preserved_before_loader": true,
+  "IX_before_loader": 0,
+  "BuildIntroTexture_original_entry_and_return_context_checked": true,
+  "timed_effect_real_callback_counters_and_stack_checked": true,
+  "early_space_exit_AF": 48746
 }

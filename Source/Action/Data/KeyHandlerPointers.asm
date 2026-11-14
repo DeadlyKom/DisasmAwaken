@@ -39,17 +39,17 @@ Index06:        FKeyHandlerPointer {
                 ; -----------------------------------------
                 ; исходная физическая запись Index07
 Index07:        FKeyHandlerPointer {
-                    @Action.IncreaseGaugeWord.Entry                             ; Target, увеличение слова шестой шкалы с исходной проверкой ограничения
+                    @Action.IncreaseGaugeWord.Entry                             ; Target, набор скорости с исходной проверкой ограничения
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Index08
 Index08:        FKeyHandlerPointer {
-                    @Action.DecreaseGaugeWord.Entry                             ; Target, уменьшение слова шестой шкалы с исходной проверкой бита 4
+                    @Action.DecreaseGaugeWord.Entry                             ; Target, сброс скорости с исходной проверкой бита 4 отрицательного слова
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Index09
 Index09:        FKeyHandlerPointer {
-                    #ACAB                                                       ; Target, адрес обработчика в общей RAM, назначение описывается отдельно для каждой цели
+                    @Action.QueueDiagnosticCounters.Entry                        ; Target, бортовой компьютер из списка настроек, ставит счётчики в очередь
                 }
                 ; -----------------------------------------
                 ; исходная физическая запись Index0A

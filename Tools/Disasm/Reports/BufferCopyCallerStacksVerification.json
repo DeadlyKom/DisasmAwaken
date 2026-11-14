@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "method": "bounded_original_code_with_TRDOS_stub_and_real_noise_ROM_IRQ",
+  "flight_frames_completed": 1,
+  "noise_frames_copied": 2,
+  "noise_entry_SP": 49148,
+  "calls": [
+    {
+      "input_SP": 49146,
+      "external_return": 43695,
+      "final_SP": 49148,
+      "call_pc": 51321,
+      "call_writes": [
+        {
+          "address": 49144,
+          "value": 124,
+          "bank": 2
+        },
+        {
+          "address": 49145,
+          "value": 200,
+          "bank": 2
+        }
+      ],
+      "copied_bytes_compared": 3072,
+      "bank1_PackedLength_unchanged": true
+    },
+    {
+      "input_SP": 49144,
+      "external_return": 24709,
+      "final_SP": 49146,
+      "call_pc": 51321,
+      "call_writes": [
+        {
+          "address": 49142,
+          "value": 124,
+          "bank": 2
+        },
+        {
+          "address": 49143,
+          "value": 200,
+          "bank": 2
+        }
+      ],
+      "copied_bytes_compared": 3072,
+      "bank1_PackedLength_unchanged": true
+    },
+    {
+      "input_SP": 49144,
+      "external_return": 24709,
+      "final_SP": 49146,
+      "call_pc": 51321,
+      "call_writes": [
+        {
+          "address": 49142,
+          "value": 124,
+          "bank": 2
+        },
+        {
+          "address": 49143,
+          "value": 200,
+          "bank": 2
+        }
+      ],
+      "copied_bytes_compared": 3072,
+      "bank1_PackedLength_unchanged": true
+    }
+  ],
+  "bank1_length_initial_load_writes": [
+    {
+      "pc": 15635,
+      "address": 56065,
+      "value": 0,
+      "bank": 1
+    },
+    {
+      "pc": 15635,
+      "address": 56066,
+      "value": 0,
+      "bank": 1
+    }
+  ],
+  "bank1_length_runtime_writes": [],
+  "selected_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "original_disk_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "original_parent_code_sha256": "3458c232be24b12c398fe4f3005a037e2d7f2a18dd3aff60feee0afdcbdf4fdf",
+  "ship_destruction_condition_prepared": true,
+  "all_game_caller_stacks_proved": false,
+  "temporary_module_natural_length_writer_proved": false,
+  "real_boot_verified": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

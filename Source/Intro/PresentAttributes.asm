@@ -2,6 +2,7 @@
                 module PresentAttributes
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
                 ; Документация [алгоритм и проверка](../../Docs/IntroPresentAttributes.md)
+                ; Особый контекст [IY столбцового эффекта](../../Docs/IntroGeneratedEffects.md#iy-столбцового-вывода-и-перенос-frames)
 ; -----------------------------------------
 ; Ожидание кадра, выбор таблицы #60C0 либо #61C0 и вызов генерируемого писателя
 ; исходная запись 3, файловые смещения #0683..#0692
@@ -21,6 +22,7 @@
                 ; Corrupt:
                 ;   HL, AF, R, FRAMES, SavedSP, 64 байта назначений и 14 временных байтов ниже входного SP
                 ; Note:
+                ;   вызовы из InitializeColumnEffect, InitializeLookupEffect и InitializeScrolledTexture при исходном 69A2=FF приходят с IY=5C0F, отдельные контексты и запись 5C4F описаны в IntroGeneratedEffects.md
                 ;   это самостоятельный дополнительный вход, а не продолжение CombineAttributeNibbles
                 ;   HALT требует разрешённых IRQ на входе, сам вход EI и DI не выполняет
                 ;   ROM после IRQ возвращает IFF=1, писатель завершается в том же кадре и не запрещает прерывания

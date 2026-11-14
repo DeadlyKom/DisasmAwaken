@@ -24,12 +24,13 @@ for a,name,index,draw,area,row,operand,pixel,description in PANELS:
    'список рисования непуст и завершается исходным маркером, PointerY=0..191, выбран станционный банк 0',
    row_symbol(row)+' содержит прежний номер либо FF, его операнд доступен для записи',
    'действуют договоры '+callee+', XorItemRow, XorPointerRow, SuspendPointer и ResumePointer'],
-  ['перед '+callee+' установлены HL=DrawItem'+str(index)+'.Entry, DE='+format(area,'04X')+', A прежний номер',
-   ('D=40 пикселей передаётся прямо, E=3, высота FInterfaceItem не ограничивает область этого входа' if pixel else
-    'D=30 запрошенных строк, E='+str(area&255)+' пикселей, фактическую байтовую высоту рассчитывает ClampRowHeight'),
+  ["HL, DE, BC и AF принадлежат "+callee,
+   "HL', DE', BC' сохраняются, AF' рабочий только на обновлении указателя, IX и IY сохраняются",
+   'перед '+callee+' установлены HL=DrawItem'+str(index)+'.Entry, DE='+format(area,'04X')+', A прежний номер',
+   'D=40 пикселей передаётся прямо, E=3, высота FInterfaceItem не ограничивает область этого входа' if pixel else
+    'D=30 запрошенных строк, E='+str(area&255)+' пикселей, фактическую байтовую высоту рассчитывает ClampRowHeight',
    'при Z=1 возвращённого '+callee+' сохранённый номер не меняется, выходные регистры принадлежат соответствующей ветви отказа или совпадения',
    'при Z=0 весь возвращённый A записан в '+row_symbol(row)+', даже если A=0 либо повторная проверка вернула высоту',
-   "HL, DE, BC и AF принадлежат "+callee+", HL', DE', BC', IX, IY сохраняются, AF' рабочий только на обновлении указателя",
    'при соблюдении договоров SP обычного возврата равен входному SP+2, I, IFF и IM не меняются'],
   ["HL, DE, BC, AF, AF' на изменении полосы и указателя"],
   ['обновление допускается лишь для точного адреса рисователя в последнем слове списка',
@@ -62,7 +63,7 @@ COMMENTS[0x6A4B]=(['выбор отступа 11 пикселей и текущ�
 # Рисователь оснащения меняет старший операнд запроса, включая посчитанную попытку маркера конца.
 equipment_contract=list(CONTRACTS['Station',0x7210])
 equipment_contract[1]=[line.replace('DrawItem38','DrawEquipmentList').replace('DE=1E1B','DE с младшим отступом 1B и старшим EquipmentListState.RowCount').replace('D=30 запрошенных строк','D равен текущему EquipmentListState.RowCount, исходно 30') for line in equipment_contract[1]]
-equipment_contract[3]=[*equipment_contract[3],'DrawEquipmentList записывает счётчик попыток, включая маркер 80, в старший операнд 7212, после отказа заголовка он равен нулю']
+equipment_contract[3]=[*equipment_contract[3],'DrawEquipmentList записывает счётчик попыток с маркером 80 в старший операнд 7212, после отказа заголовка он равен нулю']
 CONTRACTS['Station',0x7210]=tuple(equipment_contract)
 COMMENTS[0x7210]=(['выбор отступа 27 пикселей и текущего EquipmentListState.RowCount, исходно 30'],None)
 
@@ -80,3 +81,32 @@ def name_operands(region,address,operation):
  constant='PositionsPixels' if panel[7] else ('IndentedRows' if panel[4]&255==27 else 'Rows')
  draw_names={25:'DrawModelListPanel',38:'DrawEquipmentList',43:'DrawSaveSlotPanel',44:'DrawLoadSlotPanel'}
  return operation.replace('LD DE, #'+format(panel[4],'04X'),'LD DE, @PanelHoverConst.'+constant).replace('LD HL, #'+format(panel[3],'04X'),'LD HL, @Station.'+draw_names.get(panel[2],'DrawItem'+str(panel[2]))+'.Entry')
+
+
+# Фактический текущий VisibleTitles передаётся в D как байтовый счётчик заголовков.
+CONTRACTS['Station',0x6A4B] = (['IX - допустимая FInterfaceItem списка Индекс, подготовлены указатель, шрифт, таблицы адресации и банковое XOR-ядро',
+  'список рисования непуст и завершается исходным маркером, PointerY=0..191, выбран станционный банк 0',
+  'PanelHoverState.IndexRow содержит прежний номер либо FF, его операнд доступен для записи',
+  'действуют договоры UpdateRowHover, XorItemRow, XorPointerRow, SuspendPointer и ResumePointer'],
+ ['HL, DE, BC и AF принадлежат UpdateRowHover',
+  "HL', DE', BC' сохраняются, AF' рабочий только на обновлении указателя, IX и IY сохраняются",
+  'перед UpdateRowHover HL=DrawHelpContents.Entry, E=11, D=HelpPanelState.VisibleTitles, A прежний номер',
+  'D содержит текущее байтовое число заголовков, исходно 30, высоту ограничивает ClampRowHeight',
+  'при Z=1 возвращённого UpdateRowHover сохранённый номер не меняется, выходные регистры принадлежат соответствующей ветви отказа или совпадения',
+  'при Z=0 весь возвращённый A записан в PanelHoverState.IndexRow, даже если A=0 либо повторная проверка вернула высоту',
+  'при соблюдении договоров SP обычного возврата равен входному SP+2, I, IFF и IM не меняются'],
+ ["HL, DE, BC, AF, AF' на изменении полосы и указателя"],
+ ['обновление допускается лишь для точного адреса рисователя в последнем слове списка',
+  'Z показывает отсутствие обновления, он не равнозначен нулю A',
+  'две проверки PointerY не атомарны, обёртка не исправляет служебный результат позднего отказа',
+  'рисователь сбрасывает свой операнд строки в FF после замены фона, эта обёртка сама фон панели не рисует',
+  'названия списков взяты из исходных заголовков и текстов, назначение действий их строк этим контрактом не устанавливается',
+  'DrawHelpContents записывает байтовое число начатых заголовков в 6A4D, поэтому D не обязан равняться 30'])
+
+
+# Самосохраняемые списки добавляют к общему наведению только собственный номер строки.
+from RowHoverFacts import HOVER_CORRUPT
+for _address,_name,_index,_draw,_area,_row,_operand,_pixel,_description in PANELS:
+    _parts = list(CONTRACTS['Station',_address])
+    _parts[2] = [*HOVER_CORRUPT, row_symbol(_row)+' при возвращённом Z=0']
+    CONTRACTS['Station',_address] = tuple(_parts)

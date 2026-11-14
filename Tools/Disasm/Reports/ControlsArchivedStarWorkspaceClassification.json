@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 24,
+  "resources": 2,
+  "archive_proof": "ControlsArchivedStarWorkspaceVerification.json",
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

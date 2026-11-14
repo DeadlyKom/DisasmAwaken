@@ -9,7 +9,7 @@
                 ;   HL, DE, BC, AF входных аргументов не задают, сохраняемые части зависят от падающего фронта Request
                 ;   Request и SkipDetail содержат текущий и предыдущий общие запросы, X/Y/TurnPrev и Next задают защёлки каналов
                 ;   X/Y/TurnPhase содержат полные байты кольцевой фазы, XControl, YControl, TurnControl содержат signed8
-                ;   операнды стабильны при чтении, на падающем фронте доступны процедуры и конечный список ReleaseClass14Records банка 0
+                ;   операнды стабильны при чтении, на падающем фронте доступны процедуры и конечный список ReleaseBoostDebrisRecords банка 0
                 ;   перенесённый ACTION банка 5 доступен, CPU-стек допускает шесть дополнительных байтов и внешний возврат, IRQ не вмешиваются
                 ; Out:
                 ;   HL=0088, D=14, BC=0040 и IY указывает маркер только при Request=0 и прежнем SkipDetail не ноль
@@ -17,7 +17,7 @@
                 ;   E, альтернативные регистры и IX сохраняются, I, IM, IFF и 7FFD сохраняются, SP=входной SP+2
                 ;   SkipDetail получает прежний Request, Request обнулён, каждый Prev получает соответствующий Next
                 ;   канал со старым Prev не ноль пропущен, остальные сбрасывают пару операндов, вращают Phase и при прежнем бите 0 равном единице сдвигают signed8 к нулю
-                ;   на падающем фронте освобождён класс 14, LimitWord и SignedWord равны 0088, SixthRequest=1
+                ;   на падающем фронте освобождён класс 14, LimitWord и SpeedWord равны 0088, SixthRequest=1
                 ;   AF определяется последним каналом, точные формулы и R приведены в документации
                 ; Corrupt:
                 ;   HL и D только на падающем фронте, BC, AF, IY только на падающем фронте, R, существующие операнды, поля освобождённых записей и шесть временных байтов стека
@@ -42,13 +42,13 @@ Entry:          LD A, #00
                 JR NC, @Action.LatchControlsAndDecay.ClearRequest               ; переход, если прежний запрос также нулевой, падающего фронта нет
 
                 ; Освобождение всех активных записей класса 14 настоящим повторным поиском.
-                CALL @Action.ReleaseClass14Records.Entry
-                ; Обновление исходного ограничивающего слова и рабочего SignedWord значением 0088.
+                CALL @Action.ReleaseBoostDebrisRecords.Entry
+                ; Обновление исходного ограничивающего слова и рабочего SpeedWord значением 0088.
                 LD HL, @ActionControlDecayConst.ResetWord
                 LD (@ActionControlDecayState.LimitWord), HL
                 LD HL, @ActionControlDecayConst.ResetWord
-                LD (@ActionPanelGaugesState.SignedWord), HL
-                ; Создание запроса перерисовки шестой шкалы после сброса SignedWord.
+                LD (@ActionPanelGaugesState.SpeedWord), HL
+                ; Создание запроса перерисовки шестой шкалы после сброса SpeedWord.
                 LD A, @ActionControlDecayConst.RequestOn
                 LD (@ActionPanelGaugesState.SixthRequest), A
                 ; Обнуление накопленного общего Request, SkipDetail сохраняет его значение до следующего вызова.
